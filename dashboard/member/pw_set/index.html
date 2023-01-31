@@ -4,7 +4,6 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-	<meta name="generator" content="Hugo 0.104.3" />
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=991" />
@@ -71,6 +70,11 @@
 
 <!-- #header -->
 
+  
+  
+  
+  
+
 
 <header id="header" class="header" role="banner">
   <div class="inner">
@@ -89,15 +93,52 @@
   </div>
 </header>
 <!-- //#header -->
+<script type="text/javascript">
+  document.title = "Dashboard - 최초비밀번호설정";
+</script>
 
-
-<main id="container" class="main" data-header-hide="true" data-footer-hide="true" role="main">
-  
-  <script>
-    window.location.href = "/dashboard/member/login";
-  </script>
+<main id="container" class="member" data-header-hide="false" data-footer-hide="false" role="main">
+<div id="wrap" class="login password" >
+  <div class="wrap">
+          <form action="../../moral">
+              <div class="wrap">
+                  <h1>Login</h1>
+                  <strong class="id">abcd0010@realsn.com</strong>
+                  <div class="row">
+                      <strong class="ti">비밀번호 변경</strong>
+          <div class="dcp is-wid-100 is-password" style="width: 100%">
+            <input type="checkbox" id="input_pw_chk_00" class="password" checked><label for="input_pw_chk_00"></label>
+            <input type="password" id="input_pw_00" placeholder="PASSWORD" required onkeyup="watchInput();"><label for="input_pw_00"></label>
+          </div>
+                  </div>
+                  <div class="row">
+                      <strong class="ti">비밀번호 확인</strong>
+          <div class="dcp is-wid-100 is-password" style="width: 100%">
+            <input type="checkbox" id="input_pw_chk_01" class="password" checked><label for="input_pw_chk_01"></label>
+            <input type="password" id="input_pw_01" placeholder="PASSWORD" required onkeyup="watchInput();"><label for="input_pw_01"></label>
+          </div>
+                  </div>
+                  <button class="ui_btn is-color-point1 is-large is-wid-100 btn_login"><span class="txt">Save</span></button>
+                  <div class="txt">* 비밀번호 변경은 대시보드 상단 메뉴에서도 가능 합니다.</div>
+                  <script>
+                      function watchInput(){
+                          var input_00 = document.querySelector('#input_pw_00').value;
+                          var input_01 = document.querySelector('#input_pw_01').value;
+                          if (input_00.legnth > 0 || input_01.length > 0 ){
+                              document.querySelector('.ui_btn').classList.add('is-active');
+                          } else {
+                              document.querySelector('.ui_btn').classList.remove('is-active');
+                          }
+                      }
+                  </script>
+              </div>
+          </form>
+  </div>
+</div>
 </main>
-
+<script type="text/javascript">
+  
+</script>
 
 <!-- #footer -->
 <footer id="footer" class="footer visually-hidden" role="contentinfo">
