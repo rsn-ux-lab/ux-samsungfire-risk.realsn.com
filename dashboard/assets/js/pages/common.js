@@ -1,5 +1,6 @@
 import { tableSticky } from '../components/tables';
 import '../components/headerFixPin';
+import '../components/searchFold';
 
 // DOCUMENT READY...
 $(function () {

@@ -54,7 +54,7 @@ $(function () {
         break;
       case "overlapping":
         // 팝업 - 중복 로그인
-        $.modal({ className: "confirm", message: `<p class="text-center">동일 아이디 사용자가 존재합니다.</p><br><p class="text-center">기존 사용자를 강제 로그아웃 후 로그인하시겠습니까?</p>`});
+        $.modal({ className: "confirm", message: `<p class="text-center">동일 아이디 사용자가 존재합니다.</p><p class="text-center">기존 사용자를 강제 로그아웃 후 로그인하시겠습니까?</p>`});
         break;
     }
   }
