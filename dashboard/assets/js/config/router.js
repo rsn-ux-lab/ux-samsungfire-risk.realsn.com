@@ -1,8 +1,12 @@
 /* JS loader */
 let routes = [
   {
-    path: ["/dashboard/member/login/", "/dashboard/member/pw_set/"],
+    path: "/dashboard/member/login/",
     script: `${SERVER.assets}/js/pages/login.js`,
+  },
+  {
+    path: "/dashboard/member/pw_set/",
+    script: `${SERVER.assets}/js/pages/pwSet.js`,
   },
   {
     path: "/dashboard/moral/",

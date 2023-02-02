@@ -1,4 +1,5 @@
-import { tableSticky } from "../components/tables";
+import { tableSticky } from '../components/tables';
+import '../components/headerFixPin';
 
 // DOCUMENT READY...
 $(function () {
@@ -6,8 +7,8 @@ $(function () {
   ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■
   */
   {
-    if (Boolean(document.querySelectorAll("[data-thead-sticky=true]").length)) {
-      const sticky = new tableSticky(document.querySelectorAll("[data-thead-sticky=true]"));
+    if (Boolean(document.querySelectorAll('[data-thead-sticky=true]').length)) {
+      const sticky = new tableSticky(document.querySelectorAll('[data-thead-sticky=true]'));
 
       window.onLoadResize({
         callback() {
@@ -15,9 +16,10 @@ $(function () {
         },
       });
 
-      const headerPin = document.querySelectorAll(".js-header-pin");
+      const headerPin = document.querySelectorAll('.js-header-pin');
       headerPin.forEach(function (_each) {
-        _each.addEventListener("click", function () {
+        console.log(_each);
+        _each.addEventListener('click', function () {
           setTimeout(function () {
             sticky.init();
           }, 1);
@@ -46,7 +48,7 @@ $(function () {
      *
      */
 
-    $("#wrap").wait(100).attr({ "data-target-device": $.getDevice().type, "data-device-detail": $.getDevice().detail });
+    $('#wrap').wait(100).attr({ 'data-target-device': $.getDevice().type, 'data-device-detail': $.getDevice().detail });
   }
   /*
   ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■
@@ -58,39 +60,39 @@ $(function () {
      *
      */
 
-    const $wrap = document.querySelector("#wrap");
-    const $loadingWrap = document.querySelector("#loadingWrap");
+    const $wrap = document.querySelector('#wrap');
+    const $loadingWrap = document.querySelector('#loadingWrap');
     let isState;
 
     $wrap.style.opacity = 1;
-    $wrap.style.visibility = "visible";
+    $wrap.style.visibility = 'visible';
 
     const removeLoading = () => {
       try {
-        if (Boolean($loadingWrap) === false) throw new Error("#loadingWrap 찾을 수 없습니다.");
+        if (Boolean($loadingWrap) === false) throw new Error('#loadingWrap 찾을 수 없습니다.');
       } catch (_err) {
-        console.log(`%c common.js %c ${_err}`, "color:yellow;background:#ffb6c16b", "color:red;");
+        console.log(`%c common.js %c ${_err}`, 'color:yellow;background:#ffb6c16b', 'color:red;');
         return;
       }
 
       $loadingWrap
         .animate([{ opacity: 1 }, { opacity: 0 }], {
           duration: 300,
-          fill: "forwards",
+          fill: 'forwards',
         })
         .finished.then(() => {
           $loadingWrap.remove();
         });
     };
 
-    window.addEventListener("load", () => {
+    window.addEventListener('load', () => {
       removeLoading();
       isState = true;
     });
 
     setTimeout(() => {
       removeLoading();
-      !isState && console.log("리소스가 정상적으로 다운로드 되지 않았습니다.");
+      !isState && console.log('리소스가 정상적으로 다운로드 되지 않았습니다.');
     }, 2000);
   }
   /*
@@ -122,7 +124,7 @@ $(function () {
      *
      */
 
-    $(".js-anchor").anchor();
+    $('.js-anchor').anchor();
   }
   /*
   ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■
@@ -134,7 +136,7 @@ $(function () {
      *
      */
 
-    $("#wrap").formTamplate();
+    $('#wrap').formTamplate();
   }
   /*
   ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■
@@ -151,7 +153,7 @@ $(function () {
      * <div data-loding-spinner="true 1rem"></div> // rem 단위로 숫자 삽입하는 경우 크기 변경됨(기본값 : 6rem)
      *
      */
-    $("[data-loding-spinner]").lodingSpinner();
+    $('[data-loding-spinner]').lodingSpinner();
   }
   /*
       ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■
@@ -173,15 +175,15 @@ $(function () {
      *      div.appear {opacity:1;transition:opacity 0.3s ease-in-out}
      *
      */
-    const $appears = document.querySelectorAll("[class*=js-is-appear]");
+    const $appears = document.querySelectorAll('[class*=js-is-appear]');
 
     $appears.forEach((_each) => {
       const $this = _each;
-      const classNames = $this.getAttribute("class").split(" ");
+      const classNames = $this.getAttribute('class').split(' ');
       const posY = classNames
         .map((_arr) => {
-          if (_arr.indexOf("js-is-appear") !== -1) {
-            let num = Number(_arr.replace(/[^0-9]/g, ""));
+          if (_arr.indexOf('js-is-appear') !== -1) {
+            let num = Number(_arr.replace(/[^0-9]/g, ''));
 
             $this.classList.remove(_arr); //removeClass
             return (num = num !== 0 ? num : 70); //scroll.top 기본값 70 설정함
@@ -194,10 +196,10 @@ $(function () {
         $target: $this,
         top: posY,
         scrollDownAction: function () {
-          $this.classList.add("is-appear");
+          $this.classList.add('is-appear');
         },
         scrollUpAction: function () {
-          $this.classList.remove("is-appear");
+          $this.classList.remove('is-appear');
         },
       });
     });
@@ -212,13 +214,13 @@ $(function () {
      *
      */
 
-    const $header = document.querySelector("#header");
-    const $links = $header.querySelectorAll("#header [data-file-path]");
-    const paths = Array.from($links).map((_$link) => _$link.getAttribute("data-file-path"));
-    const url = location.pathname.getBetween("dashboard/", "/");
+    const $header = document.querySelector('#header');
+    const $links = $header.querySelectorAll('#header [data-file-path]');
+    const paths = Array.from($links).map((_$link) => _$link.getAttribute('data-file-path'));
+    const url = location.pathname.getBetween('dashboard/', '/');
     const hasPath = paths.find((_path) => _path === url);
 
-    if (hasPath) $header.querySelector(`[data-file-path="${hasPath}"]`).classList.add("header-gnb__link--is-active");
+    if (hasPath) $header.querySelector(`[data-file-path="${hasPath}"]`).classList.add('header-gnb__link--is-active');
   }
   /*
   ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■
@@ -230,13 +232,13 @@ $(function () {
      *
      */
 
-    const $header = document.querySelector("#header");
-    const $links = $header.querySelectorAll("#header [data-file-path]");
+    const $header = document.querySelector('#header');
+    const $links = $header.querySelectorAll('#header [data-file-path]');
 
     Array.from($links).forEach((_$link) => {
-      const href = _$link.getAttribute("data-file-path");
+      const href = _$link.getAttribute('data-file-path');
 
-      _$link.setAttribute("href", `../${href}`);
+      _$link.setAttribute('href', `../${href}`);
     });
   }
   /*
@@ -249,9 +251,9 @@ $(function () {
      *
      */
 
-    const $container = document.querySelector("#container");
-    const $header = document.querySelector("#header");
-    const isHide = $container?.getAttribute("data-header-hide")?.toLowerCase();
+    const $container = document.querySelector('#container');
+    const $header = document.querySelector('#header');
+    const isHide = $container?.getAttribute('data-header-hide')?.toLowerCase();
 
     if (isHide) $header.parentNode.removeChild($header);
   }
@@ -265,9 +267,9 @@ $(function () {
      *
      */
 
-    const $container = document.querySelector("#container");
-    const $footer = document.querySelector("#footer");
-    const isHide = $container?.getAttribute("data-footer-hide")?.toLowerCase();
+    const $container = document.querySelector('#container');
+    const $footer = document.querySelector('#footer');
+    const isHide = $container?.getAttribute('data-footer-hide')?.toLowerCase();
 
     if (isHide) $footer.parentNode.removeChild($footer);
   }
@@ -282,11 +284,11 @@ $(function () {
      *
      */
 
-    const name = new URLSearchParams(location.search).get("preview");
+    const name = new URLSearchParams(location.search).get('preview');
 
     if (name) {
       switch (name) {
-        case "test":
+        case 'test':
           break;
       }
     }
@@ -302,35 +304,35 @@ $(function () {
      *
      */
 
-    const name = new URLSearchParams(location.search).get("preview");
+    const name = new URLSearchParams(location.search).get('preview');
 
     if (name) {
       switch (name) {
         //  데이터 로딩 예시
-        case "loading":
-          const $lodings = document.querySelectorAll("[data-loding-spinner]");
+        case 'loading':
+          const $lodings = document.querySelectorAll('[data-loding-spinner]');
 
           Array.from($lodings).forEach((_$loding) => {
-            _$loding.setAttribute("data-loding-spinner", "true");
+            _$loding.setAttribute('data-loding-spinner', 'true');
           });
-          const $updateBtn = document.querySelector("[data-loading-update]");
-          $updateBtn.setAttribute("data-loading-update", "true");
+          const $updateBtn = document.querySelector('[data-loading-update]');
+          $updateBtn.setAttribute('data-loading-update', 'true');
           break;
         //  데이터 없는 경우
-        case "empty":
-          const $emptys = document.querySelectorAll("[data-is-empty]");
+        case 'empty':
+          const $emptys = document.querySelectorAll('[data-is-empty]');
 
           Array.from($emptys).forEach((_$empty) => {
-            _$empty.setAttribute("data-is-empty", "true");
+            _$empty.setAttribute('data-is-empty', 'true');
           });
           break;
-        case "notys":
-          setInterval(() => notys.info("데이터를 불러오고 있습니다", "right top"), 1500);
-          setInterval(() => notys.success("데이터 불러오기가 완료되었습니다.<br>", "right top"), 2500);
-          setInterval(() => notys.error("데이터 불러오기에 실패하였습니다.", "right top"), 3500);
+        case 'notys':
+          setInterval(() => notys.info('데이터를 불러오고 있습니다', 'right top'), 1500);
+          setInterval(() => notys.success('데이터 불러오기가 완료되었습니다.<br>', 'right top'), 2500);
+          setInterval(() => notys.error('데이터 불러오기에 실패하였습니다.', 'right top'), 3500);
           break;
-        case "modal":
-          $.modal({ isExist: true, className: "comments--all" });
+        case 'modal':
+          $.modal({ isExist: true, className: 'comments--all' });
           break;
       }
     }

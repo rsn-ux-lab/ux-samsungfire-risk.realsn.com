@@ -1,5 +1,5 @@
 
-<!-- reBuild :  20230201012054 -->
+<!-- reBuild :  20230202103633 -->
 
 <!DOCTYPE html>
 <html lang="ko">
@@ -17,13 +17,13 @@
 
   <!-- STYLE -->
   <link rel="stylesheet" href="//fonts.realsn.com/libs/NotoSansKR/NotoSansKR.css">
-  <link rel="stylesheet" href="/dashboard/assets/css/style.css?v=20230201012054">
+  <link rel="stylesheet" href="/dashboard/assets/css/style.css?v=20230202103633">
 
   <!-- JS -->
-  <script src="/dashboard/assets/js/config/files.js?v=20230201012054" defer></script>
-  <script src="/dashboard/assets/js/libs.js?v=20230201012054" defer></script>
-  <script src="/dashboard/assets/js/modules.js?v=20230201012054" defer></script>
-  <script src="/dashboard/assets/js/config/router.js?v=20230201012054" defer></script>
+  <script src="/dashboard/assets/js/config/files.js?v=20230202103633" defer></script>
+  <script src="/dashboard/assets/js/libs.js?v=20230202103633" defer></script>
+  <script src="/dashboard/assets/js/modules.js?v=20230202103633" defer></script>
+  <script src="/dashboard/assets/js/config/router.js?v=20230202103633" defer></script>
 </head>
 
 <body>
@@ -76,14 +76,14 @@
   
 
 
-<header id="header" class="header" role="banner">
+<header id="header" class="header" data-header-fixed="false" role="banner">
   <div class="inner">
     <h1 class="header-logo"><a class="d-block" href="../member/login/index.html"><img class="header-logo__img" src="https://via.placeholder.com/100x50" alt="삼성화재" /></a></h1>
     <ul class="header-indicator ">
       <li class="header-indicator__item"><i class="icon-svg-lock" aria-hidden="true"></i>알에스엔님</li>
-      <li class="header-indicator__item"><a href="#" class="" title="로그아웃"><i class="icon-svg-close" aria-hidden="true"></i></a></li>
-      <li class="header-indicator__item"><a href="#" class="" title="시스템 바로가기"><i class="icon-svg-close" aria-hidden="true"></i></a></li>
-      <li class="header-indicator__item"><button class="" title="메뉴바 상단 고정"><i class="icon-svg-close" aria-hidden="true"></i></button></li>
+      <li class="header-indicator__item"><a href="#" class="btn btn-icon" title="로그아웃"><i class="icon-svg-logout" aria-hidden="true"></i></a></li>
+      <li class="header-indicator__item"><a href="#" class="btn btn-icon" title="시스템 바로가기"><i class="icon-svg-system-monitor" aria-hidden="true"></i></a></li>
+      <li class="header-indicator__item"><button class="btn btn-icon js-header-fixed" title="메뉴바 상단 고정"><i class="icon-svg-pin" aria-hidden="true"></i></button></li>
     </ul>
     <nav class="header-gnb">
       <a class="header-gnb__link" data-file-path="moral"><span class="txt">메뉴1</span></a>
@@ -93,52 +93,43 @@
   </div>
 </header>
 <!-- //#header -->
-<script type="text/javascript">
-  document.title = "Dashboard - 최초비밀번호설정";
-</script>
 
 <main id="container" class="member" data-header-hide="false" data-footer-hide="false" role="main">
-<div id="wrap" class="login password" >
-  <div class="wrap">
-          <form action="../../moral">
-              <div class="wrap">
-                  <h1>Login</h1>
-                  <strong class="id">abcd0010@realsn.com</strong>
-                  <div class="row">
-                      <strong class="ti">비밀번호 변경</strong>
-          <div class="dcp is-wid-100 is-password" style="width: 100%">
-            <input type="checkbox" id="input_pw_chk_00" class="password" checked><label for="input_pw_chk_00"></label>
-            <input type="password" id="input_pw_00" placeholder="PASSWORD" required onkeyup="watchInput();"><label for="input_pw_00"></label>
-          </div>
-                  </div>
-                  <div class="row">
-                      <strong class="ti">비밀번호 확인</strong>
-          <div class="dcp is-wid-100 is-password" style="width: 100%">
-            <input type="checkbox" id="input_pw_chk_01" class="password" checked><label for="input_pw_chk_01"></label>
-            <input type="password" id="input_pw_01" placeholder="PASSWORD" required onkeyup="watchInput();"><label for="input_pw_01"></label>
-          </div>
-                  </div>
-                  <button class="ui_btn is-color-point1 is-large is-wid-100 btn_login"><span class="txt">Save</span></button>
-                  <div class="txt">* 비밀번호 변경은 대시보드 상단 메뉴에서도 가능 합니다.</div>
-                  <script>
-                      function watchInput(){
-                          var input_00 = document.querySelector('#input_pw_00').value;
-                          var input_01 = document.querySelector('#input_pw_01').value;
-                          if (input_00.legnth > 0 || input_01.length > 0 ){
-                              document.querySelector('.ui_btn').classList.add('is-active');
-                          } else {
-                              document.querySelector('.ui_btn').classList.remove('is-active');
-                          }
-                      }
-                  </script>
-              </div>
-          </form>
+  <h2 class="visually-hidden">회원정보</h2>
+  <div class="inner">
+    <div class="row justify-content-center">
+      <div class="col-4">
+        <section class="l-member l-member--pw-set" data-section="비밀번호변경">
+          <header class="l-member-header">
+            <h3 class="l-member-header__title l-member-header__title--pw-set">비밀번호 변경</h3>
+            <span class="l-member-header__id">jhlee7@realsn.com</span>
+          </header>
+          <main class="l-member-body">
+            <form class="form" action="../pw_set">
+              <fieldset class="form-fieldset" data-fieldset="비밀번호변경">
+                <div class="form-row form-text" data-row="새비밀번호">
+                  <input class="form-text__input" placeholder="새 비밀번호" type="password" required />
+                  <label class="form-text__label visually-hidden">password를 입력하세요</label>
+                  <button class="btn btn-eye" type="button"><span class="visually-hidden">미리보기</span></button>
+                </div>
+                <div class="form-row form-text" data-row="새비밀번호확인">
+                  <input class="form-text__input" placeholder="새 비밀번호 확인" type="password" required />
+                  <label class="form-text__label visually-hidden">password를 입력하세요</label>
+                  <button class="btn btn-eye" type="button"><span class="visually-hidden">미리보기</span></button>
+                </div>
+                <p class="form__cmt text-danger mb-32">비밀번호가 일치하지 않습니다.</p>
+              </fieldset>
+              <button class="btn btn-round btn-round--lg btn-pw-set w-100" disabled><span class="txt">변경</span></button>
+              <p class="form__cmt">비밀번호 변경은 대시보드 상단 메뉴에서도 가능합니다.</p>
+              <p class="form__cmt">비밀번호는 최소 4자 이상 사용해 주세요.</p>
+            </form>
+          </main>
+        </section>
+      </div>
+    </div>
   </div>
-</div>
 </main>
-<script type="text/javascript">
-  
-</script>
+
 
 <!-- #footer -->
 <footer id="footer" class="footer visually-hidden" role="contentinfo">

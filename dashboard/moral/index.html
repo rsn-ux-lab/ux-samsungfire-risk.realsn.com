@@ -1,5 +1,5 @@
 
-<!-- reBuild :  20230201012054 -->
+<!-- reBuild :  20230202103633 -->
 
 <!DOCTYPE html>
 <html lang="ko">
@@ -17,13 +17,13 @@
 
   <!-- STYLE -->
   <link rel="stylesheet" href="//fonts.realsn.com/libs/NotoSansKR/NotoSansKR.css">
-  <link rel="stylesheet" href="/dashboard/assets/css/style.css?v=20230201012054">
+  <link rel="stylesheet" href="/dashboard/assets/css/style.css?v=20230202103633">
 
   <!-- JS -->
-  <script src="/dashboard/assets/js/config/files.js?v=20230201012054" defer></script>
-  <script src="/dashboard/assets/js/libs.js?v=20230201012054" defer></script>
-  <script src="/dashboard/assets/js/modules.js?v=20230201012054" defer></script>
-  <script src="/dashboard/assets/js/config/router.js?v=20230201012054" defer></script>
+  <script src="/dashboard/assets/js/config/files.js?v=20230202103633" defer></script>
+  <script src="/dashboard/assets/js/libs.js?v=20230202103633" defer></script>
+  <script src="/dashboard/assets/js/modules.js?v=20230202103633" defer></script>
+  <script src="/dashboard/assets/js/config/router.js?v=20230202103633" defer></script>
 </head>
 
 <body>
@@ -75,14 +75,14 @@
   
 
 
-<header id="header" class="header" role="banner">
+<header id="header" class="header" data-header-fixed="false" role="banner">
   <div class="inner">
     <h1 class="header-logo"><a class="d-block" href="../member/login/index.html"><img class="header-logo__img" src="https://via.placeholder.com/100x50" alt="삼성화재" /></a></h1>
     <ul class="header-indicator ">
       <li class="header-indicator__item"><i class="icon-svg-lock" aria-hidden="true"></i>알에스엔님</li>
-      <li class="header-indicator__item"><a href="#" class="" title="로그아웃"><i class="icon-svg-close" aria-hidden="true"></i></a></li>
-      <li class="header-indicator__item"><a href="#" class="" title="시스템 바로가기"><i class="icon-svg-close" aria-hidden="true"></i></a></li>
-      <li class="header-indicator__item"><button class="" title="메뉴바 상단 고정"><i class="icon-svg-close" aria-hidden="true"></i></button></li>
+      <li class="header-indicator__item"><a href="#" class="btn btn-icon" title="로그아웃"><i class="icon-svg-logout" aria-hidden="true"></i></a></li>
+      <li class="header-indicator__item"><a href="#" class="btn btn-icon" title="시스템 바로가기"><i class="icon-svg-system-monitor" aria-hidden="true"></i></a></li>
+      <li class="header-indicator__item"><button class="btn btn-icon js-header-fixed" title="메뉴바 상단 고정"><i class="icon-svg-pin" aria-hidden="true"></i></button></li>
     </ul>
     <nav class="header-gnb">
       <a class="header-gnb__link" data-file-path="moral"><span class="txt">메뉴1</span></a>
@@ -93,9 +93,148 @@
 </header>
 <!-- //#header -->
 <!-- #container -->
-<main id="container" role="main">
+<main id="container" role="main">  
   <h2 class="visually-hidden">모럴 이슈 트렌드</h2>
-  <button type="button" class="btn btn-primary">Primary</button>
+
+  <!-- 상단검색영역 -->
+<section class="l-section l-section-top-serach" data-section="상단검색영역">
+  <div class="inner">
+    <header class="l-section-header visually-hidden">
+      <h3 class="l-section-header__title">상단검색색영역</h3>
+    </header>
+    <main class="l-section-body row g-0">
+      <article class="l-article l-article-form col-13" data-article="검색조건">
+        <header class="l-article-header visually-hidden">
+          <h4 class="l-article-header__title">검색조건</h4>
+        </header>
+        <main class="l-article-body">
+          <dl class="form-serach-list row">
+            <dt class="form-serach-list__title form-serach-list__title--has-required">검색기간</dt>
+            <dd class="form-serach-list__item">내용</dd>
+            <dt class="form-serach-list__title form-serach-list__title--has-required">채널</dt>
+            <dd class="form-serach-list__item">
+            <fieldset class="form-fieldset d-flex" data-fieldset="전체채널">
+              <div class="form-row form-check form-switch mr-20" data-row="전체">
+                <input id="checkboxChannerAll" class="form-check__input form-check__input--js-all-checked" type="checkbox" checked />
+                <label for="checkboxChannerAll" class="form-check__label"><span class="txt">전체</span></label>
+              </div>
+              <fieldset class="form-fieldset row g-2" data-value-minimum="1" data-fieldset="채널종류">
+                <div class="form-row form-check form-check-button col" data-row="블로그">
+                  <input id="checkboxChanner1" class="form-check__input" type="checkbox" checked />
+                  <label for="checkboxChanner1" class="form-check__label"><span class="txt">블로그</span></label>
+                </div>
+                <div class="form-row form-check form-check-button col" data-row="지식인">
+                  <input id="checkboxChanner2" class="form-check__input" type="checkbox" checked />
+                  <label for="checkboxChanner2" class="form-check__label" ><span class="txt">지식인</span></label>
+                </div>
+                <div class="form-row form-check form-check-button col" data-row="카페">
+                  <input id="checkboxChanner3" class="form-check__input" type="checkbox" checked />
+                  <label for="checkboxChanner3" class="form-check__label" ><span class="txt">카페</span></label>
+                </div>
+                <div class="form-row form-check form-check-button col" data-row="커뮤니티">
+                  <input id="checkboxChanner4" class="form-check__input" type="checkbox" checked />
+                  <label for="checkboxChanner4" class="form-check__label" ><span class="txt">커뮤니티</span></label>
+                </div>
+                <div class="form-row form-check form-check-button col" data-row="유튜브">
+                  <input id="checkboxChanner5" class="form-check__input" type="checkbox" checked />
+                  <label for="checkboxChanner5" class="form-check__label" ><span class="txt">유튜브</span></label>
+                </div>
+                <div class="form-row form-check form-check-button col" data-row="인스타그램">
+                  <input id="checkboxChanner6" class="form-check__input" type="checkbox" checked />
+                  <label for="checkboxChanner6" class="form-check__label" ><span class="txt">인스타그램</span></label>
+                </div>
+              </fieldset>
+            </fieldset>
+            </dd>
+            <dt class="form-serach-list__title form-serach-list__title--has-required">글 유형</dt>
+            <dd class="form-serach-list__item">
+            <fieldset class="form-fieldset d-flex" data-fieldset="전체글유형">
+              <div class="form-row form-check form-switch mr-20" data-row="전체">
+                <input id="checkboxWritingAll" class="form-check__input form-check__input--js-all-checked" type="checkbox" checked />
+                <label for="checkboxWritingAll" class="form-check__label"><span class="txt">전체</span></label>
+              </div>
+              <fieldset class="form-fieldset row g-2" data-value-minimum="1" data-fieldset="글유형종류">
+                <div class="form-row form-check form-check-button col" data-row="의료기간홍보">
+                  <input id="checkboxWriting1" class="form-check__input" type="checkbox" checked />
+                  <label for="checkboxWriting1" class="form-check__label"><span class="txt">의료기간홍보</span></label>
+                </div>
+                <div class="form-row form-check form-check-button col" data-row="환자의견">
+                  <input id="checkboxWriting2" class="form-check__input" type="checkbox" checked />
+                  <label for="checkboxWriting2" class="form-check__label" ><span class="txt">환자의견</span></label>
+                </div>
+              </fieldset>
+            </fieldset>
+            </dd>
+            <dt class="form-serach-list__title">관심목록</dt>
+            <dd class="form-serach-list__item">
+            <fieldset class="form-fieldset d-flex" data-fieldset="전체관심목록">
+              <div class="form-row form-check form-switch mr-20" data-row="전체">
+                <input id="checkboxwWtchlistAll" class="form-check__input form-check__input--js-all-checked" type="checkbox" checked />
+                <label for="checkboxwWtchlistAll" class="form-check__label"><span class="txt">전체</span></label>
+              </div>
+              <fieldset class="form-fieldset row g-2" data-value-minimum="1" data-fieldset="관심목록종류">
+                <div class="form-row form-check form-check-button col" data-row="보험관련">
+                  <input id="checkboWwatchlist1" class="form-check__input" type="checkbox" checked />
+                  <label for="checkboWwatchlist1" class="form-check__label"><span class="txt">보험관련</span></label>
+                </div>
+                <div class="form-row form-check form-check-button col" data-row="비용관련">
+                  <input id="checkboWwatchlist2" class="form-check__input" type="checkbox" checked />
+                  <label for="checkboWwatchlist2" class="form-check__label" ><span class="txt">비용관련</span></label>
+                </div>
+                <div class="form-row form-check form-check-button col" data-row="혜택관련">
+                  <input id="checkboWwatchlist3" class="form-check__input" type="checkbox" checked />
+                  <label for="checkboWwatchlist3" class="form-check__label" ><span class="txt">혜택관련</span></label>
+                </div>
+                <div class="form-row form-check form-check-button col" data-row="예후개선">
+                  <input id="checkboWwatchlist4" class="form-check__input" type="checkbox" checked />
+                  <label for="checkboWwatchlist4" class="form-check__label" ><span class="txt">예후개선</span></label>
+                </div>
+                <div class="form-row form-check form-check-button col" data-row="외모개선">
+                  <input id="checkboWwatchlist5" class="form-check__input" type="checkbox" checked />
+                  <label for="checkboWwatchlist5" class="form-check__label" ><span class="txt">외모개선</span></label>
+                </div>
+                <div class="form-row form-check form-check-button col" data-row="신체기능개선">
+                  <input id="checkboWwatchlist6" class="form-check__input" type="checkbox" checked />
+                  <label for="checkboWwatchlist6" class="form-check__label" ><span class="txt">신체기능개선</span></label>
+                </div>
+                <div class="form-row form-check form-check-button col" data-row="절판">
+                  <input id="checkboWwatchlist7" class="form-check__input" type="checkbox" checked />
+                  <label for="checkboWwatchlist7" class="form-check__label" ><span class="txt">절판</span></label>
+                </div>
+                <div class="form-row form-check form-check-button col" data-row="알선">
+                  <input id="checkboWwatchlist8" class="form-check__input" type="checkbox" checked />
+                  <label for="checkboWwatchlist8" class="form-check__label" ><span class="txt">알선</span></label>
+                </div>
+                <div class="form-row form-check form-check-button col" data-row="모집">
+                  <input id="checkboWwatchlist9" class="form-check__input" type="checkbox" checked />
+                  <label for="checkboWwatchlist9" class="form-check__label" ><span class="txt">모집</span></label>
+                </div>
+                <div class="form-row form-check form-check-button col" data-row="세금">
+                  <input id="checkboxWatchlist10" class="form-check__input" type="checkbox" checked />
+                  <label for="checkboxWatchlist10" class="form-check__label" ><span class="txt">세금</span></label>
+                </div>
+              </fieldset>
+            </fieldset>
+            </dd>
+          </dl>
+        </main>
+      </article>
+      <article class="l-article l-article-form col-5" data-article="선택결과">
+        <header class="l-article-header visually-hidden">
+          <h4 class="l-article-header__title">선택결과</h4>
+        </header>
+        <main class="l-article-body">
+          내용
+        </main>
+      </article>
+    </main>
+  </div>
+</section>
+<!-- //상단검색영역 -->
+
+  
+  
+<button type="button" class="btn btn-primary">Primary</button>
 <button type="button" class="btn btn-secondary">Secondary</button>
 <button type="button" class="btn btn-success">Success</button>
 <button type="button" class="btn btn-danger">Danger</button>
