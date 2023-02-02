@@ -1,5 +1,5 @@
 
-<!-- reBuild :  20230202103633 -->
+<!-- reBuild :  20230202132036 -->
 
 <!DOCTYPE html>
 <html lang="ko">
@@ -17,13 +17,13 @@
 
   <!-- STYLE -->
   <link rel="stylesheet" href="//fonts.realsn.com/libs/NotoSansKR/NotoSansKR.css">
-  <link rel="stylesheet" href="/dashboard/assets/css/style.css?v=20230202103633">
+  <link rel="stylesheet" href="/dashboard/assets/css/style.css?v=20230202132036">
 
   <!-- JS -->
-  <script src="/dashboard/assets/js/config/files.js?v=20230202103633" defer></script>
-  <script src="/dashboard/assets/js/libs.js?v=20230202103633" defer></script>
-  <script src="/dashboard/assets/js/modules.js?v=20230202103633" defer></script>
-  <script src="/dashboard/assets/js/config/router.js?v=20230202103633" defer></script>
+  <script src="/dashboard/assets/js/config/files.js?v=20230202132036" defer></script>
+  <script src="/dashboard/assets/js/libs.js?v=20230202132036" defer></script>
+  <script src="/dashboard/assets/js/modules.js?v=20230202132036" defer></script>
+  <script src="/dashboard/assets/js/config/router.js?v=20230202132036" defer></script>
 </head>
 
 <body>
@@ -102,10 +102,9 @@
         <section class="l-member l-member--pw-set" data-section="비밀번호변경">
           <header class="l-member-header">
             <h3 class="l-member-header__title l-member-header__title--pw-set">비밀번호 변경</h3>
-            <span class="l-member-header__id">jhlee7@realsn.com</span>
           </header>
           <main class="l-member-body">
-            <form class="form" action="../pw_set">
+            <form class="form" action="../../moral/">
               <fieldset class="form-fieldset" data-fieldset="비밀번호변경">
                 <div class="form-row form-text" data-row="새비밀번호">
                   <input class="form-text__input" placeholder="새 비밀번호" type="password" required />
@@ -117,11 +116,11 @@
                   <label class="form-text__label visually-hidden">password를 입력하세요</label>
                   <button class="btn btn-eye" type="button"><span class="visually-hidden">미리보기</span></button>
                 </div>
-                <p class="form__cmt text-danger mb-32">비밀번호가 일치하지 않습니다.</p>
+                <p class="form__cmt form__cmt--err text-danger"> </p>
               </fieldset>
-              <button class="btn btn-round btn-round--lg btn-pw-set w-100" disabled><span class="txt">변경</span></button>
-              <p class="form__cmt">비밀번호 변경은 대시보드 상단 메뉴에서도 가능합니다.</p>
-              <p class="form__cmt">비밀번호는 최소 4자 이상 사용해 주세요.</p>
+              <button class="btn btn-round btn-round--lg btn-pw-set mt-48 w-100" disabled><span class="txt">변경</span></button>
+              <p class="form__cmt">* 비밀번호 변경은 대시보드 상단 메뉴에서도 가능합니다.</p>
+              <p class="form__cmt">* 비밀번호는 최소 4자 이상 사용해 주세요.</p>
             </form>
           </main>
         </section>

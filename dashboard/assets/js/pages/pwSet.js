@@ -2,6 +2,18 @@ $(function () {
   /*
   ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■
   */
+ {
+  // 로컬, 퍼블 환경에서 input 초기값 설정 및 버튼 disable 제거
+  if (HOST.localhost || HOST.publish) {
+    const $btn = document.querySelector(".btn-pw-set");
+    document.querySelector(".form-row[data-row=새비밀번호] input").value = "rsn";
+    document.querySelector(".form-row[data-row=새비밀번호확인] input").value = "rsn";
+    $btn.removeAttribute("disabled");
+  }
+ }
+  /*
+  ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■
+  */
   {
     /**
      *
@@ -9,18 +21,26 @@ $(function () {
      *
      **/
      const $login = document.querySelector(".l-member--pw-set");
-    //  const $inpId = $login.querySelector(".form-row[data-row=id] input");
-    //  const $inpPass = $login.querySelector(".form-row[data-row=password] input");
+     const $inpPw = $login.querySelector(".form-row[data-row=새비밀번호] input");
+     const $inpPwConfirm = $login.querySelector(".form-row[data-row=새비밀번호확인] input");
      const $btnEyes = $login.querySelectorAll(".btn-eye");
-    //  const $btnLogin = $login.querySelector(".btn-login");
- 
-     // ID & Pass, Empity 상태에서 button 비활성화
-    //  [$inpId, $inpPass].forEach((_$el) => {
-    //    _$el.addEventListener("keyup", (e) => {
-    //      if (Boolean($inpId.value) && Boolean($inpPass.value)) $btnLogin.removeAttribute("disabled");
-    //      else $btnLogin.setAttribute("disabled", "");
-    //    });
-    //  });
+     const $errMsg = $login.querySelector(".form__cmt--err");
+     const $btnPwSet = $login.querySelector(".btn-pw-set");
+
+     // 4자리 넘는지, 일치하는지 비교
+     [$inpPw, $inpPwConfirm].forEach((_$el) => {
+       _$el.addEventListener("keyup", (e) => {
+        if (!($inpPw.value.length < 4) && !($inpPwConfirm.value.length < 4)) {
+          if ($inpPw.value == $inpPwConfirm.value) {
+            $btnPwSet.removeAttribute("disabled");
+            $errMsg.textContent = "";
+          } else {
+            $btnPwSet.setAttribute("disabled", "");
+            $errMsg.textContent = "비밀번호가 일치하지 않습니다.";
+           }
+        }
+       });
+     });
  
      // 비밀번호 미리보기
      $btnEyes.forEach(function(_$btnEye) {
@@ -33,7 +53,7 @@ $(function () {
          else e.target.parentElement.querySelector("input").setAttribute("type", "password");
          e.target.dispatchEvent(new Event("change"));
        });
-     })
+     });
    }
   /*
   ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■
