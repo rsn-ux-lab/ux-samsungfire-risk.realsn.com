@@ -6,8 +6,8 @@ $(function () {
   // 로컬, 퍼블 환경에서 input 초기값 설정 및 버튼 disable 제거
   if (HOST.localhost || HOST.publish) {
     const $btn = document.querySelector(".btn-pw-set");
-    document.querySelector(".form-row[data-row=새비밀번호] input").value = "rsn";
-    document.querySelector(".form-row[data-row=새비밀번호확인] input").value = "rsn";
+    document.querySelector(".form-row[data-row=새비밀번호] input").value = "rsnux";
+    document.querySelector(".form-row[data-row=새비밀번호확인] input").value = "rsnux";
     $btn.removeAttribute("disabled");
   }
  }
@@ -38,6 +38,9 @@ $(function () {
             $btnPwSet.setAttribute("disabled", "");
             $errMsg.textContent = "비밀번호가 일치하지 않습니다.";
            }
+        } else {
+          $btnPwSet.setAttribute("disabled", "");
+          $errMsg.textContent = "";
         }
        });
      });
