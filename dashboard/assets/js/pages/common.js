@@ -214,6 +214,7 @@ $(function () {
      */
 
     const $header = document.querySelector("#header");
+    if (!$header) return;
     const $links = $header.querySelectorAll("#header [data-file-path]");
     const paths = Array.from($links).map((_$link) => _$link.getAttribute("data-file-path"));
     const url = location.pathname.getBetween("dashboard/", "/");
@@ -232,6 +233,7 @@ $(function () {
      */
 
     const $header = document.querySelector("#header");
+    if (!$header) return;
     const $links = $header.querySelectorAll("#header [data-file-path]");
 
     Array.from($links).forEach((_$link) => {

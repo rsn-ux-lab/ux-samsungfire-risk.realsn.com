@@ -1,5 +1,5 @@
 
-<!-- reBuild :  20230206095001 -->
+<!-- reBuild :  20230208170716 -->
 
 <!DOCTYPE html>
 <html lang="ko">
@@ -17,89 +17,53 @@
 
   <!-- STYLE -->
   <link rel="stylesheet" href="//fonts.realsn.com/libs/NotoSansKR/NotoSansKR.css">
-  <link rel="stylesheet" href="/dashboard/assets/css/style.css?v=20230206095001">
+  <link rel="stylesheet" href="/dashboard/assets/css/style.css?v=20230208170716">
 
   <!-- JS -->
-  <script src="/dashboard/assets/js/config/files.js?v=20230206095001" defer></script>
-  <script src="/dashboard/assets/js/libs.js?v=20230206095001" defer></script>
-  <script src="/dashboard/assets/js/modules.js?v=20230206095001" defer></script>
-  <script src="/dashboard/assets/js/config/router.js?v=20230206095001" defer></script>
+  <script src="/dashboard/assets/js/config/files.js?v=20230208170716" defer></script>
+  <script src="/dashboard/assets/js/libs.js?v=20230208170716" defer></script>
+  <script src="/dashboard/assets/js/modules.js?v=20230208170716" defer></script>
+  <script src="/dashboard/assets/js/config/router.js?v=20230208170716" defer></script>
 </head>
 
 <body>
-
+  <!-- 페이지 로딩 -->
   
-<!-- 페이지 로딩 -->
-
-<!-- loading page -->
-<aside id="loadingWrap">
-  <div class="content">
-    <div class="img"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
-    <p>페이지를 불러오고 있습니다.</p>
-  </div>
-
-  
-  <style type="text/css">
-      #loadingWrap {position:fixed;z-index:101;top:0;left:0;width:100%;height:100%;color:#fff;font-family:sans-serif;background-color:rgba(0,0,0,0.3)}
-      #loadingWrap .content {position:absolute;top:50%;left:50%;transform:translate(-50%, -50%);}
-      #loadingWrap .content .img {position:relative;margin:auto;width:20vw;height:20vw;transform:rotate(0);animation:loadingWrap 2.4s infinite linear;}
-      #loadingWrap .content .img i {position:absolute;top:0;left:50%;width:50%;height:50%;margin-left:-25%;transform-origin:50% 100%;}
-      #loadingWrap .content .img i:nth-child(1) {transform: rotate(45deg);}
-      #loadingWrap .content .img i:nth-child(2) {transform: rotate(90deg);}
-      #loadingWrap .content .img i:nth-child(3) {transform: rotate(135deg);}
-      #loadingWrap .content .img i:nth-child(4) {transform: rotate(180deg);}
-      #loadingWrap .content .img i:nth-child(5) {transform: rotate(225deg);}
-      #loadingWrap .content .img i:nth-child(6) {transform: rotate(270deg);}
-      #loadingWrap .content .img i:nth-child(7) {transform: rotate(315deg);}
-      #loadingWrap .content .img i:nth-child(8) {transform: rotate(360deg);}
-      #loadingWrap .content .img i::after {content:"";display:block;width:35%;height:35%;background-color:#fff;border-radius:50%;transform:scale(0.6)}
-      #loadingWrap .content p {position:absolute;left:50%;margin:0;padding:0;font-size:16px;white-space:nowrap;transform:translate(-50%, 80%)}
-
-      @media screen and (min-width:768px) {
-          #loadingWrap .content .img {width:100px;height:100px;}
-      }
-      @keyframes loadingWrap {
-          0% {transform: rotate(0);}
-          100% {transform: rotate(360deg);}
-      }
-  </style>
-</aside>
-<!-- //loading page -->
-
-<!-- //페이지 로딩 -->
-<!-- #wrap -->
-<div id="wrap" data-target-device="pc" user-scalable="false" style="opacity: 0; visibility: hidden;">
-
-<!-- #header -->
-
-  
-  
+  <!-- //페이지 로딩 -->
+  <!-- #wrap -->
+  <div id="wrap" data-target-device="pc" user-scalable="false" style="opacity: 0; visibility: hidden;">
+    
+    
+      
+        
+          
+          
+          
+        <!-- #header -->
+        <header id="header" class="header" data-header-fixed="false" role="banner">
+          <div class="inner">
+            <h1 class="header-logo"><a class="d-block" href="../member/login/index.html"><img class="header-logo__img" src="https://via.placeholder.com/100x50" alt="삼성화재" /></a></h1>
+            <ul class="header-indicator ">
+              <li class="header-indicator__item"><i class="icon-svg-lock" aria-hidden="true"></i>알에스엔님</li>
+              <li class="header-indicator__item"><a href="#" class="btn btn-icon" title="로그아웃"><i class="icon-svg-logout" aria-hidden="true"></i></a></li>
+              <li class="header-indicator__item"><a href="#" class="btn btn-icon" title="시스템 바로가기"><i class="icon-svg-system-monitor" aria-hidden="true"></i></a></li>
+              <li class="header-indicator__item"><button class="btn btn-icon js-header-fixed" title="메뉴바 상단 고정"><i class="icon-svg-pin" aria-hidden="true"></i></button></li>
+            </ul>
+            <nav class="header-gnb">
+              <a class="header-gnb__link" data-file-path="moral"><span class="txt">메뉴1</span></a>
+              <a class="header-gnb__link" data-file-path="suspicious"><span class="txt">메뉴2</span></a>
+              <a class="header-gnb__link" data-file-path="medical"><span class="txt">메뉴3</span></a>      
+            </nav>
+          </div>
+        </header>
+        <!-- //#header -->
+      
+    
   
 
-
-<header id="header" class="header" data-header-fixed="false" role="banner">
-  <div class="inner">
-    <h1 class="header-logo"><a class="d-block" href="../member/login/index.html"><img class="header-logo__img" src="https://via.placeholder.com/100x50" alt="삼성화재" /></a></h1>
-    <ul class="header-indicator ">
-      <li class="header-indicator__item"><i class="icon-svg-lock" aria-hidden="true"></i>알에스엔님</li>
-      <li class="header-indicator__item"><a href="#" class="btn btn-icon" title="로그아웃"><i class="icon-svg-logout" aria-hidden="true"></i></a></li>
-      <li class="header-indicator__item"><a href="#" class="btn btn-icon" title="시스템 바로가기"><i class="icon-svg-system-monitor" aria-hidden="true"></i></a></li>
-      <li class="header-indicator__item"><button class="btn btn-icon js-header-fixed" title="메뉴바 상단 고정"><i class="icon-svg-pin" aria-hidden="true"></i></button></li>
-    </ul>
-    <nav class="header-gnb">
-      <a class="header-gnb__link" data-file-path="moral"><span class="txt">메뉴1</span></a>
-      <a class="header-gnb__link" data-file-path="suspicious"><span class="txt">메뉴2</span></a>
-      <a class="header-gnb__link" data-file-path="medical"><span class="txt">메뉴3</span></a>      
-    </nav>
-  </div>
-</header>
-  
-
-<!-- //#header -->
 <!-- #container -->
-<main id="container" role="main">  
-  <h2 class="visually-hidden">모럴 이슈 트렌드</h2>
-  
+<main id="container" class="moral" role="main">  
+  <h2 class="visually-hidden">건강정보 키워드 트렌드</h2>
   <!-- 상단검색영역 -->
 <section class="l-section l-section-top-serach" data-section="상단검색영역">
   <div class="inner">
@@ -108,7 +72,7 @@
     </header>
     <main class="l-section-body row g-0">
       <article class="l-article l-article-form h-auto col-13" data-article="검색조건">
-        <header class="l-article-header visually-hidden">
+        <header class="l-article-header">
           <h4 class="l-article-header__title">검색조건</h4>
         </header>
         <main class="l-article-body">
@@ -264,11 +228,11 @@
         </main>
       </article>
       <article class="l-article l-article-result h-auto col-5" data-article="선택결과">
-        <header class="l-article-header visually-hidden">
+        <header class="l-article-header">
           <h4 class="l-article-header__title">선택결과</h4>
         </header>
         <main class="l-article-body">
-          내용
+          내용<br>내용<br>내용<br>내용<br>
         </main>
       </article>
       <article class="l-article l-article-compact col-18" data-article="선택결과축소">
@@ -290,139 +254,1296 @@
 </section>
 <!-- //상단검색영역 -->
 
-  <button type="button" class="btn btn-primary">Primary</button>
-<button type="button" class="btn btn-secondary">Secondary</button>
-<button type="button" class="btn btn-success">Success</button>
-<button type="button" class="btn btn-danger">Danger</button>
-<button type="button" class="btn btn-warning">Warning</button>
-<button type="button" class="btn btn-info">Info</button>
-<button type="button" class="btn btn-light">Light</button>
-<button type="button" class="btn btn-dark">Dark</button>
 
-<button type="button" class="btn btn-link">Link</button>
-  <p>내용</p>
-  <p>내용</p>
-  <p>내용</p>
-  <p>내용</p>
-  <p>내용</p>
-  <p>내용</p>
-  <p>내용</p>
-  <p>내용</p>
-  <p>내용</p>
-  <p>내용</p>
-  <p>내용</p>
-  <p>내용</p>
-  <p>내용</p>
-  <p>내용</p>
-  <p>내용</p>
-  <p>내용</p>
-  <p>내용</p>
-  <p>내용</p>
-  <p>내용</p>
-  <p>내용</p>
-  <p>내용</p>
-  <p>내용</p>
-  <p>내용</p>
-  <p>내용</p>
-  <p>내용</p>
-  <p>내용</p>
-  <p>내용</p>
-  <p>내용</p>
-  <p>내용</p>
-  <p>내용</p>
-  <p>내용</p>
-  <p>내용</p>
-  <p>내용</p>
-  <p>내용</p>
-  <p>내용</p>
-  <p>내용</p>
-  <p>내용</p>
-  <p>내용</p>
-  <p>내용</p>
-  <p>내용</p>
-  <p>내용</p>
-  <p>내용</p>
-  <p>내용</p>
-  <p>내용</p>
-  <p>내용</p>
-  <p>내용</p>
-  <p>내용</p>
-  <p>내용</p>
-  <p>내용</p>
-  <p>내용</p>
-  <p>내용</p>
-  <p>내용</p>
-  <p>내용</p>
-  <p>내용</p>
-  <p>내용</p>
-  <p>내용</p>
-  <p>내용</p>
-  <p>내용</p>
-  <p>내용</p>
-  <p>내용</p>
-  <p>내용</p>
-  <p>내용</p>
-  <p>내용</p>
-  <p>내용</p>
-  <p>내용</p>
-  <p>내용</p>
-  <p>내용</p>
-  <p>내용</p>
-  <p>내용</p>
-  <p>내용</p>
-  <p>내용</p>
-  <p>내용</p>
-  <p>내용</p>
-  <p>내용</p>
-  <p>내용</p>
-  <p>내용</p>
-  <p>내용</p>
-  <p>내용</p>
-  <p>내용</p>
-  <p>내용</p>
-  <p>내용</p>
-  <p>내용</p>
-  <p>내용</p>
-  <p>내용</p>
-  <p>내용</p>
-  <p>내용</p>
-  <p>내용</p>
-  <p>내용</p>
-  <p>내용</p>
-  <p>내용</p>
-  <p>내용</p>
-  <p>내용</p>
-  <p>내용</p>
-  <p>내용</p>
-  <p>내용</p>
-  <p>내용</p>
-  <p>내용</p>
-  <p>내용</p>
-  <p>내용</p>
-  <p>내용</p>
-  <p>내용</p>
-  <p>내용</p>
-  <p>내용</p>
-  <p>내용</p>
-  <p>내용</p>
-  <p>내용</p>
-  <p>내용</p>
-  <p>내용</p>
-  <p>내용</p>
-  <p>내용</p>
-  <p>내용</p>
-  <p>내용</p>
-  <p>내용</p>
-  <p>내용</p>
-  <p>내용</p>
-  <p>내용</p>
-  <p>내용</p>
-  <p>내용</p>
-  <p>내용</p>
-  <p>내용</p>
-  <p>내용</p>
-  <p>내용</p>
-  <p>내용</p>
+  <!-- 정보량 추이 -->
+  <section class="l-section mt-32" data-section="정보량추이">
+    <div class="inner">
+      <header class="l-section-header">
+        <h3 class="l-section-header__title">정보량 추이</h3>
+      </header>
+      <main class="l-section-body">
+        <article class="l-article" data-card="정보량추이-1depth" data-loading-spinner="false" data-is-empty="false">
+          <header class="l-article-header d-flex">
+            <fieldset class="form-fieldset" data-fieldset="채널/글유형">
+              <div class="form-row form-check form-check-button form-check-button--h-lg form-check-button--switch" data-row="채널">
+                <input type="radio" id="radioChannel1" class="form-check__input" name="radioChennel" checked>
+                <label for="radioChannel1" class="form-check__label">
+                  <span class="txt">채널</span>
+                </label>
+              </div>
+              <div class="form-row form-check form-check-button form-check-button--h-lg form-check-button--switch" data-row="글유형">
+                <input type="radio" id="radioChannel2" class="form-check__input" name="radioChennel">
+                <label for="radioChannel2" class="form-check__label">
+                  <span class="txt">글유형</span>
+                </label>
+              </div>
+            </fieldset>
+            <fieldset class="form-fieldset ml-12" data-fieldset="누적/일평균">
+              <div class="form-row form-check form-check-button form-check-button--h-lg form-check-button--switch" data-row="누적">
+                <input type="radio" id="radioDataQuantity1" class="form-check__input" name="radioDataQuantity" checked>
+                <label for="radioDataQuantity1" class="form-check__label">
+                  <span class="txt">누적</span>
+                </label>
+              </div>
+              <div class="form-row form-check form-check-button form-check-button--h-lg form-check-button--switch" data-row="일평균">
+                <input type="radio" id="radioDataQuantity2" class="form-check__input" name="radioDataQuantity">
+                <label for="radioDataQuantity2" class="form-check__label">
+                  <span class="txt">일평균</span>
+                </label>
+              </div>
+            </fieldset>
+            <fieldset class="form-fieldset ml-auto" data-fieldset="증감률">
+              <div class="form-row form-select" data-row="y축데이터">
+                <select class="form-select__select">
+                  <option value="0" selected>정보량</option>
+                  <option value="1">정보량 증감률</option>
+                </select>
+              </div>
+            </fieldset>
+            <fieldset class="form-fieldset ml-12" data-fieldset="일주월별">
+              <div class="form-row form-check form-check-button form-check-button--h-lg form-check-button--switch" data-row="누적">
+                <input type="radio" id="radioSortDate01" class="form-check__input" name="radioSortDate0" checked>
+                <label for="radioSortDate01" class="form-check__label">
+                  <span class="txt">일별</span>
+                </label>
+              </div>
+              <div class="form-row form-check form-check-button form-check-button--h-lg form-check-button--switch" data-row="일평균">
+                <input type="radio" id="radioSortDate02" class="form-check__input" name="radioSortDate0">
+                <label for="radioSortDate02" class="form-check__label">
+                  <span class="txt">주별</span>
+                </label>
+              </div>
+              <div class="form-row form-check form-check-button form-check-button--h-lg form-check-button--switch" data-row="일평균">
+                <input type="radio" id="radioSortDate03" class="form-check__input" name="radioSortDate0">
+                <label for="radioSortDate03" class="form-check__label">
+                  <span class="txt">월별</span>
+                </label>
+              </div>
+            </fieldset>
+            <fieldset class="form-fieldset ml-12" data-fieldset="차트스위치">
+              <div class="form-row form-check form-check-button form-check-button--h-lg form-check-button--switch" data-row="누적">
+                <input type="radio" id="radioSwitchChart1" class="form-check__input" name="radioSwitchChart" checked>
+                <label for="radioSwitchChart1" class="form-check__label">
+                  <span class="txt">막대</span>
+                </label>
+              </div>
+              <div class="form-row form-check form-check-button form-check-button--h-lg form-check-button--switch" data-row="일평균">
+                <input type="radio" id="radioSwitchChart2" class="form-check__input" name="radioSwitchChart">
+                <label for="radioSwitchChart2" class="form-check__label">
+                  <span class="txt">라인</span>
+                </label>
+              </div>
+            </fieldset>
+          </header>
+          <main class="l-article-body mt-24">
+            <div class="js-chart" style="height: 33.8rem;">
+              <h1 class="fs-1">정보량 추이 - 막대/라인차트</h1>
+            </div>
+          </main>
+        </article>
+      </main>
+    </div>
+  </section>
+  <!-- //정보량 추이 -->
+
+
+
+  <!-- Top30 키워드 순위 변화 -->
+  <section class="l-section mt-40" data-section="Top30키워드순위변화">
+    <div class="inner">
+            <header class="l-section-header">
+        <h3 class="l-section-header__title">Top30 키워드 순위 변화</h3>
+      </header>
+      <main class="l-section-body">
+        <article class="l-article"  data-card="Top30키워드순위변화" data-loading-spinner="false" data-is-empty="false">
+          <header class="l-article-header d-flex">
+            <button class="btn btn-round" type="button">지역 설정</button>
+              <span class="txt ml-auto">순위 기준</span>
+              <fieldset class="form-fieldset ml-16" data-fieldset="Top30키워드순위변화">
+                <div class="form-row form-fieldset">
+                  <select class="form-select__select">
+                    <option value="0" selected>정보량</option>
+                    <option value="1">정보량 증감률</option>
+                    <option value="2">정보량 비중</option>
+                    <option value="3">정보량 비중 증감률</option>
+                    <option value="4">3개월 평균 대비 증감률</option>
+                  </select>
+                </div>
+              </fieldset>
+          </header>
+          <main class="l-article-body mt-24">
+            <div class="x-scroll-container" style="width: 148rem; height: 64rem;">
+              <table class="c-table" style="width: 251.6rem;">
+                <colgroup>
+                  <col width="5.6rem">
+                  <col width="16.4rem">
+                  <col width="16.4rem">
+                  <col width="16.4rem">
+                  <col width="16.4rem">
+                  <col width="16.4rem">
+                  <col width="16.4rem">
+                  <col width="16.4rem">
+                  <col width="16.4rem">
+                  <col width="16.4rem">
+                  <col width="16.4rem">
+                  <col width="16.4rem">
+                  <col width="16.4rem">
+                  <col width="16.4rem">
+                  <col width="16.4rem">
+                  <col width="16.4rem">
+                </colgroup>
+                <thead>
+                  <tr>
+                    <th class="text-center">순위</th>
+                    <th class="text-center">2021-12</th>
+                    <th class="text-center">2022-01</th>
+                    <th class="text-center">2022-02</th>
+                    <th class="text-center">2022-03</th>
+                    <th class="text-center">2022-04</th>
+                    <th class="text-center">2022-05</th>
+                    <th class="text-center">2022-06</th>
+                    <th class="text-center">2022-07</th>
+                    <th class="text-center">2022-08</th>
+                    <th class="text-center">2022-09</th>
+                    <th class="text-center">2022-10</th>
+                    <th class="text-center">2022-11</th>
+                    <th class="text-center">2022-12</th>
+                    <th class="text-center">2023-01</th>
+                    <th class="text-center">2023-02</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+  <td class="text-center">1</td>
+  <td class="text-center">스케일링</td>
+  <td class="text-center">도수치료</td>
+  <td class="text-center">시력</td>
+  <td class="text-center">보험청구</td>
+  <td class="text-center">보험가입</td>
+  <td class="text-center">한방치료</td>
+  <td class="text-center">틀니</td>
+  <td class="text-center">임플란트</td>
+  <td class="text-center">부항</td>
+  <td class="text-center">뜸</td>
+  <td class="text-center">십자인대</td>
+  <td class="text-center">백혈병</td>
+  <td class="text-center">당뇨</td>
+  <td class="text-center">고혈압</td>
+  <td class="text-center">암</td>
+</tr>
+<tr>
+  <td class="text-center">2</td>
+  <td class="text-center">스케일링</td>
+  <td class="text-center">도수치료</td>
+  <td class="text-center">시력</td>
+  <td class="text-center">보험청구</td>
+  <td class="text-center">보험가입</td>
+  <td class="text-center">한방치료</td>
+  <td class="text-center">틀니</td>
+  <td class="text-center">임플란트</td>
+  <td class="text-center">부항</td>
+  <td class="text-center">뜸</td>
+  <td class="text-center">십자인대</td>
+  <td class="text-center">백혈병</td>
+  <td class="text-center">당뇨</td>
+  <td class="text-center">고혈압</td>
+  <td class="text-center">암</td>
+</tr>
+<tr>
+  <td class="text-center">3</td>
+  <td class="text-center">스케일링</td>
+  <td class="text-center">도수치료</td>
+  <td class="text-center">시력</td>
+  <td class="text-center">보험청구</td>
+  <td class="text-center">보험가입</td>
+  <td class="text-center">한방치료</td>
+  <td class="text-center">틀니</td>
+  <td class="text-center">임플란트</td>
+  <td class="text-center">부항</td>
+  <td class="text-center">뜸</td>
+  <td class="text-center">십자인대</td>
+  <td class="text-center">백혈병</td>
+  <td class="text-center">당뇨</td>
+  <td class="text-center">고혈압</td>
+  <td class="text-center">암</td>
+</tr>
+<tr>
+  <td class="text-center">4</td>
+  <td class="text-center">스케일링</td>
+  <td class="text-center">도수치료</td>
+  <td class="text-center">시력</td>
+  <td class="text-center">보험청구</td>
+  <td class="text-center">보험가입</td>
+  <td class="text-center">한방치료</td>
+  <td class="text-center">틀니</td>
+  <td class="text-center">임플란트</td>
+  <td class="text-center">부항</td>
+  <td class="text-center">뜸</td>
+  <td class="text-center">십자인대</td>
+  <td class="text-center">백혈병</td>
+  <td class="text-center">당뇨</td>
+  <td class="text-center">고혈압</td>
+  <td class="text-center">암</td>
+</tr>
+<tr>
+  <td class="text-center">5</td>
+  <td class="text-center">스케일링</td>
+  <td class="text-center">도수치료</td>
+  <td class="text-center">시력</td>
+  <td class="text-center">보험청구</td>
+  <td class="text-center">보험가입</td>
+  <td class="text-center">한방치료</td>
+  <td class="text-center">틀니</td>
+  <td class="text-center">임플란트</td>
+  <td class="text-center">부항</td>
+  <td class="text-center">뜸</td>
+  <td class="text-center">십자인대</td>
+  <td class="text-center">백혈병</td>
+  <td class="text-center">당뇨</td>
+  <td class="text-center">고혈압</td>
+  <td class="text-center">암</td>
+</tr>
+<tr>
+  <td class="text-center">6</td>
+  <td class="text-center">스케일링</td>
+  <td class="text-center">도수치료</td>
+  <td class="text-center">시력</td>
+  <td class="text-center">보험청구</td>
+  <td class="text-center">보험가입</td>
+  <td class="text-center">한방치료</td>
+  <td class="text-center">틀니</td>
+  <td class="text-center">임플란트</td>
+  <td class="text-center">부항</td>
+  <td class="text-center">뜸</td>
+  <td class="text-center">십자인대</td>
+  <td class="text-center">백혈병</td>
+  <td class="text-center">당뇨</td>
+  <td class="text-center">고혈압</td>
+  <td class="text-center">암</td>
+</tr>
+<tr>
+  <td class="text-center">7</td>
+  <td class="text-center">스케일링</td>
+  <td class="text-center">도수치료</td>
+  <td class="text-center">시력</td>
+  <td class="text-center">보험청구</td>
+  <td class="text-center">보험가입</td>
+  <td class="text-center">한방치료</td>
+  <td class="text-center">틀니</td>
+  <td class="text-center">임플란트</td>
+  <td class="text-center">부항</td>
+  <td class="text-center">뜸</td>
+  <td class="text-center">십자인대</td>
+  <td class="text-center">백혈병</td>
+  <td class="text-center">당뇨</td>
+  <td class="text-center">고혈압</td>
+  <td class="text-center">암</td>
+</tr>
+<tr>
+  <td class="text-center">8</td>
+  <td class="text-center">스케일링</td>
+  <td class="text-center">도수치료</td>
+  <td class="text-center">시력</td>
+  <td class="text-center">보험청구</td>
+  <td class="text-center">보험가입</td>
+  <td class="text-center">한방치료</td>
+  <td class="text-center">틀니</td>
+  <td class="text-center">임플란트</td>
+  <td class="text-center">부항</td>
+  <td class="text-center">뜸</td>
+  <td class="text-center">십자인대</td>
+  <td class="text-center">백혈병</td>
+  <td class="text-center">당뇨</td>
+  <td class="text-center">고혈압</td>
+  <td class="text-center">암</td>
+</tr>
+<tr>
+  <td class="text-center">9</td>
+  <td class="text-center">스케일링</td>
+  <td class="text-center">도수치료</td>
+  <td class="text-center">시력</td>
+  <td class="text-center">보험청구</td>
+  <td class="text-center">보험가입</td>
+  <td class="text-center">한방치료</td>
+  <td class="text-center">틀니</td>
+  <td class="text-center">임플란트</td>
+  <td class="text-center">부항</td>
+  <td class="text-center">뜸</td>
+  <td class="text-center">십자인대</td>
+  <td class="text-center">백혈병</td>
+  <td class="text-center">당뇨</td>
+  <td class="text-center">고혈압</td>
+  <td class="text-center">암</td>
+</tr>
+<tr>
+  <td class="text-center">10</td>
+  <td class="text-center">스케일링</td>
+  <td class="text-center">도수치료</td>
+  <td class="text-center">시력</td>
+  <td class="text-center">보험청구</td>
+  <td class="text-center">보험가입</td>
+  <td class="text-center">한방치료</td>
+  <td class="text-center">틀니</td>
+  <td class="text-center">임플란트</td>
+  <td class="text-center">부항</td>
+  <td class="text-center">뜸</td>
+  <td class="text-center">십자인대</td>
+  <td class="text-center">백혈병</td>
+  <td class="text-center">당뇨</td>
+  <td class="text-center">고혈압</td>
+  <td class="text-center">암</td>
+</tr>
+<tr>
+  <td class="text-center">11</td>
+  <td class="text-center">스케일링</td>
+  <td class="text-center">도수치료</td>
+  <td class="text-center">시력</td>
+  <td class="text-center">보험청구</td>
+  <td class="text-center">보험가입</td>
+  <td class="text-center">한방치료</td>
+  <td class="text-center">틀니</td>
+  <td class="text-center">임플란트</td>
+  <td class="text-center">부항</td>
+  <td class="text-center">뜸</td>
+  <td class="text-center">십자인대</td>
+  <td class="text-center">백혈병</td>
+  <td class="text-center">당뇨</td>
+  <td class="text-center">고혈압</td>
+  <td class="text-center">암</td>
+</tr>
+<tr>
+  <td class="text-center">12</td>
+  <td class="text-center">스케일링</td>
+  <td class="text-center">도수치료</td>
+  <td class="text-center">시력</td>
+  <td class="text-center">보험청구</td>
+  <td class="text-center">보험가입</td>
+  <td class="text-center">한방치료</td>
+  <td class="text-center">틀니</td>
+  <td class="text-center">임플란트</td>
+  <td class="text-center">부항</td>
+  <td class="text-center">뜸</td>
+  <td class="text-center">십자인대</td>
+  <td class="text-center">백혈병</td>
+  <td class="text-center">당뇨</td>
+  <td class="text-center">고혈압</td>
+  <td class="text-center">암</td>
+</tr>
+<tr>
+  <td class="text-center">13</td>
+  <td class="text-center">스케일링</td>
+  <td class="text-center">도수치료</td>
+  <td class="text-center">시력</td>
+  <td class="text-center">보험청구</td>
+  <td class="text-center">보험가입</td>
+  <td class="text-center">한방치료</td>
+  <td class="text-center">틀니</td>
+  <td class="text-center">임플란트</td>
+  <td class="text-center">부항</td>
+  <td class="text-center">뜸</td>
+  <td class="text-center">십자인대</td>
+  <td class="text-center">백혈병</td>
+  <td class="text-center">당뇨</td>
+  <td class="text-center">고혈압</td>
+  <td class="text-center">암</td>
+</tr>
+<tr>
+  <td class="text-center">14</td>
+  <td class="text-center">스케일링</td>
+  <td class="text-center">도수치료</td>
+  <td class="text-center">시력</td>
+  <td class="text-center">보험청구</td>
+  <td class="text-center">보험가입</td>
+  <td class="text-center">한방치료</td>
+  <td class="text-center">틀니</td>
+  <td class="text-center">임플란트</td>
+  <td class="text-center">부항</td>
+  <td class="text-center">뜸</td>
+  <td class="text-center">십자인대</td>
+  <td class="text-center">백혈병</td>
+  <td class="text-center">당뇨</td>
+  <td class="text-center">고혈압</td>
+  <td class="text-center">암</td>
+</tr>
+<tr>
+  <td class="text-center">15</td>
+  <td class="text-center">스케일링</td>
+  <td class="text-center">도수치료</td>
+  <td class="text-center">시력</td>
+  <td class="text-center">보험청구</td>
+  <td class="text-center">보험가입</td>
+  <td class="text-center">한방치료</td>
+  <td class="text-center">틀니</td>
+  <td class="text-center">임플란트</td>
+  <td class="text-center">부항</td>
+  <td class="text-center">뜸</td>
+  <td class="text-center">십자인대</td>
+  <td class="text-center">백혈병</td>
+  <td class="text-center">당뇨</td>
+  <td class="text-center">고혈압</td>
+  <td class="text-center">암</td>
+</tr>
+
+<tr>
+  <td class="text-center">16</td>
+  <td class="text-center">스케일링</td>
+  <td class="text-center">도수치료</td>
+  <td class="text-center">시력</td>
+  <td class="text-center">보험청구</td>
+  <td class="text-center">보험가입</td>
+  <td class="text-center">한방치료</td>
+  <td class="text-center">틀니</td>
+  <td class="text-center">임플란트</td>
+  <td class="text-center">부항</td>
+  <td class="text-center">뜸</td>
+  <td class="text-center">십자인대</td>
+  <td class="text-center">백혈병</td>
+  <td class="text-center">당뇨</td>
+  <td class="text-center">고혈압</td>
+  <td class="text-center">암</td>
+</tr>
+<tr>
+  <td class="text-center">17</td>
+  <td class="text-center">스케일링</td>
+  <td class="text-center">도수치료</td>
+  <td class="text-center">시력</td>
+  <td class="text-center">보험청구</td>
+  <td class="text-center">보험가입</td>
+  <td class="text-center">한방치료</td>
+  <td class="text-center">틀니</td>
+  <td class="text-center">임플란트</td>
+  <td class="text-center">부항</td>
+  <td class="text-center">뜸</td>
+  <td class="text-center">십자인대</td>
+  <td class="text-center">백혈병</td>
+  <td class="text-center">당뇨</td>
+  <td class="text-center">고혈압</td>
+  <td class="text-center">암</td>
+</tr>
+<tr>
+  <td class="text-center">18</td>
+  <td class="text-center">스케일링</td>
+  <td class="text-center">도수치료</td>
+  <td class="text-center">시력</td>
+  <td class="text-center">보험청구</td>
+  <td class="text-center">보험가입</td>
+  <td class="text-center">한방치료</td>
+  <td class="text-center">틀니</td>
+  <td class="text-center">임플란트</td>
+  <td class="text-center">부항</td>
+  <td class="text-center">뜸</td>
+  <td class="text-center">십자인대</td>
+  <td class="text-center">백혈병</td>
+  <td class="text-center">당뇨</td>
+  <td class="text-center">고혈압</td>
+  <td class="text-center">암</td>
+</tr>
+<tr>
+  <td class="text-center">19</td>
+  <td class="text-center">스케일링</td>
+  <td class="text-center">도수치료</td>
+  <td class="text-center">시력</td>
+  <td class="text-center">보험청구</td>
+  <td class="text-center">보험가입</td>
+  <td class="text-center">한방치료</td>
+  <td class="text-center">틀니</td>
+  <td class="text-center">임플란트</td>
+  <td class="text-center">부항</td>
+  <td class="text-center">뜸</td>
+  <td class="text-center">십자인대</td>
+  <td class="text-center">백혈병</td>
+  <td class="text-center">당뇨</td>
+  <td class="text-center">고혈압</td>
+  <td class="text-center">암</td>
+</tr>
+<tr>
+  <td class="text-center">20</td>
+  <td class="text-center">스케일링</td>
+  <td class="text-center">도수치료</td>
+  <td class="text-center">시력</td>
+  <td class="text-center">보험청구</td>
+  <td class="text-center">보험가입</td>
+  <td class="text-center">한방치료</td>
+  <td class="text-center">틀니</td>
+  <td class="text-center">임플란트</td>
+  <td class="text-center">부항</td>
+  <td class="text-center">뜸</td>
+  <td class="text-center">십자인대</td>
+  <td class="text-center">백혈병</td>
+  <td class="text-center">당뇨</td>
+  <td class="text-center">고혈압</td>
+  <td class="text-center">암</td>
+</tr>
+<tr>
+  <td class="text-center">21</td>
+  <td class="text-center">스케일링</td>
+  <td class="text-center">도수치료</td>
+  <td class="text-center">시력</td>
+  <td class="text-center">보험청구</td>
+  <td class="text-center">보험가입</td>
+  <td class="text-center">한방치료</td>
+  <td class="text-center">틀니</td>
+  <td class="text-center">임플란트</td>
+  <td class="text-center">부항</td>
+  <td class="text-center">뜸</td>
+  <td class="text-center">십자인대</td>
+  <td class="text-center">백혈병</td>
+  <td class="text-center">당뇨</td>
+  <td class="text-center">고혈압</td>
+  <td class="text-center">암</td>
+</tr>
+<tr>
+  <td class="text-center">22</td>
+  <td class="text-center">스케일링</td>
+  <td class="text-center">도수치료</td>
+  <td class="text-center">시력</td>
+  <td class="text-center">보험청구</td>
+  <td class="text-center">보험가입</td>
+  <td class="text-center">한방치료</td>
+  <td class="text-center">틀니</td>
+  <td class="text-center">임플란트</td>
+  <td class="text-center">부항</td>
+  <td class="text-center">뜸</td>
+  <td class="text-center">십자인대</td>
+  <td class="text-center">백혈병</td>
+  <td class="text-center">당뇨</td>
+  <td class="text-center">고혈압</td>
+  <td class="text-center">암</td>
+</tr>
+<tr>
+  <td class="text-center">23</td>
+  <td class="text-center">스케일링</td>
+  <td class="text-center">도수치료</td>
+  <td class="text-center">시력</td>
+  <td class="text-center">보험청구</td>
+  <td class="text-center">보험가입</td>
+  <td class="text-center">한방치료</td>
+  <td class="text-center">틀니</td>
+  <td class="text-center">임플란트</td>
+  <td class="text-center">부항</td>
+  <td class="text-center">뜸</td>
+  <td class="text-center">십자인대</td>
+  <td class="text-center">백혈병</td>
+  <td class="text-center">당뇨</td>
+  <td class="text-center">고혈압</td>
+  <td class="text-center">암</td>
+</tr>
+<tr>
+  <td class="text-center">24</td>
+  <td class="text-center">스케일링</td>
+  <td class="text-center">도수치료</td>
+  <td class="text-center">시력</td>
+  <td class="text-center">보험청구</td>
+  <td class="text-center">보험가입</td>
+  <td class="text-center">한방치료</td>
+  <td class="text-center">틀니</td>
+  <td class="text-center">임플란트</td>
+  <td class="text-center">부항</td>
+  <td class="text-center">뜸</td>
+  <td class="text-center">십자인대</td>
+  <td class="text-center">백혈병</td>
+  <td class="text-center">당뇨</td>
+  <td class="text-center">고혈압</td>
+  <td class="text-center">암</td>
+</tr>
+<tr>
+  <td class="text-center">25</td>
+  <td class="text-center">스케일링</td>
+  <td class="text-center">도수치료</td>
+  <td class="text-center">시력</td>
+  <td class="text-center">보험청구</td>
+  <td class="text-center">보험가입</td>
+  <td class="text-center">한방치료</td>
+  <td class="text-center">틀니</td>
+  <td class="text-center">임플란트</td>
+  <td class="text-center">부항</td>
+  <td class="text-center">뜸</td>
+  <td class="text-center">십자인대</td>
+  <td class="text-center">백혈병</td>
+  <td class="text-center">당뇨</td>
+  <td class="text-center">고혈압</td>
+  <td class="text-center">암</td>
+</tr>
+<tr>
+  <td class="text-center">26</td>
+  <td class="text-center">스케일링</td>
+  <td class="text-center">도수치료</td>
+  <td class="text-center">시력</td>
+  <td class="text-center">보험청구</td>
+  <td class="text-center">보험가입</td>
+  <td class="text-center">한방치료</td>
+  <td class="text-center">틀니</td>
+  <td class="text-center">임플란트</td>
+  <td class="text-center">부항</td>
+  <td class="text-center">뜸</td>
+  <td class="text-center">십자인대</td>
+  <td class="text-center">백혈병</td>
+  <td class="text-center">당뇨</td>
+  <td class="text-center">고혈압</td>
+  <td class="text-center">암</td>
+</tr>
+<tr>
+  <td class="text-center">27</td>
+  <td class="text-center">스케일링</td>
+  <td class="text-center">도수치료</td>
+  <td class="text-center">시력</td>
+  <td class="text-center">보험청구</td>
+  <td class="text-center">보험가입</td>
+  <td class="text-center">한방치료</td>
+  <td class="text-center">틀니</td>
+  <td class="text-center">임플란트</td>
+  <td class="text-center">부항</td>
+  <td class="text-center">뜸</td>
+  <td class="text-center">십자인대</td>
+  <td class="text-center">백혈병</td>
+  <td class="text-center">당뇨</td>
+  <td class="text-center">고혈압</td>
+  <td class="text-center">암</td>
+</tr>
+<tr>
+  <td class="text-center">28</td>
+  <td class="text-center">스케일링</td>
+  <td class="text-center">도수치료</td>
+  <td class="text-center">시력</td>
+  <td class="text-center">보험청구</td>
+  <td class="text-center">보험가입</td>
+  <td class="text-center">한방치료</td>
+  <td class="text-center">틀니</td>
+  <td class="text-center">임플란트</td>
+  <td class="text-center">부항</td>
+  <td class="text-center">뜸</td>
+  <td class="text-center">십자인대</td>
+  <td class="text-center">백혈병</td>
+  <td class="text-center">당뇨</td>
+  <td class="text-center">고혈압</td>
+  <td class="text-center">암</td>
+</tr>
+<tr>
+  <td class="text-center">29</td>
+  <td class="text-center">스케일링</td>
+  <td class="text-center">도수치료</td>
+  <td class="text-center">시력</td>
+  <td class="text-center">보험청구</td>
+  <td class="text-center">보험가입</td>
+  <td class="text-center">한방치료</td>
+  <td class="text-center">틀니</td>
+  <td class="text-center">임플란트</td>
+  <td class="text-center">부항</td>
+  <td class="text-center">뜸</td>
+  <td class="text-center">십자인대</td>
+  <td class="text-center">백혈병</td>
+  <td class="text-center">당뇨</td>
+  <td class="text-center">고혈압</td>
+  <td class="text-center">암</td>
+</tr>
+<tr>
+  <td class="text-center">30</td>
+  <td class="text-center">스케일링</td>
+  <td class="text-center">도수치료</td>
+  <td class="text-center">시력</td>
+  <td class="text-center">보험청구</td>
+  <td class="text-center">보험가입</td>
+  <td class="text-center">한방치료</td>
+  <td class="text-center">틀니</td>
+  <td class="text-center">임플란트</td>
+  <td class="text-center">부항</td>
+  <td class="text-center">뜸</td>
+  <td class="text-center">십자인대</td>
+  <td class="text-center">백혈병</td>
+  <td class="text-center">당뇨</td>
+  <td class="text-center">고혈압</td>
+  <td class="text-center">암</td>
+</tr>
+                </tbody>
+              </table>
+            </div>
+          </main>
+        </article>
+      </main>
+    </div>
+  </section>
+  <!-- //Top30 키워드 순위 변화 -->
+
+
+
+  <!-- Top30 키워드 분석 -->
+  <section class="l-section mt-40" data-section="Top30키워드분석">
+    <div class="inner">
+            <header class="l-section-header">
+        <h3 class="l-section-header__title">Top30 키워드 분석</h3>
+      </header>
+      <main class="l-section-body">
+        <article class="l-article"  data-card="Top30키워드분석" data-loading-spinner="false" data-is-empty="false">
+          <header class="l-article-header">
+            <button class="btn btn-round" type="button">축 설정</button>
+          </header>
+          <main class="l-article-body mt-32">
+            <div class="js-chart" style="height: 43rem;">
+              <h1 class="fs-1">차트영역</h1>
+            </div>
+          </main>
+        </article>
+
+        <article class="l-article mt-32 border p-20">
+          <header class="l-article-header l-article-header--has-title">
+            <h4 class="l-article-header__title">정보량 추이</h4>
+          </header>
+          <main class="l-article-body">
+            <article class="l-article"  data-card="정보량추이-2depth" data-loading-spinner="false" data-is-empty="false">
+              <header class="l-article-header d-flex">
+                <fieldset class="form-fieldset ml-auto" data-fieldset="일주월별">
+                  <div class="form-row form-check form-check-button form-check-button--h-lg form-check-button--switch" data-row="누적">
+                    <input type="radio" id="radioSortDate11" class="form-check__input" name="radioSortDate1" checked>
+                    <label for="radioSortDate11" class="form-check__label">
+                      <span class="txt">일별</span>
+                    </label>
+                  </div>
+                  <div class="form-row form-check form-check-button form-check-button--h-lg form-check-button--switch" data-row="일평균">
+                    <input type="radio" id="radioSortDate12" class="form-check__input" name="radioSortDate1">
+                    <label for="radioSortDate12" class="form-check__label">
+                      <span class="txt">주별</span>
+                    </label>
+                  </div>
+                  <div class="form-row form-check form-check-button form-check-button--h-lg form-check-button--switch" data-row="일평균">
+                    <input type="radio" id="radioSortDate13" class="form-check__input" name="radioSortDate1">
+                    <label for="radioSortDate13" class="form-check__label">
+                      <span class="txt">월별</span>
+                    </label>
+                  </div>
+                </fieldset>
+              </header>
+              <main class="l-article-body mt-24">
+                <div class="js-chart"  style="height: 33.2rem;">
+                  <h1 class="fs-1">정보량 추이 - 라인차트</h1>
+                </div>
+              </main>
+            </article>
+          </main>
+        </article>
+
+
+        <article class="l-article mt-24 border p-20"  data-card="연관어" data-loading-spinner="false" data-is-empty="false">
+          <header class="l-article-header l-article-header--has-title">
+            <h4 class="l-article-header__title">연관어</h4>
+          </header>
+          <main class="l-article-body row">
+            <article class="l-article col-9"  data-card="연관어-워드클라우드" data-loading-spinner="false" data-is-empty="false">
+              <header class="l-article-header">
+                <fieldset class="form-fieldset" data-fieldset="TOP/HOT">
+                  <div class="form-row form-check form-check-button form-check-button--switch" data-row="TOP">
+                    <input id="radioIssueRank1" name="radioIssueRank" class="form-check__input" type="radio" checked />
+                    <label for="radioIssueRank1" class="form-check__label"><span class="txt">TOP</span></label>
+                  </div>
+                  <div class="form-row form-check form-check-button form-check-button--switch" data-row="HOT">
+                    <input id="radioIssueRank2" name="radioIssueRank" class="form-check__input" type="radio" />
+                    <label for="radioIssueRank2" class="form-check__label"><span class="txt">HOT</span></label>
+                  </div>
+                </fieldset>
+              </header>
+              <main class="l-article-body mt-24">
+                <div class="js-chart" style="height: 44.2rem;">
+                  <h1 class="fs-1">연관어 - 워드클라우드</h1>
+                </div>
+              </main>
+            </article>          
+
+            <article class="l-article col-8 ml-auto"  data-card="연관어-테이블" data-loading-spinner="false" data-is-empty="false">
+              <header class="l-article-header d-flex">
+                <button class="btn btn-round ml-auto">검색</button>
+              </header>
+              <main class="l-article-body mt-24">
+                <div class="scroll-container" style="height: 44rem;">
+                  <table class="c-table ml-auto" style="width: 61.9rem;">
+                    <colgroup>
+                      <col width="8.75%">
+                      <col width="*">
+                      <col width="15%">
+                      <col width="15%">
+                      <col width="20.9%">
+                    </colgroup>
+                    <thead>
+                      <tr>
+                        <th>순위</th>
+                        <th>연관어</th>
+                        <th>속성</th>
+                        <th>정보량</th>
+                        <th>정보량 증감률</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+  <td class="text-center">1</td>
+  <td class="text-center">초음파</td>
+  <td class="text-center">치료법</td>
+  <td class="text-center">2,023</td>
+  <td class="text-center"><span class="percent">000.0</span></td>
+</tr>
+<tr>
+  <td class="text-center">2</td>
+  <td class="text-center">하나병원</td>
+  <td class="text-center">의료기관</td>
+  <td class="text-center">2,023</td>
+  <td class="text-center"><span class="percent">000.0</span></td>
+</tr>
+<tr>
+  <td class="text-center">3</td>
+  <td class="text-center">초음파</td>
+  <td class="text-center">질병</td>
+  <td class="text-center">2,023</td>
+  <td class="text-center"><span class="percent">000.0</span></td>
+</tr>
+<tr>
+  <td class="text-center">4</td>
+  <td class="text-center">초음파</td>
+  <td class="text-center">치료법</td>
+  <td class="text-center">2,023</td>
+  <td class="text-center"><span class="percent">000.0</span></td>
+</tr>
+<tr>
+  <td class="text-center">5</td>
+  <td class="text-center">다초점렌즈</td>
+  <td class="text-center">치료법</td>
+  <td class="text-center">2,023</td>
+  <td class="text-center"><span class="percent">000.0</span></td>
+</tr>
+<tr>
+  <td class="text-center">6</td>
+  <td class="text-center">다초점렌즈</td>
+  <td class="text-center">의료기관</td>
+  <td class="text-center">2,023</td>
+  <td class="text-center"><span class="percent">000.0</span></td>
+</tr>
+<tr>
+  <td class="text-center">7</td>
+  <td class="text-center">다초점렌즈</td>
+  <td class="text-center">치료법</td>
+  <td class="text-center">2,023</td>
+  <td class="text-center"><span class="percent">000.0</span></td>
+</tr>
+<tr>
+  <td class="text-center">8</td>
+  <td class="text-center">다초점렌즈</td>
+  <td class="text-center">질병</td>
+  <td class="text-center">2,023</td>
+  <td class="text-center"><span class="percent">000.0</span></td>
+</tr>
+<tr>
+  <td class="text-center">9</td>
+  <td class="text-center">다초점렌즈</td>
+  <td class="text-center">의료기관</td>
+  <td class="text-center">2,023</td>
+  <td class="text-center"><span class="percent">000.0</span></td>
+</tr>
+<tr>
+  <td class="text-center">10</td>
+  <td class="text-center">다초점렌즈</td>
+  <td class="text-center">의료기관</td>
+  <td class="text-center">2,023</td>
+  <td class="text-center"><span class="percent">000.0</span></td>
+</tr>
+
+<tr>
+  <td class="text-center">11</td>
+  <td class="text-center">초음파</td>
+  <td class="text-center">치료법</td>
+  <td class="text-center">2,023</td>
+  <td class="text-center"><span class="percent">000.0</span></td>
+</tr>
+<tr>
+  <td class="text-center">12</td>
+  <td class="text-center">하나병원</td>
+  <td class="text-center">의료기관</td>
+  <td class="text-center">2,023</td>
+  <td class="text-center"><span class="percent">000.0</span></td>
+</tr>
+<tr>
+  <td class="text-center">13</td>
+  <td class="text-center">초음파</td>
+  <td class="text-center">질병</td>
+  <td class="text-center">2,023</td>
+  <td class="text-center"><span class="percent">000.0</span></td>
+</tr>
+<tr>
+  <td class="text-center">14</td>
+  <td class="text-center">초음파</td>
+  <td class="text-center">치료법</td>
+  <td class="text-center">2,023</td>
+  <td class="text-center"><span class="percent">000.0</span></td>
+</tr>
+<tr>
+  <td class="text-center">15</td>
+  <td class="text-center">다초점렌즈</td>
+  <td class="text-center">치료법</td>
+  <td class="text-center">2,023</td>
+  <td class="text-center"><span class="percent">000.0</span></td>
+</tr>
+<tr>
+  <td class="text-center">16</td>
+  <td class="text-center">다초점렌즈</td>
+  <td class="text-center">의료기관</td>
+  <td class="text-center">2,023</td>
+  <td class="text-center"><span class="percent">000.0</span></td>
+</tr>
+<tr>
+  <td class="text-center">17</td>
+  <td class="text-center">다초점렌즈</td>
+  <td class="text-center">치료법</td>
+  <td class="text-center">2,023</td>
+  <td class="text-center"><span class="percent">000.0</span></td>
+</tr>
+<tr>
+  <td class="text-center">18</td>
+  <td class="text-center">다초점렌즈</td>
+  <td class="text-center">질병</td>
+  <td class="text-center">2,023</td>
+  <td class="text-center"><span class="percent">000.0</span></td>
+</tr>
+<tr>
+  <td class="text-center">19</td>
+  <td class="text-center">다초점렌즈</td>
+  <td class="text-center">의료기관</td>
+  <td class="text-center">2,023</td>
+  <td class="text-center"><span class="percent">000.0</span></td>
+</tr>
+<tr>
+  <td class="text-center">20</td>
+  <td class="text-center">다초점렌즈</td>
+  <td class="text-center">의료기관</td>
+  <td class="text-center">2,023</td>
+  <td class="text-center"><span class="percent">000.0</span></td>
+</tr>
+
+<tr>
+  <td class="text-center">21</td>
+  <td class="text-center">초음파</td>
+  <td class="text-center">치료법</td>
+  <td class="text-center">2,023</td>
+  <td class="text-center"><span class="percent">000.0</span></td>
+</tr>
+<tr>
+  <td class="text-center">22</td>
+  <td class="text-center">하나병원</td>
+  <td class="text-center">의료기관</td>
+  <td class="text-center">2,023</td>
+  <td class="text-center"><span class="percent">000.0</span></td>
+</tr>
+<tr>
+  <td class="text-center">23</td>
+  <td class="text-center">초음파</td>
+  <td class="text-center">질병</td>
+  <td class="text-center">2,023</td>
+  <td class="text-center"><span class="percent">000.0</span></td>
+</tr>
+<tr>
+  <td class="text-center">24</td>
+  <td class="text-center">초음파</td>
+  <td class="text-center">치료법</td>
+  <td class="text-center">2,023</td>
+  <td class="text-center"><span class="percent">000.0</span></td>
+</tr>
+<tr>
+  <td class="text-center">25</td>
+  <td class="text-center">다초점렌즈</td>
+  <td class="text-center">치료법</td>
+  <td class="text-center">2,023</td>
+  <td class="text-center"><span class="percent">000.0</span></td>
+</tr>
+<tr>
+  <td class="text-center">26</td>
+  <td class="text-center">다초점렌즈</td>
+  <td class="text-center">의료기관</td>
+  <td class="text-center">2,023</td>
+  <td class="text-center"><span class="percent">000.0</span></td>
+</tr>
+<tr>
+  <td class="text-center">27</td>
+  <td class="text-center">다초점렌즈</td>
+  <td class="text-center">치료법</td>
+  <td class="text-center">2,023</td>
+  <td class="text-center"><span class="percent">000.0</span></td>
+</tr>
+<tr>
+  <td class="text-center">28</td>
+  <td class="text-center">다초점렌즈</td>
+  <td class="text-center">질병</td>
+  <td class="text-center">2,023</td>
+  <td class="text-center"><span class="percent">000.0</span></td>
+</tr>
+<tr>
+  <td class="text-center">29</td>
+  <td class="text-center">다초점렌즈</td>
+  <td class="text-center">의료기관</td>
+  <td class="text-center">2,023</td>
+  <td class="text-center"><span class="percent">000.0</span></td>
+</tr>
+<tr>
+  <td class="text-center">30</td>
+  <td class="text-center">다초점렌즈</td>
+  <td class="text-center">의료기관</td>
+  <td class="text-center">2,023</td>
+  <td class="text-center"><span class="percent">000.0</span></td>
+</tr>
+                    </tbody>
+                  </table>
+                </div>
+              </main>
+            </article>
+          </main>
+        </article>
+
+
+        <article class="l-article mt-24 mb-180 border p-20"  data-card="Top30키워드지역" data-loading-spinner="false" data-is-empty="false">
+          <header class="l-article-header l-article-header--has-title">
+            <h4 class="l-article-header__title">Top30 키워드·지역</h4>
+          </header>
+          <main class="l-article-body row">
+            <article class="l-article col-7"  data-card="Top30키워드지역-테이블" data-loading-spinner="false" data-is-empty="false">
+              <header class="l-article-header d-flex">
+                <fieldset class="form-fieldset" data-fieldset="키워드/지역">
+                  <div class="form-row form-check form-check-button form-check-button--switch" data-row="키워드">
+                    <input id="radioKeywordArea1" name="radioKeywordArea" class="form-check__input" type="radio" checked />
+                    <label for="radioKeywordArea1" class="form-check__label"><span class="txt">키워드</span></label>
+                  </div>
+                  <div class="form-row form-check form-check-button form-check-button--switch" data-row="지역">
+                    <input id="radioKeywordArea2" name="radioKeywordArea" class="form-check__input" type="radio" />
+                    <label for="radioKeywordArea2" class="form-check__label"><span class="txt">지역</span></label>
+                  </div>
+                </fieldset>
+              </header>
+              <main class="l-article-body">
+                <div class="scroll-container" style="height: 68rem;">
+                  <table class="c-table" style="width: 52.2rem;">
+                    <colgroup>
+                      <col width="10.7%">
+                      <col width="*">
+                      <col width="18.4%">
+                      <col width="25.7%">
+                    </colgroup>
+                    <thead>
+                      <tr>
+                        <th>순위</th>
+                        <th>치료법</th>
+                        <th>정보량</th>
+                        <th>정보량 증감률</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+  <td class="text-center">1</td>
+  <td class="text-center">도수치료</td>
+  <td class="text-end">2,023</td>
+  <td class="text-end"><span class="percent">000.0</span></td>
+</tr>
+<tr>
+  <td class="text-center">2</td>
+  <td class="text-center">도수치료</td>
+  <td class="text-end">2,120</td>
+  <td class="text-end"><span class="percent">000.0</span></td>
+</tr>
+<tr>
+  <td class="text-center">3</td>
+  <td class="text-center">물리치료</td>
+  <td class="text-end">2,023</td>
+  <td class="text-end"><span class="percent">000.0</span></td>
+</tr>
+<tr>
+  <td class="text-center">4</td>
+  <td class="text-center">도수치료</td>
+  <td class="text-end">2,023</td>
+  <td class="text-end"><span class="percent">000.0</span></td>
+</tr>
+<tr>
+  <td class="text-center">5</td>
+  <td class="text-center">도수치료</td>
+  <td class="text-end">2,023</td>
+  <td class="text-end"><span class="percent">000.0</span></td>
+</tr>
+<tr>
+  <td class="text-center">6</td>
+  <td class="text-center">도수치료</td>
+  <td class="text-end">2,023</td>
+  <td class="text-end"><span class="percent">000.0</span></td>
+</tr>
+<tr>
+  <td class="text-center">7</td>
+  <td class="text-center">도수치료</td>
+  <td class="text-end">2,023</td>
+  <td class="text-end"><span class="percent">000.0</span></td>
+</tr>
+<tr>
+  <td class="text-center">8</td>
+  <td class="text-center">뜸</td>
+  <td class="text-end">2,023</td>
+  <td class="text-end"><span class="percent">000.0</span></td>
+</tr>
+<tr>
+  <td class="text-center">9</td>
+  <td class="text-center">도수치료</td>
+  <td class="text-end">2,023</td>
+  <td class="text-end"><span class="percent">000.0</span></td>
+</tr>
+<tr>
+  <td class="text-center">10</td>
+  <td class="text-center">도수치료</td>
+  <td class="text-end">2,023</td>
+  <td class="text-end"><span class="percent">000.0</span></td>
+</tr>
+
+<tr>
+  <td class="text-center">11</td>
+  <td class="text-center">부항</td>
+  <td class="text-end">2,023</td>
+  <td class="text-end"><span class="percent">000.0</span></td>
+</tr>
+<tr>
+  <td class="text-center">12</td>
+  <td class="text-center">부항</td>
+  <td class="text-end">2,120</td>
+  <td class="text-end"><span class="percent">000.0</span></td>
+</tr>
+<tr>
+  <td class="text-center">13</td>
+  <td class="text-center">물리치료</td>
+  <td class="text-end">2,023</td>
+  <td class="text-end"><span class="percent">000.0</span></td>
+</tr>
+<tr>
+  <td class="text-center">14</td>
+  <td class="text-center">도수치료</td>
+  <td class="text-end">2,023</td>
+  <td class="text-end"><span class="percent">000.0</span></td>
+</tr>
+<tr>
+  <td class="text-center">15</td>
+  <td class="text-center">도수치료</td>
+  <td class="text-end">2,023</td>
+  <td class="text-end"><span class="percent">000.0</span></td>
+</tr>
+<tr>
+  <td class="text-center">16</td>
+  <td class="text-center">도수치료</td>
+  <td class="text-end">2,023</td>
+  <td class="text-end"><span class="percent">000.0</span></td>
+</tr>
+<tr>
+  <td class="text-center">17</td>
+  <td class="text-center">도수치료</td>
+  <td class="text-end">2,023</td>
+  <td class="text-end"><span class="percent">000.0</span></td>
+</tr>
+<tr>
+  <td class="text-center">18</td>
+  <td class="text-center">뜸</td>
+  <td class="text-end">2,023</td>
+  <td class="text-end"><span class="percent">000.0</span></td>
+</tr>
+<tr>
+  <td class="text-center">19</td>
+  <td class="text-center">도수치료</td>
+  <td class="text-end">2,023</td>
+  <td class="text-end"><span class="percent">000.0</span></td>
+</tr>
+<tr>
+  <td class="text-center">20</td>
+  <td class="text-center">도수치료</td>
+  <td class="text-end">2,023</td>
+  <td class="text-end"><span class="percent">000.0</span></td>
+</tr>
+
+<tr>
+  <td class="text-center">21</td>
+  <td class="text-center">도수치료</td>
+  <td class="text-end">2,023</td>
+  <td class="text-end"><span class="percent">000.0</span></td>
+</tr>
+<tr>
+  <td class="text-center">22</td>
+  <td class="text-center">도수치료</td>
+  <td class="text-end">2,120</td>
+  <td class="text-end"><span class="percent">000.0</span></td>
+</tr>
+<tr>
+  <td class="text-center">23</td>
+  <td class="text-center">물리치료</td>
+  <td class="text-end">2,023</td>
+  <td class="text-end"><span class="percent">000.0</span></td>
+</tr>
+<tr>
+  <td class="text-center">24</td>
+  <td class="text-center">도수치료</td>
+  <td class="text-end">2,023</td>
+  <td class="text-end"><span class="percent">000.0</span></td>
+</tr>
+<tr>
+  <td class="text-center">25</td>
+  <td class="text-center">도수치료</td>
+  <td class="text-end">2,023</td>
+  <td class="text-end"><span class="percent">000.0</span></td>
+</tr>
+<tr>
+  <td class="text-center">26</td>
+  <td class="text-center">도수치료</td>
+  <td class="text-end">2,023</td>
+  <td class="text-end"><span class="percent">000.0</span></td>
+</tr>
+<tr>
+  <td class="text-center">27</td>
+  <td class="text-center">도수치료</td>
+  <td class="text-end">2,023</td>
+  <td class="text-end"><span class="percent">000.0</span></td>
+</tr>
+<tr>
+  <td class="text-center">28</td>
+  <td class="text-center">뜸</td>
+  <td class="text-end">2,023</td>
+  <td class="text-end"><span class="percent">000.0</span></td>
+</tr>
+<tr>
+  <td class="text-center">29</td>
+  <td class="text-center">도수치료</td>
+  <td class="text-end">2,023</td>
+  <td class="text-end"><span class="percent">000.0</span></td>
+</tr>
+<tr>
+  <td class="text-center">30</td>
+  <td class="text-center">도수치료</td>
+  <td class="text-end">2,023</td>
+  <td class="text-end"><span class="percent">000.0</span></td>
+</tr>
+                    </tbody>
+                  </table>
+                </div>
+              </main>
+            </article>
+
+            <article class="l-article ml-auto col-11"  data-card="Top30키워드지역-차트" data-loading-spinner="false" data-is-empty="false">
+              <header class="l-article-header d-flex">
+                  <span class="txt ml-auto">순위 기준</span>
+                  <fieldset class="form-fieldset ml-16" data-fieldset="Top30키워드지역">
+                    <div class="form-row form-fieldset">
+                      <select class="form-select__select">
+                        <option value="0" selected>정보량</option>
+                        <option value="1">정보량 증감률</option>
+                        <option value="2">정보량 비중</option>
+                        <option value="3">정보량 비중 증감률</option>
+                        <option value="4">3개월 평균 대비 증감률</option>
+                      </select>
+                    </div>
+                  </fieldset>
+              </header>
+              <main class="l-article-body">
+                <div class="js-chart" style="height: 68rem;">
+                  <h1 class="fs-1">전국지도 차트 영역</h1>
+                </div>
+              </main>
+            </article>
+          </main>
+        </article>
+      </main>
+    </div>
+  </section>
+  <!-- //Top30 키워드 분석 --> 
+
 </main>
 <!-- //#container -->
 <!-- #footer -->
