@@ -103,7 +103,7 @@ $(function () {
      *   파라미터 값으로 화면 스크롤 이동
      *
      *   [URL 작성 예]
-     *   https://도메인/?moveto=data-card=감성추이 // $("[data-card='감성추이']") 위치로 이동
+     *   https://도메인/?moveto=data-article=감성추이 // $("[data-article='감성추이']") 위치로 이동
      *   https://도메인/?moveto=section // $("#section") 위치로 이동
      *   https://도메인/?moveto=card // $(".card") 위치로 이동
      *   https://도메인/?moveto=card--.js-sticky // $(".js-sticky") 높이값을 제외한 $(".card") 위치로 이동
@@ -146,13 +146,14 @@ $(function () {
      * 데이터 불러오는 동안 대기상태 표시
      *
      * [html 작성 예]
-     * <div data-loding-spinner="true"></div> // 로딩 표시
-     * <div data-loding-spinner="false"></div> // 로딩 감추기
-     * <div data-loding-spinner="true dimmed"></div> // 딤드 효과 추가 및 로딩 컬리 흰색 변경(기본값 : 검은색)
-     * <div data-loding-spinner="true 1rem"></div> // rem 단위로 숫자 삽입하는 경우 크기 변경됨(기본값 : 6rem)
+     * <div data-loading-spinner="true"></div> // 로딩 표시
+     * <div data-loading-spinner="false"></div> // 로딩 감추기
+     * <div data-loading-spinner="true dimmed"></div> // 딤드 효과 추가 및 로딩 컬리 흰색 변경(기본값 : 검은색)
+     * <div data-loading-spinner="true 1rem"></div> // rem 단위로 숫자 삽입하는 경우 크기 변경됨(기본값 : 6rem)
      *
      */
-    $("[data-loding-spinner]").lodingSpinner();
+
+    $("[data-loading-spinner]").loadingSpinner();
   }
   /*
       ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■
@@ -311,13 +312,13 @@ $(function () {
       switch (name) {
         //  데이터 로딩 예시
         case "loading":
-          const $lodings = document.querySelectorAll("[data-loding-spinner]");
+          const $lodings = document.querySelectorAll("[data-loading-spinner]");
 
           Array.from($lodings).forEach((_$loding) => {
-            _$loding.setAttribute("data-loding-spinner", "true");
+            _$loding.setAttribute("data-loading-spinner", "true");
           });
-          const $updateBtn = document.querySelector("[data-loading-update]");
-          $updateBtn.setAttribute("data-loading-update", "true");
+          // const $updateBtn = document.querySelector("[data-loading-update]");
+          // $updateBtn.setAttribute("data-loading-update", "true");
           break;
         //  데이터 없는 경우
         case "empty":

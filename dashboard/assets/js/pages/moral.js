@@ -1,71 +1,109 @@
-
 /*
 ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■
 */
 {
   /**
-   * 
+   *
+   * 검색기간 input 강제로 checked
+   *
+   */
+
+  setTimeout(() => {
+    const $datepicker = document.querySelector(".ui_datepickers .grps");
+    const $inpMonth = $datepicker?.childNodes.item(2).querySelector("input");
+
+    $inpMonth && ($inpMonth.checked = true);
+  }, 1000);
+}
+/*
+  ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■
+  */
+{
+  /**
+   *
    * Top30 키워드 순위 변화 - 마우스 오버 시 동일 데이터에 td--is-hover 클래스 부여
+   *
    */
   const $hoverTarget = document.querySelectorAll("td[data-keyword]");
-  
-  Array.from($hoverTarget).forEach(function(_$target) {
+
+  Array.from($hoverTarget).forEach(function (_$target) {
     _$target.addEventListener("mouseenter", (e) => {
-      document.querySelectorAll(".td--is-hover").forEach(function(_$oldHover) {
+      document.querySelectorAll(".td--is-hover").forEach(function (_$oldHover) {
         _$oldHover.classList.remove("td--is-hover");
       });
 
       const hoverKeyword = e.target.getAttribute("data-keyword");
       const $eventTarget = document.querySelectorAll("[data-keyword='" + hoverKeyword + "']");
-      $eventTarget.forEach(function(_this) {
+      $eventTarget.forEach(function (_this) {
         _this.classList.add("td--is-hover");
       });
     });
-  })
+  });
 }
 /*
 ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■
 */
 {
   /**
-   * 
+   *
    * Top30 키워드 순위 변화 - 항목 클릭 시 동일 데이터에 td--is-active 클래스 부여
+   *
    */
   const $activeTarget = document.querySelectorAll("td[data-keyword]");
-  
-  Array.from($activeTarget).forEach(function(_$target) {
+
+  Array.from($activeTarget).forEach(function (_$target) {
     _$target.addEventListener("click", (e) => {
-      document.querySelectorAll(".td--is-active").forEach(function(_$oldActive) {
+      document.querySelectorAll(".td--is-active").forEach(function (_$oldActive) {
         _$oldActive.classList.remove("td--is-active");
       });
 
       const activeKeyword = e.target.closest("td[data-keyword]").getAttribute("data-keyword");
       const $eventTarget = document.querySelectorAll("[data-keyword='" + activeKeyword + "']");
-      $eventTarget.forEach(function(_this) {
+      $eventTarget.forEach(function (_this) {
         _this.classList.add("td--is-active");
       });
 
       const $labelTarget = document.querySelectorAll(".js-toggle-label");
-      Array.from($labelTarget).forEach(function(_$label) {
+      Array.from($labelTarget).forEach(function (_$label) {
         _$label.innerHTML = activeKeyword;
       });
     });
-  })
+  });
 }
 /*
 ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■
 */
 {
   /**
-   * 
+   *
    * Top30 키워드 순위 변화 - 더보기 버튼 클릭 시 이벤트
+   *
    */
   const $t = document.querySelectorAll(".c-table--click-menu");
-  Array.from($t).forEach(function(e) {
-    e.addEventListener("click", function() {
+  Array.from($t).forEach(function (e) {
+    e.addEventListener("click", function () {
       // 클릭 이벤트 작동
-    })
+    });
   });
+}
+/*
+■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■
+*/
+{
+  /**
+   *
+   *  depth : 건간정보 키워드 트렌드 > 정보량 추이
+   *  block : 차트스위치
+   *  event : new Tab
+   *
+   */
+
+  const $wrapper = document.querySelector("[data-section=정보량추이] [data-article=정보량추이차트] .l-article-body");
+  const $nav = document.querySelector("[data-section=정보량추이] [data-article=정보량추이차트] [data-fieldset=차트스위치]");
+  const option = {
+    autoHeight: true,
+  };
+  const tab = new window.Tab($wrapper, $nav, option);
 }
 /*
 ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■
@@ -78,8 +116,8 @@
    *  event : new AmCharts
    *
    */
-  const $chart = document.querySelector("[data-section=정보량추이] [data-card=정보량추이-1depth] .js-chart");
 
+  const $chart = document.querySelector("[data-section=정보량추이] [data-article=정보량추이차트] .js-chart");
   var chart = AmCharts.makeChart($chart, {
     hideCredits: true,
     type: "serial",
@@ -177,26 +215,26 @@
       listeners: [
         [
           {
-              "event": "showItem",
-              "method": function( $e ){
-                  var halfNum = Number( $e.chart.graphs.length / 2 ) ;
-                  var id = $e.dataItem.valueField.split( "-" )[ 1 ] - halfNum;
-                  $e.chart.graphs.filter( function( $graph ){
-                      if( $graph.valueField == "column-" + id ) $e.chart.showGraph( $graph );
-                  })
-              }
+            event: "showItem",
+            method: function ($e) {
+              var halfNum = Number($e.chart.graphs.length / 2);
+              var id = $e.dataItem.valueField.split("-")[1] - halfNum;
+              $e.chart.graphs.filter(function ($graph) {
+                if ($graph.valueField == "column-" + id) $e.chart.showGraph($graph);
+              });
+            },
           },
           {
-              "event": "hideItem",
-              "method": function( $e ){
-                  var halfNum = Number( $e.chart.graphs.length / 2 ) ;
-                  var id = $e.dataItem.valueField.split( "-" )[ 1 ] - halfNum;
-                  $e.chart.graphs.filter( function( $graph ){
-                      if( $graph.valueField == "column-" + id ) $e.chart.hideGraph( $graph );
-                  })
-              }
-          }
-      ]
+            event: "hideItem",
+            method: function ($e) {
+              var halfNum = Number($e.chart.graphs.length / 2);
+              var id = $e.dataItem.valueField.split("-")[1] - halfNum;
+              $e.chart.graphs.filter(function ($graph) {
+                if ($graph.valueField == "column-" + id) $e.chart.hideGraph($graph);
+              });
+            },
+          },
+        ],
       ],
     },
     titles: [],
@@ -248,18 +286,18 @@
    *  event : new AmCharts
    *
    */
-   const $section = document.querySelector('[data-card="정보량추이-1depth"]');
-   const $chartDiv = $section.querySelector(".js-chart2");
- 
-   // AMchart Loader
-   const Moral1stLineChart = new rsnCharts.Moral1stLineChart($chartDiv);
-   Moral1stLineChart.options = {
-     legend: true,
-     useGraphSettings: true,
-   };
-   let categorys = ["블로그", "카페"];
-   // prettier-ignore
-   let datas = [
+  const $section = document.querySelector('[data-article="정보량추이차트"]');
+  const $chartDiv = $section.querySelector(".js-chart2");
+
+  // AMchart Loader
+  const Moral1stLineChart = new rsnCharts.Moral1stLineChart($chartDiv);
+  Moral1stLineChart.options = {
+    legend: true,
+    useGraphSettings: true,
+  };
+  let categorys = ["블로그", "카페"];
+  // prettier-ignore
+  let datas = [
      { category: "2022-10", "column-1": 500, "column-2": 600, },
      { category: "2022-11", "column-1": 300, "column-2": 500, },
      { category: "2022-12", "column-1": 200, "column-2": 100, },
@@ -267,48 +305,48 @@
      { category: "2023-02", "column-1": 200, "column-2": 500, },
      { category: "2023-03", "column-1": 150, "column-2": 500, },
    ];
- 
-   // init
-   Moral1stLineChart.reDataBinding(datas, categorys); // 데이터 변경시킬때
-   Moral1stLineChart.reColoring(["#87C67C", "#F2D301"]); // 컬러세팅
+
+  // init
+  Moral1stLineChart.reDataBinding(datas, categorys); // 데이터 변경시킬때
+  Moral1stLineChart.reColoring(["#87C67C", "#F2D301"]); // 컬러세팅
 }
 /*
 ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■
 */
 {
-/**
+  /**
    *
    *  depth : 건강정보 키워드 트렌드 > Top30 키워드 분석
    *  block : 차트(xy차트)
    *  event : new AmCharts
    *
    */
-  const $xyChartDiv = document.querySelector('[data-card="Top30키워드분석"] .js-chart');
-  var chart = AmCharts.makeChart( $xyChartDiv, {
+  const $xyChartDiv = document.querySelector('[data-article="Top30키워드분석"] .js-chart');
+  var chart = AmCharts.makeChart($xyChartDiv, {
     hideCredits: true,
     type: "xy",
     path: "//public.realsn.com/libs/amcharts/v3",
     autoMarginOffset: 0,
-    autoMargins: false,
+    autoMargins: true,
     marginLeft: 75,
     marginTop: 10,
     marginBottom: 54,
     addClassNames: true,
     autoDisplay: true,
-    color: "#999999",
+    color: "#171717",
     fontSize: 12,
     trendLines: [],
     graphs: [
       {
         accessibleLabel: "[[title]] [[category]] [[value]] [[snps]]",
         alphaField: "snpsAlp",
-        balloonText: ""
-            +"<div class='ui_positioning_bubble'>"
-            +"  <strong style='font-size:14px; color: #212121;'>[[name]]</strong>"
-            +"  <div class='rows'>정보량 증감률 <span class='cnt'>[[plus1]]</span></div>"
-            +"  <div class='rows'>정보량 <span class='cnt'>[[plus2]]</span></div>"
-            +"</div>"
-        ,
+        balloonText:
+          "" +
+          "<div class='ui_positioning_bubble' style='width: 18rem; height: 9.7rem;'>" +
+          "  <div style='text-align:center; margin-bottom:7px; margin-top:2px;'><strong style='font-size:14px; color: #ffffff;'>[[name]]</strong></div><div style='clear:both;'></div>" +
+          "  <div style='margin-top: 0.8rem;'><div class='ft_left'><div class='rows'>정보량 증감률</div></div><div class='ft_right'><i class='icon-svg-triangle-[[updown]]'></i><span class='cnt'>[[x]]%</span></div><div style='clear:both;'></div></div>" +
+          "  <div  style='margin-top: 0.4rem;'><div class='ft_left'><div class='rows'>정보량</div></div><div class='ft_right'><span class='cnt'>[[y]]</span></div><div style='clear:both;'></div></div>" +
+          "</div>",
         behindColumns: true,
         bullet: "round",
         bulletBorderColor: "#ffffff",
@@ -321,8 +359,8 @@
         lineAlpha: 0,
         lineColor: "#f5822b",
         xField: "x",
-        yField: "y"
-      }
+        yField: "y",
+      },
     ],
     guides: [],
     valueAxes: [
@@ -338,7 +376,8 @@
         zeroGridAlpha: 0,
         axisAlpha: 1,
         axisColor: "#ededef",
-        usePrefixes: true,
+        title: `정보량`,
+        titleRotation: 0,
       },
       {
         offset: 10,
@@ -352,61 +391,60 @@
         fontSize: 12,
         gridAlpha: 0,
         tickLength: 0,
-      }
+        precision: 1,
+        unit: "%",
+        title: "정보량증감률(%)",
+      },
     ],
     balloon: {
       fadeOutDuration: 0,
-      fillAlpha: 0.67,
-      fillColor: "#ffffff",
+      fillAlpha: 0.95,
+      fillColor: "#444444",
       fixedPosition: false,
       fontSize: 12,
-      horizontalPadding: 10,
+      color: "#ffffff",
       pointerWidth: 5,
-      shadowAlpha: 0.3
+      shadowAlpha: 0.3,
+      borderThickness: 0,
+      cornerRadius: 4,
     },
     titles: [],
     dataProvider: [
       {
         code: "4656",
-        name: "라면 공작소",
-        x: "1833",
-        y: "5705",
+        name: "임플란트",
+        x: "222",
+        y: "500",
         snps: "55",
         color: "#444444",
-        label_visible: "",     // 라벨보이는 경우 텍스트 입력, 안보이는 경우 ""
-        plus1 : "농심",
-        plus2 : "2,3k (15.5%)",
-        plus3 : "0,000k (15.5%)",
+        label_visible: "임플란트", // 라벨보이는 경우 텍스트 입력, 안보이는 경우 ""
+        updown: "up", // '정보량 증감률' 화살표 표시, 증가=up / 감소=down
       },
       {
         code: "4656",
-        name: "오뚜기 Daily",
-        x: "533",
-        y: "705",
+        name: "스케일링",
+        x: "200",
+        y: "217",
         snps: "88",
         color: "#444444",
-        label_visible: "",     // 라벨보이는 경우 텍스트 입력, 안보이는 경우 ""
-        plus1 : "농심",
-        plus2 : "2,3k (15.5%)",
-        plus3 : "0,000k (15.5%)",
+        label_visible: "스케일링", // 라벨보이는 경우 텍스트 입력, 안보이는 경우 ""
+        updown: "down", // '정보량 증감률' 화살표 표시, 증가=up / 감소=down
       },
-    ]
-  })
-
-
+    ],
+  });
 }
 /*
 ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■
 */
 {
-   /**
+  /**
    *
    *  depth : 건강정보 키워드 트렌드 > Top30 키워드 분석 > 정보량 추이
    *  block : 차트(라인차트)
    *  event : new AmCharts
    *
    */
-  const $section = document.querySelector('[data-card="정보량추이-2depth"]');
+  const $section = document.querySelector('[data-article="정보량추이-2depth"]');
   const $chartDiv = $section.querySelector(".js-chart");
 
   // AMchart Loader
@@ -441,7 +479,7 @@
    *  event : new AmCharts
    *
    */
-  const $chart = document.querySelector("[data-card=연관어-워드클라우드] .js-chart");
+  const $chart = document.querySelector("[data-article=연관어-워드클라우드] .js-chart");
 
   am4core.ready(function () {
     var data = [
@@ -606,12 +644,28 @@
 {
   /**
    *
+   *  depth : 건간정보 키워드 트렌드 > Top30 키워드 지역
+   *  block : 차트스위치
+   *  event : new Tab
+   *
+   */
+
+  const $wrapper = document.querySelector("[data-section=Top30키워드지역] [data-article=Top30키워드지역-차트] .l-article-body");
+  const $nav = document.querySelector("[data-section=Top30키워드지역] [data-article=Top30키워드지역-차트] [data-fieldset=차트스위치]");
+  const tab = new window.Tab($wrapper, $nav);
+}
+/*
+■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■
+*/
+{
+  /**
+   *
    *  depth : 건강정보 키워드 트렌드 > Top30 키워드 지역
    *  block : 차트(워드 클라우드)
    *  event : new AmCharts
    *
    */
-  const $chart = document.querySelector("[data-card=Top30키워드지역-차트] .js-chart2");
+  const $chart = document.querySelector("[data-article=Top30키워드지역-차트] .js-chart2");
 
   am4core.ready(function () {
     var data = [
@@ -770,3 +824,6 @@
     });
   });
 }
+/*
+■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■
+*/
