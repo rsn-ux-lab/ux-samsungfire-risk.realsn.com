@@ -13,7 +13,7 @@ $(function () {
     const $inpId = $login.querySelector(".form-row[data-row=id] input");
     const $inpPass = $login.querySelector(".form-row[data-row=password] input");
     const $btnEyes = $login.querySelectorAll(".btn-eye");
-    const $btnLogin = $login.querySelector(".btn-login");
+    const $btnLogin = $login.querySelector(".js-btn-login");
 
     // ID & Pass, Empity 상태에서 button 비활성화
     [$inpId, $inpPass].forEach((_$el) => {
@@ -24,7 +24,7 @@ $(function () {
     });
 
     // 비밀번호 미리보기
-    $btnEyes.forEach(function(_$btnEye) {
+    $btnEyes.forEach(function (_$btnEye) {
       _$btnEye.addEventListener("click", (e) => {
         e.target.classList.toggle("btn-eye--is-active");
 
@@ -34,7 +34,7 @@ $(function () {
         else e.target.parentElement.querySelector("input").setAttribute("type", "password");
         e.target.dispatchEvent(new Event("change"));
       });
-    })
+    });
   }
   /*
   ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■
@@ -59,11 +59,11 @@ $(function () {
           message: `<p class="text-center">동일 아이디 사용자가 존재합니다.</p><p class="text-center">기존 사용자를 강제 로그아웃 후 로그인하시겠습니까?</p>`,
           btnAgree: "로그인",
           on: {
-            complete({...args}) {
-              const $btnAgree = args.$modal[0].querySelector('.btn-agree');
+            complete({ ...args }) {
+              const $btnAgree = args.$modal[0].querySelector(".btn-agree");
 
-              $btnAgree.addEventListener('click', () => {
-                location.href = '../../moral';
+              $btnAgree.addEventListener("click", () => {
+                location.href = "../../moral";
               });
             },
           },

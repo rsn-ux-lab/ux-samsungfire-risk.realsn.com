@@ -1,3 +1,72 @@
+
+/*
+■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■
+*/
+{
+  /**
+   * 
+   * Top30 키워드 순위 변화 - 마우스 오버 시 동일 데이터에 td--is-hover 클래스 부여
+   */
+  const $hoverTarget = document.querySelectorAll("td[data-keyword]");
+  
+  Array.from($hoverTarget).forEach(function(_$target) {
+    _$target.addEventListener("mouseenter", (e) => {
+      document.querySelectorAll(".td--is-hover").forEach(function(_$oldHover) {
+        _$oldHover.classList.remove("td--is-hover");
+      });
+
+      const hoverKeyword = e.target.getAttribute("data-keyword");
+      const $eventTarget = document.querySelectorAll("[data-keyword='" + hoverKeyword + "']");
+      $eventTarget.forEach(function(_this) {
+        _this.classList.add("td--is-hover");
+      });
+    });
+  })
+}
+/*
+■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■
+*/
+{
+  /**
+   * 
+   * Top30 키워드 순위 변화 - 항목 클릭 시 동일 데이터에 td--is-active 클래스 부여
+   */
+  const $activeTarget = document.querySelectorAll("td[data-keyword]");
+  
+  Array.from($activeTarget).forEach(function(_$target) {
+    _$target.addEventListener("click", (e) => {
+      document.querySelectorAll(".td--is-active").forEach(function(_$oldActive) {
+        _$oldActive.classList.remove("td--is-active");
+      });
+
+      const activeKeyword = e.target.closest("td[data-keyword]").getAttribute("data-keyword");
+      const $eventTarget = document.querySelectorAll("[data-keyword='" + activeKeyword + "']");
+      $eventTarget.forEach(function(_this) {
+        _this.classList.add("td--is-active");
+      });
+
+      const $labelTarget = document.querySelectorAll(".js-toggle-label");
+      Array.from($labelTarget).forEach(function(_$label) {
+        _$label.innerHTML = activeKeyword;
+      });
+    });
+  })
+}
+/*
+■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■
+*/
+{
+  /**
+   * 
+   * Top30 키워드 순위 변화 - 더보기 버튼 클릭 시 이벤트
+   */
+  const $t = document.querySelectorAll(".c-table--click-menu");
+  Array.from($t).forEach(function(e) {
+    e.addEventListener("click", function() {
+      // 클릭 이벤트 작동
+    })
+  });
+}
 /*
 ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■
 */
@@ -18,17 +87,18 @@
     categoryField: "category",
     addClassNames: true,
     fontSize: 12,
-    columnWidth: 0.7,
+    columnWidth: 0.4,
     autoMarginOffset: 0,
     marginRight: 10,
     marginTop: 35,
-    colors: ["#91D085", "#F2D301"],
+    colors: ["#87C67C", "#F2D301"],
     color: "#505050",
     categoryAxis: {
+      axisColor: "#ededef",
       labelOffset: -2,
       equalSpacing: true,
       color: "#555555",
-      axisColor: "#ededef",
+      gridThickness: 0,
       fontSize: 11,
     },
     chartCursor: {
@@ -72,9 +142,8 @@
         stackType: "regular",
         zeroGridAlpha: 0,
         axisThickness: 0,
-        color: "#666666",
+        color: "#555555",
         fontSize: 11,
-        dashLength: 4,
         gridAlpha: 1,
         gridColor: "#EDEDEF",
         tickLength: 0,
@@ -102,6 +171,8 @@
       spacing: 20,
       valueFunction: get_chartLegendValueText,
       valueWidth: 60,
+      valueAlign: "right",
+      equalWidths: false,
       verticalGap: 0,
       listeners: [
         [
@@ -131,70 +202,75 @@
     titles: [],
     dataProvider: [
       {
-        category: "2022-04",
-        "column-1": 8,
-        "column-2": 5,
-      },
-      {
-        category: "2022-05",
-        "column-1": 6,
-        "column-2": 7,
-      },
-      {
-        category: "2022-06",
-        "column-1": 2,
-        "column-2": 3,
-      },
-      {
-        category: "2022-07",
-        "column-1": 8,
-        "column-2": 5,
-      },
-      {
-        category: "2022-08",
-        "column-1": 6,
-        "column-2": 7,
-      },
-      {
-        category: "2022-09",
-        "column-1": 2,
-        "column-2": 3,
-      },
-      {
         category: "2022-10",
-        "column-1": 8,
-        "column-2": 5,
+        "column-1": 500,
+        "column-2": 500,
       },
       {
         category: "2022-11",
-        "column-1": 8,
-        "column-2": 5,
+        "column-1": 300,
+        "column-2": 300,
       },
       {
         category: "2022-12",
-        "column-1": 8,
-        "column-2": 5,
+        "column-1": 200,
+        "column-2": 200,
       },
       {
         category: "2023-01",
-        "column-1": 8,
-        "column-2": 5,
+        "column-1": 200,
+        "column-2": 70,
       },
       {
         category: "2032-02",
-        "column-1": 8,
-        "column-2": 5,
+        "column-1": 200,
+        "column-2": 500,
       },
       {
         category: "2023-03",
-        "column-1": 8,
-        "column-2": 5,
+        "column-1": 150,
+        "column-2": 500,
       },
     ],
   });
   chart.addListener("clickGraphItem", function () {
     // $.modal({ isExist: true, className: "data-table--related" });
   });
+}
+/*
+■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■
+*/
+{
+  /**
+   *
+   *  depth : 건간정보 키워드 트렌드 > 정보량 추이
+   *  block : 차트(라인차트)
+   *  event : new AmCharts
+   *
+   */
+   const $section = document.querySelector('[data-card="정보량추이-1depth"]');
+   const $chartDiv = $section.querySelector(".js-chart2");
+ 
+   // AMchart Loader
+   const Moral1stLineChart = new rsnCharts.Moral1stLineChart($chartDiv);
+   Moral1stLineChart.options = {
+     legend: true,
+     useGraphSettings: true,
+   };
+   let categorys = ["블로그", "카페"];
+   // prettier-ignore
+   let datas = [
+     { category: "2022-10", "column-1": 500, "column-2": 600, },
+     { category: "2022-11", "column-1": 300, "column-2": 500, },
+     { category: "2022-12", "column-1": 200, "column-2": 100, },
+     { category: "2023-01", "column-1": 200, "column-2": 70, },
+     { category: "2023-02", "column-1": 200, "column-2": 500, },
+     { category: "2023-03", "column-1": 150, "column-2": 500, },
+   ];
+ 
+   // init
+   Moral1stLineChart.reDataBinding(datas, categorys); // 데이터 변경시킬때
+   Moral1stLineChart.reColoring(["#87C67C", "#F2D301"]); // 컬러세팅
 }
 /*
 ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■
@@ -221,7 +297,6 @@
     autoDisplay: true,
     color: "#999999",
     fontSize: 12,
-    usePrefixes: true,
     trendLines: [],
     graphs: [
       {
@@ -255,34 +330,28 @@
         offset: 15,
         id: "ValueAxis-1",
         minMaxMultiplier: 1,
-        treatZeroAs: 1,
         minHorizontalGap: 0,
         tickLength: 0,
         fontSize: 12,
-        color: "#cccccc",
-        gridAlpha: 1,
-        zeroGridAlpha: 2,
-        axisAlpha: 0,
-        dashLength: 3,
-        gridColor: "#dfdfdf"
-        // "zeroGridAlpha": 0,
-        // "axisAlpha": 0,
+        color: "#555555",
+        gridAlpha: 0,
+        zeroGridAlpha: 0,
+        axisAlpha: 1,
+        axisColor: "#ededef",
+        usePrefixes: true,
       },
       {
         offset: 10,
         axisFrequency: 0,
-        minMaxMultiplier: 1,
         id: "ValueAxis-2",
-        zeroGridAlpha: 2,
-        axisAlpha: 0,
+        axisAlpha: 1,
+        axisColor: "#ededef",
         position: "bottom",
         treatZeroAs: 1,
-        color: "#cccccc",
+        color: "#555555",
         fontSize: 12,
-        gridAlpha: 1,
+        gridAlpha: 0,
         tickLength: 0,
-        dashLength: 3,
-        gridColor: "#dfdfdf"
       }
     ],
     balloon: {
@@ -302,9 +371,9 @@
         name: "라면 공작소",
         x: "1833",
         y: "5705",
-        snps: "88",
-        color: "#d83832",
-        label_visible: "라면 공작소",     // 라벨보이는 경우 텍스트 입력, 안보이는 경우 ""
+        snps: "55",
+        color: "#444444",
+        label_visible: "",     // 라벨보이는 경우 텍스트 입력, 안보이는 경우 ""
         plus1 : "농심",
         plus2 : "2,3k (15.5%)",
         plus3 : "0,000k (15.5%)",
@@ -315,7 +384,7 @@
         x: "533",
         y: "705",
         snps: "88",
-        color: "#f2b1ed",
+        color: "#444444",
         label_visible: "",     // 라벨보이는 경우 텍스트 입력, 안보이는 경우 ""
         plus1 : "농심",
         plus2 : "2,3k (15.5%)",
@@ -341,31 +410,25 @@
   const $chartDiv = $section.querySelector(".js-chart");
 
   // AMchart Loader
-  const ytnLineChart2 = new rsnCharts.YtnLineChart($chartDiv);
-  ytnLineChart2.options = {
+  const Moral2ndLineChart = new rsnCharts.Moral2ndLineChart($chartDiv);
+  Moral2ndLineChart.options = {
     legend: true,
     useGraphSettings: true,
   };
   let categorys = ["정보량 증감률", "정보량"];
   // prettier-ignore
   let datas = [
-    { category: "2022-04", "column-1": 2112, "column-2": 538, },
-    { category: "2022-05", "column-1": 2012, "column-2": 438, },
-    { category: "2022-06", "column-1": 2012, "column-2": 438, },
-    { category: "2022-07", "column-1": 2012, "column-2": 438, },
-    { category: "2022-08", "column-1": 2012, "column-2": 438, },
-    { category: "2022-09", "column-1": 2012, "column-2": 438, },
-    { category: "2022-10", "column-1": 2012, "column-2": 438, },
-    { category: "2022-11", "column-1": 2012, "column-2": 438, },
-    { category: "2022-12", "column-1": 2012, "column-2": 438, },
-    { category: "2023-01", "column-1": 2012, "column-2": 438, },
-    { category: "2023-02", "column-1": 2012, "column-2": 438, },
-    { category: "2023-03", "column-1": 2012, "column-2": 438, },
+    { category: "2022-10", "column-1": 100, "column-2": 2000, },
+    { category: "2022-11", "column-1": 500, "column-2": 1700, },
+    { category: "2022-12", "column-1": 700, "column-2": 2300, },
+    { category: "2023-01", "column-1": 800, "column-2": 1500, },
+    { category: "2023-02", "column-1": 300, "column-2": 1100, },
+    { category: "2023-03", "column-1": 270, "column-2": 3500, },
   ];
 
   // init
-  ytnLineChart2.reDataBinding(datas, categorys); // 데이터 변경시킬때
-  ytnLineChart2.reColoring(["#4A81EB", "#F09F55"]); // 컬러세팅
+  Moral2ndLineChart.reDataBinding(datas, categorys); // 데이터 변경시킬때
+  Moral2ndLineChart.reColoring(["#B8CF5A", "#739EDE"]); // 컬러세팅
 }
 /*
 ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■
@@ -382,36 +445,36 @@
 
   am4core.ready(function () {
     var data = [
-      { name: "합병증", fill: "#d73b9e", value: 1100, fluc: 38.7 },
-      { name: "초음파", fill: "#d73b9e", value: 536, fluc: 38.7 },
-      { name: "당뇨병", fill: "#d73b9e", value: 368, fluc: 38.7 },
-      { name: "부항", fill: "#ffa800", value: 363, fluc: 38.7 },
-      { name: "백내장", fill: "#5ba1e0", value: 358, fluc: 38.7 },
-      { name: "강남의원", fill: "#2cb24a", value: 312, fluc: 38.7 },
-      { name: "하나병원", fill: "#54c2f0", value: 271, fluc: 38.7 },
-      { name: "최고의원", fill: "#2cb24a", value: 267, fluc: -40.1 },
-      { name: "한울병원", fill: "#54c2f0", value: 255, fluc: 38.7 },
-      { name: "뜸", fill: "#2cb24a", value: 235, fluc: -40.1 },
-      { name: "합병증", fill: "#d73b9e", value: 1100, fluc: 38.7 },
-      { name: "초음파", fill: "#d73b9e", value: 536, fluc: 38.7 },
-      { name: "당뇨병", fill: "#d73b9e", value: 368, fluc: 38.7 },
-      { name: "부항", fill: "#ffa800", value: 363, fluc: 38.7 },
-      { name: "백내장", fill: "#5ba1e0", value: 358, fluc: 38.7 },
-      { name: "강남의원", fill: "#2cb24a", value: 312, fluc: 38.7 },
-      { name: "하나병원", fill: "#54c2f0", value: 271, fluc: 38.7 },
-      { name: "최고의원", fill: "#2cb24a", value: 267, fluc: -40.1 },
-      { name: "한울병원", fill: "#54c2f0", value: 255, fluc: 38.7 },
-      { name: "뜸", fill: "#2cb24a", value: 235, fluc: -40.1 },
-      { name: "합병증", fill: "#d73b9e", value: 1100, fluc: 38.7 },
-      { name: "초음파", fill: "#d73b9e", value: 536, fluc: 38.7 },
-      { name: "당뇨병", fill: "#d73b9e", value: 368, fluc: 38.7 },
-      { name: "부항", fill: "#ffa800", value: 363, fluc: 38.7 },
-      { name: "백내장", fill: "#5ba1e0", value: 358, fluc: 38.7 },
-      { name: "강남의원", fill: "#2cb24a", value: 312, fluc: 38.7 },
-      { name: "하나병원", fill: "#54c2f0", value: 271, fluc: 38.7 },
-      { name: "최고의원", fill: "#2cb24a", value: 267, fluc: -40.1 },
-      { name: "한울병원", fill: "#54c2f0", value: 255, fluc: 38.7 },
-      { name: "뜸", fill: "#2cb24a", value: 235, fluc: -40.1 },
+      { name: "합병증", fill: "#B28838", value: 1100, fluc: 38.7 },
+      { name: "초음파", fill: "#985C6D", value: 536, fluc: 38.7 },
+      { name: "당뇨병", fill: "#58A277", value: 368, fluc: 38.7 },
+      { name: "부항", fill: "#B28838", value: 363, fluc: 38.7 },
+      { name: "백내장", fill: "#B28838", value: 358, fluc: 38.7 },
+      { name: "강남의원", fill: "#B28838", value: 312, fluc: 38.7 },
+      { name: "하나병원", fill: "#985C6D", value: 271, fluc: 38.7 },
+      { name: "최고의원", fill: "#58A277", value: 267, fluc: -40.1 },
+      { name: "한울병원", fill: "#985C6D", value: 255, fluc: 38.7 },
+      { name: "뜸", fill: "#58A277", value: 235, fluc: -40.1 },
+      { name: "합병증", fill: "#985C6D", value: 1100, fluc: 38.7 },
+      { name: "초음파", fill: "#58A277", value: 536, fluc: 38.7 },
+      { name: "당뇨병", fill: "#985C6D", value: 368, fluc: 38.7 },
+      { name: "부항", fill: "#58A277", value: 363, fluc: 38.7 },
+      { name: "백내장", fill: "#B28838", value: 358, fluc: 38.7 },
+      { name: "강남의원", fill: "#985C6D", value: 312, fluc: 38.7 },
+      { name: "하나병원", fill: "#B28838", value: 271, fluc: 38.7 },
+      { name: "최고의원", fill: "#985C6D", value: 267, fluc: -40.1 },
+      { name: "한울병원", fill: "#58A277", value: 255, fluc: 38.7 },
+      { name: "뜸", fill: "#B28838", value: 235, fluc: -40.1 },
+      { name: "합병증", fill: "#B28838", value: 1100, fluc: 38.7 },
+      { name: "초음파", fill: "#B28838", value: 536, fluc: 38.7 },
+      { name: "당뇨병", fill: "#B28838", value: 368, fluc: 38.7 },
+      { name: "부항", fill: "#985C6D", value: 363, fluc: 38.7 },
+      { name: "백내장", fill: "#985C6D", value: 358, fluc: 38.7 },
+      { name: "강남의원", fill: "#B28838", value: 312, fluc: 38.7 },
+      { name: "하나병원", fill: "#58A277", value: 271, fluc: 38.7 },
+      { name: "최고의원", fill: "#B28838", value: 267, fluc: -40.1 },
+      { name: "한울병원", fill: "#58A277", value: 255, fluc: 38.7 },
+      { name: "뜸", fill: "#B28838", value: 235, fluc: -40.1 },
     ];
 
     var chart_cloud = am4core.create($chart, am4plugins_wordCloud.WordCloud);
@@ -495,8 +558,6 @@
     });
     series_cloud.labels.template.events.on("hit", function ($e) {
       $($e.target.dom).addClass("active").siblings().removeClass("active");
-      console.log("클릭 데이터 >> ");
-      console.log($e.target._dataItem._dataContext);
     });
     var indicator;
     var indicatorInterval;
@@ -542,3 +603,170 @@
 /*
 ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■
 */
+{
+  /**
+   *
+   *  depth : 건강정보 키워드 트렌드 > Top30 키워드 지역
+   *  block : 차트(워드 클라우드)
+   *  event : new AmCharts
+   *
+   */
+  const $chart = document.querySelector("[data-card=Top30키워드지역-차트] .js-chart2");
+
+  am4core.ready(function () {
+    var data = [
+      { name: "합병증", fill: "#B28838", value: 1100, fluc: 38.7 },
+      { name: "초음파", fill: "#985C6D", value: 536, fluc: 38.7 },
+      { name: "당뇨병", fill: "#58A277", value: 368, fluc: 38.7 },
+      { name: "부항", fill: "#B28838", value: 363, fluc: 38.7 },
+      { name: "백내장", fill: "#B28838", value: 358, fluc: 38.7 },
+      { name: "강남의원", fill: "#B28838", value: 312, fluc: 38.7 },
+      { name: "하나병원", fill: "#985C6D", value: 271, fluc: 38.7 },
+      { name: "최고의원", fill: "#58A277", value: 267, fluc: -40.1 },
+      { name: "한울병원", fill: "#985C6D", value: 255, fluc: 38.7 },
+      { name: "뜸", fill: "#58A277", value: 235, fluc: -40.1 },
+      { name: "합병증", fill: "#985C6D", value: 1100, fluc: 38.7 },
+      { name: "초음파", fill: "#58A277", value: 536, fluc: 38.7 },
+      { name: "당뇨병", fill: "#985C6D", value: 368, fluc: 38.7 },
+      { name: "부항", fill: "#58A277", value: 363, fluc: 38.7 },
+      { name: "백내장", fill: "#B28838", value: 358, fluc: 38.7 },
+      { name: "강남의원", fill: "#985C6D", value: 312, fluc: 38.7 },
+      { name: "하나병원", fill: "#B28838", value: 271, fluc: 38.7 },
+      { name: "최고의원", fill: "#985C6D", value: 267, fluc: -40.1 },
+      { name: "한울병원", fill: "#58A277", value: 255, fluc: 38.7 },
+      { name: "뜸", fill: "#B28838", value: 235, fluc: -40.1 },
+      { name: "합병증", fill: "#B28838", value: 1100, fluc: 38.7 },
+      { name: "초음파", fill: "#B28838", value: 536, fluc: 38.7 },
+      { name: "당뇨병", fill: "#B28838", value: 368, fluc: 38.7 },
+      { name: "부항", fill: "#985C6D", value: 363, fluc: 38.7 },
+      { name: "백내장", fill: "#985C6D", value: 358, fluc: 38.7 },
+      { name: "강남의원", fill: "#B28838", value: 312, fluc: 38.7 },
+      { name: "하나병원", fill: "#58A277", value: 271, fluc: 38.7 },
+      { name: "최고의원", fill: "#B28838", value: 267, fluc: -40.1 },
+      { name: "한울병원", fill: "#58A277", value: 255, fluc: 38.7 },
+      { name: "뜸", fill: "#B28838", value: 235, fluc: -40.1 },
+    ];
+
+    var chart_cloud = am4core.create($chart, am4plugins_wordCloud.WordCloud);
+    var series_cloud = chart_cloud.series.push(new am4plugins_wordCloud.WordCloudSeries());
+    series_cloud.accuracy = 6;
+    series_cloud.randomness = 0;
+    series_cloud.rotationThreshold = 0;
+    series_cloud.padding(0, 0, 0, 0);
+
+    series_cloud.data = data;
+    series_cloud.id = "wordCloud";
+
+    series_cloud.dataFields.word = "name";
+    series_cloud.dataFields.value = "value";
+    series_cloud.dataFields.color = "fill";
+    series_cloud.minFontSize = 25;
+    series_cloud.maxFontSize = 70;
+
+    series_cloud.labels.template.hiddenState.transitionDuration = 0;
+    series_cloud.labels.template.defaultState.transitionDuration = 0;
+    series_cloud.labels.template.padding(1, 6, 1, 6);
+    series_cloud.labels.template.propertyFields.fill = "fill";
+    series_cloud.labels.template.zIndex = 0;
+    series_cloud.labels.template.adapter.add("text", function ($val, $target) {
+      $($target.dom).addClass("word_item");
+      return "\r" + $val + "\r";
+    });
+    series_cloud.cursorOverStyle = am4core.MouseCursorStyle.pointer;
+    series_cloud.labels.template.background.strokeWidth = 0;
+    series_cloud.labels.template.background.adapter.add("stroke", function ($val, $target) {
+      if ($target.dataItem && $target.dataItem.dataContext) {
+        $target.fill = am4core.color($target.dataItem.dataContext.fill);
+        return $target.dataItem.dataContext.fill;
+      }
+      return $val;
+    });
+
+    // Tooltip(Bubble)
+    series_cloud.tooltip.getFillFromObject = false;
+    series_cloud.tooltip.background.fill = am4core.color("#ffffff");
+    series_cloud.tooltip.background.cornerRadius = 3;
+    series_cloud.tooltip.background.strokeOpacity = 1;
+    series_cloud.tooltip.background.strokeWidth = 2;
+    series_cloud.tooltip.label.fill = am4core.color("#666666");
+    series_cloud.labels.template.tooltipText = "[bold]{name}[/]: {value}";
+    series_cloud.labels.template.adapter.add("tooltipHTML", function ($value, $target) {
+      $($target.dom).addClass("word_item");
+      $($target.background.dom)
+        .find("rect")
+        .attr("rx", $target.background.measuredHeight / 2);
+      $target.background.dy = -$target.background.measuredHeight * 0.05;
+
+      var flucUpDn = $target.dataItem.dataContext.fluc == null ? "New" : $target.dataItem.dataContext.fluc;
+      if (flucUpDn != "New") {
+        flucUpDn = $target.dataItem.dataContext.fluc > 0 ? "up" : $target.dataItem.dataContext.fluc == 0 ? "none" : "dn";
+      }
+      var cateColor;
+      var tooltipResult = "";
+      tooltipResult += '<div class="chart_tooltip">';
+      tooltipResult += '<strong class="title">{name}</strong><span class="dv">{value}&nbsp;</span>';
+      if (flucUpDn == "New") {
+        tooltipResult += '<span class="row"><span class="ui_fluc is-color-negative">New</span></span>';
+      } else {
+        tooltipResult += '<span class="row"><span class="ui_fluc before ' + flucUpDn + '">' + Math.abs($target.dataItem.dataContext.fluc) + "%</span></span>";
+      }
+      tooltipResult += "</div>";
+
+      if ($target.tooltip) {
+        $target.tooltip.background.stroke = $target.dataItem.dataContext.fill;
+      }
+      return tooltipResult;
+    });
+
+    var hs = series_cloud.labels.template.states.create("hover");
+    hs.properties.zIndex = 1;
+
+    // Event
+    series_cloud.labels.template.events.on("over", function ($e) {
+      if ($e.target.tooltip.verticalOrientation == "up") $e.target.tooltip.dy = -($e.target.background.measuredHeight / 3);
+      else $e.target.tooltip.dy = $e.target.background.measuredHeight / 3;
+    });
+    series_cloud.labels.template.events.on("hit", function ($e) {
+      $($e.target.dom).addClass("active").siblings().removeClass("active");
+    });
+    var indicator;
+    var indicatorInterval;
+
+    function showIndicator() {
+      if (!indicator) {
+        indicator = chart_cloud.tooltipContainer.createChild(am4core.Container);
+        indicator.background.fill = am4core.color("#fafafa");
+        indicator.width = am4core.percent(100);
+        indicator.height = am4core.percent(100);
+
+        var indicatorLabel = indicator.createChild(am4core.Label);
+        indicatorLabel.text = "Loading...";
+        indicatorLabel.fill = "#909090";
+        indicatorLabel.align = "center";
+        indicatorLabel.valign = "middle";
+        indicatorLabel.dy = 1;
+      }
+
+      indicator.hide(0);
+      indicator.show();
+
+      // clearInterval(indicatorInterval);
+      // indicatorInterval = setInterval(function() {
+      //         hourglass.animate([{
+      //         from: 0,
+      //         to: 360,
+      //         property: "rotation"                    //         }], 2000);
+      //     }, 3000);
+    }
+    function hideIndicator() {
+      indicator.hide();
+      clearInterval(indicatorInterval);
+    }
+
+    showIndicator();
+
+    series_cloud.events.on("arrangeended", function (ev) {
+      hideIndicator();
+    });
+  });
+}

@@ -1,5 +1,5 @@
 
-<!-- reBuild :  20230209130213 -->
+<!-- reBuild :  20230215143541 -->
 
 <!DOCTYPE html>
 <html lang="ko">
@@ -17,13 +17,13 @@
 
   <!-- STYLE -->
   <link rel="stylesheet" href="//fonts.realsn.com/libs/NotoSansKR/NotoSansKR.css">
-  <link rel="stylesheet" href="/dashboard/assets/css/style.css?v=20230209130213">
+  <link rel="stylesheet" href="/dashboard/assets/css/style.css?v=20230215143541">
 
   <!-- JS -->
-  <script src="/dashboard/assets/js/config/files.js?v=20230209130213" defer></script>
-  <script src="/dashboard/assets/js/libs.js?v=20230209130213" defer></script>
-  <script src="/dashboard/assets/js/modules.js?v=20230209130213" defer></script>
-  <script src="/dashboard/assets/js/config/router.js?v=20230209130213" defer></script>
+  <script src="/dashboard/assets/js/config/files.js?v=20230215143541" defer></script>
+  <script src="/dashboard/assets/js/libs.js?v=20230215143541" defer></script>
+  <script src="/dashboard/assets/js/modules.js?v=20230215143541" defer></script>
+  <script src="/dashboard/assets/js/config/router.js?v=20230215143541" defer></script>
 </head>
 
 <body>
@@ -53,37 +53,33 @@
 
 <main id="container" class="member" data-header-hide="false" data-footer-hide="false" role="main">
   <h2 class="visually-hidden">회원정보</h2>
-  <div class="inner">
-    <div class="row justify-content-center">
-      <div class="col-4">
-        <section class="l-member l-member--pw-set" data-section="최초비밀번호설정">
-          <header class="l-member-header">
-            <h3 class="l-member-header__title l-member-header__title--pw-set">최초 비밀번호 설정</h3>
-          </header>
-          <main class="l-member-body">
-            <form class="form" action="../../moral/">
-              <fieldset class="form-fieldset" data-fieldset="최초비밀번호설정">
-                <div class="form-row form-text" data-row="새비밀번호">
-                  <input class="form-text__input" placeholder="새 비밀번호" type="password" required />
-                  <label class="form-text__label visually-hidden">password를 입력하세요</label>
-                  <button class="btn btn-eye" type="button"><span class="visually-hidden">미리보기</span></button>
-                </div>
-                <div class="form-row form-text" data-row="새비밀번호확인">
-                  <input class="form-text__input" placeholder="새 비밀번호 확인" type="password" required />
-                  <label class="form-text__label visually-hidden">password를 입력하세요</label>
-                  <button class="btn btn-eye" type="button"><span class="visually-hidden">미리보기</span></button>
-                </div>
-                <p class="form__cmt form__cmt--err text-danger"> </p>
-              </fieldset>
-              <button class="btn btn-round btn-round--lg btn-pw-set mt-48 w-100" disabled><span class="txt">변경</span></button>
-              <p class="form__cmt">* 비밀번호 변경은 대시보드 상단 메뉴에서도 가능합니다.</p>
-              <p class="form__cmt">* 비밀번호는 최소 4자 이상 사용해 주세요.</p>
-            </form>
-          </main>
-        </section>
-      </div>
-    </div>
-  </div>
+  <section class="l-member l-member--pw-set" data-section="최초비밀번호설정">
+    <header class="l-member-header">
+      <h3 class="l-member-header__title l-member-header__title--pw-set">최초 비밀번호 설정</h3>
+    </header>
+    <main class="l-member-body">
+      <form class="form" action="../../moral/">
+        <fieldset class="form-fieldset row mb-20" data-fieldset="최초비밀번호설정">
+          <div class="form-row form-text form-text--xxl mb-20" data-row="새비밀번호">
+            <input placeholder="새 비밀번호" type="password" required />
+            <label>password를 입력하세요</label>
+            <button class="btn btn-eye" type="button"><span class="visually-hidden">미리보기</span></button>
+          </div>
+          <div class="form-row form-text form-text--xxl mb-20" data-row="새비밀번호확인">
+            <input placeholder="새 비밀번호 확인" type="password" required />
+            <label>password를 입력하세요</label>
+            <button class="btn btn-eye" type="button"><span class="visually-hidden">미리보기</span></button>
+          </div>
+          <p class="form__cmt form__cmt--err text-danger"></p>
+        </fieldset>
+        <button class="btn btn-primary btn-primary--xxl rounded-pill w-100 mb-15 js-btn-pw-set" disabled>
+          <span class="txt fw-bold">변경</span>
+        </button>              
+        <p class="form__cmt">* 비밀번호 변경은 대시보드 상단 메뉴에서도 가능합니다.</p>
+        <p class="form__cmt">* 비밀번호는 최소 4자 이상 사용해 주세요.</p>
+      </form>
+    </main>
+  </section>  
 </main>
 
 
