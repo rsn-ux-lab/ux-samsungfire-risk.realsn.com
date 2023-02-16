@@ -16,77 +16,6 @@
   }, 1000);
 }
 /*
-  ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■
-  */
-{
-  /**
-   *
-   * Top30 키워드 순위 변화 - 마우스 오버 시 동일 데이터에 td--is-hover 클래스 부여
-   *
-   */
-  const $hoverTarget = document.querySelectorAll("td[data-keyword]");
-
-  Array.from($hoverTarget).forEach(function (_$target) {
-    _$target.addEventListener("mouseenter", (e) => {
-      document.querySelectorAll(".td--is-hover").forEach(function (_$oldHover) {
-        _$oldHover.classList.remove("td--is-hover");
-      });
-
-      const hoverKeyword = e.target.getAttribute("data-keyword");
-      const $eventTarget = document.querySelectorAll("[data-keyword='" + hoverKeyword + "']");
-      $eventTarget.forEach(function (_this) {
-        _this.classList.add("td--is-hover");
-      });
-    });
-  });
-}
-/*
-■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■
-*/
-{
-  /**
-   *
-   * Top30 키워드 순위 변화 - 항목 클릭 시 동일 데이터에 td--is-active 클래스 부여
-   *
-   */
-  const $activeTarget = document.querySelectorAll("td[data-keyword]");
-
-  Array.from($activeTarget).forEach(function (_$target) {
-    _$target.addEventListener("click", (e) => {
-      document.querySelectorAll(".td--is-active").forEach(function (_$oldActive) {
-        _$oldActive.classList.remove("td--is-active");
-      });
-
-      const activeKeyword = e.target.closest("td[data-keyword]").getAttribute("data-keyword");
-      const $eventTarget = document.querySelectorAll("[data-keyword='" + activeKeyword + "']");
-      $eventTarget.forEach(function (_this) {
-        _this.classList.add("td--is-active");
-      });
-
-      const $labelTarget = document.querySelectorAll(".js-toggle-label");
-      Array.from($labelTarget).forEach(function (_$label) {
-        _$label.innerHTML = activeKeyword;
-      });
-    });
-  });
-}
-/*
-■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■
-*/
-{
-  /**
-   *
-   * Top30 키워드 순위 변화 - 더보기 버튼 클릭 시 이벤트
-   *
-   */
-  const $t = document.querySelectorAll(".c-table--click-menu");
-  Array.from($t).forEach(function (e) {
-    e.addEventListener("click", function () {
-      // 클릭 이벤트 작동
-    });
-  });
-}
-/*
 ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■
 */
 {
@@ -338,16 +267,15 @@
     trendLines: [],
     graphs: [
       {
-        accessibleLabel: "[[title]] [[category]] [[value]] [[snps]]",
-        alphaField: "snpsAlp",
+        accessibleLabel: "[[title]] [[category]] [[value]]",
+        alphaField: "opacity",
         balloonText:
-          "" +
-          "<div class='ui_positioning_bubble' style='width: 18rem; height: 9.7rem;'>" +
-          "  <div style='text-align:center; margin-bottom:7px; margin-top:2px;'><strong style='font-size:14px; color: #ffffff;'>[[name]]</strong></div><div style='clear:both;'></div>" +
-          "  <div style='margin-top: 0.8rem;'><div class='ft_left'><div class='rows'>정보량 증감률</div></div><div class='ft_right'><i class='icon-svg-triangle-[[updown]]'></i><span class='cnt'>[[x]]%</span></div><div style='clear:both;'></div></div>" +
+          "<div class='ui_positioning_bubble' style='width: 18rem; height: 8.4rem;'>" +
+          "  <div style='text-align:center;  margin-top: 0.3rem;'><strong style='font-size:14px; color: #ffffff;'>[[name]]</strong></div><div style='clear:both;'></div>" +
+          "  <div style='margin-top: 1.5rem;'><div class='ft_left'><div class='rows'>정보량 증감률</div></div><div class='ft_right'><i class='icon-svg-triangle-[[updown]]'></i><span class='cnt'>[[x]]%</span></div><div style='clear:both;'></div></div>" +
           "  <div  style='margin-top: 0.4rem;'><div class='ft_left'><div class='rows'>정보량</div></div><div class='ft_right'><span class='cnt'>[[y]]</span></div><div style='clear:both;'></div></div>" +
           "</div>",
-        behindColumns: true,
+        // behindColumns: true,
         bullet: "round",
         bulletBorderColor: "#ffffff",
         bulletBorderThickness: "0",
@@ -360,6 +288,7 @@
         lineColor: "#f5822b",
         xField: "x",
         yField: "y",
+        
       },
     ],
     guides: [],
@@ -377,6 +306,7 @@
         axisAlpha: 1,
         axisColor: "#ededef",
         title: `정보량`,
+        treatZeroAs: 1,
         titleRotation: 0,
       },
       {
@@ -402,36 +332,141 @@
       fillColor: "#444444",
       fixedPosition: false,
       fontSize: 12,
-      color: "#ffffff",
       pointerWidth: 5,
       shadowAlpha: 0.3,
-      borderThickness: 0,
-      cornerRadius: 4,
+      borderThickness: 1,
     },
     titles: [],
     dataProvider: [
       {
-        code: "4656",
-        name: "임플란트",
-        x: "222",
-        y: "500",
-        snps: "55",
-        color: "#444444",
-        label_visible: "임플란트", // 라벨보이는 경우 텍스트 입력, 안보이는 경우 ""
-        updown: "up", // '정보량 증감률' 화살표 표시, 증가=up / 감소=down
+        name: "다초점렌즈",
+        x: "100",
+        y: "550",
+        color: "#6b57e3",
+        opacity: 1,     //투명도 (active일때는 1)
+        label_visible: "다초점렌즈", // 라벨보이는 경우 텍스트 입력, 안보이는 경우 ""
+        updown: "up", // '정보량 증감률' 화살표 표시, (증가=up / 감소=down)
       },
       {
-        code: "4656",
-        name: "스케일링",
-        x: "200",
-        y: "217",
-        snps: "88",
+        name: "임플란트",
+        x: "210",
+        y: "920",
         color: "#444444",
+        opacity: 0.4,    //투명도 (active일때는 1)
+        label_visible: "임플란트", // 라벨보이는 경우 텍스트 입력, 안보이는 경우 ""
+        updown: "up", // '정보량 증감률' 화살표 표시, (증가=up / 감소=down)
+      },
+      {
+        name: "스케일링",
+        x: "78",
+        y: "890",
+        color: "#444444",
+        opacity: 0.4,     //투명도 (active일때는 1)
         label_visible: "스케일링", // 라벨보이는 경우 텍스트 입력, 안보이는 경우 ""
-        updown: "down", // '정보량 증감률' 화살표 표시, 증가=up / 감소=down
+        updown: "down", // '정보량 증감률' 화살표 표시, (증가=up / 감소=down)
+      },
+      {
+        name: "뜸",
+        x: "85",
+        y: "630",
+        color: "#444444",
+        opacity: 0.4,     //투명도 (active일때는 1)
+        label_visible: "뜸", // 라벨보이는 경우 텍스트 입력, 안보이는 경우 ""
+        updown: "down", // '정보량 증감률' 화살표 표시, (증가=up / 감소=down)
+      },
+      {
+        name: "부항",
+        x: "84",
+        y: "240",
+        color: "#444444",
+        opacity: 0.4,     //투명도 (active일때는 1)
+        label_visible: "부항", // 라벨보이는 경우 텍스트 입력, 안보이는 경우 ""
+        updown: "down", // '정보량 증감률' 화살표 표시, (증가=up / 감소=down)
+      },
+      {
+        name: "한방치료",
+        x: "65",
+        y: "510",
+        color: "#444444",
+        opacity: 0.4,     //투명도 (active일때는 1)
+        label_visible: "한방치료", // 라벨보이는 경우 텍스트 입력, 안보이는 경우 ""
+        updown: "down", // '정보량 증감률' 화살표 표시, (증가=up / 감소=down)
+      },
+      {
+        name: "데이터",
+        x: "15",
+        y: "200",
+        color: "#444444",
+        opacity: 0.4,     //투명도 (active일때는 1)
+        label_visible: "", // 라벨보이는 경우 텍스트 입력, 안보이는 경우 ""
+        updown: "down", // '정보량 증감률' 화살표 표시, (증가=up / 감소=down)
+      },
+      {
+        name: "데이터",
+        x: "17",
+        y: "210",
+        color: "#444444",
+        opacity: 0.4,     //투명도 (active일때는 1)
+        label_visible: "", // 라벨보이는 경우 텍스트 입력, 안보이는 경우 ""
+        updown: "down", // '정보량 증감률' 화살표 표시, (증가=up / 감소=down)
+      },
+      {
+        name: "데이터",
+        x: "20",
+        y: "150",
+        color: "#444444",
+        opacity: 0.4,     //투명도 (active일때는 1)
+        label_visible: "", // 라벨보이는 경우 텍스트 입력, 안보이는 경우 ""
+        updown: "down", // '정보량 증감률' 화살표 표시, (증가=up / 감소=down)
+      },
+      {
+        name: "데이터",
+        x: "10",
+        y: "100",
+        color: "#444444",
+        opacity: 0.4,     //투명도 (active일때는 1)
+        label_visible: "", // 라벨보이는 경우 텍스트 입력, 안보이는 경우 ""
+        updown: "down", // '정보량 증감률' 화살표 표시, (증가=up / 감소=down)
+      },
+      {
+        name: "데이터",
+        x: "40",
+        y: "170",
+        color: "#444444",
+        opacity: 0.4,     //투명도 (active일때는 1)
+        label_visible: "", // 라벨보이는 경우 텍스트 입력, 안보이는 경우 ""
+        updown: "down", // '정보량 증감률' 화살표 표시, (증가=up / 감소=down)
+      },
+      {
+        name: "데이터",
+        x: "47",
+        y: "70",
+        color: "#444444",
+        opacity: 0.4,     //투명도 (active일때는 1)
+        label_visible: "", // 라벨보이는 경우 텍스트 입력, 안보이는 경우 ""
+        updown: "down", // '정보량 증감률' 화살표 표시, (증가=up / 감소=down)
+      },
+      {
+        name: "데이터",
+        x: "37",
+        y: "430",
+        color: "#444444",
+        opacity: 0.4,     //투명도 (active일때는 1)
+        label_visible: "", // 라벨보이는 경우 텍스트 입력, 안보이는 경우 ""
+        updown: "down", // '정보량 증감률' 화살표 표시, (증가=up / 감소=down)
+      },
+      {
+        name: "데이터",
+        x: "150",
+        y: "570",
+        color: "#444444",
+        opacity: 0.4,     //투명도 (active일때는 1)
+        label_visible: "", // 라벨보이는 경우 텍스트 입력, 안보이는 경우 ""
+        updown: "down", // '정보량 증감률' 화살표 표시, (증가=up / 감소=down)
       },
     ],
-  });
+  })
+  console.log(chart);
 }
 /*
 ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■
@@ -456,12 +491,12 @@
   let categorys = ["정보량 증감률", "정보량"];
   // prettier-ignore
   let datas = [
-    { category: "2022-10", "column-1": 100, "column-2": 2000, },
-    { category: "2022-11", "column-1": 500, "column-2": 1700, },
-    { category: "2022-12", "column-1": 700, "column-2": 2300, },
-    { category: "2023-01", "column-1": 800, "column-2": 1500, },
-    { category: "2023-02", "column-1": 300, "column-2": 1100, },
-    { category: "2023-03", "column-1": 270, "column-2": 3500, },
+    { category: "2022-10", "column-1": 9800, "column-2": 25, },
+    { category: "2022-11", "column-1": 15500, "column-2": 18, },
+    { category: "2022-12", "column-1": 7800, "column-2": 87, },
+    { category: "2023-01", "column-1": 15000, "column-2": 21, },
+    { category: "2023-02", "column-1": 11000, "column-2": 20, },
+    { category: "2023-03", "column-1": 14800, "column-2": 22, },
   ];
 
   // init
@@ -478,41 +513,48 @@
    *  block : 차트(워드 클라우드)
    *  event : new AmCharts
    *
+   *  [data 정의]
+   *  name : 차트에 표시 될 이름
+   *  fill : 색상 (질병-#B28838, 치료법-#985C6D, 의료기관-#58A277)
+   *  value : 정보량
+   *  fluc : 정보량증감률
+   *  uw : 질병일 경우 입력, 질병이 아닌 경우 ''
+   * 
    */
   const $chart = document.querySelector("[data-article=연관어-워드클라우드] .js-chart");
-
+  
   am4core.ready(function () {
     var data = [
-      { name: "합병증", fill: "#B28838", value: 1100, fluc: 38.7 },
-      { name: "초음파", fill: "#985C6D", value: 536, fluc: 38.7 },
-      { name: "당뇨병", fill: "#58A277", value: 368, fluc: 38.7 },
-      { name: "부항", fill: "#B28838", value: 363, fluc: 38.7 },
-      { name: "백내장", fill: "#B28838", value: 358, fluc: 38.7 },
-      { name: "강남의원", fill: "#B28838", value: 312, fluc: 38.7 },
-      { name: "하나병원", fill: "#985C6D", value: 271, fluc: 38.7 },
-      { name: "최고의원", fill: "#58A277", value: 267, fluc: -40.1 },
-      { name: "한울병원", fill: "#985C6D", value: 255, fluc: 38.7 },
-      { name: "뜸", fill: "#58A277", value: 235, fluc: -40.1 },
-      { name: "합병증", fill: "#985C6D", value: 1100, fluc: 38.7 },
-      { name: "초음파", fill: "#58A277", value: 536, fluc: 38.7 },
-      { name: "당뇨병", fill: "#985C6D", value: 368, fluc: 38.7 },
-      { name: "부항", fill: "#58A277", value: 363, fluc: 38.7 },
-      { name: "백내장", fill: "#B28838", value: 358, fluc: 38.7 },
-      { name: "강남의원", fill: "#985C6D", value: 312, fluc: 38.7 },
-      { name: "하나병원", fill: "#B28838", value: 271, fluc: 38.7 },
-      { name: "최고의원", fill: "#985C6D", value: 267, fluc: -40.1 },
-      { name: "한울병원", fill: "#58A277", value: 255, fluc: 38.7 },
-      { name: "뜸", fill: "#B28838", value: 235, fluc: -40.1 },
-      { name: "합병증", fill: "#B28838", value: 1100, fluc: 38.7 },
-      { name: "초음파", fill: "#B28838", value: 536, fluc: 38.7 },
-      { name: "당뇨병", fill: "#B28838", value: 368, fluc: 38.7 },
-      { name: "부항", fill: "#985C6D", value: 363, fluc: 38.7 },
-      { name: "백내장", fill: "#985C6D", value: 358, fluc: 38.7 },
-      { name: "강남의원", fill: "#B28838", value: 312, fluc: 38.7 },
-      { name: "하나병원", fill: "#58A277", value: 271, fluc: 38.7 },
-      { name: "최고의원", fill: "#B28838", value: 267, fluc: -40.1 },
-      { name: "한울병원", fill: "#58A277", value: 255, fluc: 38.7 },
-      { name: "뜸", fill: "#B28838", value: 235, fluc: -40.1 },
+      { name: "합병증", fill: "#B28838", value: 1100, fluc: 38.7, uw: 'U/W, U/W, U/W, U/W, U/WU/W, U/W, U/W, U/W, U/W' },
+      { name: "초음파", fill: "#985C6D", value: 536, fluc: 38.7, uw: '' },
+      { name: "스케일링", fill: "#985C6D", value: 368, fluc: 38.7, uw: '' },
+      { name: "십자인대", fill: "#B28838", value: 363, fluc: 38.7, uw: 'U/W, U/W, U/W, U/W, U/W' },
+      { name: "백내장", fill: "#B28838", value: 358, fluc: 38.7, uw: 'U/W, U/W, U/W, U/W, U/W, U/W' },
+      { name: "강남의원", fill: "#58A277", value: 312, fluc: 38.7, uw: '' },
+      { name: "하나병원", fill: "#58A277", value: 271, fluc: 38.7, uw: '' },
+      { name: "한울병원", fill: "#58A277", value: 255, fluc: 38.7, uw: '' },
+      { name: "뜸", fill: "#985C6D", value: 235, fluc: -40.1, uw: '' },
+      { name: "최고의원", fill: "#58A277", value: 267, fluc: -40.1, uw: '' },
+      { name: "절제술", fill: "#985C6D", value: 1100, fluc: 38.7, uw: '' },
+      { name: "초음파", fill: "#985C6D", value: 536, fluc: 38.7, uw: '' },
+      { name: "빈혈", fill: "#B28838", value: 368, fluc: 38.7, uw: 'U/W, U/W, U/W, U/W, U/W' },
+      { name: "부항", fill: "#985C6D", value: 363, fluc: 38.7, uw: '' },
+      { name: "백내장", fill: "#B28838", value: 358, fluc: 38.7, uw: 'U/W, U/W, U/W, U/W, U/WU/W, U/W, U/W, U/W, U/W' },
+      { name: "강남의원", fill: "#58A277", value: 312, fluc: 38.7, uw: '' },
+      { name: "하나병원", fill: "#58A277", value: 271, fluc: 38.7, uw: '' },
+      { name: "최고의원", fill: "#58A277", value: 267, fluc: -40.1, uw: '' },
+      { name: "한울병원", fill: "#58A277", value: 255, fluc: 38.7, uw: '' },
+      { name: "뜸", fill: "#985C6D", value: 235, fluc: -40.1, uw: '' },
+      { name: "합병증", fill: "#B28838", value: 1100, fluc: 38.7, uw: 'U/W, U/W, U/W, U/W, U/WU/W, U/W, U/W, U/W, U/WU/W, U/W, U/W, U/W, U/W' },
+      { name: "초음파", fill: "#985C6D", value: 536, fluc: 38.7, uw: '' },
+      { name: "당뇨병", fill: "#B28838", value: 368, fluc: 38.7, uw: 'U/W, U/W, U/W, U/W, U/W' },
+      { name: "부항", fill: "#985C6D", value: 363, fluc: 38.7, uw: '' },
+      { name: "백내장", fill: "#985C6D", value: 358, fluc: 38.7, uw: '' },
+      { name: "무지외반증", fill: "#B28838", value: 312, fluc: 38.7, uw: '질병1, 질병2, 질병3, 질병4, 질병5, 질병6'},
+      { name: "하나병원", fill: "#58A277", value: 271, fluc: 38.7, uw: '' },
+      { name: "안와골절", fill: "#B28838", value: 267, fluc: -40.1 , uw: '질병, 질병, 질병'},
+      { name: "한울병원", fill: "#58A277", value: 255, fluc: 38.7, uw: '' },
+      { name: "고혈압", fill: "#B28838", value: 235, fluc: -40.1, uw: 'U/W 1, U/W 2, U/W 3, U/W 4, U/W 5, U/W 6, U/W 7, U/W 8,U/W 1, U/W 2, U/W 3, U/W 4, U/W 5, U/W 6, U/W 7, U/W 8' },
     ];
 
     var chart_cloud = am4core.create($chart, am4plugins_wordCloud.WordCloud);
@@ -552,38 +594,34 @@
 
     // Tooltip(Bubble)
     series_cloud.tooltip.getFillFromObject = false;
-    series_cloud.tooltip.background.fill = am4core.color("#ffffff");
-    series_cloud.tooltip.background.cornerRadius = 3;
-    series_cloud.tooltip.background.strokeOpacity = 1;
-    series_cloud.tooltip.background.strokeWidth = 2;
-    series_cloud.tooltip.label.fill = am4core.color("#666666");
-    series_cloud.labels.template.tooltipText = "[bold]{name}[/]: {value}";
+    series_cloud.tooltip.background.fill = am4core.color("#444444");
+    series_cloud.tooltip.background.cornerRadius = 0;
+    series_cloud.tooltip.background.strokeWidth = 0;
+    series_cloud.tooltip.label.fill = am4core.color("red");
     series_cloud.labels.template.adapter.add("tooltipHTML", function ($value, $target) {
       $($target.dom).addClass("word_item");
-      $($target.background.dom)
-        .find("rect")
-        .attr("rx", $target.background.measuredHeight / 2);
+      $($target.background.dom).find("rect").attr("rx", $target.background.measuredHeight / 2);
       $target.background.dy = -$target.background.measuredHeight * 0.05;
 
-      var flucUpDn = $target.dataItem.dataContext.fluc == null ? "New" : $target.dataItem.dataContext.fluc;
-      if (flucUpDn != "New") {
-        flucUpDn = $target.dataItem.dataContext.fluc > 0 ? "up" : $target.dataItem.dataContext.fluc == 0 ? "none" : "dn";
-      }
-      var cateColor;
-      var tooltipResult = "";
-      tooltipResult += '<div class="chart_tooltip">';
-      tooltipResult += '<strong class="title">{name}</strong><span class="dv">{value}&nbsp;</span>';
-      if (flucUpDn == "New") {
-        tooltipResult += '<span class="row"><span class="ui_fluc is-color-negative">New</span></span>';
-      } else {
-        tooltipResult += '<span class="row"><span class="ui_fluc before ' + flucUpDn + '">' + Math.abs($target.dataItem.dataContext.fluc) + "%</span></span>";
-      }
-      tooltipResult += "</div>";
+      // fluc 음,양수 비교
+      let updown = $target.dataItem.dataContext.fluc > 0 ? "up" : $target.dataItem.dataContext.fluc == 0 ? "none" : "down";
 
-      if ($target.tooltip) {
-        $target.tooltip.background.stroke = $target.dataItem.dataContext.fill;
-      }
-      return tooltipResult;
+      // 기본 툴팁 (치료법, 의료기관)
+      let tooltipDefault = "<div class='ui_positioning_bubble' style='width: 18rem; height: 8.4rem;'>" 
+                         + "  <div style='text-align:center; margin-top: 0.3rem;'><strong style='font-size:14px; color: #ffffff;'>{name}</strong></div><div style='clear:both;'></div>" 
+                         + "  <div style='margin-top: 1.5rem;'><div class='ft_left'><div class='rows'>정보량 증감률</div></div><div class='ft_right'><i class='icon-svg-triangle-"+updown+"'></i><span class='cnt'>"+Math.abs($target.dataItem.dataContext.fluc)+"%</span></div><div style='clear:both;'></div></div>" 
+                         + "  <div  style='margin-top: 0.4rem;'><div class='ft_left'><div class='rows'>정보량</div></div><div class='ft_right'><span class='cnt'>{value}</span></div><div style='clear:both;'></div></div>" 
+                         + "</div>";
+      // 질병일때 툴팁
+      let tooltipTrouble = "<div class='ui_positioning_bubble' style='width: 28rem; height: auto; padding-bottom: 0.5rem;'>" 
+                         + "  <div style='text-align:center; margin-top: 0.3rem;'><strong style='font-size:14px; color: #ffffff;'>{name}</strong></div><div style='clear:both;'></div>" 
+                         + "  <div style='text-align:center; margin-top: 0.7rem;'><div class='clamp-2' style='color: #fff;'>{uw}</div></div><div style='clear:both;'></div>" 
+                         + "  <div style='margin-top: 1.5rem;'><div class='ft_left'><div class='rows'>정보량 증감률</div></div><div class='ft_right'><i class='icon-svg-triangle-"+updown+"'></i><span class='cnt'>"+Math.abs($target.dataItem.dataContext.fluc)+"%</span></div><div style='clear:both;'></div></div>" 
+                         + "  <div  style='margin-top: 0.4rem;'><div class='ft_left'><div class='rows'>정보량</div></div><div class='ft_right'><span class='cnt'>{value}</span></div><div style='clear:both;'></div></div>" 
+                         + "</div>";
+      
+      if($target.dataItem.dataContext.fill == '#B28838') return tooltipTrouble;
+      else return tooltipDefault;
     });
 
     var hs = series_cloud.labels.template.states.create("hover");
@@ -660,45 +698,52 @@
 {
   /**
    *
-   *  depth : 건강정보 키워드 트렌드 > Top30 키워드 지역
+   *  depth : 건강정보 키워드 트렌드 > Top30 키워드 분석 > 연관어
    *  block : 차트(워드 클라우드)
    *  event : new AmCharts
    *
+   *  [data 정의]
+   *  name : 차트에 표시 될 이름
+   *  fill : 색상 (질병-#B28838, 치료법-#985C6D, 의료기관-#58A277)
+   *  value : 정보량
+   *  fluc : 정보량증감률
+   *  uw : 질병일 경우 입력, 질병이 아닌 경우 ''
+   * 
    */
   const $chart = document.querySelector("[data-article=Top30키워드지역-차트] .js-chart2");
 
   am4core.ready(function () {
     var data = [
-      { name: "합병증", fill: "#B28838", value: 1100, fluc: 38.7 },
-      { name: "초음파", fill: "#985C6D", value: 536, fluc: 38.7 },
-      { name: "당뇨병", fill: "#58A277", value: 368, fluc: 38.7 },
-      { name: "부항", fill: "#B28838", value: 363, fluc: 38.7 },
-      { name: "백내장", fill: "#B28838", value: 358, fluc: 38.7 },
-      { name: "강남의원", fill: "#B28838", value: 312, fluc: 38.7 },
-      { name: "하나병원", fill: "#985C6D", value: 271, fluc: 38.7 },
-      { name: "최고의원", fill: "#58A277", value: 267, fluc: -40.1 },
-      { name: "한울병원", fill: "#985C6D", value: 255, fluc: 38.7 },
-      { name: "뜸", fill: "#58A277", value: 235, fluc: -40.1 },
-      { name: "합병증", fill: "#985C6D", value: 1100, fluc: 38.7 },
-      { name: "초음파", fill: "#58A277", value: 536, fluc: 38.7 },
-      { name: "당뇨병", fill: "#985C6D", value: 368, fluc: 38.7 },
-      { name: "부항", fill: "#58A277", value: 363, fluc: 38.7 },
-      { name: "백내장", fill: "#B28838", value: 358, fluc: 38.7 },
-      { name: "강남의원", fill: "#985C6D", value: 312, fluc: 38.7 },
-      { name: "하나병원", fill: "#B28838", value: 271, fluc: 38.7 },
-      { name: "최고의원", fill: "#985C6D", value: 267, fluc: -40.1 },
-      { name: "한울병원", fill: "#58A277", value: 255, fluc: 38.7 },
-      { name: "뜸", fill: "#B28838", value: 235, fluc: -40.1 },
-      { name: "합병증", fill: "#B28838", value: 1100, fluc: 38.7 },
-      { name: "초음파", fill: "#B28838", value: 536, fluc: 38.7 },
-      { name: "당뇨병", fill: "#B28838", value: 368, fluc: 38.7 },
-      { name: "부항", fill: "#985C6D", value: 363, fluc: 38.7 },
-      { name: "백내장", fill: "#985C6D", value: 358, fluc: 38.7 },
-      { name: "강남의원", fill: "#B28838", value: 312, fluc: 38.7 },
-      { name: "하나병원", fill: "#58A277", value: 271, fluc: 38.7 },
-      { name: "최고의원", fill: "#B28838", value: 267, fluc: -40.1 },
-      { name: "한울병원", fill: "#58A277", value: 255, fluc: 38.7 },
-      { name: "뜸", fill: "#B28838", value: 235, fluc: -40.1 },
+      { name: "합병증", fill: "#B28838", value: 1100, fluc: 38.7, uw: 'U/W, U/W, U/W, U/W, U/WU/W, U/W, U/W, U/W, U/W' },
+      { name: "초음파", fill: "#985C6D", value: 536, fluc: 38.7, uw: '' },
+      { name: "스케일링", fill: "#985C6D", value: 368, fluc: 38.7, uw: '' },
+      { name: "십자인대", fill: "#B28838", value: 363, fluc: 38.7, uw: 'U/W, U/W, U/W, U/W, U/W' },
+      { name: "백내장", fill: "#B28838", value: 358, fluc: 38.7, uw: 'U/W, U/W, U/W, U/W, U/W, U/W' },
+      { name: "강남의원", fill: "#58A277", value: 312, fluc: 38.7, uw: '' },
+      { name: "하나병원", fill: "#58A277", value: 271, fluc: 38.7, uw: '' },
+      { name: "한울병원", fill: "#58A277", value: 255, fluc: 38.7, uw: '' },
+      { name: "뜸", fill: "#985C6D", value: 235, fluc: -40.1, uw: '' },
+      { name: "최고의원", fill: "#58A277", value: 267, fluc: -40.1, uw: '' },
+      { name: "절제술", fill: "#985C6D", value: 1100, fluc: 38.7, uw: '' },
+      { name: "초음파", fill: "#985C6D", value: 536, fluc: 38.7, uw: '' },
+      { name: "빈혈", fill: "#B28838", value: 368, fluc: 38.7, uw: 'U/W, U/W, U/W, U/W, U/W' },
+      { name: "부항", fill: "#985C6D", value: 363, fluc: 38.7, uw: '' },
+      { name: "백내장", fill: "#B28838", value: 358, fluc: 38.7, uw: 'U/W, U/W, U/W, U/W, U/WU/W, U/W, U/W, U/W, U/W' },
+      { name: "강남의원", fill: "#58A277", value: 312, fluc: 38.7, uw: '' },
+      { name: "하나병원", fill: "#58A277", value: 271, fluc: 38.7, uw: '' },
+      { name: "최고의원", fill: "#58A277", value: 267, fluc: -40.1, uw: '' },
+      { name: "한울병원", fill: "#58A277", value: 255, fluc: 38.7, uw: '' },
+      { name: "뜸", fill: "#985C6D", value: 235, fluc: -40.1, uw: '' },
+      { name: "합병증", fill: "#B28838", value: 1100, fluc: 38.7, uw: 'U/W, U/W, U/W, U/W, U/WU/W, U/W, U/W, U/W, U/WU/W, U/W, U/W, U/W, U/W' },
+      { name: "초음파", fill: "#985C6D", value: 536, fluc: 38.7, uw: '' },
+      { name: "당뇨병", fill: "#B28838", value: 368, fluc: 38.7, uw: 'U/W, U/W, U/W, U/W, U/W' },
+      { name: "부항", fill: "#985C6D", value: 363, fluc: 38.7, uw: '' },
+      { name: "백내장", fill: "#985C6D", value: 358, fluc: 38.7, uw: '' },
+      { name: "무지외반증", fill: "#B28838", value: 312, fluc: 38.7, uw: '질병1, 질병2, 질병3, 질병4, 질병5, 질병6'},
+      { name: "하나병원", fill: "#58A277", value: 271, fluc: 38.7, uw: '' },
+      { name: "안와골절", fill: "#B28838", value: 267, fluc: -40.1 , uw: '질병, 질병, 질병'},
+      { name: "한울병원", fill: "#58A277", value: 255, fluc: 38.7, uw: '' },
+      { name: "고혈압", fill: "#B28838", value: 235, fluc: -40.1, uw: 'U/W 1, U/W 2, U/W 3, U/W 4, U/W 5, U/W 6, U/W 7, U/W 8,U/W 1, U/W 2, U/W 3, U/W 4, U/W 5, U/W 6, U/W 7, U/W 8' },
     ];
 
     var chart_cloud = am4core.create($chart, am4plugins_wordCloud.WordCloud);
@@ -738,38 +783,34 @@
 
     // Tooltip(Bubble)
     series_cloud.tooltip.getFillFromObject = false;
-    series_cloud.tooltip.background.fill = am4core.color("#ffffff");
-    series_cloud.tooltip.background.cornerRadius = 3;
-    series_cloud.tooltip.background.strokeOpacity = 1;
-    series_cloud.tooltip.background.strokeWidth = 2;
-    series_cloud.tooltip.label.fill = am4core.color("#666666");
-    series_cloud.labels.template.tooltipText = "[bold]{name}[/]: {value}";
+    series_cloud.tooltip.background.fill = am4core.color("#444444");
+    series_cloud.tooltip.background.cornerRadius = 0;
+    series_cloud.tooltip.background.strokeWidth = 0;
+    series_cloud.tooltip.label.fill = am4core.color("red");
     series_cloud.labels.template.adapter.add("tooltipHTML", function ($value, $target) {
       $($target.dom).addClass("word_item");
-      $($target.background.dom)
-        .find("rect")
-        .attr("rx", $target.background.measuredHeight / 2);
+      $($target.background.dom).find("rect").attr("rx", $target.background.measuredHeight / 2);
       $target.background.dy = -$target.background.measuredHeight * 0.05;
 
-      var flucUpDn = $target.dataItem.dataContext.fluc == null ? "New" : $target.dataItem.dataContext.fluc;
-      if (flucUpDn != "New") {
-        flucUpDn = $target.dataItem.dataContext.fluc > 0 ? "up" : $target.dataItem.dataContext.fluc == 0 ? "none" : "dn";
-      }
-      var cateColor;
-      var tooltipResult = "";
-      tooltipResult += '<div class="chart_tooltip">';
-      tooltipResult += '<strong class="title">{name}</strong><span class="dv">{value}&nbsp;</span>';
-      if (flucUpDn == "New") {
-        tooltipResult += '<span class="row"><span class="ui_fluc is-color-negative">New</span></span>';
-      } else {
-        tooltipResult += '<span class="row"><span class="ui_fluc before ' + flucUpDn + '">' + Math.abs($target.dataItem.dataContext.fluc) + "%</span></span>";
-      }
-      tooltipResult += "</div>";
+      // fluc 음,양수 비교
+      let updown = $target.dataItem.dataContext.fluc > 0 ? "up" : $target.dataItem.dataContext.fluc == 0 ? "none" : "down";
 
-      if ($target.tooltip) {
-        $target.tooltip.background.stroke = $target.dataItem.dataContext.fill;
-      }
-      return tooltipResult;
+      // 기본 툴팁 (치료법, 의료기관)
+      let tooltipDefault = "<div class='ui_positioning_bubble' style='width: 18rem; height: 8.4rem;'>" 
+                         + "  <div style='text-align:center; margin-top: 0.3rem;'><strong style='font-size:14px; color: #ffffff;'>{name}</strong></div><div style='clear:both;'></div>" 
+                         + "  <div style='margin-top: 1.5rem;'><div class='ft_left'><div class='rows'>정보량 증감률</div></div><div class='ft_right'><i class='icon-svg-triangle-"+updown+"'></i><span class='cnt'>"+Math.abs($target.dataItem.dataContext.fluc)+"%</span></div><div style='clear:both;'></div></div>" 
+                         + "  <div  style='margin-top: 0.4rem;'><div class='ft_left'><div class='rows'>정보량</div></div><div class='ft_right'><span class='cnt'>{value}</span></div><div style='clear:both;'></div></div>" 
+                         + "</div>";
+      // 질병일때 툴팁
+      let tooltipTrouble = "<div class='ui_positioning_bubble' style='width: 28rem; height: auto; padding-bottom: 0.5rem;'>" 
+                         + "  <div style='text-align:center; margin-top: 0.3rem;'><strong style='font-size:14px; color: #ffffff;'>{name}</strong></div><div style='clear:both;'></div>" 
+                         + "  <div style='text-align:center; margin-top: 0.7rem;'><div class='clamp-2' style='color: #fff;'>{uw}</div></div><div style='clear:both;'></div>" 
+                         + "  <div style='margin-top: 1.5rem;'><div class='ft_left'><div class='rows'>정보량 증감률</div></div><div class='ft_right'><i class='icon-svg-triangle-"+updown+"'></i><span class='cnt'>"+Math.abs($target.dataItem.dataContext.fluc)+"%</span></div><div style='clear:both;'></div></div>" 
+                         + "  <div  style='margin-top: 0.4rem;'><div class='ft_left'><div class='rows'>정보량</div></div><div class='ft_right'><span class='cnt'>{value}</span></div><div style='clear:both;'></div></div>" 
+                         + "</div>";
+      
+      if($target.dataItem.dataContext.fill == '#B28838') return tooltipTrouble;
+      else return tooltipDefault;
     });
 
     var hs = series_cloud.labels.template.states.create("hover");
