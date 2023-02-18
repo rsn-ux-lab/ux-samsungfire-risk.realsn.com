@@ -10,7 +10,7 @@ let routes = [
   },
   {
     path: "/dashboard/moral/",
-    script: [`${SERVER.assets}/js/pages/moral.js`, `${SERVER.assets}/js/pages/tmpMoralMap.js`, `${SERVER.assets}/js/pages/moral_test.js`],
+    script: `${SERVER.assets}/js/pages/moral.js`,
   },
   {
     path: "/dashboard/keyword/",
