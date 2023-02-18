@@ -330,7 +330,7 @@
         zeroGridAlpha: 0,
         axisAlpha: 1,
         axisColor: "#ededef",
-        title: `정보량`,
+        title: `정\n보\n량`,
         treatZeroAs: 1,
         titleRotation: 0,
       },
@@ -367,8 +367,8 @@
         name: "다초점렌즈",
         x: "100",
         y: "550",
-        color: "#6b57e3",
-        opacity: 1, //투명도 (active일때는 1)
+        color: "#444444",
+        opacity: 0.4, //투명도 (active일때는 1)
         updown: "up", // '정보량 증감률' 화살표 표시, (증가=up / 감소=down)
       },
       {
@@ -479,7 +479,26 @@
   });
   
   chart.addListener('clickGraphItem', function(e) {
-    console.log(e);
+    document.querySelector(".bullet-active")?.classList.remove("bullet-active");
+    // e.item.bulletGraphics.node //불릿
+    // e.item.dataContext.name //이름
+
+    e.item.bulletGraphics.node.classList.add("bullet-active");
+
+    document.querySelectorAll(".td--is-active").forEach(function (_$oldActive) {
+      _$oldActive.classList.remove("td--is-active");
+    });
+    const activeKeyword = e.item.dataContext.name;
+    const $eventTarget = document.querySelectorAll("[data-keyword='" + activeKeyword + "']");
+    $eventTarget.forEach(function (_this) {
+      _this.classList.add("td--is-active");
+    });
+
+    const $labelTarget = document.querySelectorAll(".js-toggle-label");
+    Array.from($labelTarget).forEach(function (_$label) {
+      _$label.innerHTML = activeKeyword;
+    });
+
   });
 }
 /*
