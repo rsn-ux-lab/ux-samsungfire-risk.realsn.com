@@ -91,7 +91,8 @@ $(function () {
 
     setTimeout(() => {
       removeLoading();
-      !isState && console.log("리소스가 정상적으로 다운로드 되지 않았습니다.");
+      !isState &&
+        console.log(`%c common.js %c 리소스가 정상적으로 다운로드 않거나, 지연시간이 2초를 초과했습니다.`, "color:yellow;background:#ffb6c16b", "color:red;");
     }, 2000);
   }
   /*

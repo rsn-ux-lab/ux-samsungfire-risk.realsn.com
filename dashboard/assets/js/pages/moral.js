@@ -479,11 +479,11 @@
   });
   
   chart.addListener('clickGraphItem', function(e) {
-    document.querySelector(".bullet-active")?.classList.remove("bullet-active");
+    document.querySelector(".chart-bullet-active")?.classList.remove("chart-bullet-active");
     // e.item.bulletGraphics.node //불릿
     // e.item.dataContext.name //이름
 
-    e.item.bulletGraphics.node.classList.add("bullet-active");
+    e.item.bulletGraphics.node.classList.add("chart-bullet-active");
 
     document.querySelectorAll(".td--is-active").forEach(function (_$oldActive) {
       _$oldActive.classList.remove("td--is-active");
