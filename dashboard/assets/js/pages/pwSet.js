@@ -32,6 +32,9 @@ $(function () {
     const $errMsg = $login.querySelector(".form__cmt--err");
     const $btnPwSet = $login.querySelector(".js-btn-pw-set");
 
+    // 강제포커스
+    $inpPw.focus();
+
     // 4자리 넘는지, 일치하는지 비교
     [$inpPw, $inpPwConfirm].forEach((_$el) => {
       _$el.addEventListener("keyup", (e) => {

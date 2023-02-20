@@ -15,6 +15,9 @@ $(function () {
     const $btnEyes = $login.querySelectorAll(".btn-eye");
     const $btnLogin = $login.querySelector(".js-btn-login");
 
+    // 강제포커스
+    $inpId.focus();
+
     // ID & Pass, Empity 상태에서 button 비활성화
     [$inpId, $inpPass].forEach((_$el) => {
       _$el.addEventListener("keyup", (e) => {
