@@ -45,7 +45,6 @@
    *  event : new AmCharts
    *
    */
-
 }
 /*
 ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■
@@ -90,25 +89,29 @@
    * Top30 키워드 순위 변화 - 지역 설정 버튼 Event
    */
   document.querySelector(".js-btn-set-area").addEventListener("click", (e) => {
-    e.target.classList.toggle("btn-default--is-active");
-    const $popup = e.target.nextElementSibling;
-    e.target.classList.contains("btn-default--is-active") ? $popup.style.setProperty("visibility", "visible") : $popup.style.setProperty("visibility", "hidden")
-  })
+    e.currentTarget.classList.toggle("btn-default--is-active");
+    const $popup = e.currentTarget.nextElementSibling;
+    e.currentTarget.classList.contains("btn-default--is-active")
+      ? $popup.style.setProperty("visibility", "visible")
+      : $popup.style.setProperty("visibility", "hidden");
+  });
 }
 /*
 ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■
 */
 {
-    /**
+  /**
    * Top30 키워드 분석 - 축 설정 버튼 Event
    */
-     document.querySelector(".js-btn-set-coord").addEventListener("click", (e) => {
-      e.target.classList.toggle("btn-default--is-active");
-      const $popup = e.target.nextElementSibling;
-      e.target.classList.contains("btn-default--is-active") ? $popup.style.setProperty("visibility", "visible") : $popup.style.setProperty("visibility", "hidden")
-    })
+  document.querySelector(".js-btn-set-coord").addEventListener("click", (e) => {
+    e.currentTarget.classList.toggle("btn-default--is-active");
+    const $popup = e.currentTarget.nextElementSibling;
+    e.currentTarget.classList.contains("btn-default--is-active")
+      ? $popup.style.setProperty("visibility", "visible")
+      : $popup.style.setProperty("visibility", "hidden");
+  });
 }
-  /*
+/*
 ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■
 */
 {
@@ -119,7 +122,6 @@
    *  event : new AmCharts
    *
    */
-  
 }
 /*
 ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■
@@ -174,7 +176,6 @@
    *  uw : 질병일 경우 입력, 질병이 아닌 경우 ''
    *
    */
-  
 }
 /*
 ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■
@@ -229,65 +230,65 @@
 */
 {
   /**
- *
- *  depth : 건간정보 키워드 트렌드 > Top30 키워드ㆍ지역 > 키워드
- *  block : 차트(전국지도)
- *  event : new AmCharts
- *
- * 
- */
-const $section = document.querySelector("[data-section='Top30키워드지역']");
-const $article = $section.querySelector("[data-article='키워드']");
-const $chartDiv = $article.querySelector('.js-chart');
-let $h1 = $article.querySelector('h1');
-$chartDiv.removeChild($h1);
-// ---------------------------------임의 데이터 생성 영역-------------------------------------
-let dataArr = [];
+   *
+   *  depth : 건간정보 키워드 트렌드 > Top30 키워드ㆍ지역 > 키워드
+   *  block : 차트(전국지도)
+   *  event : new AmCharts
+   *
+   *
+   */
+  const $section = document.querySelector("[data-section='Top30키워드지역']");
+  const $article = $section.querySelector("[data-article='키워드']");
+  const $chartDiv = $article.querySelector(".js-chart");
+  let $h1 = $article.querySelector("h1");
+  $chartDiv.removeChild($h1);
+  // ---------------------------------임의 데이터 생성 영역-------------------------------------
+  let dataArr = [];
 
-for (let i = 11; i <= 50; i++) {
-  let korName;
-  if (i == 49) korName = '제주';
-  if (i == 48) korName = '경남';
-  if (i == 47) korName = '경북';
-  if (i == 46) korName = '전남';
-  if (i == 45) korName = '전북';
-  if (i == 44) korName = '충남';
-  if (i == 43) korName = '충북';
-  if (i == 42) korName = '강원';
-  if (i == 41) korName = '경기';
-  if (i == 31) korName = '울산';
-  if (i == 30) korName = '대전';
-  if (i == 29) korName = '광주';
-  if (i == 28) korName = '인천';
-  if (i == 27) korName = '대구';
-  if (i == 26) korName = '부산';
-  if (i == 11) korName = '서울';
-  if (i == 50) korName = '세종';
-  if (korName) {
-    dataArr.push({
-      id: 'KR-' + i, // 연결 값 - 대전
-      korName: korName, // 말풍선 이름 명시
-      value: Math.floor(Math.random() * 51), // 정보량
-    });
-    // *** 아래 형태로 데이터 바인딩 부탁드립니다
-    // {
-    //    id: 'KR-30',        // 연결 값 - 대전
-    //    korName: '대전',  // 말풍선 이름 명시
-    //    value: Math.floor(Math.random() * 51), // 정보량
-    // }
+  for (let i = 11; i <= 50; i++) {
+    let korName;
+    if (i == 49) korName = "제주";
+    if (i == 48) korName = "경남";
+    if (i == 47) korName = "경북";
+    if (i == 46) korName = "전남";
+    if (i == 45) korName = "전북";
+    if (i == 44) korName = "충남";
+    if (i == 43) korName = "충북";
+    if (i == 42) korName = "강원";
+    if (i == 41) korName = "경기";
+    if (i == 31) korName = "울산";
+    if (i == 30) korName = "대전";
+    if (i == 29) korName = "광주";
+    if (i == 28) korName = "인천";
+    if (i == 27) korName = "대구";
+    if (i == 26) korName = "부산";
+    if (i == 11) korName = "서울";
+    if (i == 50) korName = "세종";
+    if (korName) {
+      dataArr.push({
+        id: "KR-" + i, // 연결 값 - 대전
+        korName: korName, // 말풍선 이름 명시
+        value: Math.floor(Math.random() * 51), // 정보량
+      });
+      // *** 아래 형태로 데이터 바인딩 부탁드립니다
+      // {
+      //    id: 'KR-30',        // 연결 값 - 대전
+      //    korName: '대전',  // 말풍선 이름 명시
+      //    value: Math.floor(Math.random() * 51), // 정보량
+      // }
+    }
   }
-}
 
-// ---------------------------------페이지 스크립트 영역-------------------------------------
-let samsungFrMapDrildownChart = new rsnCharts.SamsungFrMapDrildownChart($chartDiv, dataArr); // 선언과 동시에 지도 영역 draw
-samsungFrMapDrildownChart.dataBind(dataArr); // 전국지도 데이터 바인딩
+  // ---------------------------------페이지 스크립트 영역-------------------------------------
+  let samsungFrMapDrildownChart = new rsnCharts.SamsungFrMapDrildownChart($chartDiv, dataArr); // 선언과 동시에 지도 영역 draw
+  samsungFrMapDrildownChart.dataBind(dataArr); // 전국지도 데이터 바인딩
 
-// 도시 클릭시 - 지도차트 클릭시 팝업 호출
-samsungFrMapDrildownChart.countryClickEvt(function (_ev) {
-  let clickData = _ev.target.dataItem.dataContext;
-  console.log(clickData);
-  console.log('팝업호출 스크립트 추가 영역');
-});
+  // 도시 클릭시 - 지도차트 클릭시 팝업 호출
+  samsungFrMapDrildownChart.countryClickEvt(function (_ev) {
+    let clickData = _ev.target.dataItem.dataContext;
+    console.log(clickData);
+    console.log("팝업호출 스크립트 추가 영역");
+  });
 }
 /*
 ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■
@@ -307,7 +308,6 @@ samsungFrMapDrildownChart.countryClickEvt(function (_ev) {
    *  uw : 질병일 경우 입력, 질병이 아닌 경우 ''
    *
    */
-  
 }
 /*
 ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■
