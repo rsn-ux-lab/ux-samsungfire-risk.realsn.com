@@ -1,5 +1,5 @@
 
-<!-- reBuild :  20230220143949 -->
+<!-- reBuild :  20230220145001 -->
 
 <!DOCTYPE html>
 <html lang="ko">
@@ -16,13 +16,13 @@
   <link rel="shortcut icon" href="/dashboard/assets/img/favicon.ico" />
 
   <!-- STYLE -->
-    <link rel="stylesheet" href="/dashboard/assets/css/style.css?v=20230220143949">
+    <link rel="stylesheet" href="/dashboard/assets/css/style.css?v=20230220145001">
 
   <!-- JS -->
-  <script src="/dashboard/assets/js/config/files.js?v=20230220143949" defer></script>
-  <script src="/dashboard/assets/js/libs.js?v=20230220143949" defer></script>
-  <script src="/dashboard/assets/js/modules.js?v=20230220143949" defer></script>
-  <script src="/dashboard/assets/js/config/router.js?v=20230220143949" defer></script>
+  <script src="/dashboard/assets/js/config/files.js?v=20230220145001" defer></script>
+  <script src="/dashboard/assets/js/libs.js?v=20230220145001" defer></script>
+  <script src="/dashboard/assets/js/modules.js?v=20230220145001" defer></script>
+  <script src="/dashboard/assets/js/config/router.js?v=20230220145001" defer></script>
 </head>
 
 <body>
@@ -415,7 +415,7 @@
   <main class="setting-area--body mt-16">
     <fieldset class="form-fieldset d-flex w-100" data-fieldset="전국">
       <div class="form-row form-switch form-switch--sm" data-row="전국">
-        <label for="checkboxSenseAll mr-10"><span class="txt w-100">전국</span></label>
+        <label for="checkboxSenseAll"><span class="txt w-100 mr-5">전국</span></label>
         <input id="checkboxSenseAll" class="js-all-input-checked" type="checkbox">
       </div>
       <fieldset class="form-fieldset mb-12" data-fieldset="지역">
@@ -828,41 +828,39 @@
           <header class="l-article-header">
             <button class="btn btn-default rounded-pill js-btn-set-coord" type="button"><span class="txt">축 설정</span></button>
             <aside id="setting-coord" class="aside-setting-coord rounded">
-  <div class="inner">
-    <header class="setting-coord--header"></header>
-    <main class="setting-coord--body">
-      <div class="setting-coord__x-coord d-flex">
-        <span class="txt w-100">X축</span>
-              <fieldset class="form-fieldset ml-4" data-fieldset="X축">
-                <div class="form-row form-fieldset">
-                  <select class="form-select__select">
-                    <option value="0" selected>정보량 증감률</option>
-                    <option value="1">정보량</option>
-                    <option value="2">정보량 비중</option>
-                    <option value="3">정보량 비중 증감률</option>
-                  </select>
-                </div>
-              </fieldset>
-      </div>
-      <div class="setting-coord__y-coord d-flex mt-12">
-        <span class="txt w-100">Y축</span>
-              <fieldset class="form-fieldset ml-4" data-fieldset="Y축">
-                <div class="form-row form-fieldset">
-                  <select class="form-select__select">
-                    <option value="0" selected>정보량</option>
-                    <option value="1">정보량 증감률</option>
-                    <option value="2">정보량 비중</option>
-                    <option value="3">정보량 비중 증감률</option>
-                  </select>
-                </div>
-              </fieldset>
-      </div>
-    </main>
-    <footer class="setting-coord--footer d-flex mt-16">
-      <button class="btn btn-icon rounded" title="새로고침" type="button"><i class="icon-svg icon-svg-refresh" aria-hidden="true"></i></button>
-      <button class="btn btn-secondary rounded ml-8 w-100" type="button">검색</button>
-    </footer>
-  </div>
+  <header class="setting-coord--header"></header>
+  <main class="setting-coord--body">
+    <div class="setting-coord__x-coord d-flex">
+      <span class="txt w-100">X축</span>
+      <fieldset class="form-fieldset ml-4" data-fieldset="X축">
+        <div class="form-row form-fieldset">
+          <select class="form-select__select">
+            <option value="0" selected>정보량 증감률</option>
+            <option value="1">정보량</option>
+            <option value="2">정보량 비중</option>
+            <option value="3">정보량 비중 증감률</option>
+          </select>
+        </div>
+      </fieldset>
+    </div>
+    <div class="setting-coord__y-coord d-flex mt-12">
+      <span class="txt w-100">Y축</span>
+      <fieldset class="form-fieldset ml-4" data-fieldset="Y축">
+        <div class="form-row form-fieldset">
+          <select class="form-select__select">
+            <option value="0" selected>정보량</option>
+            <option value="1">정보량 증감률</option>
+            <option value="2">정보량 비중</option>
+            <option value="3">정보량 비중 증감률</option>
+          </select>
+        </div>
+      </fieldset>
+    </div>
+  </main>
+  <footer class="setting-coord--footer d-flex mt-16">
+    <button class="btn btn-icon rounded" title="새로고침" type="button"><i class="icon-svg icon-svg-refresh" aria-hidden="true"></i></button>
+    <button class="btn btn-secondary rounded ml-8 w-100" type="button">검색</button>
+  </footer>  
 </aside>
           </header>
           <main class="l-article-body mt-32">
