@@ -1,5 +1,5 @@
 
-<!-- reBuild :  20230221211703 -->
+<!-- reBuild :  20230221232018 -->
 
 <!DOCTYPE html>
 <html lang="ko">
@@ -16,13 +16,13 @@
   <link rel="shortcut icon" href="/dashboard/assets/img/favicon.ico" />
 
   <!-- STYLE -->
-    <link rel="stylesheet" href="/dashboard/assets/css/style.css?v=20230221211703">
+    <link rel="stylesheet" href="/dashboard/assets/css/style.css?v=20230221232018">
 
   <!-- JS -->
-  <script src="/dashboard/assets/js/config/files.js?v=20230221211703" defer></script>
-  <script src="/dashboard/assets/js/libs.js?v=20230221211703" defer></script>
-  <script src="/dashboard/assets/js/modules.js?v=20230221211703" defer></script>
-  <script src="/dashboard/assets/js/config/router.js?v=20230221211703" defer></script>
+  <script src="/dashboard/assets/js/config/files.js?v=20230221232018" defer></script>
+  <script src="/dashboard/assets/js/libs.js?v=20230221232018" defer></script>
+  <script src="/dashboard/assets/js/modules.js?v=20230221232018" defer></script>
+  <script src="/dashboard/assets/js/config/router.js?v=20230221232018" defer></script>
 </head>
 
 <body>
@@ -339,8 +339,9 @@
               </div>
             </fieldset>
             <fieldset class="form-fieldset ml-auto" data-fieldset="증감률">
-              <div class="form-row form-select" data-row="y축데이터">
-                <select class="form-select__select">
+              <div class="form-row form-select form-select--border-bottom" data-row="y축데이터">
+                <label for="selectDataQuantity" class="visually-hidden">순위기준</label>
+                <select id="selectDataQuantity">
                   <option value="0" selected>정보량</option>
                   <option value="1">정보량 증감률</option>
                 </select>
@@ -495,10 +496,10 @@
     <button class="btn btn-secondary rounded ml-8 w-100" type="button">검색</button>
   </footer>  
 </aside>
-            <span class="txt ml-auto">순위 기준</span>
-            <fieldset class="form-fieldset ml-16" data-fieldset="Top30키워드순위변화">
-              <div class="form-row form-fieldset">
-                <select class="form-select__select">
+            <fieldset class="form-fieldset ml-auto" data-fieldset="Top30키워드순위변화">
+              <div class="form-row form-select form-select--border-bottom">
+                <label for="selectRank">순위 기준</label>
+                <select id="selectRank">
                   <option value="0" selected>정보량</option>
                   <option value="1">정보량 증감률</option>
                   <option value="2">정보량 비중</option>
@@ -827,38 +828,31 @@
         <article class="l-article"  data-article="Top30키워드분석" data-loading-spinner="false" data-is-empty="false">
           <header class="l-article-header">
             <button class="btn btn-default rounded-pill js-btn-set-coord" type="button"><span class="txt">축 설정</span></button>
-            <aside id="setting-coord" class="aside-setting-coord rounded">
-  <header class="setting-coord--header"></header>
-  <main class="setting-coord--body">
-    <div class="setting-coord__x-coord d-flex">
-      <span class="txt w-100">X축</span>
-      <fieldset class="form-fieldset ml-4" data-fieldset="X축">
-        <div class="form-row form-fieldset">
-          <select class="form-select__select">
-            <option value="0" selected>정보량 증감률</option>
-            <option value="1">정보량</option>
-            <option value="2">정보량 비중</option>
-            <option value="3">정보량 비중 증감률</option>
-          </select>
-        </div>
-      </fieldset>
-    </div>
-    <div class="setting-coord__y-coord d-flex mt-12">
-      <span class="txt w-100">Y축</span>
-      <fieldset class="form-fieldset ml-4" data-fieldset="Y축">
-        <div class="form-row form-fieldset">
-          <select class="form-select__select">
-            <option value="0" selected>정보량</option>
-            <option value="1">정보량 증감률</option>
-            <option value="2">정보량 비중</option>
-            <option value="3">정보량 비중 증감률</option>
-          </select>
-        </div>
-      </fieldset>
-    </div>
+            <aside id="setting-coord" class="aside-setting-coord rounded">  
+  <main class="setting-coord--body">      
+    <fieldset class="form-fieldset d-grid" data-fieldset="XY축" data-select-index>
+      <div class="form-row form-select form-select--border-bottom mb-10">
+        <label for="asideSettingCoord1" class="pl-0 mr-10">X축</label>
+        <select id="asideSettingCoord1">
+          <option value="0" selected>정보량 증감률</option>
+          <option value="1">정보량</option>
+          <option value="2">정보량 비중</option>
+          <option value="3">정보량 비중 증감률</option>
+        </select>
+      </div>
+      <div class="form-row form-select form-select--border-bottom">
+        <label for="asideSettingCoord2" class="pl-0 mr-10">Y축</label>
+        <select id="asideSettingCoord2">
+          <option value="0" selected>정보량</option>
+          <option value="1">정보량 증감률</option>
+          <option value="2">정보량 비중</option>
+          <option value="3">정보량 비중 증감률</option>
+        </select>
+      </div>
+    </fieldset>       
   </main>
   <footer class="setting-coord--footer d-flex mt-16">
-    <button class="btn btn-icon rounded" title="새로고침" type="button"><i class="icon-svg icon-svg-refresh" aria-hidden="true"></i></button>
+    <button class="btn btn-icon rounded"data-button="새로고침"  title="새로고침"  type="button"><i class="icon-svg icon-svg-refresh" aria-hidden="true"></i></button>
     <button class="btn btn-secondary rounded ml-8 w-100" type="button">검색</button>
   </footer>  
 </aside>
@@ -1230,9 +1224,9 @@
               </div>
             </fieldset>
             <fieldset class="form-fieldset d-flex align-items-center ml-auto" data-fieldset="Top30키워드지역">
-              <p class="form-fieldset__title mr-8">순위 기준</p>
-              <div class="form-row form-select">
-                <select class="form-select__select">
+              <div class="form-row form-select form-select--border-bottom">
+                <label for="selectKeywordArea">순위기준</label>
+                <select id="selectKeywordArea">
                   <option value="0" selected>정보량</option>
                   <option value="1">정보량 증감률</option>
                   <option value="2">정보량 비중</option>

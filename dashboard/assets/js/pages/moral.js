@@ -196,12 +196,14 @@
    *  event : form 요소 초기화
    *
    */
-  // const $section = document.querySelector("[data-section=Top30키워드분석]");
-  // const $fieldset = $section.querySelector("[data-select-index]");
-  // const $btnRefresh = $section.querySelector("[data-button=새로고침]");
-  // $btnRefresh.addEventListener("click", (e) => {
-  //   $fieldset.setAttribute("data-select-index", "");
-  // });
+
+  const $section = document.querySelector("[data-section=Top30키워드분석]");
+  const $fieldset = $section.querySelector("[data-select-index]");
+  const $btnRefresh = $section.querySelector("[data-button=새로고침]");
+
+  $btnRefresh.addEventListener("click", (e) => {
+    $fieldset.setAttribute("data-select-index", "");
+  });
 }
 /*
 ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■
