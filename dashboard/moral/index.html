@@ -1,5 +1,5 @@
 
-<!-- reBuild :  20230221163835 -->
+<!-- reBuild :  20230221180346 -->
 
 <!DOCTYPE html>
 <html lang="ko">
@@ -16,13 +16,13 @@
   <link rel="shortcut icon" href="/dashboard/assets/img/favicon.ico" />
 
   <!-- STYLE -->
-    <link rel="stylesheet" href="/dashboard/assets/css/style.css?v=20230221163835">
+    <link rel="stylesheet" href="/dashboard/assets/css/style.css?v=20230221180346">
 
   <!-- JS -->
-  <script src="/dashboard/assets/js/config/files.js?v=20230221163835" defer></script>
-  <script src="/dashboard/assets/js/libs.js?v=20230221163835" defer></script>
-  <script src="/dashboard/assets/js/modules.js?v=20230221163835" defer></script>
-  <script src="/dashboard/assets/js/config/router.js?v=20230221163835" defer></script>
+  <script src="/dashboard/assets/js/config/files.js?v=20230221180346" defer></script>
+  <script src="/dashboard/assets/js/libs.js?v=20230221180346" defer></script>
+  <script src="/dashboard/assets/js/modules.js?v=20230221180346" defer></script>
+  <script src="/dashboard/assets/js/config/router.js?v=20230221180346" defer></script>
 </head>
 
 <body>
@@ -368,7 +368,7 @@
             </fieldset>
             <fieldset class="form-fieldset d-inline-flex ml-12" data-fieldset="차트스위치">
               <div class="form-row form-switch-button tab-nav" data-row="막대">
-                <input type="radio" id="radioSwitchChart1"  name="radioSwitchChart" checked>
+                <input type="radio" id="radioSwitchChart1"  name="radioSwitchChart">
                 <label for="radioSwitchChart1">
                   <i class="icon-svg icon-svg-chart-candle"></i>
                 </label>
@@ -1007,14 +1007,14 @@
   <td class="text-center" data-table-type="질병"><div class="position-relative">십자인대<button class="c-table--click-menu"><i class="icon-svg-click-menu"></i></button></div></td>
   <td class="text-center">질병</td>
   <td class="text-end"><span class="c-table--open__related-pop" onclick="$.modal({isExist: true, className: 'data-table--related'});">2,023</span></td>
-  <td class="text-end"><span class="percent"><i class="icon-svg-triangle-up" title="상승"></i>000.0</span></td>
+  <td class="text-end"><span class="fluc__new">New</span></td>
   </tr>
 <tr>
   <td class="text-center">5</td>
   <td class="text-center" data-table-type="질병"><div class="position-relative">백내장<button class="c-table--click-menu"><i class="icon-svg-click-menu"></i></button></div></td>
   <td class="text-center">질병</td>
   <td class="text-end"><span class="c-table--open__related-pop" onclick="$.modal({isExist: true, className: 'data-table--related'});">2,023</span></td>
-  <td class="text-end"><span class="percent"><i class="icon-svg-triangle-up" title="상승"></i>000.0</span></td>
+  <td class="text-end"><span class="fluc__new">New</span></td>
   </tr>
 <tr>
   <td class="text-center">6</td>
@@ -1221,7 +1221,7 @@
           <header class="l-article-header d-flex">
             <fieldset class="form-fieldset d-inline-flex" data-fieldset="키워드n지역">
               <div class="form-row form-switch-button tab-nav" data-row="키워드">
-                <input id="radioKeywordArea1" name="radioKeywordArea" type="radio" checked />
+                <input id="radioKeywordArea1" name="radioKeywordArea" type="radio" />
                 <label for="radioKeywordArea1"><span class="txt">키워드</span></label>
               </div>
               <div class="form-row form-switch-button tab-nav" data-row="지역">
@@ -1454,22 +1454,28 @@
 <article class="l-article tab-slide p-20 bg-f4f4f4" data-article="키워드" data-loading-spinner="false" data-is-empty="false">
   <header class="l-article-header">
     <h4 class="l-article-header__title">지역별 현황 -<i class="c-badge js-toggle-label ml-12">다초점렌즈</i></h4>
-    <fieldset class="form-fieldset d-inline-flex ml-auto" data-fieldset="차트n테이블">
-      <div class="form-row form-switch-button tab-nav" data-row="테이블">
-        <input type="radio" id="radioSwitchTopKeyword1"  name="radioSwitchTopKeyword" checked>
+    <fieldset class="form-fieldset d-inline-flex ml-auto" data-fieldset="차트n테이블" data-tab-nav-index="1">
+      <div class="form-row form-switch-button tab-nav " data-row="차트">
+        <input type="radio" id="radioSwitchTopKeyword1"  name="radioSwitchTopKeyword">
         <label for="radioSwitchTopKeyword1">
-          <i class="icon-svg icon-svg-normal-board"></i>
+          <i class="icon-svg icon-svg-chart-map"></i>
         </label>
       </div>
-      <div class="form-row form-switch-button tab-nav" data-row="차트">
+      <div class="form-row form-switch-button tab-nav" data-row="테이블">
         <input type="radio" id="radioSwitchTopKeyword2"  name="radioSwitchTopKeyword">
         <label for="radioSwitchTopKeyword2">
-          <i class="icon-svg icon-svg-chart-map"></i>
+          <i class="icon-svg icon-svg-normal-board"></i>
         </label>
       </div>
     </fieldset>
   </header>
-  <main class="l-article-body pt-20">    
+  <main class="l-article-body pt-20">
+    <!-- tab-slide-키워드__tab-slide-차트 -->
+    <div class="js-chart tab-slide h-100">
+      <h1 class="fs-1">전국지도 차트 영역</h1>
+    </div>
+    <!-- // tab-slide-키워드__tab-slide-차트 -->
+
     <!-- tab-slide-키워드__tab-slide-테이블 -->
     <div class="tab-slide position-relative">
       <div class="scroll-container-y position-absolute translate-middle-x border-bottom" style="width: 41rem;">
@@ -1643,12 +1649,6 @@
       </div>
     </div>
     <!-- tab-slide-키워드__tab-slide-테이블 -->
-
-    <!-- tab-slide-키워드__tab-slide-차트 -->
-    <div class="js-chart tab-slide h-100">
-      <h1 class="fs-1">전국지도 차트 영역</h1>
-    </div>
-    <!-- // tab-slide-키워드__tab-slide-차트 -->
   </main>
 </article>
 <!-- // tab-slide-키워드 -->
@@ -1868,7 +1868,7 @@
     <h4 class="l-article-header__title">키워드 현황 -<i class="c-badge js-toggle-label ml-12">서울시 강남구</i></h4>
     <fieldset class="form-fieldset d-inline-flex ml-auto" data-fieldset="차트n테이블">
       <div class="form-row form-switch-button tab-nav" data-row="차트">
-        <input type="radio" id="radioSwitchTopLocal1"  name="radioSwitchTopLocal" checked>
+        <input type="radio" id="radioSwitchTopLocal1"  name="radioSwitchTopLocal">
         <label for="radioSwitchTopLocal1">
           <i class="icon-svg icon-svg-chart-word-cloud"></i>
         </label>

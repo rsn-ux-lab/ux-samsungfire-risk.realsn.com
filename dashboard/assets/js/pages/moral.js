@@ -7,9 +7,9 @@
    *
    */
 
-  const $section = document.querySelector('[data-section=상단검색영역]');
-  const $datepicker = $section.querySelector('.ui_datepickers .grps');
-  const $inpFirst = $datepicker.childNodes.item(0).querySelector('input');
+  const $section = document.querySelector("[data-section=상단검색영역]");
+  const $datepicker = $section.querySelector(".ui_datepickers .grps");
+  const $inpFirst = $datepicker.childNodes.item(0).querySelector("input");
 
   $inpFirst.click();
 }
@@ -25,16 +25,16 @@
    *
    */
 
-  const $section = document.querySelector('[data-section=상단검색영역]');
-  const $article = $section.querySelector('[data-article=검색조건]');
-  const $fieldsets = $article.querySelectorAll('[data-checkbox-index]');
-  const $datepicker = $section.querySelector('.ui_datepickers .grps');
-  const $inpFirst = $datepicker.childNodes.item(0).querySelector('input');
-  const $btnRefresh = $section.querySelector('[data-button=새로고침]');
+  const $section = document.querySelector("[data-section=상단검색영역]");
+  const $article = $section.querySelector("[data-article=검색조건]");
+  const $fieldsets = $article.querySelectorAll("[data-checkbox-index]");
+  const $datepicker = $section.querySelector(".ui_datepickers .grps");
+  const $inpFirst = $datepicker.childNodes.item(0).querySelector("input");
+  const $btnRefresh = $section.querySelector("[data-button=새로고침]");
 
-  $btnRefresh.addEventListener('click', (e) => {
+  $btnRefresh.addEventListener("click", (e) => {
     $inpFirst.click();
-    $fieldsets.forEach((_$el) => _$el.setAttribute('data-checkbox-index', ''));
+    $fieldsets.forEach((_$el) => _$el.setAttribute("data-checkbox-index", ""));
   });
 }
 /*
@@ -49,8 +49,8 @@
    *
    */
 
-  const $wrapper = document.querySelector('[data-section=정보량추이] [data-article=정보량추이차트] .l-article-body');
-  const $nav = document.querySelector('[data-section=정보량추이] [data-article=정보량추이차트] [data-fieldset=차트스위치]');
+  const $wrapper = document.querySelector("[data-section=정보량추이] [data-article=정보량추이차트] .l-article-body");
+  const $nav = document.querySelector("[data-section=정보량추이] [data-article=정보량추이차트] [data-fieldset=차트스위치]");
   const option = {
     autoHeight: true,
   };
@@ -80,7 +80,7 @@
    *
    */
   const $section = document.querySelector('[data-article="정보량추이차트"]');
-  const $chartDiv = $section.querySelector('.js-chart2');
+  const $chartDiv = $section.querySelector(".js-chart2");
 
   // AMchart Loader
   const Moral1stLineChart = new rsnCharts.Moral1stLineChart($chartDiv);
@@ -88,7 +88,7 @@
     legend: true,
     useGraphSettings: true,
   };
-  let categorys = ['블로그', '카페'];
+  let categorys = ["블로그", "카페"];
   // prettier-ignore
   let datas = [
      { category: "2022-10", "column-1": 500, "column-2": 600, },
@@ -101,7 +101,7 @@
 
   // init
   Moral1stLineChart.reDataBinding(datas, categorys); // 데이터 변경시킬때
-  Moral1stLineChart.reColoring(['#87C67C', '#F2D301']); // 컬러세팅
+  Moral1stLineChart.reColoring(["#87C67C", "#F2D301"]); // 컬러세팅
 }
 /*
 ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■
@@ -115,10 +115,12 @@
    *
    */
 
-  document.querySelector('.js-btn-set-area').addEventListener('click', (e) => {
-    e.currentTarget.classList.toggle('btn-default--is-active');
+  document.querySelector(".js-btn-set-area").addEventListener("click", (e) => {
+    e.currentTarget.classList.toggle("btn-default--is-active");
     const $popup = e.currentTarget.nextElementSibling;
-    e.currentTarget.classList.contains('btn-default--is-active') ? $popup.style.setProperty('visibility', 'visible') : $popup.style.setProperty('visibility', 'hidden');
+    e.currentTarget.classList.contains("btn-default--is-active")
+      ? $popup.style.setProperty("visibility", "visible")
+      : $popup.style.setProperty("visibility", "hidden");
   });
 }
 /*
@@ -133,12 +135,12 @@
    *
    */
 
-  const $section = document.querySelector('[data-section=Top30키워드순위변화]');
-  const $fieldset = $section.querySelector('[data-checkbox-index]');
-  const $btnRefresh = $section.querySelector('[data-button=새로고침]');
+  const $section = document.querySelector("[data-section=Top30키워드순위변화]");
+  const $fieldset = $section.querySelector("[data-checkbox-index]");
+  const $btnRefresh = $section.querySelector("[data-button=새로고침]");
 
-  $btnRefresh.addEventListener('click', (e) => {
-    $fieldset.setAttribute('data-checkbox-index', '');
+  $btnRefresh.addEventListener("click", (e) => {
+    $fieldset.setAttribute("data-checkbox-index", "");
   });
 }
 /*
@@ -153,10 +155,12 @@
    *
    */
 
-  document.querySelector('.js-btn-set-coord').addEventListener('click', (e) => {
-    e.currentTarget.classList.toggle('btn-default--is-active');
+  document.querySelector(".js-btn-set-coord").addEventListener("click", (e) => {
+    e.currentTarget.classList.toggle("btn-default--is-active");
     const $popup = e.currentTarget.nextElementSibling;
-    e.currentTarget.classList.contains('btn-default--is-active') ? $popup.style.setProperty('visibility', 'visible') : $popup.style.setProperty('visibility', 'hidden');
+    e.currentTarget.classList.contains("btn-default--is-active")
+      ? $popup.style.setProperty("visibility", "visible")
+      : $popup.style.setProperty("visibility", "hidden");
   });
 }
 /*
@@ -220,7 +224,7 @@
    *
    */
   const $section = document.querySelector('[data-article="정보량추이-2depth"]');
-  const $chartDiv = $section.querySelector('.js-chart');
+  const $chartDiv = $section.querySelector(".js-chart");
 
   // AMchart Loader
   const Moral2ndLineChart = new rsnCharts.Moral2ndLineChart($chartDiv);
@@ -228,7 +232,7 @@
     legend: true,
     useGraphSettings: true,
   };
-  let categorys = ['정보량 증감률', '정보량'];
+  let categorys = ["정보량 증감률", "정보량"];
   // prettier-ignore
   let datas = [
     { category: "2022-10", "column-1": 9800, "column-2": 25, },
@@ -241,7 +245,7 @@
 
   // init
   Moral2ndLineChart.reDataBinding(datas, categorys); // 데이터 변경시킬때
-  Moral2ndLineChart.reColoring(['#B8CF5A', '#739EDE']); // 컬러세팅
+  Moral2ndLineChart.reColoring(["#B8CF5A", "#739EDE"]); // 컬러세팅
 }
 /*
 ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■
@@ -274,8 +278,8 @@
    *
    */
 
-  const $slideWrapper = document.querySelector('[data-section=Top30키워드지역] [data-article=테이블n차트] > .l-section-body');
-  const $navWrapper = document.querySelector('[data-section=Top30키워드지역] [data-fieldset=키워드n지역]');
+  const $slideWrapper = document.querySelector("[data-section=Top30키워드지역] [data-article=테이블n차트] > .l-section-body");
+  const $navWrapper = document.querySelector("[data-section=Top30키워드지역] [data-fieldset=키워드n지역]");
   const tab = new window.Tab($slideWrapper, $navWrapper);
 }
 /*
@@ -290,9 +294,11 @@
    *
    */
 
-  const $slideWrapper = document.querySelector('[data-section=Top30키워드지역] [data-article=키워드] .l-article-body');
-  const $navWrapper = document.querySelector('[data-section=Top30키워드지역] [data-article=키워드] [data-fieldset=차트n테이블]');
+  const $slideWrapper = document.querySelector("[data-section=Top30키워드지역] [data-article=키워드] .l-article-body");
+  const $navWrapper = document.querySelector("[data-section=Top30키워드지역] [data-article=키워드] [data-fieldset=차트n테이블]");
   const tab = new window.Tab($slideWrapper, $navWrapper);
+
+  tab.activeIdx = 1; // index 강제변경
 }
 /*
 ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■
@@ -306,8 +312,8 @@
    *
    */
 
-  const $slideWrapper = document.querySelector('[data-section=Top30키워드지역] [data-article=지역] .l-article-body');
-  const $navWrapper = document.querySelector('[data-section=Top30키워드지역] [data-article=지역] [data-fieldset=차트n테이블]');
+  const $slideWrapper = document.querySelector("[data-section=Top30키워드지역] [data-article=지역] .l-article-body");
+  const $navWrapper = document.querySelector("[data-section=Top30키워드지역] [data-article=지역] [data-fieldset=차트n테이블]");
   const tab = new window.Tab($slideWrapper, $navWrapper);
 }
 /*
@@ -324,8 +330,8 @@
    */
   const $section = document.querySelector("[data-section='Top30키워드지역']");
   const $article = $section.querySelector("[data-article='키워드']");
-  const $chartDiv = $article.querySelector('.js-chart');
-  let $h1 = $article.querySelector('h1');
+  const $chartDiv = $article.querySelector(".js-chart");
+  let $h1 = $article.querySelector("h1");
   $chartDiv.removeChild($h1);
   /**
    *
@@ -338,105 +344,105 @@
   let dataArr = [];
   let cityDataArr = [
     {
-      id: '125', // 연결 값 - 원주
+      id: "125", // 연결 값 - 원주
       value: Math.floor(Math.random() * 51), //정보량
     },
     {
-      id: '139', // 연결 값 - 인제
+      id: "139", // 연결 값 - 인제
       value: Math.floor(Math.random() * 51), //정보량
     },
     {
-      id: '138', // 양구
+      id: "138", // 양구
       value: Math.floor(Math.random() * 51), //정보량
     },
     {
-      id: '137', // 화천
+      id: "137", // 화천
       value: Math.floor(Math.random() * 51), //정보량
     },
     {
-      id: '136', // 철원
+      id: "136", // 철원
       value: Math.floor(Math.random() * 51), //정보량
     },
     {
-      id: '124', // 춘천
+      id: "124", // 춘천
       value: Math.floor(Math.random() * 51), //정보량
     },
     {
-      id: '131', // 흥천
+      id: "131", // 흥천
       value: Math.floor(Math.random() * 51), //정보량
     },
     {
-      id: '141', // 양양
+      id: "141", // 양양
       value: Math.floor(Math.random() * 51), //정보량
     },
     {
-      id: '132', // 횡성
+      id: "132", // 횡성
       value: Math.floor(Math.random() * 51), //정보량
     },
     {
-      id: '129', // 속초
+      id: "129", // 속초
       value: Math.floor(Math.random() * 51), //정보량
     },
     {
-      id: '129', // 속초
+      id: "129", // 속초
       value: Math.floor(Math.random() * 51), //정보량
     },
     {
-      id: '140', // 고성
+      id: "140", // 고성
       value: Math.floor(Math.random() * 51), //정보량
     },
     {
-      id: '126', // 강릉
+      id: "126", // 강릉
       value: Math.floor(Math.random() * 51), //정보량
     },
     {
-      id: '134', // 평창
+      id: "134", // 평창
       value: Math.floor(Math.random() * 51), //정보량
     },
     {
-      id: '135', // 정선
+      id: "135", // 정선
       value: Math.floor(Math.random() * 51), //정보량
     },
     {
-      id: '133', // 영월
+      id: "133", // 영월
       value: Math.floor(Math.random() * 51), //정보량
     },
     {
-      id: '130', // 삼척
+      id: "130", // 삼척
       value: Math.floor(Math.random() * 51), //정보량
     },
     {
-      id: '128', // 동해
+      id: "128", // 동해
       value: Math.floor(Math.random() * 51), //정보량
     },
     {
-      id: '127', // 태백
+      id: "127", // 태백
       value: Math.floor(Math.random() * 51), //정보량
     },
   ];
 
   for (let i = 11; i <= 50; i++) {
     let korName;
-    if (i == 49) korName = '제주';
-    if (i == 48) korName = '경남';
-    if (i == 47) korName = '경북';
-    if (i == 46) korName = '전남';
-    if (i == 45) korName = '전북';
-    if (i == 44) korName = '충남';
-    if (i == 43) korName = '충북';
-    if (i == 42) korName = '강원';
-    if (i == 41) korName = '경기';
-    if (i == 31) korName = '울산';
-    if (i == 30) korName = '대전';
-    if (i == 29) korName = '광주';
-    if (i == 28) korName = '인천';
-    if (i == 27) korName = '대구';
-    if (i == 26) korName = '부산';
-    if (i == 11) korName = '서울';
-    if (i == 50) korName = '세종';
+    if (i == 49) korName = "제주";
+    if (i == 48) korName = "경남";
+    if (i == 47) korName = "경북";
+    if (i == 46) korName = "전남";
+    if (i == 45) korName = "전북";
+    if (i == 44) korName = "충남";
+    if (i == 43) korName = "충북";
+    if (i == 42) korName = "강원";
+    if (i == 41) korName = "경기";
+    if (i == 31) korName = "울산";
+    if (i == 30) korName = "대전";
+    if (i == 29) korName = "광주";
+    if (i == 28) korName = "인천";
+    if (i == 27) korName = "대구";
+    if (i == 26) korName = "부산";
+    if (i == 11) korName = "서울";
+    if (i == 50) korName = "세종";
     if (korName) {
       dataArr.push({
-        id: 'KR-' + i, // 연결 값 - 대전
+        id: "KR-" + i, // 연결 값 - 대전
         korName: korName, // 말풍선 이름 명시
         value: Math.floor(Math.random() * 51), // 정보량
       });
@@ -463,7 +469,7 @@
   // 시군구 클릭시 - 데이터 + 팝업 호출 영역
   samsungFrMapDrildownChart.cityClickEvt = function (_target) {
     console.log(_target);
-    console.log('팝업호출 스크립트 추가 영역');
+    console.log("팝업호출 스크립트 추가 영역");
   };
 }
 /*
