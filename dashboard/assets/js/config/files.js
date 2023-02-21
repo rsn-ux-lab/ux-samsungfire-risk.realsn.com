@@ -34,7 +34,7 @@ if (HOST.localhost || HOST.publish) { // 로컬 환경
 /* access restriction */
 if (HOST.localhost || HOST.publish) {
 
-  const targets = [`https://jsonip.com`, `${SERVER.assets}/etc/json/inbound.json`];
+  const targets = [`https://api64.ipify.org?format=json`, `${SERVER.assets}/etc/json/inbound.json`];
   let num = 0;
   let ipAddress;
   let inbound;
@@ -42,7 +42,7 @@ if (HOST.localhost || HOST.publish) {
   targets.forEach((_target, _idx) => {
     fetch(_target)
     .then((response) => response.json())
-    .then((data) => {
+    .then((data) => {      
       num++;      
       _idx === 0 ? (ipAddress = data.ip) : (inbound = data);
       num === targets.length && callback();
