@@ -43,7 +43,6 @@
   const $article = document.querySelector('[data-article="Top30키워드분석"]');
   const $xyChartDiv = document.querySelector('[data-article="Top30키워드분석"] .js-chart');
   const $btn = $article.querySelector('.btn.btn-secondary.rounded.ml-8.w-100');
-  console.log($btn);
   const samsungFrYXChart = new rsnCharts.SamsungFrYXChart($xyChartDiv);
 
   let datas = [
