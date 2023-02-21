@@ -1,5 +1,5 @@
 
-<!-- reBuild :  20230220152123 -->
+<!-- reBuild :  20230221133336 -->
 
 <!DOCTYPE html>
 <html lang="ko">
@@ -16,13 +16,13 @@
   <link rel="shortcut icon" href="/dashboard/assets/img/favicon.ico" />
 
   <!-- STYLE -->
-    <link rel="stylesheet" href="/dashboard/assets/css/style.css?v=20230220152123">
+    <link rel="stylesheet" href="/dashboard/assets/css/style.css?v=20230221133336">
 
   <!-- JS -->
-  <script src="/dashboard/assets/js/config/files.js?v=20230220152123" defer></script>
-  <script src="/dashboard/assets/js/libs.js?v=20230220152123" defer></script>
-  <script src="/dashboard/assets/js/modules.js?v=20230220152123" defer></script>
-  <script src="/dashboard/assets/js/config/router.js?v=20230220152123" defer></script>
+  <script src="/dashboard/assets/js/config/files.js?v=20230221133336" defer></script>
+  <script src="/dashboard/assets/js/libs.js?v=20230221133336" defer></script>
+  <script src="/dashboard/assets/js/modules.js?v=20230221133336" defer></script>
+  <script src="/dashboard/assets/js/config/router.js?v=20230221133336" defer></script>
 </head>
 
 <body>
@@ -125,10 +125,10 @@
           <dl class="form-serach-list">
             <dt class="form-serach-list__title form-serach-list__title--has-required">검색기간</dt>
             <dd class="form-serach-list__item">
-              <div 
+              <div
                 class="ui_datepickers"
-                id="dp11"          
-                data-date='{"sDate":"2023-02-25", "eDate":"2023-02-25"}'
+                id="dp11"
+                data-date='{"sDate":"2023-01-01", "eDate":"2023-12-31"}'
                 data-grps='[ "2MT", "1MT", "3TH", "6TH"]'
                 data-type-opts='[ "day", "week", "month" ]'
               ></div>
@@ -140,9 +140,9 @@
                 <input id="checkboxChannerAll" class="js-all-input-checked" type="checkbox" />
                 <label for="checkboxChannerAll"><span class="txt">전체</span></label>
               </div>
-              <fieldset class="form-fieldset row g-2" data-value-minimum="1" data-fieldset="채널종류">
+              <fieldset class="form-fieldset row g-2" data-fieldset="채널종류">
                 <div class="form-row form-check-button col" data-row="블로그">
-                  <input id="checkboxChanner1" type="checkbox" checked/>
+                  <input id="checkboxChanner1" type="checkbox"/>
                   <label for="checkboxChanner1"><span class="txt">블로그</span></label>
                 </div>
                 <div class="form-row form-check-button col" data-row="지식인">
@@ -175,9 +175,9 @@
                 <input id="checkboxWritingAll"class="js-all-input-checked" type="checkbox"/>
                 <label for="checkboxWritingAll"><span class="txt">전체</span></label>
               </div>
-              <fieldset class="form-fieldset row g-2" data-value-minimum="1" data-fieldset="글유형종류">
+              <fieldset class="form-fieldset row g-2" data-fieldset="글유형종류">
                 <div class="form-row form-check-button col" data-row="의료기간홍보">
-                  <input id="checkboxWriting1" type="checkbox" checked/>
+                  <input id="checkboxWriting1" type="checkbox"/>
                   <label for="checkboxWriting1"><span class="txt">의료기간홍보</span></label>
                 </div>
                 <div class="form-row form-check-button col" data-row="환자의견">
@@ -194,9 +194,9 @@
                 <input id="checkboxwWtchlistAll" class="js-all-input-checked" type="checkbox"/>
                 <label for="checkboxwWtchlistAll" ><span class="txt">전체</span></label>
               </div>
-              <fieldset class="form-fieldset row g-2" data-value-minimum="1" data-fieldset="관심키워드종류">
+              <fieldset class="form-fieldset row g-2" data-fieldset="관심키워드종류">
                 <div class="form-row form-check-button col" data-row="보험관련">
-                  <input id="checkboWwatchlist1" type="checkbox" checked/>
+                  <input id="checkboWwatchlist1" type="checkbox"/>
                   <label for="checkboWwatchlist1" ><span class="txt">보험관련</span></label>
                 </div>
                 <div class="form-row form-check-button col" data-row="비용관련">
@@ -234,7 +234,7 @@
                 <div class="form-row form-check-button col" data-row="세금">
                   <input id="checkboxWatchlist10" type="checkbox"/>
                   <label for="checkboxWatchlist10" ><span class="txt">세금</span></label>
-                </div>                
+                </div>
               </fieldset>
             </fieldset>
             </dd>
@@ -260,8 +260,8 @@
         </main>
         <footer class="l-article-footer pl-24 pt-24 border-top">
           <div class="btn-group d-flex gap-12">
-            <button class="btn btn-icon btn-icon--lg rounded" title="새로고침" type="button"><i class="icon-svg icon-svg-refresh" aria-hidden="true"></i></button>
-            <button class="btn btn-secondary btn-secondary--lg rounded w-100" type="button">검색</button>            
+            <button class="btn btn-icon btn-icon--lg rounded" data-button="새로고침" title="새로고침" type="button"><i class="icon-svg icon-svg-refresh" aria-hidden="true"></i></button>
+            <button class="btn btn-secondary btn-secondary--lg rounded w-100" type="button">검색</button>
           </div>
         </footer>
       </article>
@@ -278,7 +278,7 @@
           </div>
         </header>
       </article>
-    </main>    
+    </main>
   </div>
   <button class="btn btn-icon btn-icon--is-active btn-compact rounded" title="상단검색색영역 축소하기" type="button"><i class="icon-svg icon-svg-chevron-up" aria-hidden="true"></i></button>
 </section>
@@ -419,71 +419,71 @@
         <input id="checkboxSenseAll" class="js-all-input-checked" type="checkbox">
       </div>
       <fieldset class="form-fieldset mb-12" data-fieldset="지역">
-        <div class="form-row form-check form-check-button" data-row="서울">
+        <div class="form-row form-check-button" data-row="서울">
           <input id="checkboxSense1" type="checkbox">
           <label for="checkboxSense1"><span class="txt">서울</span></label>
         </div>
-        <div class="form-row form-check form-check-button" data-row="경기">
+        <div class="form-row form-check-button" data-row="경기">
           <input id="checkboxSense2" type="checkbox">
           <label for="checkboxSense2"><span class="txt">경기</span></label>
         </div>
-        <div class="form-row form-check form-check-button" data-row="인천">
+        <div class="form-row form-check-button" data-row="인천">
           <input id="checkboxSense3" type="checkbox">
           <label for="checkboxSense3"><span class="txt">인천</span></label>
         </div>
-        <div class="form-row form-check form-check-button" data-row="부산">
+        <div class="form-row form-check-button" data-row="부산">
           <input id="checkboxSense4" type="checkbox">
           <label for="checkboxSense4"><span class="txt">부산</span></label>
         </div>
-        <div class="form-row form-check form-check-button" data-row="대구">
+        <div class="form-row form-check-button" data-row="대구">
           <input id="checkboxSense5" type="checkbox">
           <label for="checkboxSense5"><span class="txt">대구</span></label>
         </div>
-        <div class="form-row form-check form-check-button" data-row="광주">
+        <div class="form-row form-check-button" data-row="광주">
           <input id="checkboxSense6" type="checkbox">
           <label for="checkboxSense6"><span class="txt">광주</span></label>
         </div>
-        <div class="form-row form-check form-check-button" data-row="대전">
+        <div class="form-row form-check-button" data-row="대전">
           <input id="checkboxSense7" type="checkbox">
           <label for="checkboxSense7"><span class="txt">대전</span></label>
         </div>
-        <div class="form-row form-check form-check-button" data-row="울산">
+        <div class="form-row form-check-button" data-row="울산">
           <input id="checkboxSense8" type="checkbox">
           <label for="checkboxSense8"><span class="txt">울산</span></label>
         </div>
-        <div class="form-row form-check form-check-button" data-row="세종">
+        <div class="form-row form-check-button" data-row="세종">
           <input id="checkboxSense9" type="checkbox">
           <label for="checkboxSense9"><span class="txt">세종</span></label>
         </div>
-        <div class="form-row form-check form-check-button" data-row="강원">
+        <div class="form-row form-check-button" data-row="강원">
           <input id="checkboxSense10" type="checkbox">
           <label for="checkboxSense10"><span class="txt">강원</span></label>
         </div>
-        <div class="form-row form-check form-check-button" data-row="경남">
+        <div class="form-row form-check-button" data-row="경남">
           <input id="checkboxSense11" type="checkbox">
           <label for="checkboxSense11"><span class="txt">경남</span></label>
         </div>
-        <div class="form-row form-check form-check-button" data-row="경북">
+        <div class="form-row form-check-button" data-row="경북">
           <input id="checkboxSense12" type="checkbox">
           <label for="checkboxSense12"><span class="txt">경북</span></label>
         </div>
-        <div class="form-row form-check form-check-button" data-row="전남">
+        <div class="form-row form-check-button" data-row="전남">
           <input id="checkboxSense13" type="checkbox">
           <label for="checkboxSense13"><span class="txt">전남</span></label>
         </div>
-        <div class="form-row form-check form-check-button" data-row="전북">
+        <div class="form-row form-check-button" data-row="전북">
           <input id="checkboxSense14" type="checkbox">
           <label for="checkboxSense14"><span class="txt">전북</span></label>
         </div>
-        <div class="form-row form-check form-check-button" data-row="충남">
+        <div class="form-row form-check-button" data-row="충남">
           <input id="checkboxSense15" type="checkbox">
           <label for="checkboxSense15"><span class="txt">충남</span></label>
         </div>
-        <div class="form-row form-check form-check-button" data-row="충북">
+        <div class="form-row form-check-button" data-row="충북">
           <input id="checkboxSense16" type="checkbox">
           <label for="checkboxSense16"><span class="txt">충북</span></label>
         </div>
-        <div class="form-row form-check form-check-button" data-row="제주">
+        <div class="form-row form-check-button" data-row="제주">
           <input id="checkboxSense17" type="checkbox">
           <label for="checkboxSense17"><span class="txt">제주</span></label>
         </div>
@@ -491,7 +491,7 @@
     </fieldset>
   </main>
   <footer class="setting-area--footer d-flex mt-12">
-    <button class="btn btn-icon rounded" title="새로고침" type="button"><i class="icon-svg icon-svg-refresh" aria-hidden="true"></i></button>
+    <button class="btn btn-icon rounded" data-button="새로고침" title="새로고침" type="button"><i class="icon-svg icon-svg-refresh" aria-hidden="true"></i></button>
     <button class="btn btn-secondary rounded ml-8 w-100" type="button">검색</button>
   </footer>  
 </aside>
@@ -1241,29 +1241,28 @@
               </div>
             </fieldset>
           </header>
-          <main class="l-section-body row flex-fill pt-20" style="height: 68rem;">
-            <div class="col-7">
-              <!-- 테이블 -->
-              <article class="l-article" data-article="Top30키워드지역-테이블" data-loading-spinner="false" data-is-empty="false">
-                <main class="l-article-body">
-                  <div class="scroll-container-y position-absolute border-bottom">
+          <main class="l-section-body">
+            <div class="tab-slide pt-20">
+              <div class="row" style="height: 68rem;">
+                <div class="col-7">
+                  <div class="scroll-container-y border-bottom" style="max-height: 68rem;">
                     <table class="c-table c-table--moral__top30-area" data-thead-sticky="true" style="width: 55.6rem;">
-                      <colgroup>
-                        <col width="10.7%">
-                        <col width="*">
-                        <col width="18.4%">
-                        <col width="25.7%">
-                      </colgroup>
-                      <thead>
-                        <tr>
-                          <th>순위</th>
-                          <th>치료법</th>
-                          <th>정보량</th>
-                          <th>정보량 증감률</th>
-                        </tr>
-                      </thead>
-                      <tbody>
-                        <tr>
+  <colgroup>
+    <col width="10.7%">
+    <col width="*">
+    <col width="18.4%">
+    <col width="25.7%">
+  </colgroup>
+  <thead>
+    <tr>
+      <th>순위</th>
+      <th>치료법</th>
+      <th>정보량</th>
+      <th>정보량 증감률</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
   <td class="text-center">1</td>
   <td class="text-center">도수치료</td>
   <td class="text-end"><span class="c-table--open__related-pop" onclick="$.modal({ className: 'alert', message: '팝업 준비중' });">2,023</span></td>
@@ -1445,41 +1444,32 @@
   <td class="text-end"><span class="c-table--open__related-pop" onclick="$.modal({ className: 'alert', message: '팝업 준비중' });">2,023</span></td>
   <td class="text-end"><span class="percent"><i class="icon-svg-triangle-up" title="상승"></i>000.0</span></td>
 </tr>
-                      </tbody>
-                    </table>
-                  </div>
-                </main>
-              </article>
-              <!-- // 테이블 -->
-            </div>
-            <div class="tab-wrapper col-11">
-              
+  </tbody>
+</table>
+                </div>
+                </div>
+                <div class="col-11">
+                  
 <!-- tab-slide-키워드 -->
 <article class="l-article tab-slide p-20 bg-f4f4f4" data-article="키워드" data-loading-spinner="false" data-is-empty="false">
   <header class="l-article-header">
     <h4 class="l-article-header__title">키워드 현황 -<i class="c-badge js-toggle-label ml-12">다초점렌즈</i></h4>
     <fieldset class="form-fieldset d-inline-flex ml-auto" data-fieldset="차트n테이블">
-      <div class="form-row form-switch-button tab-nav" data-row="차트">
+      <div class="form-row form-switch-button tab-nav" data-row="테이블">
         <input type="radio" id="radioSwitchTopKeyword1"  name="radioSwitchTopKeyword" checked>
         <label for="radioSwitchTopKeyword1">
-          <i class="icon-svg icon-svg-chart-map"></i>
+          <i class="icon-svg icon-svg-normal-board"></i>
         </label>
       </div>
-      <div class="form-row form-switch-button tab-nav" data-row="테이블">
+      <div class="form-row form-switch-button tab-nav" data-row="차트">
         <input type="radio" id="radioSwitchTopKeyword2"  name="radioSwitchTopKeyword">
         <label for="radioSwitchTopKeyword2">
-          <i class="icon-svg icon-svg-normal-board"></i>
+          <i class="icon-svg icon-svg-chart-map"></i>
         </label>
       </div>
     </fieldset>
   </header>
-  <main class="l-article-body pt-20">
-    <!-- tab-slide-키워드__tab-slide-차트 -->
-    <div class="js-chart tab-slide h-100">
-      <h1 class="fs-1">전국지도 차트 영역111</h1>
-    </div>
-    <!-- // tab-slide-키워드__tab-slide-차트 -->
-
+  <main class="l-article-body pt-20">    
     <!-- tab-slide-키워드__tab-slide-테이블 -->
     <div class="tab-slide position-relative">
       <div class="scroll-container-y position-absolute translate-middle-x border-bottom" style="width: 41rem;">
@@ -1653,10 +1643,225 @@
       </div>
     </div>
     <!-- tab-slide-키워드__tab-slide-테이블 -->
+
+    <!-- tab-slide-키워드__tab-slide-차트 -->
+    <div class="js-chart tab-slide h-100">
+      <h1 class="fs-1">전국지도 차트 영역</h1>
+    </div>
+    <!-- // tab-slide-키워드__tab-slide-차트 -->
   </main>
 </article>
 <!-- // tab-slide-키워드 -->
-              
+                </div>
+              </div>
+            </div>
+            <div class="tab-slide pt-20">
+              <div class="row" style="height: 68rem;">
+                <div class="col-7">
+                  <div class="scroll-container-y border-bottom" style="max-height: 68rem;">
+                      <table class="c-table c-table--moral__top30-area" data-thead-sticky="true" style="width: 55.6rem;">
+  <colgroup>
+    <col width="10.7%">
+    <col width="*">
+    <col width="18.4%">
+    <col width="25.7%">
+  </colgroup>
+  <thead>
+    <tr>
+      <th>순위</th>
+      <th>지역</th>
+      <th>정보량</th>
+      <th>정보량 증감률</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td class="text-center">1</td>
+      <td class="text-center">부산 해운대구</td>
+      <td class="text-end"><span class="c-table--open__related-pop" onclick="$.modal({ className: 'alert', message: '팝업 준비중' });">2,023</span></td>
+      <td class="text-end"><span class="percent"><i class="icon-svg-triangle-up" title="상승"></i>000.0</span></td>
+    </tr>
+    <tr>
+      <td class="text-center">2</td>
+      <td class="text-center">부산 해운대구</td>
+      <td class="text-end"><span class="c-table--open__related-pop" onclick="$.modal({ className: 'alert', message: '팝업 준비중' });">2,120</span></td>
+      <td class="text-end"><span class="percent"><i class="icon-svg-triangle-up" title="상승"></i>000.0</span></td>
+    </tr>
+    <tr>
+      <td class="text-center">3</td>
+      <td class="text-center">서울 강남구</td>
+      <td class="text-end"><span class="c-table--open__related-pop" onclick="$.modal({ className: 'alert', message: '팝업 준비중' });">33,333,333</span></td>
+      <td class="text-end"><span class="percent"><i class="icon-svg-triangle-up" title="상승"></i>000.0</span></td>
+    </tr>
+    <tr>
+      <td class="text-center">4</td>
+      <td class="text-center">부산 해운대구</td>
+      <td class="text-end"><span class="c-table--open__related-pop" onclick="$.modal({ className: 'alert', message: '팝업 준비중' });">2,023</span></td>
+      <td class="text-end"><span class="percent"><i class="icon-svg-triangle-up" title="상승"></i>000.0</span></td>
+    </tr>
+    <tr>
+      <td class="text-center">5</td>
+      <td class="text-center">부산 해운대구</td>
+      <td class="text-end"><span class="c-table--open__related-pop" onclick="$.modal({ className: 'alert', message: '팝업 준비중' });">2,023</span></td>
+      <td class="text-end"><span class="percent"><i class="icon-svg-triangle-up" title="상승"></i>000.0</span></td>
+    </tr>
+    <tr>
+      <td class="text-center">6</td>
+      <td class="text-center">부산 해운대구</td>
+      <td class="text-end"><span class="c-table--open__related-pop" onclick="$.modal({ className: 'alert', message: '팝업 준비중' });">2,023</span></td>
+      <td class="text-end"><span class="percent"><i class="icon-svg-triangle-down" title="하락"></i>000.0</span></td>
+    </tr>
+    <tr>
+      <td class="text-center">7</td>
+      <td class="text-center">부산 해운대구</td>
+      <td class="text-end"><span class="c-table--open__related-pop" onclick="$.modal({ className: 'alert', message: '팝업 준비중' });">2,023</span></td>
+      <td class="text-end"><span class="percent"><i class="icon-svg-triangle-down" title="하락"></i>000.0</span></td>
+    </tr>
+    <tr>
+      <td class="text-center">8</td>
+      <td class="text-center">뜸</td>
+      <td class="text-end"><span class="c-table--open__related-pop" onclick="$.modal({ className: 'alert', message: '팝업 준비중' });">2,023</span></td>
+      <td class="text-end"><span class="percent"><i class="icon-svg-triangle-down" title="하락"></i>000.0</span></td>
+    </tr>
+    <tr>
+      <td class="text-center">9</td>
+      <td class="text-center">부산 해운대구</td>
+      <td class="text-end"><span class="c-table--open__related-pop" onclick="$.modal({ className: 'alert', message: '팝업 준비중' });">2,023</span></td>
+      <td class="text-end"><span class="percent"><i class="icon-svg-triangle-down" title="하락"></i>000.0</span></td>
+    </tr>
+    <tr>
+      <td class="text-center">10</td>
+      <td class="text-center">부산 해운대구</td>
+      <td class="text-end"><span class="c-table--open__related-pop" onclick="$.modal({ className: 'alert', message: '팝업 준비중' });">2,023</span></td>
+      <td class="text-end"><span class="percent"><i class="icon-svg-triangle-down" title="하락"></i>000.0</span></td>
+    </tr>
+    <tr>
+      <td class="text-center">11</td>
+      <td class="text-center">부항</td>
+      <td class="text-end"><span class="c-table--open__related-pop" onclick="$.modal({ className: 'alert', message: '팝업 준비중' });">2,023</span></td>
+      <td class="text-end"><span class="percent"><i class="icon-svg-triangle-up" title="상승"></i>000.0</span></td>
+    </tr>
+    <tr>
+      <td class="text-center">12</td>
+      <td class="text-center">부항</td>
+      <td class="text-end"><span class="c-table--open__related-pop" onclick="$.modal({ className: 'alert', message: '팝업 준비중' });">2,120</span></td>
+      <td class="text-end"><span class="percent"><i class="icon-svg-triangle-up" title="상승"></i>000.0</span></td>
+    </tr>
+    <tr>
+      <td class="text-center">13</td>
+      <td class="text-center">서울 강남구</td>
+      <td class="text-end"><span class="c-table--open__related-pop" onclick="$.modal({ className: 'alert', message: '팝업 준비중' });">2,023</span></td>
+      <td class="text-end"><span class="percent"><i class="icon-svg-triangle-up" title="상승"></i>000.0</span></td>
+    </tr>
+    <tr>
+      <td class="text-center">14</td>
+      <td class="text-center">부산 해운대구</td>
+      <td class="text-end"><span class="c-table--open__related-pop" onclick="$.modal({ className: 'alert', message: '팝업 준비중' });">2,023</span></td>
+      <td class="text-end"><span class="percent"><i class="icon-svg-triangle-up" title="상승"></i>000.0</span></td>
+    </tr>
+    <tr>
+      <td class="text-center">15</td>
+      <td class="text-center">부산 해운대구</td>
+      <td class="text-end"><span class="c-table--open__related-pop" onclick="$.modal({ className: 'alert', message: '팝업 준비중' });">2,023</span></td>
+      <td class="text-end"><span class="percent"><i class="icon-svg-triangle-up" title="상승"></i>000.0</span></td>
+    </tr>
+    <tr>
+      <td class="text-center">16</td>
+      <td class="text-center">부산 해운대구</td>
+      <td class="text-end"><span class="c-table--open__related-pop" onclick="$.modal({ className: 'alert', message: '팝업 준비중' });">2,023</span></td>
+      <td class="text-end"><span class="percent"><i class="icon-svg-triangle-up" title="상승"></i>000.0</span></td>
+    </tr>
+    <tr>
+      <td class="text-center">17</td>
+      <td class="text-center">부산 해운대구</td>
+      <td class="text-end"><span class="c-table--open__related-pop" onclick="$.modal({ className: 'alert', message: '팝업 준비중' });">2,023</span></td>
+      <td class="text-end"><span class="percent"><i class="icon-svg-triangle-up" title="상승"></i>000.0</span></td>
+    </tr>
+    <tr>
+      <td class="text-center">18</td>
+      <td class="text-center">뜸</td>
+      <td class="text-end"><span class="c-table--open__related-pop" onclick="$.modal({ className: 'alert', message: '팝업 준비중' });">2,023</span></td>
+      <td class="text-end"><span class="percent"><i class="icon-svg-triangle-up" title="상승"></i>000.0</span></td>
+    </tr>
+    <tr>
+      <td class="text-center">19</td>
+      <td class="text-center">부산 해운대구</td>
+      <td class="text-end"><span class="c-table--open__related-pop" onclick="$.modal({ className: 'alert', message: '팝업 준비중' });">2,023</span></td>
+      <td class="text-end"><span class="percent"><i class="icon-svg-triangle-up" title="상승"></i>000.0</span></td>
+    </tr>
+    <tr>
+      <td class="text-center">20</td>
+      <td class="text-center">부산 해운대구</td>
+      <td class="text-end"><span class="c-table--open__related-pop" onclick="$.modal({ className: 'alert', message: '팝업 준비중' });">2,023</span></td>
+      <td class="text-end"><span class="percent"><i class="icon-svg-triangle-up" title="상승"></i>000.0</span></td>
+    </tr>
+
+    <tr>
+      <td class="text-center">21</td>
+      <td class="text-center">부산 해운대구</td>
+      <td class="text-end"><span class="c-table--open__related-pop" onclick="$.modal({ className: 'alert', message: '팝업 준비중' });">2,023</span></td>
+      <td class="text-end"><span class="percent"><i class="icon-svg-triangle-up" title="상승"></i>000.0</span></td>
+    </tr>
+    <tr>
+      <td class="text-center">22</td>
+      <td class="text-center">부산 해운대구</td>
+      <td class="text-end"><span class="c-table--open__related-pop" onclick="$.modal({ className: 'alert', message: '팝업 준비중' });">2,120</span></td>
+      <td class="text-end"><span class="percent"><i class="icon-svg-triangle-up" title="상승"></i>000.0</span></td>
+    </tr>
+    <tr>
+      <td class="text-center">23</td>
+      <td class="text-center">서울 강남구</td>
+      <td class="text-end"><span class="c-table--open__related-pop" onclick="$.modal({ className: 'alert', message: '팝업 준비중' });">2,023</span></td>
+      <td class="text-end"><span class="percent"><i class="icon-svg-triangle-up" title="상승"></i>000.0</span></td>
+    </tr>
+    <tr>
+      <td class="text-center">24</td>
+      <td class="text-center">부산 해운대구</td>
+      <td class="text-end"><span class="c-table--open__related-pop" onclick="$.modal({ className: 'alert', message: '팝업 준비중' });">2,023</span></td>
+      <td class="text-end"><span class="percent"><i class="icon-svg-triangle-up" title="상승"></i>000.0</span></td>
+    </tr>
+    <tr>
+      <td class="text-center">25</td>
+      <td class="text-center">부산 해운대구</td>
+      <td class="text-end"><span class="c-table--open__related-pop" onclick="$.modal({ className: 'alert', message: '팝업 준비중' });">2,023</span></td>
+      <td class="text-end"><span class="percent"><i class="icon-svg-triangle-up" title="상승"></i>000.0</span></td>
+    </tr>
+    <tr>
+      <td class="text-center">26</td>
+      <td class="text-center">부산 해운대구</td>
+      <td class="text-end"><span class="c-table--open__related-pop" onclick="$.modal({ className: 'alert', message: '팝업 준비중' });">2,023</span></td>
+      <td class="text-end"><span class="percent"><i class="icon-svg-triangle-up" title="상승"></i>000.0</span></td>
+    </tr>
+    <tr>
+      <td class="text-center">27</td>
+      <td class="text-center">부산 해운대구</td>
+      <td class="text-end"><span class="c-table--open__related-pop" onclick="$.modal({ className: 'alert', message: '팝업 준비중' });">2,023</span></td>
+      <td class="text-end"><span class="percent"><i class="icon-svg-triangle-up" title="상승"></i>000.0</span></td>
+    </tr>
+    <tr>
+      <td class="text-center">28</td>
+      <td class="text-center">뜸</td>
+      <td class="text-end"><span class="c-table--open__related-pop" onclick="$.modal({ className: 'alert', message: '팝업 준비중' });">2,023</span></td>
+      <td class="text-end"><span class="percent"><i class="icon-svg-triangle-up" title="상승"></i>000.0</span></td>
+    </tr>
+    <tr>
+      <td class="text-center">29</td>
+      <td class="text-center">부산 해운대구</td>
+      <td class="text-end"><span class="c-table--open__related-pop" onclick="$.modal({ className: 'alert', message: '팝업 준비중' });">2,023</span></td>
+      <td class="text-end"><span class="percent"><i class="icon-svg-triangle-up" title="상승"></i>000.0</span></td>
+    </tr>
+    <tr>
+      <td class="text-center">30</td>
+      <td class="text-center">부산 해운대구</td>
+      <td class="text-end"><span class="c-table--open__related-pop" onclick="$.modal({ className: 'alert', message: '팝업 준비중' });">2,023</span></td>
+      <td class="text-end"><span class="percent"><i class="icon-svg-triangle-up" title="상승"></i>000.0</span></td>
+    </tr>
+  </tbody>
+</table>
+                  </div>
+                </div>
+                <div class="col-11">
+                  
 <!-- tab-slide-지역 -->
 <article class="l-article tab-slide p-20 bg-f4f4f4" data-article="지역" data-loading-spinner="false" data-is-empty="false">
   <header class="l-article-header">
@@ -1856,6 +2061,8 @@
   </main>
 </article>
 <!-- // tab-slide-지역 -->
+                </div>
+              </div>
             </div>
           </main>
         </article>

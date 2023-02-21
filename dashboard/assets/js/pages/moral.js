@@ -1,19 +1,41 @@
+{
+  /**
+   *
+   *  depth : 건간정보 키워드 트렌드 > 상단검색영역
+   *  block : datepicker(달력)
+   *  event : input 강제로 checked
+   *
+   */
+
+  const $section = document.querySelector("[data-section=상단검색영역]");
+  const $datepicker = $section.querySelector(".ui_datepickers .grps");
+  const $inpFirst = $datepicker.childNodes.item(0).querySelector("input");
+
+  $inpFirst.click();
+}
 /*
 ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■
 */
 {
   /**
    *
-   * 검색기간 input 강제로 checked
+   *  depth : 건간정보 키워드 트렌드 > 상단검색영역
+   *  block : 초기화 버튼
+   *  event : form 요소 초기화
    *
    */
 
-  setTimeout(() => {
-    const $datepicker = document.querySelector(".ui_datepickers .grps");
-    const $inpMonth = $datepicker?.childNodes.item(2).querySelector("input");
+  const $section = document.querySelector("[data-section=상단검색영역]");
+  const $article = $section.querySelector("[data-article=검색조건]");
+  const $fieldsets = $article.querySelectorAll("[data-checkbox-index]");
+  const $datepicker = $section.querySelector(".ui_datepickers .grps");
+  const $inpFirst = $datepicker.childNodes.item(0).querySelector("input");
+  const $btnRefresh = $section.querySelector("[data-button=새로고침]");
 
-    $inpMonth && ($inpMonth.checked = true);
-  }, 1000);
+  $btnRefresh.addEventListener("click", (e) => {
+    $inpFirst.click();
+    $fieldsets.forEach((_$el) => _$el.setAttribute("data-checkbox-index", ""));
+  });
 }
 /*
 ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■
@@ -86,8 +108,13 @@
 */
 {
   /**
-   * Top30 키워드 순위 변화 - 지역 설정 버튼 Event
+   *
+   * depth : 건간정보 키워드 트렌드 > Top30 키워드 순위 변화
+   * block : 지역 설정 버튼
+   * event : layer show/hide toggle
+   *
    */
+
   document.querySelector(".js-btn-set-area").addEventListener("click", (e) => {
     e.currentTarget.classList.toggle("btn-default--is-active");
     const $popup = e.currentTarget.nextElementSibling;
@@ -101,14 +128,76 @@
 */
 {
   /**
-   * Top30 키워드 분석 - 축 설정 버튼 Event
+   *
+   *  depth : 건간정보 키워드 트렌드 > Top30 키워드 순위 변화 > 지역 설정 레이어
+   *  block : 초기화 버튼
+   *  event : form 요소 초기화
+   *
    */
+
+  const $section = document.querySelector("[data-section=Top30키워드순위변화]");
+  const $fieldset = $section.querySelector("[data-checkbox-index]");
+  const $btnRefresh = $section.querySelector("[data-button=새로고침]");
+
+  $btnRefresh.addEventListener("click", (e) => {
+    $fieldset.setAttribute("data-checkbox-index", "");
+  });
+}
+/*
+■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■
+*/
+{
+  /**
+   *
+   * depth : 건간정보 키워드 트렌드 > Top30 키워드 분석
+   * block : 축 설정 버튼
+   * event : layer show/hide toggle
+   *
+   */
+
   document.querySelector(".js-btn-set-coord").addEventListener("click", (e) => {
     e.currentTarget.classList.toggle("btn-default--is-active");
     const $popup = e.currentTarget.nextElementSibling;
     e.currentTarget.classList.contains("btn-default--is-active")
       ? $popup.style.setProperty("visibility", "visible")
       : $popup.style.setProperty("visibility", "hidden");
+  });
+}
+/*
+■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■
+*/
+{
+  /**
+   *
+   *  depth : 건간정보 키워드 트렌드 > Top30 키워드 분석 > 축 설정 레이어
+   *  block : 초기화 버튼
+   *  event : form 요소 초기화
+   *
+   */
+  // const $section = document.querySelector("[data-section=Top30키워드분석]");
+  // const $fieldset = $section.querySelector("[data-select-index]");
+  // const $btnRefresh = $section.querySelector("[data-button=새로고침]");
+  // $btnRefresh.addEventListener("click", (e) => {
+  //   $fieldset.setAttribute("data-select-index", "");
+  // });
+}
+/*
+■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■
+*/
+{
+  const $keywordTable = document.querySelector("[data-section='Top30키워드순위변화'] .c-table");
+  const tableHover = new window.TableSameHover($keywordTable);
+  const tableActive = new window.TableClickSameActive($keywordTable);
+  const TableClickMenu1st = new window.TableClickMenu($keywordTable);
+  const TableClickMenu2nd = new window.TableClickMenu(document.querySelector("[data-article='연관어-테이블'] .c-table"));
+
+  window.onLoadResize({
+    callback() {
+      tableHover.init();
+      tableActive.init();
+      TableClickMenu1st.init();
+      TableClickMenu2nd.init();
+    },
   });
 }
 /*
@@ -189,7 +278,7 @@
    *
    */
 
-  const $slideWrapper = document.querySelector("[data-section=Top30키워드지역] .tab-wrapper");
+  const $slideWrapper = document.querySelector("[data-section=Top30키워드지역] [data-article=테이블n차트] > .l-section-body");
   const $navWrapper = document.querySelector("[data-section=Top30키워드지역] [data-fieldset=키워드n지역]");
   const tab = new window.Tab($slideWrapper, $navWrapper);
 }

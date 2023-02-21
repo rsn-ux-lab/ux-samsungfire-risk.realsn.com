@@ -1,5 +1,5 @@
 
-<!-- reBuild :  20230220152123 -->
+<!-- reBuild :  20230221133336 -->
 
 <!DOCTYPE html>
 <html lang="ko">
@@ -16,13 +16,13 @@
   <link rel="shortcut icon" href="/dashboard/assets/img/favicon.ico" />
 
   <!-- STYLE -->
-    <link rel="stylesheet" href="/dashboard/assets/css/style.css?v=20230220152123">
+    <link rel="stylesheet" href="/dashboard/assets/css/style.css?v=20230221133336">
 
   <!-- JS -->
-  <script src="/dashboard/assets/js/config/files.js?v=20230220152123" defer></script>
-  <script src="/dashboard/assets/js/libs.js?v=20230220152123" defer></script>
-  <script src="/dashboard/assets/js/modules.js?v=20230220152123" defer></script>
-  <script src="/dashboard/assets/js/config/router.js?v=20230220152123" defer></script>
+  <script src="/dashboard/assets/js/config/files.js?v=20230221133336" defer></script>
+  <script src="/dashboard/assets/js/libs.js?v=20230221133336" defer></script>
+  <script src="/dashboard/assets/js/modules.js?v=20230221133336" defer></script>
+  <script src="/dashboard/assets/js/config/router.js?v=20230221133336" defer></script>
 </head>
 
 <body>
@@ -125,10 +125,10 @@
           <dl class="form-serach-list">
             <dt class="form-serach-list__title form-serach-list__title--has-required">검색기간</dt>
             <dd class="form-serach-list__item">
-              <div 
+              <div
                 class="ui_datepickers"
-                id="dp11"          
-                data-date='{"sDate":"2023-02-25", "eDate":"2023-02-25"}'
+                id="dp11"
+                data-date='{"sDate":"2023-01-01", "eDate":"2023-12-31"}'
                 data-grps='[ "2MT", "1MT", "3TH", "6TH"]'
                 data-type-opts='[ "day", "week", "month" ]'
               ></div>
@@ -140,9 +140,9 @@
                 <input id="checkboxChannerAll" class="js-all-input-checked" type="checkbox" />
                 <label for="checkboxChannerAll"><span class="txt">전체</span></label>
               </div>
-              <fieldset class="form-fieldset row g-2" data-value-minimum="1" data-fieldset="채널종류">
+              <fieldset class="form-fieldset row g-2" data-fieldset="채널종류">
                 <div class="form-row form-check-button col" data-row="블로그">
-                  <input id="checkboxChanner1" type="checkbox" checked/>
+                  <input id="checkboxChanner1" type="checkbox"/>
                   <label for="checkboxChanner1"><span class="txt">블로그</span></label>
                 </div>
                 <div class="form-row form-check-button col" data-row="지식인">
@@ -175,9 +175,9 @@
                 <input id="checkboxWritingAll"class="js-all-input-checked" type="checkbox"/>
                 <label for="checkboxWritingAll"><span class="txt">전체</span></label>
               </div>
-              <fieldset class="form-fieldset row g-2" data-value-minimum="1" data-fieldset="글유형종류">
+              <fieldset class="form-fieldset row g-2" data-fieldset="글유형종류">
                 <div class="form-row form-check-button col" data-row="의료기간홍보">
-                  <input id="checkboxWriting1" type="checkbox" checked/>
+                  <input id="checkboxWriting1" type="checkbox"/>
                   <label for="checkboxWriting1"><span class="txt">의료기간홍보</span></label>
                 </div>
                 <div class="form-row form-check-button col" data-row="환자의견">
@@ -194,9 +194,9 @@
                 <input id="checkboxwWtchlistAll" class="js-all-input-checked" type="checkbox"/>
                 <label for="checkboxwWtchlistAll" ><span class="txt">전체</span></label>
               </div>
-              <fieldset class="form-fieldset row g-2" data-value-minimum="1" data-fieldset="관심키워드종류">
+              <fieldset class="form-fieldset row g-2" data-fieldset="관심키워드종류">
                 <div class="form-row form-check-button col" data-row="보험관련">
-                  <input id="checkboWwatchlist1" type="checkbox" checked/>
+                  <input id="checkboWwatchlist1" type="checkbox"/>
                   <label for="checkboWwatchlist1" ><span class="txt">보험관련</span></label>
                 </div>
                 <div class="form-row form-check-button col" data-row="비용관련">
@@ -234,7 +234,7 @@
                 <div class="form-row form-check-button col" data-row="세금">
                   <input id="checkboxWatchlist10" type="checkbox"/>
                   <label for="checkboxWatchlist10" ><span class="txt">세금</span></label>
-                </div>                
+                </div>
               </fieldset>
             </fieldset>
             </dd>
@@ -260,8 +260,8 @@
         </main>
         <footer class="l-article-footer pl-24 pt-24 border-top">
           <div class="btn-group d-flex gap-12">
-            <button class="btn btn-icon btn-icon--lg rounded" title="새로고침" type="button"><i class="icon-svg icon-svg-refresh" aria-hidden="true"></i></button>
-            <button class="btn btn-secondary btn-secondary--lg rounded w-100" type="button">검색</button>            
+            <button class="btn btn-icon btn-icon--lg rounded" data-button="새로고침" title="새로고침" type="button"><i class="icon-svg icon-svg-refresh" aria-hidden="true"></i></button>
+            <button class="btn btn-secondary btn-secondary--lg rounded w-100" type="button">검색</button>
           </div>
         </footer>
       </article>
@@ -278,7 +278,7 @@
           </div>
         </header>
       </article>
-    </main>    
+    </main>
   </div>
   <button class="btn btn-icon btn-icon--is-active btn-compact rounded" title="상단검색색영역 축소하기" type="button"><i class="icon-svg icon-svg-chevron-up" aria-hidden="true"></i></button>
 </section>

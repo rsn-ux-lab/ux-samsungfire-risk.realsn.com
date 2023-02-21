@@ -13,6 +13,10 @@ let routes = [
     script: [`${SERVER.assets}/js/pages/moral.js`, `${SERVER.assets}/js/pages/moral_chart.js`,],
   },
   {
+    path: "/dashboard/moral_chart/",
+    script: `${SERVER.assets}/js/pages/moral_chart_page.js`,
+  },
+  {
     path: "/dashboard/keyword/",
     script: `${SERVER.assets}/js/pages/keyword.js`,
   },

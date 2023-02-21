@@ -40,31 +40,244 @@
    *
    */
 
+  const $article = document.querySelector('[data-article="Top30키워드분석"]');
   const $xyChartDiv = document.querySelector('[data-article="Top30키워드분석"] .js-chart');
+  const $btn = $article.querySelector('.btn.btn-secondary.rounded.ml-8.w-100');
+  console.log($btn);
   const samsungFrYXChart = new rsnCharts.SamsungFrYXChart($xyChartDiv);
-  samsungFrYXChart.draw();
 
-  // chart.addListener('clickGraphItem', function (e) {
-  //   document.querySelector('.chart-bullet-active')?.classList.remove('chart-bullet-active');
-  //   // e.item.bulletGraphics.node //불릿
-  //   // e.item.dataContext.name //이름
+  let datas = [
+    {
+      name: '다초점렌즈',
+      uw: 'U/W 1, U/W 2, U/W 3',
+      x: '100',
+      y: '550',
+      color: '#444444',
+      opacity: 0.4, //투명도 (active일때는 1)
+      updown: 'up', // '정보량 증감률' 화살표 표시, (증가=up / 감소=down)
+    },
+    {
+      name: '고혈압',
+      uw: 'U/W 1, U/W 2, U/W 3',
+      x: '210',
+      y: '920',
+      color: '#444444',
+      opacity: 0.4, //투명도 (active일때는 1)
+      updown: 'up', // '정보량 증감률' 화살표 표시, (증가=up / 감소=down)
+    },
+    {
+      name: '스케일링',
+      uw: 'U/W 1, U/W 2, U/W 3',
+      x: '78',
+      y: '890',
+      color: '#444444',
+      opacity: 0.4, //투명도 (active일때는 1)
+      updown: 'down', // '정보량 증감률' 화살표 표시, (증가=up / 감소=down)
+    },
+    {
+      name: '뜸',
+      x: '85',
+      y: '630',
+      color: '#444444',
+      opacity: 0.4, //투명도 (active일때는 1)
+      updown: 'down', // '정보량 증감률' 화살표 표시, (증가=up / 감소=down)
+    },
+    {
+      name: '부항',
+      x: '84',
+      y: '240',
+      color: '#444444',
+      opacity: 0.4, //투명도 (active일때는 1)
+      updown: 'down', // '정보량 증감률' 화살표 표시, (증가=up / 감소=down)
+    },
+    {
+      name: '한방치료',
+      x: '65',
+      y: '510',
+      color: '#444444',
+      opacity: 0.4, //투명도 (active일때는 1)
+      updown: 'down', // '정보량 증감률' 화살표 표시, (증가=up / 감소=down)
+    },
+    {
+      name: '데이터',
+      x: '15',
+      y: '200',
+      color: '#444444',
+      opacity: 0.4, //투명도 (active일때는 1)
+      updown: 'down', // '정보량 증감률' 화살표 표시, (증가=up / 감소=down)
+    },
+    {
+      name: '디스크',
+      x: '17',
+      y: '210',
+      color: '#444444',
+      opacity: 0.4, //투명도 (active일때는 1)
+      updown: 'down', // '정보량 증감률' 화살표 표시, (증가=up / 감소=down)
+    },
+    {
+      name: '비중격',
+      x: '20',
+      y: '150',
+      color: '#444444',
+      opacity: 0.4, //투명도 (active일때는 1)
+      updown: 'down', // '정보량 증감률' 화살표 표시, (증가=up / 감소=down)
+    },
+    {
+      name: '이대목동병원',
+      x: '10',
+      y: '100',
+      color: '#444444',
+      opacity: 0.4, //투명도 (active일때는 1)
+      updown: 'down', // '정보량 증감률' 화살표 표시, (증가=up / 감소=down)
+    },
+    {
+      name: '당뇨',
+      x: '40',
+      y: '170',
+      color: '#444444',
+      opacity: 0.4, //투명도 (active일때는 1)
+      updown: 'down', // '정보량 증감률' 화살표 표시, (증가=up / 감소=down)
+    },
+    {
+      name: '데이터',
+      x: '47',
+      y: '70',
+      color: '#444444',
+      opacity: 0.4, //투명도 (active일때는 1)
+      updown: 'down', // '정보량 증감률' 화살표 표시, (증가=up / 감소=down)
+    },
+    {
+      name: '데이터',
+      x: '37',
+      y: '430',
+      color: '#444444',
+      opacity: 0.4, //투명도 (active일때는 1)
+      updown: 'down', // '정보량 증감률' 화살표 표시, (증가=up / 감소=down)
+    },
+    {
+      name: '삼성서울병원',
+      x: '150',
+      y: '570',
+      color: '#444444',
+      opacity: 0.4, //투명도 (active일때는 1)
+      updown: 'down', // '정보량 증감률' 화살표 표시, (증가=up / 감소=down)
+    },
+    {
+      name: '라식',
+      x: '130',
+      y: '700',
+      color: '#444444',
+      opacity: 0.4, //투명도 (active일때는 1)
+      updown: 'up', // '정보량 증감률' 화살표 표시, (증가=up / 감소=down)
+    },
+    {
+      name: '십자인대',
+      x: '100',
+      y: '700',
+      color: '#444444',
+      opacity: 0.4, //투명도 (active일때는 1)
+      updown: 'down', // '정보량 증감률' 화살표 표시, (증가=up / 감소=down)
+    },
+    {
+      name: '백병원',
+      x: '180',
+      y: '570',
+      color: '#444444',
+      opacity: 0.4, //투명도 (active일때는 1)
+      updown: 'down', // '정보량 증감률' 화살표 표시, (증가=up / 감소=down)
+    },
+  ];
 
-  //   e.item.bulletGraphics.node.classList.add('chart-bullet-active');
+  samsungFrYXChart.reDataBinding(datas, {
+    categorys: {
+      X: { name: '정보량' },
+      Y: { name: '정보량증감률', percents: true },
+    },
+  });
 
-  //   document.querySelectorAll('.td--is-active').forEach(function (_$oldActive) {
-  //     _$oldActive.classList.remove('td--is-active');
-  //   });
-  //   const activeKeyword = e.item.dataContext.name;
-  //   const $eventTarget = document.querySelectorAll("[data-keyword='" + activeKeyword + "']");
-  //   $eventTarget.forEach(function (_this) {
-  //     _this.classList.add('td--is-active');
-  //   });
+  samsungFrYXChart.itemClickEvt(function (e) {
+    console.log(e);
+    document.querySelector('.chart-bullet-active')?.classList.remove('chart-bullet-active');
+    // e.item.bulletGraphics.node //불릿
+    // e.item.dataContext.name //이름
 
-  //   const $labelTarget = document.querySelectorAll('.js-toggle-label');
-  //   Array.from($labelTarget).forEach(function (_$label) {
-  //     _$label.innerHTML = activeKeyword;
-  //   });
-  // });
+    e.item.bulletGraphics.node.classList.add('chart-bullet-active');
+
+    document.querySelectorAll('.td--is-active').forEach(function (_$oldActive) {
+      _$oldActive.classList.remove('td--is-active');
+    });
+    const activeKeyword = e.item.dataContext.name;
+    const $eventTarget = document.querySelectorAll("[data-keyword='" + activeKeyword + "']");
+    $eventTarget.forEach(function (_this) {
+      _this.classList.add('td--is-active');
+    });
+
+    const $labelTarget = document.querySelectorAll('.js-toggle-label');
+    Array.from($labelTarget).forEach(function (_$label) {
+      _$label.innerHTML = activeKeyword;
+    });
+  });
+
+  $btn.addEventListener('click', function () {
+    let datas2 = [
+      {
+        name: '다초점렌즈',
+        x: '100',
+        y: '550',
+        color: '#444444',
+        opacity: 0.4, //투명도 (active일때는 1)
+        updown: 'up', // '정보량 증감률' 화살표 표시, (증가=up / 감소=down)
+      },
+      {
+        name: '고혈압',
+        uw: 'U/W 1, U/W 2, U/W 3',
+        x: '210',
+        y: '920',
+        color: '#444444',
+        opacity: 0.4, //투명도 (active일때는 1)
+        updown: 'up', // '정보량 증감률' 화살표 표시, (증가=up / 감소=down)
+      },
+      {
+        name: '스케일링',
+        uw: 'U/W 1, U/W 2, U/W 3',
+        x: '78',
+        y: '890',
+        color: '#444444',
+        opacity: 0.4, //투명도 (active일때는 1)
+        updown: 'down', // '정보량 증감률' 화살표 표시, (증가=up / 감소=down)
+      },
+    ];
+
+    samsungFrYXChart.reDataBinding(datas2, {
+      categorys: {
+        X: { name: '정보량비중증감률', percents: true },
+        Y: { name: '정보량' },
+      },
+    });
+
+    samsungFrYXChart.itemClickEvt(function (e) {
+      console.log(e);
+      document.querySelector('.chart-bullet-active')?.classList.remove('chart-bullet-active');
+      // e.item.bulletGraphics.node //불릿
+      // e.item.dataContext.name //이름
+
+      e.item.bulletGraphics.node.classList.add('chart-bullet-active');
+
+      document.querySelectorAll('.td--is-active').forEach(function (_$oldActive) {
+        _$oldActive.classList.remove('td--is-active');
+      });
+      const activeKeyword = e.item.dataContext.name;
+      const $eventTarget = document.querySelectorAll("[data-keyword='" + activeKeyword + "']");
+      $eventTarget.forEach(function (_this) {
+        _this.classList.add('td--is-active');
+      });
+
+      const $labelTarget = document.querySelectorAll('.js-toggle-label');
+      Array.from($labelTarget).forEach(function (_$label) {
+        _$label.innerHTML = activeKeyword;
+      });
+    });
+  });
 }
 /*
 ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■
