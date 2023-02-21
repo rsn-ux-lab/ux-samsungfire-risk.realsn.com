@@ -1,1 +1,0 @@
-console.log('xy차트 임시 페이지');
