@@ -8,7 +8,7 @@ window.cache = "?v=" + new Date().getTime();
 /* HOST */
 window.HOST = {
     localhost: /\d+\.\d+\.\d+\.\d/.test(location.hostname) || /^localhost/.test(location.hostname) || /^design.devel.com/.test(location.hostname),    
-    publish: /^ux-samsungfire-risk.realsn.com/.test(location.hostname) ,
+    publish: /^ux2-samsungfire-risk.realsn.com/.test(location.hostname) ,
     develop: /^devel/.test(location.hostname),
     product: /^prod/.test(location.hostname),
 };
