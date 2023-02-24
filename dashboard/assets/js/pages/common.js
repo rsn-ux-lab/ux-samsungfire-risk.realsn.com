@@ -131,7 +131,7 @@ import $ from "jquery";
 
   const $container = document.querySelector("#container");
   const $header = document.querySelector("#header");
-  const isHide = $container?.getAttribute("data-header-hide")?.toLowerCase();
+  const isHide = $container?.getAttribute("data-header-hide")?.toLowerCase().boolean();
 
   if (isHide) $header.parentNode.removeChild($header);
 }
@@ -147,7 +147,7 @@ import $ from "jquery";
 
   const $container = document.querySelector("#container");
   const $footer = document.querySelector("#footer");
-  const isHide = $container?.getAttribute("data-footer-hide")?.toLowerCase();
+  const isHide = $container?.getAttribute("data-footer-hide")?.toLowerCase().boolean();
 
   if (isHide) $footer.parentNode.removeChild($footer);
 }
