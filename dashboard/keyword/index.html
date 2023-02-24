@@ -1,5 +1,5 @@
 
-<!-- reBuild :  20230222155219 -->
+<!-- reBuild :  20230224170330 -->
 
 <!DOCTYPE html>
 <html lang="ko">
@@ -16,13 +16,13 @@
   <link rel="shortcut icon" href="/dashboard/assets/img/favicon.ico" />
 
   <!-- STYLE -->
-    <link rel="stylesheet" href="/dashboard/assets/css/style.css?v=20230222155219">
+    <link rel="stylesheet" href="/dashboard/assets/css/style.css?v=20230224170330">
 
   <!-- JS -->
-  <script src="/dashboard/assets/js/config/files.js?v=20230222155219" defer></script>
-  <script src="/dashboard/assets/js/libs.js?v=20230222155219" defer></script>
-  <script src="/dashboard/assets/js/modules.js?v=20230222155219" defer></script>
-  <script src="/dashboard/assets/js/config/router.js?v=20230222155219" defer></script>
+  <script src="/dashboard/assets/js/config/files.js?v=20230224170330" defer></script>
+  <script src="/dashboard/assets/js/libs.js?v=20230224170330" defer></script>
+  <script src="/dashboard/assets/js/modules.js?v=20230224170330" defer></script>
+  <script src="/dashboard/assets/js/config/router.js?v=20230224170330" defer></script>
 </head>
 
 <body>
@@ -123,6 +123,18 @@
         </header>
         <main class="l-article-body">
           <dl class="form-serach-list">
+            <dt class="form-serach-list__title form-serach-list__title--has-required">검색어</dt>
+            <dd class="form-serach-list__item">
+              <div class="form-row form-text form-text--border-bottom" data-text-value="">
+                <input id="keywordSearch" type="text" placeholder="">
+                <button class="form-search__btn-search" type="button" title="검색하기"></button>
+              </div>
+              <div class="form-row form-text form-text--border-bottom ml-4" data-text-value="">
+                <input id="keywordSearch" type="text" placeholder="">
+                <button class="form-search__btn-search" type="button" title="검색하기"></button>
+              </div>
+              <button type="button" class="btn btn-default rounded-pill ml-4">Advanced Search</button>
+            </dd>
             <dt class="form-serach-list__title form-serach-list__title--has-required">검색기간</dt>
             <dd class="form-serach-list__item">
               <div
@@ -248,6 +260,8 @@
         </header>
         <main class="l-article-body pl-24 pb-24">
           <dl class="form-serach-list">
+            <dt class="form-serach-list__title form-serach-list__title--has-required">검색어</dt>
+            <dd class="form-serach-list__item">2023-01-01 ~ 2023-02-01</span></dd>
             <dt class="form-serach-list__title form-serach-list__title--has-required">검색기간</dt>
             <dd class="form-serach-list__item">2023-01-01 ~ 2023-02-01</span></dd>
             <dt class="form-serach-list__title form-serach-list__title--has-required">채널</dt>
@@ -295,25 +309,26 @@
         </div>
       </header>
       <main class="l-section-body pt-16">
-        <article class="l-article" data-card="정보량추이-1depth" data-loading-spinner="false" data-is-empty="false">
+        <article class="l-article" data-article="정보량추이차트" data-loading-spinner="false" data-is-empty="false">
           <header class="l-article-header d-flex">
             <fieldset class="form-fieldset d-inline-flex ml-12" data-fieldset="누적/일평균">
               <div class="form-row form-switch-button" data-row="누적">
-                <input type="radio" id="radioDataQuantity1"  name="radioDataQuantity" checked>
-                <label for="radioDataQuantity1">
+                <input type="radio" id="radioDataQuantity01"  name="radioDataQuantity0" checked>
+                <label for="radioDataQuantity01">
                   <span class="txt">누적</span>
                 </label>
               </div>
               <div class="form-row form-switch-button" data-row="일평균">
-                <input type="radio" id="radioDataQuantity2"  name="radioDataQuantity">
-                <label for="radioDataQuantity2">
+                <input type="radio" id="radioDataQuantity02"  name="radioDataQuantity0">
+                <label for="radioDataQuantity02">
                   <span class="txt">일평균</span>
                 </label>
               </div>
             </fieldset>
             <fieldset class="form-fieldset ml-auto" data-fieldset="증감률">
-              <div class="form-row form-select" data-row="y축데이터">
-                <select class="form-select__select">
+              <div class="form-row form-select form-select--border-bottom" data-row="y축데이터">
+                <label for="selectDataQuantity0" class="visually-hidden">순위기준</label>
+                <select id="selectDataQuantity0">
                   <option value="0" selected>정보량</option>
                   <option value="1">정보량 증감률</option>
                 </select>
@@ -340,14 +355,14 @@
               </div>
             </fieldset>
             <fieldset class="form-fieldset d-inline-flex ml-12" data-fieldset="차트스위치">
-              <div class="form-row form-switch-button" data-row="막대">
+              <div class="form-row form-switch-button tab-nav" data-row="막대">
                 <input type="radio" id="radioSwitchChart1"  name="radioSwitchChart">
                 <label for="radioSwitchChart1">
                   <i class="icon-svg icon-svg-chart-candle"></i>
                 </label>
               </div>
-              <div class="form-row form-switch-button" data-row="라인">
-                <input type="radio" id="radioSwitchChart2"  name="radioSwitchChart" checked>
+              <div class="form-row form-switch-button tab-nav" data-row="라인">
+                <input type="radio" id="radioSwitchChart2"  name="radioSwitchChart">
                 <label for="radioSwitchChart2">
                   <i class="icon-svg icon-svg-chart-line"></i>
                 </label>
@@ -355,12 +370,10 @@
             </fieldset>
           </header>
           <main class="l-article-body mt-24">
-            <div class="js-chart" style="height: 33.8rem;">
+            <div class="js-chart tab-slide" style="height: 33.8rem;">
               <h1 class="fs-1">정보량 추이 - 막대차트</h1>
             </div>
-          </main>
-          <main class="l-article-body mt-24">
-            <div class="js-chart2" style="height: 33.8rem;">
+            <div class="js-chart2 tab-slide" style="height: 33.8rem;">
               <h1 class="fs-1">정보량 추이 - 라인차트</h1>
             </div>
           </main>
@@ -382,512 +395,530 @@
         </div>
       </header>
       <main class="l-article-body row pt-16">
-        <article class="l-article col-9"  data-card="연관어-워드클라우드" data-loading-spinner="false" data-is-empty="false">
-          <header class="l-article-header">
-            <fieldset class="form-fieldset d-inline-flex" data-fieldset="TOP/HOT">
-              <div class="form-row form-switch-button" data-row="TOP">
-                <input id="radioIssueRank1" name="radioIssueRank" type="radio" checked />
-                <label for="radioIssueRank1"><i class="icon-svg icon-svg-thumbs-up mr-4"></i><span class="txt">TOP</span></label>
-              </div>
-              <div class="form-row form-switch-button" data-row="HOT">
-                <input id="radioIssueRank2" name="radioIssueRank" type="radio" />
-                <label for="radioIssueRank2"><i class="icon-svg icon-svg-fire mr-4"></i><span class="txt">HOT</span></label>
-              </div>
-            </fieldset>
-          </header>
-          <main class="l-article-body mt-24">
-            <div class="scroll-container-y" style="height: 48.5rem;">
-              <table class="c-table c-table--moral__related ml-auto" data-thead-sticky="true" style="width: 73rem;">
-                <colgroup>
-                  <col width="11.9%">
-                  <col width="*">
-                  <col width="17.2%">
-                  <col width="15%">
-                  <col width="18.7%">
-                </colgroup>
-                <thead>
-                  <tr>
-                    <th>순위</th>
-                    <th>연관어</th>
-                    <th>속성</th>
-                    <th>정보량</th>
-                    <th>정보량 증감률</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
+        <div class="col-9">
+          <article class="l-article"  data-article="연관어분석-좌측테이블" data-loading-spinner="false" data-is-empty="false">
+            <header class="l-article-header">
+              <fieldset class="form-fieldset d-inline-flex" data-fieldset="TOP/HOT">
+                <div class="form-row form-switch-button" data-row="TOP">
+                  <input id="radioRelatedAnalysis1" name="radioRelatedAnalysis" type="radio" checked />
+                  <label for="radioRelatedAnalysis1"><i class="icon-svg icon-svg-thumbs-up mr-4"></i><span class="txt">TOP</span></label>
+                </div>
+                <div class="form-row form-switch-button" data-row="HOT">
+                  <input id="radioRelatedAnalysis2" name="radioRelatedAnalysis" type="radio" />
+                  <label for="radioRelatedAnalysis2"><i class="icon-svg icon-svg-fire mr-4"></i><span class="txt">HOT</span></label>
+                </div>
+              </fieldset>
+            </header>
+            <main class="l-article-body mt-24">
+              <div class="related-analysis--table__label related-analysis--table__label--left">백내장</div>
+              <div class="scroll-container-y border-bottom" style="height: 45.3rem;">
+                <table class="c-table c-table--hover-samsung c-table--keyword__related-left" data-thead-sticky="true">
+                  <colgroup>
+                    <col width="11.9%">
+                    <col width="*">
+                    <col width="17.2%">
+                    <col width="15%">
+                    <col width="18.7%">
+                  </colgroup>
+                  <thead>
+                    <tr>
+                      <th>순위</th>
+                      <th>연관어</th>
+                      <th>속성</th>
+                      <th>정보량</th>
+                      <th>정보량 증감률</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr data-keyword="일산백병원">
   <td class="text-center">1</td>
-  <td class="text-center" data-table-type="질병"><div class="position-relative">합병증<button class="c-table--click-menu"><i class="icon-svg-click-menu"></i></button></div></td>
-  <td class="text-center">질병</td>
+  <td class="text-center" data-table-type="의료기관"><div class="position-relative">일산백병원<button class="c-table--click-menu"><i class="icon-svg-click-menu"></i></button></div></td>
+  <td class="text-center">의료기관</td>
   <td class="text-end"><span class="c-table--open__related-pop" onclick="$.modal({isExist: true, className: 'data-table--related'});">2,023</span></td>
   <td class="text-end"><span class="percent"><i class="icon-svg-triangle-up" title="상승"></i>000.0</span></td>
-  </tr>
-<tr>
+</tr>
+<tr data-keyword="도수치료">
   <td class="text-center">2</td>
+  <td class="text-center" data-table-type="치료법"><div class="position-relative">도수치료<button class="c-table--click-menu"><i class="icon-svg-click-menu"></i></button></div></td>
+  <td class="text-center">치료법</td>
+  <td class="text-end"><span class="c-table--open__related-pop" onclick="$.modal({isExist: true, className: 'data-table--related'});">2,023</span></td>
+  <td class="text-end"><span class="percent"><i class="icon-svg-triangle-up" title="상승"></i>000.0</span></td>
+</tr>
+<tr data-keyword="골다공증">
+  <td class="text-center">3</td>
+  <td class="text-center" data-table-type="질병"><div class="position-relative">골다공증<button class="c-table--click-menu"><i class="icon-svg-click-menu"></i></button></div></td>
+  <td class="text-center">질병</td>
+  <td class="text-end"><span class="c-table--open__related-pop" onclick="$.modal({isExist: true, className: 'data-table--related'});">2,023</span></td>
+  <td class="text-end"><span class="fluc__new">New</span></td>
+</tr>
+<tr data-keyword="삼성서울병원">
+  <td class="text-center">4</td>
+  <td class="text-center" data-table-type="의료기관"><div class="position-relative">삼성서울병원<button class="c-table--click-menu"><i class="icon-svg-click-menu"></i></button></div></td>
+  <td class="text-center">의료기관</td>
+  <td class="text-end"><span class="c-table--open__related-pop" onclick="$.modal({isExist: true, className: 'data-table--related'});">2,023</span></td>
+  <td class="text-end"><span class="percent"><i class="icon-svg-triangle-up" title="상승"></i>000.0</span></td>
+</tr>
+<tr data-keyword="초음파">
+  <td class="text-center">5</td>
   <td class="text-center" data-table-type="치료법"><div class="position-relative">초음파<button class="c-table--click-menu"><i class="icon-svg-click-menu"></i></button></div></td>
   <td class="text-center">치료법</td>
-  <td class="text-end"><span class="c-table--open__related-pop" onclick="$.modal({isExist: true, className: 'data-table--related'});">33,333,333</span></td>
-  <td class="text-end"><span class="percent"><i class="icon-svg-triangle-up" title="상승"></i>000.0</span></td>
-  </tr>
-<tr>
-  <td class="text-center">3</td>
-  <td class="text-center" data-table-type="치료법"><div class="position-relative">스케일링<button class="c-table--click-menu"><i class="icon-svg-click-menu"></i></button></div></td>
-  <td class="text-center">치료법</td>
   <td class="text-end"><span class="c-table--open__related-pop" onclick="$.modal({isExist: true, className: 'data-table--related'});">2,023</span></td>
   <td class="text-end"><span class="percent"><i class="icon-svg-triangle-up" title="상승"></i>000.0</span></td>
-  </tr>
-<tr>
-  <td class="text-center">4</td>
-  <td class="text-center" data-table-type="질병"><div class="position-relative">십자인대<button class="c-table--click-menu"><i class="icon-svg-click-menu"></i></button></div></td>
-  <td class="text-center">질병</td>
-  <td class="text-end"><span class="c-table--open__related-pop" onclick="$.modal({isExist: true, className: 'data-table--related'});">2,023</span></td>
-  <td class="text-end"><span class="fluc__new">New</span></td>
-  </tr>
-<tr>
-  <td class="text-center">5</td>
-  <td class="text-center" data-table-type="질병"><div class="position-relative">백내장<button class="c-table--click-menu"><i class="icon-svg-click-menu"></i></button></div></td>
-  <td class="text-center">질병</td>
-  <td class="text-end"><span class="c-table--open__related-pop" onclick="$.modal({isExist: true, className: 'data-table--related'});">2,023</span></td>
-  <td class="text-end"><span class="fluc__new">New</span></td>
-  </tr>
-<tr>
+</tr>
+<tr data-keyword="당뇨">
   <td class="text-center">6</td>
-  <td class="text-center" data-table-type="의료기관"><div class="position-relative">강남의원<button class="c-table--click-menu"><i class="icon-svg-click-menu"></i></button></div></td>
-  <td class="text-center">의료기관</td>
+  <td class="text-center" data-table-type="질병"><div class="position-relative">당뇨<button class="c-table--click-menu"><i class="icon-svg-click-menu"></i></button></div></td>
+  <td class="text-center">질병</td>
   <td class="text-end"><span class="c-table--open__related-pop" onclick="$.modal({isExist: true, className: 'data-table--related'});">2,023</span></td>
-  <td class="text-end"><span class="percent"><i class="icon-svg-triangle-down" title="하락"></i>000.0</span></td>
-  </tr>
-<tr>
+  <td class="text-end"><span class="percent"><i class="icon-svg-triangle-up" title="상승"></i>000.0</span></td>
+</tr>
+<tr data-keyword="뜸">
   <td class="text-center">7</td>
-  <td class="text-center" data-table-type="의료기관"><div class="position-relative">하나병원<button class="c-table--click-menu"><i class="icon-svg-click-menu"></i></button></div></td>
-  <td class="text-center">의료기관</td>
-  <td class="text-end"><span class="c-table--open__related-pop" onclick="$.modal({isExist: true, className: 'data-table--related'});">2,023</span></td>
-  <td class="text-end"><span class="percent"><i class="icon-svg-triangle-down" title="하락"></i>000.0</span></td>
-  </tr>
-<tr>
-  <td class="text-center">8</td>
-  <td class="text-center" data-table-type="의료기관"><div class="position-relative">한울병원<button class="c-table--click-menu"><i class="icon-svg-click-menu"></i></button></div></td>
-  <td class="text-center">의료기관</td>
-  <td class="text-end"><span class="c-table--open__related-pop" onclick="$.modal({isExist: true, className: 'data-table--related'});">2,023</span></td>
-  <td class="text-end"><span class="percent"><i class="icon-svg-triangle-down" title="하락"></i>000.0</span></td>
-  </tr>
-<tr>
-  <td class="text-center">9</td>
   <td class="text-center" data-table-type="치료법"><div class="position-relative">뜸<button class="c-table--click-menu"><i class="icon-svg-click-menu"></i></button></div></td>
   <td class="text-center">치료법</td>
   <td class="text-end"><span class="c-table--open__related-pop" onclick="$.modal({isExist: true, className: 'data-table--related'});">2,023</span></td>
-  <td class="text-end"><span class="percent"><i class="icon-svg-triangle-down" title="하락"></i>000.0</span></td>
-  </tr>
-<tr>
-  <td class="text-center">10</td>
-  <td class="text-center" data-table-type="의료기관"><div class="position-relative">최고의원<button class="c-table--click-menu"><i class="icon-svg-click-menu"></i></button></div></td>
+  <td class="text-end"><span class="percent"><i class="icon-svg-triangle-up" title="상승"></i>000.0</span></td>
+</tr>
+<tr data-keyword="하나병원">
+  <td class="text-center">8</td>
+  <td class="text-center" data-table-type="의료기관"><div class="position-relative">하나병원<button class="c-table--click-menu"><i class="icon-svg-click-menu"></i></button></div></td>
   <td class="text-center">의료기관</td>
   <td class="text-end"><span class="c-table--open__related-pop" onclick="$.modal({isExist: true, className: 'data-table--related'});">2,023</span></td>
-  <td class="text-end"><span class="percent"><i class="icon-svg-triangle-down" title="하락"></i>000.0</span></td>
-  </tr>
+  <td class="text-end"><span class="percent"><i class="icon-svg-triangle-up" title="상승"></i>000.0</span></td>
+</tr>
+<tr data-keyword="강남의원">
+  <td class="text-center">9</td>
+  <td class="text-center" data-table-type="의료기관"><div class="position-relative">강남의원<button class="c-table--click-menu"><i class="icon-svg-click-menu"></i></button></div></td>
+  <td class="text-center">의료기관</td>
+  <td class="text-end"><span class="c-table--open__related-pop" onclick="$.modal({isExist: true, className: 'data-table--related'});">2,023</span></td>
+  <td class="text-end"><span class="percent"><i class="icon-svg-triangle-up" title="상승"></i>000.0</span></td>
+</tr>
+<tr data-keyword="사거리병원">
+  <td class="text-center">10</td>
+  <td class="text-center" data-table-type="의료기관"><div class="position-relative">사거리병원<button class="c-table--click-menu"><i class="icon-svg-click-menu"></i></button></div></td>
+  <td class="text-center">의료기관</td>
+  <td class="text-end"><span class="c-table--open__related-pop" onclick="$.modal({isExist: true, className: 'data-table--related'});">2,023</span></td>
+  <td class="text-end"><span class="percent"><i class="icon-svg-triangle-up" title="상승"></i>000.0</span></td>
+</tr>
 
-<tr>
+<tr data-keyword="라식">
   <td class="text-center">11</td>
-  <td class="text-center" data-table-type="치료법"><div class="position-relative">절제술<button class="c-table--click-menu"><i class="icon-svg-click-menu"></i></button></div></td>
+  <td class="text-center" data-table-type="치료법"><div class="position-relative">라식<button class="c-table--click-menu"><i class="icon-svg-click-menu"></i></button></div></td>
   <td class="text-center">치료법</td>
   <td class="text-end"><span class="c-table--open__related-pop" onclick="$.modal({isExist: true, className: 'data-table--related'});">2,023</span></td>
   <td class="text-end"><span class="percent"><i class="icon-svg-triangle-up" title="상승"></i>000.0</span></td>
-  </tr>
-<tr>
+</tr>
+<tr data-keyword="백내장">
   <td class="text-center">12</td>
-  <td class="text-center" data-table-type="치료법"><div class="position-relative">초음파<button class="c-table--click-menu"><i class="icon-svg-click-menu"></i></button></div></td>
-  <td class="text-center">치료법</td>
-  <td class="text-end"><span class="c-table--open__related-pop" onclick="$.modal({isExist: true, className: 'data-table--related'});">2,023</span></td>
-  <td class="text-end"><span class="percent"><i class="icon-svg-triangle-up" title="상승"></i>000.0</span></td>
-  </tr>
-<tr>
-  <td class="text-center">13</td>
-  <td class="text-center" data-table-type="질병"><div class="position-relative">빈혈<button class="c-table--click-menu"><i class="icon-svg-click-menu"></i></button></div></td>
+  <td class="text-center" data-table-type="질병"><div class="position-relative">백내장<button class="c-table--click-menu"><i class="icon-svg-click-menu"></i></button></div></td>
   <td class="text-center">질병</td>
   <td class="text-end"><span class="c-table--open__related-pop" onclick="$.modal({isExist: true, className: 'data-table--related'});">2,023</span></td>
   <td class="text-end"><span class="percent"><i class="icon-svg-triangle-up" title="상승"></i>000.0</span></td>
-  </tr>
-<tr>
+</tr>
+<tr data-keyword="고혈압">
+  <td class="text-center">13</td>
+  <td class="text-center" data-table-type="질병"><div class="position-relative">고혈압<button class="c-table--click-menu"><i class="icon-svg-click-menu"></i></button></div></td>
+  <td class="text-center">질병</td>
+  <td class="text-end"><span class="c-table--open__related-pop" onclick="$.modal({isExist: true, className: 'data-table--related'});">2,023</span></td>
+  <td class="text-end"><span class="percent"><i class="icon-svg-triangle-up" title="상승"></i>000.0</span></td>
+</tr>
+<tr data-keyword="내시경">
   <td class="text-center">14</td>
-  <td class="text-center" data-table-type="치료법"><div class="position-relative">부항<button class="c-table--click-menu"><i class="icon-svg-click-menu"></i></button></div></td>
+  <td class="text-center" data-table-type="치료법"><div class="position-relative">내시경<button class="c-table--click-menu"><i class="icon-svg-click-menu"></i></button></div></td>
   <td class="text-center">치료법</td>
   <td class="text-end"><span class="c-table--open__related-pop" onclick="$.modal({isExist: true, className: 'data-table--related'});">2,023</span></td>
   <td class="text-end"><span class="percent"><i class="icon-svg-triangle-up" title="상승"></i>000.0</span></td>
-  </tr>
-<tr>
+</tr>
+<tr data-keyword="관절경">
+  <td class="text-center">15</td>
+  <td class="text-center" data-table-type="치료법"><div class="position-relative">관절경<button class="c-table--click-menu"><i class="icon-svg-click-menu"></i></button></div></td>
+  <td class="text-center">치료법</td>
+  <td class="text-end"><span class="c-table--open__related-pop" onclick="$.modal({isExist: true, className: 'data-table--related'});">2,023</span></td>
+  <td class="text-end"><span class="percent"><i class="icon-svg-triangle-up" title="상승"></i>000.0</span></td>
+</tr>
+<tr data-keyword="레이저">
+  <td class="text-center">16</td>
+  <td class="text-center" data-table-type="치료법"><div class="position-relative">레이저<button class="c-table--click-menu"><i class="icon-svg-click-menu"></i></button></div></td>
+  <td class="text-center">치료법</td>
+  <td class="text-end"><span class="c-table--open__related-pop" onclick="$.modal({isExist: true, className: 'data-table--related'});">2,023</span></td>
+  <td class="text-end"><span class="percent"><i class="icon-svg-triangle-up" title="상승"></i>000.0</span></td>
+</tr>
+<tr data-keyword="서울한의원">
+  <td class="text-center">17</td>
+  <td class="text-center" data-table-type="의료기관"><div class="position-relative">서울한의원<button class="c-table--click-menu"><i class="icon-svg-click-menu"></i></button></div></td>
+  <td class="text-center">의료기관</td>
+  <td class="text-end"><span class="c-table--open__related-pop" onclick="$.modal({isExist: true, className: 'data-table--related'});">2,023</span></td>
+  <td class="text-end"><span class="percent"><i class="icon-svg-triangle-up" title="상승"></i>000.0</span></td>
+</tr>
+<tr data-keyword="대전정형외과">
+  <td class="text-center">18</td>
+  <td class="text-center" data-table-type="의료기관"><div class="position-relative">대전정형외과<button class="c-table--click-menu"><i class="icon-svg-click-menu"></i></button></div></td>
+  <td class="text-center">의료기관</td>
+  <td class="text-end"><span class="c-table--open__related-pop" onclick="$.modal({isExist: true, className: 'data-table--related'});">2,023</span></td>
+  <td class="text-end"><span class="percent"><i class="icon-svg-triangle-up" title="상승"></i>000.0</span></td>
+</tr>
+<tr data-keyword="대구성형외과">
+  <td class="text-center">19</td>
+  <td class="text-center" data-table-type="의료기관"><div class="position-relative">대구성형외과<button class="c-table--click-menu"><i class="icon-svg-click-menu"></i></button></div></td>
+  <td class="text-center">의료기관</td>
+  <td class="text-end"><span class="c-table--open__related-pop" onclick="$.modal({isExist: true, className: 'data-table--related'});">2,023</span></td>
+  <td class="text-end"><span class="percent"><i class="icon-svg-triangle-up" title="상승"></i>000.0</span></td>
+</tr>
+<tr data-keyword="부산치과">
+  <td class="text-center">20</td>
+  <td class="text-center" data-table-type="의료기관"><div class="position-relative">부산치과<button class="c-table--click-menu"><i class="icon-svg-click-menu"></i></button></div></td>
+  <td class="text-center">의료기관</td>
+  <td class="text-end"><span class="c-table--open__related-pop" onclick="$.modal({isExist: true, className: 'data-table--related'});">2,023</span></td>
+  <td class="text-end"><span class="percent"><i class="icon-svg-triangle-up" title="상승"></i>000.0</span></td>
+</tr>
+
+<tr data-keyword="광주의료원">
+  <td class="text-center">21</td>
+  <td class="text-center" data-table-type="의료기관"><div class="position-relative">광주의료원<button class="c-table--click-menu"><i class="icon-svg-click-menu"></i></button></div></td>
+  <td class="text-center">의료기관</td>
+  <td class="text-end"><span class="c-table--open__related-pop" onclick="$.modal({isExist: true, className: 'data-table--related'});">2,023</span></td>
+  <td class="text-end"><span class="percent"><i class="icon-svg-triangle-up" title="상승"></i>000.0</span></td>
+</tr>
+<tr data-keyword="임플란트">
+  <td class="text-center">22</td>
+  <td class="text-center" data-table-type="치료법"><div class="position-relative">임플란트<button class="c-table--click-menu"><i class="icon-svg-click-menu"></i></button></div></td>
+  <td class="text-center">치료법</td>
+  <td class="text-end"><span class="c-table--open__related-pop" onclick="$.modal({isExist: true, className: 'data-table--related'});">2,023</span></td>
+  <td class="text-end"><span class="percent"><i class="icon-svg-triangle-up" title="상승"></i>000.0</span></td>
+</tr>
+<tr data-keyword="보철치료">
+  <td class="text-center">23</td>
+  <td class="text-center" data-table-type="치료법"><div class="position-relative">보철치료<button class="c-table--click-menu"><i class="icon-svg-click-menu"></i></button></div></td>
+  <td class="text-center">치료법</td>
+  <td class="text-end"><span class="c-table--open__related-pop" onclick="$.modal({isExist: true, className: 'data-table--related'});">2,023</span></td>
+  <td class="text-end"><span class="percent"><i class="icon-svg-triangle-up" title="상승"></i>000.0</span></td>
+</tr>
+<tr data-keyword="다래끼">
+  <td class="text-center">24</td>
+  <td class="text-center" data-table-type="질병"><div class="position-relative">다래끼<button class="c-table--click-menu"><i class="icon-svg-click-menu"></i></button></div></td>
+  <td class="text-center">질병</td>
+  <td class="text-end"><span class="c-table--open__related-pop" onclick="$.modal({isExist: true, className: 'data-table--related'});">2,023</span></td>
+  <td class="text-end"><span class="percent"><i class="icon-svg-triangle-up" title="상승"></i>000.0</span></td>
+</tr>
+<tr data-keyword="무지외반증">
+  <td class="text-center">25</td>
+  <td class="text-center" data-table-type="질병"><div class="position-relative">무지외반증<button class="c-table--click-menu"><i class="icon-svg-click-menu"></i></button></div></td>
+  <td class="text-center">질병</td>
+  <td class="text-end"><span class="c-table--open__related-pop" onclick="$.modal({isExist: true, className: 'data-table--related'});">2,023</span></td>
+  <td class="text-end"><span class="percent"><i class="icon-svg-triangle-up" title="상승"></i>000.0</span></td>
+</tr>
+<tr data-keyword="내성발톱">
+  <td class="text-center">26</td>
+  <td class="text-center" data-table-type="질병"><div class="position-relative">내성발톱<button class="c-table--click-menu"><i class="icon-svg-click-menu"></i></button></div></td>
+  <td class="text-center">질병</td>
+  <td class="text-end"><span class="c-table--open__related-pop" onclick="$.modal({isExist: true, className: 'data-table--related'});">2,023</span></td>
+  <td class="text-end"><span class="percent"><i class="icon-svg-triangle-up" title="상승"></i>000.0</span></td>
+</tr>
+<tr data-keyword="비절개">
+  <td class="text-center">27</td>
+  <td class="text-center" data-table-type="치료법"><div class="position-relative">비절개<button class="c-table--click-menu"><i class="icon-svg-click-menu"></i></button></div></td>
+  <td class="text-center">치료법</td>
+  <td class="text-end"><span class="c-table--open__related-pop" onclick="$.modal({isExist: true, className: 'data-table--related'});">2,023</span></td>
+  <td class="text-end"><span class="percent"><i class="icon-svg-triangle-up" title="상승"></i>000.0</span></td>
+</tr>
+<tr data-keyword="백병원">
+  <td class="text-center">28</td>
+  <td class="text-center" data-table-type="의료기관"><div class="position-relative">백병원<button class="c-table--click-menu"><i class="icon-svg-click-menu"></i></button></div></td>
+  <td class="text-center">의료기관</td>
+  <td class="text-end"><span class="c-table--open__related-pop" onclick="$.modal({isExist: true, className: 'data-table--related'});">2,023</span></td>
+  <td class="text-end"><span class="percent"><i class="icon-svg-triangle-up" title="상승"></i>000.0</span></td>
+</tr>
+<tr data-keyword="다초점렌즈">
+  <td class="text-center">29</td>
+  <td class="text-center" data-table-type="치료법"><div class="position-relative">다초점렌즈<button class="c-table--click-menu"><i class="icon-svg-click-menu"></i></button></div></td>
+  <td class="text-center">치료법</td>
+  <td class="text-end"><span class="c-table--open__related-pop" onclick="$.modal({isExist: true, className: 'data-table--related'});">2,023</span></td>
+  <td class="text-end"><span class="percent"><i class="icon-svg-triangle-up" title="상승"></i>000.0</span></td>
+</tr>
+<tr data-keyword="한방치료">
+  <td class="text-center">30</td>
+  <td class="text-center" data-table-type="치료법"><div class="position-relative">한방치료<button class="c-table--click-menu"><i class="icon-svg-click-menu"></i></button></div></td>
+  <td class="text-center">치료법</td>
+  <td class="text-end"><span class="c-table--open__related-pop" onclick="$.modal({isExist: true, className: 'data-table--related'});">2,023</span></td>
+  <td class="text-end"><span class="percent"><i class="icon-svg-triangle-up" title="상승"></i>000.0</span></td>
+</tr>
+
+
+                  </tbody>
+                </table>
+              </div>
+            </main>
+          </article>
+        </div>
+
+        <div class="col-9">
+          <article class="l-article"  data-article="연관어분석-우측테이블" data-loading-spinner="false" data-is-empty="false">
+            <header class="l-article-header d-flex">
+              <fieldset class="form-fieldset d-flex ml-auto" data-fieldset="공통연관어">
+                <div class="form-row form-switch form-switch--sm" data-row="공통연관어">
+                  <label for="checkboxCommonRelated"><span class="txt w-100 mr-5">공통 연관어만 보기</span></label>
+                  <input id="checkboxCommonRelated" class="" type="checkbox">
+                </div>
+              </fieldset>
+              <fieldset class="form-fieldset  ml-12" data-value-minimum="1" data-fieldset="연관어">
+                <div class="form-row form-check form-check-button" data-row="질병">
+                  <input id="checkboxRelated1" class="form-check__input" type="checkbox" checked />
+                  <label for="checkboxRelated1" class="form-check__label" style="--color-set: #B28838;"><span class="txt">질병</span></label>
+                </div>
+                <div class="form-row form-check form-check-button" data-row="치료법">
+                  <input id="checkboxRelated2" class="form-check__input" type="checkbox" checked />
+                  <label for="checkboxRelated2" class="form-check__label" style="--color-set: #985C6D;"><span class="txt">치료법</span></label>
+                </div>
+                <div class="form-row form-check form-check-button" data-row="의료기관">
+                  <input id="checkboxRelated3" class="form-check__input" type="checkbox" checked />
+                  <label for="checkboxRelated3" class="form-check__label" style="--color-set: #58A277;"><span class="txt">의료기관</span></label>
+                </div>
+              </fieldset>
+              <button class="btn btn-secondary rounded ml-12">검색</button>
+            </header>
+            <main class="l-article-body mt-24">
+              <div class="related-analysis--table__label related-analysis--table__label--right">다초점렌즈</div>
+              <div class="scroll-container-y border-bottom" style="height: 45.3rem;">
+                <table class="c-table c-table--hover-samsung c-table--keyword__related-right" data-thead-sticky="true">
+                  <colgroup>
+                    <col width="11.9%">
+                    <col width="*">
+                    <col width="17.2%">
+                    <col width="15%">
+                    <col width="18.7%">
+                  </colgroup>
+                  <thead>
+                    <tr>
+                      <th>순위</th>
+                      <th>연관어</th>
+                      <th>속성</th>
+                      <th>정보량</th>
+                      <th>정보량 증감률</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr data-keyword="신경치료">
+  <td class="text-center">1</td>
+  <td class="text-center" data-table-type="치료법"><div class="position-relative">신경치료<button class="c-table--click-menu"><i class="icon-svg-click-menu"></i></button></div></td>
+  <td class="text-center">치료법</td>
+  <td class="text-end"><span class="c-table--open__related-pop" onclick="$.modal({isExist: true, className: 'data-table--related'});">2,023</span></td>
+  <td class="text-end"><span class="percent"><i class="icon-svg-triangle-up" title="상승"></i>000.0</span></td>
+</tr>
+<tr data-keyword="대상포진">
+  <td class="text-center">2</td>
+  <td class="text-center" data-table-type="질병"><div class="position-relative">대상포진<button class="c-table--click-menu"><i class="icon-svg-click-menu"></i></button></div></td>
+  <td class="text-center">질병</td>
+  <td class="text-end"><span class="c-table--open__related-pop" onclick="$.modal({isExist: true, className: 'data-table--related'});">2,023</span></td>
+  <td class="text-end"><span class="percent"><i class="icon-svg-triangle-up" title="상승"></i>000.0</span></td>
+</tr>
+<tr data-keyword="대화백병원">
+  <td class="text-center">3</td>
+  <td class="text-center" data-table-type="의료기관"><div class="position-relative">대화백병원<button class="c-table--click-menu"><i class="icon-svg-click-menu"></i></button></div></td>
+  <td class="text-center">의료기관</td>
+  <td class="text-end"><span class="c-table--open__related-pop" onclick="$.modal({isExist: true, className: 'data-table--related'});">2,023</span></td>
+  <td class="text-end"><span class="percent"><i class="icon-svg-triangle-up" title="상승"></i>000.0</span></td>
+</tr>
+<tr data-keyword="비절개">
+  <td class="text-center">4</td>
+  <td class="text-center" data-table-type="치료법"><div class="position-relative">비절개<button class="c-table--click-menu"><i class="icon-svg-click-menu"></i></button></div></td>
+  <td class="text-center">치료법</td>
+  <td class="text-end"><span class="c-table--open__related-pop" onclick="$.modal({isExist: true, className: 'data-table--related'});">2,023</span></td>
+  <td class="text-end"><span class="percent"><i class="icon-svg-triangle-up" title="상승"></i>000.0</span></td>
+</tr>
+<tr data-keyword="하나병원">
+  <td class="text-center">5</td>
+  <td class="text-center" data-table-type="의료기관"><div class="position-relative">하나병원<button class="c-table--click-menu"><i class="icon-svg-click-menu"></i></button></div></td>
+  <td class="text-center">의료기관</td>
+  <td class="text-end"><span class="c-table--open__related-pop" onclick="$.modal({isExist: true, className: 'data-table--related'});">2,023</span></td>
+  <td class="text-end"><span class="percent"><i class="icon-svg-triangle-up" title="상승"></i>000.0</span></td>
+</tr>
+<tr data-keyword="삼성서울병원">
+  <td class="text-center">6</td>
+  <td class="text-center" data-table-type="의료기관"><div class="position-relative">삼성서울병원<button class="c-table--click-menu"><i class="icon-svg-click-menu"></i></button></div></td>
+  <td class="text-center">의료기관</td>
+  <td class="text-end"><span class="c-table--open__related-pop" onclick="$.modal({isExist: true, className: 'data-table--related'});">2,023</span></td>
+  <td class="text-end"><span class="percent"><i class="icon-svg-triangle-up" title="상승"></i>000.0</span></td>
+</tr>
+<tr data-keyword="서울한의원">
+  <td class="text-center">7</td>
+  <td class="text-center" data-table-type="의료기관"><div class="position-relative">서울한의원<button class="c-table--click-menu"><i class="icon-svg-click-menu"></i></button></div></td>
+  <td class="text-center">의료기관</td>
+  <td class="text-end"><span class="c-table--open__related-pop" onclick="$.modal({isExist: true, className: 'data-table--related'});">2,023</span></td>
+  <td class="text-end"><span class="percent"><i class="icon-svg-triangle-up" title="상승"></i>000.0</span></td>
+</tr>
+<tr data-keyword="당뇨">
+  <td class="text-center">8</td>
+  <td class="text-center" data-table-type="질병"><div class="position-relative">당뇨<button class="c-table--click-menu"><i class="icon-svg-click-menu"></i></button></div></td>
+  <td class="text-center">질병</td>
+  <td class="text-end"><span class="c-table--open__related-pop" onclick="$.modal({isExist: true, className: 'data-table--related'});">2,023</span></td>
+  <td class="text-end"><span class="percent"><i class="icon-svg-triangle-up" title="상승"></i>000.0</span></td>
+</tr>
+<tr data-keyword="이대목동병원">
+  <td class="text-center">9</td>
+  <td class="text-center" data-table-type="의료기관"><div class="position-relative">이대목동병원<button class="c-table--click-menu"><i class="icon-svg-click-menu"></i></button></div></td>
+  <td class="text-center">의료기관</td>
+  <td class="text-end"><span class="c-table--open__related-pop" onclick="$.modal({isExist: true, className: 'data-table--related'});">2,023</span></td>
+  <td class="text-end"><span class="percent"><i class="icon-svg-triangle-up" title="상승"></i>000.0</span></td>
+</tr>
+<tr data-keyword="뜸">
+  <td class="text-center">10</td>
+  <td class="text-center" data-table-type="치료법"><div class="position-relative">뜸<button class="c-table--click-menu"><i class="icon-svg-click-menu"></i></button></div></td>
+  <td class="text-center">치료법</td>
+  <td class="text-end"><span class="c-table--open__related-pop" onclick="$.modal({isExist: true, className: 'data-table--related'});">2,023</span></td>
+  <td class="text-end"><span class="percent"><i class="icon-svg-triangle-up" title="상승"></i>000.0</span></td>
+</tr>
+<tr data-keyword="다초점렌즈">
+  <td class="text-center">11</td>
+  <td class="text-center" data-table-type="치료법"><div class="position-relative">다초점렌즈<button class="c-table--click-menu"><i class="icon-svg-click-menu"></i></button></div></td>
+  <td class="text-center">치료법</td>
+  <td class="text-end"><span class="c-table--open__related-pop" onclick="$.modal({isExist: true, className: 'data-table--related'});">2,023</span></td>
+  <td class="text-end"><span class="percent"><i class="icon-svg-triangle-up" title="상승"></i>000.0</span></td>
+</tr>
+<tr data-keyword="사거리병원">
+  <td class="text-center">12</td>
+  <td class="text-center" data-table-type="의료기관"><div class="position-relative">사거리병원<button class="c-table--click-menu"><i class="icon-svg-click-menu"></i></button></div></td>
+  <td class="text-center">의료기관</td>
+  <td class="text-end"><span class="c-table--open__related-pop" onclick="$.modal({isExist: true, className: 'data-table--related'});">2,023</span></td>
+  <td class="text-end"><span class="percent"><i class="icon-svg-triangle-up" title="상승"></i>000.0</span></td>
+</tr>
+
+<tr data-keyword="라식">
+  <td class="text-center">13</td>
+  <td class="text-center" data-table-type="치료법"><div class="position-relative">라식<button class="c-table--click-menu"><i class="icon-svg-click-menu"></i></button></div></td>
+  <td class="text-center">치료법</td>
+  <td class="text-end"><span class="c-table--open__related-pop" onclick="$.modal({isExist: true, className: 'data-table--related'});">2,023</span></td>
+  <td class="text-end"><span class="percent"><i class="icon-svg-triangle-up" title="상승"></i>000.0</span></td>
+</tr>
+<tr data-keyword="다래끼">
+  <td class="text-center">14</td>
+  <td class="text-center" data-table-type="질병"><div class="position-relative">다래끼<button class="c-table--click-menu"><i class="icon-svg-click-menu"></i></button></div></td>
+  <td class="text-center">질병</td>
+  <td class="text-end"><span class="c-table--open__related-pop" onclick="$.modal({isExist: true, className: 'data-table--related'});">2,023</span></td>
+  <td class="text-end"><span class="percent"><i class="icon-svg-triangle-up" title="상승"></i>000.0</span></td>
+</tr>
+<tr data-keyword="백내장">
   <td class="text-center">15</td>
   <td class="text-center" data-table-type="질병"><div class="position-relative">백내장<button class="c-table--click-menu"><i class="icon-svg-click-menu"></i></button></div></td>
   <td class="text-center">질병</td>
   <td class="text-end"><span class="c-table--open__related-pop" onclick="$.modal({isExist: true, className: 'data-table--related'});">2,023</span></td>
   <td class="text-end"><span class="percent"><i class="icon-svg-triangle-up" title="상승"></i>000.0</span></td>
-  </tr>
-<tr>
+</tr>
+<tr data-keyword="고혈압">
   <td class="text-center">16</td>
-  <td class="text-center" data-table-type="의료기관"><div class="position-relative">강남의원<button class="c-table--click-menu"><i class="icon-svg-click-menu"></i></button></div></td>
-  <td class="text-center">의료기관</td>
-  <td class="text-end"><span class="c-table--open__related-pop" onclick="$.modal({isExist: true, className: 'data-table--related'});">2,023</span></td>
-  <td class="text-end"><span class="percent"><i class="icon-svg-triangle-up" title="상승"></i>000.0</span></td>
-  </tr>
-<tr>
-  <td class="text-center">17</td>
-  <td class="text-center" data-table-type="의료기관"><div class="position-relative">하나병원<button class="c-table--click-menu"><i class="icon-svg-click-menu"></i></button></div></td>
-  <td class="text-center">의료기관</td>
-  <td class="text-end"><span class="c-table--open__related-pop" onclick="$.modal({isExist: true, className: 'data-table--related'});">2,023</span></td>
-  <td class="text-end"><span class="percent"><i class="icon-svg-triangle-up" title="상승"></i>000.0</span></td>
-  </tr>
-<tr>
-  <td class="text-center">18</td>
-  <td class="text-center" data-table-type="의료기관"><div class="position-relative">최고의원<button class="c-table--click-menu"><i class="icon-svg-click-menu"></i></button></div></td>
-  <td class="text-center">의료기관</td>
-  <td class="text-end"><span class="c-table--open__related-pop" onclick="$.modal({isExist: true, className: 'data-table--related'});">2,023</span></td>
-  <td class="text-end"><span class="percent"><i class="icon-svg-triangle-up" title="상승"></i>000.0</span></td>
-  </tr>
-<tr>
-  <td class="text-center">19</td>
-  <td class="text-center" data-table-type="의료기관"><div class="position-relative">한울병원<button class="c-table--click-menu"><i class="icon-svg-click-menu"></i></button></div></td>
-  <td class="text-center">의료기관</td>
-  <td class="text-end"><span class="c-table--open__related-pop" onclick="$.modal({isExist: true, className: 'data-table--related'});">2,023</span></td>
-  <td class="text-end"><span class="percent"><i class="icon-svg-triangle-up" title="상승"></i>000.0</span></td>
-  </tr>
-<tr>
-  <td class="text-center">20</td>
-  <td class="text-center" data-table-type="치료법"><div class="position-relative">뜸<button class="c-table--click-menu"><i class="icon-svg-click-menu"></i></button></div></td>
-  <td class="text-center">치료법</td>
-  <td class="text-end"><span class="c-table--open__related-pop" onclick="$.modal({isExist: true, className: 'data-table--related'});">2,023</span></td>
-  <td class="text-end"><span class="percent"><i class="icon-svg-triangle-up" title="상승"></i>000.0</span></td>
-  </tr>
-
-<tr>
-  <td class="text-center">21</td>
-  <td class="text-center" data-table-type="질병"><div class="position-relative">합병증<button class="c-table--click-menu"><i class="icon-svg-click-menu"></i></button></div></td>
-  <td class="text-center">질병</td>
-  <td class="text-end"><span class="c-table--open__related-pop" onclick="$.modal({isExist: true, className: 'data-table--related'});">2,023</span></td>
-  <td class="text-end"><span class="percent"><i class="icon-svg-triangle-up" title="상승"></i>000.0</span></td>
-  </tr>
-<tr>
-  <td class="text-center">22</td>
-  <td class="text-center" data-table-type="치료법"><div class="position-relative">초음파<button class="c-table--click-menu"><i class="icon-svg-click-menu"></i></button></div></td>
-  <td class="text-center">치료법</td>
-  <td class="text-end"><span class="c-table--open__related-pop" onclick="$.modal({isExist: true, className: 'data-table--related'});">2,023</span></td>
-  <td class="text-end"><span class="percent"><i class="icon-svg-triangle-up" title="상승"></i>000.0</span></td>
-  </tr>
-<tr>
-  <td class="text-center">23</td>
-  <td class="text-center" data-table-type="질병"><div class="position-relative">당뇨병<button class="c-table--click-menu"><i class="icon-svg-click-menu"></i></button></div></td>
-  <td class="text-center">질병</td>
-  <td class="text-end"><span class="c-table--open__related-pop" onclick="$.modal({isExist: true, className: 'data-table--related'});">2,023</span></td>
-  <td class="text-end"><span class="percent"><i class="icon-svg-triangle-up" title="상승"></i>000.0</span></td>
-  </tr>
-<tr>
-  <td class="text-center">24</td>
-  <td class="text-center" data-table-type="치료법"><div class="position-relative">부항<button class="c-table--click-menu"><i class="icon-svg-click-menu"></i></button></div></td>
-  <td class="text-center">치료법</td>
-  <td class="text-end"><span class="c-table--open__related-pop" onclick="$.modal({isExist: true, className: 'data-table--related'});">2,023</span></td>
-  <td class="text-end"><span class="percent"><i class="icon-svg-triangle-up" title="상승"></i>000.0</span></td>
-  </tr>
-<tr>
-  <td class="text-center">25</td>
-  <td class="text-center" data-table-type="질병"><div class="position-relative">백내장<button class="c-table--click-menu"><i class="icon-svg-click-menu"></i></button></div></td>
-  <td class="text-center">질병</td>
-  <td class="text-end"><span class="c-table--open__related-pop" onclick="$.modal({isExist: true, className: 'data-table--related'});">2,023</span></td>
-  <td class="text-end"><span class="percent"><i class="icon-svg-triangle-up" title="상승"></i>000.0</span></td>
-  </tr>
-<tr>
-  <td class="text-center">26</td>
-  <td class="text-center" data-table-type="질병"><div class="position-relative">무지외반증<button class="c-table--click-menu"><i class="icon-svg-click-menu"></i></button></div></td>
-  <td class="text-center">질병</td>
-  <td class="text-end"><span class="c-table--open__related-pop" onclick="$.modal({isExist: true, className: 'data-table--related'});">2,023</span></td>
-  <td class="text-end"><span class="percent"><i class="icon-svg-triangle-up" title="상승"></i>000.0</span></td>
-  </tr>
-<tr>
-  <td class="text-center">27</td>
-  <td class="text-center" data-table-type="의료기관"><div class="position-relative">하나병원<button class="c-table--click-menu"><i class="icon-svg-click-menu"></i></button></div></td>
-  <td class="text-center">의료기관</td>
-  <td class="text-end"><span class="c-table--open__related-pop" onclick="$.modal({isExist: true, className: 'data-table--related'});">2,023</span></td>
-  <td class="text-end"><span class="percent"><i class="icon-svg-triangle-up" title="상승"></i>000.0</span></td>
-  </tr>
-<tr>
-  <td class="text-center">28</td>
-  <td class="text-center" data-table-type="질병"><div class="position-relative">안와골절<button class="c-table--click-menu"><i class="icon-svg-click-menu"></i></button></div></td>
-  <td class="text-center">질병</td>
-  <td class="text-end"><span class="c-table--open__related-pop" onclick="$.modal({isExist: true, className: 'data-table--related'});">2,023</span></td>
-  <td class="text-end"><span class="percent"><i class="icon-svg-triangle-up" title="상승"></i>000.0</span></td>
-  </tr>
-<tr>
-  <td class="text-center">29</td>
-  <td class="text-center" data-table-type="의료기관"><div class="position-relative">한울병원<button class="c-table--click-menu"><i class="icon-svg-click-menu"></i></button></div></td>
-  <td class="text-center">의료기관</td>
-  <td class="text-end"><span class="c-table--open__related-pop" onclick="$.modal({isExist: true, className: 'data-table--related'});">2,023</span></td>
-  <td class="text-end"><span class="percent"><i class="icon-svg-triangle-up" title="상승"></i>000.0</span></td>
-  </tr>
-<tr>
-  <td class="text-center">30</td>
   <td class="text-center" data-table-type="질병"><div class="position-relative">고혈압<button class="c-table--click-menu"><i class="icon-svg-click-menu"></i></button></div></td>
   <td class="text-center">질병</td>
   <td class="text-end"><span class="c-table--open__related-pop" onclick="$.modal({isExist: true, className: 'data-table--related'});">2,023</span></td>
   <td class="text-end"><span class="percent"><i class="icon-svg-triangle-up" title="상승"></i>000.0</span></td>
-  </tr>
-                </tbody>
-              </table>
-            </div>
-          </main>
-        </article>
-
-        <article class="l-article col-9 ml-auto"  data-card="연관어-테이블" data-loading-spinner="false" data-is-empty="false">
-          <header class="l-article-header d-flex">
-            <fieldset class="form-fieldset  ml-auto" data-value-minimum="1" data-fieldset="연관어">
-              <div class="form-row form-check form-check-button" data-row="질병">
-                <input id="checkboxRelated1" class="form-check__input" type="checkbox" checked />
-                <label for="checkboxRelated1" class="form-check__label" style="--color-set: #B28838;"><span class="txt">질병</span></label>
-              </div>
-              <div class="form-row form-check form-check-button" data-row="치료법">
-                <input id="checkboxRelated2" class="form-check__input" type="checkbox" checked />
-                <label for="checkboxRelated2" class="form-check__label" style="--color-set: #985C6D;"><span class="txt">치료법</span></label>
-              </div>
-              <div class="form-row form-check form-check-button" data-row="의료기관">
-                <input id="checkboxRelated3" class="form-check__input" type="checkbox" checked />
-                <label for="checkboxRelated3" class="form-check__label" style="--color-set: #58A277;"><span class="txt">의료기관</span></label>
-              </div>
-            </fieldset>
-            <button class="btn btn-secondary rounded ml-12">검색</button>
-          </header>
-          <main class="l-article-body mt-24">
-            <div class="scroll-container-y" style="height: 48.5rem;">
-              <table class="c-table c-table--moral__related ml-auto" data-thead-sticky="true" style="width: 73rem;">
-                <colgroup>
-                  <col width="11.9%">
-                  <col width="*">
-                  <col width="17.2%">
-                  <col width="15%">
-                  <col width="18.7%">
-                </colgroup>
-                <thead>
-                  <tr>
-                    <th>순위</th>
-                    <th>연관어</th>
-                    <th>속성</th>
-                    <th>정보량</th>
-                    <th>정보량 증감률</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-  <td class="text-center">1</td>
-  <td class="text-center" data-table-type="질병"><div class="position-relative">합병증<button class="c-table--click-menu"><i class="icon-svg-click-menu"></i></button></div></td>
-  <td class="text-center">질병</td>
-  <td class="text-end"><span class="c-table--open__related-pop" onclick="$.modal({isExist: true, className: 'data-table--related'});">2,023</span></td>
-  <td class="text-end"><span class="percent"><i class="icon-svg-triangle-up" title="상승"></i>000.0</span></td>
-  </tr>
-<tr>
-  <td class="text-center">2</td>
-  <td class="text-center" data-table-type="치료법"><div class="position-relative">초음파<button class="c-table--click-menu"><i class="icon-svg-click-menu"></i></button></div></td>
-  <td class="text-center">치료법</td>
-  <td class="text-end"><span class="c-table--open__related-pop" onclick="$.modal({isExist: true, className: 'data-table--related'});">33,333,333</span></td>
-  <td class="text-end"><span class="percent"><i class="icon-svg-triangle-up" title="상승"></i>000.0</span></td>
-  </tr>
-<tr>
-  <td class="text-center">3</td>
-  <td class="text-center" data-table-type="치료법"><div class="position-relative">스케일링<button class="c-table--click-menu"><i class="icon-svg-click-menu"></i></button></div></td>
-  <td class="text-center">치료법</td>
-  <td class="text-end"><span class="c-table--open__related-pop" onclick="$.modal({isExist: true, className: 'data-table--related'});">2,023</span></td>
-  <td class="text-end"><span class="percent"><i class="icon-svg-triangle-up" title="상승"></i>000.0</span></td>
-  </tr>
-<tr>
-  <td class="text-center">4</td>
-  <td class="text-center" data-table-type="질병"><div class="position-relative">십자인대<button class="c-table--click-menu"><i class="icon-svg-click-menu"></i></button></div></td>
-  <td class="text-center">질병</td>
-  <td class="text-end"><span class="c-table--open__related-pop" onclick="$.modal({isExist: true, className: 'data-table--related'});">2,023</span></td>
-  <td class="text-end"><span class="fluc__new">New</span></td>
-  </tr>
-<tr>
-  <td class="text-center">5</td>
-  <td class="text-center" data-table-type="질병"><div class="position-relative">백내장<button class="c-table--click-menu"><i class="icon-svg-click-menu"></i></button></div></td>
-  <td class="text-center">질병</td>
-  <td class="text-end"><span class="c-table--open__related-pop" onclick="$.modal({isExist: true, className: 'data-table--related'});">2,023</span></td>
-  <td class="text-end"><span class="fluc__new">New</span></td>
-  </tr>
-<tr>
-  <td class="text-center">6</td>
-  <td class="text-center" data-table-type="의료기관"><div class="position-relative">강남의원<button class="c-table--click-menu"><i class="icon-svg-click-menu"></i></button></div></td>
-  <td class="text-center">의료기관</td>
-  <td class="text-end"><span class="c-table--open__related-pop" onclick="$.modal({isExist: true, className: 'data-table--related'});">2,023</span></td>
-  <td class="text-end"><span class="percent"><i class="icon-svg-triangle-down" title="하락"></i>000.0</span></td>
-  </tr>
-<tr>
-  <td class="text-center">7</td>
-  <td class="text-center" data-table-type="의료기관"><div class="position-relative">하나병원<button class="c-table--click-menu"><i class="icon-svg-click-menu"></i></button></div></td>
-  <td class="text-center">의료기관</td>
-  <td class="text-end"><span class="c-table--open__related-pop" onclick="$.modal({isExist: true, className: 'data-table--related'});">2,023</span></td>
-  <td class="text-end"><span class="percent"><i class="icon-svg-triangle-down" title="하락"></i>000.0</span></td>
-  </tr>
-<tr>
-  <td class="text-center">8</td>
-  <td class="text-center" data-table-type="의료기관"><div class="position-relative">한울병원<button class="c-table--click-menu"><i class="icon-svg-click-menu"></i></button></div></td>
-  <td class="text-center">의료기관</td>
-  <td class="text-end"><span class="c-table--open__related-pop" onclick="$.modal({isExist: true, className: 'data-table--related'});">2,023</span></td>
-  <td class="text-end"><span class="percent"><i class="icon-svg-triangle-down" title="하락"></i>000.0</span></td>
-  </tr>
-<tr>
-  <td class="text-center">9</td>
-  <td class="text-center" data-table-type="치료법"><div class="position-relative">뜸<button class="c-table--click-menu"><i class="icon-svg-click-menu"></i></button></div></td>
-  <td class="text-center">치료법</td>
-  <td class="text-end"><span class="c-table--open__related-pop" onclick="$.modal({isExist: true, className: 'data-table--related'});">2,023</span></td>
-  <td class="text-end"><span class="percent"><i class="icon-svg-triangle-down" title="하락"></i>000.0</span></td>
-  </tr>
-<tr>
-  <td class="text-center">10</td>
-  <td class="text-center" data-table-type="의료기관"><div class="position-relative">최고의원<button class="c-table--click-menu"><i class="icon-svg-click-menu"></i></button></div></td>
-  <td class="text-center">의료기관</td>
-  <td class="text-end"><span class="c-table--open__related-pop" onclick="$.modal({isExist: true, className: 'data-table--related'});">2,023</span></td>
-  <td class="text-end"><span class="percent"><i class="icon-svg-triangle-down" title="하락"></i>000.0</span></td>
-  </tr>
-
-<tr>
-  <td class="text-center">11</td>
-  <td class="text-center" data-table-type="치료법"><div class="position-relative">절제술<button class="c-table--click-menu"><i class="icon-svg-click-menu"></i></button></div></td>
-  <td class="text-center">치료법</td>
-  <td class="text-end"><span class="c-table--open__related-pop" onclick="$.modal({isExist: true, className: 'data-table--related'});">2,023</span></td>
-  <td class="text-end"><span class="percent"><i class="icon-svg-triangle-up" title="상승"></i>000.0</span></td>
-  </tr>
-<tr>
-  <td class="text-center">12</td>
-  <td class="text-center" data-table-type="치료법"><div class="position-relative">초음파<button class="c-table--click-menu"><i class="icon-svg-click-menu"></i></button></div></td>
-  <td class="text-center">치료법</td>
-  <td class="text-end"><span class="c-table--open__related-pop" onclick="$.modal({isExist: true, className: 'data-table--related'});">2,023</span></td>
-  <td class="text-end"><span class="percent"><i class="icon-svg-triangle-up" title="상승"></i>000.0</span></td>
-  </tr>
-<tr>
-  <td class="text-center">13</td>
-  <td class="text-center" data-table-type="질병"><div class="position-relative">빈혈<button class="c-table--click-menu"><i class="icon-svg-click-menu"></i></button></div></td>
-  <td class="text-center">질병</td>
-  <td class="text-end"><span class="c-table--open__related-pop" onclick="$.modal({isExist: true, className: 'data-table--related'});">2,023</span></td>
-  <td class="text-end"><span class="percent"><i class="icon-svg-triangle-up" title="상승"></i>000.0</span></td>
-  </tr>
-<tr>
-  <td class="text-center">14</td>
-  <td class="text-center" data-table-type="치료법"><div class="position-relative">부항<button class="c-table--click-menu"><i class="icon-svg-click-menu"></i></button></div></td>
-  <td class="text-center">치료법</td>
-  <td class="text-end"><span class="c-table--open__related-pop" onclick="$.modal({isExist: true, className: 'data-table--related'});">2,023</span></td>
-  <td class="text-end"><span class="percent"><i class="icon-svg-triangle-up" title="상승"></i>000.0</span></td>
-  </tr>
-<tr>
-  <td class="text-center">15</td>
-  <td class="text-center" data-table-type="질병"><div class="position-relative">백내장<button class="c-table--click-menu"><i class="icon-svg-click-menu"></i></button></div></td>
-  <td class="text-center">질병</td>
-  <td class="text-end"><span class="c-table--open__related-pop" onclick="$.modal({isExist: true, className: 'data-table--related'});">2,023</span></td>
-  <td class="text-end"><span class="percent"><i class="icon-svg-triangle-up" title="상승"></i>000.0</span></td>
-  </tr>
-<tr>
-  <td class="text-center">16</td>
-  <td class="text-center" data-table-type="의료기관"><div class="position-relative">강남의원<button class="c-table--click-menu"><i class="icon-svg-click-menu"></i></button></div></td>
-  <td class="text-center">의료기관</td>
-  <td class="text-end"><span class="c-table--open__related-pop" onclick="$.modal({isExist: true, className: 'data-table--related'});">2,023</span></td>
-  <td class="text-end"><span class="percent"><i class="icon-svg-triangle-up" title="상승"></i>000.0</span></td>
-  </tr>
-<tr>
+</tr>
+<tr data-keyword="내시경">
   <td class="text-center">17</td>
-  <td class="text-center" data-table-type="의료기관"><div class="position-relative">하나병원<button class="c-table--click-menu"><i class="icon-svg-click-menu"></i></button></div></td>
-  <td class="text-center">의료기관</td>
-  <td class="text-end"><span class="c-table--open__related-pop" onclick="$.modal({isExist: true, className: 'data-table--related'});">2,023</span></td>
-  <td class="text-end"><span class="percent"><i class="icon-svg-triangle-up" title="상승"></i>000.0</span></td>
-  </tr>
-<tr>
-  <td class="text-center">18</td>
-  <td class="text-center" data-table-type="의료기관"><div class="position-relative">최고의원<button class="c-table--click-menu"><i class="icon-svg-click-menu"></i></button></div></td>
-  <td class="text-center">의료기관</td>
-  <td class="text-end"><span class="c-table--open__related-pop" onclick="$.modal({isExist: true, className: 'data-table--related'});">2,023</span></td>
-  <td class="text-end"><span class="percent"><i class="icon-svg-triangle-up" title="상승"></i>000.0</span></td>
-  </tr>
-<tr>
-  <td class="text-center">19</td>
-  <td class="text-center" data-table-type="의료기관"><div class="position-relative">한울병원<button class="c-table--click-menu"><i class="icon-svg-click-menu"></i></button></div></td>
-  <td class="text-center">의료기관</td>
-  <td class="text-end"><span class="c-table--open__related-pop" onclick="$.modal({isExist: true, className: 'data-table--related'});">2,023</span></td>
-  <td class="text-end"><span class="percent"><i class="icon-svg-triangle-up" title="상승"></i>000.0</span></td>
-  </tr>
-<tr>
-  <td class="text-center">20</td>
-  <td class="text-center" data-table-type="치료법"><div class="position-relative">뜸<button class="c-table--click-menu"><i class="icon-svg-click-menu"></i></button></div></td>
+  <td class="text-center" data-table-type="치료법"><div class="position-relative">내시경<button class="c-table--click-menu"><i class="icon-svg-click-menu"></i></button></div></td>
   <td class="text-center">치료법</td>
   <td class="text-end"><span class="c-table--open__related-pop" onclick="$.modal({isExist: true, className: 'data-table--related'});">2,023</span></td>
   <td class="text-end"><span class="percent"><i class="icon-svg-triangle-up" title="상승"></i>000.0</span></td>
-  </tr>
-
-<tr>
-  <td class="text-center">21</td>
-  <td class="text-center" data-table-type="질병"><div class="position-relative">합병증<button class="c-table--click-menu"><i class="icon-svg-click-menu"></i></button></div></td>
-  <td class="text-center">질병</td>
+</tr>
+<tr data-keyword="관절경">
+  <td class="text-center">18</td>
+  <td class="text-center" data-table-type="치료법"><div class="position-relative">관절경<button class="c-table--click-menu"><i class="icon-svg-click-menu"></i></button></div></td>
+  <td class="text-center">치료법</td>
   <td class="text-end"><span class="c-table--open__related-pop" onclick="$.modal({isExist: true, className: 'data-table--related'});">2,023</span></td>
   <td class="text-end"><span class="percent"><i class="icon-svg-triangle-up" title="상승"></i>000.0</span></td>
-  </tr>
-<tr>
+</tr>
+<tr data-keyword="레이저">
+  <td class="text-center">19</td>
+  <td class="text-center" data-table-type="치료법"><div class="position-relative">레이저<button class="c-table--click-menu"><i class="icon-svg-click-menu"></i></button></div></td>
+  <td class="text-center">치료법</td>
+  <td class="text-end"><span class="c-table--open__related-pop" onclick="$.modal({isExist: true, className: 'data-table--related'});">2,023</span></td>
+  <td class="text-end"><span class="percent"><i class="icon-svg-triangle-up" title="상승"></i>000.0</span></td>
+</tr>
+
+<tr data-keyword="대전정형외과">
+  <td class="text-center">20</td>
+  <td class="text-center" data-table-type="의료기관"><div class="position-relative">대전정형외과<button class="c-table--click-menu"><i class="icon-svg-click-menu"></i></button></div></td>
+  <td class="text-center">의료기관</td>
+  <td class="text-end"><span class="c-table--open__related-pop" onclick="$.modal({isExist: true, className: 'data-table--related'});">2,023</span></td>
+  <td class="text-end"><span class="percent"><i class="icon-svg-triangle-up" title="상승"></i>000.0</span></td>
+</tr>
+<tr data-keyword="대구성형외과">
+  <td class="text-center">21</td>
+  <td class="text-center" data-table-type="의료기관"><div class="position-relative">대구성형외과<button class="c-table--click-menu"><i class="icon-svg-click-menu"></i></button></div></td>
+  <td class="text-center">의료기관</td>
+  <td class="text-end"><span class="c-table--open__related-pop" onclick="$.modal({isExist: true, className: 'data-table--related'});">2,023</span></td>
+  <td class="text-end"><span class="percent"><i class="icon-svg-triangle-up" title="상승"></i>000.0</span></td>
+</tr>
+<tr data-keyword="부산치과">
   <td class="text-center">22</td>
+  <td class="text-center" data-table-type="의료기관"><div class="position-relative">부산치과<button class="c-table--click-menu"><i class="icon-svg-click-menu"></i></button></div></td>
+  <td class="text-center">의료기관</td>
+  <td class="text-end"><span class="c-table--open__related-pop" onclick="$.modal({isExist: true, className: 'data-table--related'});">2,023</span></td>
+  <td class="text-end"><span class="percent"><i class="icon-svg-triangle-up" title="상승"></i>000.0</span></td>
+</tr>
+
+<tr data-keyword="광주의료원">
+  <td class="text-center">23</td>
+  <td class="text-center" data-table-type="의료기관"><div class="position-relative">광주의료원<button class="c-table--click-menu"><i class="icon-svg-click-menu"></i></button></div></td>
+  <td class="text-center">의료기관</td>
+  <td class="text-end"><span class="c-table--open__related-pop" onclick="$.modal({isExist: true, className: 'data-table--related'});">2,023</span></td>
+  <td class="text-end"><span class="percent"><i class="icon-svg-triangle-up" title="상승"></i>000.0</span></td>
+</tr>
+<tr data-keyword="초음파">
+  <td class="text-center">24</td>
   <td class="text-center" data-table-type="치료법"><div class="position-relative">초음파<button class="c-table--click-menu"><i class="icon-svg-click-menu"></i></button></div></td>
   <td class="text-center">치료법</td>
   <td class="text-end"><span class="c-table--open__related-pop" onclick="$.modal({isExist: true, className: 'data-table--related'});">2,023</span></td>
   <td class="text-end"><span class="percent"><i class="icon-svg-triangle-up" title="상승"></i>000.0</span></td>
-  </tr>
-<tr>
-  <td class="text-center">23</td>
-  <td class="text-center" data-table-type="질병"><div class="position-relative">당뇨병<button class="c-table--click-menu"><i class="icon-svg-click-menu"></i></button></div></td>
-  <td class="text-center">질병</td>
-  <td class="text-end"><span class="c-table--open__related-pop" onclick="$.modal({isExist: true, className: 'data-table--related'});">2,023</span></td>
-  <td class="text-end"><span class="percent"><i class="icon-svg-triangle-up" title="상승"></i>000.0</span></td>
-  </tr>
-<tr>
-  <td class="text-center">24</td>
-  <td class="text-center" data-table-type="치료법"><div class="position-relative">부항<button class="c-table--click-menu"><i class="icon-svg-click-menu"></i></button></div></td>
+</tr>
+<tr data-keyword="임플란트">
+  <td class="text-center">25</td>
+  <td class="text-center" data-table-type="치료법"><div class="position-relative">임플란트<button class="c-table--click-menu"><i class="icon-svg-click-menu"></i></button></div></td>
   <td class="text-center">치료법</td>
   <td class="text-end"><span class="c-table--open__related-pop" onclick="$.modal({isExist: true, className: 'data-table--related'});">2,023</span></td>
   <td class="text-end"><span class="percent"><i class="icon-svg-triangle-up" title="상승"></i>000.0</span></td>
-  </tr>
-<tr>
-  <td class="text-center">25</td>
-  <td class="text-center" data-table-type="질병"><div class="position-relative">백내장<button class="c-table--click-menu"><i class="icon-svg-click-menu"></i></button></div></td>
-  <td class="text-center">질병</td>
-  <td class="text-end"><span class="c-table--open__related-pop" onclick="$.modal({isExist: true, className: 'data-table--related'});">2,023</span></td>
-  <td class="text-end"><span class="percent"><i class="icon-svg-triangle-up" title="상승"></i>000.0</span></td>
-  </tr>
-<tr>
+</tr>
+<tr data-keyword="강남의원">
   <td class="text-center">26</td>
-  <td class="text-center" data-table-type="질병"><div class="position-relative">무지외반증<button class="c-table--click-menu"><i class="icon-svg-click-menu"></i></button></div></td>
-  <td class="text-center">질병</td>
+  <td class="text-center" data-table-type="의료기관"><div class="position-relative">강남의원<button class="c-table--click-menu"><i class="icon-svg-click-menu"></i></button></div></td>
+  <td class="text-center">의료기관</td>
   <td class="text-end"><span class="c-table--open__related-pop" onclick="$.modal({isExist: true, className: 'data-table--related'});">2,023</span></td>
   <td class="text-end"><span class="percent"><i class="icon-svg-triangle-up" title="상승"></i>000.0</span></td>
-  </tr>
-<tr>
+</tr>
+<tr data-keyword="보철치료">
   <td class="text-center">27</td>
-  <td class="text-center" data-table-type="의료기관"><div class="position-relative">하나병원<button class="c-table--click-menu"><i class="icon-svg-click-menu"></i></button></div></td>
-  <td class="text-center">의료기관</td>
+  <td class="text-center" data-table-type="치료법"><div class="position-relative">보철치료<button class="c-table--click-menu"><i class="icon-svg-click-menu"></i></button></div></td>
+  <td class="text-center">치료법</td>
   <td class="text-end"><span class="c-table--open__related-pop" onclick="$.modal({isExist: true, className: 'data-table--related'});">2,023</span></td>
   <td class="text-end"><span class="percent"><i class="icon-svg-triangle-up" title="상승"></i>000.0</span></td>
-  </tr>
-<tr>
+</tr>
+<tr data-keyword="내성발톱">
   <td class="text-center">28</td>
-  <td class="text-center" data-table-type="질병"><div class="position-relative">안와골절<button class="c-table--click-menu"><i class="icon-svg-click-menu"></i></button></div></td>
+  <td class="text-center" data-table-type="질병"><div class="position-relative">내성발톱<button class="c-table--click-menu"><i class="icon-svg-click-menu"></i></button></div></td>
   <td class="text-center">질병</td>
   <td class="text-end"><span class="c-table--open__related-pop" onclick="$.modal({isExist: true, className: 'data-table--related'});">2,023</span></td>
   <td class="text-end"><span class="percent"><i class="icon-svg-triangle-up" title="상승"></i>000.0</span></td>
-  </tr>
-<tr>
+</tr>
+<tr data-keyword="백병원">
   <td class="text-center">29</td>
-  <td class="text-center" data-table-type="의료기관"><div class="position-relative">한울병원<button class="c-table--click-menu"><i class="icon-svg-click-menu"></i></button></div></td>
+  <td class="text-center" data-table-type="의료기관"><div class="position-relative">백병원<button class="c-table--click-menu"><i class="icon-svg-click-menu"></i></button></div></td>
   <td class="text-center">의료기관</td>
   <td class="text-end"><span class="c-table--open__related-pop" onclick="$.modal({isExist: true, className: 'data-table--related'});">2,023</span></td>
   <td class="text-end"><span class="percent"><i class="icon-svg-triangle-up" title="상승"></i>000.0</span></td>
-  </tr>
-<tr>
+</tr>
+<tr data-keyword="한방치료">
   <td class="text-center">30</td>
-  <td class="text-center" data-table-type="질병"><div class="position-relative">고혈압<button class="c-table--click-menu"><i class="icon-svg-click-menu"></i></button></div></td>
-  <td class="text-center">질병</td>
+  <td class="text-center" data-table-type="치료법"><div class="position-relative">한방치료<button class="c-table--click-menu"><i class="icon-svg-click-menu"></i></button></div></td>
+  <td class="text-center">치료법</td>
   <td class="text-end"><span class="c-table--open__related-pop" onclick="$.modal({isExist: true, className: 'data-table--related'});">2,023</span></td>
   <td class="text-end"><span class="percent"><i class="icon-svg-triangle-up" title="상승"></i>000.0</span></td>
-  </tr>
-                </tbody>
-              </table>
-            </div>
-          </main>
-        </article>
+</tr>
+
+
+                  </tbody>
+                </table>
+              </div>
+            </main>
+          </article>
+
+        </div>
       </main>
     </div>
   </section>
@@ -904,106 +935,118 @@
           <button type="button" class="btn btn-icon rounded-circle"><i class="icon-svg icon-svg-download"></i></button>
         </div>
       </header>
-      <main class="l-article-body pt-16 row">
-        <article class="l-article col-8 ml-auto"  data-card="연관어-테이블" data-loading-spinner="false" data-is-empty="false">
-          <header class="l-article-header d-flex">
-            <fieldset class="form-fieldset d-inline-flex" data-fieldset="TOP/HOT">
-              <div class="form-row form-switch-button" data-row="TOP">
-                <input id="radioIssueRank1" name="radioIssueRank" type="radio" checked />
-                <label for="radioIssueRank1"><i class="icon-svg icon-svg-thumbs-up mr-4"></i><span class="txt">TOP</span></label>
-              </div>
-              <div class="form-row form-switch-button" data-row="HOT">
-                <input id="radioIssueRank2" name="radioIssueRank" type="radio" />
-                <label for="radioIssueRank2"><i class="icon-svg icon-svg-fire mr-4"></i><span class="txt">HOT</span></label>
-              </div>
-            </fieldset>
-          </header>
-          <main class="l-article-body mt-24">
-            <div class="scroll-container-y" style="height: 44rem;">
-              <table class="c-table c-table--moral__related ml-auto" data-thead-sticky="true" style="width: 63.8rem;">
-                <colgroup>
-                  <col width="8.75%">
-                  <col width="*">
-                  <col width="15%">
-                  <col width="15%">
-                  <col width="20.9%">
-                </colgroup>
-                <thead>
-                  <tr>
-                    <th>순위</th>
-                    <th>연관어</th>
-                    <th>속성</th>
-                    <th>정보량</th>
-                    <th>정보량 증감률</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
+      <main class="l-article-body pt-16"> 
+        <div class="row">
+          <div class="col-8">
+            <article class="l-article"  data-article="연관어상세분석-테이블" data-loading-spinner="false" data-is-empty="false">
+              <header class="l-article-header d-flex">
+                <fieldset class="form-fieldset d-inline-flex" data-fieldset="TOP/HOT">
+                  <div class="form-row form-switch-button" data-row="TOP">
+                    <input id="radioRelatedDetail1" name="radioRelatedDetail" type="radio" checked />
+                    <label for="radioRelatedDetail1"><i class="icon-svg icon-svg-thumbs-up mr-4"></i><span class="txt">TOP</span></label>
+                  </div>
+                  <div class="form-row form-switch-button" data-row="HOT">
+                    <input id="radioRelatedDetail2" name="radioRelatedDetail" type="radio" />
+                    <label for="radioRelatedDetail2"><i class="icon-svg icon-svg-fire mr-4"></i><span class="txt">HOT</span></label>
+                  </div>
+                </fieldset>
+                <fieldset class="form-fieldset  ml-12" data-value-minimum="1" data-fieldset="연관어">
+                  <div class="form-row form-check form-check-button" data-row="백내장">
+                    <input id="checkboxRelatedDetail1" class="form-check__input" type="checkbox" />
+                    <label for="checkboxRelatedDetail1" class="form-check__label" style="--color-set: #B193E2;"><span class="txt">백내장</span></label>
+                  </div>
+                  <div class="form-row form-check form-check-button" data-row="다초점렌즈">
+                    <input id="checkboxRelatedDetail2" class="form-check__input" type="checkbox" checked />
+                    <label for="checkboxRelatedDetail2" class="form-check__label" style="--color-set: #89DDD8;"><span class="txt">다초점렌즈</span></label>
+                  </div>
+                </fieldset>
+              </header>
+              <main class="l-article-body mt-24">
+                <div class="scroll-container-y position-absolute border-bottom">
+                  <table class="c-table c-table--hover-samsung c-table--keyword__related-detail" data-thead-sticky="true">
+                    <colgroup>
+                      <col width="8.75%">
+                      <col width="*">
+                      <col width="15%">
+                      <col width="15%">
+                      <col width="20.9%">
+                    </colgroup>
+                    <thead>
+                      <tr>
+                        <th>순위</th>
+                        <th>연관어</th>
+                        <th>속성</th>
+                        <th>정보량</th>
+                        <th>정보량 증감률</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
   <td class="text-center">1</td>
-  <td class="text-center" data-table-type="질병"><div class="position-relative">합병증<button class="c-table--click-menu"><i class="icon-svg-click-menu"></i></button></div></td>
+  <td class="text-center" data-table-type="질병"><div class="position-relative"><span class="link">합병증</span><button class="c-table--click-menu"><i class="icon-svg-click-menu"></i></button></div></td>
   <td class="text-center">질병</td>
   <td class="text-end"><span class="c-table--open__related-pop" onclick="$.modal({isExist: true, className: 'data-table--related'});">2,023</span></td>
   <td class="text-end"><span class="percent"><i class="icon-svg-triangle-up" title="상승"></i>000.0</span></td>
   </tr>
 <tr>
   <td class="text-center">2</td>
-  <td class="text-center" data-table-type="치료법"><div class="position-relative">초음파<button class="c-table--click-menu"><i class="icon-svg-click-menu"></i></button></div></td>
+  <td class="text-center" data-table-type="치료법"><div class="position-relative"><span class="link">초음파</span><button class="c-table--click-menu"><i class="icon-svg-click-menu"></i></button></div></td>
   <td class="text-center">치료법</td>
   <td class="text-end"><span class="c-table--open__related-pop" onclick="$.modal({isExist: true, className: 'data-table--related'});">33,333,333</span></td>
   <td class="text-end"><span class="percent"><i class="icon-svg-triangle-up" title="상승"></i>000.0</span></td>
   </tr>
 <tr>
   <td class="text-center">3</td>
-  <td class="text-center" data-table-type="치료법"><div class="position-relative">스케일링<button class="c-table--click-menu"><i class="icon-svg-click-menu"></i></button></div></td>
+  <td class="text-center" data-table-type="치료법"><div class="position-relative"><span class="link">스케일링</span><button class="c-table--click-menu"><i class="icon-svg-click-menu"></i></button></div></td>
   <td class="text-center">치료법</td>
   <td class="text-end"><span class="c-table--open__related-pop" onclick="$.modal({isExist: true, className: 'data-table--related'});">2,023</span></td>
   <td class="text-end"><span class="percent"><i class="icon-svg-triangle-up" title="상승"></i>000.0</span></td>
   </tr>
 <tr>
   <td class="text-center">4</td>
-  <td class="text-center" data-table-type="질병"><div class="position-relative">십자인대<button class="c-table--click-menu"><i class="icon-svg-click-menu"></i></button></div></td>
+  <td class="text-center" data-table-type="질병"><div class="position-relative"><span class="link">십자인대</span><button class="c-table--click-menu"><i class="icon-svg-click-menu"></i></button></div></td>
   <td class="text-center">질병</td>
   <td class="text-end"><span class="c-table--open__related-pop" onclick="$.modal({isExist: true, className: 'data-table--related'});">2,023</span></td>
   <td class="text-end"><span class="fluc__new">New</span></td>
   </tr>
 <tr>
   <td class="text-center">5</td>
-  <td class="text-center" data-table-type="질병"><div class="position-relative">백내장<button class="c-table--click-menu"><i class="icon-svg-click-menu"></i></button></div></td>
+  <td class="text-center" data-table-type="질병"><div class="position-relative"><span class="link">백내장</span><button class="c-table--click-menu"><i class="icon-svg-click-menu"></i></button></div></td>
   <td class="text-center">질병</td>
   <td class="text-end"><span class="c-table--open__related-pop" onclick="$.modal({isExist: true, className: 'data-table--related'});">2,023</span></td>
   <td class="text-end"><span class="fluc__new">New</span></td>
   </tr>
 <tr>
   <td class="text-center">6</td>
-  <td class="text-center" data-table-type="의료기관"><div class="position-relative">강남의원<button class="c-table--click-menu"><i class="icon-svg-click-menu"></i></button></div></td>
+  <td class="text-center" data-table-type="의료기관"><div class="position-relative"><span class="link">강남의원</span><button class="c-table--click-menu"><i class="icon-svg-click-menu"></i></button></div></td>
   <td class="text-center">의료기관</td>
   <td class="text-end"><span class="c-table--open__related-pop" onclick="$.modal({isExist: true, className: 'data-table--related'});">2,023</span></td>
   <td class="text-end"><span class="percent"><i class="icon-svg-triangle-down" title="하락"></i>000.0</span></td>
   </tr>
 <tr>
   <td class="text-center">7</td>
-  <td class="text-center" data-table-type="의료기관"><div class="position-relative">하나병원<button class="c-table--click-menu"><i class="icon-svg-click-menu"></i></button></div></td>
+  <td class="text-center" data-table-type="의료기관"><div class="position-relative"><span class="link">하나병원</span><button class="c-table--click-menu"><i class="icon-svg-click-menu"></i></button></div></td>
   <td class="text-center">의료기관</td>
   <td class="text-end"><span class="c-table--open__related-pop" onclick="$.modal({isExist: true, className: 'data-table--related'});">2,023</span></td>
   <td class="text-end"><span class="percent"><i class="icon-svg-triangle-down" title="하락"></i>000.0</span></td>
   </tr>
 <tr>
   <td class="text-center">8</td>
-  <td class="text-center" data-table-type="의료기관"><div class="position-relative">한울병원<button class="c-table--click-menu"><i class="icon-svg-click-menu"></i></button></div></td>
+  <td class="text-center" data-table-type="의료기관"><div class="position-relative"><span class="link">한울병원</span><button class="c-table--click-menu"><i class="icon-svg-click-menu"></i></button></div></td>
   <td class="text-center">의료기관</td>
   <td class="text-end"><span class="c-table--open__related-pop" onclick="$.modal({isExist: true, className: 'data-table--related'});">2,023</span></td>
   <td class="text-end"><span class="percent"><i class="icon-svg-triangle-down" title="하락"></i>000.0</span></td>
   </tr>
 <tr>
   <td class="text-center">9</td>
-  <td class="text-center" data-table-type="치료법"><div class="position-relative">뜸<button class="c-table--click-menu"><i class="icon-svg-click-menu"></i></button></div></td>
+  <td class="text-center" data-table-type="치료법"><div class="position-relative"><span class="link">뜸</span><button class="c-table--click-menu"><i class="icon-svg-click-menu"></i></button></div></td>
   <td class="text-center">치료법</td>
   <td class="text-end"><span class="c-table--open__related-pop" onclick="$.modal({isExist: true, className: 'data-table--related'});">2,023</span></td>
   <td class="text-end"><span class="percent"><i class="icon-svg-triangle-down" title="하락"></i>000.0</span></td>
   </tr>
 <tr>
   <td class="text-center">10</td>
-  <td class="text-center" data-table-type="의료기관"><div class="position-relative">최고의원<button class="c-table--click-menu"><i class="icon-svg-click-menu"></i></button></div></td>
+  <td class="text-center" data-table-type="의료기관"><div class="position-relative"><span class="link">최고의원</span><button class="c-table--click-menu"><i class="icon-svg-click-menu"></i></button></div></td>
   <td class="text-center">의료기관</td>
   <td class="text-end"><span class="c-table--open__related-pop" onclick="$.modal({isExist: true, className: 'data-table--related'});">2,023</span></td>
   <td class="text-end"><span class="percent"><i class="icon-svg-triangle-down" title="하락"></i>000.0</span></td>
@@ -1011,70 +1054,70 @@
 
 <tr>
   <td class="text-center">11</td>
-  <td class="text-center" data-table-type="치료법"><div class="position-relative">절제술<button class="c-table--click-menu"><i class="icon-svg-click-menu"></i></button></div></td>
+  <td class="text-center" data-table-type="치료법"><div class="position-relative"><span class="link">절제술</span><button class="c-table--click-menu"><i class="icon-svg-click-menu"></i></button></div></td>
   <td class="text-center">치료법</td>
   <td class="text-end"><span class="c-table--open__related-pop" onclick="$.modal({isExist: true, className: 'data-table--related'});">2,023</span></td>
   <td class="text-end"><span class="percent"><i class="icon-svg-triangle-up" title="상승"></i>000.0</span></td>
   </tr>
 <tr>
   <td class="text-center">12</td>
-  <td class="text-center" data-table-type="치료법"><div class="position-relative">초음파<button class="c-table--click-menu"><i class="icon-svg-click-menu"></i></button></div></td>
+  <td class="text-center" data-table-type="치료법"><div class="position-relative"><span class="link">초음파</span><button class="c-table--click-menu"><i class="icon-svg-click-menu"></i></button></div></td>
   <td class="text-center">치료법</td>
   <td class="text-end"><span class="c-table--open__related-pop" onclick="$.modal({isExist: true, className: 'data-table--related'});">2,023</span></td>
   <td class="text-end"><span class="percent"><i class="icon-svg-triangle-up" title="상승"></i>000.0</span></td>
   </tr>
 <tr>
   <td class="text-center">13</td>
-  <td class="text-center" data-table-type="질병"><div class="position-relative">빈혈<button class="c-table--click-menu"><i class="icon-svg-click-menu"></i></button></div></td>
+  <td class="text-center" data-table-type="질병"><div class="position-relative"><span class="link">빈혈</span><button class="c-table--click-menu"><i class="icon-svg-click-menu"></i></button></div></td>
   <td class="text-center">질병</td>
   <td class="text-end"><span class="c-table--open__related-pop" onclick="$.modal({isExist: true, className: 'data-table--related'});">2,023</span></td>
   <td class="text-end"><span class="percent"><i class="icon-svg-triangle-up" title="상승"></i>000.0</span></td>
   </tr>
 <tr>
   <td class="text-center">14</td>
-  <td class="text-center" data-table-type="치료법"><div class="position-relative">부항<button class="c-table--click-menu"><i class="icon-svg-click-menu"></i></button></div></td>
+  <td class="text-center" data-table-type="치료법"><div class="position-relative"><span class="link">부항</span><button class="c-table--click-menu"><i class="icon-svg-click-menu"></i></button></div></td>
   <td class="text-center">치료법</td>
   <td class="text-end"><span class="c-table--open__related-pop" onclick="$.modal({isExist: true, className: 'data-table--related'});">2,023</span></td>
   <td class="text-end"><span class="percent"><i class="icon-svg-triangle-up" title="상승"></i>000.0</span></td>
   </tr>
 <tr>
   <td class="text-center">15</td>
-  <td class="text-center" data-table-type="질병"><div class="position-relative">백내장<button class="c-table--click-menu"><i class="icon-svg-click-menu"></i></button></div></td>
+  <td class="text-center" data-table-type="질병"><div class="position-relative"><span class="link">백내장</span><button class="c-table--click-menu"><i class="icon-svg-click-menu"></i></button></div></td>
   <td class="text-center">질병</td>
   <td class="text-end"><span class="c-table--open__related-pop" onclick="$.modal({isExist: true, className: 'data-table--related'});">2,023</span></td>
   <td class="text-end"><span class="percent"><i class="icon-svg-triangle-up" title="상승"></i>000.0</span></td>
   </tr>
 <tr>
   <td class="text-center">16</td>
-  <td class="text-center" data-table-type="의료기관"><div class="position-relative">강남의원<button class="c-table--click-menu"><i class="icon-svg-click-menu"></i></button></div></td>
+  <td class="text-center" data-table-type="의료기관"><div class="position-relative"><span class="link">강남의원</span><button class="c-table--click-menu"><i class="icon-svg-click-menu"></i></button></div></td>
   <td class="text-center">의료기관</td>
   <td class="text-end"><span class="c-table--open__related-pop" onclick="$.modal({isExist: true, className: 'data-table--related'});">2,023</span></td>
   <td class="text-end"><span class="percent"><i class="icon-svg-triangle-up" title="상승"></i>000.0</span></td>
   </tr>
 <tr>
   <td class="text-center">17</td>
-  <td class="text-center" data-table-type="의료기관"><div class="position-relative">하나병원<button class="c-table--click-menu"><i class="icon-svg-click-menu"></i></button></div></td>
+  <td class="text-center" data-table-type="의료기관"><div class="position-relative"><span class="link">하나병원</span><button class="c-table--click-menu"><i class="icon-svg-click-menu"></i></button></div></td>
   <td class="text-center">의료기관</td>
   <td class="text-end"><span class="c-table--open__related-pop" onclick="$.modal({isExist: true, className: 'data-table--related'});">2,023</span></td>
   <td class="text-end"><span class="percent"><i class="icon-svg-triangle-up" title="상승"></i>000.0</span></td>
   </tr>
 <tr>
   <td class="text-center">18</td>
-  <td class="text-center" data-table-type="의료기관"><div class="position-relative">최고의원<button class="c-table--click-menu"><i class="icon-svg-click-menu"></i></button></div></td>
+  <td class="text-center" data-table-type="의료기관"><div class="position-relative"><span class="link">최고의원</span><button class="c-table--click-menu"><i class="icon-svg-click-menu"></i></button></div></td>
   <td class="text-center">의료기관</td>
   <td class="text-end"><span class="c-table--open__related-pop" onclick="$.modal({isExist: true, className: 'data-table--related'});">2,023</span></td>
   <td class="text-end"><span class="percent"><i class="icon-svg-triangle-up" title="상승"></i>000.0</span></td>
   </tr>
 <tr>
   <td class="text-center">19</td>
-  <td class="text-center" data-table-type="의료기관"><div class="position-relative">한울병원<button class="c-table--click-menu"><i class="icon-svg-click-menu"></i></button></div></td>
+  <td class="text-center" data-table-type="의료기관"><div class="position-relative"><span class="link">한울병원</span><button class="c-table--click-menu"><i class="icon-svg-click-menu"></i></button></div></td>
   <td class="text-center">의료기관</td>
   <td class="text-end"><span class="c-table--open__related-pop" onclick="$.modal({isExist: true, className: 'data-table--related'});">2,023</span></td>
   <td class="text-end"><span class="percent"><i class="icon-svg-triangle-up" title="상승"></i>000.0</span></td>
   </tr>
 <tr>
   <td class="text-center">20</td>
-  <td class="text-center" data-table-type="치료법"><div class="position-relative">뜸<button class="c-table--click-menu"><i class="icon-svg-click-menu"></i></button></div></td>
+  <td class="text-center" data-table-type="치료법"><div class="position-relative"><span class="link">뜸</span><button class="c-table--click-menu"><i class="icon-svg-click-menu"></i></button></div></td>
   <td class="text-center">치료법</td>
   <td class="text-end"><span class="c-table--open__related-pop" onclick="$.modal({isExist: true, className: 'data-table--related'});">2,023</span></td>
   <td class="text-end"><span class="percent"><i class="icon-svg-triangle-up" title="상승"></i>000.0</span></td>
@@ -1082,338 +1125,851 @@
 
 <tr>
   <td class="text-center">21</td>
-  <td class="text-center" data-table-type="질병"><div class="position-relative">합병증<button class="c-table--click-menu"><i class="icon-svg-click-menu"></i></button></div></td>
+  <td class="text-center" data-table-type="질병"><div class="position-relative"><span class="link">합병증</span><button class="c-table--click-menu"><i class="icon-svg-click-menu"></i></button></div></td>
   <td class="text-center">질병</td>
   <td class="text-end"><span class="c-table--open__related-pop" onclick="$.modal({isExist: true, className: 'data-table--related'});">2,023</span></td>
   <td class="text-end"><span class="percent"><i class="icon-svg-triangle-up" title="상승"></i>000.0</span></td>
   </tr>
 <tr>
   <td class="text-center">22</td>
-  <td class="text-center" data-table-type="치료법"><div class="position-relative">초음파<button class="c-table--click-menu"><i class="icon-svg-click-menu"></i></button></div></td>
+  <td class="text-center" data-table-type="치료법"><div class="position-relative"><span class="link">초음파</span><button class="c-table--click-menu"><i class="icon-svg-click-menu"></i></button></div></td>
   <td class="text-center">치료법</td>
   <td class="text-end"><span class="c-table--open__related-pop" onclick="$.modal({isExist: true, className: 'data-table--related'});">2,023</span></td>
   <td class="text-end"><span class="percent"><i class="icon-svg-triangle-up" title="상승"></i>000.0</span></td>
   </tr>
 <tr>
   <td class="text-center">23</td>
-  <td class="text-center" data-table-type="질병"><div class="position-relative">당뇨병<button class="c-table--click-menu"><i class="icon-svg-click-menu"></i></button></div></td>
+  <td class="text-center" data-table-type="질병"><div class="position-relative"><span class="link">당뇨병</span><button class="c-table--click-menu"><i class="icon-svg-click-menu"></i></button></div></td>
   <td class="text-center">질병</td>
   <td class="text-end"><span class="c-table--open__related-pop" onclick="$.modal({isExist: true, className: 'data-table--related'});">2,023</span></td>
   <td class="text-end"><span class="percent"><i class="icon-svg-triangle-up" title="상승"></i>000.0</span></td>
   </tr>
 <tr>
   <td class="text-center">24</td>
-  <td class="text-center" data-table-type="치료법"><div class="position-relative">부항<button class="c-table--click-menu"><i class="icon-svg-click-menu"></i></button></div></td>
+  <td class="text-center" data-table-type="치료법"><div class="position-relative"><span class="link">부항</span><button class="c-table--click-menu"><i class="icon-svg-click-menu"></i></button></div></td>
   <td class="text-center">치료법</td>
   <td class="text-end"><span class="c-table--open__related-pop" onclick="$.modal({isExist: true, className: 'data-table--related'});">2,023</span></td>
   <td class="text-end"><span class="percent"><i class="icon-svg-triangle-up" title="상승"></i>000.0</span></td>
   </tr>
 <tr>
   <td class="text-center">25</td>
-  <td class="text-center" data-table-type="질병"><div class="position-relative">백내장<button class="c-table--click-menu"><i class="icon-svg-click-menu"></i></button></div></td>
+  <td class="text-center" data-table-type="질병"><div class="position-relative"><span class="link">백내장</span><button class="c-table--click-menu"><i class="icon-svg-click-menu"></i></button></div></td>
   <td class="text-center">질병</td>
   <td class="text-end"><span class="c-table--open__related-pop" onclick="$.modal({isExist: true, className: 'data-table--related'});">2,023</span></td>
   <td class="text-end"><span class="percent"><i class="icon-svg-triangle-up" title="상승"></i>000.0</span></td>
   </tr>
 <tr>
   <td class="text-center">26</td>
-  <td class="text-center" data-table-type="질병"><div class="position-relative">무지외반증<button class="c-table--click-menu"><i class="icon-svg-click-menu"></i></button></div></td>
+  <td class="text-center" data-table-type="질병"><div class="position-relative"><span class="link">무지외반증</span><button class="c-table--click-menu"><i class="icon-svg-click-menu"></i></button></div></td>
   <td class="text-center">질병</td>
   <td class="text-end"><span class="c-table--open__related-pop" onclick="$.modal({isExist: true, className: 'data-table--related'});">2,023</span></td>
   <td class="text-end"><span class="percent"><i class="icon-svg-triangle-up" title="상승"></i>000.0</span></td>
   </tr>
 <tr>
   <td class="text-center">27</td>
-  <td class="text-center" data-table-type="의료기관"><div class="position-relative">하나병원<button class="c-table--click-menu"><i class="icon-svg-click-menu"></i></button></div></td>
+  <td class="text-center" data-table-type="의료기관"><div class="position-relative"><span class="link">하나병원</span><button class="c-table--click-menu"><i class="icon-svg-click-menu"></i></button></div></td>
   <td class="text-center">의료기관</td>
   <td class="text-end"><span class="c-table--open__related-pop" onclick="$.modal({isExist: true, className: 'data-table--related'});">2,023</span></td>
   <td class="text-end"><span class="percent"><i class="icon-svg-triangle-up" title="상승"></i>000.0</span></td>
   </tr>
 <tr>
   <td class="text-center">28</td>
-  <td class="text-center" data-table-type="질병"><div class="position-relative">안와골절<button class="c-table--click-menu"><i class="icon-svg-click-menu"></i></button></div></td>
+  <td class="text-center" data-table-type="질병"><div class="position-relative"><span class="link">안와골절</span><button class="c-table--click-menu"><i class="icon-svg-click-menu"></i></button></div></td>
   <td class="text-center">질병</td>
   <td class="text-end"><span class="c-table--open__related-pop" onclick="$.modal({isExist: true, className: 'data-table--related'});">2,023</span></td>
   <td class="text-end"><span class="percent"><i class="icon-svg-triangle-up" title="상승"></i>000.0</span></td>
   </tr>
 <tr>
   <td class="text-center">29</td>
-  <td class="text-center" data-table-type="의료기관"><div class="position-relative">한울병원<button class="c-table--click-menu"><i class="icon-svg-click-menu"></i></button></div></td>
+  <td class="text-center" data-table-type="의료기관"><div class="position-relative"><span class="link">한울병원</span><button class="c-table--click-menu"><i class="icon-svg-click-menu"></i></button></div></td>
   <td class="text-center">의료기관</td>
   <td class="text-end"><span class="c-table--open__related-pop" onclick="$.modal({isExist: true, className: 'data-table--related'});">2,023</span></td>
   <td class="text-end"><span class="percent"><i class="icon-svg-triangle-up" title="상승"></i>000.0</span></td>
   </tr>
 <tr>
   <td class="text-center">30</td>
-  <td class="text-center" data-table-type="질병"><div class="position-relative">고혈압<button class="c-table--click-menu"><i class="icon-svg-click-menu"></i></button></div></td>
+  <td class="text-center" data-table-type="질병"><div class="position-relative"><span class="link">고혈압</span><button class="c-table--click-menu"><i class="icon-svg-click-menu"></i></button></div></td>
   <td class="text-center">질병</td>
   <td class="text-end"><span class="c-table--open__related-pop" onclick="$.modal({isExist: true, className: 'data-table--related'});">2,023</span></td>
   <td class="text-end"><span class="percent"><i class="icon-svg-triangle-up" title="상승"></i>000.0</span></td>
   </tr>
-                </tbody>
-              </table>
-            </div>
-          </main>
-        </article>
-        <article class="l-article col-10"  data-card="연관어-워드클라우드" data-loading-spinner="false" data-is-empty="false">
-          <header class="l-article-header">
-            <fieldset class="form-fieldset  ml-auto" data-value-minimum="1" data-fieldset="연관어">
-              <div class="form-row form-check form-check-button" data-row="질병">
-                <input id="checkboxRelated1" class="form-check__input" type="checkbox" checked />
-                <label for="checkboxRelated1" class="form-check__label" style="--color-set: #B28838;"><span class="txt">질병</span></label>
-              </div>
-              <div class="form-row form-check form-check-button" data-row="치료법">
-                <input id="checkboxRelated2" class="form-check__input" type="checkbox" checked />
-                <label for="checkboxRelated2" class="form-check__label" style="--color-set: #985C6D;"><span class="txt">치료법</span></label>
-              </div>
-              <div class="form-row form-check form-check-button" data-row="의료기관">
-                <input id="checkboxRelated3" class="form-check__input" type="checkbox" checked />
-                <label for="checkboxRelated3" class="form-check__label" style="--color-set: #58A277;"><span class="txt">의료기관</span></label>
-              </div>
-            </fieldset>
-            <button class="btn btn-secondary rounded ml-12">검색</button>
-          </header>
-          <main class="l-article-body mt-24">
-            <div class="js-chart" style="height: 44.2rem;">
-              <h1 class="fs-1">정보량추이 라인차트</h1>
-            </div>
-          </main>
-        </article>
-        
-        <article class="l-article mt-24 border p-20"  data-card="연관의료기관" data-loading-spinner="false" data-is-empty="false">
-          <header class="l-article-header l-article-header--has-title">
-            <h4 class="l-article-header__title">연관의료기관</h4>
-            <div class="l-article-header__btn ml-auto mb-12">
-              <button type="button" class="btn btn-icon rounded-circle"><i class="icon-svg icon-svg-download"></i></button>
-            </div>
-          </header>
-          <main class="l-section-body pt-16 row">
-            <article class="l-article ml-auto col-7"  data-card="Top30키워드지역-차트" data-loading-spinner="false" data-is-empty="false">
-              <header class="l-article-header d-flex">
-              </header>
-              <main class="l-article-body">
-                <div class="js-chart tab-slide h-100">
-                  <h1 class="fs-1">전국지도 차트 영역</h1>
-                </div>
-              </main>
-            </article>
-            <article class="l-article col-11"  data-card="Top30키워드지역-테이블" data-loading-spinner="false" data-is-empty="false">
-              <header class="l-article-header">
-              </header>
-              <main class="l-article-body">
-                <div class="scroll-container-y mt-20" style="height: 60rem;">
-                  <table class="c-table c-table--moral__top30-area" data-thead-sticky="true" style="width: 86.9rem;">
-                    <colgroup>
-                      <col width="8.6%">
-                      <col width="*">
-                      <col width="12.6%">
-                      <col width="12.6%">
-                      <col width="11%">
-                      <col width="13.8%">
-                      <col width="12.6%">
-                    </colgroup>
-                    <thead>
-                      <tr>
-                        <th>순위</th>
-                        <th>병원명</th>
-                        <th>시/도</th>
-                        <th>시/군/구</th>
-                        <th>정보량</th>
-                        <th>정보량 증감률</th>
-                        <th>홈페이지</th>
-                      </tr>
-                    </thead>
-                    <tbody>
-                      <tr>
-  <td class="text-center">1</td>
-  <td class="text-center"><button class="text-underline-hover" onclick="$.modal({className: 'alert', message: '오른쪽에 2차 정보 노출'});" type="button">도수치료</button></td>
-  <td class="text-end"><button class="c-table--open__related-pop" onclick="$.modal({isExist: true, className: 'data-table--related'});" type="button">2,023</button></td>
-  <td class="text-end"><span class="percent"><i class="icon-svg-triangle-up" title="상승"></i>000.0</span></td>
-</tr>
-<tr>
-  <td class="text-center">2</td>
-  <td class="text-center"><button class="text-underline-hover" onclick="$.modal({className: 'alert', message: '오른쪽에 2차 정보 노출'});" type="button">도수치료</button></td>
-  <td class="text-end"><button class="c-table--open__related-pop" onclick="$.modal({isExist: true, className: 'data-table--related'});" type="button">2,120</button></td>
-  <td class="text-end"><span class="percent"><i class="icon-svg-triangle-up" title="상승"></i>000.0</span></td>
-</tr>
-<tr>
-  <td class="text-center">3</td>
-  <td class="text-center"><button class="text-underline-hover" onclick="$.modal({className: 'alert', message: '오른쪽에 2차 정보 노출'});" type="button">물리치료</button></td>
-  <td class="text-end"><button class="c-table--open__related-pop" onclick="$.modal({isExist: true, className: 'data-table--related'});" type="button">3,333,333</button></td>
-  <td class="text-end"><span class="percent"><i class="icon-svg-triangle-up" title="상승"></i>000.0</span></td>
-</tr>
-<tr>
-  <td class="text-center">4</td>
-  <td class="text-center"><button class="text-underline-hover" onclick="$.modal({className: 'alert', message: '오른쪽에 2차 정보 노출'});" type="button">도수치료</button></td>
-  <td class="text-end"><button class="c-table--open__related-pop" onclick="$.modal({isExist: true, className: 'data-table--related'});" type="button">2,023</button></td>
-  <td class="text-end"><span class="percent"><i class="icon-svg-triangle-up" title="상승"></i>000.0</span></td>
-</tr>
-<tr>
-  <td class="text-center">5</td>
-  <td class="text-center"><button class="text-underline-hover" onclick="$.modal({className: 'alert', message: '오른쪽에 2차 정보 노출'});" type="button">도수치료</button></td>
-  <td class="text-end"><button class="c-table--open__related-pop" onclick="$.modal({isExist: true, className: 'data-table--related'});" type="button">2,023</button></td>
-  <td class="text-end"><span class="percent"><i class="icon-svg-triangle-up" title="상승"></i>000.0</span></td>
-</tr>
-<tr>
-  <td class="text-center">6</td>
-  <td class="text-center"><button class="text-underline-hover" onclick="$.modal({className: 'alert', message: '오른쪽에 2차 정보 노출'});" type="button">도수치료</button></td>
-  <td class="text-end"><button class="c-table--open__related-pop" onclick="$.modal({isExist: true, className: 'data-table--related'});" type="button">2,023</button></td>
-  <td class="text-end"><span class="percent"><i class="icon-svg-triangle-down" title="하락"></i>000.0</span></td>
-</tr>
-<tr>
-  <td class="text-center">7</td>
-  <td class="text-center"><button class="text-underline-hover" onclick="$.modal({className: 'alert', message: '오른쪽에 2차 정보 노출'});" type="button">도수치료</button></td>
-  <td class="text-end"><button class="c-table--open__related-pop" onclick="$.modal({isExist: true, className: 'data-table--related'});" type="button">2,023</button></td>
-  <td class="text-end"><span class="percent"><i class="icon-svg-triangle-down" title="하락"></i>000.0</span></td>
-</tr>
-<tr>
-  <td class="text-center">8</td>
-  <td class="text-center"><button class="text-underline-hover" onclick="$.modal({className: 'alert', message: '오른쪽에 2차 정보 노출'});" type="button">뜸</button></td>
-  <td class="text-end"><button class="c-table--open__related-pop" onclick="$.modal({isExist: true, className: 'data-table--related'});" type="button">2,023</button></td>
-  <td class="text-end"><span class="percent"><i class="icon-svg-triangle-down" title="하락"></i>000.0</span></td>
-</tr>
-<tr>
-  <td class="text-center">9</td>
-  <td class="text-center"><button class="text-underline-hover" onclick="$.modal({className: 'alert', message: '오른쪽에 2차 정보 노출'});" type="button">도수치료</button></td>
-  <td class="text-end"><button class="c-table--open__related-pop" onclick="$.modal({isExist: true, className: 'data-table--related'});" type="button">2,023</button></td>
-  <td class="text-end"><span class="percent"><i class="icon-svg-triangle-down" title="하락"></i>000.0</span></td>
-</tr>
-<tr>
-  <td class="text-center">10</td>
-  <td class="text-center"><button class="text-underline-hover" onclick="$.modal({className: 'alert', message: '오른쪽에 2차 정보 노출'});" type="button">도수치료</button></td>
-  <td class="text-end"><button class="c-table--open__related-pop" onclick="$.modal({isExist: true, className: 'data-table--related'});" type="button">2,023</button></td>
-  <td class="text-end"><span class="percent"><i class="icon-svg-triangle-down" title="하락"></i>000.0</span></td>
-</tr>
-
-<tr>
-  <td class="text-center">11</td>
-  <td class="text-center"><button class="text-underline-hover" onclick="$.modal({className: 'alert', message: '오른쪽에 2차 정보 노출'});" type="button">부항</button></td>
-  <td class="text-end"><button class="c-table--open__related-pop" onclick="$.modal({isExist: true, className: 'data-table--related'});" type="button">2,023</button></td>
-  <td class="text-end"><span class="percent"><i class="icon-svg-triangle-up" title="상승"></i>000.0</span></td>
-</tr>
-<tr>
-  <td class="text-center">12</td>
-  <td class="text-center"><button class="text-underline-hover" onclick="$.modal({className: 'alert', message: '오른쪽에 2차 정보 노출'});" type="button">부항</button></td>
-  <td class="text-end"><button class="c-table--open__related-pop" onclick="$.modal({isExist: true, className: 'data-table--related'});" type="button">2,120</button></td>
-  <td class="text-end"><span class="percent"><i class="icon-svg-triangle-up" title="상승"></i>000.0</span></td>
-</tr>
-<tr>
-  <td class="text-center">13</td>
-  <td class="text-center"><button class="text-underline-hover" onclick="$.modal({className: 'alert', message: '오른쪽에 2차 정보 노출'});" type="button">물리치료</button></td>
-  <td class="text-end"><button class="c-table--open__related-pop" onclick="$.modal({isExist: true, className: 'data-table--related'});" type="button">2,023</button></td>
-  <td class="text-end"><span class="percent"><i class="icon-svg-triangle-up" title="상승"></i>000.0</span></td>
-</tr>
-<tr>
-  <td class="text-center">14</td>
-  <td class="text-center"><button class="text-underline-hover" onclick="$.modal({className: 'alert', message: '오른쪽에 2차 정보 노출'});" type="button">도수치료</button></td>
-  <td class="text-end"><button class="c-table--open__related-pop" onclick="$.modal({isExist: true, className: 'data-table--related'});" type="button">2,023</button></td>
-  <td class="text-end"><span class="percent"><i class="icon-svg-triangle-up" title="상승"></i>000.0</span></td>
-</tr>
-<tr>
-  <td class="text-center">15</td>
-  <td class="text-center"><button class="text-underline-hover" onclick="$.modal({className: 'alert', message: '오른쪽에 2차 정보 노출'});" type="button">도수치료</button></td>
-  <td class="text-end"><button class="c-table--open__related-pop" onclick="$.modal({isExist: true, className: 'data-table--related'});" type="button">2,023</button></td>
-  <td class="text-end"><span class="percent"><i class="icon-svg-triangle-up" title="상승"></i>000.0</span></td>
-</tr>
-<tr>
-  <td class="text-center">16</td>
-  <td class="text-center"><button class="text-underline-hover" onclick="$.modal({className: 'alert', message: '오른쪽에 2차 정보 노출'});" type="button">도수치료</button></td>
-  <td class="text-end"><button class="c-table--open__related-pop" onclick="$.modal({isExist: true, className: 'data-table--related'});" type="button">2,023</button></td>
-  <td class="text-end"><span class="percent"><i class="icon-svg-triangle-up" title="상승"></i>000.0</span></td>
-</tr>
-<tr>
-  <td class="text-center">17</td>
-  <td class="text-center"><button class="text-underline-hover" onclick="$.modal({className: 'alert', message: '오른쪽에 2차 정보 노출'});" type="button">도수치료</button></td>
-  <td class="text-end"><button class="c-table--open__related-pop" onclick="$.modal({isExist: true, className: 'data-table--related'});" type="button">2,023</button></td>
-  <td class="text-end"><span class="percent"><i class="icon-svg-triangle-up" title="상승"></i>000.0</span></td>
-</tr>
-<tr>
-  <td class="text-center">18</td>
-  <td class="text-center"><button class="text-underline-hover" onclick="$.modal({className: 'alert', message: '오른쪽에 2차 정보 노출'});" type="button">뜸</button></td>
-  <td class="text-end"><button class="c-table--open__related-pop" onclick="$.modal({isExist: true, className: 'data-table--related'});" type="button">2,023</button></td>
-  <td class="text-end"><span class="percent"><i class="icon-svg-triangle-up" title="상승"></i>000.0</span></td>
-</tr>
-<tr>
-  <td class="text-center">19</td>
-  <td class="text-center"><button class="text-underline-hover" onclick="$.modal({className: 'alert', message: '오른쪽에 2차 정보 노출'});" type="button">도수치료</button></td>
-  <td class="text-end"><button class="c-table--open__related-pop" onclick="$.modal({isExist: true, className: 'data-table--related'});" type="button">2,023</button></td>
-  <td class="text-end"><span class="percent"><i class="icon-svg-triangle-up" title="상승"></i>000.0</span></td>
-</tr>
-<tr>
-  <td class="text-center">20</td>
-  <td class="text-center"><button class="text-underline-hover" onclick="$.modal({className: 'alert', message: '오른쪽에 2차 정보 노출'});" type="button">도수치료</button></td>
-  <td class="text-end"><button class="c-table--open__related-pop" onclick="$.modal({isExist: true, className: 'data-table--related'});" type="button">2,023</button></td>
-  <td class="text-end"><span class="percent"><i class="icon-svg-triangle-up" title="상승"></i>000.0</span></td>
-</tr>
-
-<tr>
-  <td class="text-center">21</td>
-  <td class="text-center"><button class="text-underline-hover" onclick="$.modal({className: 'alert', message: '오른쪽에 2차 정보 노출'});" type="button">도수치료</button></td>
-  <td class="text-end"><button class="c-table--open__related-pop" onclick="$.modal({isExist: true, className: 'data-table--related'});" type="button">2,023</button></td>
-  <td class="text-end"><span class="percent"><i class="icon-svg-triangle-up" title="상승"></i>000.0</span></td>
-</tr>
-<tr>
-  <td class="text-center">22</td>
-  <td class="text-center"><button class="text-underline-hover" onclick="$.modal({className: 'alert', message: '오른쪽에 2차 정보 노출'});" type="button">도수치료</button></td>
-  <td class="text-end"><button class="c-table--open__related-pop" onclick="$.modal({isExist: true, className: 'data-table--related'});" type="button">2,120</button></td>
-  <td class="text-end"><span class="percent"><i class="icon-svg-triangle-up" title="상승"></i>000.0</span></td>
-</tr>
-<tr>
-  <td class="text-center">23</td>
-  <td class="text-center"><button class="text-underline-hover" onclick="$.modal({className: 'alert', message: '오른쪽에 2차 정보 노출'});" type="button">물리치료</button></td>
-  <td class="text-end"><button class="c-table--open__related-pop" onclick="$.modal({isExist: true, className: 'data-table--related'});" type="button">2,023</button></td>
-  <td class="text-end"><span class="percent"><i class="icon-svg-triangle-up" title="상승"></i>000.0</span></td>
-</tr>
-<tr>
-  <td class="text-center">24</td>
-  <td class="text-center"><button class="text-underline-hover" onclick="$.modal({className: 'alert', message: '오른쪽에 2차 정보 노출'});" type="button">도수치료</button></td>
-  <td class="text-end"><button class="c-table--open__related-pop" onclick="$.modal({isExist: true, className: 'data-table--related'});" type="button">2,023</button></td>
-  <td class="text-end"><span class="percent"><i class="icon-svg-triangle-up" title="상승"></i>000.0</span></td>
-</tr>
-<tr>
-  <td class="text-center">25</td>
-  <td class="text-center"><button class="text-underline-hover" onclick="$.modal({className: 'alert', message: '오른쪽에 2차 정보 노출'});" type="button">도수치료</button></td>
-  <td class="text-end"><button class="c-table--open__related-pop" onclick="$.modal({isExist: true, className: 'data-table--related'});" type="button">2,023</button></td>
-  <td class="text-end"><span class="percent"><i class="icon-svg-triangle-up" title="상승"></i>000.0</span></td>
-</tr>
-<tr>
-  <td class="text-center">26</td>
-  <td class="text-center"><button class="text-underline-hover" onclick="$.modal({className: 'alert', message: '오른쪽에 2차 정보 노출'});" type="button">도수치료</button></td>
-  <td class="text-end"><button class="c-table--open__related-pop" onclick="$.modal({isExist: true, className: 'data-table--related'});" type="button">2,023</button></td>
-  <td class="text-end"><span class="percent"><i class="icon-svg-triangle-up" title="상승"></i>000.0</span></td>
-</tr>
-<tr>
-  <td class="text-center">27</td>
-  <td class="text-center"><button class="text-underline-hover" onclick="$.modal({className: 'alert', message: '오른쪽에 2차 정보 노출'});" type="button">도수치료</button></td>
-  <td class="text-end"><button class="c-table--open__related-pop" onclick="$.modal({isExist: true, className: 'data-table--related'});" type="button">2,023</button></td>
-  <td class="text-end"><span class="percent"><i class="icon-svg-triangle-up" title="상승"></i>000.0</span></td>
-</tr>
-<tr>
-  <td class="text-center">28</td>
-  <td class="text-center"><button class="text-underline-hover" onclick="$.modal({className: 'alert', message: '오른쪽에 2차 정보 노출'});" type="button">뜸</button></td>
-  <td class="text-end"><button class="c-table--open__related-pop" onclick="$.modal({isExist: true, className: 'data-table--related'});" type="button">2,023</button></td>
-  <td class="text-end"><span class="percent"><i class="icon-svg-triangle-up" title="상승"></i>000.0</span></td>
-</tr>
-<tr>
-  <td class="text-center">29</td>
-  <td class="text-center"><button class="text-underline-hover" onclick="$.modal({className: 'alert', message: '오른쪽에 2차 정보 노출'});" type="button">도수치료</button></td>
-  <td class="text-end"><button class="c-table--open__related-pop" onclick="$.modal({isExist: true, className: 'data-table--related'});" type="button">2,023</button></td>
-  <td class="text-end"><span class="percent"><i class="icon-svg-triangle-up" title="상승"></i>000.0</span></td>
-</tr>
-<tr>
-  <td class="text-center">30</td>
-  <td class="text-center"><button class="text-underline-hover" onclick="$.modal({className: 'alert', message: '오른쪽에 2차 정보 노출'});" type="button">도수치료</button></td>
-  <td class="text-end"><button class="c-table--open__related-pop" onclick="$.modal({isExist: true, className: 'data-table--related'});" type="button">2,023</button></td>
-  <td class="text-end"><span class="percent"><i class="icon-svg-triangle-up" title="상승"></i>000.0</span></td>
-</tr>
                     </tbody>
                   </table>
                 </div>
               </main>
             </article>
+          </div>
+  
+          <div class="col-10">
+            <article class="l-article"  data-article="연관어상세분석-우측" data-loading-spinner="false" data-is-empty="false">
+              <header class="l-article-header">
+                <fieldset class="form-fieldset  ml-auto" data-value-minimum="1" data-fieldset="연관어">
+                  <div class="form-row form-check form-check-button" data-row="질병">
+                    <input id="checkboxRelated1" class="form-check__input" type="checkbox" checked />
+                    <label for="checkboxRelated1" class="form-check__label" style="--color-set: #B28838;"><span class="txt">질병</span></label>
+                  </div>
+                  <div class="form-row form-check form-check-button" data-row="치료법">
+                    <input id="checkboxRelated2" class="form-check__input" type="checkbox" checked />
+                    <label for="checkboxRelated2" class="form-check__label" style="--color-set: #985C6D;"><span class="txt">치료법</span></label>
+                  </div>
+                  <div class="form-row form-check form-check-button" data-row="의료기관">
+                    <input id="checkboxRelated3" class="form-check__input" type="checkbox" checked />
+                    <label for="checkboxRelated3" class="form-check__label" style="--color-set: #58A277;"><span class="txt">의료기관</span></label>
+                  </div>
+                </fieldset>
+                <button class="btn btn-secondary rounded ml-12">검색</button>
+              </header>
+              <main class="l-article-body mt-24">
+                <article class="l-article border p-20 w100" data-article="연관어상세분석-정보량추이"  data-loading-spinner="false" data-is-empty="false">
+                  <header class="l-article-header--has-title d-flex">
+                    <h4 class="l-article-header__title">정보량추이 - <i class="c-badge color-171717 ml-8 js-toggle-label--1st d-none" style="background: #DADADA;">백내장</i> <i class="c-badge color-171717 ml-4 js-toggle-label--2nd" style="background: #DADADA;">다초점렌즈</i>
+                      <div class="l-article-header__more-badge ml-8 d-none"> + <i class="c-badge color-171717" style="background: #DADADA;">노인성백내장</i></div>
+                    </h4>
+                    <div class="l-article-header__btn ml-auto mb-12">
+                      <button type="button" class="btn btn-icon rounded-circle"><i class="icon-svg icon-svg-download"></i></button>
+                    </div>
+                  </header>
+                  <main class="l-article-body">
+                    <div class="l-article-body__fieldset d-flex">
+  
+                      <fieldset class="form-fieldset d-inline-flex" data-fieldset="채널/글유형">
+                        <div class="form-row form-switch-button" data-row="채널">
+                          <input type="radio" id="radioChannel11" name="radioChannel1" checked>
+                          <label for="radioChannel11">
+                            <span class="txt">채널</span>
+                          </label>
+                        </div>
+                        <div class="form-row form-switch-button" data-row="글유형">
+                          <input type="radio" id="radioChannel12" name="radioChannel1">
+                          <label for="radioChannel12">
+                            <span class="txt">글유형</span>
+                          </label>
+                        </div>
+                      </fieldset>
+                      <fieldset class="form-fieldset d-inline-flex ml-12" data-fieldset="누적/일평균">
+                        <div class="form-row form-switch-button" data-row="누적">
+                          <input type="radio" id="radioDataQuantity11"  name="radioDataQuantity1" checked>
+                          <label for="radioDataQuantity11">
+                            <span class="txt">누적</span>
+                          </label>
+                        </div>
+                        <div class="form-row form-switch-button" data-row="일평균">
+                          <input type="radio" id="radioDataQuantity12"  name="radioDataQuantity1">
+                          <label for="radioDataQuantity12">
+                            <span class="txt">일평균</span>
+                          </label>
+                        </div>
+                      </fieldset>
+                      <fieldset class="form-fieldset d-inline-flex ml-auto" data-fieldset="일주월별">
+                        <div class="form-row form-switch-button" data-row="일별">
+                          <input type="radio" id="radioSortDate11" name="radioSortDate1">
+                          <label for="radioSortDate11">
+                            <span class="txt">일별</span>
+                          </label>
+                        </div>
+                        <div class="form-row form-switch-button" data-row="주별">
+                          <input type="radio" id="radioSortDate12" name="radioSortDate1">
+                          <label for="radioSortDate12">
+                            <span class="txt">주별</span>
+                          </label>
+                        </div>
+                        <div class="form-row form-switch-button" data-row="월별">
+                          <input type="radio" id="radioSortDate13" name="radioSortDate1" checked>
+                          <label for="radioSortDate13">
+                            <span class="txt">월별</span>
+                          </label>
+                        </div>
+                      </fieldset>
+                    </div>
+                    <div class="js-chart mt-24" style="height: 30.5rem;">
+                      <h1 class="fs-1">정보량추이 라인차트</h1>
+                    </div>
+                  </main>
+                </article>
+              </main>
+            </article>
+          </div>
+        </div>
+
+
+        
+        <article class="l-article mt-24 mb-108 border p-20"  data-article="연관의료기관" data-loading-spinner="false" data-is-empty="false">
+          <header class="l-article-header l-article-header--has-title">
+            <h4 class="l-article-header__title">연관 의료기관 - <i class="c-badge color-171717 ml-8 js-toggle-label--1st d-none" style="background: #DADADA;">백내장</i> <i class="c-badge color-171717 ml-4 js-toggle-label--2nd" style="background: #DADADA;">다초점렌즈</i>
+              <div class="l-article-header__more-badge ml-8 d-none"> + <i class="c-badge color-171717" style="background: #DADADA;">노인성백내장</i></div>
+            </h4>
+            <div class="l-article-header__btn ml-auto mb-12">
+              <button type="button" class="btn btn-icon rounded-circle"><i class="icon-svg icon-svg-download"></i></button>
+            </div>
+          </header>
+          <main class="l-section-body pt-16 row">
+            <div class="col-7">
+              <article class="l-article ml-auto"  data-article="연관의료기관-차트" data-loading-spinner="false" data-is-empty="false">
+                <header class="l-article-header d-flex">
+                </header>
+                <main class="l-article-body">
+                  <div class="js-chart tab-slide h-100">
+                    <h1 class="fs-1">전국지도 차트 영역</h1>
+                  </div>
+                </main>
+              </article>
+            </div>
+            <div class="col-11">
+              <article class="l-article"  data-article="연관의료기관-테이블" data-loading-spinner="false" data-is-empty="false">
+                <header class="l-article-header">
+                </header>
+                <main class="l-article-body">
+                  <div class="scroll-container-y border-bottom" style="height: 61.6rem;">
+                    <table class="c-table c-table--hover-samsung c-table--keyword__related-medical" data-thead-sticky="true">
+                      <colgroup>
+                        <col width="8.6%">
+                        <col width="*">
+                        <col width="12.6%">
+                        <col width="12.6%">
+                        <col width="11%">
+                        <col width="13.8%">
+                        <col width="12.6%">
+                      </colgroup>
+                      <thead>
+                        <tr>
+                          <th>순위</th>
+                          <th>병원명</th>
+                          <th>시/도</th>
+                          <th>시/군/구</th>
+                          <th>
+                            <p class="tit">정보량</p>
+                            <fieldset class="form-fieldset" data-fieldset="정렬">
+                              <div class="form-row form-check-button" data-row="오름차순">
+                                <input id="radioTableHeadSort1" name="radioTableHeadSort" type="radio" />
+                                <label for="radioTableHeadSort1" title="오름차순"><i class="icon-svg icon-svg-chevron-up" aria-hidden="true"></i></label>
+                              </div>
+                              <div class="form-row form-check-button" data-row="내림차순">
+                                <input id="radioTableHeadSort2" name="radioTableHeadSort" type="radio" />
+                                <label for="radioTableHeadSort2" title="내림차순"><i class="icon-svg icon-svg-chevron-down" aria-hidden="true"></i></label>
+                              </div>
+                            </fieldset>
+                          </th>
+                          <th>
+                            <p class="tit">정보량 증감률</p>                            
+                            <fieldset class="form-fieldset" data-fieldset="정렬">
+                              <div class="form-row form-check-button" data-row="오름차순">
+                                <input id="radioTableHeadSort3" name="radioTableHeadSort" type="radio" />
+                                <label for="radioTableHeadSort3" title="오름차순"><i class="icon-svg icon-svg-chevron-up" aria-hidden="true"></i></label>
+                              </div>
+                              <div class="form-row form-check-button" data-row="내림차순">
+                                <input id="radioTableHeadSort4" name="radioTableHeadSort" type="radio" />
+                                <label for="radioTableHeadSort4" title="내림차순"><i class="icon-svg icon-svg-chevron-down" aria-hidden="true"></i></label>
+                              </div>
+                            </fieldset>
+                          </th>
+                          <th>홈페이지</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+  <td class="text-center">1</td>
+  <td class="text-start" data-table-type="의료기관"><div class="position-relative">가톨릭대학교인천성모병원<button class="c-table--click-menu"><i class="icon-svg-click-menu"></i></button></div></td>
+  <td class="text-center">인천</td>
+  <td class="text-center">부평구</td>
+  <td class="text-end"><button class="c-table--open__related-pop" onclick="$.modal({isExist: true, className: 'data-table--related'});" type="button">2,023</button></td>
+  <td class="text-end"><span class="percent"><i class="icon-svg-triangle-up" title="상승"></i>000.0</span></td>
+  <td class="text-center"><a href="#"><i class="icon-svg icon-svg-home-page"></i></a></td>
+</tr>
+<tr>
+  <td class="text-center">2</td>
+  <td class="text-start" data-table-type="의료기관"><div class="position-relative">가톨릭대학교인천성모병원<button class="c-table--click-menu"><i class="icon-svg-click-menu"></i></button></div></td>
+  <td class="text-center">인천</td>
+  <td class="text-center">부평구</td>
+  <td class="text-end"><button class="c-table--open__related-pop" onclick="$.modal({isExist: true, className: 'data-table--related'});" type="button">2,023</button></td>
+  <td class="text-end"><span class="percent"><i class="icon-svg-triangle-up" title="상승"></i>000.0</span></td>
+  <td class="text-center"><a href="#"><i class="icon-svg icon-svg-home-page"></i></a></td>
+</tr>
+<tr>
+  <td class="text-center">3</td>
+  <td class="text-start" data-table-type="의료기관"><div class="position-relative">가톨릭대학교인천성모병원<button class="c-table--click-menu"><i class="icon-svg-click-menu"></i></button></div></td>
+  <td class="text-center">인천</td>
+  <td class="text-center">부평구</td>
+  <td class="text-end"><button class="c-table--open__related-pop" onclick="$.modal({isExist: true, className: 'data-table--related'});" type="button">2,023</button></td>
+  <td class="text-end"><span class="percent"><i class="icon-svg-triangle-up" title="상승"></i>000.0</span></td>
+  <td class="text-center"><a href="#"><i class="icon-svg icon-svg-home-page"></i></a></td>
+</tr>
+<tr>
+  <td class="text-center">4</td>
+  <td class="text-start" data-table-type="의료기관"><div class="position-relative">가톨릭대학교인천성모병원<button class="c-table--click-menu"><i class="icon-svg-click-menu"></i></button></div></td>
+  <td class="text-center">인천</td>
+  <td class="text-center">부평구</td>
+  <td class="text-end"><button class="c-table--open__related-pop" onclick="$.modal({isExist: true, className: 'data-table--related'});" type="button">2,023</button></td>
+  <td class="text-end"><span class="percent"><i class="icon-svg-triangle-up" title="상승"></i>000.0</span></td>
+  <td class="text-center"><a href="#"><i class="icon-svg icon-svg-home-page"></i></a></td>
+</tr>
+<tr>
+  <td class="text-center">5</td>
+  <td class="text-start" data-table-type="의료기관"><div class="position-relative">가톨릭대학교인천성모병원<button class="c-table--click-menu"><i class="icon-svg-click-menu"></i></button></div></td>
+  <td class="text-center">인천</td>
+  <td class="text-center">부평구</td>
+  <td class="text-end"><button class="c-table--open__related-pop" onclick="$.modal({isExist: true, className: 'data-table--related'});" type="button">2,023</button></td>
+  <td class="text-end"><span class="percent"><i class="icon-svg-triangle-up" title="상승"></i>000.0</span></td>
+  <td class="text-center"><a href="#"><i class="icon-svg icon-svg-home-page"></i></a></td>
+</tr>
+<tr>
+  <td class="text-center">6</td>
+  <td class="text-start" data-table-type="의료기관"><div class="position-relative">가톨릭대학교인천성모병원<button class="c-table--click-menu"><i class="icon-svg-click-menu"></i></button></div></td>
+  <td class="text-center">인천</td>
+  <td class="text-center">부평구</td>
+  <td class="text-end"><button class="c-table--open__related-pop" onclick="$.modal({isExist: true, className: 'data-table--related'});" type="button">2,023</button></td>
+  <td class="text-end"><span class="percent"><i class="icon-svg-triangle-up" title="상승"></i>000.0</span></td>
+  <td class="text-center"><a href="#"><i class="icon-svg icon-svg-home-page"></i></a></td>
+</tr>
+<tr>
+  <td class="text-center">7</td>
+  <td class="text-start" data-table-type="의료기관"><div class="position-relative">가톨릭대학교인천성모병원<button class="c-table--click-menu"><i class="icon-svg-click-menu"></i></button></div></td>
+  <td class="text-center">인천</td>
+  <td class="text-center">부평구</td>
+  <td class="text-end"><button class="c-table--open__related-pop" onclick="$.modal({isExist: true, className: 'data-table--related'});" type="button">2,023</button></td>
+  <td class="text-end"><span class="percent"><i class="icon-svg-triangle-up" title="상승"></i>000.0</span></td>
+  <td class="text-center"><a href="#"><i class="icon-svg icon-svg-home-page"></i></a></td>
+</tr>
+<tr>
+  <td class="text-center">8</td>
+  <td class="text-start" data-table-type="의료기관"><div class="position-relative">가톨릭대학교인천성모병원<button class="c-table--click-menu"><i class="icon-svg-click-menu"></i></button></div></td>
+  <td class="text-center">인천</td>
+  <td class="text-center">부평구</td>
+  <td class="text-end"><button class="c-table--open__related-pop" onclick="$.modal({isExist: true, className: 'data-table--related'});" type="button">2,023</button></td>
+  <td class="text-end"><span class="percent"><i class="icon-svg-triangle-up" title="상승"></i>000.0</span></td>
+  <td class="text-center"><a href="#"><i class="icon-svg icon-svg-home-page"></i></a></td>
+</tr>
+<tr>
+  <td class="text-center">9</td>
+  <td class="text-start" data-table-type="의료기관"><div class="position-relative">가톨릭대학교인천성모병원<button class="c-table--click-menu"><i class="icon-svg-click-menu"></i></button></div></td>
+  <td class="text-center">인천</td>
+  <td class="text-center">부평구</td>
+  <td class="text-end"><button class="c-table--open__related-pop" onclick="$.modal({isExist: true, className: 'data-table--related'});" type="button">2,023</button></td>
+  <td class="text-end"><span class="percent"><i class="icon-svg-triangle-up" title="상승"></i>000.0</span></td>
+  <td class="text-center"><a href="#"><i class="icon-svg icon-svg-home-page"></i></a></td>
+</tr>
+<tr>
+  <td class="text-center">10</td>
+  <td class="text-start" data-table-type="의료기관"><div class="position-relative">가톨릭대학교인천성모병원<button class="c-table--click-menu"><i class="icon-svg-click-menu"></i></button></div></td>
+  <td class="text-center">인천</td>
+  <td class="text-center">부평구</td>
+  <td class="text-end"><button class="c-table--open__related-pop" onclick="$.modal({isExist: true, className: 'data-table--related'});" type="button">2,023</button></td>
+  <td class="text-end"><span class="percent"><i class="icon-svg-triangle-up" title="상승"></i>000.0</span></td>
+  <td class="text-center"><a href="#"><i class="icon-svg icon-svg-home-page"></i></a></td>
+</tr>
+
+
+<tr>
+  <td class="text-center">11</td>
+  <td class="text-start" data-table-type="의료기관"><div class="position-relative">가톨릭대학교인천성모병원<button class="c-table--click-menu"><i class="icon-svg-click-menu"></i></button></div></td>
+  <td class="text-center">인천</td>
+  <td class="text-center">부평구</td>
+  <td class="text-end"><button class="c-table--open__related-pop" onclick="$.modal({isExist: true, className: 'data-table--related'});" type="button">2,023</button></td>
+  <td class="text-end"><span class="percent"><i class="icon-svg-triangle-up" title="상승"></i>000.0</span></td>
+  <td class="text-center"><a href="#"><i class="icon-svg icon-svg-home-page"></i></a></td>
+</tr>
+<tr>
+  <td class="text-center">12</td>
+  <td class="text-start" data-table-type="의료기관"><div class="position-relative">가톨릭대학교인천성모병원<button class="c-table--click-menu"><i class="icon-svg-click-menu"></i></button></div></td>
+  <td class="text-center">인천</td>
+  <td class="text-center">부평구</td>
+  <td class="text-end"><button class="c-table--open__related-pop" onclick="$.modal({isExist: true, className: 'data-table--related'});" type="button">2,023</button></td>
+  <td class="text-end"><span class="percent"><i class="icon-svg-triangle-up" title="상승"></i>000.0</span></td>
+  <td class="text-center"><a href="#"><i class="icon-svg icon-svg-home-page"></i></a></td>
+</tr>
+<tr>
+  <td class="text-center">13</td>
+  <td class="text-start" data-table-type="의료기관"><div class="position-relative">가톨릭대학교인천성모병원<button class="c-table--click-menu"><i class="icon-svg-click-menu"></i></button></div></td>
+  <td class="text-center">인천</td>
+  <td class="text-center">부평구</td>
+  <td class="text-end"><button class="c-table--open__related-pop" onclick="$.modal({isExist: true, className: 'data-table--related'});" type="button">2,023</button></td>
+  <td class="text-end"><span class="percent"><i class="icon-svg-triangle-up" title="상승"></i>000.0</span></td>
+  <td class="text-center"><a href="#"><i class="icon-svg icon-svg-home-page"></i></a></td>
+</tr>
+<tr>
+  <td class="text-center">14</td>
+  <td class="text-start" data-table-type="의료기관"><div class="position-relative">가톨릭대학교인천성모병원<button class="c-table--click-menu"><i class="icon-svg-click-menu"></i></button></div></td>
+  <td class="text-center">인천</td>
+  <td class="text-center">부평구</td>
+  <td class="text-end"><button class="c-table--open__related-pop" onclick="$.modal({isExist: true, className: 'data-table--related'});" type="button">2,023</button></td>
+  <td class="text-end"><span class="percent"><i class="icon-svg-triangle-up" title="상승"></i>000.0</span></td>
+  <td class="text-center"><a href="#"><i class="icon-svg icon-svg-home-page"></i></a></td>
+</tr>
+<tr>
+  <td class="text-center">15</td>
+  <td class="text-start" data-table-type="의료기관"><div class="position-relative">가톨릭대학교인천성모병원<button class="c-table--click-menu"><i class="icon-svg-click-menu"></i></button></div></td>
+  <td class="text-center">인천</td>
+  <td class="text-center">부평구</td>
+  <td class="text-end"><button class="c-table--open__related-pop" onclick="$.modal({isExist: true, className: 'data-table--related'});" type="button">2,023</button></td>
+  <td class="text-end"><span class="percent"><i class="icon-svg-triangle-up" title="상승"></i>000.0</span></td>
+  <td class="text-center"><a href="#"><i class="icon-svg icon-svg-home-page"></i></a></td>
+</tr>
+<tr>
+  <td class="text-center">16</td>
+  <td class="text-start" data-table-type="의료기관"><div class="position-relative">가톨릭대학교인천성모병원<button class="c-table--click-menu"><i class="icon-svg-click-menu"></i></button></div></td>
+  <td class="text-center">인천</td>
+  <td class="text-center">부평구</td>
+  <td class="text-end"><button class="c-table--open__related-pop" onclick="$.modal({isExist: true, className: 'data-table--related'});" type="button">2,023</button></td>
+  <td class="text-end"><span class="percent"><i class="icon-svg-triangle-up" title="상승"></i>000.0</span></td>
+  <td class="text-center"><a href="#"><i class="icon-svg icon-svg-home-page"></i></a></td>
+</tr>
+<tr>
+  <td class="text-center">17</td>
+  <td class="text-start" data-table-type="의료기관"><div class="position-relative">가톨릭대학교인천성모병원<button class="c-table--click-menu"><i class="icon-svg-click-menu"></i></button></div></td>
+  <td class="text-center">인천</td>
+  <td class="text-center">부평구</td>
+  <td class="text-end"><button class="c-table--open__related-pop" onclick="$.modal({isExist: true, className: 'data-table--related'});" type="button">2,023</button></td>
+  <td class="text-end"><span class="percent"><i class="icon-svg-triangle-up" title="상승"></i>000.0</span></td>
+  <td class="text-center"><a href="#"><i class="icon-svg icon-svg-home-page"></i></a></td>
+</tr>
+<tr>
+  <td class="text-center">18</td>
+  <td class="text-start" data-table-type="의료기관"><div class="position-relative">가톨릭대학교인천성모병원<button class="c-table--click-menu"><i class="icon-svg-click-menu"></i></button></div></td>
+  <td class="text-center">인천</td>
+  <td class="text-center">부평구</td>
+  <td class="text-end"><button class="c-table--open__related-pop" onclick="$.modal({isExist: true, className: 'data-table--related'});" type="button">2,023</button></td>
+  <td class="text-end"><span class="percent"><i class="icon-svg-triangle-up" title="상승"></i>000.0</span></td>
+  <td class="text-center"><a href="#"><i class="icon-svg icon-svg-home-page"></i></a></td>
+</tr>
+<tr>
+  <td class="text-center">19</td>
+  <td class="text-start" data-table-type="의료기관"><div class="position-relative">가톨릭대학교인천성모병원<button class="c-table--click-menu"><i class="icon-svg-click-menu"></i></button></div></td>
+  <td class="text-center">인천</td>
+  <td class="text-center">부평구</td>
+  <td class="text-end"><button class="c-table--open__related-pop" onclick="$.modal({isExist: true, className: 'data-table--related'});" type="button">2,023</button></td>
+  <td class="text-end"><span class="percent"><i class="icon-svg-triangle-up" title="상승"></i>000.0</span></td>
+  <td class="text-center"><a href="#"><i class="icon-svg icon-svg-home-page"></i></a></td>
+</tr>
+<tr>
+  <td class="text-center">20</td>
+  <td class="text-start" data-table-type="의료기관"><div class="position-relative">가톨릭대학교인천성모병원<button class="c-table--click-menu"><i class="icon-svg-click-menu"></i></button></div></td>
+  <td class="text-center">인천</td>
+  <td class="text-center">부평구</td>
+  <td class="text-end"><button class="c-table--open__related-pop" onclick="$.modal({isExist: true, className: 'data-table--related'});" type="button">2,023</button></td>
+  <td class="text-end"><span class="percent"><i class="icon-svg-triangle-up" title="상승"></i>000.0</span></td>
+  <td class="text-center"><a href="#"><i class="icon-svg icon-svg-home-page"></i></a></td>
+</tr>
+
+
+<tr>
+  <td class="text-center">21</td>
+  <td class="text-start" data-table-type="의료기관"><div class="position-relative">가톨릭대학교인천성모병원<button class="c-table--click-menu"><i class="icon-svg-click-menu"></i></button></div></td>
+  <td class="text-center">인천</td>
+  <td class="text-center">부평구</td>
+  <td class="text-end"><button class="c-table--open__related-pop" onclick="$.modal({isExist: true, className: 'data-table--related'});" type="button">2,023</button></td>
+  <td class="text-end"><span class="percent"><i class="icon-svg-triangle-up" title="상승"></i>000.0</span></td>
+  <td class="text-center"><a href="#"><i class="icon-svg icon-svg-home-page"></i></a></td>
+</tr>
+<tr>
+  <td class="text-center">22</td>
+  <td class="text-start" data-table-type="의료기관"><div class="position-relative">가톨릭대학교인천성모병원<button class="c-table--click-menu"><i class="icon-svg-click-menu"></i></button></div></td>
+  <td class="text-center">인천</td>
+  <td class="text-center">부평구</td>
+  <td class="text-end"><button class="c-table--open__related-pop" onclick="$.modal({isExist: true, className: 'data-table--related'});" type="button">2,023</button></td>
+  <td class="text-end"><span class="percent"><i class="icon-svg-triangle-up" title="상승"></i>000.0</span></td>
+  <td class="text-center"><a href="#"><i class="icon-svg icon-svg-home-page"></i></a></td>
+</tr>
+<tr>
+  <td class="text-center">23</td>
+  <td class="text-start" data-table-type="의료기관"><div class="position-relative">가톨릭대학교인천성모병원<button class="c-table--click-menu"><i class="icon-svg-click-menu"></i></button></div></td>
+  <td class="text-center">인천</td>
+  <td class="text-center">부평구</td>
+  <td class="text-end"><button class="c-table--open__related-pop" onclick="$.modal({isExist: true, className: 'data-table--related'});" type="button">2,023</button></td>
+  <td class="text-end"><span class="percent"><i class="icon-svg-triangle-up" title="상승"></i>000.0</span></td>
+  <td class="text-center"><a href="#"><i class="icon-svg icon-svg-home-page"></i></a></td>
+</tr>
+<tr>
+  <td class="text-center">24</td>
+  <td class="text-start" data-table-type="의료기관"><div class="position-relative">가톨릭대학교인천성모병원<button class="c-table--click-menu"><i class="icon-svg-click-menu"></i></button></div></td>
+  <td class="text-center">인천</td>
+  <td class="text-center">부평구</td>
+  <td class="text-end"><button class="c-table--open__related-pop" onclick="$.modal({isExist: true, className: 'data-table--related'});" type="button">2,023</button></td>
+  <td class="text-end"><span class="percent"><i class="icon-svg-triangle-up" title="상승"></i>000.0</span></td>
+  <td class="text-center"><a href="#"><i class="icon-svg icon-svg-home-page"></i></a></td>
+</tr>
+<tr>
+  <td class="text-center">25</td>
+  <td class="text-start" data-table-type="의료기관"><div class="position-relative">가톨릭대학교인천성모병원<button class="c-table--click-menu"><i class="icon-svg-click-menu"></i></button></div></td>
+  <td class="text-center">인천</td>
+  <td class="text-center">부평구</td>
+  <td class="text-end"><button class="c-table--open__related-pop" onclick="$.modal({isExist: true, className: 'data-table--related'});" type="button">2,023</button></td>
+  <td class="text-end"><span class="percent"><i class="icon-svg-triangle-up" title="상승"></i>000.0</span></td>
+  <td class="text-center"><a href="#"><i class="icon-svg icon-svg-home-page"></i></a></td>
+</tr>
+<tr>
+  <td class="text-center">26</td>
+  <td class="text-start" data-table-type="의료기관"><div class="position-relative">가톨릭대학교인천성모병원<button class="c-table--click-menu"><i class="icon-svg-click-menu"></i></button></div></td>
+  <td class="text-center">인천</td>
+  <td class="text-center">부평구</td>
+  <td class="text-end"><button class="c-table--open__related-pop" onclick="$.modal({isExist: true, className: 'data-table--related'});" type="button">2,023</button></td>
+  <td class="text-end"><span class="percent"><i class="icon-svg-triangle-up" title="상승"></i>000.0</span></td>
+  <td class="text-center"><a href="#"><i class="icon-svg icon-svg-home-page"></i></a></td>
+</tr>
+<tr>
+  <td class="text-center">27</td>
+  <td class="text-start" data-table-type="의료기관"><div class="position-relative">가톨릭대학교인천성모병원<button class="c-table--click-menu"><i class="icon-svg-click-menu"></i></button></div></td>
+  <td class="text-center">인천</td>
+  <td class="text-center">부평구</td>
+  <td class="text-end"><button class="c-table--open__related-pop" onclick="$.modal({isExist: true, className: 'data-table--related'});" type="button">2,023</button></td>
+  <td class="text-end"><span class="percent"><i class="icon-svg-triangle-up" title="상승"></i>000.0</span></td>
+  <td class="text-center"><a href="#"><i class="icon-svg icon-svg-home-page"></i></a></td>
+</tr>
+<tr>
+  <td class="text-center">28</td>
+  <td class="text-start" data-table-type="의료기관"><div class="position-relative">가톨릭대학교인천성모병원<button class="c-table--click-menu"><i class="icon-svg-click-menu"></i></button></div></td>
+  <td class="text-center">인천</td>
+  <td class="text-center">부평구</td>
+  <td class="text-end"><button class="c-table--open__related-pop" onclick="$.modal({isExist: true, className: 'data-table--related'});" type="button">2,023</button></td>
+  <td class="text-end"><span class="percent"><i class="icon-svg-triangle-up" title="상승"></i>000.0</span></td>
+  <td class="text-center"><a href="#"><i class="icon-svg icon-svg-home-page"></i></a></td>
+</tr>
+<tr>
+  <td class="text-center">29</td>
+  <td class="text-start" data-table-type="의료기관"><div class="position-relative">가톨릭대학교인천성모병원<button class="c-table--click-menu"><i class="icon-svg-click-menu"></i></button></div></td>
+  <td class="text-center">인천</td>
+  <td class="text-center">부평구</td>
+  <td class="text-end"><button class="c-table--open__related-pop" onclick="$.modal({isExist: true, className: 'data-table--related'});" type="button">2,023</button></td>
+  <td class="text-end"><span class="percent"><i class="icon-svg-triangle-up" title="상승"></i>000.0</span></td>
+  <td class="text-center"><a href="#"><i class="icon-svg icon-svg-home-page"></i></a></td>
+</tr>
+<tr>
+  <td class="text-center">30</td>
+  <td class="text-start" data-table-type="의료기관"><div class="position-relative">가톨릭대학교인천성모병원<button class="c-table--click-menu"><i class="icon-svg-click-menu"></i></button></div></td>
+  <td class="text-center">인천</td>
+  <td class="text-center">부평구</td>
+  <td class="text-end"><button class="c-table--open__related-pop" onclick="$.modal({isExist: true, className: 'data-table--related'});" type="button">2,023</button></td>
+  <td class="text-end"><span class="percent"><i class="icon-svg-triangle-up" title="상승"></i>000.0</span></td>
+  <td class="text-center"><a href="#"><i class="icon-svg icon-svg-home-page"></i></a></td>
+</tr>
+
+                      </tbody>
+                    </table>
+                  </div>
+                </main>
+              </article>
+            </div>
           </main>
         </article>
         
+        <!-- Modal - 관련정보팝업 -->
+<aside class="modal modal-data-table modal-data-table--related">
+  <div class="modal-wrapper">
+    <header class="modal-header">
+      <button type="button" class="btn btn-icon rounded-circle js-modal-close" title="창닫기"><i class="icon-svg icon-svg-close" aria-hidden="true"></i></button>
+      <h1 class="modal-header__title">관련정보 팝업 -<i class="c-badge js-toggle-label ml-12 color-171717 fw-normal" style="background-color: #C7C1EA;">다초점렌즈</i>+ <i class="c-badge color-171717 fw-normal" style="background-color: #DADADA;">노인성백내장</i></h1>
+    </header>
+    <main class="modal-body">
+      <article class="l-article border-0" data-article="전체데이터" data-loding-spinner="false" data-is-empty="false">
+        <header class="l-article-header l-article-header--has-title">
+          <h4 class="l-article-header__title">게시글 목록</h4>
+        </header>
+        <main class="l-article-body">
+          <article class="l-article">
+            <header class="l-article-header d-flex">
+              <button class="btn btn-default rounded-pill js-btn-set-area" type="button"><span class="txt">필터 조건 설정</span></button>
+              <aside id="setting-area" class="aside-setting-area rounded">  
+                <header class="setting-area--header d-flex">
+                  <h4 class="setting-area--header__title">지역</h4>
+                </header>
+                <main class="setting-area--body mt-16">
+                  <fieldset class="form-fieldset d-flex w-100" data-fieldset="전국">
+                    <div class="form-row form-switch form-switch--sm" data-row="전국">
+                      <label for="checkboxSensePopupAll"><span class="txt w-100 mr-5">전국</span></label>
+                      <input id="checkboxSensePopupAll" class="js-all-input-checked" type="checkbox">
+                    </div>
+                    <fieldset class="form-fieldset mb-12" data-fieldset="지역">
+                      <div class="form-row form-check-button" data-row="서울">
+                        <input id="checkboxSensePopup1" type="checkbox">
+                        <label for="checkboxSensePopup1"><span class="txt">서울</span></label>
+                      </div>
+                      <div class="form-row form-check-button" data-row="경기">
+                        <input id="checkboxSensePopup2" type="checkbox">
+                        <label for="checkboxSensePopup2"><span class="txt">경기</span></label>
+                      </div>
+                      <div class="form-row form-check-button" data-row="인천">
+                        <input id="checkboxSensePopup3" type="checkbox">
+                        <label for="checkboxSensePopup3"><span class="txt">인천</span></label>
+                      </div>
+                      <div class="form-row form-check-button" data-row="부산">
+                        <input id="checkboxSensePopup4" type="checkbox">
+                        <label for="checkboxSensePopup4"><span class="txt">부산</span></label>
+                      </div>
+                      <div class="form-row form-check-button" data-row="대구">
+                        <input id="checkboxSensePopup5" type="checkbox">
+                        <label for="checkboxSensePopup5"><span class="txt">대구</span></label>
+                      </div>
+                      <div class="form-row form-check-button" data-row="광주">
+                        <input id="checkboxSensePopup6" type="checkbox">
+                        <label for="checkboxSensePopup6"><span class="txt">광주</span></label>
+                      </div>
+                      <div class="form-row form-check-button" data-row="대전">
+                        <input id="checkboxSensePopup7" type="checkbox">
+                        <label for="checkboxSensePopup7"><span class="txt">대전</span></label>
+                      </div>
+                      <div class="form-row form-check-button" data-row="울산">
+                        <input id="checkboxSensePopup8" type="checkbox">
+                        <label for="checkboxSensePopup8"><span class="txt">울산</span></label>
+                      </div>
+                      <div class="form-row form-check-button" data-row="세종">
+                        <input id="checkboxSensePopup9" type="checkbox">
+                        <label for="checkboxSensePopup9"><span class="txt">세종</span></label>
+                      </div>
+                      <div class="form-row form-check-button" data-row="강원">
+                        <input id="checkboxSensePopup10" type="checkbox">
+                        <label for="checkboxSensePopup10"><span class="txt">강원</span></label>
+                      </div>
+                      <div class="form-row form-check-button" data-row="경남">
+                        <input id="checkboxSensePopup11" type="checkbox">
+                        <label for="checkboxSensePopup11"><span class="txt">경남</span></label>
+                      </div>
+                      <div class="form-row form-check-button" data-row="경북">
+                        <input id="checkboxSensePopup12" type="checkbox">
+                        <label for="checkboxSensePopup12"><span class="txt">경북</span></label>
+                      </div>
+                      <div class="form-row form-check-button" data-row="전남">
+                        <input id="checkboxSensePopup13" type="checkbox">
+                        <label for="checkboxSensePopup13"><span class="txt">전남</span></label>
+                      </div>
+                      <div class="form-row form-check-button" data-row="전북">
+                        <input id="checkboxSensePopup14" type="checkbox">
+                        <label for="checkboxSensePopup14"><span class="txt">전북</span></label>
+                      </div>
+                      <div class="form-row form-check-button" data-row="충남">
+                        <input id="checkboxSensePopup15" type="checkbox">
+                        <label for="checkboxSensePopup15"><span class="txt">충남</span></label>
+                      </div>
+                      <div class="form-row form-check-button" data-row="충북">
+                        <input id="checkboxSensePopup16" type="checkbox">
+                        <label for="checkboxSensePopup16"><span class="txt">충북</span></label>
+                      </div>
+                      <div class="form-row form-check-button" data-row="제주">
+                        <input id="checkboxSensePopup17" type="checkbox">
+                        <label for="checkboxSensePopup17"><span class="txt">제주</span></label>
+                      </div>
+                    </fieldset>
+                  </fieldset>
+                </main>
+                <footer class="setting-area--footer d-flex mt-12">
+                  <button class="btn btn-icon rounded" data-button="새로고침" title="새로고침" type="button"><i class="icon-svg icon-svg-refresh" aria-hidden="true"></i></button>
+                  <button class="btn btn-secondary rounded ml-8 w-100" type="button">검색</button>
+                </footer>  
+              </aside>
+              <p class="c-data-table-total ml-12">Total. <span class="count">155,474</span></p>
+              <fieldset class="form-fieldset ml-auto" data-fieldset="Top30키워드순위변화">
+                <div class="form-row form-select form-select--border-bottom" data-selected-value="0" data-selected-text="정보량">
+                  <select id="selectRank">
+                    <option value="0" selected="">10건 씩 보기</option>
+                    <option value="1">30건 씩 보기</option>
+                    <option value="2">50건 씩 보기</option>
+                  </select>
+                </div>
+              </fieldset>
+              <div class="form-row form-search form-search--h-lg ml-12" data-row="검색어" data-text-value="">
+                <input class="form-search__input" name="keyword" type="search" placeholder="검색어를 입력하세요."><button class="form-search__btn-clear" style="right:9px" type="button" title="입력내용삭제"></button>
+                <button class="form-search__btn-search" type="button" title="검색하기"></button>
+              </div>
+            </header>
+            <main class="l-article-body mt-24">
+              <div class="scroll-container-x">
+                <table class="c-table c-table--hover" data-thead-sticky="true">
+                  <colgroup>
+                    <col style="width:11rem">
+                    <col style="width:19rem">
+                    <col style="width:11rem">
+                    <col style="width:38rem">
+                    <col style="width:9.5rem">
+                    <col style="width:18rem">
+                    <col style="width:10rem">
+                    <col style="width:10rem">
+                  </colgroup>
+                  <thead>
+                    <tr>
+                      <th>글유형</th>
+                      <th>채널</th>
+                      <th>출처</th>
+                      <th>원문</th>
+                      <th>
+                        <p>수집일</p>
+                        <fieldset class="form-fieldset" data-fieldset="정렬">
+                          <div class="form-row form-check-button" data-row="오름차순">
+                            <input id="radioModalRelatedSort1" name="radioModalRelatedSort" type="radio" />
+                            <label for="radioModalRelatedSort1" title="오름차순"><i class="icon-svg icon-svg-chevron-up" aria-hidden="true"></i></label>
+                          </div>
+                          <div class="form-row form-check-button" data-row="내림차순">
+                            <input id="radioModalRelatedSort2" name="radioModalRelatedSort" type="radio" />
+                            <label for="radioModalRelatedSort2" title="내림차순"><i class="icon-svg icon-svg-chevron-down" aria-hidden="true"></i></label>
+                          </div>
+                        </fieldset>                      
+                      </th>
+                      <th style="background: #ebebeb;">관심키워드</th>
+                      <th style="background: #ebebeb;">관련 의료기관</th>
+                      <th style="background: #ebebeb;">추정지역</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td class="text-center">의료기관홍보</td>
+                      <td class="text-center">카페</td>
+                      <td class="text-center">출처</td>
+                      <td class="text-start">
+                        <a href="#" class="link" target="_blank" data-tooltip-text="제목제목제목"><strong class="clamp-1">제목제목제목</strong></a>
+                        <a href="#" class="link" target="_blank" data-tooltip-text="내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용"><span class="clamp-1">내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용</span></a>
+                      </td>
+                      <td class="text-center">2023-03-19</td>
+                      <td class="text-center"><span data-tooltip-text="보험관련: 실손, 실비, 보험, 사보험, 보험상담사, 특약, 담보, 청구, 보험금, 비급여, 민영건강보험, 민영의료보험 비용관련: 비용, 가격 외모개선: 외모, 미용, 미적, 외적, 심미적, 성형, 콤플렉스">보험관련, 혜택관련 외 3개</span></td>
+                      <td class="text-center">○ ○ 병원</td>
+                      <td class="text-center">서울 서초구</td>
+                    </tr>
+                    <tr>
+                      <td class="text-center">의료기관홍보</td>
+                      <td class="text-center">카페</td>
+                      <td class="text-center">출처</td>
+                      <td class="text-start">
+                        <a href="#" class="link" target="_blank" data-tooltip-text="제목제목제목"><strong class="clamp-1">제목제목제목</strong></a>
+                        <a href="#" class="link" target="_blank" data-tooltip-text="내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용"><span class="clamp-1">내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용</span></a>
+                      </td>
+                      <td class="text-center">2023-03-19</td>
+                      <td class="text-center"><span data-tooltip-text="보험관련: 실손, 실비, 보험, 사보험, 보험상담사, 특약, 담보, 청구, 보험금, 비급여, 민영건강보험, 민영의료보험 비용관련: 비용, 가격 외모개선: 외모, 미용, 미적, 외적, 심미적, 성형, 콤플렉스">보험관련, 혜택관련 외 3개</span></td>
+                      <td class="text-center">○ ○ 병원</td>
+                      <td class="text-center">서울 서초구</td>
+                    </tr>
+                    <tr>
+                      <td class="text-center">의료기관홍보</td>
+                      <td class="text-center">카페</td>
+                      <td class="text-center">출처</td>
+                      <td class="text-start">
+                        <a href="#" class="link" target="_blank" data-tooltip-text="제목제목제목"><strong class="clamp-1">제목제목제목</strong></a>
+                        <a href="#" class="link" target="_blank" data-tooltip-text="내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용"><span class="clamp-1">내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용</span></a>
+                      </td>
+                      <td class="text-center">2023-03-19</td>
+                      <td class="text-center"><span data-tooltip-text="보험관련: 실손, 실비, 보험, 사보험, 보험상담사, 특약, 담보, 청구, 보험금, 비급여, 민영건강보험, 민영의료보험 비용관련: 비용, 가격 외모개선: 외모, 미용, 미적, 외적, 심미적, 성형, 콤플렉스">보험관련, 혜택관련 외 3개</span></td>
+                      <td class="text-center">○ ○ 병원</td>
+                      <td class="text-center">서울 서초구</td>
+                    </tr>
+                    <tr>
+                      <td class="text-center">의료기관홍보</td>
+                      <td class="text-center">카페</td>
+                      <td class="text-center">출처</td>
+                      <td class="text-start">
+                        <a href="#" class="link" target="_blank" data-tooltip-text="제목제목제목"><strong class="clamp-1">제목제목제목</strong></a>
+                        <a href="#" class="link" target="_blank" data-tooltip-text="내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용"><span class="clamp-1">내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용</span></a>
+                      </td>
+                      <td class="text-center">2023-03-19</td>
+                      <td class="text-center"><span data-tooltip-text="보험관련: 실손, 실비, 보험, 사보험, 보험상담사, 특약, 담보, 청구, 보험금, 비급여, 민영건강보험, 민영의료보험 비용관련: 비용, 가격 외모개선: 외모, 미용, 미적, 외적, 심미적, 성형, 콤플렉스">보험관련, 혜택관련 외 3개</span></td>
+                      <td class="text-center">○ ○ 병원</td>
+                      <td class="text-center">서울 서초구</td>
+                    </tr>
+                    <tr>
+                      <td class="text-center">의료기관홍보</td>
+                      <td class="text-center">카페</td>
+                      <td class="text-center">출처</td>
+                      <td class="text-start">
+                        <a href="#" class="link" target="_blank" data-tooltip-text="제목제목제목"><strong class="clamp-1">제목제목제목</strong></a>
+                        <a href="#" class="link" target="_blank" data-tooltip-text="내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용"><span class="clamp-1">내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용</span></a>
+                      </td>
+                      <td class="text-center">2023-03-19</td>
+                      <td class="text-center"><span data-tooltip-text="보험관련: 실손, 실비, 보험, 사보험, 보험상담사, 특약, 담보, 청구, 보험금, 비급여, 민영건강보험, 민영의료보험 비용관련: 비용, 가격 외모개선: 외모, 미용, 미적, 외적, 심미적, 성형, 콤플렉스">보험관련, 혜택관련 외 3개</span></td>
+                      <td class="text-center">○ ○ 병원</td>
+                      <td class="text-center">서울 서초구</td>
+                    </tr>
+                    <tr>
+                      <td class="text-center">의료기관홍보</td>
+                      <td class="text-center">카페</td>
+                      <td class="text-center">출처</td>
+                      <td class="text-start">
+                        <a href="#" class="link" target="_blank" data-tooltip-text="제목제목제목"><strong class="clamp-1">제목제목제목</strong></a>
+                        <a href="#" class="link" target="_blank" data-tooltip-text="내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용"><span class="clamp-1">내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용</span></a>
+                      </td>
+                      <td class="text-center">2023-03-19</td>
+                      <td class="text-center"><span data-tooltip-text="보험관련: 실손, 실비, 보험, 사보험, 보험상담사, 특약, 담보, 청구, 보험금, 비급여, 민영건강보험, 민영의료보험 비용관련: 비용, 가격 외모개선: 외모, 미용, 미적, 외적, 심미적, 성형, 콤플렉스">보험관련, 혜택관련 외 3개</span></td>
+                      <td class="text-center">○ ○ 병원</td>
+                      <td class="text-center">서울 서초구</td>
+                    </tr>
+                    <tr>
+                      <td class="text-center">의료기관홍보</td>
+                      <td class="text-center">카페</td>
+                      <td class="text-center">출처</td>
+                      <td class="text-start">
+                        <a href="#" class="link" target="_blank" data-tooltip-text="제목제목제목"><strong class="clamp-1">제목제목제목</strong></a>
+                        <a href="#" class="link" target="_blank" data-tooltip-text="내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용"><span class="clamp-1">내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용</span></a>
+                      </td>
+                      <td class="text-center">2023-03-19</td>
+                      <td class="text-center"><span data-tooltip-text="보험관련: 실손, 실비, 보험, 사보험, 보험상담사, 특약, 담보, 청구, 보험금, 비급여, 민영건강보험, 민영의료보험 비용관련: 비용, 가격 외모개선: 외모, 미용, 미적, 외적, 심미적, 성형, 콤플렉스">보험관련, 혜택관련 외 3개</span></td>
+                      <td class="text-center">○ ○ 병원</td>
+                      <td class="text-center">서울 서초구</td>
+                    </tr>
+                    <tr>
+                      <td class="text-center">의료기관홍보</td>
+                      <td class="text-center">카페</td>
+                      <td class="text-center">출처</td>
+                      <td class="text-start">
+                        <a href="#" class="link" target="_blank" data-tooltip-text="제목제목제목"><strong class="clamp-1">제목제목제목</strong></a>
+                        <a href="#" class="link" target="_blank" data-tooltip-text="내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용"><span class="clamp-1">내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용</span></a>
+                      </td>
+                      <td class="text-center">2023-03-19</td>
+                      <td class="text-center"><span data-tooltip-text="보험관련: 실손, 실비, 보험, 사보험, 보험상담사, 특약, 담보, 청구, 보험금, 비급여, 민영건강보험, 민영의료보험 비용관련: 비용, 가격 외모개선: 외모, 미용, 미적, 외적, 심미적, 성형, 콤플렉스">보험관련, 혜택관련 외 3개</span></td>
+                      <td class="text-center">○ ○ 병원</td>
+                      <td class="text-center">서울 서초구</td>
+                    </tr>
+                    <tr>
+                      <td class="text-center">의료기관홍보</td>
+                      <td class="text-center">카페</td>
+                      <td class="text-center">출처</td>
+                      <td class="text-start">
+                        <a href="#" class="link" target="_blank" data-tooltip-text="제목제목제목"><strong class="clamp-1">제목제목제목</strong></a>
+                        <a href="#" class="link" target="_blank" data-tooltip-text="내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용"><span class="clamp-1">내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용</span></a>
+                      </td>
+                      <td class="text-center">2023-03-19</td>
+                      <td class="text-center"><span data-tooltip-text="보험관련: 실손, 실비, 보험, 사보험, 보험상담사, 특약, 담보, 청구, 보험금, 비급여, 민영건강보험, 민영의료보험 비용관련: 비용, 가격 외모개선: 외모, 미용, 미적, 외적, 심미적, 성형, 콤플렉스">보험관련, 혜택관련 외 3개</span></td>
+                      <td class="text-center">○ ○ 병원</td>
+                      <td class="text-center">서울 서초구</td>
+                    </tr>
+                    <tr>
+                      <td class="text-center">의료기관홍보</td>
+                      <td class="text-center">카페</td>
+                      <td class="text-center">출처</td>
+                      <td class="text-start">
+                        <a href="#" class="link" target="_blank" data-tooltip-text="제목제목제목"><strong class="clamp-1">제목제목제목</strong></a>
+                        <a href="#" class="link" target="_blank" data-tooltip-text="내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용"><span class="clamp-1">내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용</span></a>
+                      </td>
+                      <td class="text-center">2023-03-19</td>
+                      <td class="text-center"><span data-tooltip-text="보험관련: 실손, 실비, 보험, 사보험, 보험상담사, 특약, 담보, 청구, 보험금, 비급여, 민영건강보험, 민영의료보험 비용관련: 비용, 가격 외모개선: 외모, 미용, 미적, 외적, 심미적, 성형, 콤플렉스">보험관련, 혜택관련 외 3개</span></td>
+                      <td class="text-center">○ ○ 병원</td>
+                      <td class="text-center">서울 서초구</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </main>
+          </article>
+        </main>
+        <footer class="l-article-footer pt-10">
+          
+          
+<!-- pagination -->
+<ol class="c-pagination" data-current-page="3">
+  <li class="c-pagination__item c-pagination__item--first"><button class="btn btn-default" type="button" title="이전 10개 페이지" disabled><i class="icon-svg icon-svg-chevrons-left" aria-hidden="true"></i></button></li>
+  <li class="c-pagination__item c-pagination__item--prev"><button class="btn btn-default" type="button" title="이전 페이지" disabled><i class="icon-svg icon-svg-chevron-left" aria-hidden="true"></i></button></li>
+  <li class="c-pagination__item"><button class="btn btn-default border-0" type="button"><span class="txt">1</span></button></li>
+  <li class="c-pagination__item"><button class="btn btn-default border-0" type="button"><span class="txt">2</span></button></li>
+  <li class="c-pagination__item"><button class="btn btn-default border-0" type="button"><span class="txt">3</span></button></li>
+  <li class="c-pagination__item"><button class="btn btn-default border-0" type="button"><span class="txt">4</span></button></li>
+  <li class="c-pagination__item"><button class="btn btn-default border-0" type="button"><span class="txt">5</span></button></li>
+  <li class="c-pagination__item"><button class="btn btn-default border-0" type="button"><span class="txt">6</span></button></li>
+  <li class="c-pagination__item"><button class="btn btn-default border-0" type="button"><span class="txt">7</span></button></li>
+  <li class="c-pagination__item"><button class="btn btn-default border-0" type="button"><span class="txt">8</span></button></li>
+  <li class="c-pagination__item"><button class="btn btn-default border-0" type="button"><span class="txt">9</span></button></li>
+  <li class="c-pagination__item"><button class="btn btn-default border-0" type="button"><span class="txt">10</span></button></li>
+  <li class="c-pagination__item c-pagination__item--next"><button class="btn btn-default" type="button" title="다음 페이지"><i class="icon-svg icon-svg-chevron-right" aria-hidden="true"></i></button></li>
+  <li class="c-pagination__item c-pagination__item--last"><button class="btn btn-default" type="button" title="다음 10개 페이지"><i class="icon-svg icon-svg-chevrons-right" aria-hidden="true"></i></button></li>
+</ol>
+<!-- //pagination -->
+        </footer>
+      </article>
+    </main>
+  </div>
+  <i class="modal-dimmed"></i>
+</aside>
+<!-- //Modal - 관련정보 -->
 
       </main>
     </div>

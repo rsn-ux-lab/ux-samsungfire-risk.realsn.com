@@ -211,7 +211,7 @@
 {
   const $keywordTable = document.querySelector("[data-section='Top30키워드순위변화'] .c-table");
   const tableHover = new window.TableSameHover($keywordTable);
-  const tableActive = new window.TableClickSameActive($keywordTable);
+  const tableActive = new window.MoralTableClickSameActive($keywordTable);
   const TableClickMenu1st = new window.TableClickMenu($keywordTable);
   const TableClickMenu2nd = new window.TableClickMenu(document.querySelector("[data-article='연관어-테이블'] .c-table"));
 
@@ -779,14 +779,16 @@
 
     // ---------------------------------페이지 스크립트 영역-------------------------------------
     let samsungFrMapDrildownChart = new rsnCharts.SamsungFrMapDrildownChart($chartDiv, dataArr); // 선언과 동시에 지도 영역 draw
-    samsungFrMapDrildownChart.dataBind(dataArr); // 전국지도 데이터 바인딩
-
     // 도시 클릭시 - 지도차트 드릴다운
-    samsungFrMapDrildownChart.countryClickEvt(function (_ev) {
+    samsungFrMapDrildownChart.countryClickEvt = function (_ev) {
       let clickId = _ev.target.dataItem.dataContext.id;
       console.log(clickId);
       samsungFrMapDrildownChart.seriesShow(clickId);
-    });
+    };
+
+    samsungFrMapDrildownChart.dataBind(dataArr); // 전국지도 데이터 바인딩
+
+    samsungFrMapDrildownChart.dataBind(cityDataArr, "KR-42"); // 지역지도 데이터 바인딩
 
     // 시군구 클릭시 - 데이터 + 팝업 호출
     samsungFrMapDrildownChart.cityClickEvt = function (_target) {

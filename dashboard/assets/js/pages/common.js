@@ -1,31 +1,206 @@
-import { TableSticky } from "../components/tables";
+import $ from "jquery";
+
+/*
+■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■
+*/
+{
+  /**
+   *
+   * wrapper is ready
+   *
+   */
+
+  const $wrap = document.querySelector("#wrap");
+  const $loadingWrap = document.querySelector("#loadingWrap");
+  let isState;
+
+  $wrap.style.opacity = 1;
+  $wrap.style.visibility = "visible";
+
+  const removeLoading = () => {
+    try {
+      if (Boolean($loadingWrap) === false) throw new Error("#loadingWrap 찾을 수 없습니다.");
+    } catch (_err) {
+      console.log(`%c common.js %c ${_err}`, "color:yellow;background:#ffb6c16b", "color:red;");
+      return;
+    }
+
+    $loadingWrap
+      .animate([{ opacity: 1 }, { opacity: 0 }], {
+        duration: 300,
+        fill: "forwards",
+      })
+      .finished.then(() => {
+        $loadingWrap.remove();
+      });
+  };
+
+  window.addEventListener("load", () => {
+    removeLoading();
+    isState = true;
+  });
+
+  setTimeout(() => {
+    removeLoading();
+    !isState &&
+      console.log(`%c common.js %c 리소스가 정상적으로 다운로드 않거나, 지연시간이 2초를 초과했습니다.`, "color:yellow;background:#ffb6c16b", "color:red;");
+  }, 2000);
+}
+/*
+■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■
+*/
+{
+  /**
+   *
+   * <thaad>를 table 최 상단에 고정하기
+   *
+   */
+
+  if (Boolean(document.querySelectorAll("[data-thead-sticky=true]").length)) {
+    const sticky = new window.TableSticky(document.querySelectorAll("[data-thead-sticky=true]"));
+
+    window.onLoadResize({
+      callback() {
+        sticky.init();
+      },
+    });
+
+    const headerPin = document.querySelectorAll(".js-header-pin");
+    headerPin.forEach(function (_each) {
+      console.log(_each);
+      _each.addEventListener("click", function () {
+        setTimeout(function () {
+          sticky.init();
+        }, 1);
+      });
+    });
+  }
+}
+/*
+■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■
+*/
+{
+  /**
+   *
+   * GNB - active
+   *
+   */
+
+  const $header = document.querySelector("#header");
+
+  if ($header) {
+    const $links = $header.querySelectorAll("#header [data-file-path]");
+    const paths = Array.from($links).map((_$link) => _$link.getAttribute("data-file-path"));
+    const url = location.pathname.getBetween("dashboard/", "/");
+    const hasPath = paths.find((_path) => _path === url);
+
+    if (hasPath) $header.querySelector(`[data-file-path="${hasPath}"]`).classList.add("header-gnb__link--is-active");
+  }
+}
+/*
+■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■
+*/
+{
+  /**
+   *
+   * GNB - link up
+   *
+   */
+
+  const $header = document.querySelector("#header");
+
+  if ($header) {
+    const $links = $header.querySelectorAll("#header [data-file-path]");
+
+    Array.from($links).forEach((_$link) => {
+      const href = _$link.getAttribute("data-file-path");
+
+      _$link.setAttribute("href", `../${href}`);
+    });
+  }
+}
+/*
+■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■
+*/
+{
+  /**
+   *
+   * #header 숨기기 (custom data attributes)
+   *
+   */
+
+  const $container = document.querySelector("#container");
+  const $header = document.querySelector("#header");
+  const isHide = $container?.getAttribute("data-header-hide")?.toLowerCase();
+
+  if (isHide) $header.parentNode.removeChild($header);
+}
+/*
+■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■
+*/
+{
+  /**
+   *
+   * #footer 숨기기 (custom data attributes)
+   *
+   */
+
+  const $container = document.querySelector("#container");
+  const $footer = document.querySelector("#footer");
+  const isHide = $container?.getAttribute("data-footer-hide")?.toLowerCase();
+
+  if (isHide) $footer.parentNode.removeChild($footer);
+}
+/*
+■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■
+*/
+{
+  /**
+   *
+   * depth : 대시보드 공통
+   * event : TEST 파라미터
+   *
+   */
+
+  const name = new URLSearchParams(location.search).get("preview");
+
+  if (name) {
+    switch (name) {
+      //  데이터 로딩 예시
+      case "loading":
+        const $lodings = document.querySelectorAll("[data-loading-spinner]");
+
+        Array.from($lodings).forEach((_$loding) => {
+          _$loding.setAttribute("data-loading-spinner", "true");
+        });
+        // const $updateBtn = document.querySelector("[data-loading-update]");
+        // $updateBtn.setAttribute("data-loading-update", "true");
+        break;
+      //  데이터 없는 경우
+      case "empty":
+        const $emptys = document.querySelectorAll("[data-is-empty]");
+
+        Array.from($emptys).forEach((_$empty) => {
+          _$empty.setAttribute("data-is-empty", "true");
+        });
+        break;
+      case "notys":
+        setInterval(() => notys.info("데이터를 불러오고 있습니다", "right top"), 1500);
+        setInterval(() => notys.success("데이터 불러오기가 완료되었습니다.<br>", "right top"), 2500);
+        setInterval(() => notys.error("데이터 불러오기에 실패하였습니다.", "right top"), 3500);
+        break;
+      case "modal":
+        $.modal({ isExist: true, className: "comments--all" });
+        break;
+    }
+  }
+}
+/*
+■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■
+*/
 
 // jQuery DOCUMENT READY...
 $(function () {
-  /*
-  ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■
-  */
-  {
-    if (Boolean(document.querySelectorAll("[data-thead-sticky=true]").length)) {
-      const sticky = new TableSticky(document.querySelectorAll("[data-thead-sticky=true]"));
-
-      window.onLoadResize({
-        callback() {
-          sticky.init();
-        },
-      });
-
-      const headerPin = document.querySelectorAll(".js-header-pin");
-      headerPin.forEach(function (_each) {
-        console.log(_each);
-        _each.addEventListener("click", function () {
-          setTimeout(function () {
-            sticky.init();
-          }, 1);
-        });
-      });
-    }
-  }
   /*
   ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■
   */
@@ -55,113 +230,6 @@ $(function () {
   {
     /**
      *
-     * wrapper is ready
-     *
-     */
-
-    const $wrap = document.querySelector("#wrap");
-    const $loadingWrap = document.querySelector("#loadingWrap");
-    let isState;
-
-    $wrap.style.opacity = 1;
-    $wrap.style.visibility = "visible";
-
-    const removeLoading = () => {
-      try {
-        if (Boolean($loadingWrap) === false) throw new Error("#loadingWrap 찾을 수 없습니다.");
-      } catch (_err) {
-        console.log(`%c common.js %c ${_err}`, "color:yellow;background:#ffb6c16b", "color:red;");
-        return;
-      }
-
-      $loadingWrap
-        .animate([{ opacity: 1 }, { opacity: 0 }], {
-          duration: 300,
-          fill: "forwards",
-        })
-        .finished.then(() => {
-          $loadingWrap.remove();
-        });
-    };
-
-    window.addEventListener("load", () => {
-      removeLoading();
-      isState = true;
-    });
-
-    setTimeout(() => {
-      removeLoading();
-      !isState &&
-        console.log(`%c common.js %c 리소스가 정상적으로 다운로드 않거나, 지연시간이 2초를 초과했습니다.`, "color:yellow;background:#ffb6c16b", "color:red;");
-    }, 2000);
-  }
-  /*
-  ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■
-  */
-  {
-    /**
-     *
-     *   파라미터 값으로 화면 스크롤 이동
-     *
-     *   [URL 작성 예]
-     *   https://도메인/?moveto=data-article=감성추이 // $("[data-article='감성추이']") 위치로 이동
-     *   https://도메인/?moveto=section // $("#section") 위치로 이동
-     *   https://도메인/?moveto=card // $(".card") 위치로 이동
-     *   https://도메인/?moveto=card--.js-sticky // $(".js-sticky") 높이값을 제외한 $(".card") 위치로 이동
-     *   https://도메인/?moveto=card--50 // 50px 높이값을 제외한 $(".card") 위치로 이동
-     *
-     */
-
-    setTimeout(() => $.moveToParams(), 1000);
-  }
-  /*
-  ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■
-  */
-  {
-    /**
-     *
-     * 스크롤 이동
-     *
-     */
-
-    $(".js-anchor").anchor();
-  }
-  /*
-  ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■
-  */
-  {
-    /**
-     *
-     * form 요소 인러랙션 일괄 적용
-     *
-     */
-
-    $("#wrap").formTamplate();
-  }
-  /*
-  ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■
-  */
-  {
-    /**
-     *
-     * 데이터 불러오는 동안 대기상태 표시
-     *
-     * [html 작성 예]
-     * <div data-loading-spinner="true"></div> // 로딩 표시
-     * <div data-loading-spinner="false"></div> // 로딩 감추기
-     * <div data-loading-spinner="true dimmed"></div> // 딤드 효과 추가 및 로딩 컬리 흰색 변경(기본값 : 검은색)
-     * <div data-loading-spinner="true 1rem"></div> // rem 단위로 숫자 삽입하는 경우 크기 변경됨(기본값 : 6rem)
-     *
-     */
-
-    $("[data-loading-spinner]").loadingSpinner();
-  }
-  /*
-      ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■
-      */
-  {
-    /**
-     *
      *.js-is-appear에 FadeIn 적용 ▼
      *
      *  [html 작성 예]
@@ -176,6 +244,7 @@ $(function () {
      *      div.appear {opacity:1;transition:opacity 0.3s ease-in-out}
      *
      */
+
     const $appears = document.querySelectorAll("[class*=js-is-appear]");
 
     $appears.forEach((_each) => {
@@ -204,141 +273,6 @@ $(function () {
         },
       });
     });
-  }
-  /*
-  ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■
-  */
-  {
-    /**
-     *
-     * GNB - active
-     *
-     */
-
-    const $header = document.querySelector("#header");
-    if (!$header) return;
-    const $links = $header.querySelectorAll("#header [data-file-path]");
-    const paths = Array.from($links).map((_$link) => _$link.getAttribute("data-file-path"));
-    const url = location.pathname.getBetween("dashboard/", "/");
-    const hasPath = paths.find((_path) => _path === url);
-
-    if (hasPath) $header.querySelector(`[data-file-path="${hasPath}"]`).classList.add("header-gnb__link--is-active");
-  }
-  /*
-  ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■
-  */
-  {
-    /**
-     *
-     * GNB - link up
-     *
-     */
-
-    const $header = document.querySelector("#header");
-    if (!$header) return;
-    const $links = $header.querySelectorAll("#header [data-file-path]");
-
-    Array.from($links).forEach((_$link) => {
-      const href = _$link.getAttribute("data-file-path");
-
-      _$link.setAttribute("href", `../${href}`);
-    });
-  }
-  /*
-  ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■
-  */
-  {
-    /**
-     *
-     * #header 숨기기 (custom data attributes)
-     *
-     */
-
-    const $container = document.querySelector("#container");
-    const $header = document.querySelector("#header");
-    const isHide = $container?.getAttribute("data-header-hide")?.toLowerCase();
-
-    if (isHide) $header.parentNode.removeChild($header);
-  }
-  /*
-  ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■
-  */
-  {
-    /**
-     *
-     * #footer 숨기기 (custom data attributes)
-     *
-     */
-
-    const $container = document.querySelector("#container");
-    const $footer = document.querySelector("#footer");
-    const isHide = $container?.getAttribute("data-footer-hide")?.toLowerCase();
-
-    if (isHide) $footer.parentNode.removeChild($footer);
-  }
-  /*
-  ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■
-  */
-  {
-    /**
-     *
-     * depth : 대시보드 공통
-     * event : TEST 파라미터
-     *
-     */
-
-    const name = new URLSearchParams(location.search).get("preview");
-
-    if (name) {
-      switch (name) {
-        case "test":
-          break;
-      }
-    }
-  }
-  /*
-  ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■
-  */
-  {
-    /**
-     *
-     * depth : 대시보드 공통
-     * event : TEST 파라미터
-     *
-     */
-
-    const name = new URLSearchParams(location.search).get("preview");
-
-    if (name) {
-      switch (name) {
-        //  데이터 로딩 예시
-        case "loading":
-          const $lodings = document.querySelectorAll("[data-loading-spinner]");
-
-          Array.from($lodings).forEach((_$loding) => {
-            _$loding.setAttribute("data-loading-spinner", "true");
-          });
-          // const $updateBtn = document.querySelector("[data-loading-update]");
-          // $updateBtn.setAttribute("data-loading-update", "true");
-          break;
-        //  데이터 없는 경우
-        case "empty":
-          const $emptys = document.querySelectorAll("[data-is-empty]");
-
-          Array.from($emptys).forEach((_$empty) => {
-            _$empty.setAttribute("data-is-empty", "true");
-          });
-          break;
-        case "notys":
-          setInterval(() => notys.info("데이터를 불러오고 있습니다", "right top"), 1500);
-          setInterval(() => notys.success("데이터 불러오기가 완료되었습니다.<br>", "right top"), 2500);
-          setInterval(() => notys.error("데이터 불러오기에 실패하였습니다.", "right top"), 3500);
-          break;
-        case "modal":
-          $.modal({ isExist: true, className: "comments--all" });
-          break;
-      }
-    }
   }
   /*
   ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■
