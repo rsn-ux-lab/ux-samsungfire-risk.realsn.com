@@ -6,15 +6,6 @@
 /*!
  *
  * @author: GUNI, h2dlhs@realsn.com
- *
- * $options
- *      - stroke: 컬러값 | #000000
- *      - strokeWidth: 라인 두께 | 1
- **/
-
-/*!
- *
- * @author: GUNI, h2dlhs@realsn.com
  **/
 
 /*!
@@ -199,68 +190,6 @@
  * Copyright jQuery Foundation and other contributors
  * Released under the MIT license.
  * http://jquery.org/license
- */
-
-/*! 
-jQuery.awesomeCloud v0.2 indyarmy.com
-by Russ Porosky
-IndyArmy Network, Inc.
-
-Usage:
-    $( "#myContainer" ).awesomeCloud( settings );
-
-    Your container must contain words in the following format:
-        <element data-weight="12">Word</element>
-    The <element> can be any valid HTML element (for example, <span>), and
-    the weight must be a decimal or integer contained in the "data-weight"
-    attribute. The content of the <element> is the word that will be
-    displayed. The original element is removed from the page (but not the DOM).
-
-Settings:
-    "size" {
-        "grid" : 8, // word spacing; smaller is more tightly packed but takes longer
-        "factor" : 0, // font resizing factor; default "0" means automatically fill the container
-        "normalize" : true // reduces outlier weights for a more attractive output
-    },
-    "color" {
-        "background" : "rgba(255,255,255,0)", // default is transparent
-        "start" : "#20f", // color of the smallest font
-        "end" : "#e00" // color of the largest font
-    },
-    "options" {
-        "color" : "gradient", // if set to "random-light" or "random-dark", color.start and color.end are ignored
-        "rotationRatio" : 0.3, // 0 is all horizontal words, 1 is all vertical words
-        "printMultiplier" : 1 // 1 will look best on screen and is fastest; setting to 3.5 gives nice 300dpi printer output but takes longer
-    },
-    "font" : "Futura, Helvetica, sans-serif", // font family, identical to CSS font-family attribute
-    "shape" : "circle", // one of "circle", "square", "diamond", "triangle", "triangle-forward", "x", "pentagon" or "star"; this can also be a function with the following prototype - function( theta ) {}
-
-Notes:
-    AwesomeCloud uses the HTML5 canvas element to create word clouds
-    similar to http://wordle.net/. It may or may not work for you.
-
-    If your words are all fairly evenly weighted and are large compared to
-    the containing element, you may need to adjust the size.grid setting
-    to make the output more attractive. Conversely, you can adjust the
-    size.factor setting instead.
-
-    It should be noted that the more words you have, the smaller the size.grid,
-    and the larger the options.printMultiplier, the longer it will take to
-    generate and display the word cloud.
-
-Extra Thanks:
-    Without Timothy Chien's work (https://github.com/timdream/wordcloud),
-    this plugin would have taken much longer and been much uglier. Fate
-    smiled and I found his version while I was searching out the equations
-    I needed to make a circle-shaped cloud. I've simplified and, in places,
-    dumbified his code for this plugin, and even outright copied chunks of
-    it since those parts just worked far better than what I had originally
-    written. Many thanks, Timothy, for saving some of my wits, sanity and
-    hair over the past week.
-
-    Thanks to http://www.websanova.com/tutorials/jquery/jquery-plugin-development-boilerplate
-    for providing a great boilerplate I could use for my first jQuery plugin.
-    My original layout worked, but this one was much better.
  */
 
 /*! jQuery UI - v1.13.2 - 2022-07-14

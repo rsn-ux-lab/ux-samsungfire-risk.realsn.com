@@ -53,3 +53,22 @@ function modalRelated(_callback) {
 /*
 ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■
 */
+{
+  /**
+   *
+   *  depth : 모달 > 관련정보팝업 > 필터 조건 설정 레이어
+   *  block : 초기화 버튼
+   *  event : form 요소 초기화
+   *
+   */
+
+  const $fieldset = $wrapper.querySelector("[data-checkbox-index]");
+  const $btnRefresh = $wrapper.querySelector("[data-button=새로고침]");
+
+  $btnRefresh.addEventListener("click", (e) => {
+    $fieldset.setAttribute("data-checkbox-index", "");
+  });
+}
+/*
+■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■
+*/
