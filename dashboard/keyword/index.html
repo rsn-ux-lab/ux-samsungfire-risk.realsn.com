@@ -1,5 +1,5 @@
 
-<!-- reBuild :  20230227164316 -->
+<!-- reBuild :  20230228080351 -->
 
 <!DOCTYPE html>
 <html lang="ko">
@@ -16,13 +16,13 @@
   <link rel="shortcut icon" href="/dashboard/assets/img/favicon.ico" />
 
   <!-- STYLE -->
-    <link rel="stylesheet" href="/dashboard/assets/css/style.css?v=20230227164316">
+    <link rel="stylesheet" href="/dashboard/assets/css/style.css?v=20230228080351">
 
   <!-- JS -->
-  <script src="/dashboard/assets/js/config/files.js?v=20230227164316" defer></script>
-  <script src="/dashboard/assets/js/libs.js?v=20230227164316" defer></script>
-  <script src="/dashboard/assets/js/modules.js?v=20230227164316" defer></script>
-  <script src="/dashboard/assets/js/config/router.js?v=20230227164316" defer></script>
+  <script src="/dashboard/assets/js/config/files.js?v=20230228080351" defer></script>
+  <script src="/dashboard/assets/js/libs.js?v=20230228080351" defer></script>
+  <script src="/dashboard/assets/js/modules.js?v=20230228080351" defer></script>
+  <script src="/dashboard/assets/js/config/router.js?v=20230228080351" defer></script>
 </head>
 
 <body>
@@ -123,104 +123,104 @@
         </header>
         <main class="l-article-body">
           <dl class="form-search-list">
-            <dt class="form-search-list__title form-search-list__title--has-required">검색어</dt>
+            <dt class="form-search-list__title form-search-list__title--has-required">키워드</dt>
             <dd class="form-search-list__item">
               <div class="form-row form-search form-search--border-bottom" data-text-value="">
                 <input id="keywordSearch1st" type="text" placeholder="">
-                <button class="btn btn-icon btn-search rounded-pill" type="button" title="검색하기"><i class="icon-svg icon-svg-search" aria-hidden="true"></i></button>
+                <button class="btn btn-icon btn-search rounded-pill" type="button" onclick="modalKeyword();" title="검색하기"><i class="icon-svg icon-svg-search" aria-hidden="true"></i></button>
               </div>
 
-              <aside class="form-search-list__lately d-none">
-                <header class="lately-header d-flex border-bottom">
-                  <h4 class="lately-header__title">최근 키워드</h4>
-                  <button class="btn btn-icon border-0 w-auto lately-header__btn" type="button">전체삭제 <i class="icon-svg icon-svg-close ml-4"></i></button>
+              <aside class="form-search-list__lately-left d-none">
+                <header class="lately-left-header d-flex border-bottom">
+                  <h4 class="lately-left-header__title">최근 키워드</h4>
+                  <button class="btn btn-icon border-0 w-auto lately-left-header__btn" type="button">전체삭제 <i class="icon-svg icon-svg-close ml-4"></i></button>
                 </header>
-                <main class="lately-body">
-                  <ul class="lately-body--list">
-                    <li class="lately-body--list__item tooltip">
-                      <button type="button" class="lately-body--list__item-contents d-flex lately-body--list__item-contents--has-as">
+                <main class="lately-left-body">
+                  <ul class="lately-left-body--list">
+                    <li class="lately-left-body--list__item tooltip">
+                      <button type="button" class="lately-left-body--list__item-contents d-flex lately-left-body--list__item-contents--has-as">
                         <span class="txt clamp-1">백내장</span>
                         <span class="type ml-8">질병</span>
                         <span class="rule"><span class="clamp-1">((노인))OR(((안과)))NOT((녹내장))AND((다초점렌즈))</span></span>
                       </button>
-                      <button class="lately-body--list__item-del" title="삭제" tabindex="-1">
+                      <button class="lately-left-body--list__item-del" title="삭제" tabindex="-1">
                       </button>
                       <div class="tooltip-text">
                         <p class="tooltip-text__title">제목 14px</p>
                         <p class="tooltip-text__body">본문 12px</p>                        
                       </div>
                     </li>
-                    <li class="lately-body--list__item">
-                      <button type="button" class="lately-body--list__item-contents d-flex">
+                    <li class="lately-left-body--list__item">
+                      <button type="button" class="lately-left-body--list__item-contents d-flex">
                         <span class="txt clamp-1">레이저</span>
                         <span class="type ml-8">치료법</span>
                       </button>
-                      <button class="lately-body--list__item-del" title="삭제" tabindex="-1">
+                      <button class="lately-left-body--list__item-del" title="삭제" tabindex="-1">
                       </button>
                     </li>
-                    <li class="lately-body--list__item">
-                      <button type="button" class="lately-body--list__item-contents d-flex">
+                    <li class="lately-left-body--list__item">
+                      <button type="button" class="lately-left-body--list__item-contents d-flex">
                         <span class="txt clamp-1">이대목동병원</span>
                         <span class="type ml-8">의료기관</span>
                       </button>
-                      <button class="lately-body--list__item-del" title="삭제" tabindex="-1">
+                      <button class="lately-left-body--list__item-del" title="삭제" tabindex="-1">
                       </button>
                     </li>
-                    <li class="lately-body--list__item">
-                      <button type="button" class="lately-body--list__item-contents d-flex">
+                    <li class="lately-left-body--list__item">
+                      <button type="button" class="lately-left-body--list__item-contents d-flex">
                         <span class="txt clamp-1">삼성서울병원</span>
                         <span class="type ml-8"></span>
                       </button>
-                      <button class="lately-body--list__item-del" title="삭제" tabindex="-1">
+                      <button class="lately-left-body--list__item-del" title="삭제" tabindex="-1">
                       </button>
                     </li>
-                    <li class="lately-body--list__item">
-                      <button type="button" class="lately-body--list__item-contents d-flex lately-body--list__item-contents--has-as">
+                    <li class="lately-left-body--list__item">
+                      <button type="button" class="lately-left-body--list__item-contents d-flex lately-left-body--list__item-contents--has-as">
                         <span class="txt clamp-1">무지외반증</span>
                         <span class="type ml-8">질병</span>
                       </button>
-                      <button class="lately-body--list__item-del" title="삭제" tabindex="-1">
+                      <button class="lately-left-body--list__item-del" title="삭제" tabindex="-1">
                       </button>
                     </li>
-                    <li class="lately-body--list__item">
-                      <button type="button" class="lately-body--list__item-contents d-flex">
+                    <li class="lately-left-body--list__item">
+                      <button type="button" class="lately-left-body--list__item-contents d-flex">
                         <span class="txt clamp-1">골다공증</span>
                         <span class="type ml-8">질병</span>
                       </button>
-                      <button class="lately-body--list__item-del" title="삭제" tabindex="-1">
+                      <button class="lately-left-body--list__item-del" title="삭제" tabindex="-1">
                       </button>
                     </li>
-                    <li class="lately-body--list__item">
-                      <button type="button" class="lately-body--list__item-contents d-flex lately-body--list__item-contents--has-as">
+                    <li class="lately-left-body--list__item">
+                      <button type="button" class="lately-left-body--list__item-contents d-flex lately-left-body--list__item-contents--has-as">
                         <span class="txt clamp-1">도수치료</span>
                         <span class="type ml-8">치료법</span>
                       </button>
-                      <button class="lately-body--list__item-del" title="삭제" tabindex="-1">
+                      <button class="lately-left-body--list__item-del" title="삭제" tabindex="-1">
                       </button>
                     </li>
-                    <li class="lately-body--list__item">
-                      <button type="button" class="lately-body--list__item-contents d-flex">
+                    <li class="lately-left-body--list__item">
+                      <button type="button" class="lately-left-body--list__item-contents d-flex">
                         <span class="txt clamp-1">한방치료</span>
                         <span class="type ml-8">치료법</span>
                         <span class="rule"><span class="clamp-1">((노인))OR(((안과)))NOT((녹내장))AND((다초점렌즈))</span></span>
                       </button>
-                      <button class="lately-body--list__item-del" title="삭제" tabindex="-1">
+                      <button class="lately-left-body--list__item-del" title="삭제" tabindex="-1">
                       </button>
                     </li>
-                    <li class="lately-body--list__item">
-                      <button type="button" class="lately-body--list__item-contents d-flex">
+                    <li class="lately-left-body--list__item">
+                      <button type="button" class="lately-left-body--list__item-contents d-flex">
                         <span class="txt clamp-1">서울한의원</span>
                         <span class="type ml-8"></span>
                       </button>
-                      <button class="lately-body--list__item-del" title="삭제" tabindex="-1">
+                      <button class="lately-left-body--list__item-del" title="삭제" tabindex="-1">
                       </button>
                     </li>
-                    <li class="lately-body--list__item">
-                      <button type="button" class="lately-body--list__item-contents d-flex">
+                    <li class="lately-left-body--list__item">
+                      <button type="button" class="lately-left-body--list__item-contents d-flex">
                         <span class="txt clamp-1">경기이비인후과</span>
                         <span class="type ml-8"></span>
                       </button>
-                      <button class="lately-body--list__item-del" title="삭제" tabindex="-1">
+                      <button class="lately-left-body--list__item-del" title="삭제" tabindex="-1">
                       </button>
                     </li>
                   </ul>
@@ -229,9 +229,107 @@
 
               <div class="form-row form-search form-search--border-bottom" data-text-value="">
                 <input id="keywordSearch2nd" type="text" placeholder="">
-                <button class="btn btn-icon btn-search rounded-pill" type="button" title="검색하기"><i class="icon-svg icon-svg-search" aria-hidden="true"></i></button>
+                <button class="btn btn-icon btn-search rounded-pill" type="button" onclick="modalKeyword();" title="검색하기"><i class="icon-svg icon-svg-search" aria-hidden="true"></i></button>
               </div>
-              <button type="button" class="btn btn-default rounded-pill ml-4">Advanced Search</button>
+
+              <aside class="form-search-list__lately-right d-none">
+                <header class="lately-right-header d-flex border-bottom">
+                  <h4 class="lately-right-header__title">최근 키워드</h4>
+                  <button class="btn btn-icon border-0 w-auto lately-right-header__btn" type="button">전체삭제 <i class="icon-svg icon-svg-close ml-4"></i></button>
+                </header>
+                <main class="lately-right-body">
+                  <ul class="lately-right-body--list">
+                    <li class="lately-right-body--list__item tooltip">
+                      <button type="button" class="lately-right-body--list__item-contents d-flex lately-right-body--list__item-contents--has-as">
+                        <span class="txt clamp-1">백내장</span>
+                        <span class="type ml-8">질병</span>
+                        <span class="rule"><span class="clamp-1">((노인))OR(((안과)))NOT((녹내장))AND((다초점렌즈))</span></span>
+                      </button>
+                      <button class="lately-right-body--list__item-del" title="삭제" tabindex="-1">
+                      </button>
+                      <div class="tooltip-text">
+                        <p class="tooltip-text__title">제목 14px</p>
+                        <p class="tooltip-text__body">본문 12px</p>                        
+                      </div>
+                    </li>
+                    <li class="lately-right-body--list__item">
+                      <button type="button" class="lately-right-body--list__item-contents d-flex">
+                        <span class="txt clamp-1">레이저</span>
+                        <span class="type ml-8">치료법</span>
+                      </button>
+                      <button class="lately-right-body--list__item-del" title="삭제" tabindex="-1">
+                      </button>
+                    </li>
+                    <li class="lately-right-body--list__item">
+                      <button type="button" class="lately-right-body--list__item-contents d-flex">
+                        <span class="txt clamp-1">이대목동병원</span>
+                        <span class="type ml-8">의료기관</span>
+                      </button>
+                      <button class="lately-right-body--list__item-del" title="삭제" tabindex="-1">
+                      </button>
+                    </li>
+                    <li class="lately-right-body--list__item">
+                      <button type="button" class="lately-right-body--list__item-contents d-flex">
+                        <span class="txt clamp-1">삼성서울병원</span>
+                        <span class="type ml-8"></span>
+                      </button>
+                      <button class="lately-right-body--list__item-del" title="삭제" tabindex="-1">
+                      </button>
+                    </li>
+                    <li class="lately-right-body--list__item">
+                      <button type="button" class="lately-right-body--list__item-contents d-flex lately-right-body--list__item-contents--has-as">
+                        <span class="txt clamp-1">무지외반증</span>
+                        <span class="type ml-8">질병</span>
+                      </button>
+                      <button class="lately-right-body--list__item-del" title="삭제" tabindex="-1">
+                      </button>
+                    </li>
+                    <li class="lately-right-body--list__item">
+                      <button type="button" class="lately-right-body--list__item-contents d-flex">
+                        <span class="txt clamp-1">골다공증</span>
+                        <span class="type ml-8">질병</span>
+                      </button>
+                      <button class="lately-right-body--list__item-del" title="삭제" tabindex="-1">
+                      </button>
+                    </li>
+                    <li class="lately-right-body--list__item">
+                      <button type="button" class="lately-right-body--list__item-contents d-flex lately-right-body--list__item-contents--has-as">
+                        <span class="txt clamp-1">도수치료</span>
+                        <span class="type ml-8">치료법</span>
+                      </button>
+                      <button class="lately-right-body--list__item-del" title="삭제" tabindex="-1">
+                      </button>
+                    </li>
+                    <li class="lately-right-body--list__item">
+                      <button type="button" class="lately-right-body--list__item-contents d-flex">
+                        <span class="txt clamp-1">한방치료</span>
+                        <span class="type ml-8">치료법</span>
+                        <span class="rule"><span class="clamp-1">((노인))OR(((안과)))NOT((녹내장))AND((다초점렌즈))</span></span>
+                      </button>
+                      <button class="lately-right-body--list__item-del" title="삭제" tabindex="-1">
+                      </button>
+                    </li>
+                    <li class="lately-right-body--list__item">
+                      <button type="button" class="lately-right-body--list__item-contents d-flex">
+                        <span class="txt clamp-1">서울한의원</span>
+                        <span class="type ml-8"></span>
+                      </button>
+                      <button class="lately-right-body--list__item-del" title="삭제" tabindex="-1">
+                      </button>
+                    </li>
+                    <li class="lately-right-body--list__item">
+                      <button type="button" class="lately-right-body--list__item-contents d-flex">
+                        <span class="txt clamp-1">경기이비인후과</span>
+                        <span class="type ml-8"></span>
+                      </button>
+                      <button class="lately-right-body--list__item-del" title="삭제" tabindex="-1">
+                      </button>
+                    </li>
+                  </ul>
+                </main>
+              </aside>
+
+              <button type="button" class="btn btn-default rounded-pill ml-4" onclick="modalAdvanced();">Advanced Search</button>
             </dd>
             <dt class="form-search-list__title form-search-list__title--has-required">검색기간</dt>
             <dd class="form-search-list__item">
@@ -358,7 +456,7 @@
         </header>
         <main class="l-article-body pl-24 pb-24">
           <dl class="form-search-list">
-            <dt class="form-search-list__title form-search-list__title--has-required">검색어</dt>
+            <dt class="form-search-list__title form-search-list__title--has-required">키워드</dt>
             <dd class="form-search-list__item">2023-01-01 ~ 2023-02-01</span></dd>
             <dt class="form-search-list__title form-search-list__title--has-required">검색기간</dt>
             <dd class="form-search-list__item">2023-01-01 ~ 2023-02-01</span></dd>
