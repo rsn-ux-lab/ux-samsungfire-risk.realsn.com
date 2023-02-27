@@ -1,3 +1,5 @@
+$.modal({ isExist: true, className: "data-table--advanced" });
+
 {
   /**
    *
@@ -140,9 +142,7 @@
   document.querySelector(".js-btn-set-area").addEventListener("click", (e) => {
     e.currentTarget.classList.toggle("btn-default--is-active");
     const $popup = e.currentTarget.nextElementSibling;
-    e.currentTarget.classList.contains("btn-default--is-active")
-      ? $popup.style.setProperty("visibility", "visible")
-      : $popup.style.setProperty("visibility", "hidden");
+    e.currentTarget.classList.contains("btn-default--is-active") ? $popup.style.setProperty("visibility", "visible") : $popup.style.setProperty("visibility", "hidden");
   });
 }
 /*
@@ -180,9 +180,7 @@
   document.querySelector(".js-btn-set-coord").addEventListener("click", (e) => {
     e.currentTarget.classList.toggle("btn-default--is-active");
     const $popup = e.currentTarget.nextElementSibling;
-    e.currentTarget.classList.contains("btn-default--is-active")
-      ? $popup.style.setProperty("visibility", "visible")
-      : $popup.style.setProperty("visibility", "hidden");
+    e.currentTarget.classList.contains("btn-default--is-active") ? $popup.style.setProperty("visibility", "visible") : $popup.style.setProperty("visibility", "hidden");
   });
 }
 /*

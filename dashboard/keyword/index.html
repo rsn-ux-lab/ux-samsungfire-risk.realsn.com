@@ -1,5 +1,5 @@
 
-<!-- reBuild :  20230227115306 -->
+<!-- reBuild :  20230227150834 -->
 
 <!DOCTYPE html>
 <html lang="ko">
@@ -16,13 +16,13 @@
   <link rel="shortcut icon" href="/dashboard/assets/img/favicon.ico" />
 
   <!-- STYLE -->
-    <link rel="stylesheet" href="/dashboard/assets/css/style.css?v=20230227115306">
+    <link rel="stylesheet" href="/dashboard/assets/css/style.css?v=20230227150834">
 
   <!-- JS -->
-  <script src="/dashboard/assets/js/config/files.js?v=20230227115306" defer></script>
-  <script src="/dashboard/assets/js/libs.js?v=20230227115306" defer></script>
-  <script src="/dashboard/assets/js/modules.js?v=20230227115306" defer></script>
-  <script src="/dashboard/assets/js/config/router.js?v=20230227115306" defer></script>
+  <script src="/dashboard/assets/js/config/files.js?v=20230227150834" defer></script>
+  <script src="/dashboard/assets/js/libs.js?v=20230227150834" defer></script>
+  <script src="/dashboard/assets/js/modules.js?v=20230227150834" defer></script>
+  <script src="/dashboard/assets/js/config/router.js?v=20230227150834" defer></script>
 </head>
 
 <body>
@@ -126,18 +126,18 @@
             <dt class="form-search-list__title form-search-list__title--has-required">검색어</dt>
             <dd class="form-search-list__item">
               <div class="form-row form-search form-search--border-bottom" data-text-value="">
-                <input id="keywordSearch" type="text" placeholder="">
+                <input id="keywordSearch1st" type="text" placeholder="">
                 <button class="btn btn-icon btn-search rounded-pill" type="button" title="검색하기"><i class="icon-svg icon-svg-search" aria-hidden="true"></i></button>
               </div>
 
-              <aside class="form-search-list__lately">
+              <aside class="form-search-list__lately d-none">
                 <header class="lately-header d-flex border-bottom">
                   <h4 class="lately-header__title">최근 키워드</h4>
                   <button class="btn btn-icon border-0 w-auto lately-header__btn" type="button">전체삭제 <i class="icon-svg icon-svg-close ml-4"></i></button>
                 </header>
                 <main class="lately-body">
                   <ul class="lately-body--list">
-                    <li class="lately-body--list__item">
+                    <li class="lately-body--list__item tooltip">
                       <button type="button" class="lately-body--list__item-contents d-flex lately-body--list__item-contents--has-as">
                         <span class="txt clamp-1">백내장</span>
                         <span class="type ml-8">질병</span>
@@ -145,6 +145,10 @@
                       </button>
                       <button class="lately-body--list__item-del" title="삭제" tabindex="-1">
                       </button>
+                      <div class="tooltip-text">
+                        <p class="tooltip-text__title">제목 14px</p>
+                        <p class="tooltip-text__body">본문 12px</p>                        
+                      </div>
                     </li>
                     <li class="lately-body--list__item">
                       <button type="button" class="lately-body--list__item-contents d-flex">
@@ -224,7 +228,7 @@
               </aside>
 
               <div class="form-row form-search form-search--border-bottom" data-text-value="">
-                <input id="keywordSearch" type="text" placeholder="">
+                <input id="keywordSearch2nd" type="text" placeholder="">
                 <button class="btn btn-icon btn-search rounded-pill" type="button" title="검색하기"><i class="icon-svg icon-svg-search" aria-hidden="true"></i></button>
               </div>
               <button type="button" class="btn btn-default rounded-pill ml-4">Advanced Search</button>
@@ -362,7 +366,7 @@
             <dd class="form-search-list__item" data-tooltip-text="지식인, 카페, 커뮤니티, 유튜브, 인스타그램"><span class="clamp-1 word-keep">지식인, 카페, 커뮤니티, 유튜브, 인스타그램</span></dd>
             <dt class="form-search-list__title form-search-list__title--has-required">글유형</dt>
             <dd class="form-search-list__item"><span class="text-warning">필수 항목</span></dd>
-            <dt class="form-search-list__title align-items-start">관심항목</dt>
+            <dt class="form-search-list__title align-items-start">관심키워드</dt>
             <dd class="form-search-list__item" data-tooltip-text="보험관련, 비용관련, 혜택관련, 예후개선, 외모개선, 신체기능선, 절판, 모집, 세금"><span class="clamp-2 word-keep">보험관련, 비용관련, 혜택관련, 예후개선, 외모개선, 신체기능개선, 절판, 모집, 세금</span></dd>
           </dl>
         </main>
@@ -392,6 +396,24 @@
 </section>
 <!-- //상단검색영역 -->
 
+
+  
+  <!-- 삭제항목 -->
+  <section class="l-section mt-32">
+    <div class="inner">
+      <header class="l-section-header">
+        <h3 class="l-section-header__title">모달 테스트</h3>
+      </header>
+      <main class="l-section-body pt-16">        
+          <button class="btn btn-default" onclick="modalRelated()" type="button">관련정보 팝업</button>
+          <button class="btn btn-default" onclick="modalKeyword();" type="button">키워드팝업</button>
+          <button class="btn btn-default" onclick="modalInfos()" type="button">의료기관 정보 팝업</button>
+          <button class="btn btn-default" onclick="modalAdvanced();" type="button">고급검색 팝업</button>        
+      </main>
+    </div>
+  </section>
+  <!-- //삭제항목 -->
+  
 
   <!-- 정보량 추이 -->
   <section class="l-section mt-32" data-section="정보량추이">
@@ -2273,6 +2295,1213 @@
 
 </main>
 <!-- //#container -->
+
+<!-- Modal - 관련정보팝업 -->
+<aside class="modal modal-data-table modal-data-table--related">
+  <div class="modal-wrapper">
+    <header class="modal-header">
+      <button type="button" class="btn btn-icon rounded-circle js-modal-close" title="창닫기"><i class="icon-svg icon-svg-close" aria-hidden="true"></i></button>
+      <h1 class="modal-header__title">관련정보 팝업 -<i class="c-badge js-toggle-label ml-12 color-171717 fw-normal" style="background-color: #C7C1EA;">다초점렌즈</i>+ <i class="c-badge color-171717 fw-normal" style="background-color: #DADADA;">노인성백내장</i></h1>
+    </header>
+    <main class="modal-body">
+      <article class="l-article border-0" data-article="전체데이터" data-loding-spinner="false" data-is-empty="false">
+        <header class="l-article-header l-article-header--has-title">
+          <h4 class="l-article-header__title">게시글 목록</h4>
+        </header>
+        <main class="l-article-body">
+          <article class="l-article">
+            <header class="l-article-header d-flex">
+              <button class="btn btn-default rounded-pill js-btn-set-area" type="button"><span class="txt">필터 조건 설정</span></button>
+              <aside id="setting-area" class="aside-setting-area rounded">
+                <header class="setting-area--header d-flex">
+                  <h4 class="setting-area--header__title">지역</h4>
+                </header>
+                <main class="setting-area--body mt-16">
+                  <fieldset class="form-fieldset d-flex w-100" data-fieldset="전국">
+                    <div class="form-row form-switch form-switch--sm" data-row="전국">
+                      <label for="checkboxSensePopupAll"><span class="txt w-100 mr-5">전국</span></label>
+                      <input id="checkboxSensePopupAll" class="js-all-input-checked" type="checkbox">
+                    </div>
+                    <fieldset class="form-fieldset mb-12" data-fieldset="지역">
+                      <div class="form-row form-check-button" data-row="서울">
+                        <input id="checkboxSensePopup1" type="checkbox">
+                        <label for="checkboxSensePopup1"><span class="txt">서울</span></label>
+                      </div>
+                      <div class="form-row form-check-button" data-row="경기">
+                        <input id="checkboxSensePopup2" type="checkbox">
+                        <label for="checkboxSensePopup2"><span class="txt">경기</span></label>
+                      </div>
+                      <div class="form-row form-check-button" data-row="인천">
+                        <input id="checkboxSensePopup3" type="checkbox">
+                        <label for="checkboxSensePopup3"><span class="txt">인천</span></label>
+                      </div>
+                      <div class="form-row form-check-button" data-row="부산">
+                        <input id="checkboxSensePopup4" type="checkbox">
+                        <label for="checkboxSensePopup4"><span class="txt">부산</span></label>
+                      </div>
+                      <div class="form-row form-check-button" data-row="대구">
+                        <input id="checkboxSensePopup5" type="checkbox">
+                        <label for="checkboxSensePopup5"><span class="txt">대구</span></label>
+                      </div>
+                      <div class="form-row form-check-button" data-row="광주">
+                        <input id="checkboxSensePopup6" type="checkbox">
+                        <label for="checkboxSensePopup6"><span class="txt">광주</span></label>
+                      </div>
+                      <div class="form-row form-check-button" data-row="대전">
+                        <input id="checkboxSensePopup7" type="checkbox">
+                        <label for="checkboxSensePopup7"><span class="txt">대전</span></label>
+                      </div>
+                      <div class="form-row form-check-button" data-row="울산">
+                        <input id="checkboxSensePopup8" type="checkbox">
+                        <label for="checkboxSensePopup8"><span class="txt">울산</span></label>
+                      </div>
+                      <div class="form-row form-check-button" data-row="세종">
+                        <input id="checkboxSensePopup9" type="checkbox">
+                        <label for="checkboxSensePopup9"><span class="txt">세종</span></label>
+                      </div>
+                      <div class="form-row form-check-button" data-row="강원">
+                        <input id="checkboxSensePopup10" type="checkbox">
+                        <label for="checkboxSensePopup10"><span class="txt">강원</span></label>
+                      </div>
+                      <div class="form-row form-check-button" data-row="경남">
+                        <input id="checkboxSensePopup11" type="checkbox">
+                        <label for="checkboxSensePopup11"><span class="txt">경남</span></label>
+                      </div>
+                      <div class="form-row form-check-button" data-row="경북">
+                        <input id="checkboxSensePopup12" type="checkbox">
+                        <label for="checkboxSensePopup12"><span class="txt">경북</span></label>
+                      </div>
+                      <div class="form-row form-check-button" data-row="전남">
+                        <input id="checkboxSensePopup13" type="checkbox">
+                        <label for="checkboxSensePopup13"><span class="txt">전남</span></label>
+                      </div>
+                      <div class="form-row form-check-button" data-row="전북">
+                        <input id="checkboxSensePopup14" type="checkbox">
+                        <label for="checkboxSensePopup14"><span class="txt">전북</span></label>
+                      </div>
+                      <div class="form-row form-check-button" data-row="충남">
+                        <input id="checkboxSensePopup15" type="checkbox">
+                        <label for="checkboxSensePopup15"><span class="txt">충남</span></label>
+                      </div>
+                      <div class="form-row form-check-button" data-row="충북">
+                        <input id="checkboxSensePopup16" type="checkbox">
+                        <label for="checkboxSensePopup16"><span class="txt">충북</span></label>
+                      </div>
+                      <div class="form-row form-check-button" data-row="제주">
+                        <input id="checkboxSensePopup17" type="checkbox">
+                        <label for="checkboxSensePopup17"><span class="txt">제주</span></label>
+                      </div>
+                    </fieldset>
+                  </fieldset>
+                </main>
+                <footer class="setting-area--footer d-flex mt-12">
+                  <button class="btn btn-icon rounded" data-button="새로고침" title="새로고침" type="button"><i class="icon-svg icon-svg-refresh" aria-hidden="true"></i></button>
+                  <button class="btn btn-secondary rounded ml-8 w-100" type="button">검색</button>
+                </footer>
+              </aside>
+              <p class="c-data-table-total ml-12">Total. <span class="count">155,474</span></p>
+              <fieldset class="form-fieldset ml-auto" data-fieldset="Top30키워드순위변화">
+                <div class="form-row form-select form-select--border-bottom" data-selected-value="0" data-selected-text="정보량">
+                  <select id="selectRank">
+                    <option value="0" selected="">10건 씩 보기</option>
+                    <option value="1">30건 씩 보기</option>
+                    <option value="2">50건 씩 보기</option>
+                  </select>
+                </div>
+              </fieldset>
+              <div class="form-row form-search ml-12" data-row="검색어" data-text-value="">
+                <input class="rounded-pill" name="keyword" type="search" placeholder="검색어를 입력하세요.">
+                <button class="btn btn-icon btn-search" type="button" title="검색하기"><i class="icon-svg icon-svg-search" aria-hidden="true"></i></button>
+              </div>
+            </header>
+            <main class="l-article-body mt-24">
+              <div class="scroll-container-x">
+                <table class="c-table c-table--hover" data-thead-sticky="true">
+                  <colgroup>
+                    <col style="width:11rem">
+                    <col style="width:9rem">
+                    <col style="width:11rem">
+                    <col style="width:38rem">
+                    <col style="width:9.5rem">
+                    <col style="width:18rem">
+                    <col style="width:10rem">
+                    <col style="width:10rem">
+                  </colgroup>
+                  <thead>
+                    <tr>
+                      <th>글유형</th>
+                      <th>채널</th>
+                      <th>출처</th>
+                      <th>원문</th>
+                      <th>
+                        <p>수집일</p>
+                        <fieldset class="form-fieldset" data-fieldset="정렬">
+                          <div class="form-row form-check-button" data-row="오름차순">
+                            <input id="radioModalRelatedSort1" name="radioModalRelatedSort" type="radio" />
+                            <label for="radioModalRelatedSort1" title="오름차순"><i class="icon-svg icon-svg-chevron-up" aria-hidden="true"></i></label>
+                          </div>
+                          <div class="form-row form-check-button" data-row="내림차순">
+                            <input id="radioModalRelatedSort2" name="radioModalRelatedSort" type="radio" />
+                            <label for="radioModalRelatedSort2" title="내림차순"><i class="icon-svg icon-svg-chevron-down" aria-hidden="true"></i></label>
+                          </div>
+                        </fieldset>
+                      </th>
+                      <th style="background: #ebebeb;">관심키워드</th>
+                      <th style="background: #ebebeb;">관련 의료기관</th>
+                      <th style="background: #ebebeb;">추정지역</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td class="text-center">의료기관홍보</td>
+                      <td class="text-center">카페</td>
+                      <td class="text-center">출처</td>
+                      <td>
+                        <div class="tooltip js-tooltip-fixed">
+                          <a href="#" class="link text-start" target="_blank"><strong class="clamp-1">제목제목제목</strong></a>
+                          <a href="#" class="link text-start" target="_blank"><span class="clamp-1">내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용</span></a>
+                          <aside class="tooltip-text" style="width: 40rem">
+                            <p class="tooltip-text__title"><strong class="clamp-2">말풍선 제목은 최대 2줄까지 말줄임 됩니다.</strong></p>
+                            <p class="tooltip-text__body"><span class="clamp-6">말풍선 본문은 최대 6줄까지 말줄임 됩니다. 그 이상되면 모달창 범위를 벗어나 내용을 확인할 수 없습니다. 말풍선 본문은 최대 6줄까지 말줄임 됩니다. 그 이상되면 모달창 범위를 벗어나 내용을 확인할 수 없습니다. 말풍선 본문은 최대 6줄까지 말줄임 됩니다. 그 이상되면 모달창 범위를 벗어나 내용을 확인할 수 없습니다. 말풍선 본문은 최대 6줄까지 말줄임 됩니다. 그 이상되면 모달창 범위를 벗어나 내용을 확인할 수 없습니다.</span></p>
+                          </aside>
+                        </div>
+                      </td>
+                      <td class="text-center">2023-03-19</td>
+                      <td>
+                        <div class="tooltip js-tooltip-fixed tooltip-keyword">
+                          <p class="text-center">보험관련, 혜택관련 외 3개</p>
+                          <aside class="tooltip-text">
+                            <dl class="keyword-list">
+                              <dt class="keyword-list__title">보험관련</dt>
+                              <dd class="keyword-list__item">실손, 실비, 보험, 사보험, 보험상담사, 특약, 담보, 청구, 보험금, 비급여, 민영건강보험, 민영의료보험</dd>
+                              <dt class="keyword-list__title">비용관련</dt>
+                              <dd class="keyword-list__item">비용, 가격</dd>
+                              <dt class="keyword-list__title">외모개선</dt>
+                              <dd class="keyword-list__item">외모, 미용, 미적, 외적, 심미적, 성형, 콤플렉스</dd>
+                            </dl>
+                          </aside>
+                        </div>
+                      </td>
+                      <td class="text-center">○ ○ 병원</td>
+                      <td class="text-center">서울 서초구</td>
+                    </tr>
+                    <tr>
+                      <td class="text-center">의료기관홍보</td>
+                      <td class="text-center">카페</td>
+                      <td class="text-center">출처</td>
+                      <td>
+                        <div class="tooltip js-tooltip-fixed">
+                          <a href="#" class="link text-start" target="_blank"><strong class="clamp-1">제목제목제목</strong></a>
+                          <a href="#" class="link text-start" target="_blank"><span class="clamp-1">내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용</span></a>
+                          <aside class="tooltip-text" style="width: 40rem">
+                            <p class="tooltip-text__title"><strong class="clamp-2">말풍선 제목은 최대 2줄까지 말줄임 됩니다.</strong></p>
+                            <p class="tooltip-text__body"><span class="clamp-6">말풍선 본문은 최대 6줄까지 말줄임 됩니다. 그 이상되면 모달창 범위를 벗어나 내용을 확인할 수 없습니다. 말풍선 본문은 최대 6줄까지 말줄임 됩니다. 그 이상되면 모달창 범위를 벗어나 내용을 확인할 수 없습니다. 말풍선 본문은 최대 6줄까지 말줄임 됩니다. 그 이상되면 모달창 범위를 벗어나 내용을 확인할 수 없습니다. 말풍선 본문은 최대 6줄까지 말줄임 됩니다. 그 이상되면 모달창 범위를 벗어나 내용을 확인할 수 없습니다.</span></p>
+                          </aside>
+                        </div>
+                      </td>
+                      <td class="text-center">2023-03-19</td>
+                      <td>
+                        <div class="tooltip js-tooltip-fixed tooltip-keyword">
+                          <p class="text-center">보험관련, 혜택관련 외 3개</p>
+                          <aside class="tooltip-text">
+                            <dl class="keyword-list">
+                              <dt class="keyword-list__title">보험관련</dt>
+                              <dd class="keyword-list__item">실손, 실비, 보험, 사보험, 보험상담사, 특약, 담보, 청구, 보험금, 비급여, 민영건강보험, 민영의료보험</dd>
+                              <dt class="keyword-list__title">비용관련</dt>
+                              <dd class="keyword-list__item">비용, 가격</dd>
+                              <dt class="keyword-list__title">외모개선</dt>
+                              <dd class="keyword-list__item">외모, 미용, 미적, 외적, 심미적, 성형, 콤플렉스</dd>
+                            </dl>
+                          </aside>
+                        </div>
+                      </td>
+                      <td class="text-center">○ ○ 병원</td>
+                      <td class="text-center">서울 서초구</td>
+                    </tr>
+                    <tr>
+                      <td class="text-center">의료기관홍보</td>
+                      <td class="text-center">카페</td>
+                      <td class="text-center">출처</td>
+                      <td>
+                        <div class="tooltip js-tooltip-fixed">
+                          <a href="#" class="link text-start" target="_blank"><strong class="clamp-1">제목제목제목</strong></a>
+                          <a href="#" class="link text-start" target="_blank"><span class="clamp-1">내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용</span></a>
+                          <aside class="tooltip-text" style="width: 40rem">
+                            <p class="tooltip-text__title"><strong class="clamp-2">말풍선 제목은 최대 2줄까지 말줄임 됩니다.</strong></p>
+                            <p class="tooltip-text__body"><span class="clamp-6">말풍선 본문은 최대 6줄까지 말줄임 됩니다. 그 이상되면 모달창 범위를 벗어나 내용을 확인할 수 없습니다. 말풍선 본문은 최대 6줄까지 말줄임 됩니다. 그 이상되면 모달창 범위를 벗어나 내용을 확인할 수 없습니다. 말풍선 본문은 최대 6줄까지 말줄임 됩니다. 그 이상되면 모달창 범위를 벗어나 내용을 확인할 수 없습니다. 말풍선 본문은 최대 6줄까지 말줄임 됩니다. 그 이상되면 모달창 범위를 벗어나 내용을 확인할 수 없습니다.</span></p>
+                          </aside>
+                        </div>
+                      </td>
+                      <td class="text-center">2023-03-19</td>
+                      <td>
+                        <div class="tooltip js-tooltip-fixed tooltip-keyword">
+                          <p class="text-center">보험관련, 혜택관련 외 3개</p>
+                          <aside class="tooltip-text">
+                            <dl class="keyword-list">
+                              <dt class="keyword-list__title">보험관련</dt>
+                              <dd class="keyword-list__item">실손, 실비, 보험, 사보험, 보험상담사, 특약, 담보, 청구, 보험금, 비급여, 민영건강보험, 민영의료보험</dd>
+                              <dt class="keyword-list__title">비용관련</dt>
+                              <dd class="keyword-list__item">비용, 가격</dd>
+                              <dt class="keyword-list__title">외모개선</dt>
+                              <dd class="keyword-list__item">외모, 미용, 미적, 외적, 심미적, 성형, 콤플렉스</dd>
+                            </dl>
+                          </aside>
+                        </div>
+                      </td>
+                      <td class="text-center">○ ○ 병원</td>
+                      <td class="text-center">서울 서초구</td>
+                    </tr>
+                    <tr>
+                      <td class="text-center">의료기관홍보</td>
+                      <td class="text-center">카페</td>
+                      <td class="text-center">출처</td>
+                      <td>
+                        <div class="tooltip js-tooltip-fixed">
+                          <a href="#" class="link text-start" target="_blank"><strong class="clamp-1">제목제목제목</strong></a>
+                          <a href="#" class="link text-start" target="_blank"><span class="clamp-1">내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용</span></a>
+                          <aside class="tooltip-text" style="width: 40rem">
+                            <p class="tooltip-text__title"><strong class="clamp-2">말풍선 제목은 최대 2줄까지 말줄임 됩니다.</strong></p>
+                            <p class="tooltip-text__body"><span class="clamp-6">말풍선 본문은 최대 6줄까지 말줄임 됩니다. 그 이상되면 모달창 범위를 벗어나 내용을 확인할 수 없습니다. 말풍선 본문은 최대 6줄까지 말줄임 됩니다. 그 이상되면 모달창 범위를 벗어나 내용을 확인할 수 없습니다. 말풍선 본문은 최대 6줄까지 말줄임 됩니다. 그 이상되면 모달창 범위를 벗어나 내용을 확인할 수 없습니다. 말풍선 본문은 최대 6줄까지 말줄임 됩니다. 그 이상되면 모달창 범위를 벗어나 내용을 확인할 수 없습니다.</span></p>
+                          </aside>
+                        </div>
+                      </td>
+                      <td class="text-center">2023-03-19</td>
+                      <td>
+                        <div class="tooltip js-tooltip-fixed tooltip-keyword">
+                          <p class="text-center">보험관련, 혜택관련 외 3개</p>
+                          <aside class="tooltip-text">
+                            <dl class="keyword-list">
+                              <dt class="keyword-list__title">보험관련</dt>
+                              <dd class="keyword-list__item">실손, 실비, 보험, 사보험, 보험상담사, 특약, 담보, 청구, 보험금, 비급여, 민영건강보험, 민영의료보험</dd>
+                              <dt class="keyword-list__title">비용관련</dt>
+                              <dd class="keyword-list__item">비용, 가격</dd>
+                              <dt class="keyword-list__title">외모개선</dt>
+                              <dd class="keyword-list__item">외모, 미용, 미적, 외적, 심미적, 성형, 콤플렉스</dd>
+                            </dl>
+                          </aside>
+                        </div>
+                      </td>
+                      <td class="text-center">○ ○ 병원</td>
+                      <td class="text-center">서울 서초구</td>
+                    </tr>
+                    <tr>
+                      <td class="text-center">의료기관홍보</td>
+                      <td class="text-center">카페</td>
+                      <td class="text-center">출처</td>
+                      <td>
+                        <div class="tooltip js-tooltip-fixed">
+                          <a href="#" class="link text-start" target="_blank"><strong class="clamp-1">제목제목제목</strong></a>
+                          <a href="#" class="link text-start" target="_blank"><span class="clamp-1">내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용</span></a>
+                          <aside class="tooltip-text" style="width: 40rem">
+                            <p class="tooltip-text__title"><strong class="clamp-2">말풍선 제목은 최대 2줄까지 말줄임 됩니다.</strong></p>
+                            <p class="tooltip-text__body"><span class="clamp-6">말풍선 본문은 최대 6줄까지 말줄임 됩니다. 그 이상되면 모달창 범위를 벗어나 내용을 확인할 수 없습니다. 말풍선 본문은 최대 6줄까지 말줄임 됩니다. 그 이상되면 모달창 범위를 벗어나 내용을 확인할 수 없습니다. 말풍선 본문은 최대 6줄까지 말줄임 됩니다. 그 이상되면 모달창 범위를 벗어나 내용을 확인할 수 없습니다. 말풍선 본문은 최대 6줄까지 말줄임 됩니다. 그 이상되면 모달창 범위를 벗어나 내용을 확인할 수 없습니다.</span></p>
+                          </aside>
+                        </div>
+                      </td>
+                      <td class="text-center">2023-03-19</td>
+                      <td>
+                        <div class="tooltip js-tooltip-fixed tooltip-keyword">
+                          <p class="text-center">보험관련, 혜택관련 외 3개</p>
+                          <aside class="tooltip-text">
+                            <dl class="keyword-list">
+                              <dt class="keyword-list__title">보험관련</dt>
+                              <dd class="keyword-list__item">실손, 실비, 보험, 사보험, 보험상담사, 특약, 담보, 청구, 보험금, 비급여, 민영건강보험, 민영의료보험</dd>
+                              <dt class="keyword-list__title">비용관련</dt>
+                              <dd class="keyword-list__item">비용, 가격</dd>
+                              <dt class="keyword-list__title">외모개선</dt>
+                              <dd class="keyword-list__item">외모, 미용, 미적, 외적, 심미적, 성형, 콤플렉스</dd>
+                            </dl>
+                          </aside>
+                        </div>
+                      </td>
+                      <td class="text-center">○ ○ 병원</td>
+                      <td class="text-center">서울 서초구</td>
+                    </tr>
+                    <tr>
+                      <td class="text-center">의료기관홍보</td>
+                      <td class="text-center">카페</td>
+                      <td class="text-center">출처</td>
+                      <td>
+                        <div class="tooltip js-tooltip-fixed">
+                          <a href="#" class="link text-start" target="_blank"><strong class="clamp-1">제목제목제목</strong></a>
+                          <a href="#" class="link text-start" target="_blank"><span class="clamp-1">내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용</span></a>
+                          <aside class="tooltip-text" style="width: 40rem">
+                            <p class="tooltip-text__title"><strong class="clamp-2">말풍선 제목은 최대 2줄까지 말줄임 됩니다.</strong></p>
+                            <p class="tooltip-text__body"><span class="clamp-6">말풍선 본문은 최대 6줄까지 말줄임 됩니다. 그 이상되면 모달창 범위를 벗어나 내용을 확인할 수 없습니다. 말풍선 본문은 최대 6줄까지 말줄임 됩니다. 그 이상되면 모달창 범위를 벗어나 내용을 확인할 수 없습니다. 말풍선 본문은 최대 6줄까지 말줄임 됩니다. 그 이상되면 모달창 범위를 벗어나 내용을 확인할 수 없습니다. 말풍선 본문은 최대 6줄까지 말줄임 됩니다. 그 이상되면 모달창 범위를 벗어나 내용을 확인할 수 없습니다.</span></p>
+                          </aside>
+                        </div>
+                      </td>
+                      <td class="text-center">2023-03-19</td>
+                      <td>
+                        <div class="tooltip js-tooltip-fixed tooltip-keyword">
+                          <p class="text-center">보험관련, 혜택관련 외 3개</p>
+                          <aside class="tooltip-text">
+                            <dl class="keyword-list">
+                              <dt class="keyword-list__title">보험관련</dt>
+                              <dd class="keyword-list__item">실손, 실비, 보험, 사보험, 보험상담사, 특약, 담보, 청구, 보험금, 비급여, 민영건강보험, 민영의료보험</dd>
+                              <dt class="keyword-list__title">비용관련</dt>
+                              <dd class="keyword-list__item">비용, 가격</dd>
+                              <dt class="keyword-list__title">외모개선</dt>
+                              <dd class="keyword-list__item">외모, 미용, 미적, 외적, 심미적, 성형, 콤플렉스</dd>
+                            </dl>
+                          </aside>
+                        </div>
+                      </td>
+                      <td class="text-center">○ ○ 병원</td>
+                      <td class="text-center">서울 서초구</td>
+                    </tr>
+                    <tr>
+                      <td class="text-center">의료기관홍보</td>
+                      <td class="text-center">카페</td>
+                      <td class="text-center">출처</td>
+                      <td>
+                        <div class="tooltip js-tooltip-fixed">
+                          <a href="#" class="link text-start" target="_blank"><strong class="clamp-1">제목제목제목</strong></a>
+                          <a href="#" class="link text-start" target="_blank"><span class="clamp-1">내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용</span></a>
+                          <aside class="tooltip-text" style="width: 40rem">
+                            <p class="tooltip-text__title"><strong class="clamp-2">말풍선 제목은 최대 2줄까지 말줄임 됩니다.</strong></p>
+                            <p class="tooltip-text__body"><span class="clamp-6">말풍선 본문은 최대 6줄까지 말줄임 됩니다. 그 이상되면 모달창 범위를 벗어나 내용을 확인할 수 없습니다. 말풍선 본문은 최대 6줄까지 말줄임 됩니다. 그 이상되면 모달창 범위를 벗어나 내용을 확인할 수 없습니다. 말풍선 본문은 최대 6줄까지 말줄임 됩니다. 그 이상되면 모달창 범위를 벗어나 내용을 확인할 수 없습니다. 말풍선 본문은 최대 6줄까지 말줄임 됩니다. 그 이상되면 모달창 범위를 벗어나 내용을 확인할 수 없습니다.</span></p>
+                          </aside>
+                        </div>
+                      </td>
+                      <td class="text-center">2023-03-19</td>
+                      <td>
+                        <div class="tooltip js-tooltip-fixed tooltip-keyword">
+                          <p class="text-center">보험관련, 혜택관련 외 3개</p>
+                          <aside class="tooltip-text">
+                            <dl class="keyword-list">
+                              <dt class="keyword-list__title">보험관련</dt>
+                              <dd class="keyword-list__item">실손, 실비, 보험, 사보험, 보험상담사, 특약, 담보, 청구, 보험금, 비급여, 민영건강보험, 민영의료보험</dd>
+                              <dt class="keyword-list__title">비용관련</dt>
+                              <dd class="keyword-list__item">비용, 가격</dd>
+                              <dt class="keyword-list__title">외모개선</dt>
+                              <dd class="keyword-list__item">외모, 미용, 미적, 외적, 심미적, 성형, 콤플렉스</dd>
+                            </dl>
+                          </aside>
+                        </div>
+                      </td>
+                      <td class="text-center">○ ○ 병원</td>
+                      <td class="text-center">서울 서초구</td>
+                    </tr>
+                    <tr>
+                      <td class="text-center">의료기관홍보</td>
+                      <td class="text-center">카페</td>
+                      <td class="text-center">출처</td>
+                      <td>
+                        <div class="tooltip js-tooltip-fixed">
+                          <a href="#" class="link text-start" target="_blank"><strong class="clamp-1">제목제목제목</strong></a>
+                          <a href="#" class="link text-start" target="_blank"><span class="clamp-1">내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용</span></a>
+                          <aside class="tooltip-text" style="width: 40rem">
+                            <p class="tooltip-text__title"><strong class="clamp-2">말풍선 제목은 최대 2줄까지 말줄임 됩니다.</strong></p>
+                            <p class="tooltip-text__body"><span class="clamp-6">말풍선 본문은 최대 6줄까지 말줄임 됩니다. 그 이상되면 모달창 범위를 벗어나 내용을 확인할 수 없습니다. 말풍선 본문은 최대 6줄까지 말줄임 됩니다. 그 이상되면 모달창 범위를 벗어나 내용을 확인할 수 없습니다. 말풍선 본문은 최대 6줄까지 말줄임 됩니다. 그 이상되면 모달창 범위를 벗어나 내용을 확인할 수 없습니다. 말풍선 본문은 최대 6줄까지 말줄임 됩니다. 그 이상되면 모달창 범위를 벗어나 내용을 확인할 수 없습니다.</span></p>
+                          </aside>
+                        </div>
+                      </td>
+                      <td class="text-center">2023-03-19</td>
+                      <td>
+                        <div class="tooltip js-tooltip-fixed tooltip-keyword">
+                          <p class="text-center">보험관련, 혜택관련 외 3개</p>
+                          <aside class="tooltip-text">
+                            <dl class="keyword-list">
+                              <dt class="keyword-list__title">보험관련</dt>
+                              <dd class="keyword-list__item">실손, 실비, 보험, 사보험, 보험상담사, 특약, 담보, 청구, 보험금, 비급여, 민영건강보험, 민영의료보험</dd>
+                              <dt class="keyword-list__title">비용관련</dt>
+                              <dd class="keyword-list__item">비용, 가격</dd>
+                              <dt class="keyword-list__title">외모개선</dt>
+                              <dd class="keyword-list__item">외모, 미용, 미적, 외적, 심미적, 성형, 콤플렉스</dd>
+                            </dl>
+                          </aside>
+                        </div>
+                      </td>
+                      <td class="text-center">○ ○ 병원</td>
+                      <td class="text-center">서울 서초구</td>
+                    </tr>
+                    <tr>
+                      <td class="text-center">의료기관홍보</td>
+                      <td class="text-center">카페</td>
+                      <td class="text-center">출처</td>
+                      <td>
+                        <div class="tooltip js-tooltip-fixed">
+                          <a href="#" class="link text-start" target="_blank"><strong class="clamp-1">제목제목제목</strong></a>
+                          <a href="#" class="link text-start" target="_blank"><span class="clamp-1">내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용</span></a>
+                          <aside class="tooltip-text" style="width: 40rem">
+                            <p class="tooltip-text__title"><strong class="clamp-2">말풍선 제목은 최대 2줄까지 말줄임 됩니다.</strong></p>
+                            <p class="tooltip-text__body"><span class="clamp-6">말풍선 본문은 최대 6줄까지 말줄임 됩니다. 그 이상되면 모달창 범위를 벗어나 내용을 확인할 수 없습니다. 말풍선 본문은 최대 6줄까지 말줄임 됩니다. 그 이상되면 모달창 범위를 벗어나 내용을 확인할 수 없습니다. 말풍선 본문은 최대 6줄까지 말줄임 됩니다. 그 이상되면 모달창 범위를 벗어나 내용을 확인할 수 없습니다. 말풍선 본문은 최대 6줄까지 말줄임 됩니다. 그 이상되면 모달창 범위를 벗어나 내용을 확인할 수 없습니다.</span></p>
+                          </aside>
+                        </div>
+                      </td>
+                      <td class="text-center">2023-03-19</td>
+                      <td>
+                        <div class="tooltip js-tooltip-fixed tooltip-keyword">
+                          <p class="text-center">보험관련, 혜택관련 외 3개</p>
+                          <aside class="tooltip-text">
+                            <dl class="keyword-list">
+                              <dt class="keyword-list__title">보험관련</dt>
+                              <dd class="keyword-list__item">실손, 실비, 보험, 사보험, 보험상담사, 특약, 담보, 청구, 보험금, 비급여, 민영건강보험, 민영의료보험</dd>
+                              <dt class="keyword-list__title">비용관련</dt>
+                              <dd class="keyword-list__item">비용, 가격</dd>
+                              <dt class="keyword-list__title">외모개선</dt>
+                              <dd class="keyword-list__item">외모, 미용, 미적, 외적, 심미적, 성형, 콤플렉스</dd>
+                            </dl>
+                          </aside>
+                        </div>
+                      </td>
+                      <td class="text-center">○ ○ 병원</td>
+                      <td class="text-center">서울 서초구</td>
+                    </tr>
+                    <tr>
+                      <td class="text-center">의료기관홍보</td>
+                      <td class="text-center">카페</td>
+                      <td class="text-center">출처</td>
+                      <td>
+                        <div class="tooltip js-tooltip-fixed">
+                          <a href="#" class="link text-start" target="_blank"><strong class="clamp-1">제목제목제목</strong></a>
+                          <a href="#" class="link text-start" target="_blank"><span class="clamp-1">내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용</span></a>
+                          <aside class="tooltip-text" style="width: 40rem">
+                            <p class="tooltip-text__title"><strong class="clamp-2">말풍선 제목은 최대 2줄까지 말줄임 됩니다.</strong></p>
+                            <p class="tooltip-text__body"><span class="clamp-6">말풍선 본문은 최대 6줄까지 말줄임 됩니다. 그 이상되면 모달창 범위를 벗어나 내용을 확인할 수 없습니다. 말풍선 본문은 최대 6줄까지 말줄임 됩니다. 그 이상되면 모달창 범위를 벗어나 내용을 확인할 수 없습니다. 말풍선 본문은 최대 6줄까지 말줄임 됩니다. 그 이상되면 모달창 범위를 벗어나 내용을 확인할 수 없습니다. 말풍선 본문은 최대 6줄까지 말줄임 됩니다. 그 이상되면 모달창 범위를 벗어나 내용을 확인할 수 없습니다.</span></p>
+                          </aside>
+                        </div>
+                      </td>
+                      <td class="text-center">2023-03-19</td>
+                      <td>
+                        <div class="tooltip js-tooltip-fixed tooltip-keyword">
+                          <p class="text-center">보험관련, 혜택관련 외 3개</p>
+                          <aside class="tooltip-text">
+                            <dl class="keyword-list">
+                              <dt class="keyword-list__title">보험관련</dt>
+                              <dd class="keyword-list__item">실손, 실비, 보험, 사보험, 보험상담사, 특약, 담보, 청구, 보험금, 비급여, 민영건강보험, 민영의료보험</dd>
+                              <dt class="keyword-list__title">비용관련</dt>
+                              <dd class="keyword-list__item">비용, 가격</dd>
+                              <dt class="keyword-list__title">외모개선</dt>
+                              <dd class="keyword-list__item">외모, 미용, 미적, 외적, 심미적, 성형, 콤플렉스</dd>
+                            </dl>
+                          </aside>
+                        </div>
+                      </td>
+                      <td class="text-center">○ ○ 병원</td>
+                      <td class="text-center">서울 서초구</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </main>
+          </article>
+        </main>
+        <footer class="l-article-footer pt-10">
+          
+          
+<!-- pagination -->
+<ol class="c-pagination" data-current-page="3">
+  <li class="c-pagination__item c-pagination__item--first"><button class="btn btn-default" type="button" title="이전 10개 페이지" disabled><i class="icon-svg icon-svg-chevrons-left" aria-hidden="true"></i></button></li>
+  <li class="c-pagination__item c-pagination__item--prev"><button class="btn btn-default" type="button" title="이전 페이지" disabled><i class="icon-svg icon-svg-chevron-left" aria-hidden="true"></i></button></li>
+  <li class="c-pagination__item"><button class="btn btn-default border-0" type="button"><span class="txt">1</span></button></li>
+  <li class="c-pagination__item"><button class="btn btn-default border-0" type="button"><span class="txt">2</span></button></li>
+  <li class="c-pagination__item"><button class="btn btn-default border-0" type="button"><span class="txt">3</span></button></li>
+  <li class="c-pagination__item"><button class="btn btn-default border-0" type="button"><span class="txt">4</span></button></li>
+  <li class="c-pagination__item"><button class="btn btn-default border-0" type="button"><span class="txt">5</span></button></li>
+  <li class="c-pagination__item"><button class="btn btn-default border-0" type="button"><span class="txt">6</span></button></li>
+  <li class="c-pagination__item"><button class="btn btn-default border-0" type="button"><span class="txt">7</span></button></li>
+  <li class="c-pagination__item"><button class="btn btn-default border-0" type="button"><span class="txt">8</span></button></li>
+  <li class="c-pagination__item"><button class="btn btn-default border-0" type="button"><span class="txt">9</span></button></li>
+  <li class="c-pagination__item"><button class="btn btn-default border-0" type="button"><span class="txt">10</span></button></li>
+  <li class="c-pagination__item c-pagination__item--next"><button class="btn btn-default" type="button" title="다음 페이지"><i class="icon-svg icon-svg-chevron-right" aria-hidden="true"></i></button></li>
+  <li class="c-pagination__item c-pagination__item--last"><button class="btn btn-default" type="button" title="다음 10개 페이지"><i class="icon-svg icon-svg-chevrons-right" aria-hidden="true"></i></button></li>
+</ol>
+<!-- //pagination -->
+        </footer>
+      </article>
+    </main>
+  </div>
+  <i class="modal-dimmed"></i>
+</aside>
+<!-- //Modal - 관련정보 -->
+
+<!-- Modal - 의료기관정보 팝업 -->
+<aside class="modal modal-data-table modal-data-table--infos">
+  <div class="modal-wrapper">
+    <header class="modal-header">
+      <button type="button" class="btn btn-icon rounded-circle js-modal-close" title="창닫기"><i class="icon-svg icon-svg-close" aria-hidden="true"></i></button>
+      <h1 class="modal-header__title">의료기관 정보 팝업 -<i class="c-badge js-toggle-label ml-12 color-171717 fw-normal" style="background-color: #C7C1EA;">백내장</i> <i class="c-badge js-toggle-label color-171717 fw-normal" style="background-color: #89DDD8;">다초점렌즈</i>+ <i class="c-badge color-171717 fw-normal" style="background-color: #DADADA;">노인성백내장</i></h1>
+    </header>
+
+    <main class="modal-body">
+      <div class="row">
+        <div class="col-7">
+          <div class="row">
+            <div class="col-18">
+              <article class="l-article">
+                  <main class="l-article-body">
+                      <table class="c-table c-table--bordered">
+                        <colgroup>
+                          <col width="20%">
+                          <col width="*">
+                          <col width="20%">
+                          <col width="20%">
+                        </colgroup>
+                        <tbody>
+                          <tr>
+                            <th class="text-center" style="background: #DEDEDE;">의료기관</td>
+                            <td colspan="3" class="text-left">강릉아산병원</td>
+                          </tr>
+                          <tr>
+                            <th class="text-center" style="background: #DEDEDE;">종별</td>
+                            <td class="text-left">상급종합</td>
+                            <th class="text-center" style="background: #DEDEDE;">개설일</td>
+                            <td class="text-center">2023-03-19</td>
+                          </tr>
+                          <tr>
+                            <th class="text-center" style="background: #DEDEDE;">진료과목</td>
+                            <td colspan="3" class="text-left">내과 외 00</td>
+                          </tr>
+                          <tr>
+                            <th class="text-center" style="background: #DEDEDE;">전화번호</td>
+                            <td colspan="3" class="text-left">033-610-3114</td>
+                          </tr>
+                          <tr>
+                            <th class="text-center" style="background: #DEDEDE;">주소</td>
+                            <td colspan="3" class="text-left">강원도 강릉시 사천면 방동길 38</td>
+                          </tr>
+                          <tr>
+                            <th class="text-center" style="background: #DEDEDE;">홈페이지</td>
+                            <td colspan="3" class="text-left">www.gnah.co.kr</td>
+                          </tr>
+                          <tr>
+                            <th class="text-center" style="background: #DEDEDE;">총 의사 수</td>
+                            <td class="text-left">203</td>
+                            <th class="text-center" style="background: #DEDEDE;">총 병상 수</td>
+                            <td class="text-center">-</td>
+                          </tr>
+                        </tbody>
+                      </table>
+                  </main>
+              </article>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-18">
+              <article class="l-article border mt-12 p-12" data-article="의료기관정보량" >
+                <header class="l-article-header d-flex">
+                  <fieldset class="form-fieldset d-inline-flex ml-auto" data-fieldset="일주월별">
+                    <div class="form-row form-switch-button" data-row="일별">
+                      <input type="radio" id="radioSortDatePopupInfos11" name="radioSortDatePopupInfos1">
+                      <label for="radioSortDatePopupInfos11">
+                        <span class="txt">일별</span>
+                      </label>
+                    </div>
+                    <div class="form-row form-switch-button" data-row="주별">
+                      <input type="radio" id="radioSortDatePopupInfos12" name="radioSortDatePopupInfos1">
+                      <label for="radioSortDatePopupInfos12">
+                        <span class="txt">주별</span>
+                      </label>
+                    </div>
+                    <div class="form-row form-switch-button" data-row="월별">
+                      <input type="radio" id="radioSortDatePopupInfos13" name="radioSortDatePopupInfos1" checked>
+                      <label for="radioSortDatePopupInfos13">
+                        <span class="txt">월별</span>
+                      </label>
+                    </div>
+                  </fieldset>
+                </header>
+                <main class="l-article-body">
+                  <div class="js-chart"  style="height: 33.2rem;"></div>
+                </main>
+              </article>
+            </div>
+          </div>
+        </div>
+        <div class="col-11">
+          <article class="l-article border-0" data-article="전체데이터" data-loding-spinner="false" data-is-empty="false">
+            <header class="l-article-header l-article-header--has-title">
+              <h4 class="l-article-header__title">게시글 목록</h4>
+            </header>
+            <main class="l-article-body">
+              <article class="l-article">
+                <header class="l-article-header d-flex">
+                  <p class="c-data-table-total ml-12">Total. <span class="count">155,474</span></p>
+                  <fieldset class="form-fieldset ml-auto" data-fieldset="Top30키워드순위변화">
+                    <div class="form-row form-select form-select--border-bottom" data-selected-value="0" data-selected-text="정보량">
+                      <select id="selectRank">
+                        <option value="0" selected="">10건 씩 보기</option>
+                        <option value="1">30건 씩 보기</option>
+                        <option value="2">50건 씩 보기</option>
+                      </select>
+                    </div>
+                  </fieldset>
+                  <div class="form-row form-search ml-12" data-row="검색어" data-text-value="">
+                    <input class="rounded-pill" name="keyword" type="search" placeholder="검색어를 입력하세요.">
+                    <button class="btn btn-icon btn-search" type="button" title="검색하기"><i class="icon-svg icon-svg-search" aria-hidden="true"></i></button>
+                  </div>
+                </header>
+                <main class="l-article-body mt-24">
+                    <table class="c-table c-table--hover" data-thead-sticky="true">
+                      <colgroup>
+                        <col style="width:8rem">
+                        <col style="width:6.5rem">
+                        <col style="width:7.5rem">
+                        <col width="*">
+                        <col style="width:9rem">
+                      </colgroup>
+                      <thead>
+                        <tr>
+                          <th>글유형</th>
+                          <th>채널</th>
+                          <th>출처</th>
+                          <th>원문</th>
+                          <th>
+                            <p>수집일</p>
+                            <fieldset class="form-fieldset" data-fieldset="정렬">
+                              <div class="form-row form-check-button" data-row="오름차순">
+                                <input id="radioModalInfosSort1" name="radioModalInfosSort" type="radio" />
+                                <label for="radioModalInfosSort1" title="오름차순"><i class="icon-svg icon-svg-chevron-up" aria-hidden="true"></i></label>
+                              </div>
+                              <div class="form-row form-check-button" data-row="내림차순">
+                                <input id="radioModalInfosSort2" name="radioModalInfosSort" type="radio" />
+                                <label for="radioModalInfosSort2" title="내림차순"><i class="icon-svg icon-svg-chevron-down" aria-hidden="true"></i></label>
+                              </div>
+                            </fieldset>
+                          </th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td class="text-center"><p class="clamp-2">의료기관홍보</p></td>
+                          <td class="text-center"><p class="clamp-2">카페</p></td>
+                          <td class="text-center"><p class="clamp-2">출처</p></td>
+                          <td>
+                            <div class="tooltip js-tooltip-fixed">
+                              <a href="#" class="link text-start" target="_blank"><strong class="clamp-1">제목제목제목</strong></a>
+                              <a href="#" class="link text-start" target="_blank"><span class="clamp-1">내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용</span></a>
+                              <aside class="tooltip-text" style="width: 40rem">
+                                <p class="tooltip-text__title"><strong class="clamp-2">말풍선 제목은 최대 2줄까지 말줄임 됩니다.</strong></p>
+                                <p class="tooltip-text__body"><span class="clamp-6">말풍선 본문은 최대 6줄까지 말줄임 됩니다. 그 이상되면 모달창 범위를 벗어나 내용을 확인할 수 없습니다. 말풍선 본문은 최대 6줄까지 말줄임 됩니다. 그 이상되면 모달창 범위를 벗어나 내용을 확인할 수 없습니다. 말풍선 본문은 최대 6줄까지 말줄임 됩니다. 그 이상되면 모달창 범위를 벗어나 내용을 확인할 수 없습니다. 말풍선 본문은 최대 6줄까지 말줄임 됩니다. 그 이상되면 모달창 범위를 벗어나 내용을 확인할 수 없습니다.</span></p>
+                              </aside>
+                            </div>
+                          </td>
+                          <td class="text-center">2023-03-19</td>
+                        </tr>
+                        <tr>
+                          <td class="text-center"><p class="clamp-2">의료기관홍보</p></td>
+                          <td class="text-center"><p class="clamp-2">카페</p></td>
+                          <td class="text-center"><p class="clamp-2">출처</p></td>
+                          <td>
+                            <div class="tooltip js-tooltip-fixed">
+                              <a href="#" class="link" target="_blank"><strong class="clamp-1">제목제목제목</strong></a>
+                              <a href="#" class="link" target="_blank"><span class="clamp-1">내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용</span></a>
+                              <aside class="tooltip-text" style="width: 40rem">
+                                <p class="tooltip-text__title"><strong class="clamp-2">말풍선 제목은 최대 2줄까지 말줄임 됩니다.</strong></p>
+                                <p class="tooltip-text__body"><span class="clamp-6">말풍선 본문은 최대 6줄까지 말줄임 됩니다. 그 이상되면 모달창 범위를 벗어나 내용을 확인할 수 없습니다. 말풍선 본문은 최대 6줄까지 말줄임 됩니다. 그 이상되면 모달창 범위를 벗어나 내용을 확인할 수 없습니다. 말풍선 본문은 최대 6줄까지 말줄임 됩니다. 그 이상되면 모달창 범위를 벗어나 내용을 확인할 수 없습니다. 말풍선 본문은 최대 6줄까지 말줄임 됩니다. 그 이상되면 모달창 범위를 벗어나 내용을 확인할 수 없습니다.</span></p>
+                              </aside>
+                            </div>
+                          </td>
+                          <td class="text-center">2023-03-19</td>
+                        </tr>
+                        <tr>
+                          <td class="text-center"><p class="clamp-2">의료기관홍보</p></td>
+                          <td class="text-center"><p class="clamp-2">카페</p></td>
+                          <td class="text-center"><p class="clamp-2">출처</p></td>
+                          <td>
+                            <div class="tooltip js-tooltip-fixed">
+                              <a href="#" class="link" target="_blank"><strong class="clamp-1">제목제목제목</strong></a>
+                              <a href="#" class="link" target="_blank"><span class="clamp-1">내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용</span></a>
+                              <aside class="tooltip-text" style="width: 40rem">
+                                <p class="tooltip-text__title"><strong class="clamp-2">말풍선 제목은 최대 2줄까지 말줄임 됩니다.</strong></p>
+                                <p class="tooltip-text__body"><span class="clamp-6">말풍선 본문은 최대 6줄까지 말줄임 됩니다. 그 이상되면 모달창 범위를 벗어나 내용을 확인할 수 없습니다. 말풍선 본문은 최대 6줄까지 말줄임 됩니다. 그 이상되면 모달창 범위를 벗어나 내용을 확인할 수 없습니다. 말풍선 본문은 최대 6줄까지 말줄임 됩니다. 그 이상되면 모달창 범위를 벗어나 내용을 확인할 수 없습니다. 말풍선 본문은 최대 6줄까지 말줄임 됩니다. 그 이상되면 모달창 범위를 벗어나 내용을 확인할 수 없습니다.</span></p>
+                              </aside>
+                            </div>
+                          </td>
+                          <td class="text-center">2023-03-19</td>
+                        </tr>
+                        <tr>
+                          <td class="text-center"><p class="clamp-2">의료기관홍보</p></td>
+                          <td class="text-center"><p class="clamp-2">카페</p></td>
+                          <td class="text-center"><p class="clamp-2">출처</p></td>
+                          <td>
+                            <div class="tooltip js-tooltip-fixed">
+                              <a href="#" class="link" target="_blank"><strong class="clamp-1">제목제목제목</strong></a>
+                              <a href="#" class="link" target="_blank"><span class="clamp-1">내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용</span></a>
+                              <aside class="tooltip-text" style="width: 40rem">
+                                <p class="tooltip-text__title"><strong class="clamp-2">말풍선 제목은 최대 2줄까지 말줄임 됩니다.</strong></p>
+                                <p class="tooltip-text__body"><span class="clamp-6">말풍선 본문은 최대 6줄까지 말줄임 됩니다. 그 이상되면 모달창 범위를 벗어나 내용을 확인할 수 없습니다. 말풍선 본문은 최대 6줄까지 말줄임 됩니다. 그 이상되면 모달창 범위를 벗어나 내용을 확인할 수 없습니다. 말풍선 본문은 최대 6줄까지 말줄임 됩니다. 그 이상되면 모달창 범위를 벗어나 내용을 확인할 수 없습니다. 말풍선 본문은 최대 6줄까지 말줄임 됩니다. 그 이상되면 모달창 범위를 벗어나 내용을 확인할 수 없습니다.</span></p>
+                              </aside>
+                            </div>
+                          </td>
+                          <td class="text-center">2023-03-19</td>
+                        </tr>
+                        <tr>
+                          <td class="text-center"><p class="clamp-2">의료기관홍보</p></td>
+                          <td class="text-center"><p class="clamp-2">카페</p></td>
+                          <td class="text-center"><p class="clamp-2">출처</p></td>
+                          <td>
+                            <div class="tooltip js-tooltip-fixed">
+                              <a href="#" class="link" target="_blank"><strong class="clamp-1">제목제목제목</strong></a>
+                              <a href="#" class="link" target="_blank"><span class="clamp-1">내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용</span></a>
+                              <aside class="tooltip-text" style="width: 40rem">
+                                <p class="tooltip-text__title"><strong class="clamp-2">말풍선 제목은 최대 2줄까지 말줄임 됩니다.</strong></p>
+                                <p class="tooltip-text__body"><span class="clamp-6">말풍선 본문은 최대 6줄까지 말줄임 됩니다. 그 이상되면 모달창 범위를 벗어나 내용을 확인할 수 없습니다. 말풍선 본문은 최대 6줄까지 말줄임 됩니다. 그 이상되면 모달창 범위를 벗어나 내용을 확인할 수 없습니다. 말풍선 본문은 최대 6줄까지 말줄임 됩니다. 그 이상되면 모달창 범위를 벗어나 내용을 확인할 수 없습니다. 말풍선 본문은 최대 6줄까지 말줄임 됩니다. 그 이상되면 모달창 범위를 벗어나 내용을 확인할 수 없습니다.</span></p>
+                              </aside>
+                            </div>
+                          </td>
+                          <td class="text-center">2023-03-19</td>
+                        </tr>
+                        <tr>
+                          <td class="text-center"><p class="clamp-2">의료기관홍보</p></td>
+                          <td class="text-center"><p class="clamp-2">카페</p></td>
+                          <td class="text-center"><p class="clamp-2">출처</p></td>
+                          <td>
+                            <div class="tooltip js-tooltip-fixed">
+                              <a href="#" class="link" target="_blank"><strong class="clamp-1">제목제목제목</strong></a>
+                              <a href="#" class="link" target="_blank"><span class="clamp-1">내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용</span></a>
+                              <aside class="tooltip-text" style="width: 40rem">
+                                <p class="tooltip-text__title"><strong class="clamp-2">말풍선 제목은 최대 2줄까지 말줄임 됩니다.</strong></p>
+                                <p class="tooltip-text__body"><span class="clamp-6">말풍선 본문은 최대 6줄까지 말줄임 됩니다. 그 이상되면 모달창 범위를 벗어나 내용을 확인할 수 없습니다. 말풍선 본문은 최대 6줄까지 말줄임 됩니다. 그 이상되면 모달창 범위를 벗어나 내용을 확인할 수 없습니다. 말풍선 본문은 최대 6줄까지 말줄임 됩니다. 그 이상되면 모달창 범위를 벗어나 내용을 확인할 수 없습니다. 말풍선 본문은 최대 6줄까지 말줄임 됩니다. 그 이상되면 모달창 범위를 벗어나 내용을 확인할 수 없습니다.</span></p>
+                              </aside>
+                            </div>
+                          </td>
+                          <td class="text-center">2023-03-19</td>
+                        </tr>
+                        <tr>
+                          <td class="text-center"><p class="clamp-2">의료기관홍보</p></td>
+                          <td class="text-center"><p class="clamp-2">카페</p></td>
+                          <td class="text-center"><p class="clamp-2">출처</p></td>
+                          <td>
+                            <div class="tooltip js-tooltip-fixed">
+                              <a href="#" class="link" target="_blank"><strong class="clamp-1">제목제목제목</strong></a>
+                              <a href="#" class="link" target="_blank"><span class="clamp-1">내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용</span></a>
+                              <aside class="tooltip-text" style="width: 40rem">
+                                <p class="tooltip-text__title"><strong class="clamp-2">말풍선 제목은 최대 2줄까지 말줄임 됩니다.</strong></p>
+                                <p class="tooltip-text__body"><span class="clamp-6">말풍선 본문은 최대 6줄까지 말줄임 됩니다. 그 이상되면 모달창 범위를 벗어나 내용을 확인할 수 없습니다. 말풍선 본문은 최대 6줄까지 말줄임 됩니다. 그 이상되면 모달창 범위를 벗어나 내용을 확인할 수 없습니다. 말풍선 본문은 최대 6줄까지 말줄임 됩니다. 그 이상되면 모달창 범위를 벗어나 내용을 확인할 수 없습니다. 말풍선 본문은 최대 6줄까지 말줄임 됩니다. 그 이상되면 모달창 범위를 벗어나 내용을 확인할 수 없습니다.</span></p>
+                              </aside>
+                            </div>
+                          </td>
+                          <td class="text-center">2023-03-19</td>
+                        </tr>
+                        <tr>
+                          <td class="text-center"><p class="clamp-2">의료기관홍보</p></td>
+                          <td class="text-center"><p class="clamp-2">카페</p></td>
+                          <td class="text-center"><p class="clamp-2">출처</p></td>
+                          <td>
+                            <div class="tooltip js-tooltip-fixed">
+                              <a href="#" class="link" target="_blank"><strong class="clamp-1">제목제목제목</strong></a>
+                              <a href="#" class="link" target="_blank"><span class="clamp-1">내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용</span></a>
+                              <aside class="tooltip-text" style="width: 40rem">
+                                <p class="tooltip-text__title"><strong class="clamp-2">말풍선 제목은 최대 2줄까지 말줄임 됩니다.</strong></p>
+                                <p class="tooltip-text__body"><span class="clamp-6">말풍선 본문은 최대 6줄까지 말줄임 됩니다. 그 이상되면 모달창 범위를 벗어나 내용을 확인할 수 없습니다. 말풍선 본문은 최대 6줄까지 말줄임 됩니다. 그 이상되면 모달창 범위를 벗어나 내용을 확인할 수 없습니다. 말풍선 본문은 최대 6줄까지 말줄임 됩니다. 그 이상되면 모달창 범위를 벗어나 내용을 확인할 수 없습니다. 말풍선 본문은 최대 6줄까지 말줄임 됩니다. 그 이상되면 모달창 범위를 벗어나 내용을 확인할 수 없습니다.</span></p>
+                              </aside>
+                            </div>
+                          </td>
+                          <td class="text-center">2023-03-19</td>
+                        </tr>
+                        <tr>
+                          <td class="text-center"><p class="clamp-2">의료기관홍보</p></td>
+                          <td class="text-center"><p class="clamp-2">카페</p></td>
+                          <td class="text-center"><p class="clamp-2">출처</p></td>
+                          <td>
+                            <div class="tooltip js-tooltip-fixed">
+                              <a href="#" class="link" target="_blank"><strong class="clamp-1">제목제목제목</strong></a>
+                              <a href="#" class="link" target="_blank"><span class="clamp-1">내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용</span></a>
+                              <aside class="tooltip-text" style="width: 40rem">
+                                <p class="tooltip-text__title"><strong class="clamp-2">말풍선 제목은 최대 2줄까지 말줄임 됩니다.</strong></p>
+                                <p class="tooltip-text__body"><span class="clamp-6">말풍선 본문은 최대 6줄까지 말줄임 됩니다. 그 이상되면 모달창 범위를 벗어나 내용을 확인할 수 없습니다. 말풍선 본문은 최대 6줄까지 말줄임 됩니다. 그 이상되면 모달창 범위를 벗어나 내용을 확인할 수 없습니다. 말풍선 본문은 최대 6줄까지 말줄임 됩니다. 그 이상되면 모달창 범위를 벗어나 내용을 확인할 수 없습니다. 말풍선 본문은 최대 6줄까지 말줄임 됩니다. 그 이상되면 모달창 범위를 벗어나 내용을 확인할 수 없습니다.</span></p>
+                              </aside>
+                            </div>
+                          </td>
+                          <td class="text-center">2023-03-19</td>
+                        </tr>
+                        <tr>
+                          <td class="text-center"><p class="clamp-2">의료기관홍보</p></td>
+                          <td class="text-center"><p class="clamp-2">카페</p></td>
+                          <td class="text-center"><p class="clamp-2">출처</p></td>
+                          <td>
+                            <div class="tooltip js-tooltip-fixed">
+                              <a href="#" class="link" target="_blank"><strong class="clamp-1">제목제목제목</strong></a>
+                              <a href="#" class="link" target="_blank"><span class="clamp-1">내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용</span></a>
+                              <aside class="tooltip-text" style="width: 40rem">
+                                <p class="tooltip-text__title"><strong class="clamp-2">말풍선 제목은 최대 2줄까지 말줄임 됩니다.</strong></p>
+                                <p class="tooltip-text__body"><span class="clamp-6">말풍선 본문은 최대 6줄까지 말줄임 됩니다. 그 이상되면 모달창 범위를 벗어나 내용을 확인할 수 없습니다. 말풍선 본문은 최대 6줄까지 말줄임 됩니다. 그 이상되면 모달창 범위를 벗어나 내용을 확인할 수 없습니다. 말풍선 본문은 최대 6줄까지 말줄임 됩니다. 그 이상되면 모달창 범위를 벗어나 내용을 확인할 수 없습니다. 말풍선 본문은 최대 6줄까지 말줄임 됩니다. 그 이상되면 모달창 범위를 벗어나 내용을 확인할 수 없습니다.</span></p>
+                              </aside>
+                            </div>
+                          </td>
+                          <td class="text-center">2023-03-19</td>
+                        </tr>                        
+                      </tbody>
+                    </table>
+                </main>
+                <footer class="l-article-footer flex-grow-0 pt-10">
+                  
+                  
+<!-- pagination -->
+<ol class="c-pagination" data-current-page="3">
+  <li class="c-pagination__item c-pagination__item--first"><button class="btn btn-default" type="button" title="이전 10개 페이지" disabled><i class="icon-svg icon-svg-chevrons-left" aria-hidden="true"></i></button></li>
+  <li class="c-pagination__item c-pagination__item--prev"><button class="btn btn-default" type="button" title="이전 페이지" disabled><i class="icon-svg icon-svg-chevron-left" aria-hidden="true"></i></button></li>
+  <li class="c-pagination__item"><button class="btn btn-default border-0" type="button"><span class="txt">1</span></button></li>
+  <li class="c-pagination__item"><button class="btn btn-default border-0" type="button"><span class="txt">2</span></button></li>
+  <li class="c-pagination__item"><button class="btn btn-default border-0" type="button"><span class="txt">3</span></button></li>
+  <li class="c-pagination__item"><button class="btn btn-default border-0" type="button"><span class="txt">4</span></button></li>
+  <li class="c-pagination__item"><button class="btn btn-default border-0" type="button"><span class="txt">5</span></button></li>
+  <li class="c-pagination__item"><button class="btn btn-default border-0" type="button"><span class="txt">6</span></button></li>
+  <li class="c-pagination__item"><button class="btn btn-default border-0" type="button"><span class="txt">7</span></button></li>
+  <li class="c-pagination__item"><button class="btn btn-default border-0" type="button"><span class="txt">8</span></button></li>
+  <li class="c-pagination__item"><button class="btn btn-default border-0" type="button"><span class="txt">9</span></button></li>
+  <li class="c-pagination__item"><button class="btn btn-default border-0" type="button"><span class="txt">10</span></button></li>
+  <li class="c-pagination__item c-pagination__item--next"><button class="btn btn-default" type="button" title="다음 페이지"><i class="icon-svg icon-svg-chevron-right" aria-hidden="true"></i></button></li>
+  <li class="c-pagination__item c-pagination__item--last"><button class="btn btn-default" type="button" title="다음 10개 페이지"><i class="icon-svg icon-svg-chevrons-right" aria-hidden="true"></i></button></li>
+</ol>
+<!-- //pagination -->
+                </footer>
+              </article>
+            </main>
+          </article>
+        </div>
+      </div>
+
+    </main>
+  </div>
+  <i class="modal-dimmed"></i>
+</aside>
+<!-- //Modal - 관련정보 -->
+
+<!-- Modal - 키워드 검색 -->
+<aside class="modal modal-data-table modal-data-table--keyword">
+  <div class="modal-wrapper">
+    <header class="modal-header">
+      <button type="button" class="btn btn-icon rounded-circle js-modal-close" title="창닫기"><i class="icon-svg icon-svg-close" aria-hidden="true"></i></button>
+      <h1 class="modal-header__title">키워드 검색</h1>
+    </header>
+    <main class="modal-body">
+      <article class="l-article border-0" data-article="전체데이터" data-loding-spinner="false" data-is-empty="false">
+        <header class="l-article-header l-article-header--has-title pb-16">
+          <fieldset class="form-fieldset ml-auto" data-fieldset="키워드 검색">
+            <div class="form-row form-text form-text--border-bottom" data-text-value="백내장">
+              <label for="keywordSearch">검색어</label>
+              <input id="keywordSearch" type="text" placeholder="" >
+            </div>
+          </fieldset>
+          <button class="btn btn-secondary rounded ml-12 mr-auto">검색</button>
+        </header>
+        <main class="l-article-body">
+          <article class="l-article">
+            <header class="l-article-header d-flex">
+              <span class="txt">검색 결과 <span class="color-primary">365</span>건</span>
+              <fieldset class="form-fieldset ml-auto" data-fieldset="구분">
+                <div class="form-row form-select form-select--border-bottom" data-selected-value="0" data-selected-text="정보량">
+                  <select id="selectRank">
+                    <option value="0" selected="">구분 전체</option>
+                    <option value="1">구분 1</option>
+                    <option value="2">구분 2</option>
+                  </select>
+                </div>
+              </fieldset>
+              <fieldset class="form-fieldset ml-12" data-fieldset="건씩보기">
+                <div class="form-row form-select form-select--border-bottom" data-selected-value="0" data-selected-text="정보량">
+                  <select id="selectRank">
+                    <option value="0" selected="">10건 씩 보기</option>
+                    <option value="1">30건 씩 보기</option>
+                    <option value="2">50건 씩 보기</option>
+                  </select>
+                </div>
+              </fieldset>
+            </header>
+            <main class="l-article-body mt-12">
+              <table class="c-table c-table--hover" data-thead-sticky="true">
+                <colgroup>
+                  <col width="10.6%">
+                  <col width="20%">
+                  <col width="*">
+                  <col width="10.6%">
+                </colgroup>
+                <thead>
+                  <tr>
+                    <th>구분</th>
+                    <th>분류명</th>
+                    <th>키워드</th>
+                    <th>선택</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="text-center">의료기관</td>
+                    <td class="text-center"> <span class="search-color">백내</span>장</td>
+                    <td class="text-center">이차성  <span class="search-color">백내</span>장 오른쪽</td>
+                    <td class="text-center"><button type="button">[선택]</button></td>
+                  </tr>
+                  <tr class="c-table--is-active">
+                    <td class="text-center">의료기관</td>
+                    <td class="text-center"> <span class="search-color">백내</span>장</td>
+                    <td class="text-center">이차성  <span class="search-color">백내</span>장 오른쪽</td>
+                    <td class="text-center"><button type="button">[선택]</button></td>
+                  </tr>
+                  <tr>
+                    <td class="text-center">의료기관</td>
+                    <td class="text-center"> <span class="search-color">백내</span>장</td>
+                    <td class="text-center">이차성  <span class="search-color">백내</span>장 오른쪽</td>
+                    <td class="text-center"><button type="button">[선택]</button></td>
+                  </tr>
+                  <tr>
+                    <td class="text-center">의료기관</td>
+                    <td class="text-center"> <span class="search-color">백내</span>장</td>
+                    <td class="text-center">이차성  <span class="search-color">백내</span>장 오른쪽</td>
+                    <td class="text-center"><button type="button">[선택]</button></td>
+                  </tr>
+                  <tr>
+                    <td class="text-center">의료기관</td>
+                    <td class="text-center"> <span class="search-color">백내</span>장</td>
+                    <td class="text-center">이차성  <span class="search-color">백내</span>장 오른쪽</td>
+                    <td class="text-center"><button type="button">[선택]</button></td>
+                  </tr>
+                  <tr>
+                    <td class="text-center">의료기관</td>
+                    <td class="text-center"> <span class="search-color">백내</span>장</td>
+                    <td class="text-center">이차성  <span class="search-color">백내</span>장 오른쪽</td>
+                    <td class="text-center"><button type="button">[선택]</button></td>
+                  </tr>
+                  <tr>
+                    <td class="text-center">의료기관</td>
+                    <td class="text-center"> <span class="search-color">백내</span>장</td>
+                    <td class="text-center">이차성  <span class="search-color">백내</span>장 오른쪽</td>
+                    <td class="text-center"><button type="button">[선택]</button></td>
+                  </tr>
+                  <tr>
+                    <td class="text-center">의료기관</td>
+                    <td class="text-center"> <span class="search-color">백내</span>장</td>
+                    <td class="text-center">이차성  <span class="search-color">백내</span>장 오른쪽</td>
+                    <td class="text-center"><button type="button">[선택]</button></td>
+                  </tr>
+                  <tr>
+                    <td class="text-center">의료기관</td>
+                    <td class="text-center"> <span class="search-color">백내</span>장</td>
+                    <td class="text-center">이차성  <span class="search-color">백내</span>장 오른쪽</td>
+                    <td class="text-center"><button type="button">[선택]</button></td>
+                  </tr>
+                  <tr>
+                    <td class="text-center">의료기관</td>
+                    <td class="text-center"> <span class="search-color">백내</span>장</td>
+                    <td class="text-center">이차성  <span class="search-color">백내</span>장 오른쪽</td>
+                    <td class="text-center"><button type="button">[선택]</button></td>
+                  </tr>
+                </tbody>
+              </table>
+            </main>
+          </article>
+        </main>
+        <footer class="l-article-footer pt-10">
+          
+          
+<!-- pagination -->
+<ol class="c-pagination" data-current-page="3">
+  <li class="c-pagination__item c-pagination__item--first"><button class="btn btn-default" type="button" title="이전 10개 페이지" disabled><i class="icon-svg icon-svg-chevrons-left" aria-hidden="true"></i></button></li>
+  <li class="c-pagination__item c-pagination__item--prev"><button class="btn btn-default" type="button" title="이전 페이지" disabled><i class="icon-svg icon-svg-chevron-left" aria-hidden="true"></i></button></li>
+  <li class="c-pagination__item"><button class="btn btn-default border-0" type="button"><span class="txt">1</span></button></li>
+  <li class="c-pagination__item"><button class="btn btn-default border-0" type="button"><span class="txt">2</span></button></li>
+  <li class="c-pagination__item"><button class="btn btn-default border-0" type="button"><span class="txt">3</span></button></li>
+  <li class="c-pagination__item"><button class="btn btn-default border-0" type="button"><span class="txt">4</span></button></li>
+  <li class="c-pagination__item"><button class="btn btn-default border-0" type="button"><span class="txt">5</span></button></li>
+  <li class="c-pagination__item"><button class="btn btn-default border-0" type="button"><span class="txt">6</span></button></li>
+  <li class="c-pagination__item"><button class="btn btn-default border-0" type="button"><span class="txt">7</span></button></li>
+  <li class="c-pagination__item"><button class="btn btn-default border-0" type="button"><span class="txt">8</span></button></li>
+  <li class="c-pagination__item"><button class="btn btn-default border-0" type="button"><span class="txt">9</span></button></li>
+  <li class="c-pagination__item"><button class="btn btn-default border-0" type="button"><span class="txt">10</span></button></li>
+  <li class="c-pagination__item c-pagination__item--next"><button class="btn btn-default" type="button" title="다음 페이지"><i class="icon-svg icon-svg-chevron-right" aria-hidden="true"></i></button></li>
+  <li class="c-pagination__item c-pagination__item--last"><button class="btn btn-default" type="button" title="다음 10개 페이지"><i class="icon-svg icon-svg-chevrons-right" aria-hidden="true"></i></button></li>
+</ol>
+<!-- //pagination -->
+        </footer>
+      </article>
+    </main>
+  </div>
+  <i class="modal-dimmed"></i>
+</aside>
+<!-- //Modal - 관련정보 -->
+
+<!-- Modal - 고급검색 검색 -->
+<aside class="modal modal-data-table modal-data-table--advanced">
+  <div class="modal-wrapper">
+    <header class="modal-header">
+      <button type="button" class="btn btn-icon rounded-circle js-modal-close" title="창닫기"><i class="icon-svg icon-svg-close" aria-hidden="true"></i></button>
+      <h1 class="modal-header__title">Advanced Search</h1>
+    </header>
+    <main class="modal-body p-0">
+      <div class="row m-0">
+        <div class="col-9 p-0">
+          <article class="l-article border-0 pt-24 pl-24 pr-12" style="height: 71.7rem;" data-card="" data-loding-spinner="false" data-is-empty="false">
+            <main class="l-article-body" >
+              <article class="l-article">
+                <header class="l-article-header d-flex">
+                  <button class="btn btn-secondary--lg w-100 js-active-btn" type="button" style="background:#b193e2;">[질병] 백내장</button>
+                </header>
+                <main class="l-article-body">
+                  <div class="row">
+                    <div class="col">
+                      <article class="l-article border-0 mt-16" data-card="" data-loding-spinner="false" data-is-empty="false">
+                        <header class="l-article-header pb-4">
+                          <h4 class="l-article-header__title">일반조건</h4><i></i>
+                          <button type="button" class="btn btn-icon rounded ml-auto"><i class="icon-svg icon-svg-chevron-down"></i></button>
+                        </header>
+                        <main class="l-article-body">
+                          <fieldset class="form-fieldset border rounded" data-fieldset="일반조건1">
+                            <div class="form-row  w-100 h-100" data-row="일반조건1">
+                              <textarea name="popupAdvancedBasic1" id="popupAdvancedBasic1" cols="30" rows="10" class="w-100"></textarea>
+                            </div>
+                          </fieldset>
+                        </main>
+                      </article>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col">
+                      <article class="l-article border-0 mt-16" data-card="" data-loding-spinner="false" data-is-empty="false">
+                        <header class="l-article-header pb-4">
+                          <h4 class="l-article-header__title">제외조건</h4><i></i>
+                          <button type="button" class="btn btn-icon rounded ml-auto"><i class="icon-svg icon-svg-chevron-down"></i></button>
+                        </header>
+                        <main class="l-article-body">
+                          <fieldset class="form-fieldset border rounded" data-fieldset="제외조건1">
+                            <div class="form-row  w-100 h-100" data-row="제외조건1">
+                              <textarea name="popupAdvancedBasic1" id="popupAdvancedBasic1" cols="30" rows="10" class="w-100"></textarea>
+                            </div>
+                          </fieldset>
+                        </main>
+                      </article>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col">
+                      <article class="l-article border-0 mt-16" data-card="" data-loding-spinner="false" data-is-empty="false">
+                        <header class="l-article-header pb-4">
+                          <h4 class="l-article-header__title">구문조건</h4><i></i>
+                          <button type="button" class="btn btn-icon rounded ml-auto"><i class="icon-svg icon-svg-chevron-down"></i></button>
+                        </header>
+                        <main class="l-article-body">
+                          <fieldset class="form-fieldset border rounded" data-fieldset="구문조건1">
+                            <div class="form-row  w-100 h-100" data-row="구문조건1">
+                              <textarea name="popupAdvancedBasic1" id="popupAdvancedBasic1" cols="30" rows="10" class="w-100"></textarea>
+                            </div>
+                          </fieldset>
+                        </main>
+                      </article>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col">
+                      <article class="l-article border-0 mt-16" data-card="" data-loding-spinner="false" data-is-empty="false">
+                        <header class="l-article-header pb-4">
+                          <h4 class="l-article-header__title">인접조건</h4><i></i>
+                          <button type="button" class="btn btn-icon rounded ml-auto"><i class="icon-svg icon-svg-chevron-down"></i></button>
+                        </header>
+                        <main class="l-article-body">
+                          <fieldset class="form-fieldset border rounded visually-hidden" data-fieldset="인접조건1">
+                            <div class="form-row  w-100 h-100" data-row="인접조건1">
+                              <textarea name="popupAdvancedBasic1" id="popupAdvancedBasic1" cols="30" rows="10" class="w-100"></textarea>
+                            </div>
+                          </fieldset>
+                        </main>
+                      </article>
+                    </div>
+                  </div>
+                </main>
+                <footer class="l-article-footer flex-grow-0 pt-16 pb-24 mt-24 text-left border-top">
+                  <button type="button" class="btn btn-icon rounded ml-auto"><i class="icon-svg icon-svg-refresh"></i></button>
+                  <span>입력한 글자 수(<span class="danger-color">1004</span> / 200)</span>
+                </footer>
+              </article>
+            </main>
+          </article>
+        </div>
+        <div class="col-9 p-0">
+          <article class="l-article border-0 pt-24 pl-12 pr-24 is-disabled" style="height: 71.7rem;" data-card="" data-loding-spinner="false" data-is-empty="false">
+            <main class="l-article-body" >
+              <article class="l-article">
+                <header class="l-article-header d-flex">
+                  <button class="btn btn-secondary--lg w-100 js-active-btn" type="button" style="background:#89DDD8;">[질병] 백내장</button>
+                </header>
+                <main class="l-article-body">
+                  <div class="row">
+                    <div class="col">
+                      <article class="l-article border-0 mt-16" data-card="" data-loding-spinner="false" data-is-empty="false">
+                        <header class="l-article-header pb-4">
+                          <h4 class="l-article-header__title">일반조건</h4><i></i>
+                          <button type="button" class="btn btn-icon rounded ml-auto"><i class="icon-svg icon-svg-chevron-down"></i></button>
+                        </header>
+                        <main class="l-article-body">
+                          <fieldset class="form-fieldset border rounded" data-fieldset="일반조건1">
+                            <div class="form-row  w-100 h-100" data-row="일반조건1">
+                              <textarea name="popupAdvancedBasic1" id="popupAdvancedBasic1" cols="30" rows="10" class="w-100"></textarea>
+                            </div>
+                          </fieldset>
+                        </main>
+                      </article>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col">
+                      <article class="l-article border-0 mt-16" data-card="" data-loding-spinner="false" data-is-empty="false">
+                        <header class="l-article-header pb-4">
+                          <h4 class="l-article-header__title">제외조건</h4><i></i>
+                          <button type="button" class="btn btn-icon rounded ml-auto"><i class="icon-svg icon-svg-chevron-down"></i></button>
+                        </header>
+                        <main class="l-article-body">
+                          <fieldset class="form-fieldset border rounded" data-fieldset="제외조건1">
+                            <div class="form-row  w-100 h-100" data-row="제외조건1">
+                              <textarea name="popupAdvancedBasic1" id="popupAdvancedBasic1" cols="30" rows="10" class="w-100"></textarea>
+                            </div>
+                          </fieldset>
+                        </main>
+                      </article>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col">
+                      <article class="l-article border-0 mt-16" data-card="" data-loding-spinner="false" data-is-empty="false">
+                        <header class="l-article-header pb-4">
+                          <h4 class="l-article-header__title">구문조건</h4><i></i>
+                          <button type="button" class="btn btn-icon rounded ml-auto"><i class="icon-svg icon-svg-chevron-down"></i></button>
+                        </header>
+                        <main class="l-article-body">
+                          <fieldset class="form-fieldset border rounded" data-fieldset="구문조건1">
+                            <div class="form-row  w-100 h-100" data-row="구문조건1">
+                              <textarea name="popupAdvancedBasic1" id="popupAdvancedBasic1" cols="30" rows="10" class="w-100"></textarea>
+                            </div>
+                          </fieldset>
+                        </main>
+                      </article>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col">
+                      <article class="l-article border-0 mt-16" data-card="" data-loding-spinner="false" data-is-empty="false">
+                        <header class="l-article-header pb-4">
+                          <h4 class="l-article-header__title">인접조건</h4><i></i>
+                          <button type="button" class="btn btn-icon rounded ml-auto"><i class="icon-svg icon-svg-chevron-down"></i></button>
+                        </header>
+                        <main class="l-article-body">
+                          <fieldset class="form-fieldset border rounded" data-fieldset="인접조건1">
+                            <div class="form-row  w-100 h-100" data-row="인접조건1">
+                              <textarea name="popupAdvancedBasic1" id="popupAdvancedBasic1" cols="30" rows="10" class="w-100"></textarea>
+                            </div>
+                          </fieldset>
+                        </main>
+                      </article>
+                    </div>
+                  </div>
+                </main>
+                <footer class="l-article-footer flex-grow-0 pt-16 pb-24 mt-24 text-left border-top">
+                  <button type="button" class="btn btn-icon rounded ml-auto"><i class="icon-svg icon-svg-refresh"></i></button>
+                  <span>입력한 글자 수(<span class="danger-color">1004</span> / 200)</span>
+                </footer>
+              </article>
+            </main>
+          </article>
+        </div>
+      </div>
+    </main>
+    <footer class="modal-footer pt-24 text-center">
+      <button class="btn btn-secondary btn-secondary--lg rounded-pill" type="button">저장 및 닫기</button>
+    </footer>
+  </div>
+  <i class="modal-dimmed"></i>
+</aside>
+<!-- //Modal - 관련정보 -->
+ 
 <!-- #footer -->
 <footer id="footer" class="footer visually-hidden" role="contentinfo">
   <h2>푸터</h2>

@@ -14,11 +14,11 @@ let routes = [
   },
   {
     path: "/dashboard/keyword/",
-    script: `${SERVER.assets}/js/pages/keyword.js`,
+    script: [`${SERVER.assets}/js/pages/keyword.js`, `${SERVER.assets}/js/pages/modal/related.js`, `${SERVER.assets}/js/pages/modal/keyword.js`, `${SERVER.assets}/js/pages/modal/infos.js`, `${SERVER.assets}/js/pages/modal/advanced.js`],
   },
   {
     path: "/dashboard/medical/",
-    script: `${SERVER.assets}/js/pages/medical.js`,
+    script: [`${SERVER.assets}/js/pages/medical.js`, `${SERVER.assets}/js/pages/modal/related.js`, `${SERVER.assets}/js/pages/modal/info-search.js`],
   },
   {
     path: "/dashboard/expired/",
