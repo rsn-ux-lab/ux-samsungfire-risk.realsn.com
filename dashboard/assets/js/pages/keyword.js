@@ -108,8 +108,8 @@
   const $observeTarget = document.querySelector('[data-article=연관어상세분석-테이블] [data-fieldset=연관어]');
   const chkBoxObserver = new MutationObserver((mutations) => {
     mutations.forEach((mutation) => {
-      const chkBox1 = document.querySelector('#checkboxRelatedDetail1').parentElement.getAttribute('data-checkbox-value').boolean();
-      const chkBox2 = document.querySelector('#checkboxRelatedDetail2').parentElement.getAttribute('data-checkbox-value').boolean();
+      const chkBox1 = document.querySelector('#checkboxRelatedDetail-left1').parentElement.getAttribute('data-checkbox-value').boolean();
+      const chkBox2 = document.querySelector('#checkboxRelatedDetail-left2').parentElement.getAttribute('data-checkbox-value').boolean();
 
       chkBox1
         ? Array.from($labels1).forEach((_$label1) => {
