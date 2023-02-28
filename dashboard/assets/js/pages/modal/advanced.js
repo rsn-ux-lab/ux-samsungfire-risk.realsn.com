@@ -44,13 +44,13 @@
       let $form = _mut[0].target.querySelector(".form-fieldset");
       if (clickAfterBool) {
         $btn.classList.add("btn-icon--is-active");
-        $btnIcon.classList.remove("icon-svg-chevron-up");
-        $btnIcon.classList.add("icon-svg-chevron-down");
+        $btnIcon.classList.remove("icon-svg-chevron-down");
+        $btnIcon.classList.add("icon-svg-chevron-up");
         $form.classList.remove("visually-hidden");
       } else {
         $btn.classList.remove("btn-icon--is-active");
-        $btnIcon.classList.remove("icon-svg-chevron-down");
-        $btnIcon.classList.add("icon-svg-chevron-up");
+        $btnIcon.classList.remove("icon-svg-chevron-up");
+        $btnIcon.classList.add("icon-svg-chevron-down");
         $form.classList.add("visually-hidden");
       }
     });

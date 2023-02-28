@@ -1,5 +1,5 @@
 
-<!-- reBuild :  20230228145024 -->
+<!-- reBuild :  20230228164644 -->
 
 <!DOCTYPE html>
 <html lang="ko">
@@ -16,13 +16,13 @@
   <link rel="shortcut icon" href="/dashboard/assets/img/favicon.ico" />
 
   <!-- STYLE -->
-    <link rel="stylesheet" href="/dashboard/assets/css/style.css?v=20230228145024">
+    <link rel="stylesheet" href="/dashboard/assets/css/style.css?v=20230228164644">
 
   <!-- JS -->
-  <script src="/dashboard/assets/js/config/files.js?v=20230228145024" defer></script>
-  <script src="/dashboard/assets/js/libs.js?v=20230228145024" defer></script>
-  <script src="/dashboard/assets/js/modules.js?v=20230228145024" defer></script>
-  <script src="/dashboard/assets/js/config/router.js?v=20230228145024" defer></script>
+  <script src="/dashboard/assets/js/config/files.js?v=20230228164644" defer></script>
+  <script src="/dashboard/assets/js/libs.js?v=20230228164644" defer></script>
+  <script src="/dashboard/assets/js/modules.js?v=20230228164644" defer></script>
+  <script src="/dashboard/assets/js/config/router.js?v=20230228164644" defer></script>
 </head>
 
 <body>
@@ -641,14 +641,42 @@
       <article class="l-article border-0" data-article="전체데이터" data-loding-spinner="false" data-is-empty="false">
         <header class="l-article-header l-article-header--has-title">
           <h4 class="l-article-header__title">게시글 목록</h4>
+          <div class="l-section-header__btn ml-auto">
+            <button type="button" class="btn btn-icon btn-icon--sm rounded-circle "><i class="icon-svg icon-svg-download"></i></button>
+          </div>
         </header>
         <main class="l-article-body">
           <article class="l-article">
             <header class="l-article-header d-flex">
               <button class="btn btn-default rounded-pill js-btn-set-area" type="button"><span class="txt">필터 조건 설정</span></button>
               <aside id="setting-area" class="aside-setting-area rounded">
+                <main class="setting-area--body pb-16 mb-16">      
+                  <fieldset class="form-fieldset d-grid" data-fieldset="XY축">
+                    <div class="form-row form-select form-select--border-bottom mb-10" data-selected-value="0" data-selected-text="블로그 외 1개 증감률">
+                      <label for="relatePopupFilter1" class="pl-0 mr-10">채널</label>
+                      <select id="relatePopupFilter1" class="ml-auto" style="width: 14rem">
+                        <option value="0" selected="">블로그 외 1개</option>
+                        <option value="1">블로그 외 2개</option>
+                      </select>
+                    </div>
+                    <div class="form-row form-select form-select--border-bottom mb-10" data-selected-value="0" data-selected-text="의료기관 홍보">
+                      <label for="relatePopupFilter2" class="pl-0 mr-10">글유형</label>
+                      <select id="relatePopupFilter2" class="ml-auto" style="width: 14rem">
+                        <option value="0" selected="">의료기관 홍보</option>
+                        <option value="1">의료기관 홍보2</option>
+                      </select>
+                    </div>
+                    <div class="form-row form-select form-select--border-bottom" data-selected-value="0" data-selected-text="보험관련 외 3개">
+                      <label for="relatePopupFilter3" class="pl-0 mr-10">관심키워드</label>
+                      <select id="relatePopupFilter3" class="ml-auto" style="width: 14rem">
+                        <option value="0" selected="">보험관련 외 3개</option>
+                        <option value="1">보험관련 외 4개</option>
+                      </select>
+                    </div>
+                  </fieldset>       
+                </main>
                 <header class="setting-area--header d-flex">
-                  <h4 class="setting-area--header__title">지역</h4>
+                  <h4 class="setting-area--header__title">추정지역</h4>
                 </header>
                 <main class="setting-area--body mt-16">
                   <fieldset class="form-fieldset d-flex w-100" data-fieldset="전국">
@@ -1161,10 +1189,19 @@
     <main class="modal-body">
       <article class="l-article border-0" data-article="전체데이터" data-loding-spinner="false" data-is-empty="false">
         <header class="l-article-header l-article-header--has-title pb-16">
-          <fieldset class="form-fieldset ml-auto" data-fieldset="키워드 검색">
-            <div class="form-row form-text form-text--border-bottom" data-text-value="백내장">
+          
+          <fieldset class="form-fieldset ml-auto" data-fieldset="구분">
+            <div class="form-row form-select form-select--border-bottom" data-selected-value="0" data-selected-text="의료기관+키워드">
               <label for="keywordSearch">검색어</label>
-              <input id="keywordSearch" type="text" placeholder="" >
+              <select id="selectRank">
+                <option value="0" selected="">의료기관+키워드</option>
+                <option value="1">주소+전화번호</option>
+              </select>
+            </div>
+          </fieldset>
+          <fieldset class="form-fieldset ml-8" data-fieldset="키워드 검색">
+            <div class="form-row form-text form-text--border-bottom" data-text-value="백내장">
+              <input id="keywordSearch" type="text" placeholder="" style="width: 25rem">
             </div>
           </fieldset>
           <button class="btn btn-secondary rounded ml-12 mr-auto">검색</button>
@@ -1173,26 +1210,9 @@
           <article class="l-article">
             <header class="l-article-header d-flex">
               <span class="txt">검색 결과 <span class="color-primary">365</span>건</span>
-              <fieldset class="form-fieldset ml-auto" data-fieldset="구분">
-                <div class="form-row form-select form-select--border-bottom" data-selected-value="0" data-selected-text="정보량">
-                  <select id="selectRank">
-                    <option value="0" selected="">구분 전체</option>
-                    <option value="1">구분 1</option>
-                    <option value="2">구분 2</option>
-                  </select>
-                </div>
-              </fieldset>
-              <fieldset class="form-fieldset ml-12" data-fieldset="건씩보기">
-                <div class="form-row form-select form-select--border-bottom" data-selected-value="0" data-selected-text="정보량">
-                  <select id="selectRank">
-                    <option value="0" selected="">10건 씩 보기</option>
-                    <option value="1">30건 씩 보기</option>
-                    <option value="2">50건 씩 보기</option>
-                  </select>
-                </div>
-              </fieldset>
             </header>
-            <main class="l-article-body mt-12">
+            
+            <main class="l-article-body mt-12" data-is-empty="false" data-is-before-search="true">
               <table class="c-table c-table--hover" data-thead-sticky="true">
                 <colgroup>
                   <col width="16%">
@@ -1218,7 +1238,7 @@
                     <td class="text-center">02-2650-5114</td>
                     <td class="text-center"><button type="button">[선택]</button></td>
                   </tr>
-                  <tr class="c-table--is-active">
+                  <tr>
                     <td class="text-center">이대 목동병원</td>
                     <td class="text-center"> <span class="search-color">이화</span>여자대학교목동병원</td>
                     <td class="text-right">서울특별시 양천구 안양천로 1071 (목동)</td>
