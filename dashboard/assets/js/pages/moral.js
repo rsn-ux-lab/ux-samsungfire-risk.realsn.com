@@ -786,7 +786,9 @@ $.modal({ isExist: true, className: "data-table--advanced" });
 
     samsungFrMapDrildownChart.dataBind(dataArr); // 전국지도 데이터 바인딩
 
-    samsungFrMapDrildownChart.dataBind(cityDataArr, "KR-42"); // 지역지도 데이터 바인딩
+    setTimeout(function () {
+      samsungFrMapDrildownChart.dataBind(cityDataArr, "KR-42"); // 지역지도 데이터 바인딩
+    });
 
     // 시군구 클릭시 - 데이터 + 팝업 호출
     samsungFrMapDrildownChart.cityClickEvt = function (_target) {

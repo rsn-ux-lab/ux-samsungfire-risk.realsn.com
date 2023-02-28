@@ -4,7 +4,7 @@
 {
   /**
    * 검색조건 영역 키워드 좌,우측에 대한 이벤트 처리
-   * 
+   *
    */
   const $1stInput = document.querySelector("#keywordSearch1st");
   const $targetLeft = document.querySelector(".form-search-list__lately-left");
@@ -13,7 +13,6 @@
   const $2ndInput = document.querySelector("#keywordSearch2nd");
   const $targetRight = document.querySelector(".form-search-list__lately-right");
   const $listRight = document.querySelector(".lately-right-body--list");
-
 
   /* 인풋에 포커싱 됐을 때 최근키워드 목록 띄워주는 클래스 - topSearch.js */
   const latelyShowLeft = new window.ViewLatelyKeyword($1stInput, $targetLeft);
@@ -28,11 +27,11 @@
   latelyRightListEv.init();
 
   /* 전체삭제 버튼 이벤트 */
-  const $allDelBtns = document.querySelectorAll("aside header .btn");
+  const $allDelBtns = document.querySelectorAll(".form-search--all-del__btn");
   Array.from($allDelBtns).forEach((_$allDelBtn) => {
     _$allDelBtn.addEventListener("click", (ev) => {
-      ev.currentTarget.closest("aside").querySelector("ul").innerHTML = '';
-    })
+      ev.currentTarget.closest("aside").querySelector("ul").innerHTML = "";
+    });
   });
 
   /* input에 텍스트 없을 시 'AS'마크 제거하는 옵저버  */
@@ -41,14 +40,13 @@
 
   const textValObserver = new MutationObserver((mutations) => {
     mutations.forEach((mutation) => {
-      if(mutation.target.getAttribute("data-text-value") == '') {
+      if (mutation.target.getAttribute("data-text-value") == "") {
         mutation.target.classList.remove("form-search--has-as");
       }
     });
   });
-  textValObserver.observe($inputDivLeft, { attributeFilter: ['data-text-value'] });
-  textValObserver.observe($inputDivRight, { attributeFilter: ['data-text-value'] });
-
+  textValObserver.observe($inputDivLeft, { attributeFilter: ["data-text-value"] });
+  textValObserver.observe($inputDivRight, { attributeFilter: ["data-text-value"] });
 }
 /*
 ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■
@@ -62,8 +60,8 @@
    *
    */
 
-  const $wrapper = document.querySelector('[data-section=정보량추이] [data-article=정보량추이차트] .l-article-body');
-  const $nav = document.querySelector('[data-section=정보량추이] [data-article=정보량추이차트] [data-fieldset=차트스위치]');
+  const $wrapper = document.querySelector("[data-section=정보량추이] [data-article=정보량추이차트] .l-article-body");
+  const $nav = document.querySelector("[data-section=정보량추이] [data-article=정보량추이차트] [data-fieldset=차트스위치]");
   const tab = new window.Tab($wrapper, $nav);
 }
 /*
@@ -80,10 +78,10 @@
 
   // 서비스개발팀 개발 환경에서는 return
   if (HOST.localhost || HOST.publish) {
-    const $chart = document.querySelector('[data-section=정보량추이] [data-article=정보량추이차트] .js-chart');
+    const $chart = document.querySelector("[data-section=정보량추이] [data-article=정보량추이차트] .js-chart");
     const keywordCandleChart = new rsnCharts.KeywordCandleChart($chart);
 
-    let categorys = ['백내장', '다초점렌즈'];
+    let categorys = ["백내장", "다초점렌즈"];
     // prettier-ignore
     let datas = [
        { category: "2022-10", "column-1": 500, "column-2": 600, },
@@ -96,7 +94,7 @@
 
     // init
     keywordCandleChart.reDataBinding(datas, categorys); // 데이터 변경시킬때
-    keywordCandleChart.reColoring(['#B193E2', '#89DDD8']); // 컬러세팅
+    keywordCandleChart.reColoring(["#B193E2", "#89DDD8"]); // 컬러세팅
   }
 }
 /*
@@ -114,7 +112,7 @@
   // 서비스개발팀 개발 환경에서는 return
   if (HOST.localhost || HOST.publish) {
     const $section = document.querySelector('[data-article="정보량추이차트"]');
-    const $chartDiv = $section.querySelector('.js-chart2');
+    const $chartDiv = $section.querySelector(".js-chart2");
 
     // AMchart Loader
     const Keyword1stLineChart = new rsnCharts.Keyword1stLineChart($chartDiv);
@@ -122,7 +120,7 @@
       legend: true,
       useGraphSettings: true,
     };
-    let categorys = ['백내장', '다초점렌즈'];
+    let categorys = ["백내장", "다초점렌즈"];
     // prettier-ignore
     let datas = [
      { category: "2022-10", "column-1": 800, "column-2": 70,  },
@@ -135,7 +133,7 @@
 
     // init
     Keyword1stLineChart.reDataBinding(datas, categorys); // 데이터 변경시킬때
-    Keyword1stLineChart.reColoring(['#B193E2', '#89DDD8']); // 컬러세팅
+    Keyword1stLineChart.reColoring(["#B193E2", "#89DDD8"]); // 컬러세팅
   }
 }
 /*
@@ -147,32 +145,32 @@
    * 연관어 상세분석 내 개별 키워드 체크박스 라벨 클릭 시 '정보량추이' 및 '연관 의료기관' 우측 라벨 스위치
    *
    */
-  const $labels1 = document.querySelectorAll('.js-toggle-label--1st');
-  const $labels2 = document.querySelectorAll('.js-toggle-label--2nd');
-  const $observeTarget = document.querySelector('[data-article=연관어상세분석-테이블] [data-fieldset=연관어]');
+  const $labels1 = document.querySelectorAll(".js-toggle-label--1st");
+  const $labels2 = document.querySelectorAll(".js-toggle-label--2nd");
+  const $observeTarget = document.querySelector("[data-article=연관어상세분석-테이블] [data-fieldset=연관어]");
   const chkBoxObserver = new MutationObserver((mutations) => {
     mutations.forEach((mutation) => {
-      const chkBox1 = document.querySelector('#checkboxRelatedDetail-left1').parentElement.getAttribute('data-checkbox-value').boolean();
-      const chkBox2 = document.querySelector('#checkboxRelatedDetail-left2').parentElement.getAttribute('data-checkbox-value').boolean();
+      const chkBox1 = document.querySelector("#checkboxRelatedDetail-left1").parentElement.getAttribute("data-checkbox-value").boolean();
+      const chkBox2 = document.querySelector("#checkboxRelatedDetail-left2").parentElement.getAttribute("data-checkbox-value").boolean();
 
       chkBox1
         ? Array.from($labels1).forEach((_$label1) => {
-            _$label1.classList.remove('d-none');
+            _$label1.classList.remove("d-none");
           })
         : Array.from($labels1).forEach((_$label1) => {
-            _$label1.classList.add('d-none');
+            _$label1.classList.add("d-none");
           });
 
       chkBox2
         ? Array.from($labels2).forEach((_$label2) => {
-            _$label2.classList.remove('d-none');
+            _$label2.classList.remove("d-none");
           })
         : Array.from($labels2).forEach((_$label2) => {
-            _$label2.classList.add('d-none');
+            _$label2.classList.add("d-none");
           });
     });
   });
-  chkBoxObserver.observe($observeTarget, { attributeFilter: ['data-checkbox-index'] });
+  chkBoxObserver.observe($observeTarget, { attributeFilter: ["data-checkbox-index"] });
 }
 /*
 ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■
@@ -183,34 +181,34 @@
    * 연관어 분석 내 '공통 연관어만 보기' On일 때 공통연관어에 hover 하이라이팅
    *
    */
-  const $observeTarget = document.querySelector('[data-article=연관어분석-우측테이블] [data-row=공통연관어]');
-  const $leftTable = document.querySelector('.c-table--keyword__related-left').classList;
-  const $rightTable = document.querySelector('.c-table--keyword__related-right').classList;
+  const $observeTarget = document.querySelector("[data-article=연관어분석-우측테이블] [data-row=공통연관어]");
+  const $leftTable = document.querySelector(".c-table--keyword__related-left").classList;
+  const $rightTable = document.querySelector(".c-table--keyword__related-right").classList;
   const chkBoxObserver = new MutationObserver((mutations) => {
     mutations.forEach((mutation) => {
-      const isChecked = document.querySelector('#checkboxCommonRelated').parentElement.getAttribute('data-checkbox-value').boolean();
+      const isChecked = document.querySelector("#checkboxCommonRelated").parentElement.getAttribute("data-checkbox-value").boolean();
 
-      isChecked ? $leftTable.add('common-related--active') + $rightTable.add('common-related--active') + $leftTable.remove('c-table--hover-samsung') + $rightTable.remove('c-table--hover-samsung') : $leftTable.remove('common-related--active') + $rightTable.remove('common-related--active') + $leftTable.add('c-table--hover-samsung') + $rightTable.add('c-table--hover-samsung');
+      isChecked ? $leftTable.add("common-related--active") + $rightTable.add("common-related--active") + $leftTable.remove("c-table--hover-samsung") + $rightTable.remove("c-table--hover-samsung") : $leftTable.remove("common-related--active") + $rightTable.remove("common-related--active") + $leftTable.add("c-table--hover-samsung") + $rightTable.add("c-table--hover-samsung");
     });
   });
-  chkBoxObserver.observe($observeTarget, { attributeFilter: ['data-checkbox-value'] });
+  chkBoxObserver.observe($observeTarget, { attributeFilter: ["data-checkbox-value"] });
 }
 /*
 ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■
 */
 {
-  const $relatedAnalLeftTable = document.querySelector('.c-table--keyword__related-left');
-  const $relatedAnalRightTable = document.querySelector('.c-table--keyword__related-right');
+  const $relatedAnalLeftTable = document.querySelector(".c-table--keyword__related-left");
+  const $relatedAnalRightTable = document.querySelector(".c-table--keyword__related-right");
   const TableRelatedHilighting = new window.KeywordTableRelatedHilighting($relatedAnalLeftTable);
   const TableClickMenu1st = new window.TableClickMenu($relatedAnalLeftTable);
   const TableClickMenu2nd = new window.TableClickMenu($relatedAnalRightTable);
   const TableHover = new window.KeywordTableHover([$relatedAnalLeftTable, $relatedAnalRightTable]);
 
-  const $relatedDetailTable = document.querySelector('.c-table--keyword__related-detail');
+  const $relatedDetailTable = document.querySelector(".c-table--keyword__related-detail");
   const TableClickMenu3rd = new window.TableClickMenu($relatedDetailTable);
   const TableClickActiveLabel = new window.KeywordTableClickActive($relatedDetailTable);
 
-  const $relatedMedicalTable = document.querySelector('.c-table--keyword__related-medical');
+  const $relatedMedicalTable = document.querySelector(".c-table--keyword__related-medical");
   const TableClickMenu4th = new window.TableClickMenu($relatedMedicalTable);
 
   window.onLoadResize({
@@ -240,7 +238,7 @@
   // 서비스개발팀 개발 환경에서는 return
   if (HOST.localhost || HOST.publish) {
     const $section = document.querySelector('[data-article="연관어상세분석-정보량추이"]');
-    const $chartDiv = $section.querySelector('.js-chart');
+    const $chartDiv = $section.querySelector(".js-chart");
 
     // AMchart Loader
     const Keyword2ndLineChart = new rsnCharts.Keyword2ndLineChart($chartDiv);
@@ -248,7 +246,7 @@
       legend: true,
       useGraphSettings: true,
     };
-    let categorys = ['병원홍보', '환자의견'];
+    let categorys = ["병원홍보", "환자의견"];
     // prettier-ignore
     let datas = [
      { category: "2022-10", "column-1": 500, "column-2": 600, },
@@ -261,7 +259,7 @@
 
     // init
     Keyword2ndLineChart.reDataBinding(datas, categorys); // 데이터 변경시킬때
-    Keyword2ndLineChart.reColoring(['#6379B0', '#D58A69']); // 컬러세팅
+    Keyword2ndLineChart.reColoring(["#6379B0", "#D58A69"]); // 컬러세팅
   }
 }
 /*
@@ -269,10 +267,10 @@
 */
 {
   const $card = document.querySelector("[data-article='연관의료기관-차트']");
-  const $chartDiv = $card.querySelector('.js-chart');
-  let $h1 = $chartDiv.querySelector('h1');
+  const $chartDiv = $card.querySelector(".js-chart");
+  let $h1 = $chartDiv.querySelector("h1");
   $chartDiv.removeChild($h1);
-  $chartDiv.setAttribute('style', 'height: 636px !important'); // 지워야해요
+  $chartDiv.setAttribute("style", "height: 636px !important"); // 지워야해요
   /**
    *
    * 예시 데이터 양이 많아지면 보기 흉해서
@@ -284,105 +282,105 @@
   let dataArr = [];
   let cityDataArr = [
     {
-      id: '125', // 연결 값 - 원주
+      id: "125", // 연결 값 - 원주
       value: Math.floor(Math.random() * 51), //정보량
     },
     {
-      id: '139', // 연결 값 - 인제
+      id: "139", // 연결 값 - 인제
       value: Math.floor(Math.random() * 51), //정보량
     },
     {
-      id: '138', // 양구
+      id: "138", // 양구
       value: Math.floor(Math.random() * 51), //정보량
     },
     {
-      id: '137', // 화천
+      id: "137", // 화천
       value: Math.floor(Math.random() * 51), //정보량
     },
     {
-      id: '136', // 철원
+      id: "136", // 철원
       value: Math.floor(Math.random() * 51), //정보량
     },
     {
-      id: '124', // 춘천
+      id: "124", // 춘천
       value: Math.floor(Math.random() * 51), //정보량
     },
     {
-      id: '131', // 흥천
+      id: "131", // 흥천
       value: Math.floor(Math.random() * 51), //정보량
     },
     {
-      id: '141', // 양양
+      id: "141", // 양양
       value: Math.floor(Math.random() * 51), //정보량
     },
     {
-      id: '132', // 횡성
+      id: "132", // 횡성
       value: Math.floor(Math.random() * 51), //정보량
     },
     {
-      id: '129', // 속초
+      id: "129", // 속초
       value: Math.floor(Math.random() * 51), //정보량
     },
     {
-      id: '129', // 속초
+      id: "129", // 속초
       value: Math.floor(Math.random() * 51), //정보량
     },
     {
-      id: '140', // 고성
+      id: "140", // 고성
       value: Math.floor(Math.random() * 51), //정보량
     },
     {
-      id: '126', // 강릉
+      id: "126", // 강릉
       value: Math.floor(Math.random() * 51), //정보량
     },
     {
-      id: '134', // 평창
+      id: "134", // 평창
       value: Math.floor(Math.random() * 51), //정보량
     },
     {
-      id: '135', // 정선
+      id: "135", // 정선
       value: Math.floor(Math.random() * 51), //정보량
     },
     {
-      id: '133', // 영월
+      id: "133", // 영월
       value: Math.floor(Math.random() * 51), //정보량
     },
     {
-      id: '130', // 삼척
+      id: "130", // 삼척
       value: Math.floor(Math.random() * 51), //정보량
     },
     {
-      id: '128', // 동해
+      id: "128", // 동해
       value: Math.floor(Math.random() * 51), //정보량
     },
     {
-      id: '127', // 태백
+      id: "127", // 태백
       value: Math.floor(Math.random() * 51), //정보량
     },
   ];
 
   for (let i = 11; i <= 50; i++) {
     let korName;
-    if (i == 49) korName = '제주';
-    if (i == 48) korName = '경남';
-    if (i == 47) korName = '경북';
-    if (i == 46) korName = '전남';
-    if (i == 45) korName = '전북';
-    if (i == 44) korName = '충남';
-    if (i == 43) korName = '충북';
-    if (i == 42) korName = '강원';
-    if (i == 41) korName = '경기';
-    if (i == 31) korName = '울산';
-    if (i == 30) korName = '대전';
-    if (i == 29) korName = '광주';
-    if (i == 28) korName = '인천';
-    if (i == 27) korName = '대구';
-    if (i == 26) korName = '부산';
-    if (i == 11) korName = '서울';
-    if (i == 50) korName = '세종';
+    if (i == 49) korName = "제주";
+    if (i == 48) korName = "경남";
+    if (i == 47) korName = "경북";
+    if (i == 46) korName = "전남";
+    if (i == 45) korName = "전북";
+    if (i == 44) korName = "충남";
+    if (i == 43) korName = "충북";
+    if (i == 42) korName = "강원";
+    if (i == 41) korName = "경기";
+    if (i == 31) korName = "울산";
+    if (i == 30) korName = "대전";
+    if (i == 29) korName = "광주";
+    if (i == 28) korName = "인천";
+    if (i == 27) korName = "대구";
+    if (i == 26) korName = "부산";
+    if (i == 11) korName = "서울";
+    if (i == 50) korName = "세종";
     if (korName) {
       dataArr.push({
-        id: 'KR-' + i, // 연결 값 - 대전
+        id: "KR-" + i, // 연결 값 - 대전
         korName: korName, // 말풍선 이름 명시
         value: Math.floor(Math.random() * 51), // 정보량
       });
@@ -408,10 +406,38 @@
 
   samsungFrMapDrildownChart.dataBind(dataArr); // 전국지도 데이터 바인딩
 
-  samsungFrMapDrildownChart.dataBind(cityDataArr, 'KR-42'); // 지역지도 데이터 바인딩
+  samsungFrMapDrildownChart.dataBind(cityDataArr, "KR-42"); // 지역지도 데이터 바인딩
   // 시군구 클릭시 - 데이터 + 팝업 호출 영역
   samsungFrMapDrildownChart.cityClickEvt = function (_target) {
     console.log(_target);
-    console.log('팝업호출 스크립트 추가 영역');
+    console.log("팝업호출 스크립트 추가 영역");
   };
+}
+{
+  /*
+  ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■
+  */
+  {
+    /*
+     *
+     * 상황별 preview 가져오기
+     *
+     **/
+    const name = new URLSearchParams(location.search).get("preview");
+
+    switch (name) {
+      case "popup-relate":
+        modalRelated();
+        break;
+      case "popup-keyword":
+        modalKeyword();
+        break;
+      case "popup-infos":
+        modalInfos();
+        break;
+      case "popup-advanced":
+        modalAdvanced();
+        break;
+    }
+  }
 }

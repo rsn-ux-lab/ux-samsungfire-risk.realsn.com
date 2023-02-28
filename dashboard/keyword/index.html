@@ -1,5 +1,5 @@
 
-<!-- reBuild :  20230228100714 -->
+<!-- reBuild :  20230228144106 -->
 
 <!DOCTYPE html>
 <html lang="ko">
@@ -16,13 +16,13 @@
   <link rel="shortcut icon" href="/dashboard/assets/img/favicon.ico" />
 
   <!-- STYLE -->
-    <link rel="stylesheet" href="/dashboard/assets/css/style.css?v=20230228100714">
+    <link rel="stylesheet" href="/dashboard/assets/css/style.css?v=20230228144106">
 
   <!-- JS -->
-  <script src="/dashboard/assets/js/config/files.js?v=20230228100714" defer></script>
-  <script src="/dashboard/assets/js/libs.js?v=20230228100714" defer></script>
-  <script src="/dashboard/assets/js/modules.js?v=20230228100714" defer></script>
-  <script src="/dashboard/assets/js/config/router.js?v=20230228100714" defer></script>
+  <script src="/dashboard/assets/js/config/files.js?v=20230228144106" defer></script>
+  <script src="/dashboard/assets/js/libs.js?v=20230228144106" defer></script>
+  <script src="/dashboard/assets/js/modules.js?v=20230228144106" defer></script>
+  <script src="/dashboard/assets/js/config/router.js?v=20230228144106" defer></script>
 </head>
 
 <body>
@@ -133,7 +133,7 @@
               <aside class="form-search-list__lately-left d-none">
                 <header class="lately-left-header d-flex border-bottom">
                   <h4 class="lately-left-header__title">최근 키워드</h4>
-                  <button class="btn btn-icon border-0 w-auto lately-left-header__btn" type="button">전체삭제 <i class="icon-svg icon-svg-close ml-4"></i></button>
+                  <button class="btn btn-icon border-0 w-auto lately-left-header__btn form-search--all-del__btn" type="button">전체삭제 <i class="icon-svg icon-svg-close ml-4"></i></button>
                 </header>
                 <main class="lately-left-body">
                   <ul class="lately-left-body--list">
@@ -235,7 +235,7 @@
               <aside class="form-search-list__lately-right d-none">
                 <header class="lately-right-header d-flex border-bottom">
                   <h4 class="lately-right-header__title">최근 키워드</h4>
-                  <button class="btn btn-icon border-0 w-auto lately-right-header__btn" type="button">전체삭제 <i class="icon-svg icon-svg-close ml-4"></i></button>
+                  <button class="btn btn-icon border-0 w-auto lately-right-header__btn form-search--all-del__btn" type="button">전체삭제 <i class="icon-svg icon-svg-close ml-4"></i></button>
                 </header>
                 <main class="lately-right-body">
                   <ul class="lately-right-body--list">
@@ -1867,527 +1867,6 @@
           </main>
         </article>
         
-        <!-- Modal - 관련정보팝업 -->
-<aside class="modal modal-data-table modal-data-table--related">
-  <div class="modal-wrapper">
-    <header class="modal-header">
-      <button type="button" class="btn btn-icon rounded-circle js-modal-close" title="창닫기"><i class="icon-svg icon-svg-close" aria-hidden="true"></i></button>
-      <h1 class="modal-header__title">관련정보 팝업 -<i class="c-badge js-toggle-label ml-12 color-171717 fw-normal" style="background-color: #C7C1EA;">다초점렌즈</i>+ <i class="c-badge color-171717 fw-normal" style="background-color: #DADADA;">노인성백내장</i></h1>
-    </header>
-    <main class="modal-body">
-      <article class="l-article border-0" data-article="전체데이터" data-loding-spinner="false" data-is-empty="false">
-        <header class="l-article-header l-article-header--has-title">
-          <h4 class="l-article-header__title">게시글 목록</h4>
-        </header>
-        <main class="l-article-body">
-          <article class="l-article">
-            <header class="l-article-header d-flex">
-              <button class="btn btn-default rounded-pill js-btn-set-area" type="button"><span class="txt">필터 조건 설정</span></button>
-              <aside id="setting-area" class="aside-setting-area rounded">
-                <header class="setting-area--header d-flex">
-                  <h4 class="setting-area--header__title">지역</h4>
-                </header>
-                <main class="setting-area--body mt-16">
-                  <fieldset class="form-fieldset d-flex w-100" data-fieldset="전국">
-                    <div class="form-row form-switch form-switch--sm" data-row="전국">
-                      <label for="checkboxSensePopupAll"><span class="txt w-100 mr-5">전국</span></label>
-                      <input id="checkboxSensePopupAll" class="js-all-input-checked" type="checkbox">
-                    </div>
-                    <fieldset class="form-fieldset mb-12" data-fieldset="지역">
-                      <div class="form-row form-check-button" data-row="서울">
-                        <input id="checkboxSensePopup1" type="checkbox">
-                        <label for="checkboxSensePopup1"><span class="txt">서울</span></label>
-                      </div>
-                      <div class="form-row form-check-button" data-row="경기">
-                        <input id="checkboxSensePopup2" type="checkbox">
-                        <label for="checkboxSensePopup2"><span class="txt">경기</span></label>
-                      </div>
-                      <div class="form-row form-check-button" data-row="인천">
-                        <input id="checkboxSensePopup3" type="checkbox">
-                        <label for="checkboxSensePopup3"><span class="txt">인천</span></label>
-                      </div>
-                      <div class="form-row form-check-button" data-row="부산">
-                        <input id="checkboxSensePopup4" type="checkbox">
-                        <label for="checkboxSensePopup4"><span class="txt">부산</span></label>
-                      </div>
-                      <div class="form-row form-check-button" data-row="대구">
-                        <input id="checkboxSensePopup5" type="checkbox">
-                        <label for="checkboxSensePopup5"><span class="txt">대구</span></label>
-                      </div>
-                      <div class="form-row form-check-button" data-row="광주">
-                        <input id="checkboxSensePopup6" type="checkbox">
-                        <label for="checkboxSensePopup6"><span class="txt">광주</span></label>
-                      </div>
-                      <div class="form-row form-check-button" data-row="대전">
-                        <input id="checkboxSensePopup7" type="checkbox">
-                        <label for="checkboxSensePopup7"><span class="txt">대전</span></label>
-                      </div>
-                      <div class="form-row form-check-button" data-row="울산">
-                        <input id="checkboxSensePopup8" type="checkbox">
-                        <label for="checkboxSensePopup8"><span class="txt">울산</span></label>
-                      </div>
-                      <div class="form-row form-check-button" data-row="세종">
-                        <input id="checkboxSensePopup9" type="checkbox">
-                        <label for="checkboxSensePopup9"><span class="txt">세종</span></label>
-                      </div>
-                      <div class="form-row form-check-button" data-row="강원">
-                        <input id="checkboxSensePopup10" type="checkbox">
-                        <label for="checkboxSensePopup10"><span class="txt">강원</span></label>
-                      </div>
-                      <div class="form-row form-check-button" data-row="경남">
-                        <input id="checkboxSensePopup11" type="checkbox">
-                        <label for="checkboxSensePopup11"><span class="txt">경남</span></label>
-                      </div>
-                      <div class="form-row form-check-button" data-row="경북">
-                        <input id="checkboxSensePopup12" type="checkbox">
-                        <label for="checkboxSensePopup12"><span class="txt">경북</span></label>
-                      </div>
-                      <div class="form-row form-check-button" data-row="전남">
-                        <input id="checkboxSensePopup13" type="checkbox">
-                        <label for="checkboxSensePopup13"><span class="txt">전남</span></label>
-                      </div>
-                      <div class="form-row form-check-button" data-row="전북">
-                        <input id="checkboxSensePopup14" type="checkbox">
-                        <label for="checkboxSensePopup14"><span class="txt">전북</span></label>
-                      </div>
-                      <div class="form-row form-check-button" data-row="충남">
-                        <input id="checkboxSensePopup15" type="checkbox">
-                        <label for="checkboxSensePopup15"><span class="txt">충남</span></label>
-                      </div>
-                      <div class="form-row form-check-button" data-row="충북">
-                        <input id="checkboxSensePopup16" type="checkbox">
-                        <label for="checkboxSensePopup16"><span class="txt">충북</span></label>
-                      </div>
-                      <div class="form-row form-check-button" data-row="제주">
-                        <input id="checkboxSensePopup17" type="checkbox">
-                        <label for="checkboxSensePopup17"><span class="txt">제주</span></label>
-                      </div>
-                    </fieldset>
-                  </fieldset>
-                </main>
-                <footer class="setting-area--footer d-flex mt-12">
-                  <button class="btn btn-icon rounded" data-button="새로고침" title="새로고침" type="button"><i class="icon-svg icon-svg-refresh" aria-hidden="true"></i></button>
-                  <button class="btn btn-secondary rounded ml-8 w-100" type="button">검색</button>
-                </footer>
-              </aside>
-              <p class="c-data-table-total ml-12">Total. <span class="count">155,474</span></p>
-              <fieldset class="form-fieldset ml-auto" data-fieldset="Top30키워드순위변화">
-                <div class="form-row form-select form-select--border-bottom" data-selected-value="0" data-selected-text="정보량">
-                  <select id="selectRank">
-                    <option value="0" selected="">10건 씩 보기</option>
-                    <option value="1">30건 씩 보기</option>
-                    <option value="2">50건 씩 보기</option>
-                  </select>
-                </div>
-              </fieldset>
-              <div class="form-row form-search ml-12" data-row="검색어" data-text-value="">
-                <input class="rounded-pill" name="keyword" type="search" placeholder="검색어를 입력하세요.">
-                <button class="btn btn-icon btn-search" type="button" title="검색하기"><i class="icon-svg icon-svg-search" aria-hidden="true"></i></button>
-              </div>
-            </header>
-            <main class="l-article-body mt-24">
-              <div class="scroll-container-x">
-                <table class="c-table c-table--hover" data-thead-sticky="true">
-                  <colgroup>
-                    <col style="width:11rem">
-                    <col style="width:9rem">
-                    <col style="width:11rem">
-                    <col style="width:38rem">
-                    <col style="width:9.5rem">
-                    <col style="width:18rem">
-                    <col style="width:10rem">
-                    <col style="width:10rem">
-                  </colgroup>
-                  <thead>
-                    <tr>
-                      <th>글유형</th>
-                      <th>채널</th>
-                      <th>출처</th>
-                      <th>원문</th>
-                      <th>
-                        <p>수집일</p>
-                        <fieldset class="form-fieldset" data-fieldset="정렬">
-                          <div class="form-row form-check-button" data-row="오름차순">
-                            <input id="radioModalRelatedSort1" name="radioModalRelatedSort" type="radio" />
-                            <label for="radioModalRelatedSort1" title="오름차순"><i class="icon-svg icon-svg-chevron-up" aria-hidden="true"></i></label>
-                          </div>
-                          <div class="form-row form-check-button" data-row="내림차순">
-                            <input id="radioModalRelatedSort2" name="radioModalRelatedSort" type="radio" />
-                            <label for="radioModalRelatedSort2" title="내림차순"><i class="icon-svg icon-svg-chevron-down" aria-hidden="true"></i></label>
-                          </div>
-                        </fieldset>
-                      </th>
-                      <th style="background: #ebebeb;">관심키워드</th>
-                      <th style="background: #ebebeb;">관련 의료기관</th>
-                      <th style="background: #ebebeb;">추정지역</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <tr>
-                      <td class="text-center">의료기관홍보</td>
-                      <td class="text-center">카페</td>
-                      <td class="text-center">출처</td>
-                      <td>
-                        <div class="tooltip js-tooltip-fixed">
-                          <a href="#" class="link text-start" target="_blank"><strong class="clamp-1">제목제목제목</strong></a>
-                          <a href="#" class="link text-start" target="_blank"><span class="clamp-1">내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용</span></a>
-                          <aside class="tooltip-text" style="width: 40rem">
-                            <p class="tooltip-text__title"><strong class="clamp-2">말풍선 제목은 최대 2줄까지 말줄임 됩니다.</strong></p>
-                            <p class="tooltip-text__body"><span class="clamp-6">말풍선 본문은 최대 6줄까지 말줄임 됩니다. 그 이상되면 모달창 범위를 벗어나 내용을 확인할 수 없습니다. 말풍선 본문은 최대 6줄까지 말줄임 됩니다. 그 이상되면 모달창 범위를 벗어나 내용을 확인할 수 없습니다. 말풍선 본문은 최대 6줄까지 말줄임 됩니다. 그 이상되면 모달창 범위를 벗어나 내용을 확인할 수 없습니다. 말풍선 본문은 최대 6줄까지 말줄임 됩니다. 그 이상되면 모달창 범위를 벗어나 내용을 확인할 수 없습니다.</span></p>
-                          </aside>
-                        </div>
-                      </td>
-                      <td class="text-center">2023-03-19</td>
-                      <td>
-                        <div class="tooltip js-tooltip-fixed tooltip-keyword">
-                          <p class="text-center">보험관련, 혜택관련 외 3개</p>
-                          <aside class="tooltip-text">
-                            <dl class="keyword-list">
-                              <dt class="keyword-list__title">보험관련</dt>
-                              <dd class="keyword-list__item">실손, 실비, 보험, 사보험, 보험상담사, 특약, 담보, 청구, 보험금, 비급여, 민영건강보험, 민영의료보험</dd>
-                              <dt class="keyword-list__title">비용관련</dt>
-                              <dd class="keyword-list__item">비용, 가격</dd>
-                              <dt class="keyword-list__title">외모개선</dt>
-                              <dd class="keyword-list__item">외모, 미용, 미적, 외적, 심미적, 성형, 콤플렉스</dd>
-                            </dl>
-                          </aside>
-                        </div>
-                      </td>
-                      <td class="text-center">○ ○ 병원</td>
-                      <td class="text-center">서울 서초구</td>
-                    </tr>
-                    <tr>
-                      <td class="text-center">의료기관홍보</td>
-                      <td class="text-center">카페</td>
-                      <td class="text-center">출처</td>
-                      <td>
-                        <div class="tooltip js-tooltip-fixed">
-                          <a href="#" class="link text-start" target="_blank"><strong class="clamp-1">제목제목제목</strong></a>
-                          <a href="#" class="link text-start" target="_blank"><span class="clamp-1">내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용</span></a>
-                          <aside class="tooltip-text" style="width: 40rem">
-                            <p class="tooltip-text__title"><strong class="clamp-2">말풍선 제목은 최대 2줄까지 말줄임 됩니다.</strong></p>
-                            <p class="tooltip-text__body"><span class="clamp-6">말풍선 본문은 최대 6줄까지 말줄임 됩니다. 그 이상되면 모달창 범위를 벗어나 내용을 확인할 수 없습니다. 말풍선 본문은 최대 6줄까지 말줄임 됩니다. 그 이상되면 모달창 범위를 벗어나 내용을 확인할 수 없습니다. 말풍선 본문은 최대 6줄까지 말줄임 됩니다. 그 이상되면 모달창 범위를 벗어나 내용을 확인할 수 없습니다. 말풍선 본문은 최대 6줄까지 말줄임 됩니다. 그 이상되면 모달창 범위를 벗어나 내용을 확인할 수 없습니다.</span></p>
-                          </aside>
-                        </div>
-                      </td>
-                      <td class="text-center">2023-03-19</td>
-                      <td>
-                        <div class="tooltip js-tooltip-fixed tooltip-keyword">
-                          <p class="text-center">보험관련, 혜택관련 외 3개</p>
-                          <aside class="tooltip-text">
-                            <dl class="keyword-list">
-                              <dt class="keyword-list__title">보험관련</dt>
-                              <dd class="keyword-list__item">실손, 실비, 보험, 사보험, 보험상담사, 특약, 담보, 청구, 보험금, 비급여, 민영건강보험, 민영의료보험</dd>
-                              <dt class="keyword-list__title">비용관련</dt>
-                              <dd class="keyword-list__item">비용, 가격</dd>
-                              <dt class="keyword-list__title">외모개선</dt>
-                              <dd class="keyword-list__item">외모, 미용, 미적, 외적, 심미적, 성형, 콤플렉스</dd>
-                            </dl>
-                          </aside>
-                        </div>
-                      </td>
-                      <td class="text-center">○ ○ 병원</td>
-                      <td class="text-center">서울 서초구</td>
-                    </tr>
-                    <tr>
-                      <td class="text-center">의료기관홍보</td>
-                      <td class="text-center">카페</td>
-                      <td class="text-center">출처</td>
-                      <td>
-                        <div class="tooltip js-tooltip-fixed">
-                          <a href="#" class="link text-start" target="_blank"><strong class="clamp-1">제목제목제목</strong></a>
-                          <a href="#" class="link text-start" target="_blank"><span class="clamp-1">내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용</span></a>
-                          <aside class="tooltip-text" style="width: 40rem">
-                            <p class="tooltip-text__title"><strong class="clamp-2">말풍선 제목은 최대 2줄까지 말줄임 됩니다.</strong></p>
-                            <p class="tooltip-text__body"><span class="clamp-6">말풍선 본문은 최대 6줄까지 말줄임 됩니다. 그 이상되면 모달창 범위를 벗어나 내용을 확인할 수 없습니다. 말풍선 본문은 최대 6줄까지 말줄임 됩니다. 그 이상되면 모달창 범위를 벗어나 내용을 확인할 수 없습니다. 말풍선 본문은 최대 6줄까지 말줄임 됩니다. 그 이상되면 모달창 범위를 벗어나 내용을 확인할 수 없습니다. 말풍선 본문은 최대 6줄까지 말줄임 됩니다. 그 이상되면 모달창 범위를 벗어나 내용을 확인할 수 없습니다.</span></p>
-                          </aside>
-                        </div>
-                      </td>
-                      <td class="text-center">2023-03-19</td>
-                      <td>
-                        <div class="tooltip js-tooltip-fixed tooltip-keyword">
-                          <p class="text-center">보험관련, 혜택관련 외 3개</p>
-                          <aside class="tooltip-text">
-                            <dl class="keyword-list">
-                              <dt class="keyword-list__title">보험관련</dt>
-                              <dd class="keyword-list__item">실손, 실비, 보험, 사보험, 보험상담사, 특약, 담보, 청구, 보험금, 비급여, 민영건강보험, 민영의료보험</dd>
-                              <dt class="keyword-list__title">비용관련</dt>
-                              <dd class="keyword-list__item">비용, 가격</dd>
-                              <dt class="keyword-list__title">외모개선</dt>
-                              <dd class="keyword-list__item">외모, 미용, 미적, 외적, 심미적, 성형, 콤플렉스</dd>
-                            </dl>
-                          </aside>
-                        </div>
-                      </td>
-                      <td class="text-center">○ ○ 병원</td>
-                      <td class="text-center">서울 서초구</td>
-                    </tr>
-                    <tr>
-                      <td class="text-center">의료기관홍보</td>
-                      <td class="text-center">카페</td>
-                      <td class="text-center">출처</td>
-                      <td>
-                        <div class="tooltip js-tooltip-fixed">
-                          <a href="#" class="link text-start" target="_blank"><strong class="clamp-1">제목제목제목</strong></a>
-                          <a href="#" class="link text-start" target="_blank"><span class="clamp-1">내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용</span></a>
-                          <aside class="tooltip-text" style="width: 40rem">
-                            <p class="tooltip-text__title"><strong class="clamp-2">말풍선 제목은 최대 2줄까지 말줄임 됩니다.</strong></p>
-                            <p class="tooltip-text__body"><span class="clamp-6">말풍선 본문은 최대 6줄까지 말줄임 됩니다. 그 이상되면 모달창 범위를 벗어나 내용을 확인할 수 없습니다. 말풍선 본문은 최대 6줄까지 말줄임 됩니다. 그 이상되면 모달창 범위를 벗어나 내용을 확인할 수 없습니다. 말풍선 본문은 최대 6줄까지 말줄임 됩니다. 그 이상되면 모달창 범위를 벗어나 내용을 확인할 수 없습니다. 말풍선 본문은 최대 6줄까지 말줄임 됩니다. 그 이상되면 모달창 범위를 벗어나 내용을 확인할 수 없습니다.</span></p>
-                          </aside>
-                        </div>
-                      </td>
-                      <td class="text-center">2023-03-19</td>
-                      <td>
-                        <div class="tooltip js-tooltip-fixed tooltip-keyword">
-                          <p class="text-center">보험관련, 혜택관련 외 3개</p>
-                          <aside class="tooltip-text">
-                            <dl class="keyword-list">
-                              <dt class="keyword-list__title">보험관련</dt>
-                              <dd class="keyword-list__item">실손, 실비, 보험, 사보험, 보험상담사, 특약, 담보, 청구, 보험금, 비급여, 민영건강보험, 민영의료보험</dd>
-                              <dt class="keyword-list__title">비용관련</dt>
-                              <dd class="keyword-list__item">비용, 가격</dd>
-                              <dt class="keyword-list__title">외모개선</dt>
-                              <dd class="keyword-list__item">외모, 미용, 미적, 외적, 심미적, 성형, 콤플렉스</dd>
-                            </dl>
-                          </aside>
-                        </div>
-                      </td>
-                      <td class="text-center">○ ○ 병원</td>
-                      <td class="text-center">서울 서초구</td>
-                    </tr>
-                    <tr>
-                      <td class="text-center">의료기관홍보</td>
-                      <td class="text-center">카페</td>
-                      <td class="text-center">출처</td>
-                      <td>
-                        <div class="tooltip js-tooltip-fixed">
-                          <a href="#" class="link text-start" target="_blank"><strong class="clamp-1">제목제목제목</strong></a>
-                          <a href="#" class="link text-start" target="_blank"><span class="clamp-1">내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용</span></a>
-                          <aside class="tooltip-text" style="width: 40rem">
-                            <p class="tooltip-text__title"><strong class="clamp-2">말풍선 제목은 최대 2줄까지 말줄임 됩니다.</strong></p>
-                            <p class="tooltip-text__body"><span class="clamp-6">말풍선 본문은 최대 6줄까지 말줄임 됩니다. 그 이상되면 모달창 범위를 벗어나 내용을 확인할 수 없습니다. 말풍선 본문은 최대 6줄까지 말줄임 됩니다. 그 이상되면 모달창 범위를 벗어나 내용을 확인할 수 없습니다. 말풍선 본문은 최대 6줄까지 말줄임 됩니다. 그 이상되면 모달창 범위를 벗어나 내용을 확인할 수 없습니다. 말풍선 본문은 최대 6줄까지 말줄임 됩니다. 그 이상되면 모달창 범위를 벗어나 내용을 확인할 수 없습니다.</span></p>
-                          </aside>
-                        </div>
-                      </td>
-                      <td class="text-center">2023-03-19</td>
-                      <td>
-                        <div class="tooltip js-tooltip-fixed tooltip-keyword">
-                          <p class="text-center">보험관련, 혜택관련 외 3개</p>
-                          <aside class="tooltip-text">
-                            <dl class="keyword-list">
-                              <dt class="keyword-list__title">보험관련</dt>
-                              <dd class="keyword-list__item">실손, 실비, 보험, 사보험, 보험상담사, 특약, 담보, 청구, 보험금, 비급여, 민영건강보험, 민영의료보험</dd>
-                              <dt class="keyword-list__title">비용관련</dt>
-                              <dd class="keyword-list__item">비용, 가격</dd>
-                              <dt class="keyword-list__title">외모개선</dt>
-                              <dd class="keyword-list__item">외모, 미용, 미적, 외적, 심미적, 성형, 콤플렉스</dd>
-                            </dl>
-                          </aside>
-                        </div>
-                      </td>
-                      <td class="text-center">○ ○ 병원</td>
-                      <td class="text-center">서울 서초구</td>
-                    </tr>
-                    <tr>
-                      <td class="text-center">의료기관홍보</td>
-                      <td class="text-center">카페</td>
-                      <td class="text-center">출처</td>
-                      <td>
-                        <div class="tooltip js-tooltip-fixed">
-                          <a href="#" class="link text-start" target="_blank"><strong class="clamp-1">제목제목제목</strong></a>
-                          <a href="#" class="link text-start" target="_blank"><span class="clamp-1">내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용</span></a>
-                          <aside class="tooltip-text" style="width: 40rem">
-                            <p class="tooltip-text__title"><strong class="clamp-2">말풍선 제목은 최대 2줄까지 말줄임 됩니다.</strong></p>
-                            <p class="tooltip-text__body"><span class="clamp-6">말풍선 본문은 최대 6줄까지 말줄임 됩니다. 그 이상되면 모달창 범위를 벗어나 내용을 확인할 수 없습니다. 말풍선 본문은 최대 6줄까지 말줄임 됩니다. 그 이상되면 모달창 범위를 벗어나 내용을 확인할 수 없습니다. 말풍선 본문은 최대 6줄까지 말줄임 됩니다. 그 이상되면 모달창 범위를 벗어나 내용을 확인할 수 없습니다. 말풍선 본문은 최대 6줄까지 말줄임 됩니다. 그 이상되면 모달창 범위를 벗어나 내용을 확인할 수 없습니다.</span></p>
-                          </aside>
-                        </div>
-                      </td>
-                      <td class="text-center">2023-03-19</td>
-                      <td>
-                        <div class="tooltip js-tooltip-fixed tooltip-keyword">
-                          <p class="text-center">보험관련, 혜택관련 외 3개</p>
-                          <aside class="tooltip-text">
-                            <dl class="keyword-list">
-                              <dt class="keyword-list__title">보험관련</dt>
-                              <dd class="keyword-list__item">실손, 실비, 보험, 사보험, 보험상담사, 특약, 담보, 청구, 보험금, 비급여, 민영건강보험, 민영의료보험</dd>
-                              <dt class="keyword-list__title">비용관련</dt>
-                              <dd class="keyword-list__item">비용, 가격</dd>
-                              <dt class="keyword-list__title">외모개선</dt>
-                              <dd class="keyword-list__item">외모, 미용, 미적, 외적, 심미적, 성형, 콤플렉스</dd>
-                            </dl>
-                          </aside>
-                        </div>
-                      </td>
-                      <td class="text-center">○ ○ 병원</td>
-                      <td class="text-center">서울 서초구</td>
-                    </tr>
-                    <tr>
-                      <td class="text-center">의료기관홍보</td>
-                      <td class="text-center">카페</td>
-                      <td class="text-center">출처</td>
-                      <td>
-                        <div class="tooltip js-tooltip-fixed">
-                          <a href="#" class="link text-start" target="_blank"><strong class="clamp-1">제목제목제목</strong></a>
-                          <a href="#" class="link text-start" target="_blank"><span class="clamp-1">내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용</span></a>
-                          <aside class="tooltip-text" style="width: 40rem">
-                            <p class="tooltip-text__title"><strong class="clamp-2">말풍선 제목은 최대 2줄까지 말줄임 됩니다.</strong></p>
-                            <p class="tooltip-text__body"><span class="clamp-6">말풍선 본문은 최대 6줄까지 말줄임 됩니다. 그 이상되면 모달창 범위를 벗어나 내용을 확인할 수 없습니다. 말풍선 본문은 최대 6줄까지 말줄임 됩니다. 그 이상되면 모달창 범위를 벗어나 내용을 확인할 수 없습니다. 말풍선 본문은 최대 6줄까지 말줄임 됩니다. 그 이상되면 모달창 범위를 벗어나 내용을 확인할 수 없습니다. 말풍선 본문은 최대 6줄까지 말줄임 됩니다. 그 이상되면 모달창 범위를 벗어나 내용을 확인할 수 없습니다.</span></p>
-                          </aside>
-                        </div>
-                      </td>
-                      <td class="text-center">2023-03-19</td>
-                      <td>
-                        <div class="tooltip js-tooltip-fixed tooltip-keyword">
-                          <p class="text-center">보험관련, 혜택관련 외 3개</p>
-                          <aside class="tooltip-text">
-                            <dl class="keyword-list">
-                              <dt class="keyword-list__title">보험관련</dt>
-                              <dd class="keyword-list__item">실손, 실비, 보험, 사보험, 보험상담사, 특약, 담보, 청구, 보험금, 비급여, 민영건강보험, 민영의료보험</dd>
-                              <dt class="keyword-list__title">비용관련</dt>
-                              <dd class="keyword-list__item">비용, 가격</dd>
-                              <dt class="keyword-list__title">외모개선</dt>
-                              <dd class="keyword-list__item">외모, 미용, 미적, 외적, 심미적, 성형, 콤플렉스</dd>
-                            </dl>
-                          </aside>
-                        </div>
-                      </td>
-                      <td class="text-center">○ ○ 병원</td>
-                      <td class="text-center">서울 서초구</td>
-                    </tr>
-                    <tr>
-                      <td class="text-center">의료기관홍보</td>
-                      <td class="text-center">카페</td>
-                      <td class="text-center">출처</td>
-                      <td>
-                        <div class="tooltip js-tooltip-fixed">
-                          <a href="#" class="link text-start" target="_blank"><strong class="clamp-1">제목제목제목</strong></a>
-                          <a href="#" class="link text-start" target="_blank"><span class="clamp-1">내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용</span></a>
-                          <aside class="tooltip-text" style="width: 40rem">
-                            <p class="tooltip-text__title"><strong class="clamp-2">말풍선 제목은 최대 2줄까지 말줄임 됩니다.</strong></p>
-                            <p class="tooltip-text__body"><span class="clamp-6">말풍선 본문은 최대 6줄까지 말줄임 됩니다. 그 이상되면 모달창 범위를 벗어나 내용을 확인할 수 없습니다. 말풍선 본문은 최대 6줄까지 말줄임 됩니다. 그 이상되면 모달창 범위를 벗어나 내용을 확인할 수 없습니다. 말풍선 본문은 최대 6줄까지 말줄임 됩니다. 그 이상되면 모달창 범위를 벗어나 내용을 확인할 수 없습니다. 말풍선 본문은 최대 6줄까지 말줄임 됩니다. 그 이상되면 모달창 범위를 벗어나 내용을 확인할 수 없습니다.</span></p>
-                          </aside>
-                        </div>
-                      </td>
-                      <td class="text-center">2023-03-19</td>
-                      <td>
-                        <div class="tooltip js-tooltip-fixed tooltip-keyword">
-                          <p class="text-center">보험관련, 혜택관련 외 3개</p>
-                          <aside class="tooltip-text">
-                            <dl class="keyword-list">
-                              <dt class="keyword-list__title">보험관련</dt>
-                              <dd class="keyword-list__item">실손, 실비, 보험, 사보험, 보험상담사, 특약, 담보, 청구, 보험금, 비급여, 민영건강보험, 민영의료보험</dd>
-                              <dt class="keyword-list__title">비용관련</dt>
-                              <dd class="keyword-list__item">비용, 가격</dd>
-                              <dt class="keyword-list__title">외모개선</dt>
-                              <dd class="keyword-list__item">외모, 미용, 미적, 외적, 심미적, 성형, 콤플렉스</dd>
-                            </dl>
-                          </aside>
-                        </div>
-                      </td>
-                      <td class="text-center">○ ○ 병원</td>
-                      <td class="text-center">서울 서초구</td>
-                    </tr>
-                    <tr>
-                      <td class="text-center">의료기관홍보</td>
-                      <td class="text-center">카페</td>
-                      <td class="text-center">출처</td>
-                      <td>
-                        <div class="tooltip js-tooltip-fixed">
-                          <a href="#" class="link text-start" target="_blank"><strong class="clamp-1">제목제목제목</strong></a>
-                          <a href="#" class="link text-start" target="_blank"><span class="clamp-1">내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용</span></a>
-                          <aside class="tooltip-text" style="width: 40rem">
-                            <p class="tooltip-text__title"><strong class="clamp-2">말풍선 제목은 최대 2줄까지 말줄임 됩니다.</strong></p>
-                            <p class="tooltip-text__body"><span class="clamp-6">말풍선 본문은 최대 6줄까지 말줄임 됩니다. 그 이상되면 모달창 범위를 벗어나 내용을 확인할 수 없습니다. 말풍선 본문은 최대 6줄까지 말줄임 됩니다. 그 이상되면 모달창 범위를 벗어나 내용을 확인할 수 없습니다. 말풍선 본문은 최대 6줄까지 말줄임 됩니다. 그 이상되면 모달창 범위를 벗어나 내용을 확인할 수 없습니다. 말풍선 본문은 최대 6줄까지 말줄임 됩니다. 그 이상되면 모달창 범위를 벗어나 내용을 확인할 수 없습니다.</span></p>
-                          </aside>
-                        </div>
-                      </td>
-                      <td class="text-center">2023-03-19</td>
-                      <td>
-                        <div class="tooltip js-tooltip-fixed tooltip-keyword">
-                          <p class="text-center">보험관련, 혜택관련 외 3개</p>
-                          <aside class="tooltip-text">
-                            <dl class="keyword-list">
-                              <dt class="keyword-list__title">보험관련</dt>
-                              <dd class="keyword-list__item">실손, 실비, 보험, 사보험, 보험상담사, 특약, 담보, 청구, 보험금, 비급여, 민영건강보험, 민영의료보험</dd>
-                              <dt class="keyword-list__title">비용관련</dt>
-                              <dd class="keyword-list__item">비용, 가격</dd>
-                              <dt class="keyword-list__title">외모개선</dt>
-                              <dd class="keyword-list__item">외모, 미용, 미적, 외적, 심미적, 성형, 콤플렉스</dd>
-                            </dl>
-                          </aside>
-                        </div>
-                      </td>
-                      <td class="text-center">○ ○ 병원</td>
-                      <td class="text-center">서울 서초구</td>
-                    </tr>
-                    <tr>
-                      <td class="text-center">의료기관홍보</td>
-                      <td class="text-center">카페</td>
-                      <td class="text-center">출처</td>
-                      <td>
-                        <div class="tooltip js-tooltip-fixed">
-                          <a href="#" class="link text-start" target="_blank"><strong class="clamp-1">제목제목제목</strong></a>
-                          <a href="#" class="link text-start" target="_blank"><span class="clamp-1">내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용</span></a>
-                          <aside class="tooltip-text" style="width: 40rem">
-                            <p class="tooltip-text__title"><strong class="clamp-2">말풍선 제목은 최대 2줄까지 말줄임 됩니다.</strong></p>
-                            <p class="tooltip-text__body"><span class="clamp-6">말풍선 본문은 최대 6줄까지 말줄임 됩니다. 그 이상되면 모달창 범위를 벗어나 내용을 확인할 수 없습니다. 말풍선 본문은 최대 6줄까지 말줄임 됩니다. 그 이상되면 모달창 범위를 벗어나 내용을 확인할 수 없습니다. 말풍선 본문은 최대 6줄까지 말줄임 됩니다. 그 이상되면 모달창 범위를 벗어나 내용을 확인할 수 없습니다. 말풍선 본문은 최대 6줄까지 말줄임 됩니다. 그 이상되면 모달창 범위를 벗어나 내용을 확인할 수 없습니다.</span></p>
-                          </aside>
-                        </div>
-                      </td>
-                      <td class="text-center">2023-03-19</td>
-                      <td>
-                        <div class="tooltip js-tooltip-fixed tooltip-keyword">
-                          <p class="text-center">보험관련, 혜택관련 외 3개</p>
-                          <aside class="tooltip-text">
-                            <dl class="keyword-list">
-                              <dt class="keyword-list__title">보험관련</dt>
-                              <dd class="keyword-list__item">실손, 실비, 보험, 사보험, 보험상담사, 특약, 담보, 청구, 보험금, 비급여, 민영건강보험, 민영의료보험</dd>
-                              <dt class="keyword-list__title">비용관련</dt>
-                              <dd class="keyword-list__item">비용, 가격</dd>
-                              <dt class="keyword-list__title">외모개선</dt>
-                              <dd class="keyword-list__item">외모, 미용, 미적, 외적, 심미적, 성형, 콤플렉스</dd>
-                            </dl>
-                          </aside>
-                        </div>
-                      </td>
-                      <td class="text-center">○ ○ 병원</td>
-                      <td class="text-center">서울 서초구</td>
-                    </tr>
-                  </tbody>
-                </table>
-              </div>
-            </main>
-          </article>
-        </main>
-        <footer class="l-article-footer pt-10">
-          
-          
-<!-- pagination -->
-<ol class="c-pagination" data-current-page="3">
-  <li class="c-pagination__item c-pagination__item--first"><button class="btn btn-default" type="button" title="이전 10개 페이지" disabled><i class="icon-svg icon-svg-chevrons-left" aria-hidden="true"></i></button></li>
-  <li class="c-pagination__item c-pagination__item--prev"><button class="btn btn-default" type="button" title="이전 페이지" disabled><i class="icon-svg icon-svg-chevron-left" aria-hidden="true"></i></button></li>
-  <li class="c-pagination__item"><button class="btn btn-default border-0" type="button"><span class="txt">1</span></button></li>
-  <li class="c-pagination__item"><button class="btn btn-default border-0" type="button"><span class="txt">2</span></button></li>
-  <li class="c-pagination__item"><button class="btn btn-default border-0" type="button"><span class="txt">3</span></button></li>
-  <li class="c-pagination__item"><button class="btn btn-default border-0" type="button"><span class="txt">4</span></button></li>
-  <li class="c-pagination__item"><button class="btn btn-default border-0" type="button"><span class="txt">5</span></button></li>
-  <li class="c-pagination__item"><button class="btn btn-default border-0" type="button"><span class="txt">6</span></button></li>
-  <li class="c-pagination__item"><button class="btn btn-default border-0" type="button"><span class="txt">7</span></button></li>
-  <li class="c-pagination__item"><button class="btn btn-default border-0" type="button"><span class="txt">8</span></button></li>
-  <li class="c-pagination__item"><button class="btn btn-default border-0" type="button"><span class="txt">9</span></button></li>
-  <li class="c-pagination__item"><button class="btn btn-default border-0" type="button"><span class="txt">10</span></button></li>
-  <li class="c-pagination__item c-pagination__item--next"><button class="btn btn-default" type="button" title="다음 페이지"><i class="icon-svg icon-svg-chevron-right" aria-hidden="true"></i></button></li>
-  <li class="c-pagination__item c-pagination__item--last"><button class="btn btn-default" type="button" title="다음 10개 페이지"><i class="icon-svg icon-svg-chevrons-right" aria-hidden="true"></i></button></li>
-</ol>
-<!-- //pagination -->
-        </footer>
-      </article>
-    </main>
-  </div>
-  <i class="modal-dimmed"></i>
-</aside>
-<!-- //Modal - 관련정보 -->
-
       </main>
     </div>
   </section>
@@ -3005,7 +2484,7 @@
                   </fieldset>
                 </header>
                 <main class="l-article-body">
-                  <div class="js-chart"  style="height: 26.5rem;"></div>
+                  <div class="js-chart"  style="height: 31.8rem;"></div>
                 </main>
               </article>
             </div>
@@ -3426,22 +2905,26 @@
     <main class="modal-body p-0">
       <div class="row m-0">
         <div class="col-9 p-0">
-          <article class="l-article border-0 pt-24 pl-24 pr-12" style="height: 71.7rem;" data-card="" data-loding-spinner="false" data-is-empty="false">
+          <article class="l-article border-0 pt-24 pl-24 pr-12 js-text-length" style="height: 71.7rem;" data-card="" data-loding-spinner="false" data-is-empty="false">
             <main class="l-article-body" >
               <article class="l-article">
                 <header class="l-article-header d-flex">
-                  <button class="btn btn-secondary--lg w-100 js-active-btn" type="button" style="background:#b193e2;">[질병] 백내장</button>
+                  <fieldset class="form-fieldset w-100 form-fieldset--js-active-input" data-fieldset="키워드1">
+                    <div class="form-row " data-row="키워드1">
+                      <input type="text" class="btn btn-secondary--lg"  style="background:#B193E2;" value="[질병] 백내장">
+                    </div>
+                  </fieldset>
                 </header>
                 <main class="l-article-body">
                   <div class="row">
                     <div class="col">
-                      <article class="l-article border-0 mt-16" data-card="" data-loding-spinner="false" data-is-empty="false">
+                      <article class="l-article border-0 mt-16 js-fold-textarea" data-textarea-fold="true"data-card="일반조건1" data-loding-spinner="false" data-is-empty="false">
                         <header class="l-article-header pb-4">
                           <h4 class="l-article-header__title">일반조건</h4><i></i>
-                          <button type="button" class="btn btn-icon rounded ml-auto"><i class="icon-svg icon-svg-chevron-down"></i></button>
+                          <button type="button" class="btn btn-icon rounded ml-auto btn-icon--is-active"><i class="icon-svg icon-svg-chevron-down"></i></button>
                         </header>
                         <main class="l-article-body">
-                          <fieldset class="form-fieldset border rounded" data-fieldset="일반조건1">
+                          <fieldset class="form-fieldset rounded" data-fieldset="일반조건1">
                             <div class="form-row  w-100 h-100" data-row="일반조건1">
                               <textarea name="popupAdvancedBasic1" id="popupAdvancedBasic1" cols="30" rows="10" class="w-100"></textarea>
                             </div>
@@ -3452,13 +2935,13 @@
                   </div>
                   <div class="row">
                     <div class="col">
-                      <article class="l-article border-0 mt-16" data-card="" data-loding-spinner="false" data-is-empty="false">
+                      <article class="l-article border-0 mt-16 js-fold-textarea" data-textarea-fold="true"data-card="제외조건1" data-loding-spinner="false" data-is-empty="false">
                         <header class="l-article-header pb-4">
                           <h4 class="l-article-header__title">제외조건</h4><i></i>
-                          <button type="button" class="btn btn-icon rounded ml-auto"><i class="icon-svg icon-svg-chevron-down"></i></button>
+                          <button type="button" class="btn btn-icon rounded ml-auto btn-icon--is-active"><i class="icon-svg icon-svg-chevron-down"></i></button>
                         </header>
                         <main class="l-article-body">
-                          <fieldset class="form-fieldset border rounded" data-fieldset="제외조건1">
+                          <fieldset class="form-fieldset rounded" data-fieldset="제외조건1">
                             <div class="form-row  w-100 h-100" data-row="제외조건1">
                               <textarea name="popupAdvancedBasic1" id="popupAdvancedBasic1" cols="30" rows="10" class="w-100"></textarea>
                             </div>
@@ -3469,13 +2952,13 @@
                   </div>
                   <div class="row">
                     <div class="col">
-                      <article class="l-article border-0 mt-16" data-card="" data-loding-spinner="false" data-is-empty="false">
+                      <article class="l-article border-0 mt-16 js-fold-textarea" data-textarea-fold="false"data-card="구문조건1" data-loding-spinner="false" data-is-empty="false">
                         <header class="l-article-header pb-4">
                           <h4 class="l-article-header__title">구문조건</h4><i></i>
                           <button type="button" class="btn btn-icon rounded ml-auto"><i class="icon-svg icon-svg-chevron-down"></i></button>
                         </header>
                         <main class="l-article-body">
-                          <fieldset class="form-fieldset border rounded" data-fieldset="구문조건1">
+                          <fieldset class="form-fieldset rounded visually-hidden" data-fieldset="구문조건1">
                             <div class="form-row  w-100 h-100" data-row="구문조건1">
                               <textarea name="popupAdvancedBasic1" id="popupAdvancedBasic1" cols="30" rows="10" class="w-100"></textarea>
                             </div>
@@ -3486,13 +2969,13 @@
                   </div>
                   <div class="row">
                     <div class="col">
-                      <article class="l-article border-0 mt-16" data-card="" data-loding-spinner="false" data-is-empty="false">
+                      <article class="l-article border-0 mt-16 js-fold-textarea" data-textarea-fold="false"data-card="인접조건1" data-loding-spinner="false" data-is-empty="false">
                         <header class="l-article-header pb-4">
                           <h4 class="l-article-header__title">인접조건</h4><i></i>
-                          <button type="button" class="btn btn-icon rounded ml-auto"><i class="icon-svg icon-svg-chevron-down"></i></button>
+                          <button type="button" class="btn btn-icon rounded ml-auto "><i class="icon-svg icon-svg-chevron-down"></i></button>
                         </header>
                         <main class="l-article-body">
-                          <fieldset class="form-fieldset border rounded visually-hidden" data-fieldset="인접조건1">
+                          <fieldset class="form-fieldset rounded visually-hidden" data-fieldset="인접조건1">
                             <div class="form-row  w-100 h-100" data-row="인접조건1">
                               <textarea name="popupAdvancedBasic1" id="popupAdvancedBasic1" cols="30" rows="10" class="w-100"></textarea>
                             </div>
@@ -3502,32 +2985,37 @@
                     </div>
                   </div>
                 </main>
-                <footer class="l-article-footer flex-grow-0 pt-16 pb-24 mt-24 text-left border-top">
-                  <button type="button" class="btn btn-icon rounded ml-auto"><i class="icon-svg icon-svg-refresh"></i></button>
-                  <span>입력한 글자 수(<span class="danger-color">1004</span> / 200)</span>
+                <footer class="l-article-footer flex-grow-0 pt-16 pb-24 mt-24 text-left">
+                  <button type="button" class="btn btn-icon rounded ml-auto js-refresh"><i class="icon-svg icon-svg-refresh"></i></button>
+                  <span>입력한 글자 수(<span class="cnt">0</span> / 200)</span>
                 </footer>
               </article>
             </main>
           </article>
         </div>
         <div class="col-9 p-0">
-          <article class="l-article border-0 pt-24 pl-12 pr-24 is-disabled" style="height: 71.7rem;" data-card="" data-loding-spinner="false" data-is-empty="false">
+          <article class="l-article border-0 pt-24 pl-12 pr-24 js-text-length is-disabled" style="height: 71.7rem;" data-card="" data-loding-spinner="false" data-is-empty="false">
             <main class="l-article-body" >
               <article class="l-article">
+                
                 <header class="l-article-header d-flex">
-                  <button class="btn btn-secondary--lg w-100 js-active-btn" type="button" style="background:#89DDD8;">[질병] 백내장</button>
+                  <fieldset class="form-fieldset form-fieldset--js-active-input" data-fieldset="키워드2">
+                    <div class="form-row" data-row="키워드2">
+                      <input type="text" class="btn btn-secondary--lg"  style="background:#89DDD8;" value="이대">
+                    </div>
+                  </fieldset>
                 </header>
                 <main class="l-article-body">
                   <div class="row">
                     <div class="col">
-                      <article class="l-article border-0 mt-16" data-card="" data-loding-spinner="false" data-is-empty="false">
+                      <article class="l-article border-0 mt-16 js-fold-textarea" data-textarea-fold="true"data-card="일반조건2" data-loding-spinner="false" data-is-empty="false">
                         <header class="l-article-header pb-4">
                           <h4 class="l-article-header__title">일반조건</h4><i></i>
-                          <button type="button" class="btn btn-icon rounded ml-auto"><i class="icon-svg icon-svg-chevron-down"></i></button>
+                          <button type="button" class="btn btn-icon rounded ml-auto btn-icon--is-active"><i class="icon-svg icon-svg-chevron-down"></i></button>
                         </header>
                         <main class="l-article-body">
-                          <fieldset class="form-fieldset border rounded" data-fieldset="일반조건1">
-                            <div class="form-row  w-100 h-100" data-row="일반조건1">
+                          <fieldset class="form-fieldset rounded" data-fieldset="일반조건2">
+                            <div class="form-row  w-100 h-100" data-row="일반조건2">
                               <textarea name="popupAdvancedBasic1" id="popupAdvancedBasic1" cols="30" rows="10" class="w-100"></textarea>
                             </div>
                           </fieldset>
@@ -3537,14 +3025,14 @@
                   </div>
                   <div class="row">
                     <div class="col">
-                      <article class="l-article border-0 mt-16" data-card="" data-loding-spinner="false" data-is-empty="false">
+                      <article class="l-article border-0 mt-16 js-fold-textarea" data-textarea-fold="true"data-card="제외조건2" data-loding-spinner="false" data-is-empty="false">
                         <header class="l-article-header pb-4">
                           <h4 class="l-article-header__title">제외조건</h4><i></i>
-                          <button type="button" class="btn btn-icon rounded ml-auto"><i class="icon-svg icon-svg-chevron-down"></i></button>
+                          <button type="button" class="btn btn-icon rounded ml-auto btn-icon--is-active"><i class="icon-svg icon-svg-chevron-down"></i></button>
                         </header>
                         <main class="l-article-body">
-                          <fieldset class="form-fieldset border rounded" data-fieldset="제외조건1">
-                            <div class="form-row  w-100 h-100" data-row="제외조건1">
+                          <fieldset class="form-fieldset rounded" data-fieldset="제외조건2">
+                            <div class="form-row  w-100 h-100" data-row="제외조건2">
                               <textarea name="popupAdvancedBasic1" id="popupAdvancedBasic1" cols="30" rows="10" class="w-100"></textarea>
                             </div>
                           </fieldset>
@@ -3554,14 +3042,14 @@
                   </div>
                   <div class="row">
                     <div class="col">
-                      <article class="l-article border-0 mt-16" data-card="" data-loding-spinner="false" data-is-empty="false">
+                      <article class="l-article border-0 mt-16 js-fold-textarea" data-textarea-fold="false" data-card="구문조건2" data-loding-spinner="false" data-is-empty="false">
                         <header class="l-article-header pb-4">
                           <h4 class="l-article-header__title">구문조건</h4><i></i>
                           <button type="button" class="btn btn-icon rounded ml-auto"><i class="icon-svg icon-svg-chevron-down"></i></button>
                         </header>
                         <main class="l-article-body">
-                          <fieldset class="form-fieldset border rounded" data-fieldset="구문조건1">
-                            <div class="form-row  w-100 h-100" data-row="구문조건1">
+                          <fieldset class="form-fieldset rounded visually-hidden" data-fieldset="구문조건2">
+                            <div class="form-row  w-100 h-100" data-row="구문조건2">
                               <textarea name="popupAdvancedBasic1" id="popupAdvancedBasic1" cols="30" rows="10" class="w-100"></textarea>
                             </div>
                           </fieldset>
@@ -3571,14 +3059,14 @@
                   </div>
                   <div class="row">
                     <div class="col">
-                      <article class="l-article border-0 mt-16" data-card="" data-loding-spinner="false" data-is-empty="false">
+                      <article class="l-article border-0 mt-16 js-fold-textarea" data-textarea-fold="false"data-card="인접조건2" data-loding-spinner="false" data-is-empty="false">
                         <header class="l-article-header pb-4">
                           <h4 class="l-article-header__title">인접조건</h4><i></i>
                           <button type="button" class="btn btn-icon rounded ml-auto"><i class="icon-svg icon-svg-chevron-down"></i></button>
                         </header>
                         <main class="l-article-body">
-                          <fieldset class="form-fieldset border rounded" data-fieldset="인접조건1">
-                            <div class="form-row  w-100 h-100" data-row="인접조건1">
+                          <fieldset class="form-fieldset rounded visually-hidden" data-fieldset="인접조건2">
+                            <div class="form-row  w-100 h-100" data-row="인접조건2">
                               <textarea name="popupAdvancedBasic1" id="popupAdvancedBasic1" cols="30" rows="10" class="w-100"></textarea>
                             </div>
                           </fieldset>
@@ -3587,9 +3075,9 @@
                     </div>
                   </div>
                 </main>
-                <footer class="l-article-footer flex-grow-0 pt-16 pb-24 mt-24 text-left border-top">
-                  <button type="button" class="btn btn-icon rounded ml-auto"><i class="icon-svg icon-svg-refresh"></i></button>
-                  <span>입력한 글자 수(<span class="danger-color">1004</span> / 200)</span>
+                <footer class="l-article-footer flex-grow-0 pt-16 pb-24 mt-24 text-left">
+                  <button type="button" class="btn btn-icon rounded ml-auto js-refresh"><i class="icon-svg icon-svg-refresh"></i></button>
+                  <span>입력한 글자 수(<span class="cnt">0</span> / 200)</span>
                 </footer>
               </article>
             </main>
@@ -3598,7 +3086,7 @@
       </div>
     </main>
     <footer class="modal-footer pt-24 text-center">
-      <button class="btn btn-secondary btn-secondary--lg rounded-pill" type="button">저장 및 닫기</button>
+      <button class="btn btn-secondary btn-secondary--lg rounded-pill js-save" type="button">저장 및 닫기</button>
     </footer>
   </div>
   <i class="modal-dimmed"></i>
