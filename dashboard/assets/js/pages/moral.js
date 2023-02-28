@@ -1,5 +1,3 @@
-$.modal({ isExist: true, className: "data-table--advanced" });
-
 {
   /**
    *
