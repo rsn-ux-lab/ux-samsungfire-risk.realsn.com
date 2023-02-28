@@ -432,6 +432,19 @@
       case "popup-keyword":
         modalKeyword();
         break;
+      case "popup-keyword":
+        modalKeyword();
+        break;
+      case "popup-keyword-empty":
+        modalKeyword(function (_$wrapper) {
+          _$wrapper.querySelector("[data-is-empty]").setAttribute("data-is-empty", true);
+        });
+        break;
+      case "popup-keyword-before-search":
+        modalKeyword(function (_$wrapper) {
+          _$wrapper.querySelector("[data-is-before-search]").setAttribute("data-is-before-search", true);
+        });
+        break;
       case "popup-infos":
         modalInfos();
         break;

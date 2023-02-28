@@ -1,5 +1,5 @@
 
-<!-- reBuild :  20230228164644 -->
+<!-- reBuild :  20230228171646 -->
 
 <!DOCTYPE html>
 <html lang="ko">
@@ -16,13 +16,13 @@
   <link rel="shortcut icon" href="/dashboard/assets/img/favicon.ico" />
 
   <!-- STYLE -->
-    <link rel="stylesheet" href="/dashboard/assets/css/style.css?v=20230228164644">
+    <link rel="stylesheet" href="/dashboard/assets/css/style.css?v=20230228171646">
 
   <!-- JS -->
-  <script src="/dashboard/assets/js/config/files.js?v=20230228164644" defer></script>
-  <script src="/dashboard/assets/js/libs.js?v=20230228164644" defer></script>
-  <script src="/dashboard/assets/js/modules.js?v=20230228164644" defer></script>
-  <script src="/dashboard/assets/js/config/router.js?v=20230228164644" defer></script>
+  <script src="/dashboard/assets/js/config/files.js?v=20230228171646" defer></script>
+  <script src="/dashboard/assets/js/libs.js?v=20230228171646" defer></script>
+  <script src="/dashboard/assets/js/modules.js?v=20230228171646" defer></script>
+  <script src="/dashboard/assets/js/config/router.js?v=20230228171646" defer></script>
 </head>
 
 <body>
@@ -317,7 +317,7 @@
         </div>
       </header>
       <main class="l-section-body pt-16">
-        <article class="l-article" data-card="의료기관별상세정보-1depth" data-loading-spinner="false" data-is-empty="false">
+        <article class="l-article" data-article="의료기관별상세정보-1depth" data-loading-spinner="false" data-is-empty="false">
           <header class="l-article-header d-flex">
             <fieldset class="form-fieldset ml-auto" data-fieldset="증감률">
               <p class="form-fieldset__title mr-8">업데이트 기준</p>
@@ -331,6 +331,7 @@
               </div>
             </fieldset>
           </header>
+
             <article class="l-article" data-article="의료기관정보" data-loading-spinner="false" data-is-empty="false">
               <header class="l-article-header">
                 <h4 class="l-article-header__title">의료기관정보</h4>
@@ -339,6 +340,7 @@
                 테이블 영역
               </main>
             </article>
+
             <article class="l-article mt-24" data-article="진료정보" data-loading-spinner="false" data-is-empty="false">
               <header class="l-article-header">
                 <h4 class="l-article-header__title">진료정보</h4>
@@ -347,22 +349,122 @@
                 테이블 영역
               </main>
             </article>
+
             <article class="l-article mt-24" data-article="인력현황" data-loading-spinner="false" data-is-empty="false">
               <header class="l-article-header">
                 <h4 class="l-article-header__title">인력현황</h4>
               </header>
               <main class="l-article-body">    
-                테이블 영역
+                <ul class="human-present--list">
+                  <li class="human-present--list__item">
+
+                    <dl class="normal-medical--list d-flex">
+                      <dt class="normal-medical--list__title d-flex"><i class="icon-svg icon-svg-normal-medical" aria-hidden="true"></i><p class="tit">의과</p><p class="count">342</p></dt>
+                      <dd class="normal-medical--list__item">
+                        <p class="tit">일반의</p>
+                        <p class="count">0</p>
+                      </dd>
+                      <dd class="normal-medical--list__item">
+                        <p class="tit">인턴</p>
+                        <p class="count">0</p>
+                      </dd>
+                      <dd class="normal-medical--list__item">
+                        <p class="tit">레지던트</p>
+                        <p class="count">0</p>
+                      </dd>
+                      <dd class="normal-medical--list__item">
+                        <p class="tit">전문의</p>
+                        <p class="count">0</p>
+                      </dd>
+                    </dl>
+
+                    <dl class="dental-clinic--list d-flex">
+                      <dt class="dental-clinic--list__title d-flex"><i class="icon-svg icon-svg-dental-clinic" aria-hidden="true"></i><p class="tit">의과</p><p class="count">342</p></dt>
+                      <dd class="dental-clinic--list__item">
+                        <p class="tit">일반의</p>
+                        <p class="count">0</p>
+                      </dd>
+                      <dd class="dental-clinic--list__item">
+                        <p class="tit">인턴</p>
+                        <p class="count">0</p>
+                      </dd>
+                      <dd class="dental-clinic--list__item">
+                        <p class="tit">레지던트</p>
+                        <p class="count">0</p>
+                      </dd>
+                      <dd class="dental-clinic--list__item">
+                        <p class="tit">전문의</p>
+                        <p class="count">0</p>
+                      </dd>
+                    </dl>
+
+                    <dl class="oriental-medical--list d-flex">
+                      <dt class="oriental-medical--list__title d-flex"><i class="icon-svg icon-svg-oriental-medical" aria-hidden="true"></i><p class="tit">의과</p><p class="count">342</p></dt>
+                      <dd class="oriental-medical--list__item">
+                        <p class="tit">일반의</p>
+                        <p class="count">0</p>
+                      </dd>
+                      <dd class="oriental-medical--list__item">
+                        <p class="tit">인턴</p>
+                        <p class="count">0</p>
+                      </dd>
+                      <dd class="oriental-medical--list__item">
+                        <p class="tit">레지던트</p>
+                        <p class="count">0</p>
+                      </dd>
+                      <dd class="oriental-medical--list__item">
+                        <p class="tit">전문의</p>
+                        <p class="count">0</p>
+                      </dd>
+                    </dl>
+
+                    <dl class="other--list d-flex">
+                      <dt class="other--list__title d-flex"><i class="icon-svg icon-svg-other-medical" aria-hidden="true"></i><p class="tit">의과</p><p class="count">342</p></dt>
+                      <dd class="other--list__item">
+                        <p class="tit">약사</p>
+                        <p class="count">0</p>
+                      </dd>
+                      <dd class="other--list__item">
+                        <p class="tit">물리치료사</p>
+                        <p class="count">0</p>
+                      </dd>
+                      <dd class="other--list__item">
+                        <p class="tit">작업치료사</p>
+                        <p class="count">0</p>
+                      </dd>
+                      <dd class="other--list__item">
+                        <p class="tit">사회복지사</p>
+                        <p class="count">0</p>
+                      </dd>
+                      <dd class="other--list__item">
+                        <p class="tit">한약사</p>
+                        <p class="count">0</p>
+                      </dd>
+                    </dl>
+                  </li>
+                </ul>
               </main>
             </article>
+
             <article class="l-article mt-24" data-article="병상현황" data-loading-spinner="false" data-is-empty="false">
               <header class="l-article-header">
                 <h4 class="l-article-header__title">병상현황</h4>
               </header>
               <main class="l-article-body">    
-                테이블 영역
+                <ul class="bed-present--list">
+                  <li class="bed-present--list__item">
+                    <dl class="소목록=list">
+                      <dt class="소목록=list__title"><i class="icon-svg" aria-hidden="true"></i><p class="tit">의과</p><p class="count">342</p></dt>
+                      <dd class="소목록=list__item">
+                        <p class="tit">일반의</p>
+                        <p class="count">0</p>
+                      </dd>
+                    </dl>
+                  </li>
+                </ul>
               </main>
             </article>
+
             <article class="l-article mt-24" data-article="비급여 진료비" data-loading-spinner="false" data-is-empty="false">
               <header class="l-article-header l-article-header--has-title">
                 <h4 class="l-article-header__title">비급여 진료비</h4>
@@ -389,6 +491,7 @@
                 </article>
               </main>
             </article>
+
         </article>
       </main>
     </div>
@@ -436,10 +539,11 @@
               </div>
             </fieldset>
             <fieldset class="form-fieldset ml-auto" data-fieldset="증감률">
-              <div class="form-row form-select" data-row="y축데이터">
-                <select class="form-select__select">
-                  <option value="0" selected>정보량</option>
-                  <option value="1">정보량 증감률</option>
+              <div class="form-row form-select form-select--border-bottom" data-row="y축데이터" data-selected-value="증감률">
+                <label for="selectDataQuantity" class="visually-hidden">순위기준</label>
+                <select id="selectDataQuantity">
+                  <option value="정보량">정보량</option>
+                  <option value="증감률">정보량 증감률</option>
                 </select>
               </div>
             </fieldset>
@@ -504,17 +608,28 @@
       <main class="l-section-body pt-16">
         <article class="l-article" data-article="정보량추이차트" data-loading-spinner="false" data-is-empty="false">
           <header class="l-article-header d-flex">
-            <button class="btn btn-default rounded-pill js-btn-set-coord" type="button"><span class="txt">축 설정</span></button>
-            <aside id="setting-coord" class="aside-setting-coord rounded">
-  <header class="setting-coord--header"></header>
-  <main class="setting-coord--body">
-    <div class="setting-coord__x-coord d-flex">
+            <button class="btn btn-default rounded-pill js-btn-set-coord" type="button"><span class="txt">키워드 상세 설정</span></button>
+            <aside id="setting-keyword-detail" class="aside-setting-keyword-detail rounded">
+  <header class="setting-keyword-detail--header"></header>
+  <main class="setting-keyword-detail--body">
+    <div class="setting-keyword-detail__attribute d-flex">
       <span class="txt w-100">속성</span>
-      <fieldset class="form-fieldset ml-4" data-fieldset="속성">
-        버튼 두개
+      <fieldset class="form-fieldset d-inline-flex ml-12" data-fieldset="속성">
+        <div class="form-row form-switch-button" data-row="질병">
+          <input type="radio" id="radioKeywordAttribute1"  name="radioKeywordAttribute" checked>
+          <label for="radioKeywordAttribute1">
+            <span class="txt">질병</span>
+          </label>
+        </div>
+        <div class="form-row form-switch-button" data-row="치료법">
+          <input type="radio" id="radioKeywordAttribute2"  name="radioKeywordAttribute">
+          <label for="radioKeywordAttribute2">
+            <span class="txt">치료법</span>
+          </label>
+        </div>
       </fieldset>
     </div>
-    <div class="setting-coord__y-coord d-flex mt-12">
+    <div class="setting-keyword-detail__related-keyword d-flex mt-12">
       <span class="txt w-100">관심키워드</span>
       <fieldset class="form-fieldset ml-4" data-fieldset="관심키워드">
         <div class="form-row form-fieldset">
@@ -526,7 +641,7 @@
       </fieldset>
     </div>
   </main>
-  <footer class="setting-coord--footer d-flex mt-16">
+  <footer class="setting-keyword-detail--footer d-flex mt-16">
     <button class="btn btn-icon rounded" title="새로고침" type="button"><i class="icon-svg icon-svg-refresh" aria-hidden="true"></i></button>
     <button class="btn btn-secondary rounded ml-8 w-100" type="button">검색</button>
   </footer>  
@@ -543,7 +658,303 @@
             </fieldset>
           </header>
           <main class="l-article-body mt-24">
-            테이블 영역
+            <div class="scroll-container-y border-bottom" style="width: 148rem; height: 64rem;">
+              <table class="c-table c-table--moral__top30-change" data-thead-sticky="true" style="width: 148rem;">
+  <colgroup>
+    <col width="7.5rem">
+    <col width="23rem">
+    <col width="23.3rem">
+    <col width="23.3rem">
+    <col width="23.3rem">
+    <col width="23.3rem">
+    <col width="23.3rem">
+  </colgroup>
+  <thead>
+    <tr>
+      <th class="text-center">순위</th>
+      <th class="text-center">2022-09</th>
+      <th class="text-center">2022-10</th>
+      <th class="text-center">2022-11</th>
+      <th class="text-center">2022-12</th>
+      <th class="text-center">2023-01</th>
+      <th class="text-center">2023-02</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td class="text-center">1</td>
+      <td class="text-center" data-keyword="고혈압" data-table-type="질병"><div class="position-relative">고혈압<button class="c-table--click-menu"><i class="icon-svg-click-menu"></i></button><aside class="c-table--hover-tooltip is-trouble"><header class="tooltip__header"><strong>고혈압</strong></header><main class="tooltip__body"><div class="tooltip__body--txt clamp-2">질병, 질병, 질병, 질병, 질병, 질병</div></main><footer class="tooltip__footer"><div class="ft-left">정보량 증감률</div><div class="ft-right"><i class="icon-svg-triangle-up"></i><span class="percent">292</span></div></footer><div class="tooltip__arrow"></div></aside></div></td>
+      <td class="text-center" data-keyword="다초점렌즈" data-table-type="치료법"><div class="position-relative">다초점렌즈<button class="c-table--click-menu"><i class="icon-svg-click-menu"></i></button><aside class="c-table--hover-tooltip"><header class="tooltip__header"><strong>다초점렌즈</strong></header><footer class="tooltip__footer"><div class="ft-left">정보량 증감률</div><div class="ft-right"><i class="icon-svg-triangle-up"></i><span class="percent">292</span></div></footer><div class="tooltip__arrow"></div></aside></div></td>
+      <td class="text-center" data-keyword="백병원" data-table-type="의료기관"><div class="position-relative">백병원<button class="c-table--click-menu"><i class="icon-svg-click-menu"></i></button><aside class="c-table--hover-tooltip"><header class="tooltip__header"><strong>백병원</strong></header><footer class="tooltip__footer"><div class="ft-left">정보량 증감률</div><div class="ft-right"><i class="icon-svg-triangle-up"></i><span class="percent">292</span></div></footer><div class="tooltip__arrow"></div></aside></div></td>
+      <td class="text-center" data-keyword="당뇨" data-table-type="질병"><div class="position-relative">당뇨<button class="c-table--click-menu"><i class="icon-svg-click-menu"></i></button><aside class="c-table--hover-tooltip is-trouble"><header class="tooltip__header"><strong>당뇨</strong></header><main class="tooltip__body"><div class="tooltip__body--txt clamp-2">질병, 질병, 질병, 질병, 질병, 질병</div></main><footer class="tooltip__footer"><div class="ft-left">정보량 증감률</div><div class="ft-right"><i class="icon-svg-triangle-up"></i><span class="percent">292</span></div></footer><div class="tooltip__arrow"></div></aside></div></td>
+      <td class="text-center" data-keyword="이대목동병원" data-table-type="의료기관"><div class="position-relative">이대목동병원<button class="c-table--click-menu"><i class="icon-svg-click-menu"></i></button><aside class="c-table--hover-tooltip"><header class="tooltip__header"><strong>이대목동병원</strong></header><footer class="tooltip__footer"><div class="ft-left">정보량 증감률</div><div class="ft-right"><i class="icon-svg-triangle-up"></i><span class="percent">292</span></div></footer><div class="tooltip__arrow"></div></aside></div></td>
+      <td class="text-center" data-keyword="한방치료" data-table-type="치료법"><div class="position-relative">한방치료<button class="c-table--click-menu"><i class="icon-svg-click-menu"></i></button><aside class="c-table--hover-tooltip"><header class="tooltip__header"><strong>한방치료</strong></header><footer class="tooltip__footer"><div class="ft-left">정보량 증감률</div><div class="ft-right"><i class="icon-svg-triangle-up"></i><span class="percent">292</span></div></footer><div class="tooltip__arrow"></div></aside></div></td>
+    </tr>
+    <tr>
+      <td class="text-center">2</td>
+      <td class="text-center" data-keyword="다초점렌즈" data-table-type="치료법"><div class="position-relative">다초점렌즈<button class="c-table--click-menu"><i class="icon-svg-click-menu"></i></button><aside class="c-table--hover-tooltip"><header class="tooltip__header"><strong>다초점렌즈</strong></header><footer class="tooltip__footer"><div class="ft-left">정보량 증감률</div><div class="ft-right"><i class="icon-svg-triangle-up"></i><span class="percent">292</span></div></footer><div class="tooltip__arrow"></div></aside></div></td>
+      <td class="text-center" data-keyword="이대목동병원" data-table-type="의료기관"><div class="position-relative">이대목동병원<button class="c-table--click-menu"><i class="icon-svg-click-menu"></i></button><aside class="c-table--hover-tooltip"><header class="tooltip__header"><strong>이대목동병원</strong></header><footer class="tooltip__footer"><div class="ft-left">정보량 증감률</div><div class="ft-right"><i class="icon-svg-triangle-up"></i><span class="percent">292</span></div></footer><div class="tooltip__arrow"></div></aside></div></td>
+      <td class="text-center" data-keyword="고혈압" data-table-type="질병"><div class="position-relative">고혈압<button class="c-table--click-menu"><i class="icon-svg-click-menu"></i></button><aside class="c-table--hover-tooltip is-trouble"><header class="tooltip__header"><strong>고혈압</strong></header><main class="tooltip__body"><div class="tooltip__body--txt clamp-2">질병, 질병, 질병, 질병, 질병, 질병</div></main><footer class="tooltip__footer"><div class="ft-left">정보량 증감률</div><div class="ft-right"><i class="icon-svg-triangle-up"></i><span class="percent">292</span></div></footer><div class="tooltip__arrow"></div></aside></div></td>
+      <td class="text-center" data-keyword="한방치료" data-table-type="치료법"><div class="position-relative">한방치료<button class="c-table--click-menu"><i class="icon-svg-click-menu"></i></button><aside class="c-table--hover-tooltip"><header class="tooltip__header"><strong>한방치료</strong></header><footer class="tooltip__footer"><div class="ft-left">정보량 증감률</div><div class="ft-right"><i class="icon-svg-triangle-up"></i><span class="percent">292</span></div></footer><div class="tooltip__arrow"></div></aside></div></td>
+      <td class="text-center" data-keyword="백병원" data-table-type="의료기관"><div class="position-relative">백병원<button class="c-table--click-menu"><i class="icon-svg-click-menu"></i></button><aside class="c-table--hover-tooltip"><header class="tooltip__header"><strong>백병원</strong></header><footer class="tooltip__footer"><div class="ft-left">정보량 증감률</div><div class="ft-right"><i class="icon-svg-triangle-up"></i><span class="percent">292</span></div></footer><div class="tooltip__arrow"></div></aside></div></td>
+      <td class="text-center" data-keyword="당뇨" data-table-type="질병"><div class="position-relative">당뇨<button class="c-table--click-menu"><i class="icon-svg-click-menu"></i></button><aside class="c-table--hover-tooltip is-trouble"><header class="tooltip__header"><strong>당뇨</strong></header><main class="tooltip__body"><div class="tooltip__body--txt clamp-2">질병, 질병, 질병, 질병, 질병, 질병</div></main><footer class="tooltip__footer"><div class="ft-left">정보량 증감률</div><div class="ft-right"><i class="icon-svg-triangle-up"></i><span class="percent">292</span></div></footer><div class="tooltip__arrow"></div></aside></div></td>
+    </tr>
+    <tr>
+      <td class="text-center">3</td>
+      <td class="text-center" data-keyword="이대목동병원" data-table-type="의료기관"><div class="position-relative">이대목동병원<button class="c-table--click-menu"><i class="icon-svg-click-menu"></i></button><aside class="c-table--hover-tooltip"><header class="tooltip__header"><strong>이대목동병원</strong></header><footer class="tooltip__footer"><div class="ft-left">정보량 증감률</div><div class="ft-right"><i class="icon-svg-triangle-up"></i><span class="percent">292</span></div></footer><div class="tooltip__arrow"></div></aside></div></td>
+      <td class="text-center" data-keyword="당뇨" data-table-type="질병"><div class="position-relative">당뇨<button class="c-table--click-menu"><i class="icon-svg-click-menu"></i></button><aside class="c-table--hover-tooltip is-trouble"><header class="tooltip__header"><strong>당뇨</strong></header><main class="tooltip__body"><div class="tooltip__body--txt clamp-2">질병, 질병, 질병, 질병, 질병, 질병</div></main><footer class="tooltip__footer"><div class="ft-left">정보량 증감률</div><div class="ft-right"><i class="icon-svg-triangle-up"></i><span class="percent">292</span></div></footer><div class="tooltip__arrow"></div></aside></div></td>
+      <td class="text-center" data-keyword="다초점렌즈" data-table-type="치료법"><div class="position-relative">다초점렌즈<button class="c-table--click-menu"><i class="icon-svg-click-menu"></i></button><aside class="c-table--hover-tooltip"><header class="tooltip__header"><strong>다초점렌즈</strong></header><footer class="tooltip__footer"><div class="ft-left">정보량 증감률</div><div class="ft-right"><i class="icon-svg-triangle-up"></i><span class="percent">292</span></div></footer><div class="tooltip__arrow"></div></aside></div></td>
+      <td class="text-center" data-keyword="고혈압" data-table-type="질병"><div class="position-relative">고혈압<button class="c-table--click-menu"><i class="icon-svg-click-menu"></i></button><aside class="c-table--hover-tooltip is-trouble"><header class="tooltip__header"><strong>고혈압</strong></header><main class="tooltip__body"><div class="tooltip__body--txt clamp-2">질병, 질병, 질병, 질병, 질병, 질병</div></main><footer class="tooltip__footer"><div class="ft-left">정보량 증감률</div><div class="ft-right"><i class="icon-svg-triangle-up"></i><span class="percent">292</span></div></footer><div class="tooltip__arrow"></div></aside></div></td>
+      <td class="text-center" data-keyword="한방치료" data-table-type="치료법"><div class="position-relative">한방치료<button class="c-table--click-menu"><i class="icon-svg-click-menu"></i></button><aside class="c-table--hover-tooltip"><header class="tooltip__header"><strong>한방치료</strong></header><footer class="tooltip__footer"><div class="ft-left">정보량 증감률</div><div class="ft-right"><i class="icon-svg-triangle-up"></i><span class="percent">292</span></div></footer><div class="tooltip__arrow"></div></aside></div></td>
+      <td class="text-center" data-keyword="백병원" data-table-type="의료기관"><div class="position-relative">백병원<button class="c-table--click-menu"><i class="icon-svg-click-menu"></i></button><aside class="c-table--hover-tooltip"><header class="tooltip__header"><strong>백병원</strong></header><footer class="tooltip__footer"><div class="ft-left">정보량 증감률</div><div class="ft-right"><i class="icon-svg-triangle-up"></i><span class="percent">292</span></div></footer><div class="tooltip__arrow"></div></aside></div></td>
+    </tr>
+    <tr>
+      <td class="text-center">4</td>
+      <td class="text-center" data-keyword="백병원" data-table-type="의료기관"><div class="position-relative">백병원<button class="c-table--click-menu"><i class="icon-svg-click-menu"></i></button><aside class="c-table--hover-tooltip"><header class="tooltip__header"><strong>백병원</strong></header><footer class="tooltip__footer"><div class="ft-left">정보량 증감률</div><div class="ft-right"><i class="icon-svg-triangle-up"></i><span class="percent">292</span></div></footer><div class="tooltip__arrow"></div></aside></div></td>
+      <td class="text-center" data-keyword="다초점렌즈" data-table-type="치료법"><div class="position-relative">다초점렌즈<button class="c-table--click-menu"><i class="icon-svg-click-menu"></i></button><aside class="c-table--hover-tooltip"><header class="tooltip__header"><strong>다초점렌즈</strong></header><footer class="tooltip__footer"><div class="ft-left">정보량 증감률</div><div class="ft-right"><i class="icon-svg-triangle-up"></i><span class="percent">292</span></div></footer><div class="tooltip__arrow"></div></aside></div></td>
+      <td class="text-center" data-keyword="이대목동병원" data-table-type="의료기관"><div class="position-relative">이대목동병원<button class="c-table--click-menu"><i class="icon-svg-click-menu"></i></button><aside class="c-table--hover-tooltip"><header class="tooltip__header"><strong>이대목동병원</strong></header><footer class="tooltip__footer"><div class="ft-left">정보량 증감률</div><div class="ft-right"><i class="icon-svg-triangle-up"></i><span class="percent">292</span></div></footer><div class="tooltip__arrow"></div></aside></div></td>
+      <td class="text-center" data-keyword="뜸" data-table-type="치료법"><div class="position-relative">뜸<button class="c-table--click-menu"><i class="icon-svg-click-menu"></i></button><aside class="c-table--hover-tooltip"><header class="tooltip__header"><strong>뜸</strong></header><footer class="tooltip__footer"><div class="ft-left">정보량 증감률</div><div class="ft-right"><i class="icon-svg-triangle-up"></i><span class="percent">292</span></div></footer><div class="tooltip__arrow"></div></aside></div></td>
+      <td class="text-center" data-keyword="고혈압" data-table-type="질병"><div class="position-relative">고혈압<button class="c-table--click-menu"><i class="icon-svg-click-menu"></i></button><aside class="c-table--hover-tooltip is-trouble"><header class="tooltip__header"><strong>고혈압</strong></header><main class="tooltip__body"><div class="tooltip__body--txt clamp-2">질병, 질병, 질병, 질병, 질병, 질병</div></main><footer class="tooltip__footer"><div class="ft-left">정보량 증감률</div><div class="ft-right"><i class="icon-svg-triangle-up"></i><span class="percent">292</span></div></footer><div class="tooltip__arrow"></div></aside></div></td>
+      <td class="text-center" data-keyword="한방치료" data-table-type="치료법"><div class="position-relative">한방치료<button class="c-table--click-menu"><i class="icon-svg-click-menu"></i></button><aside class="c-table--hover-tooltip"><header class="tooltip__header"><strong>한방치료</strong></header><footer class="tooltip__footer"><div class="ft-left">정보량 증감률</div><div class="ft-right"><i class="icon-svg-triangle-up"></i><span class="percent">292</span></div></footer><div class="tooltip__arrow"></div></aside></div></td>
+    </tr>
+    <tr>
+      <td class="text-center">5</td>
+      <td class="text-center" data-keyword="한방치료" data-table-type="치료법"><div class="position-relative">한방치료<button class="c-table--click-menu"><i class="icon-svg-click-menu"></i></button><aside class="c-table--hover-tooltip"><header class="tooltip__header"><strong>한방치료</strong></header><footer class="tooltip__footer"><div class="ft-left">정보량 증감률</div><div class="ft-right"><i class="icon-svg-triangle-up"></i><span class="percent">292</span></div></footer><div class="tooltip__arrow"></div></aside></div></td>
+      <td class="text-center" data-keyword="이대목동병원" data-table-type="의료기관"><div class="position-relative">이대목동병원<button class="c-table--click-menu"><i class="icon-svg-click-menu"></i></button><aside class="c-table--hover-tooltip"><header class="tooltip__header"><strong>이대목동병원</strong></header><footer class="tooltip__footer"><div class="ft-left">정보량 증감률</div><div class="ft-right"><i class="icon-svg-triangle-up"></i><span class="percent">292</span></div></footer><div class="tooltip__arrow"></div></aside></div></td>
+      <td class="text-center" data-keyword="당뇨" data-table-type="질병"><div class="position-relative">당뇨<button class="c-table--click-menu"><i class="icon-svg-click-menu"></i></button><aside class="c-table--hover-tooltip is-trouble"><header class="tooltip__header"><strong>당뇨</strong></header><main class="tooltip__body"><div class="tooltip__body--txt clamp-2">질병, 질병, 질병, 질병, 질병, 질병</div></main><footer class="tooltip__footer"><div class="ft-left">정보량 증감률</div><div class="ft-right"><i class="icon-svg-triangle-up"></i><span class="percent">292</span></div></footer><div class="tooltip__arrow"></div></aside></div></td>
+      <td class="text-center" data-keyword="다초점렌즈" data-table-type="치료법"><div class="position-relative">다초점렌즈<button class="c-table--click-menu"><i class="icon-svg-click-menu"></i></button><aside class="c-table--hover-tooltip"><header class="tooltip__header"><strong>다초점렌즈</strong></header><footer class="tooltip__footer"><div class="ft-left">정보량 증감률</div><div class="ft-right"><i class="icon-svg-triangle-up"></i><span class="percent">292</span></div></footer><div class="tooltip__arrow"></div></aside></div></td>
+      <td class="text-center" data-keyword="백병원" data-table-type="의료기관"><div class="position-relative">백병원<button class="c-table--click-menu"><i class="icon-svg-click-menu"></i></button><aside class="c-table--hover-tooltip"><header class="tooltip__header"><strong>백병원</strong></header><footer class="tooltip__footer"><div class="ft-left">정보량 증감률</div><div class="ft-right"><i class="icon-svg-triangle-up"></i><span class="percent">292</span></div></footer><div class="tooltip__arrow"></div></aside></div></td>
+      <td class="text-center" data-keyword="고혈압" data-table-type="질병"><div class="position-relative">고혈압<button class="c-table--click-menu"><i class="icon-svg-click-menu"></i></button><aside class="c-table--hover-tooltip is-trouble"><header class="tooltip__header"><strong>고혈압</strong></header><main class="tooltip__body"><div class="tooltip__body--txt clamp-2">질병, 질병, 질병, 질병, 질병, 질병</div></main><footer class="tooltip__footer"><div class="ft-left">정보량 증감률</div><div class="ft-right"><i class="icon-svg-triangle-up"></i><span class="percent">292</span></div></footer><div class="tooltip__arrow"></div></aside></div></td>
+    </tr>
+    <tr>
+      <td class="text-center">6</td>
+      <td class="text-center" data-keyword="십자인대" data-table-type="질병"><div class="position-relative">십자인대<button class="c-table--click-menu"><i class="icon-svg-click-menu"></i></button><aside class="c-table--hover-tooltip is-trouble"><header class="tooltip__header"><strong>십자인대</strong></header><main class="tooltip__body"><div class="tooltip__body--txt clamp-2">질병, 질병, 질병, 질병, 질병, 질병</div></main><footer class="tooltip__footer"><div class="ft-left">정보량 증감률</div><div class="ft-right"><i class="icon-svg-triangle-up"></i><span class="percent">292</span></div></footer><div class="tooltip__arrow"></div></aside></div></td>
+      <td class="text-center" data-keyword="백병원" data-table-type="의료기관"><div class="position-relative">백병원<button class="c-table--click-menu"><i class="icon-svg-click-menu"></i></button><aside class="c-table--hover-tooltip"><header class="tooltip__header"><strong>백병원</strong></header><footer class="tooltip__footer"><div class="ft-left">정보량 증감률</div><div class="ft-right"><i class="icon-svg-triangle-up"></i><span class="percent">292</span></div></footer><div class="tooltip__arrow"></div></aside></div></td>
+      <td class="text-center" data-keyword="당뇨" data-table-type="질병"><div class="position-relative">당뇨<button class="c-table--click-menu"><i class="icon-svg-click-menu"></i></button><aside class="c-table--hover-tooltip is-trouble"><header class="tooltip__header"><strong>당뇨</strong></header><main class="tooltip__body"><div class="tooltip__body--txt clamp-2">질병, 질병, 질병, 질병, 질병, 질병</div></main><footer class="tooltip__footer"><div class="ft-left">정보량 증감률</div><div class="ft-right"><i class="icon-svg-triangle-up"></i><span class="percent">292</span></div></footer><div class="tooltip__arrow"></div></aside></div></td>
+      <td class="text-center" data-keyword="이대목동병원" data-table-type="의료기관"><div class="position-relative">이대목동병원<button class="c-table--click-menu"><i class="icon-svg-click-menu"></i></button><aside class="c-table--hover-tooltip"><header class="tooltip__header"><strong>이대목동병원</strong></header><footer class="tooltip__footer"><div class="ft-left">정보량 증감률</div><div class="ft-right"><i class="icon-svg-triangle-up"></i><span class="percent">292</span></div></footer><div class="tooltip__arrow"></div></aside></div></td>
+      <td class="text-center" data-keyword="한방치료" data-table-type="치료법"><div class="position-relative">한방치료<button class="c-table--click-menu"><i class="icon-svg-click-menu"></i></button><aside class="c-table--hover-tooltip"><header class="tooltip__header"><strong>한방치료</strong></header><footer class="tooltip__footer"><div class="ft-left">정보량 증감률</div><div class="ft-right"><i class="icon-svg-triangle-up"></i><span class="percent">292</span></div></footer><div class="tooltip__arrow"></div></aside></div></td>
+      <td class="text-center" data-keyword="고혈압" data-table-type="질병"><div class="position-relative">고혈압<button class="c-table--click-menu"><i class="icon-svg-click-menu"></i></button><aside class="c-table--hover-tooltip is-trouble"><header class="tooltip__header"><strong>고혈압</strong></header><main class="tooltip__body"><div class="tooltip__body--txt clamp-2">질병, 질병, 질병, 질병, 질병, 질병</div></main><footer class="tooltip__footer"><div class="ft-left">정보량 증감률</div><div class="ft-right"><i class="icon-svg-triangle-up"></i><span class="percent">292</span></div></footer><div class="tooltip__arrow"></div></aside></div></td>
+    </tr>
+    <tr>
+      <td class="text-center">7</td>
+      <td class="text-center" data-keyword="뜸" data-table-type="치료법"><div class="position-relative">뜸<button class="c-table--click-menu"><i class="icon-svg-click-menu"></i></button><aside class="c-table--hover-tooltip"><header class="tooltip__header"><strong>뜸</strong></header><footer class="tooltip__footer"><div class="ft-left">정보량 증감률</div><div class="ft-right"><i class="icon-svg-triangle-up"></i><span class="percent">292</span></div></footer><div class="tooltip__arrow"></div></aside></div></td>
+      <td class="text-center" data-keyword="십자인대" data-table-type="질병"><div class="position-relative">십자인대<button class="c-table--click-menu"><i class="icon-svg-click-menu"></i></button><aside class="c-table--hover-tooltip is-trouble"><header class="tooltip__header"><strong>십자인대</strong></header><main class="tooltip__body"><div class="tooltip__body--txt clamp-2">질병, 질병, 질병, 질병, 질병, 질병</div></main><footer class="tooltip__footer"><div class="ft-left">정보량 증감률</div><div class="ft-right"><i class="icon-svg-triangle-up"></i><span class="percent">292</span></div></footer><div class="tooltip__arrow"></div></aside></div></td>
+      <td class="text-center" data-keyword="라식" data-table-type="치료법"><div class="position-relative">라식<button class="c-table--click-menu"><i class="icon-svg-click-menu"></i></button><aside class="c-table--hover-tooltip"><header class="tooltip__header"><strong>라식</strong></header><footer class="tooltip__footer"><div class="ft-left">정보량 증감률</div><div class="ft-right"><i class="icon-svg-triangle-up"></i><span class="percent">292</span></div></footer><div class="tooltip__arrow"></div></aside></div></td>
+      <td class="text-center" data-keyword="라식" data-table-type="치료법"><div class="position-relative">라식<button class="c-table--click-menu"><i class="icon-svg-click-menu"></i></button><aside class="c-table--hover-tooltip"><header class="tooltip__header"><strong>라식</strong></header><footer class="tooltip__footer"><div class="ft-left">정보량 증감률</div><div class="ft-right"><i class="icon-svg-triangle-up"></i><span class="percent">292</span></div></footer><div class="tooltip__arrow"></div></aside></div></td>
+      <td class="text-center" data-keyword="삼성서울병원" data-table-type="의료기관"><div class="position-relative">삼성서울병원<button class="c-table--click-menu"><i class="icon-svg-click-menu"></i></button><aside class="c-table--hover-tooltip"><header class="tooltip__header"><strong>삼성서울병원</strong></header><footer class="tooltip__footer"><div class="ft-left">정보량 증감률</div><div class="ft-right"><i class="icon-svg-triangle-up"></i><span class="percent">292</span></div></footer><div class="tooltip__arrow"></div></aside></div></td>
+      <td class="text-center" data-keyword="한방치료" data-table-type="치료법"><div class="position-relative">한방치료<button class="c-table--click-menu"><i class="icon-svg-click-menu"></i></button><aside class="c-table--hover-tooltip"><header class="tooltip__header"><strong>한방치료</strong></header><footer class="tooltip__footer"><div class="ft-left">정보량 증감률</div><div class="ft-right"><i class="icon-svg-triangle-up"></i><span class="percent">292</span></div></footer><div class="tooltip__arrow"></div></aside></div></td>
+    </tr>
+    <tr>
+      <td class="text-center">8</td>
+      <td class="text-center" data-keyword="고혈압" data-table-type="질병"><div class="position-relative">고혈압<button class="c-table--click-menu"><i class="icon-svg-click-menu"></i></button><aside class="c-table--hover-tooltip is-trouble"><header class="tooltip__header"><strong>고혈압</strong></header><main class="tooltip__body"><div class="tooltip__body--txt clamp-2">질병, 질병, 질병, 질병, 질병, 질병</div></main><footer class="tooltip__footer"><div class="ft-left">정보량 증감률</div><div class="ft-right"><i class="icon-svg-triangle-up"></i><span class="percent">292</span></div></footer><div class="tooltip__arrow"></div></aside></div></td>
+      <td class="text-center" data-keyword="다초점렌즈" data-table-type="치료법"><div class="position-relative">다초점렌즈<button class="c-table--click-menu"><i class="icon-svg-click-menu"></i></button><aside class="c-table--hover-tooltip"><header class="tooltip__header"><strong>다초점렌즈</strong></header><footer class="tooltip__footer"><div class="ft-left">정보량 증감률</div><div class="ft-right"><i class="icon-svg-triangle-up"></i><span class="percent">292</span></div></footer><div class="tooltip__arrow"></div></aside></div></td>
+      <td class="text-center" data-keyword="이대목동병원" data-table-type="의료기관"><div class="position-relative">이대목동병원<button class="c-table--click-menu"><i class="icon-svg-click-menu"></i></button><aside class="c-table--hover-tooltip"><header class="tooltip__header"><strong>이대목동병원</strong></header><footer class="tooltip__footer"><div class="ft-left">정보량 증감률</div><div class="ft-right"><i class="icon-svg-triangle-up"></i><span class="percent">292</span></div></footer><div class="tooltip__arrow"></div></aside></div></td>
+      <td class="text-center" data-keyword="당뇨" data-table-type="질병"><div class="position-relative">당뇨<button class="c-table--click-menu"><i class="icon-svg-click-menu"></i></button><aside class="c-table--hover-tooltip is-trouble"><header class="tooltip__header"><strong>당뇨</strong></header><main class="tooltip__body"><div class="tooltip__body--txt clamp-2">질병, 질병, 질병, 질병, 질병, 질병</div></main><footer class="tooltip__footer"><div class="ft-left">정보량 증감률</div><div class="ft-right"><i class="icon-svg-triangle-up"></i><span class="percent">292</span></div></footer><div class="tooltip__arrow"></div></aside></div></td>
+      <td class="text-center" data-keyword="한방치료" data-table-type="치료법"><div class="position-relative">한방치료<button class="c-table--click-menu"><i class="icon-svg-click-menu"></i></button><aside class="c-table--hover-tooltip"><header class="tooltip__header"><strong>한방치료</strong></header><footer class="tooltip__footer"><div class="ft-left">정보량 증감률</div><div class="ft-right"><i class="icon-svg-triangle-up"></i><span class="percent">292</span></div></footer><div class="tooltip__arrow"></div></aside></div></td>
+      <td class="text-center" data-keyword="백병원" data-table-type="의료기관"><div class="position-relative">백병원<button class="c-table--click-menu"><i class="icon-svg-click-menu"></i></button><aside class="c-table--hover-tooltip"><header class="tooltip__header"><strong>백병원</strong></header><footer class="tooltip__footer"><div class="ft-left">정보량 증감률</div><div class="ft-right"><i class="icon-svg-triangle-up"></i><span class="percent">292</span></div></footer><div class="tooltip__arrow"></div></aside></div></td>
+    </tr>
+    <tr>
+      <td class="text-center">9</td>
+      <td class="text-center" data-keyword="라식" data-table-type="치료법"><div class="position-relative">라식<button class="c-table--click-menu"><i class="icon-svg-click-menu"></i></button><aside class="c-table--hover-tooltip"><header class="tooltip__header"><strong>라식</strong></header><footer class="tooltip__footer"><div class="ft-left">정보량 증감률</div><div class="ft-right"><i class="icon-svg-triangle-up"></i><span class="percent">292</span></div></footer><div class="tooltip__arrow"></div></aside></div></td>
+      <td class="text-center" data-keyword="뜸" data-table-type="치료법"><div class="position-relative">뜸<button class="c-table--click-menu"><i class="icon-svg-click-menu"></i></button><aside class="c-table--hover-tooltip"><header class="tooltip__header"><strong>뜸</strong></header><footer class="tooltip__footer"><div class="ft-left">정보량 증감률</div><div class="ft-right"><i class="icon-svg-triangle-up"></i><span class="percent">292</span></div></footer><div class="tooltip__arrow"></div></aside></div></td>
+      <td class="text-center" data-keyword="뜸" data-table-type="치료법"><div class="position-relative">뜸<button class="c-table--click-menu"><i class="icon-svg-click-menu"></i></button><aside class="c-table--hover-tooltip"><header class="tooltip__header"><strong>뜸</strong></header><footer class="tooltip__footer"><div class="ft-left">정보량 증감률</div><div class="ft-right"><i class="icon-svg-triangle-up"></i><span class="percent">292</span></div></footer><div class="tooltip__arrow"></div></aside></div></td>
+      <td class="text-center" data-keyword="십자인대" data-table-type="질병"><div class="position-relative">십자인대<button class="c-table--click-menu"><i class="icon-svg-click-menu"></i></button><aside class="c-table--hover-tooltip is-trouble"><header class="tooltip__header"><strong>십자인대</strong></header><main class="tooltip__body"><div class="tooltip__body--txt clamp-2">질병, 질병, 질병, 질병, 질병, 질병</div></main><footer class="tooltip__footer"><div class="ft-left">정보량 증감률</div><div class="ft-right"><i class="icon-svg-triangle-up"></i><span class="percent">292</span></div></footer><div class="tooltip__arrow"></div></aside></div></td>
+      <td class="text-center" data-keyword="백병원" data-table-type="의료기관"><div class="position-relative">백병원<button class="c-table--click-menu"><i class="icon-svg-click-menu"></i></button><aside class="c-table--hover-tooltip"><header class="tooltip__header"><strong>백병원</strong></header><footer class="tooltip__footer"><div class="ft-left">정보량 증감률</div><div class="ft-right"><i class="icon-svg-triangle-up"></i><span class="percent">292</span></div></footer><div class="tooltip__arrow"></div></aside></div></td>
+      <td class="text-center" data-keyword="한방치료" data-table-type="치료법"><div class="position-relative">한방치료<button class="c-table--click-menu"><i class="icon-svg-click-menu"></i></button><aside class="c-table--hover-tooltip"><header class="tooltip__header"><strong>한방치료</strong></header><footer class="tooltip__footer"><div class="ft-left">정보량 증감률</div><div class="ft-right"><i class="icon-svg-triangle-up"></i><span class="percent">292</span></div></footer><div class="tooltip__arrow"></div></aside></div></td>
+    </tr>
+    <tr>
+      <td class="text-center">10</td>
+      <td class="text-center" data-keyword="비절개" data-table-type="치료법"><div class="position-relative">비절개<button class="c-table--click-menu"><i class="icon-svg-click-menu"></i></button><aside class="c-table--hover-tooltip"><header class="tooltip__header"><strong>비절개</strong></header><footer class="tooltip__footer"><div class="ft-left">정보량 증감률</div><div class="ft-right"><i class="icon-svg-triangle-up"></i><span class="percent">292</span></div></footer><div class="tooltip__arrow"></div></aside></div></td>
+      <td class="text-center" data-keyword="디스크" data-table-type="질병"><div class="position-relative">디스크<button class="c-table--click-menu"><i class="icon-svg-click-menu"></i></button><aside class="c-table--hover-tooltip is-trouble"><header class="tooltip__header"><strong>디스크</strong></header><main class="tooltip__body"><div class="tooltip__body--txt clamp-2">질병, 질병, 질병, 질병, 질병, 질병</div></main><footer class="tooltip__footer"><div class="ft-left">정보량 증감률</div><div class="ft-right"><i class="icon-svg-triangle-up"></i><span class="percent">292</span></div></footer><div class="tooltip__arrow"></div></aside></div></td>
+      <td class="text-center" data-keyword="무지외반증" data-table-type="질병"><div class="position-relative">무지외반증<button class="c-table--click-menu"><i class="icon-svg-click-menu"></i></button><aside class="c-table--hover-tooltip is-trouble"><header class="tooltip__header"><strong>무지외반증</strong></header><main class="tooltip__body"><div class="tooltip__body--txt clamp-2">질병, 질병, 질병, 질병, 질병, 질병</div></main><footer class="tooltip__footer"><div class="ft-left">정보량 증감률</div><div class="ft-right"><i class="icon-svg-triangle-up"></i><span class="percent">292</span></div></footer><div class="tooltip__arrow"></div></aside></div></td>
+      <td class="text-center" data-keyword="삼성서울병원" data-table-type="의료기관"><div class="position-relative">삼성서울병원<button class="c-table--click-menu"><i class="icon-svg-click-menu"></i></button><aside class="c-table--hover-tooltip"><header class="tooltip__header"><strong>삼성서울병원</strong></header><footer class="tooltip__footer"><div class="ft-left">정보량 증감률</div><div class="ft-right"><i class="icon-svg-triangle-up"></i><span class="percent">292</span></div></footer><div class="tooltip__arrow"></div></aside></div></td>
+      <td class="text-center" data-keyword="뜸" data-table-type="치료법"><div class="position-relative">뜸<button class="c-table--click-menu"><i class="icon-svg-click-menu"></i></button><aside class="c-table--hover-tooltip"><header class="tooltip__header"><strong>뜸</strong></header><footer class="tooltip__footer"><div class="ft-left">정보량 증감률</div><div class="ft-right"><i class="icon-svg-triangle-up"></i><span class="percent">292</span></div></footer><div class="tooltip__arrow"></div></aside></div></td>
+      <td class="text-center" data-keyword="비중격" data-table-type="질병"><div class="position-relative">비중격<button class="c-table--click-menu"><i class="icon-svg-click-menu"></i></button><aside class="c-table--hover-tooltip is-trouble"><header class="tooltip__header"><strong>비중격</strong></header><main class="tooltip__body"><div class="tooltip__body--txt clamp-2">질병, 질병, 질병, 질병, 질병, 질병</div></main><footer class="tooltip__footer"><div class="ft-left">정보량 증감률</div><div class="ft-right"><i class="icon-svg-triangle-up"></i><span class="percent">292</span></div></footer><div class="tooltip__arrow"></div></aside></div></td>
+    </tr>
+    <tr>
+      <td class="text-center">11</td>
+      <td class="text-center" data-keyword="무지외반증" data-table-type="질병"><div class="position-relative">무지외반증<button class="c-table--click-menu"><i class="icon-svg-click-menu"></i></button><aside class="c-table--hover-tooltip is-trouble"><header class="tooltip__header"><strong>무지외반증</strong></header><main class="tooltip__body"><div class="tooltip__body--txt clamp-2">질병, 질병, 질병, 질병, 질병, 질병</div></main><footer class="tooltip__footer"><div class="ft-left">정보량 증감률</div><div class="ft-right"><i class="icon-svg-triangle-up"></i><span class="percent">292</span></div></footer><div class="tooltip__arrow"></div></aside></div></td>
+      <td class="text-center" data-keyword="비절개" data-table-type="치료법"><div class="position-relative">비절개<button class="c-table--click-menu"><i class="icon-svg-click-menu"></i></button><aside class="c-table--hover-tooltip"><header class="tooltip__header"><strong>비절개</strong></header><footer class="tooltip__footer"><div class="ft-left">정보량 증감률</div><div class="ft-right"><i class="icon-svg-triangle-up"></i><span class="percent">292</span></div></footer><div class="tooltip__arrow"></div></aside></div></td>
+      <td class="text-center" data-keyword="삼성서울병원" data-table-type="의료기관"><div class="position-relative">삼성서울병원<button class="c-table--click-menu"><i class="icon-svg-click-menu"></i></button><aside class="c-table--hover-tooltip"><header class="tooltip__header"><strong>삼성서울병원</strong></header><footer class="tooltip__footer"><div class="ft-left">정보량 증감률</div><div class="ft-right"><i class="icon-svg-triangle-up"></i><span class="percent">292</span></div></footer><div class="tooltip__arrow"></div></aside></div></td>
+      <td class="text-center" data-keyword="족저근막염" data-table-type="질병"><div class="position-relative">족저근막염<button class="c-table--click-menu"><i class="icon-svg-click-menu"></i></button><aside class="c-table--hover-tooltip is-trouble"><header class="tooltip__header"><strong>족저근막염</strong></header><main class="tooltip__body"><div class="tooltip__body--txt clamp-2">질병, 질병, 질병, 질병, 질병, 질병</div></main><footer class="tooltip__footer"><div class="ft-left">정보량 증감률</div><div class="ft-right"><i class="icon-svg-triangle-up"></i><span class="percent">292</span></div></footer><div class="tooltip__arrow"></div></aside></div></td>
+      <td class="text-center" data-keyword="비중격" data-table-type="질병"><div class="position-relative">비중격<button class="c-table--click-menu"><i class="icon-svg-click-menu"></i></button><aside class="c-table--hover-tooltip is-trouble"><header class="tooltip__header"><strong>비중격</strong></header><main class="tooltip__body"><div class="tooltip__body--txt clamp-2">질병, 질병, 질병, 질병, 질병, 질병</div></main><footer class="tooltip__footer"><div class="ft-left">정보량 증감률</div><div class="ft-right"><i class="icon-svg-triangle-up"></i><span class="percent">292</span></div></footer><div class="tooltip__arrow"></div></aside></div></td>
+      <td class="text-center" data-keyword="뜸" data-table-type="치료법"><div class="position-relative">뜸<button class="c-table--click-menu"><i class="icon-svg-click-menu"></i></button><aside class="c-table--hover-tooltip"><header class="tooltip__header"><strong>뜸</strong></header><footer class="tooltip__footer"><div class="ft-left">정보량 증감률</div><div class="ft-right"><i class="icon-svg-triangle-up"></i><span class="percent">292</span></div></footer><div class="tooltip__arrow"></div></aside></div></td>
+    </tr>
+    <tr>
+      <td class="text-center">12</td>
+      <td class="text-center" data-keyword="족저근막염" data-table-type="질병"><div class="position-relative">족저근막염<button class="c-table--click-menu"><i class="icon-svg-click-menu"></i></button><aside class="c-table--hover-tooltip is-trouble"><header class="tooltip__header"><strong>족저근막염</strong></header><main class="tooltip__body"><div class="tooltip__body--txt clamp-2">질병, 질병, 질병, 질병, 질병, 질병</div></main><footer class="tooltip__footer"><div class="ft-left">정보량 증감률</div><div class="ft-right"><i class="icon-svg-triangle-up"></i><span class="percent">292</span></div></footer><div class="tooltip__arrow"></div></aside></div></td>
+      <td class="text-center" data-keyword="비중격" data-table-type="질병"><div class="position-relative">비중격<button class="c-table--click-menu"><i class="icon-svg-click-menu"></i></button><aside class="c-table--hover-tooltip is-trouble"><header class="tooltip__header"><strong>비중격</strong></header><main class="tooltip__body"><div class="tooltip__body--txt clamp-2">질병, 질병, 질병, 질병, 질병, 질병</div></main><footer class="tooltip__footer"><div class="ft-left">정보량 증감률</div><div class="ft-right"><i class="icon-svg-triangle-up"></i><span class="percent">292</span></div></footer><div class="tooltip__arrow"></div></aside></div></td>
+      <td class="text-center" data-keyword="비절개" data-table-type="치료법"><div class="position-relative">비절개<button class="c-table--click-menu"><i class="icon-svg-click-menu"></i></button><aside class="c-table--hover-tooltip"><header class="tooltip__header"><strong>비절개</strong></header><footer class="tooltip__footer"><div class="ft-left">정보량 증감률</div><div class="ft-right"><i class="icon-svg-triangle-up"></i><span class="percent">292</span></div></footer><div class="tooltip__arrow"></div></aside></div></td>
+      <td class="text-center" data-keyword="디스크" data-table-type="질병"><div class="position-relative">디스크<button class="c-table--click-menu"><i class="icon-svg-click-menu"></i></button><aside class="c-table--hover-tooltip is-trouble"><header class="tooltip__header"><strong>디스크</strong></header><main class="tooltip__body"><div class="tooltip__body--txt clamp-2">질병, 질병, 질병, 질병, 질병, 질병</div></main><footer class="tooltip__footer"><div class="ft-left">정보량 증감률</div><div class="ft-right"><i class="icon-svg-triangle-up"></i><span class="percent">292</span></div></footer><div class="tooltip__arrow"></div></aside></div></td>
+      <td class="text-center" data-keyword="무지외반증" data-table-type="질병"><div class="position-relative">무지외반증<button class="c-table--click-menu"><i class="icon-svg-click-menu"></i></button><aside class="c-table--hover-tooltip is-trouble"><header class="tooltip__header"><strong>무지외반증</strong></header><main class="tooltip__body"><div class="tooltip__body--txt clamp-2">질병, 질병, 질병, 질병, 질병, 질병</div></main><footer class="tooltip__footer"><div class="ft-left">정보량 증감률</div><div class="ft-right"><i class="icon-svg-triangle-up"></i><span class="percent">292</span></div></footer><div class="tooltip__arrow"></div></aside></div></td>
+      <td class="text-center" data-keyword="삼성서울병원" data-table-type="의료기관"><div class="position-relative">삼성서울병원<button class="c-table--click-menu"><i class="icon-svg-click-menu"></i></button><aside class="c-table--hover-tooltip"><header class="tooltip__header"><strong>삼성서울병원</strong></header><footer class="tooltip__footer"><div class="ft-left">정보량 증감률</div><div class="ft-right"><i class="icon-svg-triangle-up"></i><span class="percent">292</span></div></footer><div class="tooltip__arrow"></div></aside></div></td>
+    </tr>
+    <tr>
+      <td class="text-center">13</td>
+      <td class="text-center" data-keyword="디스크" data-table-type="질병"><div class="position-relative">디스크<button class="c-table--click-menu"><i class="icon-svg-click-menu"></i></button><aside class="c-table--hover-tooltip is-trouble"><header class="tooltip__header"><strong>디스크</strong></header><main class="tooltip__body"><div class="tooltip__body--txt clamp-2">질병, 질병, 질병, 질병, 질병, 질병</div></main><footer class="tooltip__footer"><div class="ft-left">정보량 증감률</div><div class="ft-right"><i class="icon-svg-triangle-up"></i><span class="percent">292</span></div></footer><div class="tooltip__arrow"></div></aside></div></td>
+      <td class="text-center" data-keyword="무지외반증" data-table-type="질병"><div class="position-relative">무지외반증<button class="c-table--click-menu"><i class="icon-svg-click-menu"></i></button><aside class="c-table--hover-tooltip is-trouble"><header class="tooltip__header"><strong>무지외반증</strong></header><main class="tooltip__body"><div class="tooltip__body--txt clamp-2">질병, 질병, 질병, 질병, 질병, 질병</div></main><footer class="tooltip__footer"><div class="ft-left">정보량 증감률</div><div class="ft-right"><i class="icon-svg-triangle-up"></i><span class="percent">292</span></div></footer><div class="tooltip__arrow"></div></aside></div></td>
+      <td class="text-center" data-keyword="족저근막염" data-table-type="질병"><div class="position-relative">족저근막염<button class="c-table--click-menu"><i class="icon-svg-click-menu"></i></button><aside class="c-table--hover-tooltip is-trouble"><header class="tooltip__header"><strong>족저근막염</strong></header><main class="tooltip__body"><div class="tooltip__body--txt clamp-2">질병, 질병, 질병, 질병, 질병, 질병</div></main><footer class="tooltip__footer"><div class="ft-left">정보량 증감률</div><div class="ft-right"><i class="icon-svg-triangle-up"></i><span class="percent">292</span></div></footer><div class="tooltip__arrow"></div></aside></div></td>
+      <td class="text-center" data-keyword="비중격" data-table-type="질병"><div class="position-relative">비중격<button class="c-table--click-menu"><i class="icon-svg-click-menu"></i></button><aside class="c-table--hover-tooltip is-trouble"><header class="tooltip__header"><strong>비중격</strong></header><main class="tooltip__body"><div class="tooltip__body--txt clamp-2">질병, 질병, 질병, 질병, 질병, 질병</div></main><footer class="tooltip__footer"><div class="ft-left">정보량 증감률</div><div class="ft-right"><i class="icon-svg-triangle-up"></i><span class="percent">292</span></div></footer><div class="tooltip__arrow"></div></aside></div></td>
+      <td class="text-center" data-keyword="삼성서울병원" data-table-type="의료기관"><div class="position-relative">삼성서울병원<button class="c-table--click-menu"><i class="icon-svg-click-menu"></i></button><aside class="c-table--hover-tooltip"><header class="tooltip__header"><strong>삼성서울병원</strong></header><footer class="tooltip__footer"><div class="ft-left">정보량 증감률</div><div class="ft-right"><i class="icon-svg-triangle-up"></i><span class="percent">292</span></div></footer><div class="tooltip__arrow"></div></aside></div></td>
+      <td class="text-center" data-keyword="비절개" data-table-type="치료법"><div class="position-relative">비절개<button class="c-table--click-menu"><i class="icon-svg-click-menu"></i></button><aside class="c-table--hover-tooltip"><header class="tooltip__header"><strong>비절개</strong></header><footer class="tooltip__footer"><div class="ft-left">정보량 증감률</div><div class="ft-right"><i class="icon-svg-triangle-up"></i><span class="percent">292</span></div></footer><div class="tooltip__arrow"></div></aside></div></td>
+    </tr>
+    <tr>
+      <td class="text-center">14</td>
+      <td class="text-center" data-keyword="삼성서울병원" data-table-type="의료기관"><div class="position-relative">삼성서울병원<button class="c-table--click-menu"><i class="icon-svg-click-menu"></i></button><aside class="c-table--hover-tooltip"><header class="tooltip__header"><strong>삼성서울병원</strong></header><footer class="tooltip__footer"><div class="ft-left">정보량 증감률</div><div class="ft-right"><i class="icon-svg-triangle-up"></i><span class="percent">292</span></div></footer><div class="tooltip__arrow"></div></aside></div></td>
+      <td class="text-center" data-keyword="족저근막염" data-table-type="질병"><div class="position-relative">족저근막염<button class="c-table--click-menu"><i class="icon-svg-click-menu"></i></button><aside class="c-table--hover-tooltip is-trouble"><header class="tooltip__header"><strong>족저근막염</strong></header><main class="tooltip__body"><div class="tooltip__body--txt clamp-2">질병, 질병, 질병, 질병, 질병, 질병</div></main><footer class="tooltip__footer"><div class="ft-left">정보량 증감률</div><div class="ft-right"><i class="icon-svg-triangle-up"></i><span class="percent">292</span></div></footer><div class="tooltip__arrow"></div></aside></div></td>
+      <td class="text-center" data-keyword="비중격" data-table-type="질병"><div class="position-relative">비중격<button class="c-table--click-menu"><i class="icon-svg-click-menu"></i></button><aside class="c-table--hover-tooltip is-trouble"><header class="tooltip__header"><strong>비중격</strong></header><main class="tooltip__body"><div class="tooltip__body--txt clamp-2">질병, 질병, 질병, 질병, 질병, 질병</div></main><footer class="tooltip__footer"><div class="ft-left">정보량 증감률</div><div class="ft-right"><i class="icon-svg-triangle-up"></i><span class="percent">292</span></div></footer><div class="tooltip__arrow"></div></aside></div></td>
+      <td class="text-center" data-keyword="비절개" data-table-type="치료법"><div class="position-relative">비절개<button class="c-table--click-menu"><i class="icon-svg-click-menu"></i></button><aside class="c-table--hover-tooltip"><header class="tooltip__header"><strong>비절개</strong></header><footer class="tooltip__footer"><div class="ft-left">정보량 증감률</div><div class="ft-right"><i class="icon-svg-triangle-up"></i><span class="percent">292</span></div></footer><div class="tooltip__arrow"></div></aside></div></td>
+      <td class="text-center" data-keyword="디스크" data-table-type="질병"><div class="position-relative">디스크<button class="c-table--click-menu"><i class="icon-svg-click-menu"></i></button><aside class="c-table--hover-tooltip is-trouble"><header class="tooltip__header"><strong>디스크</strong></header><main class="tooltip__body"><div class="tooltip__body--txt clamp-2">질병, 질병, 질병, 질병, 질병, 질병</div></main><footer class="tooltip__footer"><div class="ft-left">정보량 증감률</div><div class="ft-right"><i class="icon-svg-triangle-up"></i><span class="percent">292</span></div></footer><div class="tooltip__arrow"></div></aside></div></td>
+      <td class="text-center" data-keyword="무지외반증" data-table-type="질병"><div class="position-relative">무지외반증<button class="c-table--click-menu"><i class="icon-svg-click-menu"></i></button><aside class="c-table--hover-tooltip is-trouble"><header class="tooltip__header"><strong>무지외반증</strong></header><main class="tooltip__body"><div class="tooltip__body--txt clamp-2">질병, 질병, 질병, 질병, 질병, 질병</div></main><footer class="tooltip__footer"><div class="ft-left">정보량 증감률</div><div class="ft-right"><i class="icon-svg-triangle-up"></i><span class="percent">292</span></div></footer><div class="tooltip__arrow"></div></aside></div></td>
+    </tr>
+    <tr>
+      <td class="text-center">15</td>
+      <td class="text-center" data-keyword="비중격" data-table-type="질병"><div class="position-relative">비중격<button class="c-table--click-menu"><i class="icon-svg-click-menu"></i></button><aside class="c-table--hover-tooltip is-trouble"><header class="tooltip__header"><strong>비중격</strong></header><main class="tooltip__body"><div class="tooltip__body--txt clamp-2">질병, 질병, 질병, 질병, 질병, 질병</div></main><footer class="tooltip__footer"><div class="ft-left">정보량 증감률</div><div class="ft-right"><i class="icon-svg-triangle-up"></i><span class="percent">292</span></div></footer><div class="tooltip__arrow"></div></aside></div></td>
+      <td class="text-center" data-keyword="삼성서울병원" data-table-type="의료기관"><div class="position-relative">삼성서울병원<button class="c-table--click-menu"><i class="icon-svg-click-menu"></i></button><aside class="c-table--hover-tooltip"><header class="tooltip__header"><strong>삼성서울병원</strong></header><footer class="tooltip__footer"><div class="ft-left">정보량 증감률</div><div class="ft-right"><i class="icon-svg-triangle-up"></i><span class="percent">292</span></div></footer><div class="tooltip__arrow"></div></aside></div></td>
+      <td class="text-center" data-keyword="디스크" data-table-type="질병"><div class="position-relative">디스크<button class="c-table--click-menu"><i class="icon-svg-click-menu"></i></button><aside class="c-table--hover-tooltip is-trouble"><header class="tooltip__header"><strong>디스크</strong></header><main class="tooltip__body"><div class="tooltip__body--txt clamp-2">질병, 질병, 질병, 질병, 질병, 질병</div></main><footer class="tooltip__footer"><div class="ft-left">정보량 증감률</div><div class="ft-right"><i class="icon-svg-triangle-up"></i><span class="percent">292</span></div></footer><div class="tooltip__arrow"></div></aside></div></td>
+      <td class="text-center" data-keyword="무지외반증" data-table-type="질병"><div class="position-relative">무지외반증<button class="c-table--click-menu"><i class="icon-svg-click-menu"></i></button><aside class="c-table--hover-tooltip is-trouble"><header class="tooltip__header"><strong>무지외반증</strong></header><main class="tooltip__body"><div class="tooltip__body--txt clamp-2">질병, 질병, 질병, 질병, 질병, 질병</div></main><footer class="tooltip__footer"><div class="ft-left">정보량 증감률</div><div class="ft-right"><i class="icon-svg-triangle-up"></i><span class="percent">292</span></div></footer><div class="tooltip__arrow"></div></aside></div></td>
+      <td class="text-center" data-keyword="비절개" data-table-type="치료법"><div class="position-relative">비절개<button class="c-table--click-menu"><i class="icon-svg-click-menu"></i></button><aside class="c-table--hover-tooltip"><header class="tooltip__header"><strong>비절개</strong></header><footer class="tooltip__footer"><div class="ft-left">정보량 증감률</div><div class="ft-right"><i class="icon-svg-triangle-up"></i><span class="percent">292</span></div></footer><div class="tooltip__arrow"></div></aside></div></td>
+      <td class="text-center" data-keyword="족저근막염" data-table-type="질병"><div class="position-relative">족저근막염<button class="c-table--click-menu"><i class="icon-svg-click-menu"></i></button><aside class="c-table--hover-tooltip is-trouble"><header class="tooltip__header"><strong>족저근막염</strong></header><main class="tooltip__body"><div class="tooltip__body--txt clamp-2">질병, 질병, 질병, 질병, 질병, 질병</div></main><footer class="tooltip__footer"><div class="ft-left">정보량 증감률</div><div class="ft-right"><i class="icon-svg-triangle-up"></i><span class="percent">292</span></div></footer><div class="tooltip__arrow"></div></aside></div></td>
+    </tr>
+    
+    <tr>
+      <td class="text-center">16</td>
+      <td class="text-center" data-keyword="데이터" data-table-type="데이터"><div class="position-relative">데이터<button class="c-table--click-menu"><i class="icon-svg-click-menu"></i></button><aside class="c-table--hover-tooltip"><header class="tooltip__header"><strong>데이터</strong></header><footer class="tooltip__footer"><div class="ft-left">정보량 증감률</div><div class="ft-right"><i class="icon-svg-triangle-up"></i><span class="percent">292</span></div></footer><div class="tooltip__arrow"></div></aside></div></td>
+      <td class="text-center" data-keyword="데이터" data-table-type="데이터"><div class="position-relative">데이터<button class="c-table--click-menu"><i class="icon-svg-click-menu"></i></button><aside class="c-table--hover-tooltip"><header class="tooltip__header"><strong>데이터</strong></header><footer class="tooltip__footer"><div class="ft-left">정보량 증감률</div><div class="ft-right"><i class="icon-svg-triangle-up"></i><span class="percent">292</span></div></footer><div class="tooltip__arrow"></div></aside></div></td>
+      <td class="text-center" data-keyword="데이터" data-table-type="데이터"><div class="position-relative">데이터<button class="c-table--click-menu"><i class="icon-svg-click-menu"></i></button><aside class="c-table--hover-tooltip"><header class="tooltip__header"><strong>데이터</strong></header><footer class="tooltip__footer"><div class="ft-left">정보량 증감률</div><div class="ft-right"><i class="icon-svg-triangle-up"></i><span class="percent">292</span></div></footer><div class="tooltip__arrow"></div></aside></div></td>
+      <td class="text-center" data-keyword="데이터" data-table-type="데이터"><div class="position-relative">데이터<button class="c-table--click-menu"><i class="icon-svg-click-menu"></i></button><aside class="c-table--hover-tooltip"><header class="tooltip__header"><strong>데이터</strong></header><footer class="tooltip__footer"><div class="ft-left">정보량 증감률</div><div class="ft-right"><i class="icon-svg-triangle-up"></i><span class="percent">292</span></div></footer><div class="tooltip__arrow"></div></aside></div></td>
+      <td class="text-center" data-keyword="데이터" data-table-type="데이터"><div class="position-relative">데이터<button class="c-table--click-menu"><i class="icon-svg-click-menu"></i></button><aside class="c-table--hover-tooltip"><header class="tooltip__header"><strong>데이터</strong></header><footer class="tooltip__footer"><div class="ft-left">정보량 증감률</div><div class="ft-right"><i class="icon-svg-triangle-up"></i><span class="percent">292</span></div></footer><div class="tooltip__arrow"></div></aside></div></td>
+      <td class="text-center" data-keyword="데이터" data-table-type="데이터"><div class="position-relative">데이터<button class="c-table--click-menu"><i class="icon-svg-click-menu"></i></button><aside class="c-table--hover-tooltip"><header class="tooltip__header"><strong>데이터</strong></header><footer class="tooltip__footer"><div class="ft-left">정보량 증감률</div><div class="ft-right"><i class="icon-svg-triangle-up"></i><span class="percent">292</span></div></footer><div class="tooltip__arrow"></div></aside></div></td>
+    </tr>
+    <tr>
+      <td class="text-center">17</td>
+      <td class="text-center" data-keyword="데이터" data-table-type="데이터"><div class="position-relative">데이터<button class="c-table--click-menu"><i class="icon-svg-click-menu"></i></button><aside class="c-table--hover-tooltip"><header class="tooltip__header"><strong>데이터</strong></header><footer class="tooltip__footer"><div class="ft-left">정보량 증감률</div><div class="ft-right"><i class="icon-svg-triangle-up"></i><span class="percent">292</span></div></footer><div class="tooltip__arrow"></div></aside></div></td>
+      <td class="text-center" data-keyword="데이터" data-table-type="데이터"><div class="position-relative">데이터<button class="c-table--click-menu"><i class="icon-svg-click-menu"></i></button><aside class="c-table--hover-tooltip"><header class="tooltip__header"><strong>데이터</strong></header><footer class="tooltip__footer"><div class="ft-left">정보량 증감률</div><div class="ft-right"><i class="icon-svg-triangle-up"></i><span class="percent">292</span></div></footer><div class="tooltip__arrow"></div></aside></div></td>
+      <td class="text-center" data-keyword="데이터" data-table-type="데이터"><div class="position-relative">데이터<button class="c-table--click-menu"><i class="icon-svg-click-menu"></i></button><aside class="c-table--hover-tooltip"><header class="tooltip__header"><strong>데이터</strong></header><footer class="tooltip__footer"><div class="ft-left">정보량 증감률</div><div class="ft-right"><i class="icon-svg-triangle-up"></i><span class="percent">292</span></div></footer><div class="tooltip__arrow"></div></aside></div></td>
+      <td class="text-center" data-keyword="데이터" data-table-type="데이터"><div class="position-relative">데이터<button class="c-table--click-menu"><i class="icon-svg-click-menu"></i></button><aside class="c-table--hover-tooltip"><header class="tooltip__header"><strong>데이터</strong></header><footer class="tooltip__footer"><div class="ft-left">정보량 증감률</div><div class="ft-right"><i class="icon-svg-triangle-up"></i><span class="percent">292</span></div></footer><div class="tooltip__arrow"></div></aside></div></td>
+      <td class="text-center" data-keyword="데이터" data-table-type="데이터"><div class="position-relative">데이터<button class="c-table--click-menu"><i class="icon-svg-click-menu"></i></button><aside class="c-table--hover-tooltip"><header class="tooltip__header"><strong>데이터</strong></header><footer class="tooltip__footer"><div class="ft-left">정보량 증감률</div><div class="ft-right"><i class="icon-svg-triangle-up"></i><span class="percent">292</span></div></footer><div class="tooltip__arrow"></div></aside></div></td>
+      <td class="text-center" data-keyword="데이터" data-table-type="데이터"><div class="position-relative">데이터<button class="c-table--click-menu"><i class="icon-svg-click-menu"></i></button><aside class="c-table--hover-tooltip"><header class="tooltip__header"><strong>데이터</strong></header><footer class="tooltip__footer"><div class="ft-left">정보량 증감률</div><div class="ft-right"><i class="icon-svg-triangle-up"></i><span class="percent">292</span></div></footer><div class="tooltip__arrow"></div></aside></div></td>
+    </tr>
+    <tr>
+      <td class="text-center">18</td>
+      <td class="text-center" data-keyword="데이터" data-table-type="데이터"><div class="position-relative">데이터<button class="c-table--click-menu"><i class="icon-svg-click-menu"></i></button><aside class="c-table--hover-tooltip"><header class="tooltip__header"><strong>데이터</strong></header><footer class="tooltip__footer"><div class="ft-left">정보량 증감률</div><div class="ft-right"><i class="icon-svg-triangle-up"></i><span class="percent">292</span></div></footer><div class="tooltip__arrow"></div></aside></div></td>
+      <td class="text-center" data-keyword="데이터" data-table-type="데이터"><div class="position-relative">데이터<button class="c-table--click-menu"><i class="icon-svg-click-menu"></i></button><aside class="c-table--hover-tooltip"><header class="tooltip__header"><strong>데이터</strong></header><footer class="tooltip__footer"><div class="ft-left">정보량 증감률</div><div class="ft-right"><i class="icon-svg-triangle-up"></i><span class="percent">292</span></div></footer><div class="tooltip__arrow"></div></aside></div></td>
+      <td class="text-center" data-keyword="데이터" data-table-type="데이터"><div class="position-relative">데이터<button class="c-table--click-menu"><i class="icon-svg-click-menu"></i></button><aside class="c-table--hover-tooltip"><header class="tooltip__header"><strong>데이터</strong></header><footer class="tooltip__footer"><div class="ft-left">정보량 증감률</div><div class="ft-right"><i class="icon-svg-triangle-up"></i><span class="percent">292</span></div></footer><div class="tooltip__arrow"></div></aside></div></td>
+      <td class="text-center" data-keyword="데이터" data-table-type="데이터"><div class="position-relative">데이터<button class="c-table--click-menu"><i class="icon-svg-click-menu"></i></button><aside class="c-table--hover-tooltip"><header class="tooltip__header"><strong>데이터</strong></header><footer class="tooltip__footer"><div class="ft-left">정보량 증감률</div><div class="ft-right"><i class="icon-svg-triangle-up"></i><span class="percent">292</span></div></footer><div class="tooltip__arrow"></div></aside></div></td>
+      <td class="text-center" data-keyword="데이터" data-table-type="데이터"><div class="position-relative">데이터<button class="c-table--click-menu"><i class="icon-svg-click-menu"></i></button><aside class="c-table--hover-tooltip"><header class="tooltip__header"><strong>데이터</strong></header><footer class="tooltip__footer"><div class="ft-left">정보량 증감률</div><div class="ft-right"><i class="icon-svg-triangle-up"></i><span class="percent">292</span></div></footer><div class="tooltip__arrow"></div></aside></div></td>
+      <td class="text-center" data-keyword="데이터" data-table-type="데이터"><div class="position-relative">데이터<button class="c-table--click-menu"><i class="icon-svg-click-menu"></i></button><aside class="c-table--hover-tooltip"><header class="tooltip__header"><strong>데이터</strong></header><footer class="tooltip__footer"><div class="ft-left">정보량 증감률</div><div class="ft-right"><i class="icon-svg-triangle-up"></i><span class="percent">292</span></div></footer><div class="tooltip__arrow"></div></aside></div></td>
+    </tr>
+    <tr>
+      <td class="text-center">19</td>
+      <td class="text-center" data-keyword="데이터" data-table-type="데이터"><div class="position-relative">데이터<button class="c-table--click-menu"><i class="icon-svg-click-menu"></i></button><aside class="c-table--hover-tooltip"><header class="tooltip__header"><strong>데이터</strong></header><footer class="tooltip__footer"><div class="ft-left">정보량 증감률</div><div class="ft-right"><i class="icon-svg-triangle-up"></i><span class="percent">292</span></div></footer><div class="tooltip__arrow"></div></aside></div></td>
+      <td class="text-center" data-keyword="데이터" data-table-type="데이터"><div class="position-relative">데이터<button class="c-table--click-menu"><i class="icon-svg-click-menu"></i></button><aside class="c-table--hover-tooltip"><header class="tooltip__header"><strong>데이터</strong></header><footer class="tooltip__footer"><div class="ft-left">정보량 증감률</div><div class="ft-right"><i class="icon-svg-triangle-up"></i><span class="percent">292</span></div></footer><div class="tooltip__arrow"></div></aside></div></td>
+      <td class="text-center" data-keyword="데이터" data-table-type="데이터"><div class="position-relative">데이터<button class="c-table--click-menu"><i class="icon-svg-click-menu"></i></button><aside class="c-table--hover-tooltip"><header class="tooltip__header"><strong>데이터</strong></header><footer class="tooltip__footer"><div class="ft-left">정보량 증감률</div><div class="ft-right"><i class="icon-svg-triangle-up"></i><span class="percent">292</span></div></footer><div class="tooltip__arrow"></div></aside></div></td>
+      <td class="text-center" data-keyword="데이터" data-table-type="데이터"><div class="position-relative">데이터<button class="c-table--click-menu"><i class="icon-svg-click-menu"></i></button><aside class="c-table--hover-tooltip"><header class="tooltip__header"><strong>데이터</strong></header><footer class="tooltip__footer"><div class="ft-left">정보량 증감률</div><div class="ft-right"><i class="icon-svg-triangle-up"></i><span class="percent">292</span></div></footer><div class="tooltip__arrow"></div></aside></div></td>
+      <td class="text-center" data-keyword="데이터" data-table-type="데이터"><div class="position-relative">데이터<button class="c-table--click-menu"><i class="icon-svg-click-menu"></i></button><aside class="c-table--hover-tooltip"><header class="tooltip__header"><strong>데이터</strong></header><footer class="tooltip__footer"><div class="ft-left">정보량 증감률</div><div class="ft-right"><i class="icon-svg-triangle-up"></i><span class="percent">292</span></div></footer><div class="tooltip__arrow"></div></aside></div></td>
+      <td class="text-center" data-keyword="데이터" data-table-type="데이터"><div class="position-relative">데이터<button class="c-table--click-menu"><i class="icon-svg-click-menu"></i></button><aside class="c-table--hover-tooltip"><header class="tooltip__header"><strong>데이터</strong></header><footer class="tooltip__footer"><div class="ft-left">정보량 증감률</div><div class="ft-right"><i class="icon-svg-triangle-up"></i><span class="percent">292</span></div></footer><div class="tooltip__arrow"></div></aside></div></td>
+    </tr>
+    <tr>
+      <td class="text-center">20</td>
+      <td class="text-center" data-keyword="데이터" data-table-type="데이터"><div class="position-relative">데이터<button class="c-table--click-menu"><i class="icon-svg-click-menu"></i></button><aside class="c-table--hover-tooltip"><header class="tooltip__header"><strong>데이터</strong></header><footer class="tooltip__footer"><div class="ft-left">정보량 증감률</div><div class="ft-right"><i class="icon-svg-triangle-up"></i><span class="percent">292</span></div></footer><div class="tooltip__arrow"></div></aside></div></td>
+      <td class="text-center" data-keyword="데이터" data-table-type="데이터"><div class="position-relative">데이터<button class="c-table--click-menu"><i class="icon-svg-click-menu"></i></button><aside class="c-table--hover-tooltip"><header class="tooltip__header"><strong>데이터</strong></header><footer class="tooltip__footer"><div class="ft-left">정보량 증감률</div><div class="ft-right"><i class="icon-svg-triangle-up"></i><span class="percent">292</span></div></footer><div class="tooltip__arrow"></div></aside></div></td>
+      <td class="text-center" data-keyword="데이터" data-table-type="데이터"><div class="position-relative">데이터<button class="c-table--click-menu"><i class="icon-svg-click-menu"></i></button><aside class="c-table--hover-tooltip"><header class="tooltip__header"><strong>데이터</strong></header><footer class="tooltip__footer"><div class="ft-left">정보량 증감률</div><div class="ft-right"><i class="icon-svg-triangle-up"></i><span class="percent">292</span></div></footer><div class="tooltip__arrow"></div></aside></div></td>
+      <td class="text-center" data-keyword="데이터" data-table-type="데이터"><div class="position-relative">데이터<button class="c-table--click-menu"><i class="icon-svg-click-menu"></i></button><aside class="c-table--hover-tooltip"><header class="tooltip__header"><strong>데이터</strong></header><footer class="tooltip__footer"><div class="ft-left">정보량 증감률</div><div class="ft-right"><i class="icon-svg-triangle-up"></i><span class="percent">292</span></div></footer><div class="tooltip__arrow"></div></aside></div></td>
+      <td class="text-center" data-keyword="데이터" data-table-type="데이터"><div class="position-relative">데이터<button class="c-table--click-menu"><i class="icon-svg-click-menu"></i></button><aside class="c-table--hover-tooltip"><header class="tooltip__header"><strong>데이터</strong></header><footer class="tooltip__footer"><div class="ft-left">정보량 증감률</div><div class="ft-right"><i class="icon-svg-triangle-up"></i><span class="percent">292</span></div></footer><div class="tooltip__arrow"></div></aside></div></td>
+      <td class="text-center" data-keyword="데이터" data-table-type="데이터"><div class="position-relative">데이터<button class="c-table--click-menu"><i class="icon-svg-click-menu"></i></button><aside class="c-table--hover-tooltip"><header class="tooltip__header"><strong>데이터</strong></header><footer class="tooltip__footer"><div class="ft-left">정보량 증감률</div><div class="ft-right"><i class="icon-svg-triangle-up"></i><span class="percent">292</span></div></footer><div class="tooltip__arrow"></div></aside></div></td>
+    </tr>
+    <tr>
+      <td class="text-center">21</td>
+      <td class="text-center" data-keyword="데이터" data-table-type="데이터"><div class="position-relative">데이터<button class="c-table--click-menu"><i class="icon-svg-click-menu"></i></button><aside class="c-table--hover-tooltip"><header class="tooltip__header"><strong>데이터</strong></header><footer class="tooltip__footer"><div class="ft-left">정보량 증감률</div><div class="ft-right"><i class="icon-svg-triangle-up"></i><span class="percent">292</span></div></footer><div class="tooltip__arrow"></div></aside></div></td>
+      <td class="text-center" data-keyword="데이터" data-table-type="데이터"><div class="position-relative">데이터<button class="c-table--click-menu"><i class="icon-svg-click-menu"></i></button><aside class="c-table--hover-tooltip"><header class="tooltip__header"><strong>데이터</strong></header><footer class="tooltip__footer"><div class="ft-left">정보량 증감률</div><div class="ft-right"><i class="icon-svg-triangle-up"></i><span class="percent">292</span></div></footer><div class="tooltip__arrow"></div></aside></div></td>
+      <td class="text-center" data-keyword="데이터" data-table-type="데이터"><div class="position-relative">데이터<button class="c-table--click-menu"><i class="icon-svg-click-menu"></i></button><aside class="c-table--hover-tooltip"><header class="tooltip__header"><strong>데이터</strong></header><footer class="tooltip__footer"><div class="ft-left">정보량 증감률</div><div class="ft-right"><i class="icon-svg-triangle-up"></i><span class="percent">292</span></div></footer><div class="tooltip__arrow"></div></aside></div></td>
+      <td class="text-center" data-keyword="데이터" data-table-type="데이터"><div class="position-relative">데이터<button class="c-table--click-menu"><i class="icon-svg-click-menu"></i></button><aside class="c-table--hover-tooltip"><header class="tooltip__header"><strong>데이터</strong></header><footer class="tooltip__footer"><div class="ft-left">정보량 증감률</div><div class="ft-right"><i class="icon-svg-triangle-up"></i><span class="percent">292</span></div></footer><div class="tooltip__arrow"></div></aside></div></td>
+      <td class="text-center" data-keyword="데이터" data-table-type="데이터"><div class="position-relative">데이터<button class="c-table--click-menu"><i class="icon-svg-click-menu"></i></button><aside class="c-table--hover-tooltip"><header class="tooltip__header"><strong>데이터</strong></header><footer class="tooltip__footer"><div class="ft-left">정보량 증감률</div><div class="ft-right"><i class="icon-svg-triangle-up"></i><span class="percent">292</span></div></footer><div class="tooltip__arrow"></div></aside></div></td>
+      <td class="text-center" data-keyword="데이터" data-table-type="데이터"><div class="position-relative">데이터<button class="c-table--click-menu"><i class="icon-svg-click-menu"></i></button><aside class="c-table--hover-tooltip"><header class="tooltip__header"><strong>데이터</strong></header><footer class="tooltip__footer"><div class="ft-left">정보량 증감률</div><div class="ft-right"><i class="icon-svg-triangle-up"></i><span class="percent">292</span></div></footer><div class="tooltip__arrow"></div></aside></div></td>
+    </tr>
+    <tr>
+      <td class="text-center">22</td>
+      <td class="text-center" data-keyword="데이터" data-table-type="데이터"><div class="position-relative">데이터<button class="c-table--click-menu"><i class="icon-svg-click-menu"></i></button><aside class="c-table--hover-tooltip"><header class="tooltip__header"><strong>데이터</strong></header><footer class="tooltip__footer"><div class="ft-left">정보량 증감률</div><div class="ft-right"><i class="icon-svg-triangle-up"></i><span class="percent">292</span></div></footer><div class="tooltip__arrow"></div></aside></div></td>
+      <td class="text-center" data-keyword="데이터" data-table-type="데이터"><div class="position-relative">데이터<button class="c-table--click-menu"><i class="icon-svg-click-menu"></i></button><aside class="c-table--hover-tooltip"><header class="tooltip__header"><strong>데이터</strong></header><footer class="tooltip__footer"><div class="ft-left">정보량 증감률</div><div class="ft-right"><i class="icon-svg-triangle-up"></i><span class="percent">292</span></div></footer><div class="tooltip__arrow"></div></aside></div></td>
+      <td class="text-center" data-keyword="데이터" data-table-type="데이터"><div class="position-relative">데이터<button class="c-table--click-menu"><i class="icon-svg-click-menu"></i></button><aside class="c-table--hover-tooltip"><header class="tooltip__header"><strong>데이터</strong></header><footer class="tooltip__footer"><div class="ft-left">정보량 증감률</div><div class="ft-right"><i class="icon-svg-triangle-up"></i><span class="percent">292</span></div></footer><div class="tooltip__arrow"></div></aside></div></td>
+      <td class="text-center" data-keyword="데이터" data-table-type="데이터"><div class="position-relative">데이터<button class="c-table--click-menu"><i class="icon-svg-click-menu"></i></button><aside class="c-table--hover-tooltip"><header class="tooltip__header"><strong>데이터</strong></header><footer class="tooltip__footer"><div class="ft-left">정보량 증감률</div><div class="ft-right"><i class="icon-svg-triangle-up"></i><span class="percent">292</span></div></footer><div class="tooltip__arrow"></div></aside></div></td>
+      <td class="text-center" data-keyword="데이터" data-table-type="데이터"><div class="position-relative">데이터<button class="c-table--click-menu"><i class="icon-svg-click-menu"></i></button><aside class="c-table--hover-tooltip"><header class="tooltip__header"><strong>데이터</strong></header><footer class="tooltip__footer"><div class="ft-left">정보량 증감률</div><div class="ft-right"><i class="icon-svg-triangle-up"></i><span class="percent">292</span></div></footer><div class="tooltip__arrow"></div></aside></div></td>
+      <td class="text-center" data-keyword="데이터" data-table-type="데이터"><div class="position-relative">데이터<button class="c-table--click-menu"><i class="icon-svg-click-menu"></i></button><aside class="c-table--hover-tooltip"><header class="tooltip__header"><strong>데이터</strong></header><footer class="tooltip__footer"><div class="ft-left">정보량 증감률</div><div class="ft-right"><i class="icon-svg-triangle-up"></i><span class="percent">292</span></div></footer><div class="tooltip__arrow"></div></aside></div></td>
+    </tr>
+    <tr>
+      <td class="text-center">23</td>
+      <td class="text-center" data-keyword="데이터" data-table-type="데이터"><div class="position-relative">데이터<button class="c-table--click-menu"><i class="icon-svg-click-menu"></i></button><aside class="c-table--hover-tooltip"><header class="tooltip__header"><strong>데이터</strong></header><footer class="tooltip__footer"><div class="ft-left">정보량 증감률</div><div class="ft-right"><i class="icon-svg-triangle-up"></i><span class="percent">292</span></div></footer><div class="tooltip__arrow"></div></aside></div></td>
+      <td class="text-center" data-keyword="데이터" data-table-type="데이터"><div class="position-relative">데이터<button class="c-table--click-menu"><i class="icon-svg-click-menu"></i></button><aside class="c-table--hover-tooltip"><header class="tooltip__header"><strong>데이터</strong></header><footer class="tooltip__footer"><div class="ft-left">정보량 증감률</div><div class="ft-right"><i class="icon-svg-triangle-up"></i><span class="percent">292</span></div></footer><div class="tooltip__arrow"></div></aside></div></td>
+      <td class="text-center" data-keyword="데이터" data-table-type="데이터"><div class="position-relative">데이터<button class="c-table--click-menu"><i class="icon-svg-click-menu"></i></button><aside class="c-table--hover-tooltip"><header class="tooltip__header"><strong>데이터</strong></header><footer class="tooltip__footer"><div class="ft-left">정보량 증감률</div><div class="ft-right"><i class="icon-svg-triangle-up"></i><span class="percent">292</span></div></footer><div class="tooltip__arrow"></div></aside></div></td>
+      <td class="text-center" data-keyword="데이터" data-table-type="데이터"><div class="position-relative">데이터<button class="c-table--click-menu"><i class="icon-svg-click-menu"></i></button><aside class="c-table--hover-tooltip"><header class="tooltip__header"><strong>데이터</strong></header><footer class="tooltip__footer"><div class="ft-left">정보량 증감률</div><div class="ft-right"><i class="icon-svg-triangle-up"></i><span class="percent">292</span></div></footer><div class="tooltip__arrow"></div></aside></div></td>
+      <td class="text-center" data-keyword="데이터" data-table-type="데이터"><div class="position-relative">데이터<button class="c-table--click-menu"><i class="icon-svg-click-menu"></i></button><aside class="c-table--hover-tooltip"><header class="tooltip__header"><strong>데이터</strong></header><footer class="tooltip__footer"><div class="ft-left">정보량 증감률</div><div class="ft-right"><i class="icon-svg-triangle-up"></i><span class="percent">292</span></div></footer><div class="tooltip__arrow"></div></aside></div></td>
+      <td class="text-center" data-keyword="데이터" data-table-type="데이터"><div class="position-relative">데이터<button class="c-table--click-menu"><i class="icon-svg-click-menu"></i></button><aside class="c-table--hover-tooltip"><header class="tooltip__header"><strong>데이터</strong></header><footer class="tooltip__footer"><div class="ft-left">정보량 증감률</div><div class="ft-right"><i class="icon-svg-triangle-up"></i><span class="percent">292</span></div></footer><div class="tooltip__arrow"></div></aside></div></td>
+    </tr>
+    <tr>
+      <td class="text-center">24</td>
+      <td class="text-center" data-keyword="데이터" data-table-type="데이터"><div class="position-relative">데이터<button class="c-table--click-menu"><i class="icon-svg-click-menu"></i></button><aside class="c-table--hover-tooltip"><header class="tooltip__header"><strong>데이터</strong></header><footer class="tooltip__footer"><div class="ft-left">정보량 증감률</div><div class="ft-right"><i class="icon-svg-triangle-up"></i><span class="percent">292</span></div></footer><div class="tooltip__arrow"></div></aside></div></td>
+      <td class="text-center" data-keyword="데이터" data-table-type="데이터"><div class="position-relative">데이터<button class="c-table--click-menu"><i class="icon-svg-click-menu"></i></button><aside class="c-table--hover-tooltip"><header class="tooltip__header"><strong>데이터</strong></header><footer class="tooltip__footer"><div class="ft-left">정보량 증감률</div><div class="ft-right"><i class="icon-svg-triangle-up"></i><span class="percent">292</span></div></footer><div class="tooltip__arrow"></div></aside></div></td>
+      <td class="text-center" data-keyword="데이터" data-table-type="데이터"><div class="position-relative">데이터<button class="c-table--click-menu"><i class="icon-svg-click-menu"></i></button><aside class="c-table--hover-tooltip"><header class="tooltip__header"><strong>데이터</strong></header><footer class="tooltip__footer"><div class="ft-left">정보량 증감률</div><div class="ft-right"><i class="icon-svg-triangle-up"></i><span class="percent">292</span></div></footer><div class="tooltip__arrow"></div></aside></div></td>
+      <td class="text-center" data-keyword="데이터" data-table-type="데이터"><div class="position-relative">데이터<button class="c-table--click-menu"><i class="icon-svg-click-menu"></i></button><aside class="c-table--hover-tooltip"><header class="tooltip__header"><strong>데이터</strong></header><footer class="tooltip__footer"><div class="ft-left">정보량 증감률</div><div class="ft-right"><i class="icon-svg-triangle-up"></i><span class="percent">292</span></div></footer><div class="tooltip__arrow"></div></aside></div></td>
+      <td class="text-center" data-keyword="데이터" data-table-type="데이터"><div class="position-relative">데이터<button class="c-table--click-menu"><i class="icon-svg-click-menu"></i></button><aside class="c-table--hover-tooltip"><header class="tooltip__header"><strong>데이터</strong></header><footer class="tooltip__footer"><div class="ft-left">정보량 증감률</div><div class="ft-right"><i class="icon-svg-triangle-up"></i><span class="percent">292</span></div></footer><div class="tooltip__arrow"></div></aside></div></td>
+      <td class="text-center" data-keyword="데이터" data-table-type="데이터"><div class="position-relative">데이터<button class="c-table--click-menu"><i class="icon-svg-click-menu"></i></button><aside class="c-table--hover-tooltip"><header class="tooltip__header"><strong>데이터</strong></header><footer class="tooltip__footer"><div class="ft-left">정보량 증감률</div><div class="ft-right"><i class="icon-svg-triangle-up"></i><span class="percent">292</span></div></footer><div class="tooltip__arrow"></div></aside></div></td>
+    </tr>
+    <tr>
+      <td class="text-center">25</td>
+      <td class="text-center" data-keyword="데이터" data-table-type="데이터"><div class="position-relative">데이터<button class="c-table--click-menu"><i class="icon-svg-click-menu"></i></button><aside class="c-table--hover-tooltip"><header class="tooltip__header"><strong>데이터</strong></header><footer class="tooltip__footer"><div class="ft-left">정보량 증감률</div><div class="ft-right"><i class="icon-svg-triangle-up"></i><span class="percent">292</span></div></footer><div class="tooltip__arrow"></div></aside></div></td>
+      <td class="text-center" data-keyword="데이터" data-table-type="데이터"><div class="position-relative">데이터<button class="c-table--click-menu"><i class="icon-svg-click-menu"></i></button><aside class="c-table--hover-tooltip"><header class="tooltip__header"><strong>데이터</strong></header><footer class="tooltip__footer"><div class="ft-left">정보량 증감률</div><div class="ft-right"><i class="icon-svg-triangle-up"></i><span class="percent">292</span></div></footer><div class="tooltip__arrow"></div></aside></div></td>
+      <td class="text-center" data-keyword="데이터" data-table-type="데이터"><div class="position-relative">데이터<button class="c-table--click-menu"><i class="icon-svg-click-menu"></i></button><aside class="c-table--hover-tooltip"><header class="tooltip__header"><strong>데이터</strong></header><footer class="tooltip__footer"><div class="ft-left">정보량 증감률</div><div class="ft-right"><i class="icon-svg-triangle-up"></i><span class="percent">292</span></div></footer><div class="tooltip__arrow"></div></aside></div></td>
+      <td class="text-center" data-keyword="데이터" data-table-type="데이터"><div class="position-relative">데이터<button class="c-table--click-menu"><i class="icon-svg-click-menu"></i></button><aside class="c-table--hover-tooltip"><header class="tooltip__header"><strong>데이터</strong></header><footer class="tooltip__footer"><div class="ft-left">정보량 증감률</div><div class="ft-right"><i class="icon-svg-triangle-up"></i><span class="percent">292</span></div></footer><div class="tooltip__arrow"></div></aside></div></td>
+      <td class="text-center" data-keyword="데이터" data-table-type="데이터"><div class="position-relative">데이터<button class="c-table--click-menu"><i class="icon-svg-click-menu"></i></button><aside class="c-table--hover-tooltip"><header class="tooltip__header"><strong>데이터</strong></header><footer class="tooltip__footer"><div class="ft-left">정보량 증감률</div><div class="ft-right"><i class="icon-svg-triangle-up"></i><span class="percent">292</span></div></footer><div class="tooltip__arrow"></div></aside></div></td>
+      <td class="text-center" data-keyword="데이터" data-table-type="데이터"><div class="position-relative">데이터<button class="c-table--click-menu"><i class="icon-svg-click-menu"></i></button><aside class="c-table--hover-tooltip"><header class="tooltip__header"><strong>데이터</strong></header><footer class="tooltip__footer"><div class="ft-left">정보량 증감률</div><div class="ft-right"><i class="icon-svg-triangle-up"></i><span class="percent">292</span></div></footer><div class="tooltip__arrow"></div></aside></div></td>
+    </tr>
+    <tr>
+      <td class="text-center">26</td>
+      <td class="text-center" data-keyword="데이터" data-table-type="데이터"><div class="position-relative">데이터<button class="c-table--click-menu"><i class="icon-svg-click-menu"></i></button><aside class="c-table--hover-tooltip"><header class="tooltip__header"><strong>데이터</strong></header><footer class="tooltip__footer"><div class="ft-left">정보량 증감률</div><div class="ft-right"><i class="icon-svg-triangle-up"></i><span class="percent">292</span></div></footer><div class="tooltip__arrow"></div></aside></div></td>
+      <td class="text-center" data-keyword="데이터" data-table-type="데이터"><div class="position-relative">데이터<button class="c-table--click-menu"><i class="icon-svg-click-menu"></i></button><aside class="c-table--hover-tooltip"><header class="tooltip__header"><strong>데이터</strong></header><footer class="tooltip__footer"><div class="ft-left">정보량 증감률</div><div class="ft-right"><i class="icon-svg-triangle-up"></i><span class="percent">292</span></div></footer><div class="tooltip__arrow"></div></aside></div></td>
+      <td class="text-center" data-keyword="데이터" data-table-type="데이터"><div class="position-relative">데이터<button class="c-table--click-menu"><i class="icon-svg-click-menu"></i></button><aside class="c-table--hover-tooltip"><header class="tooltip__header"><strong>데이터</strong></header><footer class="tooltip__footer"><div class="ft-left">정보량 증감률</div><div class="ft-right"><i class="icon-svg-triangle-up"></i><span class="percent">292</span></div></footer><div class="tooltip__arrow"></div></aside></div></td>
+      <td class="text-center" data-keyword="데이터" data-table-type="데이터"><div class="position-relative">데이터<button class="c-table--click-menu"><i class="icon-svg-click-menu"></i></button><aside class="c-table--hover-tooltip"><header class="tooltip__header"><strong>데이터</strong></header><footer class="tooltip__footer"><div class="ft-left">정보량 증감률</div><div class="ft-right"><i class="icon-svg-triangle-up"></i><span class="percent">292</span></div></footer><div class="tooltip__arrow"></div></aside></div></td>
+      <td class="text-center" data-keyword="데이터" data-table-type="데이터"><div class="position-relative">데이터<button class="c-table--click-menu"><i class="icon-svg-click-menu"></i></button><aside class="c-table--hover-tooltip"><header class="tooltip__header"><strong>데이터</strong></header><footer class="tooltip__footer"><div class="ft-left">정보량 증감률</div><div class="ft-right"><i class="icon-svg-triangle-up"></i><span class="percent">292</span></div></footer><div class="tooltip__arrow"></div></aside></div></td>
+      <td class="text-center" data-keyword="데이터" data-table-type="데이터"><div class="position-relative">데이터<button class="c-table--click-menu"><i class="icon-svg-click-menu"></i></button><aside class="c-table--hover-tooltip"><header class="tooltip__header"><strong>데이터</strong></header><footer class="tooltip__footer"><div class="ft-left">정보량 증감률</div><div class="ft-right"><i class="icon-svg-triangle-up"></i><span class="percent">292</span></div></footer><div class="tooltip__arrow"></div></aside></div></td>
+    </tr>
+    <tr>
+      <td class="text-center">27</td>
+      <td class="text-center" data-keyword="데이터" data-table-type="데이터"><div class="position-relative">데이터<button class="c-table--click-menu"><i class="icon-svg-click-menu"></i></button><aside class="c-table--hover-tooltip"><header class="tooltip__header"><strong>데이터</strong></header><footer class="tooltip__footer"><div class="ft-left">정보량 증감률</div><div class="ft-right"><i class="icon-svg-triangle-up"></i><span class="percent">292</span></div></footer><div class="tooltip__arrow"></div></aside></div></td>
+      <td class="text-center" data-keyword="데이터" data-table-type="데이터"><div class="position-relative">데이터<button class="c-table--click-menu"><i class="icon-svg-click-menu"></i></button><aside class="c-table--hover-tooltip"><header class="tooltip__header"><strong>데이터</strong></header><footer class="tooltip__footer"><div class="ft-left">정보량 증감률</div><div class="ft-right"><i class="icon-svg-triangle-up"></i><span class="percent">292</span></div></footer><div class="tooltip__arrow"></div></aside></div></td>
+      <td class="text-center" data-keyword="데이터" data-table-type="데이터"><div class="position-relative">데이터<button class="c-table--click-menu"><i class="icon-svg-click-menu"></i></button><aside class="c-table--hover-tooltip"><header class="tooltip__header"><strong>데이터</strong></header><footer class="tooltip__footer"><div class="ft-left">정보량 증감률</div><div class="ft-right"><i class="icon-svg-triangle-up"></i><span class="percent">292</span></div></footer><div class="tooltip__arrow"></div></aside></div></td>
+      <td class="text-center" data-keyword="데이터" data-table-type="데이터"><div class="position-relative">데이터<button class="c-table--click-menu"><i class="icon-svg-click-menu"></i></button><aside class="c-table--hover-tooltip"><header class="tooltip__header"><strong>데이터</strong></header><footer class="tooltip__footer"><div class="ft-left">정보량 증감률</div><div class="ft-right"><i class="icon-svg-triangle-up"></i><span class="percent">292</span></div></footer><div class="tooltip__arrow"></div></aside></div></td>
+      <td class="text-center" data-keyword="데이터" data-table-type="데이터"><div class="position-relative">데이터<button class="c-table--click-menu"><i class="icon-svg-click-menu"></i></button><aside class="c-table--hover-tooltip"><header class="tooltip__header"><strong>데이터</strong></header><footer class="tooltip__footer"><div class="ft-left">정보량 증감률</div><div class="ft-right"><i class="icon-svg-triangle-up"></i><span class="percent">292</span></div></footer><div class="tooltip__arrow"></div></aside></div></td>
+      <td class="text-center" data-keyword="데이터" data-table-type="데이터"><div class="position-relative">데이터<button class="c-table--click-menu"><i class="icon-svg-click-menu"></i></button><aside class="c-table--hover-tooltip"><header class="tooltip__header"><strong>데이터</strong></header><footer class="tooltip__footer"><div class="ft-left">정보량 증감률</div><div class="ft-right"><i class="icon-svg-triangle-up"></i><span class="percent">292</span></div></footer><div class="tooltip__arrow"></div></aside></div></td>
+    </tr>
+    <tr>
+      <td class="text-center">28</td>
+      <td class="text-center" data-keyword="데이터" data-table-type="데이터"><div class="position-relative">데이터<button class="c-table--click-menu"><i class="icon-svg-click-menu"></i></button><aside class="c-table--hover-tooltip"><header class="tooltip__header"><strong>데이터</strong></header><footer class="tooltip__footer"><div class="ft-left">정보량 증감률</div><div class="ft-right"><i class="icon-svg-triangle-up"></i><span class="percent">292</span></div></footer><div class="tooltip__arrow"></div></aside></div></td>
+      <td class="text-center" data-keyword="데이터" data-table-type="데이터"><div class="position-relative">데이터<button class="c-table--click-menu"><i class="icon-svg-click-menu"></i></button><aside class="c-table--hover-tooltip"><header class="tooltip__header"><strong>데이터</strong></header><footer class="tooltip__footer"><div class="ft-left">정보량 증감률</div><div class="ft-right"><i class="icon-svg-triangle-up"></i><span class="percent">292</span></div></footer><div class="tooltip__arrow"></div></aside></div></td>
+      <td class="text-center" data-keyword="데이터" data-table-type="데이터"><div class="position-relative">데이터<button class="c-table--click-menu"><i class="icon-svg-click-menu"></i></button><aside class="c-table--hover-tooltip"><header class="tooltip__header"><strong>데이터</strong></header><footer class="tooltip__footer"><div class="ft-left">정보량 증감률</div><div class="ft-right"><i class="icon-svg-triangle-up"></i><span class="percent">292</span></div></footer><div class="tooltip__arrow"></div></aside></div></td>
+      <td class="text-center" data-keyword="데이터" data-table-type="데이터"><div class="position-relative">데이터<button class="c-table--click-menu"><i class="icon-svg-click-menu"></i></button><aside class="c-table--hover-tooltip"><header class="tooltip__header"><strong>데이터</strong></header><footer class="tooltip__footer"><div class="ft-left">정보량 증감률</div><div class="ft-right"><i class="icon-svg-triangle-up"></i><span class="percent">292</span></div></footer><div class="tooltip__arrow"></div></aside></div></td>
+      <td class="text-center" data-keyword="데이터" data-table-type="데이터"><div class="position-relative">데이터<button class="c-table--click-menu"><i class="icon-svg-click-menu"></i></button><aside class="c-table--hover-tooltip"><header class="tooltip__header"><strong>데이터</strong></header><footer class="tooltip__footer"><div class="ft-left">정보량 증감률</div><div class="ft-right"><i class="icon-svg-triangle-up"></i><span class="percent">292</span></div></footer><div class="tooltip__arrow"></div></aside></div></td>
+      <td class="text-center" data-keyword="데이터" data-table-type="데이터"><div class="position-relative">데이터<button class="c-table--click-menu"><i class="icon-svg-click-menu"></i></button><aside class="c-table--hover-tooltip"><header class="tooltip__header"><strong>데이터</strong></header><footer class="tooltip__footer"><div class="ft-left">정보량 증감률</div><div class="ft-right"><i class="icon-svg-triangle-up"></i><span class="percent">292</span></div></footer><div class="tooltip__arrow"></div></aside></div></td>
+    </tr>
+    <tr>
+      <td class="text-center">29</td>
+      <td class="text-center" data-keyword="데이터" data-table-type="데이터"><div class="position-relative">데이터<button class="c-table--click-menu"><i class="icon-svg-click-menu"></i></button><aside class="c-table--hover-tooltip"><header class="tooltip__header"><strong>데이터</strong></header><footer class="tooltip__footer"><div class="ft-left">정보량 증감률</div><div class="ft-right"><i class="icon-svg-triangle-up"></i><span class="percent">292</span></div></footer><div class="tooltip__arrow"></div></aside></div></td>
+      <td class="text-center" data-keyword="데이터" data-table-type="데이터"><div class="position-relative">데이터<button class="c-table--click-menu"><i class="icon-svg-click-menu"></i></button><aside class="c-table--hover-tooltip"><header class="tooltip__header"><strong>데이터</strong></header><footer class="tooltip__footer"><div class="ft-left">정보량 증감률</div><div class="ft-right"><i class="icon-svg-triangle-up"></i><span class="percent">292</span></div></footer><div class="tooltip__arrow"></div></aside></div></td>
+      <td class="text-center" data-keyword="데이터" data-table-type="데이터"><div class="position-relative">데이터<button class="c-table--click-menu"><i class="icon-svg-click-menu"></i></button><aside class="c-table--hover-tooltip"><header class="tooltip__header"><strong>데이터</strong></header><footer class="tooltip__footer"><div class="ft-left">정보량 증감률</div><div class="ft-right"><i class="icon-svg-triangle-up"></i><span class="percent">292</span></div></footer><div class="tooltip__arrow"></div></aside></div></td>
+      <td class="text-center" data-keyword="데이터" data-table-type="데이터"><div class="position-relative">데이터<button class="c-table--click-menu"><i class="icon-svg-click-menu"></i></button><aside class="c-table--hover-tooltip"><header class="tooltip__header"><strong>데이터</strong></header><footer class="tooltip__footer"><div class="ft-left">정보량 증감률</div><div class="ft-right"><i class="icon-svg-triangle-up"></i><span class="percent">292</span></div></footer><div class="tooltip__arrow"></div></aside></div></td>
+      <td class="text-center" data-keyword="데이터" data-table-type="데이터"><div class="position-relative">데이터<button class="c-table--click-menu"><i class="icon-svg-click-menu"></i></button><aside class="c-table--hover-tooltip"><header class="tooltip__header"><strong>데이터</strong></header><footer class="tooltip__footer"><div class="ft-left">정보량 증감률</div><div class="ft-right"><i class="icon-svg-triangle-up"></i><span class="percent">292</span></div></footer><div class="tooltip__arrow"></div></aside></div></td>
+      <td class="text-center" data-keyword="데이터" data-table-type="데이터"><div class="position-relative">데이터<button class="c-table--click-menu"><i class="icon-svg-click-menu"></i></button><aside class="c-table--hover-tooltip"><header class="tooltip__header"><strong>데이터</strong></header><footer class="tooltip__footer"><div class="ft-left">정보량 증감률</div><div class="ft-right"><i class="icon-svg-triangle-up"></i><span class="percent">292</span></div></footer><div class="tooltip__arrow"></div></aside></div></td>
+    </tr>
+    <tr>
+      <td class="text-center">30</td>
+      <td class="text-center" data-keyword="데이터" data-table-type="데이터"><div class="position-relative">데이터<button class="c-table--click-menu"><i class="icon-svg-click-menu"></i></button><aside class="c-table--hover-tooltip"><header class="tooltip__header"><strong>데이터</strong></header><footer class="tooltip__footer"><div class="ft-left">정보량 증감률</div><div class="ft-right"><i class="icon-svg-triangle-up"></i><span class="percent">292</span></div></footer><div class="tooltip__arrow"></div></aside></div></td>
+      <td class="text-center" data-keyword="데이터" data-table-type="데이터"><div class="position-relative">데이터<button class="c-table--click-menu"><i class="icon-svg-click-menu"></i></button><aside class="c-table--hover-tooltip"><header class="tooltip__header"><strong>데이터</strong></header><footer class="tooltip__footer"><div class="ft-left">정보량 증감률</div><div class="ft-right"><i class="icon-svg-triangle-up"></i><span class="percent">292</span></div></footer><div class="tooltip__arrow"></div></aside></div></td>
+      <td class="text-center" data-keyword="데이터" data-table-type="데이터"><div class="position-relative">데이터<button class="c-table--click-menu"><i class="icon-svg-click-menu"></i></button><aside class="c-table--hover-tooltip"><header class="tooltip__header"><strong>데이터</strong></header><footer class="tooltip__footer"><div class="ft-left">정보량 증감률</div><div class="ft-right"><i class="icon-svg-triangle-up"></i><span class="percent">292</span></div></footer><div class="tooltip__arrow"></div></aside></div></td>
+      <td class="text-center" data-keyword="데이터" data-table-type="데이터"><div class="position-relative">데이터<button class="c-table--click-menu"><i class="icon-svg-click-menu"></i></button><aside class="c-table--hover-tooltip"><header class="tooltip__header"><strong>데이터</strong></header><footer class="tooltip__footer"><div class="ft-left">정보량 증감률</div><div class="ft-right"><i class="icon-svg-triangle-up"></i><span class="percent">292</span></div></footer><div class="tooltip__arrow"></div></aside></div></td>
+      <td class="text-center" data-keyword="데이터" data-table-type="데이터"><div class="position-relative">데이터<button class="c-table--click-menu"><i class="icon-svg-click-menu"></i></button><aside class="c-table--hover-tooltip"><header class="tooltip__header"><strong>데이터</strong></header><footer class="tooltip__footer"><div class="ft-left">정보량 증감률</div><div class="ft-right"><i class="icon-svg-triangle-up"></i><span class="percent">292</span></div></footer><div class="tooltip__arrow"></div></aside></div></td>
+      <td class="text-center" data-keyword="데이터" data-table-type="데이터"><div class="position-relative">데이터<button class="c-table--click-menu"><i class="icon-svg-click-menu"></i></button><aside class="c-table--hover-tooltip"><header class="tooltip__header"><strong>데이터</strong></header><footer class="tooltip__footer"><div class="ft-left">정보량 증감률</div><div class="ft-right"><i class="icon-svg-triangle-up"></i><span class="percent">292</span></div></footer><div class="tooltip__arrow"></div></aside></div></td>
+    </tr>
+  </tbody>
+</table>
+            </div>
           </main>
         </article>
       </main>
@@ -1212,7 +1623,7 @@
               <span class="txt">검색 결과 <span class="color-primary">365</span>건</span>
             </header>
             
-            <main class="l-article-body mt-12" data-is-empty="false" data-is-before-search="true">
+            <main class="l-article-body mt-12" data-is-empty="false" data-is-before-search="false">
               <table class="c-table c-table--hover" data-thead-sticky="true">
                 <colgroup>
                   <col width="16%">
