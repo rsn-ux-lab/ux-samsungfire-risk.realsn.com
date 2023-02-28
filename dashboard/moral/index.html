@@ -1,5 +1,5 @@
 
-<!-- reBuild :  20230228080351 -->
+<!-- reBuild :  20230228100714 -->
 
 <!DOCTYPE html>
 <html lang="ko">
@@ -16,13 +16,13 @@
   <link rel="shortcut icon" href="/dashboard/assets/img/favicon.ico" />
 
   <!-- STYLE -->
-    <link rel="stylesheet" href="/dashboard/assets/css/style.css?v=20230228080351">
+    <link rel="stylesheet" href="/dashboard/assets/css/style.css?v=20230228100714">
 
   <!-- JS -->
-  <script src="/dashboard/assets/js/config/files.js?v=20230228080351" defer></script>
-  <script src="/dashboard/assets/js/libs.js?v=20230228080351" defer></script>
-  <script src="/dashboard/assets/js/modules.js?v=20230228080351" defer></script>
-  <script src="/dashboard/assets/js/config/router.js?v=20230228080351" defer></script>
+  <script src="/dashboard/assets/js/config/files.js?v=20230228100714" defer></script>
+  <script src="/dashboard/assets/js/libs.js?v=20230228100714" defer></script>
+  <script src="/dashboard/assets/js/modules.js?v=20230228100714" defer></script>
+  <script src="/dashboard/assets/js/config/router.js?v=20230228100714" defer></script>
 </head>
 
 <body>
@@ -249,7 +249,7 @@
         <main class="l-article-body pl-24 pb-24">
           <dl class="form-search-list">
             <dt class="form-search-list__title form-search-list__title--has-required">검색기간</dt>
-            <dd class="form-search-list__item">2023-01-01 ~ 2023-02-01</span></dd>
+            <dd class="form-search-list__item"><span>2023-01-01 ~ 2023-02-01</span></dd>
             <dt class="form-search-list__title form-search-list__title--has-required">채널</dt>
             <dd class="form-search-list__item" data-tooltip-text="지식인, 카페, 커뮤니티, 유튜브, 인스타그램"><span class="clamp-1 word-keep">지식인, 카페, 커뮤니티, 유튜브, 인스타그램</span></dd>
             <dt class="form-search-list__title form-search-list__title--has-required">글유형</dt>
@@ -2629,7 +2629,7 @@
             <div class="col-18">
               <article class="l-article">
                   <main class="l-article-body">
-                      <table class="c-table c-table--bordered">
+                      <table class="c-table c-table--bordered c-table--border-top c-table--th-border-bottom-white">
                         <colgroup>
                           <col width="20%">
                           <col width="*">
@@ -2678,7 +2678,7 @@
           <div class="row">
             <div class="col-18">
               <article class="l-article border mt-12 p-12" data-article="의료기관정보량" >
-                <header class="l-article-header d-flex">
+                <header class="l-article-header d-flex mb-16">
                   <fieldset class="form-fieldset d-inline-flex ml-auto" data-fieldset="일주월별">
                     <div class="form-row form-switch-button" data-row="일별">
                       <input type="radio" id="radioSortDatePopupInfos11" name="radioSortDatePopupInfos1">
@@ -2701,7 +2701,7 @@
                   </fieldset>
                 </header>
                 <main class="l-article-body">
-                  <div class="js-chart"  style="height: 33.2rem;"></div>
+                  <div class="js-chart"  style="height: 26.5rem;"></div>
                 </main>
               </article>
             </div>
@@ -2731,198 +2731,200 @@
                   </div>
                 </header>
                 <main class="l-article-body mt-24">
-                    <table class="c-table c-table--hover" data-thead-sticky="true">
-                      <colgroup>
-                        <col style="width:8rem">
-                        <col style="width:6.5rem">
-                        <col style="width:7.5rem">
-                        <col width="*">
-                        <col style="width:9rem">
-                      </colgroup>
-                      <thead>
-                        <tr>
-                          <th>글유형</th>
-                          <th>채널</th>
-                          <th>출처</th>
-                          <th>원문</th>
-                          <th>
-                            <p>수집일</p>
-                            <fieldset class="form-fieldset" data-fieldset="정렬">
-                              <div class="form-row form-check-button" data-row="오름차순">
-                                <input id="radioModalInfosSort1" name="radioModalInfosSort" type="radio" />
-                                <label for="radioModalInfosSort1" title="오름차순"><i class="icon-svg icon-svg-chevron-up" aria-hidden="true"></i></label>
+                  <div class="scroll-container-y border-bottom" style="height: 55.7rem">
+                    <table class="c-table c-table--hover c-table--pad-04" data-thead-sticky="true">
+                        <colgroup>
+                          <col style="width:8rem">
+                          <col style="width:6.5rem">
+                          <col style="width:7.5rem">
+                          <col width="*">
+                          <col style="width:9rem">
+                        </colgroup>
+                        <thead>
+                          <tr>
+                            <th>글유형</th>
+                            <th>채널</th>
+                            <th>출처</th>
+                            <th>원문</th>
+                            <th>
+                              <p>수집일</p>
+                              <fieldset class="form-fieldset" data-fieldset="정렬">
+                                <div class="form-row form-check-button" data-row="오름차순">
+                                  <input id="radioModalInfosSort1" name="radioModalInfosSort" type="radio" />
+                                  <label for="radioModalInfosSort1" title="오름차순"><i class="icon-svg icon-svg-chevron-up" aria-hidden="true"></i></label>
+                                </div>
+                                <div class="form-row form-check-button" data-row="내림차순">
+                                  <input id="radioModalInfosSort2" name="radioModalInfosSort" type="radio" />
+                                  <label for="radioModalInfosSort2" title="내림차순"><i class="icon-svg icon-svg-chevron-down" aria-hidden="true"></i></label>
+                                </div>
+                              </fieldset>
+                            </th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr>
+                            <td class="text-center"><p class="clamp-2">의료기관홍보</p></td>
+                            <td class="text-center"><p class="clamp-2">카페</p></td>
+                            <td class="text-center"><p class="clamp-2">출처</p></td>
+                            <td>
+                              <div class="tooltip js-tooltip-fixed">
+                                <a href="#" class="link text-start" target="_blank"><strong class="clamp-1">제목제목제목</strong></a>
+                                <a href="#" class="link text-start" target="_blank"><span class="clamp-1">내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용</span></a>
+                                <aside class="tooltip-text" style="width: 40rem">
+                                  <p class="tooltip-text__title"><strong class="clamp-2">말풍선 제목은 최대 2줄까지 말줄임 됩니다.</strong></p>
+                                  <p class="tooltip-text__body"><span class="clamp-6">말풍선 본문은 최대 6줄까지 말줄임 됩니다. 그 이상되면 모달창 범위를 벗어나 내용을 확인할 수 없습니다. 말풍선 본문은 최대 6줄까지 말줄임 됩니다. 그 이상되면 모달창 범위를 벗어나 내용을 확인할 수 없습니다. 말풍선 본문은 최대 6줄까지 말줄임 됩니다. 그 이상되면 모달창 범위를 벗어나 내용을 확인할 수 없습니다. 말풍선 본문은 최대 6줄까지 말줄임 됩니다. 그 이상되면 모달창 범위를 벗어나 내용을 확인할 수 없습니다.</span></p>
+                                </aside>
                               </div>
-                              <div class="form-row form-check-button" data-row="내림차순">
-                                <input id="radioModalInfosSort2" name="radioModalInfosSort" type="radio" />
-                                <label for="radioModalInfosSort2" title="내림차순"><i class="icon-svg icon-svg-chevron-down" aria-hidden="true"></i></label>
+                            </td>
+                            <td class="text-center">2023-03-19</td>
+                          </tr>
+                          <tr>
+                            <td class="text-center"><p class="clamp-2">의료기관홍보</p></td>
+                            <td class="text-center"><p class="clamp-2">카페</p></td>
+                            <td class="text-center"><p class="clamp-2">출처</p></td>
+                            <td>
+                              <div class="tooltip js-tooltip-fixed">
+                                <a href="#" class="link" target="_blank"><strong class="clamp-1">제목제목제목</strong></a>
+                                <a href="#" class="link" target="_blank"><span class="clamp-1">내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용</span></a>
+                                <aside class="tooltip-text" style="width: 40rem">
+                                  <p class="tooltip-text__title"><strong class="clamp-2">말풍선 제목은 최대 2줄까지 말줄임 됩니다.</strong></p>
+                                  <p class="tooltip-text__body"><span class="clamp-6">말풍선 본문은 최대 6줄까지 말줄임 됩니다. 그 이상되면 모달창 범위를 벗어나 내용을 확인할 수 없습니다. 말풍선 본문은 최대 6줄까지 말줄임 됩니다. 그 이상되면 모달창 범위를 벗어나 내용을 확인할 수 없습니다. 말풍선 본문은 최대 6줄까지 말줄임 됩니다. 그 이상되면 모달창 범위를 벗어나 내용을 확인할 수 없습니다. 말풍선 본문은 최대 6줄까지 말줄임 됩니다. 그 이상되면 모달창 범위를 벗어나 내용을 확인할 수 없습니다.</span></p>
+                                </aside>
                               </div>
-                            </fieldset>
-                          </th>
-                        </tr>
-                      </thead>
-                      <tbody>
-                        <tr>
-                          <td class="text-center"><p class="clamp-2">의료기관홍보</p></td>
-                          <td class="text-center"><p class="clamp-2">카페</p></td>
-                          <td class="text-center"><p class="clamp-2">출처</p></td>
-                          <td>
-                            <div class="tooltip js-tooltip-fixed">
-                              <a href="#" class="link text-start" target="_blank"><strong class="clamp-1">제목제목제목</strong></a>
-                              <a href="#" class="link text-start" target="_blank"><span class="clamp-1">내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용</span></a>
-                              <aside class="tooltip-text" style="width: 40rem">
-                                <p class="tooltip-text__title"><strong class="clamp-2">말풍선 제목은 최대 2줄까지 말줄임 됩니다.</strong></p>
-                                <p class="tooltip-text__body"><span class="clamp-6">말풍선 본문은 최대 6줄까지 말줄임 됩니다. 그 이상되면 모달창 범위를 벗어나 내용을 확인할 수 없습니다. 말풍선 본문은 최대 6줄까지 말줄임 됩니다. 그 이상되면 모달창 범위를 벗어나 내용을 확인할 수 없습니다. 말풍선 본문은 최대 6줄까지 말줄임 됩니다. 그 이상되면 모달창 범위를 벗어나 내용을 확인할 수 없습니다. 말풍선 본문은 최대 6줄까지 말줄임 됩니다. 그 이상되면 모달창 범위를 벗어나 내용을 확인할 수 없습니다.</span></p>
-                              </aside>
-                            </div>
-                          </td>
-                          <td class="text-center">2023-03-19</td>
-                        </tr>
-                        <tr>
-                          <td class="text-center"><p class="clamp-2">의료기관홍보</p></td>
-                          <td class="text-center"><p class="clamp-2">카페</p></td>
-                          <td class="text-center"><p class="clamp-2">출처</p></td>
-                          <td>
-                            <div class="tooltip js-tooltip-fixed">
-                              <a href="#" class="link" target="_blank"><strong class="clamp-1">제목제목제목</strong></a>
-                              <a href="#" class="link" target="_blank"><span class="clamp-1">내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용</span></a>
-                              <aside class="tooltip-text" style="width: 40rem">
-                                <p class="tooltip-text__title"><strong class="clamp-2">말풍선 제목은 최대 2줄까지 말줄임 됩니다.</strong></p>
-                                <p class="tooltip-text__body"><span class="clamp-6">말풍선 본문은 최대 6줄까지 말줄임 됩니다. 그 이상되면 모달창 범위를 벗어나 내용을 확인할 수 없습니다. 말풍선 본문은 최대 6줄까지 말줄임 됩니다. 그 이상되면 모달창 범위를 벗어나 내용을 확인할 수 없습니다. 말풍선 본문은 최대 6줄까지 말줄임 됩니다. 그 이상되면 모달창 범위를 벗어나 내용을 확인할 수 없습니다. 말풍선 본문은 최대 6줄까지 말줄임 됩니다. 그 이상되면 모달창 범위를 벗어나 내용을 확인할 수 없습니다.</span></p>
-                              </aside>
-                            </div>
-                          </td>
-                          <td class="text-center">2023-03-19</td>
-                        </tr>
-                        <tr>
-                          <td class="text-center"><p class="clamp-2">의료기관홍보</p></td>
-                          <td class="text-center"><p class="clamp-2">카페</p></td>
-                          <td class="text-center"><p class="clamp-2">출처</p></td>
-                          <td>
-                            <div class="tooltip js-tooltip-fixed">
-                              <a href="#" class="link" target="_blank"><strong class="clamp-1">제목제목제목</strong></a>
-                              <a href="#" class="link" target="_blank"><span class="clamp-1">내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용</span></a>
-                              <aside class="tooltip-text" style="width: 40rem">
-                                <p class="tooltip-text__title"><strong class="clamp-2">말풍선 제목은 최대 2줄까지 말줄임 됩니다.</strong></p>
-                                <p class="tooltip-text__body"><span class="clamp-6">말풍선 본문은 최대 6줄까지 말줄임 됩니다. 그 이상되면 모달창 범위를 벗어나 내용을 확인할 수 없습니다. 말풍선 본문은 최대 6줄까지 말줄임 됩니다. 그 이상되면 모달창 범위를 벗어나 내용을 확인할 수 없습니다. 말풍선 본문은 최대 6줄까지 말줄임 됩니다. 그 이상되면 모달창 범위를 벗어나 내용을 확인할 수 없습니다. 말풍선 본문은 최대 6줄까지 말줄임 됩니다. 그 이상되면 모달창 범위를 벗어나 내용을 확인할 수 없습니다.</span></p>
-                              </aside>
-                            </div>
-                          </td>
-                          <td class="text-center">2023-03-19</td>
-                        </tr>
-                        <tr>
-                          <td class="text-center"><p class="clamp-2">의료기관홍보</p></td>
-                          <td class="text-center"><p class="clamp-2">카페</p></td>
-                          <td class="text-center"><p class="clamp-2">출처</p></td>
-                          <td>
-                            <div class="tooltip js-tooltip-fixed">
-                              <a href="#" class="link" target="_blank"><strong class="clamp-1">제목제목제목</strong></a>
-                              <a href="#" class="link" target="_blank"><span class="clamp-1">내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용</span></a>
-                              <aside class="tooltip-text" style="width: 40rem">
-                                <p class="tooltip-text__title"><strong class="clamp-2">말풍선 제목은 최대 2줄까지 말줄임 됩니다.</strong></p>
-                                <p class="tooltip-text__body"><span class="clamp-6">말풍선 본문은 최대 6줄까지 말줄임 됩니다. 그 이상되면 모달창 범위를 벗어나 내용을 확인할 수 없습니다. 말풍선 본문은 최대 6줄까지 말줄임 됩니다. 그 이상되면 모달창 범위를 벗어나 내용을 확인할 수 없습니다. 말풍선 본문은 최대 6줄까지 말줄임 됩니다. 그 이상되면 모달창 범위를 벗어나 내용을 확인할 수 없습니다. 말풍선 본문은 최대 6줄까지 말줄임 됩니다. 그 이상되면 모달창 범위를 벗어나 내용을 확인할 수 없습니다.</span></p>
-                              </aside>
-                            </div>
-                          </td>
-                          <td class="text-center">2023-03-19</td>
-                        </tr>
-                        <tr>
-                          <td class="text-center"><p class="clamp-2">의료기관홍보</p></td>
-                          <td class="text-center"><p class="clamp-2">카페</p></td>
-                          <td class="text-center"><p class="clamp-2">출처</p></td>
-                          <td>
-                            <div class="tooltip js-tooltip-fixed">
-                              <a href="#" class="link" target="_blank"><strong class="clamp-1">제목제목제목</strong></a>
-                              <a href="#" class="link" target="_blank"><span class="clamp-1">내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용</span></a>
-                              <aside class="tooltip-text" style="width: 40rem">
-                                <p class="tooltip-text__title"><strong class="clamp-2">말풍선 제목은 최대 2줄까지 말줄임 됩니다.</strong></p>
-                                <p class="tooltip-text__body"><span class="clamp-6">말풍선 본문은 최대 6줄까지 말줄임 됩니다. 그 이상되면 모달창 범위를 벗어나 내용을 확인할 수 없습니다. 말풍선 본문은 최대 6줄까지 말줄임 됩니다. 그 이상되면 모달창 범위를 벗어나 내용을 확인할 수 없습니다. 말풍선 본문은 최대 6줄까지 말줄임 됩니다. 그 이상되면 모달창 범위를 벗어나 내용을 확인할 수 없습니다. 말풍선 본문은 최대 6줄까지 말줄임 됩니다. 그 이상되면 모달창 범위를 벗어나 내용을 확인할 수 없습니다.</span></p>
-                              </aside>
-                            </div>
-                          </td>
-                          <td class="text-center">2023-03-19</td>
-                        </tr>
-                        <tr>
-                          <td class="text-center"><p class="clamp-2">의료기관홍보</p></td>
-                          <td class="text-center"><p class="clamp-2">카페</p></td>
-                          <td class="text-center"><p class="clamp-2">출처</p></td>
-                          <td>
-                            <div class="tooltip js-tooltip-fixed">
-                              <a href="#" class="link" target="_blank"><strong class="clamp-1">제목제목제목</strong></a>
-                              <a href="#" class="link" target="_blank"><span class="clamp-1">내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용</span></a>
-                              <aside class="tooltip-text" style="width: 40rem">
-                                <p class="tooltip-text__title"><strong class="clamp-2">말풍선 제목은 최대 2줄까지 말줄임 됩니다.</strong></p>
-                                <p class="tooltip-text__body"><span class="clamp-6">말풍선 본문은 최대 6줄까지 말줄임 됩니다. 그 이상되면 모달창 범위를 벗어나 내용을 확인할 수 없습니다. 말풍선 본문은 최대 6줄까지 말줄임 됩니다. 그 이상되면 모달창 범위를 벗어나 내용을 확인할 수 없습니다. 말풍선 본문은 최대 6줄까지 말줄임 됩니다. 그 이상되면 모달창 범위를 벗어나 내용을 확인할 수 없습니다. 말풍선 본문은 최대 6줄까지 말줄임 됩니다. 그 이상되면 모달창 범위를 벗어나 내용을 확인할 수 없습니다.</span></p>
-                              </aside>
-                            </div>
-                          </td>
-                          <td class="text-center">2023-03-19</td>
-                        </tr>
-                        <tr>
-                          <td class="text-center"><p class="clamp-2">의료기관홍보</p></td>
-                          <td class="text-center"><p class="clamp-2">카페</p></td>
-                          <td class="text-center"><p class="clamp-2">출처</p></td>
-                          <td>
-                            <div class="tooltip js-tooltip-fixed">
-                              <a href="#" class="link" target="_blank"><strong class="clamp-1">제목제목제목</strong></a>
-                              <a href="#" class="link" target="_blank"><span class="clamp-1">내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용</span></a>
-                              <aside class="tooltip-text" style="width: 40rem">
-                                <p class="tooltip-text__title"><strong class="clamp-2">말풍선 제목은 최대 2줄까지 말줄임 됩니다.</strong></p>
-                                <p class="tooltip-text__body"><span class="clamp-6">말풍선 본문은 최대 6줄까지 말줄임 됩니다. 그 이상되면 모달창 범위를 벗어나 내용을 확인할 수 없습니다. 말풍선 본문은 최대 6줄까지 말줄임 됩니다. 그 이상되면 모달창 범위를 벗어나 내용을 확인할 수 없습니다. 말풍선 본문은 최대 6줄까지 말줄임 됩니다. 그 이상되면 모달창 범위를 벗어나 내용을 확인할 수 없습니다. 말풍선 본문은 최대 6줄까지 말줄임 됩니다. 그 이상되면 모달창 범위를 벗어나 내용을 확인할 수 없습니다.</span></p>
-                              </aside>
-                            </div>
-                          </td>
-                          <td class="text-center">2023-03-19</td>
-                        </tr>
-                        <tr>
-                          <td class="text-center"><p class="clamp-2">의료기관홍보</p></td>
-                          <td class="text-center"><p class="clamp-2">카페</p></td>
-                          <td class="text-center"><p class="clamp-2">출처</p></td>
-                          <td>
-                            <div class="tooltip js-tooltip-fixed">
-                              <a href="#" class="link" target="_blank"><strong class="clamp-1">제목제목제목</strong></a>
-                              <a href="#" class="link" target="_blank"><span class="clamp-1">내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용</span></a>
-                              <aside class="tooltip-text" style="width: 40rem">
-                                <p class="tooltip-text__title"><strong class="clamp-2">말풍선 제목은 최대 2줄까지 말줄임 됩니다.</strong></p>
-                                <p class="tooltip-text__body"><span class="clamp-6">말풍선 본문은 최대 6줄까지 말줄임 됩니다. 그 이상되면 모달창 범위를 벗어나 내용을 확인할 수 없습니다. 말풍선 본문은 최대 6줄까지 말줄임 됩니다. 그 이상되면 모달창 범위를 벗어나 내용을 확인할 수 없습니다. 말풍선 본문은 최대 6줄까지 말줄임 됩니다. 그 이상되면 모달창 범위를 벗어나 내용을 확인할 수 없습니다. 말풍선 본문은 최대 6줄까지 말줄임 됩니다. 그 이상되면 모달창 범위를 벗어나 내용을 확인할 수 없습니다.</span></p>
-                              </aside>
-                            </div>
-                          </td>
-                          <td class="text-center">2023-03-19</td>
-                        </tr>
-                        <tr>
-                          <td class="text-center"><p class="clamp-2">의료기관홍보</p></td>
-                          <td class="text-center"><p class="clamp-2">카페</p></td>
-                          <td class="text-center"><p class="clamp-2">출처</p></td>
-                          <td>
-                            <div class="tooltip js-tooltip-fixed">
-                              <a href="#" class="link" target="_blank"><strong class="clamp-1">제목제목제목</strong></a>
-                              <a href="#" class="link" target="_blank"><span class="clamp-1">내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용</span></a>
-                              <aside class="tooltip-text" style="width: 40rem">
-                                <p class="tooltip-text__title"><strong class="clamp-2">말풍선 제목은 최대 2줄까지 말줄임 됩니다.</strong></p>
-                                <p class="tooltip-text__body"><span class="clamp-6">말풍선 본문은 최대 6줄까지 말줄임 됩니다. 그 이상되면 모달창 범위를 벗어나 내용을 확인할 수 없습니다. 말풍선 본문은 최대 6줄까지 말줄임 됩니다. 그 이상되면 모달창 범위를 벗어나 내용을 확인할 수 없습니다. 말풍선 본문은 최대 6줄까지 말줄임 됩니다. 그 이상되면 모달창 범위를 벗어나 내용을 확인할 수 없습니다. 말풍선 본문은 최대 6줄까지 말줄임 됩니다. 그 이상되면 모달창 범위를 벗어나 내용을 확인할 수 없습니다.</span></p>
-                              </aside>
-                            </div>
-                          </td>
-                          <td class="text-center">2023-03-19</td>
-                        </tr>
-                        <tr>
-                          <td class="text-center"><p class="clamp-2">의료기관홍보</p></td>
-                          <td class="text-center"><p class="clamp-2">카페</p></td>
-                          <td class="text-center"><p class="clamp-2">출처</p></td>
-                          <td>
-                            <div class="tooltip js-tooltip-fixed">
-                              <a href="#" class="link" target="_blank"><strong class="clamp-1">제목제목제목</strong></a>
-                              <a href="#" class="link" target="_blank"><span class="clamp-1">내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용</span></a>
-                              <aside class="tooltip-text" style="width: 40rem">
-                                <p class="tooltip-text__title"><strong class="clamp-2">말풍선 제목은 최대 2줄까지 말줄임 됩니다.</strong></p>
-                                <p class="tooltip-text__body"><span class="clamp-6">말풍선 본문은 최대 6줄까지 말줄임 됩니다. 그 이상되면 모달창 범위를 벗어나 내용을 확인할 수 없습니다. 말풍선 본문은 최대 6줄까지 말줄임 됩니다. 그 이상되면 모달창 범위를 벗어나 내용을 확인할 수 없습니다. 말풍선 본문은 최대 6줄까지 말줄임 됩니다. 그 이상되면 모달창 범위를 벗어나 내용을 확인할 수 없습니다. 말풍선 본문은 최대 6줄까지 말줄임 됩니다. 그 이상되면 모달창 범위를 벗어나 내용을 확인할 수 없습니다.</span></p>
-                              </aside>
-                            </div>
-                          </td>
-                          <td class="text-center">2023-03-19</td>
-                        </tr>                        
-                      </tbody>
+                            </td>
+                            <td class="text-center">2023-03-19</td>
+                          </tr>
+                          <tr>
+                            <td class="text-center"><p class="clamp-2">의료기관홍보</p></td>
+                            <td class="text-center"><p class="clamp-2">카페</p></td>
+                            <td class="text-center"><p class="clamp-2">출처</p></td>
+                            <td>
+                              <div class="tooltip js-tooltip-fixed">
+                                <a href="#" class="link" target="_blank"><strong class="clamp-1">제목제목제목</strong></a>
+                                <a href="#" class="link" target="_blank"><span class="clamp-1">내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용</span></a>
+                                <aside class="tooltip-text" style="width: 40rem">
+                                  <p class="tooltip-text__title"><strong class="clamp-2">말풍선 제목은 최대 2줄까지 말줄임 됩니다.</strong></p>
+                                  <p class="tooltip-text__body"><span class="clamp-6">말풍선 본문은 최대 6줄까지 말줄임 됩니다. 그 이상되면 모달창 범위를 벗어나 내용을 확인할 수 없습니다. 말풍선 본문은 최대 6줄까지 말줄임 됩니다. 그 이상되면 모달창 범위를 벗어나 내용을 확인할 수 없습니다. 말풍선 본문은 최대 6줄까지 말줄임 됩니다. 그 이상되면 모달창 범위를 벗어나 내용을 확인할 수 없습니다. 말풍선 본문은 최대 6줄까지 말줄임 됩니다. 그 이상되면 모달창 범위를 벗어나 내용을 확인할 수 없습니다.</span></p>
+                                </aside>
+                              </div>
+                            </td>
+                            <td class="text-center">2023-03-19</td>
+                          </tr>
+                          <tr>
+                            <td class="text-center"><p class="clamp-2">의료기관홍보</p></td>
+                            <td class="text-center"><p class="clamp-2">카페</p></td>
+                            <td class="text-center"><p class="clamp-2">출처</p></td>
+                            <td>
+                              <div class="tooltip js-tooltip-fixed">
+                                <a href="#" class="link" target="_blank"><strong class="clamp-1">제목제목제목</strong></a>
+                                <a href="#" class="link" target="_blank"><span class="clamp-1">내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용</span></a>
+                                <aside class="tooltip-text" style="width: 40rem">
+                                  <p class="tooltip-text__title"><strong class="clamp-2">말풍선 제목은 최대 2줄까지 말줄임 됩니다.</strong></p>
+                                  <p class="tooltip-text__body"><span class="clamp-6">말풍선 본문은 최대 6줄까지 말줄임 됩니다. 그 이상되면 모달창 범위를 벗어나 내용을 확인할 수 없습니다. 말풍선 본문은 최대 6줄까지 말줄임 됩니다. 그 이상되면 모달창 범위를 벗어나 내용을 확인할 수 없습니다. 말풍선 본문은 최대 6줄까지 말줄임 됩니다. 그 이상되면 모달창 범위를 벗어나 내용을 확인할 수 없습니다. 말풍선 본문은 최대 6줄까지 말줄임 됩니다. 그 이상되면 모달창 범위를 벗어나 내용을 확인할 수 없습니다.</span></p>
+                                </aside>
+                              </div>
+                            </td>
+                            <td class="text-center">2023-03-19</td>
+                          </tr>
+                          <tr>
+                            <td class="text-center"><p class="clamp-2">의료기관홍보</p></td>
+                            <td class="text-center"><p class="clamp-2">카페</p></td>
+                            <td class="text-center"><p class="clamp-2">출처</p></td>
+                            <td>
+                              <div class="tooltip js-tooltip-fixed">
+                                <a href="#" class="link" target="_blank"><strong class="clamp-1">제목제목제목</strong></a>
+                                <a href="#" class="link" target="_blank"><span class="clamp-1">내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용</span></a>
+                                <aside class="tooltip-text" style="width: 40rem">
+                                  <p class="tooltip-text__title"><strong class="clamp-2">말풍선 제목은 최대 2줄까지 말줄임 됩니다.</strong></p>
+                                  <p class="tooltip-text__body"><span class="clamp-6">말풍선 본문은 최대 6줄까지 말줄임 됩니다. 그 이상되면 모달창 범위를 벗어나 내용을 확인할 수 없습니다. 말풍선 본문은 최대 6줄까지 말줄임 됩니다. 그 이상되면 모달창 범위를 벗어나 내용을 확인할 수 없습니다. 말풍선 본문은 최대 6줄까지 말줄임 됩니다. 그 이상되면 모달창 범위를 벗어나 내용을 확인할 수 없습니다. 말풍선 본문은 최대 6줄까지 말줄임 됩니다. 그 이상되면 모달창 범위를 벗어나 내용을 확인할 수 없습니다.</span></p>
+                                </aside>
+                              </div>
+                            </td>
+                            <td class="text-center">2023-03-19</td>
+                          </tr>
+                          <tr>
+                            <td class="text-center"><p class="clamp-2">의료기관홍보</p></td>
+                            <td class="text-center"><p class="clamp-2">카페</p></td>
+                            <td class="text-center"><p class="clamp-2">출처</p></td>
+                            <td>
+                              <div class="tooltip js-tooltip-fixed">
+                                <a href="#" class="link" target="_blank"><strong class="clamp-1">제목제목제목</strong></a>
+                                <a href="#" class="link" target="_blank"><span class="clamp-1">내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용</span></a>
+                                <aside class="tooltip-text" style="width: 40rem">
+                                  <p class="tooltip-text__title"><strong class="clamp-2">말풍선 제목은 최대 2줄까지 말줄임 됩니다.</strong></p>
+                                  <p class="tooltip-text__body"><span class="clamp-6">말풍선 본문은 최대 6줄까지 말줄임 됩니다. 그 이상되면 모달창 범위를 벗어나 내용을 확인할 수 없습니다. 말풍선 본문은 최대 6줄까지 말줄임 됩니다. 그 이상되면 모달창 범위를 벗어나 내용을 확인할 수 없습니다. 말풍선 본문은 최대 6줄까지 말줄임 됩니다. 그 이상되면 모달창 범위를 벗어나 내용을 확인할 수 없습니다. 말풍선 본문은 최대 6줄까지 말줄임 됩니다. 그 이상되면 모달창 범위를 벗어나 내용을 확인할 수 없습니다.</span></p>
+                                </aside>
+                              </div>
+                            </td>
+                            <td class="text-center">2023-03-19</td>
+                          </tr>
+                          <tr>
+                            <td class="text-center"><p class="clamp-2">의료기관홍보</p></td>
+                            <td class="text-center"><p class="clamp-2">카페</p></td>
+                            <td class="text-center"><p class="clamp-2">출처</p></td>
+                            <td>
+                              <div class="tooltip js-tooltip-fixed">
+                                <a href="#" class="link" target="_blank"><strong class="clamp-1">제목제목제목</strong></a>
+                                <a href="#" class="link" target="_blank"><span class="clamp-1">내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용</span></a>
+                                <aside class="tooltip-text" style="width: 40rem">
+                                  <p class="tooltip-text__title"><strong class="clamp-2">말풍선 제목은 최대 2줄까지 말줄임 됩니다.</strong></p>
+                                  <p class="tooltip-text__body"><span class="clamp-6">말풍선 본문은 최대 6줄까지 말줄임 됩니다. 그 이상되면 모달창 범위를 벗어나 내용을 확인할 수 없습니다. 말풍선 본문은 최대 6줄까지 말줄임 됩니다. 그 이상되면 모달창 범위를 벗어나 내용을 확인할 수 없습니다. 말풍선 본문은 최대 6줄까지 말줄임 됩니다. 그 이상되면 모달창 범위를 벗어나 내용을 확인할 수 없습니다. 말풍선 본문은 최대 6줄까지 말줄임 됩니다. 그 이상되면 모달창 범위를 벗어나 내용을 확인할 수 없습니다.</span></p>
+                                </aside>
+                              </div>
+                            </td>
+                            <td class="text-center">2023-03-19</td>
+                          </tr>
+                          <tr>
+                            <td class="text-center"><p class="clamp-2">의료기관홍보</p></td>
+                            <td class="text-center"><p class="clamp-2">카페</p></td>
+                            <td class="text-center"><p class="clamp-2">출처</p></td>
+                            <td>
+                              <div class="tooltip js-tooltip-fixed">
+                                <a href="#" class="link" target="_blank"><strong class="clamp-1">제목제목제목</strong></a>
+                                <a href="#" class="link" target="_blank"><span class="clamp-1">내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용</span></a>
+                                <aside class="tooltip-text" style="width: 40rem">
+                                  <p class="tooltip-text__title"><strong class="clamp-2">말풍선 제목은 최대 2줄까지 말줄임 됩니다.</strong></p>
+                                  <p class="tooltip-text__body"><span class="clamp-6">말풍선 본문은 최대 6줄까지 말줄임 됩니다. 그 이상되면 모달창 범위를 벗어나 내용을 확인할 수 없습니다. 말풍선 본문은 최대 6줄까지 말줄임 됩니다. 그 이상되면 모달창 범위를 벗어나 내용을 확인할 수 없습니다. 말풍선 본문은 최대 6줄까지 말줄임 됩니다. 그 이상되면 모달창 범위를 벗어나 내용을 확인할 수 없습니다. 말풍선 본문은 최대 6줄까지 말줄임 됩니다. 그 이상되면 모달창 범위를 벗어나 내용을 확인할 수 없습니다.</span></p>
+                                </aside>
+                              </div>
+                            </td>
+                            <td class="text-center">2023-03-19</td>
+                          </tr>
+                          <tr>
+                            <td class="text-center"><p class="clamp-2">의료기관홍보</p></td>
+                            <td class="text-center"><p class="clamp-2">카페</p></td>
+                            <td class="text-center"><p class="clamp-2">출처</p></td>
+                            <td>
+                              <div class="tooltip js-tooltip-fixed">
+                                <a href="#" class="link" target="_blank"><strong class="clamp-1">제목제목제목</strong></a>
+                                <a href="#" class="link" target="_blank"><span class="clamp-1">내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용</span></a>
+                                <aside class="tooltip-text" style="width: 40rem">
+                                  <p class="tooltip-text__title"><strong class="clamp-2">말풍선 제목은 최대 2줄까지 말줄임 됩니다.</strong></p>
+                                  <p class="tooltip-text__body"><span class="clamp-6">말풍선 본문은 최대 6줄까지 말줄임 됩니다. 그 이상되면 모달창 범위를 벗어나 내용을 확인할 수 없습니다. 말풍선 본문은 최대 6줄까지 말줄임 됩니다. 그 이상되면 모달창 범위를 벗어나 내용을 확인할 수 없습니다. 말풍선 본문은 최대 6줄까지 말줄임 됩니다. 그 이상되면 모달창 범위를 벗어나 내용을 확인할 수 없습니다. 말풍선 본문은 최대 6줄까지 말줄임 됩니다. 그 이상되면 모달창 범위를 벗어나 내용을 확인할 수 없습니다.</span></p>
+                                </aside>
+                              </div>
+                            </td>
+                            <td class="text-center">2023-03-19</td>
+                          </tr>
+                          <tr>
+                            <td class="text-center"><p class="clamp-2">의료기관홍보</p></td>
+                            <td class="text-center"><p class="clamp-2">카페</p></td>
+                            <td class="text-center"><p class="clamp-2">출처</p></td>
+                            <td>
+                              <div class="tooltip js-tooltip-fixed">
+                                <a href="#" class="link" target="_blank"><strong class="clamp-1">제목제목제목</strong></a>
+                                <a href="#" class="link" target="_blank"><span class="clamp-1">내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용</span></a>
+                                <aside class="tooltip-text" style="width: 40rem">
+                                  <p class="tooltip-text__title"><strong class="clamp-2">말풍선 제목은 최대 2줄까지 말줄임 됩니다.</strong></p>
+                                  <p class="tooltip-text__body"><span class="clamp-6">말풍선 본문은 최대 6줄까지 말줄임 됩니다. 그 이상되면 모달창 범위를 벗어나 내용을 확인할 수 없습니다. 말풍선 본문은 최대 6줄까지 말줄임 됩니다. 그 이상되면 모달창 범위를 벗어나 내용을 확인할 수 없습니다. 말풍선 본문은 최대 6줄까지 말줄임 됩니다. 그 이상되면 모달창 범위를 벗어나 내용을 확인할 수 없습니다. 말풍선 본문은 최대 6줄까지 말줄임 됩니다. 그 이상되면 모달창 범위를 벗어나 내용을 확인할 수 없습니다.</span></p>
+                                </aside>
+                              </div>
+                            </td>
+                            <td class="text-center">2023-03-19</td>
+                          </tr>                        
+                        </tbody>
                     </table>
+                  </div>
                 </main>
                 <footer class="l-article-footer flex-grow-0 pt-10">
                   

@@ -1,6 +1,3 @@
-const $modal = document.querySelector(".modal-data-table--related");
-const $wrapper = $modal.querySelector(".modal-wrapper");
-
 /*
 ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■
 */
@@ -10,6 +7,9 @@ const $wrapper = $modal.querySelector(".modal-wrapper");
  * event : Modal show/hide toggle
  *
  */
+
+const $modal = document.querySelector(".modal-data-table--related");
+const $wrapper = $modal.querySelector(".modal-wrapper");
 
 function modalRelated(_callback) {
   $.modal({
@@ -45,9 +45,7 @@ function modalRelated(_callback) {
   $wrapper.querySelector(".js-btn-set-area").addEventListener("click", (e) => {
     e.currentTarget.classList.toggle("btn-default--is-active");
     const $popup = e.currentTarget.nextElementSibling;
-    e.currentTarget.classList.contains("btn-default--is-active")
-      ? $popup.style.setProperty("visibility", "visible")
-      : $popup.style.setProperty("visibility", "hidden");
+    e.currentTarget.classList.contains("btn-default--is-active") ? $popup.style.setProperty("visibility", "visible") : $popup.style.setProperty("visibility", "hidden");
   });
 }
 /*

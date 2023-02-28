@@ -1,11 +1,55 @@
-// const tableTest = document.querySelectorAll("[data-section=연관어분석] .c-table");
-// const testClass = new window.TableHilightColor(tableTest);
+/*
+■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■
+*/
+{
+  /**
+   * 검색조건 영역 키워드 좌,우측에 대한 이벤트 처리
+   * 
+   */
+  const $1stInput = document.querySelector("#keywordSearch1st");
+  const $targetLeft = document.querySelector(".form-search-list__lately-left");
+  const $listLeft = document.querySelector(".lately-left-body--list");
 
-// window.onLoadResize({
-//   callback() {
-//     testClass.init();
-//   },
-// });
+  const $2ndInput = document.querySelector("#keywordSearch2nd");
+  const $targetRight = document.querySelector(".form-search-list__lately-right");
+  const $listRight = document.querySelector(".lately-right-body--list");
+
+
+  /* 인풋에 포커싱 됐을 때 최근키워드 목록 띄워주는 클래스 - topSearch.js */
+  const latelyShowLeft = new window.ViewLatelyKeyword($1stInput, $targetLeft);
+  const latelyShowRight = new window.ViewLatelyKeyword($2ndInput, $targetRight);
+  latelyShowLeft.init();
+  latelyShowRight.init();
+
+  /* 최근키워드 목록 내 항목 및 삭제 버튼 이벤트 클래스 - topSearch.js */
+  const latelyLeftListEv = new window.LatelyBtnEv($1stInput, $listLeft);
+  const latelyRightListEv = new window.LatelyBtnEv($2ndInput, $listRight);
+  latelyLeftListEv.init();
+  latelyRightListEv.init();
+
+  /* 전체삭제 버튼 이벤트 */
+  const $allDelBtns = document.querySelectorAll("aside header .btn");
+  Array.from($allDelBtns).forEach((_$allDelBtn) => {
+    _$allDelBtn.addEventListener("click", (ev) => {
+      ev.currentTarget.closest("aside").querySelector("ul").innerHTML = '';
+    })
+  });
+
+  /* input에 텍스트 없을 시 'AS'마크 제거하는 옵저버  */
+  const $inputDivLeft = document.querySelector("#keywordSearch1st").closest(".form-search");
+  const $inputDivRight = document.querySelector("#keywordSearch2nd").closest(".form-search");
+
+  const textValObserver = new MutationObserver((mutations) => {
+    mutations.forEach((mutation) => {
+      if(mutation.target.getAttribute("data-text-value") == '') {
+        mutation.target.classList.remove("form-search--has-as");
+      }
+    });
+  });
+  textValObserver.observe($inputDivLeft, { attributeFilter: ['data-text-value'] });
+  textValObserver.observe($inputDivRight, { attributeFilter: ['data-text-value'] });
+
+}
 /*
 ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■
 */
