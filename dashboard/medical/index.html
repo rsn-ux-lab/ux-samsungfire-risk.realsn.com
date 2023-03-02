@@ -1,5 +1,5 @@
 
-<!-- reBuild :  20230228171646 -->
+<!-- reBuild :  20230302222809 -->
 
 <!DOCTYPE html>
 <html lang="ko">
@@ -16,13 +16,13 @@
   <link rel="shortcut icon" href="/dashboard/assets/img/favicon.ico" />
 
   <!-- STYLE -->
-    <link rel="stylesheet" href="/dashboard/assets/css/style.css?v=20230228171646">
+    <link rel="stylesheet" href="/dashboard/assets/css/style.css?v=20230302222809">
 
   <!-- JS -->
-  <script src="/dashboard/assets/js/config/files.js?v=20230228171646" defer></script>
-  <script src="/dashboard/assets/js/libs.js?v=20230228171646" defer></script>
-  <script src="/dashboard/assets/js/modules.js?v=20230228171646" defer></script>
-  <script src="/dashboard/assets/js/config/router.js?v=20230228171646" defer></script>
+  <script src="/dashboard/assets/js/config/files.js?v=20230302222809" defer></script>
+  <script src="/dashboard/assets/js/libs.js?v=20230302222809" defer></script>
+  <script src="/dashboard/assets/js/modules.js?v=20230302222809" defer></script>
+  <script src="/dashboard/assets/js/config/router.js?v=20230302222809" defer></script>
 </head>
 
 <body>
@@ -125,7 +125,10 @@
           <dl class="form-search-list">
             <dt class="form-search-list__title form-search-list__title--has-required">의료기관</dt>
             <dd class="form-search-list__item">
-              asf
+              <div class="form-row form-search form-search--border-bottom" data-text-value="">
+                <input id="medicalSearch" onclick="modalInfoSearch();" type="text" placeholder="클릭하여 의료기관을 검색하세요">
+                <button class="btn btn-icon btn-search rounded-pill" onclick="modalInfoSearch();" type="button" title="검색하기"><i class="icon-svg icon-svg-search" aria-hidden="true"></i></button>
+              </div>
             </dd>
             <dt class="form-search-list__title form-search-list__title--has-required">검색기간</dt>
             <dd class="form-search-list__item">
@@ -180,9 +183,9 @@
                 <label for="checkboxWritingAll"><span class="txt">전체</span></label>
               </div>
               <fieldset class="form-fieldset row g-2" data-fieldset="글유형종류">
-                <div class="form-row form-check-button col" data-row="의료기간홍보">
+                <div class="form-row form-check-button col" data-row="의료기관홍보">
                   <input id="checkboxWriting1" type="checkbox"/>
-                  <label for="checkboxWriting1"><span class="txt">의료기간홍보</span></label>
+                  <label for="checkboxWriting1"><span class="txt">의료기관홍보</span></label>
                 </div>
                 <div class="form-row form-check-button col" data-row="환자의견">
                   <input id="checkboxWriting2" type="checkbox" />
@@ -276,7 +279,7 @@
           <ul class="compact-list">
             <i class="c-badge">2023-01-01 ~ 2023-01-03 vs <strong>2023-01-04 ~ 2023-01-06</strong></i>
             <i class="c-badge">블로그 외 6개</i>
-            <i class="c-badge">의료기간홍보 외 1개</i>
+            <i class="c-badge">의료기관홍보 외 1개</i>
             <i class="c-badge">보험관련 외 16개</i>
           </ul>
           <div class="compact-today ml-auto">
@@ -320,7 +323,7 @@
         <article class="l-article" data-article="의료기관별상세정보-1depth" data-loading-spinner="false" data-is-empty="false">
           <header class="l-article-header d-flex">
             <fieldset class="form-fieldset ml-auto" data-fieldset="증감률">
-              <p class="form-fieldset__title mr-8">업데이트 기준</p>
+              <span class="form-fieldset__title mr-8">업데이트 기준</span>
               <div class="form-row form-select" data-row="y축데이터">
                 <select class="form-select__select">
                   <option value="0" selected>2022년 4분기</option>
@@ -332,111 +335,256 @@
             </fieldset>
           </header>
 
-            <article class="l-article" data-article="의료기관정보" data-loading-spinner="false" data-is-empty="false">
-              <header class="l-article-header">
+            <article class="l-article mt-24" data-article="의료기관정보" data-loading-spinner="false" data-is-empty="false">
+              <header class="l-article-header d-flex">
                 <h4 class="l-article-header__title">의료기관정보</h4>
+                <span class="l-article-header__updated-info ml-auto">업데이트 기준 : 2022년 4분기</span>
               </header>
-              <main class="l-article-body">    
-                테이블 영역
+              <main class="l-article-body mt-12">    
+                <ul class="medical-info--list">
+                  <li class="medical-info--list__item">
+                    <dl class="medical--information--list d-flex border">
+                      <dt class="medical--information--list__title border-end">
+                        <p class="tit">의료기관</p>
+                        <p class="txt clamp-2 mt-12">이화여자대학교의과대학부속목동병원</p>
+                        <p class="since text-end mt-20">개설일자 : 1993-07-30</p>
+                      </dt>
+                      <dd class="medical--information--list__item border-end">
+                        <span class="tit">주소</span><span class="txt">(07985) 서울특별시 양천구 안양천로 1071 (목동)</span> <br>
+                        <span class="tit mt-8">전화번호</span><span class="txt mt-8">02-2650-5114</span> <br>
+                        <span class="tit mt-8">홈페이지</span><span class="txt mt-8"><i class="icon-svg icon-svg-home-page mr-8"></i>www.eumc.ac.kr/mokdong</span>
+                      </dd>
+                      <dd class="medical--information--list__item">
+                        <span class="tit">종별코드명 (코드)</span><span class="txt">상급종합 (1)</span> <br>
+                        <span class="tit mt-8">설립구분코드명 (코드)</span><span class="txt mt-8">학교법인 (4)</span>
+                      </dd>
+                    </dl>
+                  </li>
+                </ul>
               </main>
             </article>
 
-            <article class="l-article mt-24" data-article="진료정보" data-loading-spinner="false" data-is-empty="false">
-              <header class="l-article-header">
+            <article class="l-article mt-24" data-article="진료정보" data-loadin g-spinner="false" data-is-empty="false">
+              <header class="l-article-header d-flex">
                 <h4 class="l-article-header__title">진료정보</h4>
+                <span class="l-article-header__updated-info ml-auto">업데이트 기준 : 2022년 4분기</span>
               </header>
-              <main class="l-article-body">    
-                테이블 영역
+              <main class="l-article-body row mt-12">    
+                <div class="col-5">
+                  <div class="scroll-container-y" style="height: 32rem;">
+                    <table class="c-table c-table--medical__treatment-info" data-thead-sticky="true">
+                      
+<colgroup>
+  <col width="*">
+  <col width="34.3%">
+</colgroup>
+<thead>
+  <tr>
+    <th class="text-center">진료과목 (코드)</th>
+    <th class="text-center">과목별 전문의 수</th>
+  </tr>
+</thead>
+<tbody>
+  <tr>
+    <td class="text-start">내과 (01)</td>
+    <td class="text-center">46</td>
+  </tr>
+  <tr>
+    <td class="text-start">신경과 (02)</td>
+    <td class="text-center">9</td>
+  </tr>
+  <tr>
+    <td class="text-start">정신건강의학과 (03)</td>
+    <td class="text-center">3</td>
+  </tr>
+  <tr>
+    <td class="text-start">외과 (04)</td>
+    <td class="text-center">21</td>
+  </tr>
+  <tr>
+    <td class="text-start">정형외과 (05)</td>
+    <td class="text-center">7</td>
+  </tr>
+  <tr>
+    <td class="text-start">신경외과 (06)</td>
+    <td class="text-center">5</td>
+  </tr>
+  <tr>
+    <td class="text-start">흉부외과 (07)</td>
+    <td class="text-center">5</td>
+  </tr>
+  <tr>
+    <td class="text-start">성형외과 (08)</td>
+    <td class="text-center">5</td>
+  </tr>
+  <tr>
+    <td class="text-start">마취통증의학과 (09)</td>
+    <td class="text-center">46</td>
+  </tr>
+  <tr>
+    <td class="text-start">산부인과 (10)</td>
+    <td class="text-center">46</td>
+  </tr>
+  <tr>
+    <td class="text-start">소아청소년과 (11)</td>
+    <td class="text-center">46</td>
+  </tr>
+  <tr>
+    <td class="text-start">안과 (12)</td>
+    <td class="text-center">46</td>
+  </tr>
+  <tr>
+    <td class="text-start">이비인후과 (13)</td>
+    <td class="text-center">46</td>
+  </tr>
+</tbody>
+                    </table>
+                  </div>
+                </div>
+
+                <div class="col-6">
+                  <div class="scroll-container-y" style="height: 32rem;">
+                    <ul class="treatment-time--list">
+                      <li class="treatment-time--list__title text-center"><span class="tit w-100">진료시간</span></li>
+                      <li class="treatment-time--list__item text-center"><span class="day">월</span><span class="time">08:00 ~ 17:30</span></li>
+                      <li class="treatment-time--list__item text-center"><span class="day">화</span><span class="time">08:00 ~ 17:30</span></li>
+                      <li class="treatment-time--list__item text-center"><span class="day">수</span><span class="time">08:00 ~ 17:30</span></li>
+                      <li class="treatment-time--list__item text-center"><span class="day">목</span><span class="time">-</span></li>
+                      <li class="treatment-time--list__item text-center"><span class="day">금</span><span class="time">08:00 ~ 17:30</span></li>
+                      <li class="treatment-time--list__item text-center"><span class="day">토</span><span class="time">08:00 ~ 17:30</span></li>
+                      <li class="treatment-time--list__item text-center"><span class="day">일</span><span class="time">-</span></li>
+                    </ul>
+                  </div>
+                </div>
+
+                <div class="col-7">
+                  <div class="scroll-container-y" style="height: 32rem;">
+                    <ul class="lunch-time--list">
+                      <div class="lunch-time--list__title">점심시간</div>
+                      <li class="lunch-time--list__item">
+                        <dl class="lunch--list d-flex">
+                          <dt class="lunch--list__title">평일</dt>
+                          <dd class="lunch--list__item">
+                            <p class="txt">12:30 - 14:00</p>
+                            <p class="desc">(수요일과 토요일은 점심시간 없이 2시까지 진료)</p>
+                          </dd>
+                        </dl>
+                      </li>
+                      <li class="lunch-time--list__item">
+                        <dl class="lunch--list d-flex">
+                          <dt class="lunch--list__title">토요일</dt>
+                          <dd class="lunch--list__item">없음(점심시간 없이 14:00까지 진료) 수요일도 동일함</dd>
+                        </dl>
+                      </li>
+                    </ul>
+                    <ul class="close-medical--list">
+                      <div class="close-medical--list__title">휴진 안내</div>
+                      <li class="close-medical--list__item">
+                        <dl class="close--list d-flex">
+                          <dt class="close--list__title">일요일</dt>
+                          <dd class="close--list__item">전부 휴진 (산부인과 분만 & 응급 산모 진료 24시간)</dd>
+                        </dl>
+                      </li>
+                      <li class="close-medical--list__item">
+                        <dl class="close--list d-flex">
+                          <dt class="close--list__title">공휴일</dt>
+                          <dd class="close--list__item">-</dd>
+                        </dl>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
               </main>
             </article>
 
             <article class="l-article mt-24" data-article="인력현황" data-loading-spinner="false" data-is-empty="false">
-              <header class="l-article-header">
+              <header class="l-article-header d-flex">
                 <h4 class="l-article-header__title">인력현황</h4>
+                <span class="l-article-header__updated-info ml-auto">업데이트 기준 : 2022년 4분기</span>
               </header>
-              <main class="l-article-body">    
+              <main class="l-article-body mt-12">    
                 <ul class="human-present--list">
                   <li class="human-present--list__item">
 
-                    <dl class="normal-medical--list d-flex">
-                      <dt class="normal-medical--list__title d-flex"><i class="icon-svg icon-svg-normal-medical" aria-hidden="true"></i><p class="tit">의과</p><p class="count">342</p></dt>
-                      <dd class="normal-medical--list__item">
+                    <dl class="normal-medical--list d-flex border">
+                      <dt class="normal-medical--list__title d-flex"><i class="icon-svg icon-svg-normal-medical" aria-hidden="true"></i><p class="tit ml-12">의과</p><p class="count ml-auto">342</p></dt>
+                      <dd class="normal-medical--list__item text-center">
                         <p class="tit">일반의</p>
                         <p class="count">0</p>
                       </dd>
-                      <dd class="normal-medical--list__item">
+                      <dd class="normal-medical--list__item text-center">
                         <p class="tit">인턴</p>
                         <p class="count">0</p>
                       </dd>
-                      <dd class="normal-medical--list__item">
+                      <dd class="normal-medical--list__item text-center">
                         <p class="tit">레지던트</p>
                         <p class="count">0</p>
                       </dd>
-                      <dd class="normal-medical--list__item">
+                      <dd class="normal-medical--list__item text-center">
                         <p class="tit">전문의</p>
                         <p class="count">0</p>
                       </dd>
                     </dl>
 
-                    <dl class="dental-clinic--list d-flex">
-                      <dt class="dental-clinic--list__title d-flex"><i class="icon-svg icon-svg-dental-clinic" aria-hidden="true"></i><p class="tit">의과</p><p class="count">342</p></dt>
-                      <dd class="dental-clinic--list__item">
+                    <dl class="dental-clinic--list d-flex border mt-8">
+                      <dt class="dental-clinic--list__title d-flex"><i class="icon-svg icon-svg-dental-clinic" aria-hidden="true"></i><p class="tit ml-12">치과</p><p class="count ml-auto">342</p></dt>
+                      <dd class="dental-clinic--list__item text-center">
                         <p class="tit">일반의</p>
                         <p class="count">0</p>
                       </dd>
-                      <dd class="dental-clinic--list__item">
+                      <dd class="dental-clinic--list__item text-center">
                         <p class="tit">인턴</p>
                         <p class="count">0</p>
                       </dd>
-                      <dd class="dental-clinic--list__item">
+                      <dd class="dental-clinic--list__item text-center">
                         <p class="tit">레지던트</p>
                         <p class="count">0</p>
                       </dd>
-                      <dd class="dental-clinic--list__item">
+                      <dd class="dental-clinic--list__item text-center">
                         <p class="tit">전문의</p>
                         <p class="count">0</p>
                       </dd>
                     </dl>
 
-                    <dl class="oriental-medical--list d-flex">
-                      <dt class="oriental-medical--list__title d-flex"><i class="icon-svg icon-svg-oriental-medical" aria-hidden="true"></i><p class="tit">의과</p><p class="count">342</p></dt>
-                      <dd class="oriental-medical--list__item">
+                    <dl class="oriental-medical--list d-flex border mt-8">
+                      <dt class="oriental-medical--list__title d-flex"><i class="icon-svg icon-svg-oriental-medical" aria-hidden="true"></i><p class="tit ml-12">한방</p><p class="count ml-auto">342</p></dt>
+                      <dd class="oriental-medical--list__item text-center">
                         <p class="tit">일반의</p>
                         <p class="count">0</p>
                       </dd>
-                      <dd class="oriental-medical--list__item">
+                      <dd class="oriental-medical--list__item text-center">
                         <p class="tit">인턴</p>
                         <p class="count">0</p>
                       </dd>
-                      <dd class="oriental-medical--list__item">
+                      <dd class="oriental-medical--list__item text-center">
                         <p class="tit">레지던트</p>
                         <p class="count">0</p>
                       </dd>
-                      <dd class="oriental-medical--list__item">
+                      <dd class="oriental-medical--list__item text-center">
                         <p class="tit">전문의</p>
                         <p class="count">0</p>
                       </dd>
                     </dl>
 
-                    <dl class="other--list d-flex">
-                      <dt class="other--list__title d-flex"><i class="icon-svg icon-svg-other-medical" aria-hidden="true"></i><p class="tit">의과</p><p class="count">342</p></dt>
-                      <dd class="other--list__item">
+                    <dl class="other--list d-flex border mt-8">
+                      <dt class="other--list__title d-flex"><i class="icon-svg icon-svg-other-medical" aria-hidden="true"></i><p class="tit ml-12">기타</p><p class="count ml-auto">342</p></dt>
+                      <dd class="other--list__item text-center">
                         <p class="tit">약사</p>
                         <p class="count">0</p>
                       </dd>
-                      <dd class="other--list__item">
+                      <dd class="other--list__item text-center">
                         <p class="tit">물리치료사</p>
                         <p class="count">0</p>
                       </dd>
-                      <dd class="other--list__item">
+                      <dd class="other--list__item text-center">
                         <p class="tit">작업치료사</p>
                         <p class="count">0</p>
                       </dd>
-                      <dd class="other--list__item">
+                      <dd class="other--list__item text-center">
                         <p class="tit">사회복지사</p>
                         <p class="count">0</p>
                       </dd>
-                      <dd class="other--list__item">
+                      <dd class="other--list__item text-center">
                         <p class="tit">한약사</p>
                         <p class="count">0</p>
                       </dd>
@@ -447,27 +595,86 @@
             </article>
 
             <article class="l-article mt-24" data-article="병상현황" data-loading-spinner="false" data-is-empty="false">
-              <header class="l-article-header">
+              <header class="l-article-header d-flex">
                 <h4 class="l-article-header__title">병상현황</h4>
+                <span class="l-article-header__updated-info ml-auto">업데이트 기준 : 2022년 4분기</span>
               </header>
-              <main class="l-article-body">    
-                <ul class="bed-present--list">
-                  <li class="bed-present--list__item">
-                    <dl class="소목록=list">
-                      <dt class="소목록=list__title"><i class="icon-svg" aria-hidden="true"></i><p class="tit">의과</p><p class="count">342</p></dt>
-                      <dd class="소목록=list__item">
-                        <p class="tit">일반의</p>
-                        <p class="count">0</p>
-                      </dd>
-                    </dl>
-                  </li>
-                </ul>
+              <main class="l-article-body mt-12">    
+                <table class="c-table c-table--medical__normal-bed">
+                  <colgroup>
+  <col width="16.58%">
+  <col width="16.58%">
+  <col width="*">
+  <col width="*">
+  <col width="*">
+  <col width="16.58%">
+  <col width="16.58%">
+</colgroup>
+<thead>
+  <tr>
+    <th class="text-center" colspan="2">일반입원실</th>
+    <th class="text-center" colspan="3">중환자실</th>
+    <th class="text-center" colspan="2">정신과폐쇄</th>
+  </tr>
+</thead>
+<tbody>
+  <tr>
+    <td class="text-center">상급</td>
+    <td class="text-center">일반</td>
+    <td class="text-center">성인</td>
+    <td class="text-center">소아</td>
+    <td class="text-center">신생아</td>
+    <td class="text-center">상급</td>
+    <td class="text-center">일반</td>
+  </tr>
+  <tr>
+    <td class="text-center">34</td>
+    <td class="text-center">578</td>
+    <td class="text-center">60</td>
+    <td class="text-center">0</td>
+    <td class="text-center">11</td>
+    <td class="text-center">7</td>
+    <td class="text-center">13</td>
+  </tr>
+</tbody>
+                </table>
+                <table class="c-table c-table--medical__special-bed mt-12">
+                  <colgroup>
+  <col width="*">
+  <col width="*">
+  <col width="*">
+  <col width="*">
+  <col width="*">
+  <col width="*">
+</colgroup>
+<thead>
+  <tr>
+    <th>격리병실</th>
+    <th>무균치료실</th>
+    <th>분만실</th>
+    <th>수술실</th>
+    <th>응급실</th>
+    <th>물리치료실</th>
+  </tr>
+</thead>
+<tbody>
+  <tr>
+    <td class="text-center">34</td>
+    <td class="text-center">34</td>
+    <td class="text-center">34</td>
+    <td class="text-center">34</td>
+    <td class="text-center">34</td>
+    <td class="text-center">34</td>
+  </tr>
+</tbody>
+                </table>
               </main>
             </article>
 
             <article class="l-article mt-24" data-article="비급여 진료비" data-loading-spinner="false" data-is-empty="false">
-              <header class="l-article-header l-article-header--has-title">
+              <header class="l-article-header l-article-header--has-title d-flex">
                 <h4 class="l-article-header__title">비급여 진료비</h4>
+                <span class="l-article-header__updated-info ml-auto">업데이트 기준 : 2022년 4분기</span>
               </header>
               <main class="l-article-body">
                 <article class="l-article" data-article="테이블n차트">
@@ -486,8 +693,178 @@
                     <button class="btn btn-secondary rounded ml-12">검색</button>
                   </header>
                   <main class="l-article-body mt-24">
-                    테이블 영역 
+                    <table class="c-table c-table--medical__non-benefit">
+                      <colgroup>
+  <col width="12.7%">
+  <col width="16.8%">
+  <col width="16.8%">
+  <col width="*">
+  <col width="8.7%">
+  <col width="8.7%">
+  <col width="8%">
+</colgroup>
+<thead>
+  <tr>
+    <th>edi 코드</th>
+    <th>중분류</th>
+    <th>소분류</th>
+    <th>상세분류</th>
+    <th>
+      <p class="tit">최대금액</p>
+      <fieldset class="form-fieldset" data-fieldset="정렬">
+        <div class="form-row form-check-button" data-row="오름차순">
+          <input id="radioNonBenefitTableHeadSort1" name="radioNonBenefitTableHeadSort" type="radio" />
+          <label for="radioNonBenefitTableHeadSort1" title="오름차순"><i class="icon-svg icon-svg-chevron-up" aria-hidden="true"></i></label>
+        </div>
+        <div class="form-row form-check-button" data-row="내림차순">
+          <input id="radioNonBenefitTableHeadSort2" name="radioNonBenefitTableHeadSort" type="radio" />
+          <label for="radioNonBenefitTableHeadSort2" title="내림차순"><i class="icon-svg icon-svg-chevron-down" aria-hidden="true"></i></label>
+        </div>
+      </fieldset>
+    </th>
+    <th>
+      <p class="tit">최소금액</p>
+      <fieldset class="form-fieldset" data-fieldset="정렬">
+        <div class="form-row form-check-button" data-row="오름차순">
+          <input id="radioNonBenefitTableHeadSort3" name="radioNonBenefitTableHeadSort" type="radio" />
+          <label for="radioNonBenefitTableHeadSort3" title="오름차순"><i class="icon-svg icon-svg-chevron-up" aria-hidden="true"></i></label>
+        </div>
+        <div class="form-row form-check-button" data-row="내림차순">
+          <input id="radioNonBenefitTableHeadSort4" name="radioNonBenefitTableHeadSort" type="radio" />
+          <label for="radioNonBenefitTableHeadSort4" title="내림차순"><i class="icon-svg icon-svg-chevron-down" aria-hidden="true"></i></label>
+        </div>
+      </fieldset>
+    </th>
+    <th>
+      <p class="tit">적용개시일자</p>
+      <fieldset class="form-fieldset" data-fieldset="정렬">
+        <div class="form-row form-check-button" data-row="오름차순">
+          <input id="radioNonBenefitTableHeadSort5" name="radioNonBenefitTableHeadSort" type="radio" />
+          <label for="radioNonBenefitTableHeadSort5" title="오름차순"><i class="icon-svg icon-svg-chevron-up" aria-hidden="true"></i></label>
+        </div>
+        <div class="form-row form-check-button" data-row="내림차순">
+          <input id="radioNonBenefitTableHeadSort6" name="radioNonBenefitTableHeadSort" type="radio" />
+          <label for="radioNonBenefitTableHeadSort6" title="내림차순"><i class="icon-svg icon-svg-chevron-down" aria-hidden="true"></i></label>
+        </div>
+      </fieldset>
+    </th>
+  </tr>
+</thead>
+<tbody>
+  <tr>
+    <td class="text-center">EA0010000</td>
+    <td class="text-start">내시경, 천자 및 생검료</td>
+    <td class="text-start">진정내시경환자관리료</td>
+    <td class="text-start">I</td>
+    <td class="text-end">139,000</td>
+    <td class="text-end">139,000</td>
+    <td class="text-center">2022-12-14</td>
+  </tr>
+  <tr>
+    <td class="text-center">EA0010000</td>
+    <td class="text-start">내시경, 천자 및 생검료</td>
+    <td class="text-start">진정내시경환자관리료</td>
+    <td class="text-start">I</td>
+    <td class="text-end">139,000</td>
+    <td class="text-end">139,000</td>
+    <td class="text-center">2022-12-14</td>
+  </tr>
+  <tr>
+    <td class="text-center">EA0010000</td>
+    <td class="text-start">내시경, 천자 및 생검료</td>
+    <td class="text-start">진정내시경환자관리료</td>
+    <td class="text-start">I</td>
+    <td class="text-end">139,000</td>
+    <td class="text-end">139,000</td>
+    <td class="text-center">2022-12-14</td>
+  </tr>
+  <tr>
+    <td class="text-center">EA0010000</td>
+    <td class="text-start">내시경, 천자 및 생검료</td>
+    <td class="text-start">진정내시경환자관리료</td>
+    <td class="text-start">I</td>
+    <td class="text-end">139,000</td>
+    <td class="text-end">139,000</td>
+    <td class="text-center">2022-12-14</td>
+  </tr>
+  <tr>
+    <td class="text-center">EA0010000</td>
+    <td class="text-start">내시경, 천자 및 생검료</td>
+    <td class="text-start">진정내시경환자관리료</td>
+    <td class="text-start">I</td>
+    <td class="text-end">139,000</td>
+    <td class="text-end">139,000</td>
+    <td class="text-center">2022-12-14</td>
+  </tr>
+  <tr>
+    <td class="text-center">EA0010000</td>
+    <td class="text-start">내시경, 천자 및 생검료</td>
+    <td class="text-start">진정내시경환자관리료</td>
+    <td class="text-start">I</td>
+    <td class="text-end">139,000</td>
+    <td class="text-end">139,000</td>
+    <td class="text-center">2022-12-14</td>
+  </tr>
+  <tr>
+    <td class="text-center">EA0010000</td>
+    <td class="text-start">내시경, 천자 및 생검료</td>
+    <td class="text-start">진정내시경환자관리료</td>
+    <td class="text-start">I</td>
+    <td class="text-end">139,000</td>
+    <td class="text-end">139,000</td>
+    <td class="text-center">2022-12-14</td>
+  </tr>
+  <tr>
+    <td class="text-center">EA0010000</td>
+    <td class="text-start">내시경, 천자 및 생검료</td>
+    <td class="text-start">진정내시경환자관리료</td>
+    <td class="text-start">I</td>
+    <td class="text-end">139,000</td>
+    <td class="text-end">139,000</td>
+    <td class="text-center">2022-12-14</td>
+  </tr>
+  <tr>
+    <td class="text-center">EA0010000</td>
+    <td class="text-start">내시경, 천자 및 생검료</td>
+    <td class="text-start">진정내시경환자관리료</td>
+    <td class="text-start">I</td>
+    <td class="text-end">139,000</td>
+    <td class="text-end">139,000</td>
+    <td class="text-center">2022-12-14</td>
+  </tr>
+  <tr>
+    <td class="text-center">EA0010000</td>
+    <td class="text-start">내시경, 천자 및 생검료</td>
+    <td class="text-start">진정내시경환자관리료</td>
+    <td class="text-start">I</td>
+    <td class="text-end">139,000</td>
+    <td class="text-end">139,000</td>
+    <td class="text-center">2022-12-14</td>
+  </tr>
+</tbody>
+                    </table>
                   </main>
+                  <footer class="l-article-footer mt-12">
+                    
+<!-- pagination -->
+<ol class="c-pagination" data-current-page="3">
+  <li class="c-pagination__item c-pagination__item--first"><button class="btn btn-default" type="button" title="이전 10개 페이지" disabled><i class="icon-svg icon-svg-chevrons-left" aria-hidden="true"></i></button></li>
+  <li class="c-pagination__item c-pagination__item--prev"><button class="btn btn-default" type="button" title="이전 페이지" disabled><i class="icon-svg icon-svg-chevron-left" aria-hidden="true"></i></button></li>
+  <li class="c-pagination__item"><button class="btn btn-default border-0" type="button"><span class="txt">1</span></button></li>
+  <li class="c-pagination__item"><button class="btn btn-default border-0" type="button"><span class="txt">2</span></button></li>
+  <li class="c-pagination__item"><button class="btn btn-default border-0" type="button"><span class="txt">3</span></button></li>
+  <li class="c-pagination__item"><button class="btn btn-default border-0" type="button"><span class="txt">4</span></button></li>
+  <li class="c-pagination__item"><button class="btn btn-default border-0" type="button"><span class="txt">5</span></button></li>
+  <li class="c-pagination__item"><button class="btn btn-default border-0" type="button"><span class="txt">6</span></button></li>
+  <li class="c-pagination__item"><button class="btn btn-default border-0" type="button"><span class="txt">7</span></button></li>
+  <li class="c-pagination__item"><button class="btn btn-default border-0" type="button"><span class="txt">8</span></button></li>
+  <li class="c-pagination__item"><button class="btn btn-default border-0" type="button"><span class="txt">9</span></button></li>
+  <li class="c-pagination__item"><button class="btn btn-default border-0" type="button"><span class="txt">10</span></button></li>
+  <li class="c-pagination__item c-pagination__item--next"><button class="btn btn-default" type="button" title="다음 페이지"><i class="icon-svg icon-svg-chevron-right" aria-hidden="true"></i></button></li>
+  <li class="c-pagination__item c-pagination__item--last"><button class="btn btn-default" type="button" title="다음 10개 페이지"><i class="icon-svg icon-svg-chevrons-right" aria-hidden="true"></i></button></li>
+</ol>
+<!-- //pagination -->
+                  </footer>
                 </article>
               </main>
             </article>
@@ -630,12 +1007,13 @@
       </fieldset>
     </div>
     <div class="setting-keyword-detail__related-keyword d-flex mt-12">
-      <span class="txt w-100">관심키워드</span>
-      <fieldset class="form-fieldset ml-4" data-fieldset="관심키워드">
-        <div class="form-row form-fieldset">
-          <select class="form-select__select">
-            <option value="0" selected>보험관련 외 3개</option>
-            <option value="1">보험관련 외 3개</option>
+      <span class="txt">관심키워드</span>
+      <fieldset class="form-fieldset ml-12" data-fieldset="관심키워드">
+        <div class="form-row form-select form-select--border-bottom" data-row="관심키워드" data-selected-value="전체">
+          <label for="selectRelatedKeyword" class="visually-hidden">관심키워드</label>
+          <select id="selectRelatedKeyword">
+            <option value="전체">보험관련 외 3개</option>
+            <option value="증감률">정보량 증감률</option>
           </select>
         </div>
       </fieldset>
@@ -975,44 +1353,47 @@
         <article class="l-article" data-article="정보량추이차트" data-loading-spinner="false" data-is-empty="false">
           <header class="l-article-header d-flex">
             <button class="btn btn-default rounded-pill js-btn-set-coord" type="button"><span class="txt">필터 조건 설정</span></button>
-            <aside id="setting-coord" class="aside-setting-coord rounded">
-  <header class="setting-coord--header"></header>
-  <main class="setting-coord--body">
-    <div class="setting-coord__x-coord d-flex">
-      <span class="txt w-100">채널</span>
-      <fieldset class="form-fieldset ml-4" data-fieldset="채널">
-        <div class="form-row form-fieldset">
-          <select class="form-select__select">
-            <option value="0" selected>블로그 외 1개</option>
-            <option value="1">블로그 외 1개</option>
+            <aside id="setting-article-filter" class="aside-setting-article-filter rounded">
+  <header class="setting-article-filter--header"></header>
+  <main class="setting-article-filter--body">
+    <div class="setting-article-filter__channel d-flex">
+      <span class="txt">채널</span>
+      <fieldset class="form-fieldset ml-auto" data-fieldset="채널">
+        <div class="form-row form-select form-select--border-bottom" data-row="채널" data-selected-value="전체">
+          <label for="selectChannel" class="visually-hidden">채널</label>
+          <select id="selectChannel">
+            <option value="전체">블로그 외 1개</option>
+            <option value="증감률">정보량 증감률</option>
           </select>
         </div>
       </fieldset>
     </div>
-    <div class="setting-coord__y-coord d-flex mt-12">
-      <span class="txt w-100">글유형</span>
-      <fieldset class="form-fieldset ml-4" data-fieldset="글유형">
-        <div class="form-row form-fieldset">
-          <select class="form-select__select">
-            <option value="0" selected>의료기관 홍보1</option>
-            <option value="1">의료기관 홍보2</option>
+    <div class="setting-article-filter__article-category d-flex mt-12">
+      <span class="txt">글유형</span>
+      <fieldset class="form-fieldset ml-auto" data-fieldset="글유형">
+        <div class="form-row form-select form-select--border-bottom" data-row="글유형" data-selected-value="홍보">
+          <label for="selectArticleCategory" class="visually-hidden">글유형</label>
+          <select id="selectArticleCategory">
+            <option value="홍보">의료기관 홍보</option>
+            <option value="증감률">정보량 증감률</option>
           </select>
         </div>
       </fieldset>
     </div>
-    <div class="setting-coord__y-coord d-flex mt-12">
-      <span class="txt w-100">관심키워드</span>
-      <fieldset class="form-fieldset ml-4" data-fieldset="관심키워드">
-        <div class="form-row form-fieldset">
-          <select class="form-select__select">
-            <option value="0" selected>보험관련 외 3개</option>
-            <option value="1">보험관련 외 3개</option>
+    <div class="setting-article-filter__related-keyword d-flex mt-12">
+      <span class="txt">관심키워드</span>
+      <fieldset class="form-fieldset ml-12" data-fieldset="관심키워드">
+        <div class="form-row form-select form-select--border-bottom" data-row="관심키워드" data-selected-value="전체">
+          <label for="selectRelatedKeyword" class="visually-hidden">관심키워드</label>
+          <select id="selectRelatedKeyword">
+            <option value="전체">보험관련 외 3개</option>
+            <option value="증감률">정보량 증감률</option>
           </select>
         </div>
       </fieldset>
     </div>
   </main>
-  <footer class="setting-coord--footer d-flex mt-16">
+  <footer class="setting-article-filter--footer d-flex mt-16">
     <button class="btn btn-icon rounded" title="새로고침" type="button"><i class="icon-svg icon-svg-refresh" aria-hidden="true"></i></button>
     <button class="btn btn-secondary rounded ml-8 w-100" type="button">검색</button>
   </footer>  
@@ -1029,8 +1410,372 @@
             </fieldset>
           </header>
           <main class="l-article-body mt-24">
-            테이블 영역
+            <table class="c-table c-table--medical__article c-table--hover-samsung">
+              <colgroup>
+  <col width="7.4%">
+  <col width="6%">
+  <col width="7.4%">
+  <col width="*">
+  <col width="6.4%">
+  <col width="12%">
+</colgroup>
+<thead>
+  <tr>
+    <th class="text-center">글유형</th>
+    <th class="text-center">채널</th>
+    <th class="text-center">출처</th>
+    <th class="text-center">원문</th>
+    <th class="text-center">
+      <p class="tit">수집일</p>
+      <fieldset class="form-fieldset" data-fieldset="정렬">
+        <div class="form-row form-check-button" data-row="오름차순">
+          <input id="radioArticleTableHeadSort1" name="radioArticleTableHeadSort" type="radio" />
+          <label for="radioArticleTableHeadSort1" title="오름차순"><i class="icon-svg icon-svg-chevron-up" aria-hidden="true"></i></label>
+        </div>
+        <div class="form-row form-check-button" data-row="내림차순">
+          <input id="radioArticleTableHeadSort2" name="radioArticleTableHeadSort" type="radio" />
+          <label for="radioArticleTableHeadSort2" title="내림차순"><i class="icon-svg icon-svg-chevron-down" aria-hidden="true"></i></label>
+        </div>
+      </fieldset>
+    </th>
+    <th class="text-center">관심키워드</th>
+  </tr>
+</thead>
+<tbody>
+  <tr>
+    <td class="text-center">의료기관홍보</td>
+    <td class="text-center">카페</td>
+    <td class="text-center">출처</td>
+    <td>
+      <div class="tooltip">
+        <a href="#" class="link"><strong class="clamp-1">제목제목제목</strong></a>
+        <a href="#" class="link"><span class="clamp-1">내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용</span></a>
+        <aside class="tooltip-text">
+          <p class="tooltip-text__title"><strong class="clamp-2">제목제목제목</strong></p>
+          <p class="tooltip-text__body"><span class="clamp-6">내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용</span></p>
+        </aside>
+      </div>
+    </td>
+    <td class="text-center">2023-03-19</td>
+    <td class="text-center">
+      <div class="tooltip js-tooltip-fixed tooltip-keyword">
+        <p class="text-center">보험관련, 혜택관련 외 3개</p>
+        <aside class="tooltip-text text-start">
+          <dl class="keyword-list">
+            <dt class="keyword-list__title">보험관련</dt>
+            <dd class="keyword-list__item">실손, 실비, 보험, 사보험, 보험상담사, 특약, 담보, 청구, 보험금, 비급여, 민영건강보험, 민영의료보험</dd>
+            <dt class="keyword-list__title">비용관련</dt>
+            <dd class="keyword-list__item">비용, 가격</dd>
+            <dt class="keyword-list__title">외모개선</dt>
+            <dd class="keyword-list__item">외모, 미용, 미적, 외적, 심미적, 성형, 콤플렉스</dd>
+          </dl>
+        </aside>
+      </div>
+    </td>
+  </tr>
+  <tr>
+    <td class="text-center">의료기관홍보</td>
+    <td class="text-center">카페</td>
+    <td class="text-center">출처</td>
+    <td>
+      <div class="tooltip">
+        <a href="#" class="link"><strong class="clamp-1">제목제목제목</strong></a>
+        <a href="#" class="link"><span class="clamp-1">내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용</span></a>
+        <aside class="tooltip-text">
+          <p class="tooltip-text__title"><strong class="clamp-2">제목제목제목</strong></p>
+          <p class="tooltip-text__body"><span class="clamp-6">내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용</span></p>
+        </aside>
+      </div>
+    </td>
+    <td class="text-center">2023-03-19</td>
+    <td class="text-center">
+      <div class="tooltip js-tooltip-fixed tooltip-keyword">
+        <p class="text-center">보험관련, 혜택관련 외 3개</p>
+        <aside class="tooltip-text text-start">
+          <dl class="keyword-list">
+            <dt class="keyword-list__title">보험관련</dt>
+            <dd class="keyword-list__item">실손, 실비, 보험, 사보험, 보험상담사, 특약, 담보, 청구, 보험금, 비급여, 민영건강보험, 민영의료보험</dd>
+            <dt class="keyword-list__title">비용관련</dt>
+            <dd class="keyword-list__item">비용, 가격</dd>
+            <dt class="keyword-list__title">외모개선</dt>
+            <dd class="keyword-list__item">외모, 미용, 미적, 외적, 심미적, 성형, 콤플렉스</dd>
+          </dl>
+        </aside>
+      </div>
+    </td>
+  </tr>
+  <tr>
+    <td class="text-center">의료기관홍보</td>
+    <td class="text-center">카페</td>
+    <td class="text-center">출처</td>
+    <td>
+      <div class="tooltip">
+        <a href="#" class="link"><strong class="clamp-1">제목제목제목</strong></a>
+        <a href="#" class="link"><span class="clamp-1">내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용</span></a>
+        <aside class="tooltip-text">
+          <p class="tooltip-text__title"><strong class="clamp-2">제목제목제목</strong></p>
+          <p class="tooltip-text__body"><span class="clamp-6">내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용</span></p>
+        </aside>
+      </div>
+    </td>
+    <td class="text-center">2023-03-19</td>
+    <td class="text-center">
+      <div class="tooltip js-tooltip-fixed tooltip-keyword">
+        <p class="text-center">보험관련, 혜택관련 외 3개</p>
+        <aside class="tooltip-text text-start">
+          <dl class="keyword-list">
+            <dt class="keyword-list__title">보험관련</dt>
+            <dd class="keyword-list__item">실손, 실비, 보험, 사보험, 보험상담사, 특약, 담보, 청구, 보험금, 비급여, 민영건강보험, 민영의료보험</dd>
+            <dt class="keyword-list__title">비용관련</dt>
+            <dd class="keyword-list__item">비용, 가격</dd>
+            <dt class="keyword-list__title">외모개선</dt>
+            <dd class="keyword-list__item">외모, 미용, 미적, 외적, 심미적, 성형, 콤플렉스</dd>
+          </dl>
+        </aside>
+      </div>
+    </td>
+  </tr>
+  <tr>
+    <td class="text-center">의료기관홍보</td>
+    <td class="text-center">카페</td>
+    <td class="text-center">출처</td>
+    <td>
+      <div class="tooltip">
+        <a href="#" class="link"><strong class="clamp-1">제목제목제목</strong></a>
+        <a href="#" class="link"><span class="clamp-1">내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용</span></a>
+        <aside class="tooltip-text">
+          <p class="tooltip-text__title"><strong class="clamp-2">제목제목제목</strong></p>
+          <p class="tooltip-text__body"><span class="clamp-6">내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용</span></p>
+        </aside>
+      </div>
+    </td>
+    <td class="text-center">2023-03-19</td>
+    <td class="text-center">
+      <div class="tooltip js-tooltip-fixed tooltip-keyword">
+        <p class="text-center">보험관련, 혜택관련 외 3개</p>
+        <aside class="tooltip-text text-start">
+          <dl class="keyword-list">
+            <dt class="keyword-list__title">보험관련</dt>
+            <dd class="keyword-list__item">실손, 실비, 보험, 사보험, 보험상담사, 특약, 담보, 청구, 보험금, 비급여, 민영건강보험, 민영의료보험</dd>
+            <dt class="keyword-list__title">비용관련</dt>
+            <dd class="keyword-list__item">비용, 가격</dd>
+            <dt class="keyword-list__title">외모개선</dt>
+            <dd class="keyword-list__item">외모, 미용, 미적, 외적, 심미적, 성형, 콤플렉스</dd>
+          </dl>
+        </aside>
+      </div>
+    </td>
+  </tr>
+  <tr>
+    <td class="text-center">의료기관홍보</td>
+    <td class="text-center">카페</td>
+    <td class="text-center">출처</td>
+    <td>
+      <div class="tooltip">
+        <a href="#" class="link"><strong class="clamp-1">제목제목제목</strong></a>
+        <a href="#" class="link"><span class="clamp-1">내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용</span></a>
+        <aside class="tooltip-text">
+          <p class="tooltip-text__title"><strong class="clamp-2">제목제목제목</strong></p>
+          <p class="tooltip-text__body"><span class="clamp-6">내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용</span></p>
+        </aside>
+      </div>
+    </td>
+    <td class="text-center">2023-03-19</td>
+    <td class="text-center">
+      <div class="tooltip js-tooltip-fixed tooltip-keyword">
+        <p class="text-center">보험관련, 혜택관련 외 3개</p>
+        <aside class="tooltip-text text-start">
+          <dl class="keyword-list">
+            <dt class="keyword-list__title">보험관련</dt>
+            <dd class="keyword-list__item">실손, 실비, 보험, 사보험, 보험상담사, 특약, 담보, 청구, 보험금, 비급여, 민영건강보험, 민영의료보험</dd>
+            <dt class="keyword-list__title">비용관련</dt>
+            <dd class="keyword-list__item">비용, 가격</dd>
+            <dt class="keyword-list__title">외모개선</dt>
+            <dd class="keyword-list__item">외모, 미용, 미적, 외적, 심미적, 성형, 콤플렉스</dd>
+          </dl>
+        </aside>
+      </div>
+    </td>
+  </tr>
+  <tr>
+    <td class="text-center">의료기관홍보</td>
+    <td class="text-center">카페</td>
+    <td class="text-center">출처</td>
+    <td>
+      <div class="tooltip">
+        <a href="#" class="link"><strong class="clamp-1">제목제목제목</strong></a>
+        <a href="#" class="link"><span class="clamp-1">내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용</span></a>
+        <aside class="tooltip-text">
+          <p class="tooltip-text__title"><strong class="clamp-2">제목제목제목</strong></p>
+          <p class="tooltip-text__body"><span class="clamp-6">내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용</span></p>
+        </aside>
+      </div>
+    </td>
+    <td class="text-center">2023-03-19</td>
+    <td class="text-center">
+      <div class="tooltip js-tooltip-fixed tooltip-keyword">
+        <p class="text-center">보험관련, 혜택관련 외 3개</p>
+        <aside class="tooltip-text text-start">
+          <dl class="keyword-list">
+            <dt class="keyword-list__title">보험관련</dt>
+            <dd class="keyword-list__item">실손, 실비, 보험, 사보험, 보험상담사, 특약, 담보, 청구, 보험금, 비급여, 민영건강보험, 민영의료보험</dd>
+            <dt class="keyword-list__title">비용관련</dt>
+            <dd class="keyword-list__item">비용, 가격</dd>
+            <dt class="keyword-list__title">외모개선</dt>
+            <dd class="keyword-list__item">외모, 미용, 미적, 외적, 심미적, 성형, 콤플렉스</dd>
+          </dl>
+        </aside>
+      </div>
+    </td>
+  </tr>
+  <tr>
+    <td class="text-center">의료기관홍보</td>
+    <td class="text-center">카페</td>
+    <td class="text-center">출처</td>
+    <td>
+      <div class="tooltip">
+        <a href="#" class="link"><strong class="clamp-1">제목제목제목</strong></a>
+        <a href="#" class="link"><span class="clamp-1">내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용</span></a>
+        <aside class="tooltip-text">
+          <p class="tooltip-text__title"><strong class="clamp-2">제목제목제목</strong></p>
+          <p class="tooltip-text__body"><span class="clamp-6">내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용</span></p>
+        </aside>
+      </div>
+    </td>
+    <td class="text-center">2023-03-19</td>
+    <td class="text-center">
+      <div class="tooltip js-tooltip-fixed tooltip-keyword">
+        <p class="text-center">보험관련, 혜택관련 외 3개</p>
+        <aside class="tooltip-text text-start">
+          <dl class="keyword-list">
+            <dt class="keyword-list__title">보험관련</dt>
+            <dd class="keyword-list__item">실손, 실비, 보험, 사보험, 보험상담사, 특약, 담보, 청구, 보험금, 비급여, 민영건강보험, 민영의료보험</dd>
+            <dt class="keyword-list__title">비용관련</dt>
+            <dd class="keyword-list__item">비용, 가격</dd>
+            <dt class="keyword-list__title">외모개선</dt>
+            <dd class="keyword-list__item">외모, 미용, 미적, 외적, 심미적, 성형, 콤플렉스</dd>
+          </dl>
+        </aside>
+      </div>
+    </td>
+  </tr>
+  <tr>
+    <td class="text-center">의료기관홍보</td>
+    <td class="text-center">카페</td>
+    <td class="text-center">출처</td>
+    <td>
+      <div class="tooltip">
+        <a href="#" class="link"><strong class="clamp-1">제목제목제목</strong></a>
+        <a href="#" class="link"><span class="clamp-1">내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용</span></a>
+        <aside class="tooltip-text">
+          <p class="tooltip-text__title"><strong class="clamp-2">제목제목제목</strong></p>
+          <p class="tooltip-text__body"><span class="clamp-6">내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용</span></p>
+        </aside>
+      </div>
+    </td>
+    <td class="text-center">2023-03-19</td>
+    <td class="text-center">
+      <div class="tooltip js-tooltip-fixed tooltip-keyword">
+        <p class="text-center">보험관련, 혜택관련 외 3개</p>
+        <aside class="tooltip-text text-start">
+          <dl class="keyword-list">
+            <dt class="keyword-list__title">보험관련</dt>
+            <dd class="keyword-list__item">실손, 실비, 보험, 사보험, 보험상담사, 특약, 담보, 청구, 보험금, 비급여, 민영건강보험, 민영의료보험</dd>
+            <dt class="keyword-list__title">비용관련</dt>
+            <dd class="keyword-list__item">비용, 가격</dd>
+            <dt class="keyword-list__title">외모개선</dt>
+            <dd class="keyword-list__item">외모, 미용, 미적, 외적, 심미적, 성형, 콤플렉스</dd>
+          </dl>
+        </aside>
+      </div>
+    </td>
+  </tr>
+  <tr>
+    <td class="text-center">의료기관홍보</td>
+    <td class="text-center">카페</td>
+    <td class="text-center">출처</td>
+    <td>
+      <div class="tooltip">
+        <a href="#" class="link"><strong class="clamp-1">제목제목제목</strong></a>
+        <a href="#" class="link"><span class="clamp-1">내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용</span></a>
+        <aside class="tooltip-text">
+          <p class="tooltip-text__title"><strong class="clamp-2">제목제목제목</strong></p>
+          <p class="tooltip-text__body"><span class="clamp-6">내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용</span></p>
+        </aside>
+      </div>
+    </td>
+    <td class="text-center">2023-03-19</td>
+    <td class="text-center">
+      <div class="tooltip js-tooltip-fixed tooltip-keyword">
+        <p class="text-center">보험관련, 혜택관련 외 3개</p>
+        <aside class="tooltip-text text-start">
+          <dl class="keyword-list">
+            <dt class="keyword-list__title">보험관련</dt>
+            <dd class="keyword-list__item">실손, 실비, 보험, 사보험, 보험상담사, 특약, 담보, 청구, 보험금, 비급여, 민영건강보험, 민영의료보험</dd>
+            <dt class="keyword-list__title">비용관련</dt>
+            <dd class="keyword-list__item">비용, 가격</dd>
+            <dt class="keyword-list__title">외모개선</dt>
+            <dd class="keyword-list__item">외모, 미용, 미적, 외적, 심미적, 성형, 콤플렉스</dd>
+          </dl>
+        </aside>
+      </div>
+    </td>
+  </tr>
+  <tr>
+    <td class="text-center">의료기관홍보</td>
+    <td class="text-center">카페</td>
+    <td class="text-center">출처</td>
+    <td>
+      <div class="tooltip">
+        <a href="#" class="link"><strong class="clamp-1">제목제목제목</strong></a>
+        <a href="#" class="link"><span class="clamp-1">내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용</span></a>
+        <aside class="tooltip-text">
+          <p class="tooltip-text__title"><strong class="clamp-2">제목제목제목</strong></p>
+          <p class="tooltip-text__body"><span class="clamp-6">내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용</span></p>
+        </aside>
+      </div>
+    </td>
+    <td class="text-center">2023-03-19</td>
+    <td class="text-center">
+      <div class="tooltip js-tooltip-fixed tooltip-keyword">
+        <p class="text-center">보험관련, 혜택관련 외 3개</p>
+        <aside class="tooltip-text text-start">
+          <dl class="keyword-list">
+            <dt class="keyword-list__title">보험관련</dt>
+            <dd class="keyword-list__item">실손, 실비, 보험, 사보험, 보험상담사, 특약, 담보, 청구, 보험금, 비급여, 민영건강보험, 민영의료보험</dd>
+            <dt class="keyword-list__title">비용관련</dt>
+            <dd class="keyword-list__item">비용, 가격</dd>
+            <dt class="keyword-list__title">외모개선</dt>
+            <dd class="keyword-list__item">외모, 미용, 미적, 외적, 심미적, 성형, 콤플렉스</dd>
+          </dl>
+        </aside>
+      </div>
+    </td>
+  </tr>
+</tbody>
+            </table>
           </main>
+          <footer class="l-article-footer mt-12 mb-60">
+            
+<!-- pagination -->
+<ol class="c-pagination" data-current-page="3">
+  <li class="c-pagination__item c-pagination__item--first"><button class="btn btn-default" type="button" title="이전 10개 페이지" disabled><i class="icon-svg icon-svg-chevrons-left" aria-hidden="true"></i></button></li>
+  <li class="c-pagination__item c-pagination__item--prev"><button class="btn btn-default" type="button" title="이전 페이지" disabled><i class="icon-svg icon-svg-chevron-left" aria-hidden="true"></i></button></li>
+  <li class="c-pagination__item"><button class="btn btn-default border-0" type="button"><span class="txt">1</span></button></li>
+  <li class="c-pagination__item"><button class="btn btn-default border-0" type="button"><span class="txt">2</span></button></li>
+  <li class="c-pagination__item"><button class="btn btn-default border-0" type="button"><span class="txt">3</span></button></li>
+  <li class="c-pagination__item"><button class="btn btn-default border-0" type="button"><span class="txt">4</span></button></li>
+  <li class="c-pagination__item"><button class="btn btn-default border-0" type="button"><span class="txt">5</span></button></li>
+  <li class="c-pagination__item"><button class="btn btn-default border-0" type="button"><span class="txt">6</span></button></li>
+  <li class="c-pagination__item"><button class="btn btn-default border-0" type="button"><span class="txt">7</span></button></li>
+  <li class="c-pagination__item"><button class="btn btn-default border-0" type="button"><span class="txt">8</span></button></li>
+  <li class="c-pagination__item"><button class="btn btn-default border-0" type="button"><span class="txt">9</span></button></li>
+  <li class="c-pagination__item"><button class="btn btn-default border-0" type="button"><span class="txt">10</span></button></li>
+  <li class="c-pagination__item c-pagination__item--next"><button class="btn btn-default" type="button" title="다음 페이지"><i class="icon-svg icon-svg-chevron-right" aria-hidden="true"></i></button></li>
+  <li class="c-pagination__item c-pagination__item--last"><button class="btn btn-default" type="button" title="다음 10개 페이지"><i class="icon-svg icon-svg-chevrons-right" aria-hidden="true"></i></button></li>
+</ol>
+<!-- //pagination -->
+          </footer>
         </article>
       </main>
     </div>
