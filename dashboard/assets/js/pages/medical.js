@@ -91,6 +91,24 @@
 ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■
 */
 {
+  /**
+   *
+   * depth : 의료기관 상세 정보 > Top30 키워드 순위 변화
+   * block : 키워드 상세 설정 버튼
+   * event : layer show/hide toggle
+   *
+   */
+
+  document.querySelector(".js-btn-set-keyword-detail").addEventListener("click", (e) => {
+    e.currentTarget.classList.toggle("btn-default--is-active");
+    const $popup = e.currentTarget.nextElementSibling;
+    e.currentTarget.classList.contains("btn-default--is-active") ? $popup.style.setProperty("visibility", "visible") : $popup.style.setProperty("visibility", "hidden");
+  });
+}
+/*
+■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■
+*/
+{
   const $keywordTable = document.querySelector("[data-section='Top30키워드순위변화'] .c-table");
   const tableHover = new window.TableSameHover($keywordTable);
   const tableActive = new window.TableClickSameActive($keywordTable);
@@ -102,6 +120,24 @@
       tableActive.init();
       TableClickMenu1st.init();
     },
+  });
+}
+/*
+■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■
+*/
+{
+  /**
+   *
+   * depth : 의료기관 상세 정보 > 게시글 목록
+   * block : 필터 조건 설정 버튼
+   * event : layer show/hide toggle
+   *
+   */
+
+  document.querySelector(".js-btn-set-article-filter").addEventListener("click", (e) => {
+    e.currentTarget.classList.toggle("btn-default--is-active");
+    const $popup = e.currentTarget.nextElementSibling;
+    e.currentTarget.classList.contains("btn-default--is-active") ? $popup.style.setProperty("visibility", "visible") : $popup.style.setProperty("visibility", "hidden");
   });
 }
 /*

@@ -57,7 +57,7 @@
     Array.from($areaBoxes).filter(function (_$areaBox) {
       _$areaBox.querySelector(".btn").addEventListener("click", function () {
         let nowBool = JSON.parse(_$areaBox.getAttribute("data-textarea-fold"));
-        _$areaBox.querySelector("textarea").focus();
+        if (!nowBool) _$areaBox.querySelector("textarea").focus();
         _$areaBox.setAttribute("data-textarea-fold", !nowBool);
       });
 
@@ -102,16 +102,20 @@
   {
     // refresh 버튼 클릭시 해당 영역 textarea 텍스트 전부 삭제
     const $advanKeywordBoxes = $wrapper.querySelectorAll(".js-text-length");
+    const $saveBtn = $wrapper.querySelector(".js-save");
     Array.from($advanKeywordBoxes).forEach(function (_$box) {
       const $articleFooter = _$box.querySelector(".l-article-footer");
+      const $input = _$box.querySelector(".form-fieldset--js-active-input input");
       const $refreshBtn = $articleFooter.querySelector(".js-refresh");
       const $cnt = _$box.querySelector(".cnt");
 
       $refreshBtn.addEventListener("click", function () {
+        $input.value = "";
+        $cnt.innerHTML = 0;
+        $cnt.classList.remove("danger-color");
+        $saveBtn.removeAttribute("disabled");
         [..._$box.querySelectorAll("textarea")].forEach(function (_$textArea) {
           _$textArea.value = "";
-          $cnt.innerHTML = 0;
-          $cnt.classList.remove("danger-color");
         });
       });
     });
@@ -120,15 +124,25 @@
   ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■
   */
   {
-    // 팝업 상단 인풋 활성화시 is-disabled 제거
+    // 팝업 인풋 &  활성화시 is-disabled 제거
     const $advanKeywordBoxes = $wrapper.querySelectorAll(".js-text-length");
     Array.from($advanKeywordBoxes).forEach(function (_$box) {
       const $input = _$box.querySelector(".form-fieldset--js-active-input input");
+      const $textareas = _$box.querySelectorAll("textarea");
       $input.addEventListener("focus", function () {
         Array.from($advanKeywordBoxes).forEach(function (_$el) {
           _$el.classList.add("is-disabled");
         });
         _$box.classList.remove("is-disabled");
+      });
+
+      Array.from($textareas).forEach(function (_$textArea) {
+        _$textArea.addEventListener("focus", function () {
+          Array.from($advanKeywordBoxes).forEach(function (_$el) {
+            _$el.classList.add("is-disabled");
+          });
+          _$box.classList.remove("is-disabled");
+        });
       });
     });
   }
