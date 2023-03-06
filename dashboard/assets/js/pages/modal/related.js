@@ -42,10 +42,20 @@ function modalRelated(_callback) {
    *
    */
 
-  $wrapper.querySelector(".js-btn-set-area").addEventListener("click", (e) => {
+  $wrapper.querySelector(".js-btn-set-filter").addEventListener("click", (e) => {
     e.currentTarget.classList.toggle("btn-default--is-active");
     const $popup = e.currentTarget.nextElementSibling;
     e.currentTarget.classList.contains("btn-default--is-active") ? $popup.style.setProperty("visibility", "visible") : $popup.style.setProperty("visibility", "hidden");
+
+    setTimeout(() => {
+      document.addEventListener("click", function(ev) {
+        if (!(Boolean(ev.target.closest(".aside-setting-filter")))) {
+          $popup.style.setProperty("visibility", "hidden");
+          $wrapper.querySelector(".js-btn-set-filter").classList.remove("btn-default--is-active");
+          document.removeEventListener("click", arguments.callee);
+        }
+      });
+    }), 200;
   });
 }
 /*
@@ -64,7 +74,12 @@ function modalRelated(_callback) {
   const $btnRefresh = $wrapper.querySelector("[data-button=새로고침]");
 
   $btnRefresh.addEventListener("click", (e) => {
-    $fieldset.setAttribute("data-checkbox-index", "");
+    let childLen = '';
+    for (i = 0; i< $fieldset.children.length; i++) {
+      childLen += i;
+      if (i != $fieldset.children.length-1)  childLen += ', ';
+    };
+    $fieldset.setAttribute("data-checkbox-index", childLen);
   });
 }
 /*

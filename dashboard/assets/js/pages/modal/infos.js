@@ -24,6 +24,7 @@
           // complete callback(모달 생성 후)
 
           if (_callback) _callback($wrapper);
+          $wrapper.querySelector("[data-article=의료기관팝업-게시글목록] .form-search input").focus();
         },
         close() {
           // execute close callback(모달 제거 후)
@@ -50,25 +51,25 @@
     const $chartDiv = $section.querySelector(".js-chart");
 
     // AMchart Loader
-    const Moral2ndLineChart = new rsnCharts.Moral2ndLineChart($chartDiv);
-    Moral2ndLineChart.options = {
+    const KeywordPopupLineChart = new rsnCharts.KeywordPopupLineChart($chartDiv);
+    KeywordPopupLineChart.options = {
       legend: true,
       useGraphSettings: true,
     };
-    let categorys = ["정보량 증감률", "정보량"];
+    let categorys = ["백내장", "다초점렌즈"];
     // prettier-ignore
     let datas = [
-    { category: "2022-04", "column-1": 9800, "column-2": 25, },
-    { category: "2022-05", "column-1": 15500, "column-2": 18, },
-    { category: "2022-06", "column-1": 7800, "column-2": 87, },
-    { category: "2023-07", "column-1": 15000, "column-2": 21, },
-    { category: "2023-08", "column-1": 11000, "column-2": 20, },
-    { category: "2023-09", "column-1": 14800, "column-2": 22, },
+    { category: "2022-04", "column-1": 550, "column-2": 370, },
+    { category: "2022-05", "column-1": 420, "column-2": 720, },
+    { category: "2022-06", "column-1": 780, "column-2": 870, },
+    { category: "2023-07", "column-1": 150, "column-2": 210, },
+    { category: "2023-08", "column-1": 110, "column-2": 200, },
+    { category: "2023-09", "column-1": 148, "column-2": 220, },
   ];
 
     // init
-    Moral2ndLineChart.reDataBinding(datas, categorys); // 데이터 변경시킬때
-    Moral2ndLineChart.reColoring(["#B8CF5A", "#739EDE"]); // 컬러세팅
+    KeywordPopupLineChart.reDataBinding(datas, categorys); // 데이터 변경시킬때
+    KeywordPopupLineChart.reColoring(["#b193e2", "#89DDD8"]); // 컬러세팅
   }
 }
 /*

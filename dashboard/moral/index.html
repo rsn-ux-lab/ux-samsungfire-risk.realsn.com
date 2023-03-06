@@ -1,5 +1,5 @@
 
-<!-- reBuild :  20230303160923 -->
+<!-- reBuild :  20230306154625 -->
 
 <!DOCTYPE html>
 <html lang="ko">
@@ -16,13 +16,13 @@
   <link rel="shortcut icon" href="/dashboard/assets/img/favicon.ico" />
 
   <!-- STYLE -->
-    <link rel="stylesheet" href="/dashboard/assets/css/style.css?v=20230303160923">
+    <link rel="stylesheet" href="/dashboard/assets/css/style.css?v=20230306154625">
 
   <!-- JS -->
-  <script src="/dashboard/assets/js/config/files.js?v=20230303160923" defer></script>
-  <script src="/dashboard/assets/js/libs.js?v=20230303160923" defer></script>
-  <script src="/dashboard/assets/js/modules.js?v=20230303160923" defer></script>
-  <script src="/dashboard/assets/js/config/router.js?v=20230303160923" defer></script>
+  <script src="/dashboard/assets/js/config/files.js?v=20230306154625" defer></script>
+  <script src="/dashboard/assets/js/libs.js?v=20230306154625" defer></script>
+  <script src="/dashboard/assets/js/modules.js?v=20230306154625" defer></script>
+  <script src="/dashboard/assets/js/config/router.js?v=20230306154625" defer></script>
 </head>
 
 <body>
@@ -303,10 +303,10 @@
             })" 
             type="button"
           > 관련정보 팝업 callback 예시</button>
-          <button class="btn btn-default" onclick="$.modal({isExist: true, className: 'data-table--keyword'});" type="button">키워드팝업</button>
-          <button class="btn btn-default" onclick="$.modal({isExist: true, className: 'data-table--info_search'});" type="button">의료기관 상세 검색 팝업</button>
-          <button class="btn btn-default" onclick="$.modal({isExist: true, className: 'data-table--infos'});" type="button">의료기관 정보 팝업</button>
-          <button class="btn btn-default" onclick="$.modal({isExist: true, className: 'data-table--advanced'});" type="button">고급검색 팝업</button>        
+          <button class="btn btn-default" onclick="modalKeyword();" type="button">키워드팝업</button>
+          <button class="btn btn-default" onclick="modalInfoSearch();" type="button">의료기관 상세 검색 팝업</button>
+          <button class="btn btn-default" onclick="modalInfos();" type="button">의료기관 정보 팝업</button>
+          <button class="btn btn-default" onclick="modalAdvanced();" type="button">고급검색 팝업</button>        
       </main>
     </div>
   </section>
@@ -2111,9 +2111,9 @@
         <main class="l-article-body">
           <article class="l-article">
             <header class="l-article-header d-flex">
-              <button class="btn btn-default rounded-pill js-btn-set-area" type="button"><span class="txt">필터 조건 설정</span></button>
-              <aside id="setting-area" class="aside-setting-area rounded">
-                <main class="setting-area--body pb-16 mb-16">      
+              <button class="btn btn-default rounded-pill js-btn-set-filter" type="button"><span class="txt">필터 조건 설정</span></button>
+              <aside id="setting-filter" class="aside-setting-filter rounded">
+                <main class="setting-filter--body pb-16 mb-16">      
                   <fieldset class="form-fieldset d-grid" data-fieldset="XY축">
                     <div class="form-row form-select form-select--border-bottom mb-10" data-selected-value="0" data-selected-text="블로그 외 1개 증감률">
                       <label for="relatePopupFilter1" class="pl-0 mr-10">채널</label>
@@ -2138,10 +2138,10 @@
                     </div>
                   </fieldset>       
                 </main>
-                <header class="setting-area--header d-flex">
-                  <h4 class="setting-area--header__title">추정지역</h4>
+                <header class="setting-filter--header d-flex">
+                  <h4 class="setting-filter--header__title">추정지역</h4>
                 </header>
-                <main class="setting-area--body mt-16">
+                <main class="setting-filter--body mt-16">
                   <fieldset class="form-fieldset d-flex w-100" data-fieldset="전국">
                     <div class="form-row form-switch form-switch--sm" data-row="전국">
                       <label for="checkboxSensePopupAll"><span class="txt w-100 mr-5">전국</span></label>
@@ -2219,7 +2219,7 @@
                     </fieldset>
                   </fieldset>
                 </main>
-                <footer class="setting-area--footer d-flex mt-12">
+                <footer class="setting-filter--footer d-flex mt-12">
                   <button class="btn btn-icon rounded" data-button="새로고침" title="새로고침" type="button"><i class="icon-svg icon-svg-refresh" aria-hidden="true"></i></button>
                   <button class="btn btn-secondary rounded ml-8 w-100" type="button">검색</button>
                 </footer>
@@ -2243,20 +2243,21 @@
               <div class="scroll-container-x">
                 <table class="c-table c-table--hover" data-thead-sticky="true">
                   <colgroup>
+                    <col style="width:9.2rem">
                     <col style="width:11rem">
+                    <col style="width:13.4rem">
+                    <col style="width:33.4rem">
+                    <col style="width:9.4rem">
+                    <col style="width:14rem">
                     <col style="width:9rem">
-                    <col style="width:11rem">
-                    <col style="width:38rem">
-                    <col style="width:9.5rem">
-                    <col style="width:18rem">
-                    <col style="width:10rem">
-                    <col style="width:10rem">
+                    <col style="width:11.2rem">
                   </colgroup>
                   <thead>
                     <tr>
                       <th>글유형</th>
                       <th>채널</th>
-                      <th>출처</th>
+                      <th>출처
+                      </th>
                       <th>원문</th>
                       <th>
                         <p>수집일</p>
@@ -2272,15 +2273,22 @@
                         </fieldset>
                       </th>
                       <th style="background: #ebebeb;">관심키워드</th>
-                      <th style="background: #ebebeb;">관련 의료기관</th>
+                      <th style="background: #ebebeb; padding-left: 0; padding-right: 0;">관련 의료기관</th>
                       <th style="background: #ebebeb;">추정지역</th>
                     </tr>
                   </thead>
                   <tbody>
                     <tr>
-                      <td class="text-center">의료기관홍보</td>
+                      <td class="text-center">의료기관 홍보</td>
                       <td class="text-center">카페</td>
-                      <td class="text-center">출처</td>
+                      <td class="text-center">
+                        <div class="tooltip js-tooltip-fixed">
+                          <p class="text-center clamp-2">출처출처출처출처출처출처출처출처</p>
+                          <aside class="tooltip-text" style="width: 20rem;">
+                            <p class="tooltip-text__body">출처출처출처출처출처출처출처출처</p>
+                          </aside>
+                        </div>
+                      </td>
                       <td>
                         <div class="tooltip js-tooltip-fixed">
                           <a href="#" class="link text-start" target="_blank"><strong class="clamp-1">제목제목제목</strong></a>
@@ -2297,23 +2305,43 @@
                           <p class="text-center clamp-2">보험관련, 혜택관련 외 3개</p>
                           <aside class="tooltip-text">
                             <dl class="keyword-list">
-                              <dt class="keyword-list__title">보험관련</dt>
-                              <dd class="keyword-list__item">실손, 실비, 보험, 사보험, 보험상담사, 특약, 담보, 청구, 보험금, 비급여, 민영건강보험, 민영의료보험</dd>
-                              <dt class="keyword-list__title">비용관련</dt>
-                              <dd class="keyword-list__item">비용, 가격</dd>
-                              <dt class="keyword-list__title">외모개선</dt>
-                              <dd class="keyword-list__item">외모, 미용, 미적, 외적, 심미적, 성형, 콤플렉스</dd>
+                              <div class="keyword-list__item d-flex">
+                                <dt class="keyword-list__title">보험관련</dt>
+                                <dd class="keyword-list__content">실손, 실비, 보험, 사보험, 보험상담사, 특약, 담보, 청구, 보험금, 비급여, 민영건강보험, 민영의료보험</dd>
+                              </div>
+                              <div class="keyword-list__item d-flex">
+                                <dt class="keyword-list__title">비용관련</dt>
+                                <dd class="keyword-list__content">비용, 가격</dd>
+                              </div>
+                              <div class="keyword-list__item d-flex">
+                                <dt class="keyword-list__title">외모개선</dt>
+                                <dd class="keyword-list__content">외모, 미용, 미적, 외적, 심미적, 성형, 콤플렉스</dd>
+                              </div>
                             </dl>
                           </aside>
                         </div>
                       </td>
-                      <td class="text-center">○ ○ 병원</td>
+                      <td class="text-center">
+                        <div class="tooltip js-tooltip-fixed">
+                          <p class="clamp-2">○ ○ 병원○ ○ 병원○ ○ 병원○ ○ 병원</p>
+                          <aside class="tooltip-text" style="width: 17rem;">
+                            <p class="tooltip-text__body">○ ○ 병원○ ○ 병원○ ○ 병원○ ○ 병원</p>
+                          </aside>
+                        </div>
+                      </td>
                       <td class="text-center">서울 서초구</td>
                     </tr>
                     <tr>
-                      <td class="text-center">의료기관홍보</td>
+                      <td class="text-center">의료기관 홍보</td>
                       <td class="text-center">카페</td>
-                      <td class="text-center">출처</td>
+                      <td class="text-center">
+                        <div class="tooltip js-tooltip-fixed">
+                          <p class="text-center clamp-2">출처출처출처출처출처출처출처출처출처출처출처출처출처출처출처출처</p>
+                          <aside class="tooltip-text" style="width: 20rem;">
+                            <p class="tooltip-text__body">출처출처출처출처출처출처출처출처출처출처출처출처출처출처출처출처</p>
+                          </aside>
+                        </div>
+                      </td>
                       <td>
                         <div class="tooltip js-tooltip-fixed">
                           <a href="#" class="link text-start" target="_blank"><strong class="clamp-1">제목제목제목</strong></a>
@@ -2330,23 +2358,43 @@
                           <p class="text-center clamp-2">보험관련, 혜택관련 외 3개</p>
                           <aside class="tooltip-text">
                             <dl class="keyword-list">
-                              <dt class="keyword-list__title">보험관련</dt>
-                              <dd class="keyword-list__item">실손, 실비, 보험, 사보험, 보험상담사, 특약, 담보, 청구, 보험금, 비급여, 민영건강보험, 민영의료보험</dd>
-                              <dt class="keyword-list__title">비용관련</dt>
-                              <dd class="keyword-list__item">비용, 가격</dd>
-                              <dt class="keyword-list__title">외모개선</dt>
-                              <dd class="keyword-list__item">외모, 미용, 미적, 외적, 심미적, 성형, 콤플렉스</dd>
+                              <div class="keyword-list__item d-flex">
+                                <dt class="keyword-list__title">보험관련</dt>
+                                <dd class="keyword-list__content">실손, 실비, 보험, 사보험, 보험상담사, 특약, 담보, 청구, 보험금, 비급여, 민영건강보험, 민영의료보험</dd>
+                              </div>
+                              <div class="keyword-list__item d-flex">
+                                <dt class="keyword-list__title">비용관련</dt>
+                                <dd class="keyword-list__content">비용, 가격</dd>
+                              </div>
+                              <div class="keyword-list__item d-flex">
+                                <dt class="keyword-list__title">외모개선</dt>
+                                <dd class="keyword-list__content">외모, 미용, 미적, 외적, 심미적, 성형, 콤플렉스</dd>
+                              </div>
                             </dl>
                           </aside>
                         </div>
                       </td>
-                      <td class="text-center">○ ○ 병원</td>
+                      <td class="text-center">
+                        <div class="tooltip js-tooltip-fixed">
+                          <p class="clamp-2">○ ○ 병원○ ○ 병원○ ○ 병원○ ○ 병원○ ○ 병원○ ○ 병원○ ○ 병원○ ○ 병원○ ○ 병원○ ○ 병원</p>
+                          <aside class="tooltip-text" style="width: 17rem;">
+                            <p class="tooltip-text__body">○ ○ 병원○ ○ 병원○ ○ 병원○ ○ 병원○ ○ 병원○ ○ 병원○ ○ 병원○ ○ 병원○ ○ 병원○ ○ 병원</p>
+                          </aside>
+                        </div>
+                      </td>
                       <td class="text-center">서울 서초구</td>
                     </tr>
                     <tr>
-                      <td class="text-center">의료기관홍보</td>
+                      <td class="text-center">의료기관 홍보</td>
                       <td class="text-center">카페</td>
-                      <td class="text-center">출처</td>
+                      <td class="text-center">
+                        <div class="tooltip js-tooltip-fixed">
+                          <p class="text-center clamp-2">출처</p>
+                          <aside class="tooltip-text" style="width: 20rem;">
+                            <p class="tooltip-text__body">출처</p>
+                          </aside>
+                        </div>
+                      </td>
                       <td>
                         <div class="tooltip js-tooltip-fixed">
                           <a href="#" class="link text-start" target="_blank"><strong class="clamp-1">제목제목제목</strong></a>
@@ -2363,23 +2411,43 @@
                           <p class="text-center clamp-2">보험관련, 혜택관련 외 3개</p>
                           <aside class="tooltip-text">
                             <dl class="keyword-list">
-                              <dt class="keyword-list__title">보험관련</dt>
-                              <dd class="keyword-list__item">실손, 실비, 보험, 사보험, 보험상담사, 특약, 담보, 청구, 보험금, 비급여, 민영건강보험, 민영의료보험</dd>
-                              <dt class="keyword-list__title">비용관련</dt>
-                              <dd class="keyword-list__item">비용, 가격</dd>
-                              <dt class="keyword-list__title">외모개선</dt>
-                              <dd class="keyword-list__item">외모, 미용, 미적, 외적, 심미적, 성형, 콤플렉스</dd>
+                              <div class="keyword-list__item d-flex">
+                                <dt class="keyword-list__title">보험관련</dt>
+                                <dd class="keyword-list__content">실손, 실비, 보험, 사보험, 보험상담사, 특약, 담보, 청구, 보험금, 비급여, 민영건강보험, 민영의료보험</dd>
+                              </div>
+                              <div class="keyword-list__item d-flex">
+                                <dt class="keyword-list__title">비용관련</dt>
+                                <dd class="keyword-list__content">비용, 가격</dd>
+                              </div>
+                              <div class="keyword-list__item d-flex">
+                                <dt class="keyword-list__title">외모개선</dt>
+                                <dd class="keyword-list__content">외모, 미용, 미적, 외적, 심미적, 성형, 콤플렉스</dd>
+                              </div>
                             </dl>
                           </aside>
                         </div>
                       </td>
-                      <td class="text-center">○ ○ 병원</td>
+                      <td class="text-center">
+                        <div class="tooltip js-tooltip-fixed">
+                          <p class="clamp-2">○ ○ 병원</p>
+                          <aside class="tooltip-text" style="width: 17rem;">
+                            <p class="tooltip-text__body">○ ○ 병원</p>
+                          </aside>
+                        </div>
+                      </td>
                       <td class="text-center">서울 서초구</td>
                     </tr>
                     <tr>
-                      <td class="text-center">의료기관홍보</td>
+                      <td class="text-center">의료기관 홍보</td>
                       <td class="text-center">카페</td>
-                      <td class="text-center">출처</td>
+                      <td class="text-center">
+                        <div class="tooltip js-tooltip-fixed">
+                          <p class="text-center clamp-2">출처</p>
+                          <aside class="tooltip-text" style="width: 20rem;">
+                            <p class="tooltip-text__body">출처</p>
+                          </aside>
+                        </div>
+                      </td>
                       <td>
                         <div class="tooltip js-tooltip-fixed">
                           <a href="#" class="link text-start" target="_blank"><strong class="clamp-1">제목제목제목</strong></a>
@@ -2396,23 +2464,43 @@
                           <p class="text-center clamp-2">보험관련, 혜택관련 외 3개</p>
                           <aside class="tooltip-text">
                             <dl class="keyword-list">
-                              <dt class="keyword-list__title">보험관련</dt>
-                              <dd class="keyword-list__item">실손, 실비, 보험, 사보험, 보험상담사, 특약, 담보, 청구, 보험금, 비급여, 민영건강보험, 민영의료보험</dd>
-                              <dt class="keyword-list__title">비용관련</dt>
-                              <dd class="keyword-list__item">비용, 가격</dd>
-                              <dt class="keyword-list__title">외모개선</dt>
-                              <dd class="keyword-list__item">외모, 미용, 미적, 외적, 심미적, 성형, 콤플렉스</dd>
+                              <div class="keyword-list__item d-flex">
+                                <dt class="keyword-list__title">보험관련</dt>
+                                <dd class="keyword-list__content">실손, 실비, 보험, 사보험, 보험상담사, 특약, 담보, 청구, 보험금, 비급여, 민영건강보험, 민영의료보험</dd>
+                              </div>
+                              <div class="keyword-list__item d-flex">
+                                <dt class="keyword-list__title">비용관련</dt>
+                                <dd class="keyword-list__content">비용, 가격</dd>
+                              </div>
+                              <div class="keyword-list__item d-flex">
+                                <dt class="keyword-list__title">외모개선</dt>
+                                <dd class="keyword-list__content">외모, 미용, 미적, 외적, 심미적, 성형, 콤플렉스</dd>
+                              </div>
                             </dl>
                           </aside>
                         </div>
                       </td>
-                      <td class="text-center">○ ○ 병원</td>
+                      <td class="text-center">
+                        <div class="tooltip js-tooltip-fixed">
+                          <p class="clamp-2">○ ○ 병원</p>
+                          <aside class="tooltip-text" style="width: 17rem;">
+                            <p class="tooltip-text__body">○ ○ 병원</p>
+                          </aside>
+                        </div>
+                      </td>
                       <td class="text-center">서울 서초구</td>
                     </tr>
                     <tr>
-                      <td class="text-center">의료기관홍보</td>
+                      <td class="text-center">의료기관 홍보</td>
                       <td class="text-center">카페</td>
-                      <td class="text-center">출처</td>
+                      <td class="text-center">
+                        <div class="tooltip js-tooltip-fixed">
+                          <p class="text-center clamp-2">출처</p>
+                          <aside class="tooltip-text" style="width: 20rem;">
+                            <p class="tooltip-text__body">출처</p>
+                          </aside>
+                        </div>
+                      </td>
                       <td>
                         <div class="tooltip js-tooltip-fixed">
                           <a href="#" class="link text-start" target="_blank"><strong class="clamp-1">제목제목제목</strong></a>
@@ -2429,23 +2517,43 @@
                           <p class="text-center clamp-2">보험관련, 혜택관련 외 3개</p>
                           <aside class="tooltip-text">
                             <dl class="keyword-list">
-                              <dt class="keyword-list__title">보험관련</dt>
-                              <dd class="keyword-list__item">실손, 실비, 보험, 사보험, 보험상담사, 특약, 담보, 청구, 보험금, 비급여, 민영건강보험, 민영의료보험</dd>
-                              <dt class="keyword-list__title">비용관련</dt>
-                              <dd class="keyword-list__item">비용, 가격</dd>
-                              <dt class="keyword-list__title">외모개선</dt>
-                              <dd class="keyword-list__item">외모, 미용, 미적, 외적, 심미적, 성형, 콤플렉스</dd>
+                              <div class="keyword-list__item d-flex">
+                                <dt class="keyword-list__title">보험관련</dt>
+                                <dd class="keyword-list__content">실손, 실비, 보험, 사보험, 보험상담사, 특약, 담보, 청구, 보험금, 비급여, 민영건강보험, 민영의료보험</dd>
+                              </div>
+                              <div class="keyword-list__item d-flex">
+                                <dt class="keyword-list__title">비용관련</dt>
+                                <dd class="keyword-list__content">비용, 가격</dd>
+                              </div>
+                              <div class="keyword-list__item d-flex">
+                                <dt class="keyword-list__title">외모개선</dt>
+                                <dd class="keyword-list__content">외모, 미용, 미적, 외적, 심미적, 성형, 콤플렉스</dd>
+                              </div>
                             </dl>
                           </aside>
                         </div>
                       </td>
-                      <td class="text-center">○ ○ 병원</td>
+                      <td class="text-center">
+                        <div class="tooltip js-tooltip-fixed">
+                          <p class="clamp-2">○ ○ 병원</p>
+                          <aside class="tooltip-text" style="width: 17rem;">
+                            <p class="tooltip-text__body">○ ○ 병원</p>
+                          </aside>
+                        </div>
+                      </td>
                       <td class="text-center">서울 서초구</td>
                     </tr>
                     <tr>
-                      <td class="text-center">의료기관홍보</td>
+                      <td class="text-center">의료기관 홍보</td>
                       <td class="text-center">카페</td>
-                      <td class="text-center">출처</td>
+                      <td class="text-center">
+                        <div class="tooltip js-tooltip-fixed">
+                          <p class="text-center clamp-2">출처</p>
+                          <aside class="tooltip-text" style="width: 20rem;">
+                            <p class="tooltip-text__body">출처</p>
+                          </aside>
+                        </div>
+                      </td>
                       <td>
                         <div class="tooltip js-tooltip-fixed">
                           <a href="#" class="link text-start" target="_blank"><strong class="clamp-1">제목제목제목</strong></a>
@@ -2462,23 +2570,43 @@
                           <p class="text-center clamp-2">보험관련, 혜택관련 외 3개</p>
                           <aside class="tooltip-text">
                             <dl class="keyword-list">
-                              <dt class="keyword-list__title">보험관련</dt>
-                              <dd class="keyword-list__item">실손, 실비, 보험, 사보험, 보험상담사, 특약, 담보, 청구, 보험금, 비급여, 민영건강보험, 민영의료보험</dd>
-                              <dt class="keyword-list__title">비용관련</dt>
-                              <dd class="keyword-list__item">비용, 가격</dd>
-                              <dt class="keyword-list__title">외모개선</dt>
-                              <dd class="keyword-list__item">외모, 미용, 미적, 외적, 심미적, 성형, 콤플렉스</dd>
+                              <div class="keyword-list__item d-flex">
+                                <dt class="keyword-list__title">보험관련</dt>
+                                <dd class="keyword-list__content">실손, 실비, 보험, 사보험, 보험상담사, 특약, 담보, 청구, 보험금, 비급여, 민영건강보험, 민영의료보험</dd>
+                              </div>
+                              <div class="keyword-list__item d-flex">
+                                <dt class="keyword-list__title">비용관련</dt>
+                                <dd class="keyword-list__content">비용, 가격</dd>
+                              </div>
+                              <div class="keyword-list__item d-flex">
+                                <dt class="keyword-list__title">외모개선</dt>
+                                <dd class="keyword-list__content">외모, 미용, 미적, 외적, 심미적, 성형, 콤플렉스</dd>
+                              </div>
                             </dl>
                           </aside>
                         </div>
                       </td>
-                      <td class="text-center">○ ○ 병원</td>
+                      <td class="text-center">
+                        <div class="tooltip js-tooltip-fixed">
+                          <p class="clamp-2">○ ○ 병원</p>
+                          <aside class="tooltip-text" style="width: 17rem;">
+                            <p class="tooltip-text__body">○ ○ 병원</p>
+                          </aside>
+                        </div>
+                      </td>
                       <td class="text-center">서울 서초구</td>
                     </tr>
                     <tr>
-                      <td class="text-center">의료기관홍보</td>
+                      <td class="text-center">의료기관 홍보</td>
                       <td class="text-center">카페</td>
-                      <td class="text-center">출처</td>
+                      <td class="text-center">
+                        <div class="tooltip js-tooltip-fixed">
+                          <p class="text-center clamp-2">출처</p>
+                          <aside class="tooltip-text" style="width: 20rem;">
+                            <p class="tooltip-text__body">출처</p>
+                          </aside>
+                        </div>
+                      </td>
                       <td>
                         <div class="tooltip js-tooltip-fixed">
                           <a href="#" class="link text-start" target="_blank"><strong class="clamp-1">제목제목제목</strong></a>
@@ -2495,23 +2623,43 @@
                           <p class="text-center clamp-2">보험관련, 혜택관련 외 3개</p>
                           <aside class="tooltip-text">
                             <dl class="keyword-list">
-                              <dt class="keyword-list__title">보험관련</dt>
-                              <dd class="keyword-list__item">실손, 실비, 보험, 사보험, 보험상담사, 특약, 담보, 청구, 보험금, 비급여, 민영건강보험, 민영의료보험</dd>
-                              <dt class="keyword-list__title">비용관련</dt>
-                              <dd class="keyword-list__item">비용, 가격</dd>
-                              <dt class="keyword-list__title">외모개선</dt>
-                              <dd class="keyword-list__item">외모, 미용, 미적, 외적, 심미적, 성형, 콤플렉스</dd>
+                              <div class="keyword-list__item d-flex">
+                                <dt class="keyword-list__title">보험관련</dt>
+                                <dd class="keyword-list__content">실손, 실비, 보험, 사보험, 보험상담사, 특약, 담보, 청구, 보험금, 비급여, 민영건강보험, 민영의료보험</dd>
+                              </div>
+                              <div class="keyword-list__item d-flex">
+                                <dt class="keyword-list__title">비용관련</dt>
+                                <dd class="keyword-list__content">비용, 가격</dd>
+                              </div>
+                              <div class="keyword-list__item d-flex">
+                                <dt class="keyword-list__title">외모개선</dt>
+                                <dd class="keyword-list__content">외모, 미용, 미적, 외적, 심미적, 성형, 콤플렉스</dd>
+                              </div>
                             </dl>
                           </aside>
                         </div>
                       </td>
-                      <td class="text-center">○ ○ 병원</td>
+                      <td class="text-center">
+                        <div class="tooltip js-tooltip-fixed">
+                          <p class="clamp-2">○ ○ 병원</p>
+                          <aside class="tooltip-text" style="width: 17rem;">
+                            <p class="tooltip-text__body">○ ○ 병원</p>
+                          </aside>
+                        </div>
+                      </td>
                       <td class="text-center">서울 서초구</td>
                     </tr>
                     <tr>
-                      <td class="text-center">의료기관홍보</td>
+                      <td class="text-center">의료기관 홍보</td>
                       <td class="text-center">카페</td>
-                      <td class="text-center">출처</td>
+                      <td class="text-center">
+                        <div class="tooltip js-tooltip-fixed">
+                          <p class="text-center clamp-2">출처</p>
+                          <aside class="tooltip-text" style="width: 20rem;">
+                            <p class="tooltip-text__body">출처</p>
+                          </aside>
+                        </div>
+                      </td>
                       <td>
                         <div class="tooltip js-tooltip-fixed">
                           <a href="#" class="link text-start" target="_blank"><strong class="clamp-1">제목제목제목</strong></a>
@@ -2528,23 +2676,43 @@
                           <p class="text-center clamp-2">보험관련, 혜택관련 외 3개</p>
                           <aside class="tooltip-text">
                             <dl class="keyword-list">
-                              <dt class="keyword-list__title">보험관련</dt>
-                              <dd class="keyword-list__item">실손, 실비, 보험, 사보험, 보험상담사, 특약, 담보, 청구, 보험금, 비급여, 민영건강보험, 민영의료보험</dd>
-                              <dt class="keyword-list__title">비용관련</dt>
-                              <dd class="keyword-list__item">비용, 가격</dd>
-                              <dt class="keyword-list__title">외모개선</dt>
-                              <dd class="keyword-list__item">외모, 미용, 미적, 외적, 심미적, 성형, 콤플렉스</dd>
+                              <div class="keyword-list__item d-flex">
+                                <dt class="keyword-list__title">보험관련</dt>
+                                <dd class="keyword-list__content">실손, 실비, 보험, 사보험, 보험상담사, 특약, 담보, 청구, 보험금, 비급여, 민영건강보험, 민영의료보험</dd>
+                              </div>
+                              <div class="keyword-list__item d-flex">
+                                <dt class="keyword-list__title">비용관련</dt>
+                                <dd class="keyword-list__content">비용, 가격</dd>
+                              </div>
+                              <div class="keyword-list__item d-flex">
+                                <dt class="keyword-list__title">외모개선</dt>
+                                <dd class="keyword-list__content">외모, 미용, 미적, 외적, 심미적, 성형, 콤플렉스</dd>
+                              </div>
                             </dl>
                           </aside>
                         </div>
                       </td>
-                      <td class="text-center">○ ○ 병원</td>
+                      <td class="text-center">
+                        <div class="tooltip js-tooltip-fixed">
+                          <p class="clamp-2">○ ○ 병원</p>
+                          <aside class="tooltip-text" style="width: 17rem;">
+                            <p class="tooltip-text__body">○ ○ 병원</p>
+                          </aside>
+                        </div>
+                      </td>
                       <td class="text-center">서울 서초구</td>
                     </tr>
                     <tr>
-                      <td class="text-center">의료기관홍보</td>
+                      <td class="text-center">의료기관 홍보</td>
                       <td class="text-center">카페</td>
-                      <td class="text-center">출처</td>
+                      <td class="text-center">
+                        <div class="tooltip js-tooltip-fixed">
+                          <p class="text-center clamp-2">출처</p>
+                          <aside class="tooltip-text" style="width: 20rem;">
+                            <p class="tooltip-text__body">출처</p>
+                          </aside>
+                        </div>
+                      </td>
                       <td>
                         <div class="tooltip js-tooltip-fixed">
                           <a href="#" class="link text-start" target="_blank"><strong class="clamp-1">제목제목제목</strong></a>
@@ -2561,23 +2729,43 @@
                           <p class="text-center clamp-2">보험관련, 혜택관련 외 3개</p>
                           <aside class="tooltip-text">
                             <dl class="keyword-list">
-                              <dt class="keyword-list__title">보험관련</dt>
-                              <dd class="keyword-list__item">실손, 실비, 보험, 사보험, 보험상담사, 특약, 담보, 청구, 보험금, 비급여, 민영건강보험, 민영의료보험</dd>
-                              <dt class="keyword-list__title">비용관련</dt>
-                              <dd class="keyword-list__item">비용, 가격</dd>
-                              <dt class="keyword-list__title">외모개선</dt>
-                              <dd class="keyword-list__item">외모, 미용, 미적, 외적, 심미적, 성형, 콤플렉스</dd>
+                              <div class="keyword-list__item d-flex">
+                                <dt class="keyword-list__title">보험관련</dt>
+                                <dd class="keyword-list__content">실손, 실비, 보험, 사보험, 보험상담사, 특약, 담보, 청구, 보험금, 비급여, 민영건강보험, 민영의료보험</dd>
+                              </div>
+                              <div class="keyword-list__item d-flex">
+                                <dt class="keyword-list__title">비용관련</dt>
+                                <dd class="keyword-list__content">비용, 가격</dd>
+                              </div>
+                              <div class="keyword-list__item d-flex">
+                                <dt class="keyword-list__title">외모개선</dt>
+                                <dd class="keyword-list__content">외모, 미용, 미적, 외적, 심미적, 성형, 콤플렉스</dd>
+                              </div>
                             </dl>
                           </aside>
                         </div>
                       </td>
-                      <td class="text-center">○ ○ 병원</td>
+                      <td class="text-center">
+                        <div class="tooltip js-tooltip-fixed">
+                          <p class="clamp-2">○ ○ 병원</p>
+                          <aside class="tooltip-text" style="width: 17rem;">
+                            <p class="tooltip-text__body">○ ○ 병원</p>
+                          </aside>
+                        </div>
+                      </td>
                       <td class="text-center">서울 서초구</td>
                     </tr>
                     <tr>
-                      <td class="text-center">의료기관홍보</td>
+                      <td class="text-center">의료기관 홍보</td>
                       <td class="text-center">카페</td>
-                      <td class="text-center">출처</td>
+                      <td class="text-center">
+                        <div class="tooltip js-tooltip-fixed">
+                          <p class="text-center clamp-2">출처</p>
+                          <aside class="tooltip-text" style="width: 20rem;">
+                            <p class="tooltip-text__body">출처</p>
+                          </aside>
+                        </div>
+                      </td>
                       <td>
                         <div class="tooltip js-tooltip-fixed">
                           <a href="#" class="link text-start" target="_blank"><strong class="clamp-1">제목제목제목</strong></a>
@@ -2594,17 +2782,30 @@
                           <p class="text-center clamp-2">보험관련, 혜택관련 외 3개</p>
                           <aside class="tooltip-text">
                             <dl class="keyword-list">
-                              <dt class="keyword-list__title">보험관련</dt>
-                              <dd class="keyword-list__item">실손, 실비, 보험, 사보험, 보험상담사, 특약, 담보, 청구, 보험금, 비급여, 민영건강보험, 민영의료보험</dd>
-                              <dt class="keyword-list__title">비용관련</dt>
-                              <dd class="keyword-list__item">비용, 가격</dd>
-                              <dt class="keyword-list__title">외모개선</dt>
-                              <dd class="keyword-list__item">외모, 미용, 미적, 외적, 심미적, 성형, 콤플렉스</dd>
+                              <div class="keyword-list__item d-flex">
+                                <dt class="keyword-list__title">보험관련</dt>
+                                <dd class="keyword-list__content">실손, 실비, 보험, 사보험, 보험상담사, 특약, 담보, 청구, 보험금, 비급여, 민영건강보험, 민영의료보험</dd>
+                              </div>
+                              <div class="keyword-list__item d-flex">
+                                <dt class="keyword-list__title">비용관련</dt>
+                                <dd class="keyword-list__content">비용, 가격</dd>
+                              </div>
+                              <div class="keyword-list__item d-flex">
+                                <dt class="keyword-list__title">외모개선</dt>
+                                <dd class="keyword-list__content">외모, 미용, 미적, 외적, 심미적, 성형, 콤플렉스</dd>
+                              </div>
                             </dl>
                           </aside>
                         </div>
                       </td>
-                      <td class="text-center">○ ○ 병원</td>
+                      <td class="text-center">
+                        <div class="tooltip js-tooltip-fixed">
+                          <p class="clamp-2">○ ○ 병원</p>
+                          <aside class="tooltip-text" style="width: 17rem;">
+                            <p class="tooltip-text__body">○ ○ 병원</p>
+                          </aside>
+                        </div>
+                      </td>
                       <td class="text-center">서울 서초구</td>
                     </tr>
                   </tbody>
@@ -2744,7 +2945,7 @@
           </div>
         </div>
         <div class="col-11">
-          <article class="l-article border-0" data-article="전체데이터" data-loding-spinner="false" data-is-empty="false">
+          <article class="l-article border-0" data-article="의료기관팝업-게시글목록" data-loding-spinner="false" data-is-empty="false">
             <header class="l-article-header l-article-header--has-title">
               <h4 class="l-article-header__title">게시글 목록</h4>
             </header>
@@ -2752,8 +2953,8 @@
               <article class="l-article">
                 <header class="l-article-header d-flex">
                   <p class="c-data-table-total ml-12">Total. <span class="count">155,474</span></p>
-                  <fieldset class="form-fieldset ml-auto" data-fieldset="Top30키워드순위변화">
-                    <div class="form-row form-select form-select--border-bottom" data-selected-value="0" data-selected-text="정보량">
+                  <fieldset class="form-fieldset ml-auto" data-fieldset="의료기관팝업-검색">
+                    <div class="form-row form-select form-select--border-bottom" data-selected-value="0" data-selected-text="10건 씩 보기">
                       <select id="selectRank">
                         <option value="0" selected="">10건 씩 보기</option>
                         <option value="1">30건 씩 보기</option>
@@ -2799,7 +3000,7 @@
                         </thead>
                         <tbody>
                           <tr>
-                            <td class="text-center"><p class="clamp-2">의료기관홍보</p></td>
+                            <td class="text-center"><p class="clamp-2">의료기관 홍보</p></td>
                             <td class="text-center"><p class="clamp-2">카페</p></td>
                             <td class="text-center"><p class="clamp-2">출처</p></td>
                             <td>
@@ -2815,7 +3016,7 @@
                             <td class="text-center">2023-03-19</td>
                           </tr>
                           <tr>
-                            <td class="text-center"><p class="clamp-2">의료기관홍보</p></td>
+                            <td class="text-center"><p class="clamp-2">의료기관 홍보</p></td>
                             <td class="text-center"><p class="clamp-2">카페</p></td>
                             <td class="text-center"><p class="clamp-2">출처</p></td>
                             <td>
@@ -2831,7 +3032,7 @@
                             <td class="text-center">2023-03-19</td>
                           </tr>
                           <tr>
-                            <td class="text-center"><p class="clamp-2">의료기관홍보</p></td>
+                            <td class="text-center"><p class="clamp-2">의료기관 홍보</p></td>
                             <td class="text-center"><p class="clamp-2">카페</p></td>
                             <td class="text-center"><p class="clamp-2">출처</p></td>
                             <td>
@@ -2847,7 +3048,7 @@
                             <td class="text-center">2023-03-19</td>
                           </tr>
                           <tr>
-                            <td class="text-center"><p class="clamp-2">의료기관홍보</p></td>
+                            <td class="text-center"><p class="clamp-2">의료기관 홍보</p></td>
                             <td class="text-center"><p class="clamp-2">카페</p></td>
                             <td class="text-center"><p class="clamp-2">출처</p></td>
                             <td>
@@ -2863,7 +3064,7 @@
                             <td class="text-center">2023-03-19</td>
                           </tr>
                           <tr>
-                            <td class="text-center"><p class="clamp-2">의료기관홍보</p></td>
+                            <td class="text-center"><p class="clamp-2">의료기관 홍보</p></td>
                             <td class="text-center"><p class="clamp-2">카페</p></td>
                             <td class="text-center"><p class="clamp-2">출처</p></td>
                             <td>
@@ -2879,7 +3080,7 @@
                             <td class="text-center">2023-03-19</td>
                           </tr>
                           <tr>
-                            <td class="text-center"><p class="clamp-2">의료기관홍보</p></td>
+                            <td class="text-center"><p class="clamp-2">의료기관 홍보</p></td>
                             <td class="text-center"><p class="clamp-2">카페</p></td>
                             <td class="text-center"><p class="clamp-2">출처</p></td>
                             <td>
@@ -2895,7 +3096,7 @@
                             <td class="text-center">2023-03-19</td>
                           </tr>
                           <tr>
-                            <td class="text-center"><p class="clamp-2">의료기관홍보</p></td>
+                            <td class="text-center"><p class="clamp-2">의료기관 홍보</p></td>
                             <td class="text-center"><p class="clamp-2">카페</p></td>
                             <td class="text-center"><p class="clamp-2">출처</p></td>
                             <td>
@@ -2911,7 +3112,7 @@
                             <td class="text-center">2023-03-19</td>
                           </tr>
                           <tr>
-                            <td class="text-center"><p class="clamp-2">의료기관홍보</p></td>
+                            <td class="text-center"><p class="clamp-2">의료기관 홍보</p></td>
                             <td class="text-center"><p class="clamp-2">카페</p></td>
                             <td class="text-center"><p class="clamp-2">출처</p></td>
                             <td>
@@ -2927,7 +3128,7 @@
                             <td class="text-center">2023-03-19</td>
                           </tr>
                           <tr>
-                            <td class="text-center"><p class="clamp-2">의료기관홍보</p></td>
+                            <td class="text-center"><p class="clamp-2">의료기관 홍보</p></td>
                             <td class="text-center"><p class="clamp-2">카페</p></td>
                             <td class="text-center"><p class="clamp-2">출처</p></td>
                             <td>
@@ -2943,7 +3144,7 @@
                             <td class="text-center">2023-03-19</td>
                           </tr>
                           <tr>
-                            <td class="text-center"><p class="clamp-2">의료기관홍보</p></td>
+                            <td class="text-center"><p class="clamp-2">의료기관 홍보</p></td>
                             <td class="text-center"><p class="clamp-2">카페</p></td>
                             <td class="text-center"><p class="clamp-2">출처</p></td>
                             <td>
@@ -3007,7 +3208,7 @@
       <article class="l-article border-0" data-article="전체데이터" data-loding-spinner="false">
         <header class="l-article-header l-article-header--has-title pb-16">
           <fieldset class="form-fieldset ml-auto" data-fieldset="키워드 검색">
-            <div class="form-row form-search form-search--border-bottom" data-text-value="백내장" style="width: 37rem">
+            <div class="form-row form-search form-search--border-bottom" style="width: 37rem">
               <label for="keywordSearch">검색어</label>
               <input id="keywordSearch" type="text" placeholder="" >
             </div>
@@ -3039,84 +3240,86 @@
             </header>
             
             <main class="l-article-body mt-12" data-is-empty="false" data-is-before-search="false">
-              <table class="c-table c-table--hover" data-thead-sticky="true">
-                <colgroup>
-                  <col width="10.6%">
-                  <col width="20%">
-                  <col width="*">
-                  <col width="10.6%">
-                </colgroup>
-                <thead>
-                  <tr>
-                    <th>구분</th>
-                    <th>분류명</th>
-                    <th>키워드</th>
-                    <th>선택</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <td class="text-center">의료기관</td>
-                    <td class="text-center"> <span class="search-color">백내</span>장</td>
-                    <td class="text-center">이차성  <span class="search-color">백내</span>장 오른쪽</td>
-                    <td class="text-center"><button type="button">[선택]</button></td>
-                  </tr>
-                  <tr>
-                    <td class="text-center">의료기관</td>
-                    <td class="text-center"> <span class="search-color">백내</span>장</td>
-                    <td class="text-center">이차성  <span class="search-color">백내</span>장 오른쪽</td>
-                    <td class="text-center"><button type="button">[선택]</button></td>
-                  </tr>
-                  <tr>
-                    <td class="text-center">의료기관</td>
-                    <td class="text-center"> <span class="search-color">백내</span>장</td>
-                    <td class="text-center">이차성  <span class="search-color">백내</span>장 오른쪽</td>
-                    <td class="text-center"><button type="button">[선택]</button></td>
-                  </tr>
-                  <tr>
-                    <td class="text-center">의료기관</td>
-                    <td class="text-center"> <span class="search-color">백내</span>장</td>
-                    <td class="text-center">이차성  <span class="search-color">백내</span>장 오른쪽</td>
-                    <td class="text-center"><button type="button">[선택]</button></td>
-                  </tr>
-                  <tr>
-                    <td class="text-center">의료기관</td>
-                    <td class="text-center"> <span class="search-color">백내</span>장</td>
-                    <td class="text-center">이차성  <span class="search-color">백내</span>장 오른쪽</td>
-                    <td class="text-center"><button type="button">[선택]</button></td>
-                  </tr>
-                  <tr>
-                    <td class="text-center">의료기관</td>
-                    <td class="text-center"> <span class="search-color">백내</span>장</td>
-                    <td class="text-center">이차성  <span class="search-color">백내</span>장 오른쪽</td>
-                    <td class="text-center"><button type="button">[선택]</button></td>
-                  </tr>
-                  <tr>
-                    <td class="text-center">의료기관</td>
-                    <td class="text-center"> <span class="search-color">백내</span>장</td>
-                    <td class="text-center">이차성  <span class="search-color">백내</span>장 오른쪽</td>
-                    <td class="text-center"><button type="button">[선택]</button></td>
-                  </tr>
-                  <tr>
-                    <td class="text-center">의료기관</td>
-                    <td class="text-center"> <span class="search-color">백내</span>장</td>
-                    <td class="text-center">이차성  <span class="search-color">백내</span>장 오른쪽</td>
-                    <td class="text-center"><button type="button">[선택]</button></td>
-                  </tr>
-                  <tr>
-                    <td class="text-center">의료기관</td>
-                    <td class="text-center"> <span class="search-color">백내</span>장</td>
-                    <td class="text-center">이차성  <span class="search-color">백내</span>장 오른쪽</td>
-                    <td class="text-center"><button type="button">[선택]</button></td>
-                  </tr>
-                  <tr>
-                    <td class="text-center">의료기관</td>
-                    <td class="text-center"> <span class="search-color">백내</span>장</td>
-                    <td class="text-center">이차성  <span class="search-color">백내</span>장 오른쪽</td>
-                    <td class="text-center"><button type="button">[선택]</button></td>
-                  </tr>
-                </tbody>
-              </table>
+              <div class="scroll-container-y" style="height: 43.1rem;">
+                <table class="c-table c-table--hover" data-thead-sticky="true">
+                  <colgroup>
+                    <col width="10.6%">
+                    <col width="20%">
+                    <col width="*">
+                    <col width="10.6%">
+                  </colgroup>
+                  <thead>
+                    <tr>
+                      <th>구분</th>
+                      <th>분류명</th>
+                      <th>키워드</th>
+                      <th>선택</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td class="text-center">의료기관</td>
+                      <td class="text-center"> <mark style="--color:#FFB038">백내</mark>장</td>
+                      <td class="text-center">이차성  <mark style="--color:#FFB038">백내</mark>장 오른쪽</td>
+                      <td class="text-center"><button type="button">[선택]</button></td>
+                    </tr>
+                    <tr>
+                      <td class="text-center">의료기관</td>
+                      <td class="text-center"> <mark style="--color:#FFB038">백내</mark>장</td>
+                      <td class="text-center">이차성  <mark style="--color:#FFB038">백내</mark>장 오른쪽</td>
+                      <td class="text-center"><button type="button">[선택]</button></td>
+                    </tr>
+                    <tr>
+                      <td class="text-center">의료기관</td>
+                      <td class="text-center"> <mark style="--color:#FFB038">백내</mark>장</td>
+                      <td class="text-center">이차성  <mark style="--color:#FFB038">백내</mark>장 오른쪽</td>
+                      <td class="text-center"><button type="button">[선택]</button></td>
+                    </tr>
+                    <tr>
+                      <td class="text-center">의료기관</td>
+                      <td class="text-center"> <mark style="--color:#FFB038">백내</mark>장</td>
+                      <td class="text-center">이차성  <mark style="--color:#FFB038">백내</mark>장 오른쪽</td>
+                      <td class="text-center"><button type="button">[선택]</button></td>
+                    </tr>
+                    <tr>
+                      <td class="text-center">의료기관</td>
+                      <td class="text-center"> <mark style="--color:#FFB038">백내</mark>장</td>
+                      <td class="text-center">이차성  <mark style="--color:#FFB038">백내</mark>장 오른쪽</td>
+                      <td class="text-center"><button type="button">[선택]</button></td>
+                    </tr>
+                    <tr>
+                      <td class="text-center">의료기관</td>
+                      <td class="text-center"> <mark style="--color:#FFB038">백내</mark>장</td>
+                      <td class="text-center">이차성  <mark style="--color:#FFB038">백내</mark>장 오른쪽</td>
+                      <td class="text-center"><button type="button">[선택]</button></td>
+                    </tr>
+                    <tr>
+                      <td class="text-center">의료기관</td>
+                      <td class="text-center"> <mark style="--color:#FFB038">백내</mark>장</td>
+                      <td class="text-center">이차성  <mark style="--color:#FFB038">백내</mark>장 오른쪽</td>
+                      <td class="text-center"><button type="button">[선택]</button></td>
+                    </tr>
+                    <tr>
+                      <td class="text-center">의료기관</td>
+                      <td class="text-center"> <mark style="--color:#FFB038">백내</mark>장</td>
+                      <td class="text-center">이차성  <mark style="--color:#FFB038">백내</mark>장 오른쪽</td>
+                      <td class="text-center"><button type="button">[선택]</button></td>
+                    </tr>
+                    <tr>
+                      <td class="text-center">의료기관</td>
+                      <td class="text-center"> <mark style="--color:#FFB038">백내</mark>장</td>
+                      <td class="text-center">이차성  <mark style="--color:#FFB038">백내</mark>장 오른쪽</td>
+                      <td class="text-center"><button type="button">[선택]</button></td>
+                    </tr>
+                    <tr>
+                      <td class="text-center">의료기관</td>
+                      <td class="text-center"> <mark style="--color:#FFB038">백내</mark>장</td>
+                      <td class="text-center">이차성  <mark style="--color:#FFB038">백내</mark>장 오른쪽</td>
+                      <td class="text-center"><button type="button">[선택]</button></td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
             </main>
           </article>
         </main>
@@ -3183,96 +3386,98 @@
             </header>
             
             <main class="l-article-body mt-12" data-is-empty="false" data-is-before-search="false">
-              <table class="c-table c-table--hover" data-thead-sticky="true">
-                <colgroup>
-                  <col width="16%">
-                  <col width="20%">
-                  <col width="*">
-                  <col width="15%">
-                  <col width="10%">
-                </colgroup>
-                <thead>
-                  <tr>
-                    <th>의료기관</th>
-                    <th>키워드</th>
-                    <th>주소</th>
-                    <th>전화번호</th>
-                    <th>선택</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <td class="text-center">이대 목동병원</td>
-                    <td class="text-center"> <span class="search-color">이화</span>여자대학교목동병원</td>
-                    <td class="text-right">서울특별시 양천구 안양천로 1071 (목동)</td>
-                    <td class="text-center">02-2650-5114</td>
-                    <td class="text-center"><button type="button">[선택]</button></td>
-                  </tr>
-                  <tr>
-                    <td class="text-center">이대 목동병원</td>
-                    <td class="text-center"> <span class="search-color">이화</span>여자대학교목동병원</td>
-                    <td class="text-right">서울특별시 양천구 안양천로 1071 (목동)</td>
-                    <td class="text-center">02-2650-5114</td>
-                    <td class="text-center"><button type="button">[선택]</button></td>
-                  </tr>
-                  <tr>
-                    <td class="text-center">이대 목동병원</td>
-                    <td class="text-center"> <span class="search-color">이화</span>여자대학교목동병원</td>
-                    <td class="text-right">서울특별시 양천구 안양천로 1071 (목동)</td>
-                    <td class="text-center">02-2650-5114</td>
-                    <td class="text-center"><button type="button">[선택]</button></td>
-                  </tr>
-                  <tr>
-                    <td class="text-center">이대 목동병원</td>
-                    <td class="text-center"> <span class="search-color">이화</span>여자대학교목동병원</td>
-                    <td class="text-right">서울특별시 양천구 안양천로 1071 (목동)</td>
-                    <td class="text-center">02-2650-5114</td>
-                    <td class="text-center"><button type="button">[선택]</button></td>
-                  </tr>
-                  <tr>
-                    <td class="text-center">이대 목동병원</td>
-                    <td class="text-center"> <span class="search-color">이화</span>여자대학교목동병원</td>
-                    <td class="text-right">서울특별시 양천구 안양천로 1071 (목동)</td>
-                    <td class="text-center">02-2650-5114</td>
-                    <td class="text-center"><button type="button">[선택]</button></td>
-                  </tr>
-                  <tr>
-                    <td class="text-center">이대 목동병원</td>
-                    <td class="text-center"> <span class="search-color">이화</span>여자대학교목동병원</td>
-                    <td class="text-right">서울특별시 양천구 안양천로 1071 (목동)</td>
-                    <td class="text-center">02-2650-5114</td>
-                    <td class="text-center"><button type="button">[선택]</button></td>
-                  </tr>
-                  <tr>
-                    <td class="text-center">이대 목동병원</td>
-                    <td class="text-center"> <span class="search-color">이화</span>여자대학교목동병원</td>
-                    <td class="text-right">서울특별시 양천구 안양천로 1071 (목동)</td>
-                    <td class="text-center">02-2650-5114</td>
-                    <td class="text-center"><button type="button">[선택]</button></td>
-                  </tr>
-                  <tr>
-                    <td class="text-center">이대 목동병원</td>
-                    <td class="text-center"> <span class="search-color">이화</span>여자대학교목동병원</td>
-                    <td class="text-right">서울특별시 양천구 안양천로 1071 (목동)</td>
-                    <td class="text-center">02-2650-5114</td>
-                    <td class="text-center"><button type="button">[선택]</button></td>
-                  </tr>
-                  <tr>
-                    <td class="text-center">이대 목동병원</td>
-                    <td class="text-center"> <span class="search-color">이화</span>여자대학교목동병원</td>
-                    <td class="text-right">서울특별시 양천구 안양천로 1071 (목동)</td>
-                    <td class="text-center">02-2650-5114</td>
-                    <td class="text-center"><button type="button">[선택]</button></td>
-                  </tr>
-                  <tr>
-                    <td class="text-center">이대 목동병원</td>
-                    <td class="text-center"> <span class="search-color">이화</span>여자대학교목동병원</td>
-                    <td class="text-right">서울특별시 양천구 안양천로 1071 (목동)</td>
-                    <td class="text-center">02-2650-5114</td>
-                    <td class="text-center"><button type="button">[선택]</button></td>
-                  </tr>
-                </tbody>
-              </table>
+              <div class="scroll-container-y" style="height: 43.1rem;">
+                <table class="c-table c-table--hover" data-thead-sticky="true">
+                  <colgroup>
+                    <col width="16%">
+                    <col width="20%">
+                    <col width="*">
+                    <col width="15%">
+                    <col width="10%">
+                  </colgroup>
+                  <thead>
+                    <tr>
+                      <th>의료기관</th>
+                      <th>키워드</th>
+                      <th>주소</th>
+                      <th>전화번호</th>
+                      <th>선택</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td class="text-center">이대 목동병원</td>
+                      <td class="text-center"> <mark style="--color:#FFB038">이화</mark>여자대학교목동병원</td>
+                      <td class="text-right">서울특별시 양천구 안양천로 1071 (목동)</td>
+                      <td class="text-center">02-2650-5114</td>
+                      <td class="text-center"><button type="button">[선택]</button></td>
+                    </tr>
+                    <tr>
+                      <td class="text-center">이대 목동병원</td>
+                      <td class="text-center"> <mark style="--color:#FFB038">이화</mark>여자대학교목동병원</td>
+                      <td class="text-right">서울특별시 양천구 안양천로 1071 (목동)</td>
+                      <td class="text-center">02-2650-5114</td>
+                      <td class="text-center"><button type="button">[선택]</button></td>
+                    </tr>
+                    <tr>
+                      <td class="text-center">이대 목동병원</td>
+                      <td class="text-center"> <mark style="--color:#FFB038">이화</mark>여자대학교목동병원</td>
+                      <td class="text-right">서울특별시 양천구 안양천로 1071 (목동)</td>
+                      <td class="text-center">02-2650-5114</td>
+                      <td class="text-center"><button type="button">[선택]</button></td>
+                    </tr>
+                    <tr>
+                      <td class="text-center">이대 목동병원</td>
+                      <td class="text-center"> <mark style="--color:#FFB038">이화</mark>여자대학교목동병원</td>
+                      <td class="text-right">서울특별시 양천구 안양천로 1071 (목동)</td>
+                      <td class="text-center">02-2650-5114</td>
+                      <td class="text-center"><button type="button">[선택]</button></td>
+                    </tr>
+                    <tr>
+                      <td class="text-center">이대 목동병원</td>
+                      <td class="text-center"> <mark style="--color:#FFB038">이화</mark>여자대학교목동병원</td>
+                      <td class="text-right">서울특별시 양천구 안양천로 1071 (목동)</td>
+                      <td class="text-center">02-2650-5114</td>
+                      <td class="text-center"><button type="button">[선택]</button></td>
+                    </tr>
+                    <tr>
+                      <td class="text-center">이대 목동병원</td>
+                      <td class="text-center"> <mark style="--color:#FFB038">이화</mark>여자대학교목동병원</td>
+                      <td class="text-right">서울특별시 양천구 안양천로 1071 (목동)</td>
+                      <td class="text-center">02-2650-5114</td>
+                      <td class="text-center"><button type="button">[선택]</button></td>
+                    </tr>
+                    <tr>
+                      <td class="text-center">이대 목동병원</td>
+                      <td class="text-center"> <mark style="--color:#FFB038">이화</mark>여자대학교목동병원</td>
+                      <td class="text-right">서울특별시 양천구 안양천로 1071 (목동)</td>
+                      <td class="text-center">02-2650-5114</td>
+                      <td class="text-center"><button type="button">[선택]</button></td>
+                    </tr>
+                    <tr>
+                      <td class="text-center">이대 목동병원</td>
+                      <td class="text-center"> <mark style="--color:#FFB038">이화</mark>여자대학교목동병원</td>
+                      <td class="text-right">서울특별시 양천구 안양천로 1071 (목동)</td>
+                      <td class="text-center">02-2650-5114</td>
+                      <td class="text-center"><button type="button">[선택]</button></td>
+                    </tr>
+                    <tr>
+                      <td class="text-center">이대 목동병원</td>
+                      <td class="text-center"> <mark style="--color:#FFB038">이화</mark>여자대학교목동병원</td>
+                      <td class="text-right">서울특별시 양천구 안양천로 1071 (목동)</td>
+                      <td class="text-center">02-2650-5114</td>
+                      <td class="text-center"><button type="button">[선택]</button></td>
+                    </tr>
+                    <tr>
+                      <td class="text-center">이대 목동병원</td>
+                      <td class="text-center"> <mark style="--color:#FFB038">이화</mark>여자대학교목동병원</td>
+                      <td class="text-right">서울특별시 양천구 안양천로 1071 (목동)</td>
+                      <td class="text-center">02-2650-5114</td>
+                      <td class="text-center"><button type="button">[선택]</button></td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
             </main>
           </article>
         </main>
