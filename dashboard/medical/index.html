@@ -1,5 +1,5 @@
 
-<!-- reBuild :  20230306154625 -->
+<!-- reBuild :  20230307092703 -->
 
 <!DOCTYPE html>
 <html lang="ko">
@@ -16,13 +16,13 @@
   <link rel="shortcut icon" href="/dashboard/assets/img/favicon.ico" />
 
   <!-- STYLE -->
-    <link rel="stylesheet" href="/dashboard/assets/css/style.css?v=20230306154625">
+    <link rel="stylesheet" href="/dashboard/assets/css/style.css?v=20230307092703">
 
   <!-- JS -->
-  <script src="/dashboard/assets/js/config/files.js?v=20230306154625" defer></script>
-  <script src="/dashboard/assets/js/libs.js?v=20230306154625" defer></script>
-  <script src="/dashboard/assets/js/modules.js?v=20230306154625" defer></script>
-  <script src="/dashboard/assets/js/config/router.js?v=20230306154625" defer></script>
+  <script src="/dashboard/assets/js/config/files.js?v=20230307092703" defer></script>
+  <script src="/dashboard/assets/js/libs.js?v=20230307092703" defer></script>
+  <script src="/dashboard/assets/js/modules.js?v=20230307092703" defer></script>
+  <script src="/dashboard/assets/js/config/router.js?v=20230307092703" defer></script>
 </head>
 
 <body>
@@ -1029,18 +1029,14 @@
   <main class="setting-keyword-detail--body">
     <div class="setting-keyword-detail__attribute d-flex">
       <span class="txt w-100">속성</span>
-      <fieldset class="form-fieldset d-inline-flex ml-12" data-fieldset="속성">
-        <div class="form-row form-switch-button" data-row="질병">
-          <input type="radio" id="radioKeywordAttribute1"  name="radioKeywordAttribute" checked>
-          <label for="radioKeywordAttribute1">
-            <span class="txt">질병</span>
-          </label>
+      <fieldset class="form-fieldset mb-12 d-inline-flex" data-fieldset="속성">
+        <div class="form-row form-check-button" data-row="질병">
+          <input id="checkboxSense1" type="checkbox">
+          <label for="checkboxSense1"><span class="txt">질병</span></label>
         </div>
-        <div class="form-row form-switch-button" data-row="치료법">
-          <input type="radio" id="radioKeywordAttribute2"  name="radioKeywordAttribute">
-          <label for="radioKeywordAttribute2">
-            <span class="txt">치료법</span>
-          </label>
+        <div class="form-row form-check-button ml-4" data-row="치료법">
+          <input id="checkboxSense2" type="checkbox">
+          <label for="checkboxSense2"><span class="txt">치료법</span></label>
         </div>
       </fieldset>
     </div>

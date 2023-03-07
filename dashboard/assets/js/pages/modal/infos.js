@@ -70,6 +70,10 @@
     // init
     KeywordPopupLineChart.reDataBinding(datas, categorys); // 데이터 변경시킬때
     KeywordPopupLineChart.reColoring(["#b193e2", "#89DDD8"]); // 컬러세팅
+    
+    KeywordPopupLineChart.chart.addListener("clickGraphItem", function () {
+      console.log('chart click');
+    }); // 클릭이벤트
   }
 }
 /*

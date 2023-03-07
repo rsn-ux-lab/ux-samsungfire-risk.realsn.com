@@ -85,6 +85,11 @@
     // init
     samsungFrOneColumnChart.reDataBinding(datas, categorys); // 데이터 변경시킬때
     samsungFrOneColumnChart.reColoring(["#87C67C", "#F2D301"]); // 컬러세팅
+
+    samsungFrOneColumnChart.chart.addListener("clickGraphItem", function() {
+      // modalRelated();
+      console.log('chart click');
+    }); // 클릭이벤트
   }
 }
 /*
@@ -124,6 +129,11 @@
     // init
     Moral1stLineChart.reDataBinding(datas, categorys); // 데이터 변경시킬때
     Moral1stLineChart.reColoring(["#87C67C", "#F2D301"]); // 컬러세팅
+
+    Moral1stLineChart.chart.addListener("clickGraphItem", function() {
+      // modalRelated();
+      console.log('chart click');
+    }); // 클릭이벤트
   }
 }
 /*
@@ -511,6 +521,11 @@
     // init
     Moral2ndLineChart.reDataBinding(datas, categorys); // 데이터 변경시킬때
     Moral2ndLineChart.reColoring(["#B8CF5A", "#739EDE"]); // 컬러세팅
+
+    Moral2ndLineChart.chart.addListener("clickGraphItem", function() {
+      // modalRelated();
+      console.log('chart click');
+    }); // 클릭이벤트
   }
 }
 /*

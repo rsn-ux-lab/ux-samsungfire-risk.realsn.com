@@ -95,6 +95,11 @@
     // init
     keywordCandleChart.reDataBinding(datas, categorys); // 데이터 변경시킬때
     keywordCandleChart.reColoring(["#B193E2", "#89DDD8"]); // 컬러세팅
+
+    keywordCandleChart.chart.addListener("clickGraphItem", function() {
+      // modalRelated();
+      console.log('chart click');
+    }); // 클릭이벤트
   }
 }
 /*
@@ -134,6 +139,11 @@
     // init
     Keyword1stLineChart.reDataBinding(datas, categorys); // 데이터 변경시킬때
     Keyword1stLineChart.reColoring(["#B193E2", "#89DDD8"]); // 컬러세팅
+    
+    Keyword1stLineChart.chart.addListener("clickGraphItem", function() {
+      // modalRelated();
+      console.log('chart click');
+    }); // 클릭이벤트
   }
 }
 /*
@@ -260,6 +270,11 @@
     // init
     Keyword2ndLineChart.reDataBinding(datas, categorys); // 데이터 변경시킬때
     Keyword2ndLineChart.reColoring(["#6379B0", "#D58A69"]); // 컬러세팅
+
+    Keyword2ndLineChart.chart.addListener("clickGraphItem", function() {
+      // modalRelated();
+      console.log('chart click');
+    }); // 클릭이벤트
   }
 }
 /*
