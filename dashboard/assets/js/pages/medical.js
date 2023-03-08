@@ -113,12 +113,14 @@
   const tableHover = new window.TableSameHover($keywordTable);
   const tableActive = new window.TableClickSameActive($keywordTable);
   const TableClickMenu1st = new window.TableClickMenu($keywordTable);
+  const TableEmptyDimmed = new window.TableEmptyDimmed($keywordTable);
 
   window.onLoadResize({
     callback() {
       tableHover.init();
       tableActive.init();
       TableClickMenu1st.init();
+      TableEmptyDimmed.init();
     },
   });
 }

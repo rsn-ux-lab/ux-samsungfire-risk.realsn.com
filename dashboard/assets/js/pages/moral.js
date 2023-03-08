@@ -222,12 +222,16 @@
   const TableClickMenu1st = new window.TableClickMenu($keywordTable);
   const TableClickMenu2nd = new window.TableClickMenu(document.querySelector("[data-article='연관어-테이블'] .c-table"));
 
+  // 임시로 넣은 상태라 데이터 열이 3개인 테이블에 적용 중
+  const TableEmptyDimmed = new window.TableEmptyDimmed(document.querySelectorAll("[data-section='Top30키워드순위변화'] .c-table")[1]);
+
   window.onLoadResize({
     callback() {
       tableHover.init();
       tableActive.init();
       TableClickMenu1st.init();
       TableClickMenu2nd.init();
+      TableEmptyDimmed.init();
     },
   });
 }
@@ -510,12 +514,12 @@
     let categorys = ["정보량 증감률", "정보량"];
     // prettier-ignore
     let datas = [
-    { category: "2022-10", "column-1": 9800, "column-2": 25, },
-    { category: "2022-11", "column-1": 15500, "column-2": 18, },
-    { category: "2022-12", "column-1": 7800, "column-2": 87, },
-    { category: "2023-01", "column-1": 15000, "column-2": 21, },
-    { category: "2023-02", "column-1": 11000, "column-2": 20, },
-    { category: "2023-03", "column-1": 14800, "column-2": 22, },
+    { category: "2022-10", "column-1": 980.7, "column-2": 25, },
+    { category: "2022-11", "column-1": -155, "column-2": 18, },
+    { category: "2022-12", "column-1": 0, "column-2": 87, },
+    { category: "2023-01", "column-1": 150.0, "column-2": 21, },
+    { category: "2023-02", "column-1": 110.2, "column-2": 20, },
+    { category: "2023-03", "column-1": -148.3, "column-2": 22, },
   ];
 
     // init

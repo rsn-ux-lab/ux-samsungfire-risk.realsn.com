@@ -1,5 +1,5 @@
 
-<!-- reBuild :  20230308134057 -->
+<!-- reBuild :  20230308210202 -->
 
 <!DOCTYPE html>
 <html lang="ko">
@@ -16,13 +16,13 @@
   <link rel="shortcut icon" href="/dashboard/assets/img/favicon.ico" />
 
   <!-- STYLE -->
-    <link rel="stylesheet" href="/dashboard/assets/css/style.css?v=20230308134057">
+    <link rel="stylesheet" href="/dashboard/assets/css/style.css?v=20230308210202">
 
   <!-- JS -->
-  <script src="/dashboard/assets/js/config/files.js?v=20230308134057" defer></script>
-  <script src="/dashboard/assets/js/libs.js?v=20230308134057" defer></script>
-  <script src="/dashboard/assets/js/modules.js?v=20230308134057" defer></script>
-  <script src="/dashboard/assets/js/config/router.js?v=20230308134057" defer></script>
+  <script src="/dashboard/assets/js/config/files.js?v=20230308210202" defer></script>
+  <script src="/dashboard/assets/js/libs.js?v=20230308210202" defer></script>
+  <script src="/dashboard/assets/js/modules.js?v=20230308210202" defer></script>
+  <script src="/dashboard/assets/js/config/router.js?v=20230308210202" defer></script>
 </head>
 
 <body>
@@ -1060,7 +1060,7 @@
     <button class="btn btn-secondary rounded ml-8 w-100" type="button">검색</button>
   </footer>  
 </aside>
-
+            
             <fieldset class="form-fieldset d-flex align-items-center ml-auto" data-fieldset="증감률">
               <p class="form-fieldset__title mr-8">순위 기준</p>
               <div class="form-row form-select form-select--border-bottom" data-row="순위기준">
@@ -1074,11 +1074,12 @@
             </fieldset>
           </header>
           <main class="l-article-body mt-24">
+            <div class="rank-table--dimmed d-flex"><p class="rank-table--dimmed__text">선택된 기간이 없습니다.</p></div>
             <div class="scroll-container-y border-bottom" style="width: 148rem; height: 64rem;">
               <table class="c-table c-table--medical__top30-change" data-thead-sticky="true" style="width: 148rem;">
   <colgroup>
     <col width="7.5rem">
-    <col width="23rem">
+    <col width="23.3rem">
     <col width="23.3rem">
     <col width="23.3rem">
     <col width="23.3rem">
@@ -1092,8 +1093,8 @@
       <th class="text-center">2022-10</th>
       <th class="text-center">2022-11</th>
       <th class="text-center">2022-12</th>
-      <th class="text-center">2023-01</th>
-      <th class="text-center">2023-02</th>
+      <th class="text-center --is-diff-year">2023-01</th>
+      <th class="text-center --is-diff-year">2023-02</th>
     </tr>
   </thead>
   <tbody>
