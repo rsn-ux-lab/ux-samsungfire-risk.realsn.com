@@ -257,139 +257,152 @@
     let datas = [
       {
         name: "다초점렌즈",
-        uw: "U/W 1, U/W 2, U/W 3",
-        x: "100",
-        y: "550",
+        uw: '',
+        x: 100,
+        y: 550,
         color: "#444444",
         opacity: 0.4, //투명도 (active일때는 1)
-        updown: "up", // '정보량 증감률' 화살표 표시, (증가=up / 감소=down)
       },
       {
         name: "고혈압",
         uw: "U/W 1, U/W 2, U/W 3",
-        x: "210",
-        y: "920",
+        x: 210,
+        y: 920,
         color: "#444444",
         opacity: 0.4, //투명도 (active일때는 1)
         updown: "up", // '정보량 증감률' 화살표 표시, (증가=up / 감소=down)
       },
       {
         name: "스케일링",
-        uw: "U/W 1, U/W 2, U/W 3",
-        x: "78",
-        y: "890",
+        uw: '',
+        x: 78,
+        y: 890,
         color: "#444444",
         opacity: 0.4, //투명도 (active일때는 1)
         updown: "down", // '정보량 증감률' 화살표 표시, (증가=up / 감소=down)
       },
       {
         name: "뜸",
-        x: "85",
-        y: "630",
+        uw: '',
+        x: 85,
+        y: 630,
         color: "#444444",
         opacity: 0.4, //투명도 (active일때는 1)
         updown: "down", // '정보량 증감률' 화살표 표시, (증가=up / 감소=down)
       },
       {
         name: "부항",
-        x: "84",
-        y: "240",
+        uw: '',
+        x: 84,
+        y: 240,
         color: "#444444",
         opacity: 0.4, //투명도 (active일때는 1)
         updown: "down", // '정보량 증감률' 화살표 표시, (증가=up / 감소=down)
       },
       {
         name: "한방치료",
-        x: "65",
-        y: "510",
+        uw: '',
+        x: 65,
+        y: 510,
         color: "#444444",
         opacity: 0.4, //투명도 (active일때는 1)
         updown: "down", // '정보량 증감률' 화살표 표시, (증가=up / 감소=down)
       },
       {
         name: "데이터",
-        x: "15",
-        y: "200",
+        uw: '',
+        x: 15,
+        y: 200,
         color: "#444444",
         opacity: 0.4, //투명도 (active일때는 1)
         updown: "down", // '정보량 증감률' 화살표 표시, (증가=up / 감소=down)
       },
       {
         name: "디스크",
-        x: "17",
-        y: "210",
+        uw: 'U/W 1, U/W 2, U/W 3, U/W 1, U/W 2, U/W 3',
+        x: 17,
+        y: -210,
         color: "#444444",
         opacity: 0.4, //투명도 (active일때는 1)
         updown: "down", // '정보량 증감률' 화살표 표시, (증가=up / 감소=down)
       },
       {
         name: "비중격",
-        x: "20",
-        y: "150",
+        uw: 'U/W 1, U/W 2, U/W 3',
+        x: 20,
+        y: 150,
         color: "#444444",
         opacity: 0.4, //투명도 (active일때는 1)
         updown: "down", // '정보량 증감률' 화살표 표시, (증가=up / 감소=down)
       },
       {
         name: "이대목동병원",
-        x: "10",
-        y: "100",
+        uw: '',
+        x: 10,
+        y: -100,
         color: "#444444",
         opacity: 0.4, //투명도 (active일때는 1)
         updown: "down", // '정보량 증감률' 화살표 표시, (증가=up / 감소=down)
       },
       {
         name: "당뇨",
-        x: "40",
-        y: "170",
+        uw: 'U/W 1, U/W 2, U/W 3',
+        x: 40,
+        y: 170,
         color: "#444444",
         opacity: 0.4, //투명도 (active일때는 1)
         updown: "down", // '정보량 증감률' 화살표 표시, (증가=up / 감소=down)
       },
       {
         name: "데이터",
-        x: "47",
-        y: "70",
+        uw: '',
+        x: 47,
+        y: 70,
         color: "#444444",
         opacity: 0.4, //투명도 (active일때는 1)
         updown: "down", // '정보량 증감률' 화살표 표시, (증가=up / 감소=down)
       },
       {
         name: "데이터",
-        x: "37",
-        y: "430",
+        uw: '',
+        x: 37,
+        y: 430,
         color: "#444444",
         opacity: 0.4, //투명도 (active일때는 1)
         updown: "down", // '정보량 증감률' 화살표 표시, (증가=up / 감소=down)
       },
       {
         name: "삼성서울병원",
-        x: "150",
-        y: "570",
+        uw: '',
+        x: 150,
+        y: 570,
         color: "#444444",
         opacity: 0.4, //투명도 (active일때는 1)
         updown: "down", // '정보량 증감률' 화살표 표시, (증가=up / 감소=down)
       },
       {
         name: "라식",
-        x: "130",
-        y: "700",
+        uw: '',
+        x: 130,
+        y: 700,
         color: "#444444",
         opacity: 0.4, //투명도 (active일때는 1)
         updown: "up", // '정보량 증감률' 화살표 표시, (증가=up / 감소=down)
       },
       {
         name: "십자인대",
-        x: "100",
-        y: "700",
+        uw: 'U/W 1, U/W 2, U/W 3, U/W 1, U/W 2, U/W 3, U/W 1, U/W 2, U/W 3U/W 1, U/W 2, U/W 3, U/W 1, U/W 2, U/W 3, U/W 1, U/W 2, U/W 3',
+        x: 100,
+        y: 700,
         color: "#444444",
         opacity: 0.4, //투명도 (active일때는 1)
         updown: "down", // '정보량 증감률' 화살표 표시, (증가=up / 감소=down)
       },
       {
         name: "백병원",
-        x: "180",
-        y: "570",
+        uw: '',
+        x: 180,
+        y: 570,
         color: "#444444",
         opacity: 0.4, //투명도 (active일때는 1)
         updown: "down", // '정보량 증감률' 화살표 표시, (증가=up / 감소=down)
@@ -430,29 +443,27 @@
       let datas2 = [
         {
           name: "다초점렌즈",
-          x: "100",
-          y: "550",
+          uw: '',
+          x: -100,
+          y: 550,
           color: "#444444",
           opacity: 0.4, //투명도 (active일때는 1)
-          updown: "up", // '정보량 증감률' 화살표 표시, (증가=up / 감소=down)
         },
         {
           name: "고혈압",
           uw: "U/W 1, U/W 2, U/W 3",
-          x: "210",
-          y: "920",
+          x: 210,
+          y: 920,
           color: "#444444",
           opacity: 0.4, //투명도 (active일때는 1)
-          updown: "up", // '정보량 증감률' 화살표 표시, (증가=up / 감소=down)
         },
         {
           name: "스케일링",
-          uw: "U/W 1, U/W 2, U/W 3",
-          x: "78",
-          y: "890",
+          uw: "",
+          x: -78,
+          y: 890,
           color: "#444444",
           opacity: 0.4, //투명도 (active일때는 1)
-          updown: "down", // '정보량 증감률' 화살표 표시, (증가=up / 감소=down)
         },
       ];
 
