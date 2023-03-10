@@ -285,7 +285,7 @@
   const $chartDiv = $card.querySelector(".js-chart");
   let $h1 = $chartDiv.querySelector("h1");
   $chartDiv.removeChild($h1);
-  $chartDiv.setAttribute("style", "height: 636px !important"); // 지워야해요
+  $chartDiv.setAttribute("style", "height: 61.6rem !important"); // 지워야해요
   /**
    *
    * 예시 데이터 양이 많아지면 보기 흉해서
