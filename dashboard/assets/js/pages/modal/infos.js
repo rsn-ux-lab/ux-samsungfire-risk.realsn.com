@@ -68,6 +68,7 @@
   ];
 
     // init
+    KeywordPopupLineChart.isPercent = false;
     KeywordPopupLineChart.reDataBinding(datas, categorys); // 데이터 변경시킬때
     KeywordPopupLineChart.reColoring(["#b193e2", "#89DDD8"]); // 컬러세팅
     

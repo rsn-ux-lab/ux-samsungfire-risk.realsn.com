@@ -1,4 +1,3 @@
-
 {
   /**
    *
@@ -74,15 +73,16 @@
     let categorys = ["블로그", "카페"];
     // prettier-ignore
     let datas = [
-       { category: "2022-10", "column-1": 500, "column-2": 600, },
-       { category: "2022-11", "column-1": 300, "column-2": 500, },
+       { category: "2022-10", "column-1": -501, "column-2": 600, },
+       { category: "2022-11", "column-1": -300, "column-2": 500, },
        { category: "2022-12", "column-1": 200, "column-2": 100, },
-       { category: "2023-01", "column-1": 200, "column-2": 70, },
-       { category: "2023-02", "column-1": 200, "column-2": 500, },
+       { category: "2023-01", "column-1": 200, "column-2": -70, },
+       { category: "2023-02", "column-1": -200, "column-2": 500, },
        { category: "2023-03", "column-1": 150, "column-2": 500, },
      ];
 
     // init
+    samsungFrOneColumnChart.isPercent = false;
     samsungFrOneColumnChart.reDataBinding(datas, categorys); // 데이터 변경시킬때
     samsungFrOneColumnChart.reColoring(["#87C67C", "#F2D301"]); // 컬러세팅
 
@@ -111,10 +111,6 @@
 
     // AMchart Loader
     const Moral1stLineChart = new rsnCharts.Moral1stLineChart($chartDiv);
-    Moral1stLineChart.options = {
-      legend: true,
-      useGraphSettings: true,
-    };
     let categorys = ["블로그", "카페"];
     // prettier-ignore
     let datas = [
@@ -127,6 +123,7 @@
    ];
 
     // init
+    Moral1stLineChart.isPercent = false;
     Moral1stLineChart.reDataBinding(datas, categorys); // 데이터 변경시킬때
     Moral1stLineChart.reColoring(["#87C67C", "#F2D301"]); // 컬러세팅
 
@@ -270,7 +267,6 @@
         y: 920,
         color: "#444444",
         opacity: 0.4, //투명도 (active일때는 1)
-        updown: "up", // '정보량 증감률' 화살표 표시, (증가=up / 감소=down)
       },
       {
         name: "스케일링",
@@ -279,7 +275,6 @@
         y: 890,
         color: "#444444",
         opacity: 0.4, //투명도 (active일때는 1)
-        updown: "down", // '정보량 증감률' 화살표 표시, (증가=up / 감소=down)
       },
       {
         name: "뜸",
@@ -288,7 +283,6 @@
         y: 630,
         color: "#444444",
         opacity: 0.4, //투명도 (active일때는 1)
-        updown: "down", // '정보량 증감률' 화살표 표시, (증가=up / 감소=down)
       },
       {
         name: "부항",
@@ -297,7 +291,6 @@
         y: 240,
         color: "#444444",
         opacity: 0.4, //투명도 (active일때는 1)
-        updown: "down", // '정보량 증감률' 화살표 표시, (증가=up / 감소=down)
       },
       {
         name: "한방치료",
@@ -306,7 +299,6 @@
         y: 510,
         color: "#444444",
         opacity: 0.4, //투명도 (active일때는 1)
-        updown: "down", // '정보량 증감률' 화살표 표시, (증가=up / 감소=down)
       },
       {
         name: "데이터",
@@ -315,7 +307,6 @@
         y: 200,
         color: "#444444",
         opacity: 0.4, //투명도 (active일때는 1)
-        updown: "down", // '정보량 증감률' 화살표 표시, (증가=up / 감소=down)
       },
       {
         name: "디스크",
@@ -324,7 +315,6 @@
         y: -210,
         color: "#444444",
         opacity: 0.4, //투명도 (active일때는 1)
-        updown: "down", // '정보량 증감률' 화살표 표시, (증가=up / 감소=down)
       },
       {
         name: "비중격",
@@ -333,7 +323,6 @@
         y: 150,
         color: "#444444",
         opacity: 0.4, //투명도 (active일때는 1)
-        updown: "down", // '정보량 증감률' 화살표 표시, (증가=up / 감소=down)
       },
       {
         name: "이대목동병원",
@@ -342,7 +331,6 @@
         y: -100,
         color: "#444444",
         opacity: 0.4, //투명도 (active일때는 1)
-        updown: "down", // '정보량 증감률' 화살표 표시, (증가=up / 감소=down)
       },
       {
         name: "당뇨",
@@ -351,7 +339,6 @@
         y: 170,
         color: "#444444",
         opacity: 0.4, //투명도 (active일때는 1)
-        updown: "down", // '정보량 증감률' 화살표 표시, (증가=up / 감소=down)
       },
       {
         name: "데이터",
@@ -360,7 +347,6 @@
         y: 70,
         color: "#444444",
         opacity: 0.4, //투명도 (active일때는 1)
-        updown: "down", // '정보량 증감률' 화살표 표시, (증가=up / 감소=down)
       },
       {
         name: "데이터",
@@ -369,7 +355,6 @@
         y: 430,
         color: "#444444",
         opacity: 0.4, //투명도 (active일때는 1)
-        updown: "down", // '정보량 증감률' 화살표 표시, (증가=up / 감소=down)
       },
       {
         name: "삼성서울병원",
@@ -378,7 +363,6 @@
         y: 570,
         color: "#444444",
         opacity: 0.4, //투명도 (active일때는 1)
-        updown: "down", // '정보량 증감률' 화살표 표시, (증가=up / 감소=down)
       },
       {
         name: "라식",
@@ -387,7 +371,6 @@
         y: 700,
         color: "#444444",
         opacity: 0.4, //투명도 (active일때는 1)
-        updown: "up", // '정보량 증감률' 화살표 표시, (증가=up / 감소=down)
       },
       {
         name: "십자인대",
@@ -396,7 +379,6 @@
         y: 700,
         color: "#444444",
         opacity: 0.4, //투명도 (active일때는 1)
-        updown: "down", // '정보량 증감률' 화살표 표시, (증가=up / 감소=down)
       },
       {
         name: "백병원",
@@ -405,7 +387,6 @@
         y: 570,
         color: "#444444",
         opacity: 0.4, //투명도 (active일때는 1)
-        updown: "down", // '정보량 증감률' 화살표 표시, (증가=up / 감소=down)
       },
     ];
 

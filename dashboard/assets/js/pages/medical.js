@@ -32,20 +32,21 @@
     const $chart = document.querySelector("[data-section=정보량추이] [data-article=정보량추이차트] .js-chart");
     const samsungFrOneColumnChart = new rsnCharts.SamsungFrOneColumnChart($chart);
 
-    let categorys = ["블로그", "카페", "커뮤니티", "유튜브", "인스타그램", "지식인"];
+    let categorys = ["블로그", "카페", "커뮤니티", "유튜브", "인스타그램", "지식인", "테스트테스트"];
     // prettier-ignore
     let datas = [
-       { category: "2022-10", "column-1": 500, "column-2": 600, "column-3": 550, "column-4": 650, "column-5": 700, "column-6": 430 },
-       { category: "2022-11", "column-1": 300, "column-2": 500, "column-3": 550, "column-4": 650, "column-5": 700, "column-6": 430 },
-       { category: "2022-12", "column-1": 200, "column-2": 100, "column-3": 550, "column-4": 650, "column-5": 700, "column-6": 430 },
-       { category: "2023-01", "column-1": 200, "column-2": 70, "column-3": 550, "column-4": 650, "column-5": 700, "column-6": 430 },
-       { category: "2023-02", "column-1": 200, "column-2": 500, "column-3": 550, "column-4": 650, "column-5": 700, "column-6": 430 },
-       { category: "2023-03", "column-1": 150, "column-2": 500, "column-3": 550, "column-4": 650, "column-5": 700, "column-6": 430 },
+       { category: "2022-10", "column-1": 500, "column-2": 100000, "column-3": 5000, "column-4": 10000, "column-5": 10, "column-6": 100000, "column-7": 100000, },
+       { category: "2022-11", "column-1": 500, "column-2": 100000, "column-3": 5000, "column-4": 10000, "column-5": 10, "column-6": 100000, "column-7": 100000, },
+       { category: "2022-12", "column-1": 500, "column-2": 100000, "column-3": 5000, "column-4": 10000, "column-5": 10, "column-6": 100000, "column-7": 100000, },
+       { category: "2023-01", "column-1": 500, "column-2": 100000, "column-3": 5000, "column-4": 10000, "column-5": 10, "column-6": 100000 , "column-7": 100000,},
+       { category: "2023-02", "column-1": 500, "column-2": 100000, "column-3": 5000, "column-4": 10000, "column-5": 10, "column-6": 100000, "column-7": 100000, },
+       { category: "2023-03", "column-1": 500, "column-2": 100000, "column-3": 5000, "column-4": 10000, "column-5": 10, "column-6": 100000, "column-7": 100000, },
      ];
 
     // init
+    samsungFrOneColumnChart.isPercent = false;
     samsungFrOneColumnChart.reDataBinding(datas, categorys); // 데이터 변경시킬때
-    samsungFrOneColumnChart.reColoring(["#87C67C", "#F2D301", "#F3A184", "#F77890", "#EAA6E4", "#7285EB"]); // 컬러세팅
+    samsungFrOneColumnChart.reColoring(["#87C67C", "#F2D301", "#F3A184", "#F77890", "#EAA6E4", "#7285EB", "#8b8b8b"]); // 컬러세팅
   }
 }
 /*
@@ -83,6 +84,7 @@
    ];
 
     // init
+    Moral1stLineChart.isPercent = false;
     Moral1stLineChart.reDataBinding(datas, categorys); // 데이터 변경시킬때
     Moral1stLineChart.reColoring(["#87C67C", "#F2D301", "#F3A184", "#F77890", "#EAA6E4", "#7285EB"]); // 컬러세팅
   }

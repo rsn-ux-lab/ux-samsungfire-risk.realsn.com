@@ -93,6 +93,7 @@
      ];
 
     // init
+    keywordCandleChart.isPercent = false;
     keywordCandleChart.reDataBinding(datas, categorys); // 데이터 변경시킬때
     keywordCandleChart.reColoring(["#B193E2", "#89DDD8"]); // 컬러세팅
 
@@ -137,6 +138,7 @@
    ];
 
     // init
+    Keyword1stLineChart.isPercent = false;
     Keyword1stLineChart.reDataBinding(datas, categorys); // 데이터 변경시킬때
     Keyword1stLineChart.reColoring(["#B193E2", "#89DDD8"]); // 컬러세팅
     
